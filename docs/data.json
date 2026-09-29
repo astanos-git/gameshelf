@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T17:30:47+00:00",
+ "generated_at": "2026-09-29T17:42:31+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -4311,7 +4311,12 @@
    ],
    "released": "2021-09-27",
    "rawg_slug": "hot-wheels-unleashed",
-   "hltb": null
+   "hltb": {
+    "main": 8.95,
+    "extra": 15.69,
+    "complete": 22.65,
+    "url": "https://howlongtobeat.com/game/129536"
+   }
   },
   {
    "name": "Little Nightmares II",
@@ -5909,8 +5914,8 @@
    }
   },
   {
-   "name": "Gran Turismo™ 7",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202202/2806/wpHT6JXmOA9iECLZKRPRvt0U.png",
+   "name": "Gran Turismo® 7",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202109/1321/yZ7dpmjtHr1olhutHT57IFRh.png",
    "platforms": [
     "PS5"
    ],
@@ -5957,13 +5962,18 @@
     "2023": 14.5,
     "2024": 2.1
    },
-   "metacritic": null,
+   "metacritic": 84,
    "genres": [
     "Racing"
    ],
-   "released": "2001-04-28",
-   "rawg_slug": "gran-turismo-3-a-spec",
-   "hltb": null
+   "released": "2022-03-04",
+   "rawg_slug": "gran-turismo-7",
+   "hltb": {
+    "main": 25.54,
+    "extra": 47.43,
+    "complete": 156.81,
+    "url": "https://howlongtobeat.com/game/81847"
+   }
   },
   {
    "name": "Horizon Call of the Mountain™",
@@ -9697,7 +9707,12 @@
    ],
    "released": "2020-02-20",
    "rawg_slug": "persona-5-strikers",
-   "hltb": null
+   "hltb": {
+    "main": 35.18,
+    "extra": 45.88,
+    "complete": 70.61,
+    "url": "https://howlongtobeat.com/game/72069"
+   }
   },
   {
    "name": "The Persistence",
@@ -10552,7 +10567,12 @@
    ],
    "released": "2011-09-22",
    "rawg_slug": "another-world-20th",
-   "hltb": null
+   "hltb": {
+    "main": 2.34,
+    "extra": 2.51,
+    "complete": 2.62,
+    "url": "https://howlongtobeat.com/game/503"
+   }
   },
   {
    "name": "Persona 5",
@@ -15853,7 +15873,12 @@
    ],
    "released": "2014-11-18",
    "rawg_slug": "littlebigplanet-3",
-   "hltb": null
+   "hltb": {
+    "main": 5.96,
+    "extra": 10.71,
+    "complete": 19.3,
+    "url": "https://howlongtobeat.com/game/19550"
+   }
   },
   {
    "name": "This War of Mine: The Little Ones",
@@ -17268,7 +17293,12 @@
    ],
    "released": "2014-09-30",
    "rawg_slug": "shadow-of-mordor",
-   "hltb": null
+   "hltb": {
+    "main": 15.71,
+    "extra": 23.94,
+    "complete": 32.93,
+    "url": "https://howlongtobeat.com/game/18006"
+   }
   },
   {
    "name": "FIFA 15",

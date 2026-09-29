@@ -120,8 +120,12 @@
   "url": "https://howlongtobeat.com/game/74207"
  },
  "Another World - 20th Anniversary Edition": {
+  "complete": 2.62,
+  "extra": 2.51,
+  "main": 2.34,
+  "name": "Another World",
   "query": "Another World - 20th Anniversary Edition",
-  "v": 2
+  "url": "https://howlongtobeat.com/game/503"
  },
  "Arise: A simple story": {
   "complete": 7.24,
@@ -1224,8 +1228,12 @@
   "url": "https://howlongtobeat.com/game/57478"
  },
  "HOT WHEELS UNLEASHED™ 2 - Turbocharged": {
+  "complete": 22.65,
+  "extra": 15.69,
+  "main": 8.95,
+  "name": "Hot Wheels Unleashed 2: Turbocharged",
   "query": "HOT WHEELS UNLEASHED 2 - Turbocharged",
-  "v": 2
+  "url": "https://howlongtobeat.com/game/129536"
  },
  "Heavenly Bodies": {
   "complete": 11.29,
@@ -2093,7 +2101,7 @@
  },
  "Rad TV": {
   "query": "Rad TV",
-  "v": 2
+  "v": 3
  },
  "Ratchet & Clank™": {
   "complete": 23.74,
@@ -2417,7 +2425,7 @@
  },
  "Spotify": {
   "query": "Spotify",
-  "v": 2
+  "v": 3
  },
  "Star Wars: Tales from the Galaxy's Edge - Enhanced Edition": {
   "complete": 10.82,
