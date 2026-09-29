@@ -56,6 +56,7 @@ Go to **Actions → Refresh game data → Run workflow**. The run takes about 3�
   - Earning the platinum or 100% of the trophies later turns a Beaten game into **Completed**.
   - A Dropped game with new playtime or a new trophy after the date you dropped it goes back to its normal status at your next refresh.
   Only issues you open yourself are processed, so nobody else can change your flags.
+- **Flag several games at once:** tap **Select** (next to the sort menu), tap the games you want, or use **Select all shown** for the current filter or search, then choose an action in the bar at the bottom. Everything goes into one GitHub page, so it's still just one tap on **Create**. Very large selections (roughly 150+ games) are split into Part 1, Part 2 and so on; open each part and tap Create. Completed games can't be selected.
 - **Stats:** the Stats tab shows each year, or all time: trophies, platinums, hours played, your top 3 games by trophies and by hours, trophies by month, and a genre breakdown by hours or number of games.
 
 ## Renewing the PSN login (about every two months)

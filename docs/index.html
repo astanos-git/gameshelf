@@ -144,6 +144,30 @@ button, select, input { font: inherit; color: inherit; }
 .detail a.flagbtn:hover { border-color: var(--accent); }
 .detail a.flagbtn.beaten { border-color: var(--st-beaten); color: var(--st-beaten); }
 .detail a.flagbtn.dropped { border-color: var(--st-dropped); color: var(--st-dropped); }
+@media (max-width: 520px) { .row2 { flex-wrap: wrap; } .row2 input { flex-basis: 100%; } .row2 select { flex: 1 1 auto; min-width: 0; } }
+.selbtn { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; font-size: 14px; cursor: pointer; flex: none; }
+.selbtn[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.cover { position: relative; }
+.check { position: absolute; inset: 0; display: grid; place-items: center; background: color-mix(in srgb, var(--surface) 55%, transparent); }
+.check::before { content: ""; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--muted); background: var(--surface); box-sizing: border-box; }
+.game.sel { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.game.sel .check::before { border-color: var(--accent); background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat; }
+.game.locked { opacity: .5; }
+.game.locked .check::before { border-style: dashed; }
+body.selecting .wrap { padding-bottom: 170px; }
+.selbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface); border-top: 1px solid var(--line);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -6px 20px rgba(0,0,0,.08); }
+.selbar-in { max-width: 880px; margin: 0 auto; display: grid; gap: 8px; }
+.selrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.selrow b { font: 600 18px var(--display); margin-right: auto; }
+.selrow .lnk { background: none; border: 0; color: var(--accent); font-size: 13.5px; font-weight: 600; cursor: pointer; padding: 4px 2px; }
+.selrow a.act, .selrow span.act { text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 600; color: var(--fg); }
+.selrow a.act.beaten { border-color: var(--st-beaten); color: var(--st-beaten); }
+.selrow a.act.dropped { border-color: var(--st-dropped); color: var(--st-dropped); }
+.selrow span.act { opacity: .45; }
+.parts { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13.5px; font-weight: 600; }
+.selrow a.act.visited { opacity: .5; }
+.selnote { font-size: 12.5px; color: var(--muted); margin: 0; }
 .empty { text-align: center; color: var(--muted); padding: 32px 0; }
 @media (max-width: 420px) { .game > button { grid-template-columns: 48px 1fr auto; gap: 10px; } .cover { width: 48px; height: 48px; } }
 </style>
@@ -178,10 +202,13 @@ button, select, input { font: inherit; color: inherit; }
         <option value="beat">Time to beat</option>
         <option value="name">Name</option>
       </select>
+      <button class="selbtn" id="selectBtn" aria-pressed="false">Select</button>
     </div>
   </div>
 
   <main class="list" id="list"></main>
+</div>
+<div class="selbar" id="selbar" hidden><div class="selbar-in" id="selbarIn"></div>
 </div>
 
 <script>
@@ -238,7 +265,7 @@ function applyFlags(games, flags) {
   }
 }
 const $ = id => document.getElementById(id);
-let DATA, state = { status: "all", q: "", sort: "recent", open: null };
+let DATA, state = { status: "all", q: "", sort: "recent", open: null, selecting: false, sel: new Set() };
 try { Object.assign(state, JSON.parse(localStorage.getItem("shelf") || "{}"), { q: "", open: null }); } catch {}
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -344,22 +371,29 @@ const SORTS = {
   name: (a, b) => a.name.localeCompare(b.name),
 };
 
-function renderList() {
+function visibleRows() {
   const q = state.q.trim().toLowerCase();
-  const rows = DATA.games
+  return DATA.games
     .filter(x => state.status === "all" || x.status === state.status)
     .filter(x => !q || x.name.toLowerCase().includes(q) || (x.genres || []).some(gn => gn.toLowerCase().includes(q)))
     .sort(SORTS[state.sort]);
+}
+
+function renderList() {
+  const rows = visibleRows();
+  renderSelBar();
   if (!rows.length) { $("list").innerHTML = `<p class="empty">No games match this filter.</p>`; return; }
   $("list").innerHTML = rows.map((x, i) => {
-    const id = "g" + DATA.games.indexOf(x), open = state.open === id;
+    const id = "g" + DATA.games.indexOf(x), open = !state.selecting && state.open === id;
+    const locked = state.selecting && x.base_status === "completed", picked = state.selecting && state.sel.has(id);
     const prog = x.defined
       ? `<div class="prog ${x.platinum ? "plat" : ""}"><span class="bar"><i style="width:${x.progress}%"></i></span><span class="num">${x.trophies_earned}/${x.trophies_total} · ${x.progress}%</span></div>`
       : `<div class="prog">No trophies yet</div>`;
     const hrs = x.hours ? `${x.hours.toLocaleString()} h` : (x.platforms.some(p => p === "PS3" || p === "PSVITA") ? "Playtime n/a" : "0 h");
-    return `<article class="game">
-      <button aria-expanded="${open}" aria-controls="${id}-d" data-id="${id}">
-        <span class="cover">${pic(x.image, x.name)}</span>
+    const btnAttr = state.selecting ? `aria-pressed="${picked}"${locked ? ' aria-disabled="true" title="Completed games can\'t be flagged"' : ""}` : `aria-expanded="${open}" aria-controls="${id}-d"`;
+    return `<article class="game${picked ? " sel" : ""}${locked ? " locked" : ""}">
+      <button ${btnAttr} data-id="${id}">
+        <span class="cover">${pic(x.image, x.name)}${state.selecting ? '<span class="check"></span>' : ""}</span>
         <span class="main">
           <span class="name">${esc(x.name)}</span>
           <span class="meta"><span class="pill st-${x.status}">${STATUS_LABEL[x.status]}</span><span>${x.platforms.join(" · ")}</span><span class="num">${hrs}</span>${beat(x)}</span>
@@ -378,13 +412,53 @@ function beat(x) {
   return m ? `<span class="num" title="HowLongToBeat, main story">Beat in ~${fmtH(m)}</span>` : "";
 }
 
+function issueUrl(flag, names) {
+  const repo = repoUrl(); if (!repo) return null;
+  const what = names.length === 1 ? names[0] : `${names.length} games`;
+  const title = flag === "none" ? `Flag ${what}: remove flag` : `Flag ${what} as ${flag}`;
+  const body = `Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\nflag: ${flag}\n` + names.map(n => `game: ${n}\n`).join("");
+  return `${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+}
+const MAX_URL = 6000;  // stay well under what GitHub accepts in a pre-filled link
+function chunks(flag, names) {  // split a big selection into several links
+  const out = []; let cur = [];
+  for (const n of names) {
+    if (cur.length && issueUrl(flag, [...cur, n]).length > MAX_URL) { out.push(cur); cur = []; }
+    cur.push(n);
+  }
+  if (cur.length) out.push(cur);
+  return out;
+}
+
+function renderSelBar() {
+  document.body.classList.toggle("selecting", state.selecting);
+  $("selectBtn").setAttribute("aria-pressed", state.selecting);
+  $("selectBtn").textContent = state.selecting ? "Done" : "Select";
+  $("selbar").hidden = !state.selecting;
+  if (!state.selecting) return;
+  const picked = DATA.games.filter((x, i) => state.sel.has("g" + i));
+  const names = picked.map(x => x.name), n = names.length;
+  const act = (flag, label, cls) => {
+    if (!n || !repoUrl()) return `<span class="act" aria-disabled="true">${label}</span>`;
+    const parts = chunks(flag, names);
+    if (parts.length === 1) return `<a class="act ${cls}" data-act href="${issueUrl(flag, parts[0])}" target="_blank" rel="noopener">${label}</a>`;
+    return `<span class="parts">${label}: ${parts.map((c, i) => `<a class="act ${cls}" data-part href="${issueUrl(flag, c)}" target="_blank" rel="noopener">Part ${i + 1}</a>`).join("")}</span>`;
+  };
+  const anyFlag = picked.some(x => x.flag);
+  let note = n ? "Opens one pre-filled GitHub page for all selected games. Tap Create to save." : "Tap games to select them. Completed games can't be flagged.";
+  const nParts = n ? chunks("dropped", names).length : 1;
+  if (n && !repoUrl()) note = "Flag buttons work on your GitHub Pages dashboard.";
+  else if (nParts > 1) note = `That's a lot of games for one GitHub page, so it's split into ${nParts} parts. Open each part and tap Create, then tap Done.`;
+  $("selbarIn").innerHTML = `
+    <div class="selrow"><b class="num">${n} selected</b>
+      <button class="lnk" id="selAll">Select all shown</button>${n ? '<button class="lnk" id="selClear">Clear</button>' : ""}</div>
+    <div class="selrow">${act("beaten", "Mark as beaten", "beaten")}${act("dropped", "Mark as dropped", "dropped")}${anyFlag ? act("none", "Remove flag", "") : ""}</div>
+    <p class="selnote">${note}</p>`;
+}
+
 function flagBar(x) {
   const repo = repoUrl();
-  const issue = (flag, label, cls) => {
-    const title = flag === "none" ? `Flag ${x.name}: remove flag` : `Flag ${x.name} as ${flag}`;
-    const body = `Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\ngame: ${x.name}\nflag: ${flag}\n`;
-    return repo ? `<a class="flagbtn ${cls}" target="_blank" rel="noopener" href="${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}">${label}</a>` : "";
-  };
+  const issue = (flag, label, cls) => repo ? `<a class="flagbtn ${cls}" target="_blank" rel="noopener" href="${issueUrl(flag, [x.name])}">${label}</a>` : "";
   let btns = "", note = "";
   if (x.base_status === "completed") {
     note = "Completed games can't be flagged: the platinum or 100% trophies already say you finished it.";
@@ -422,7 +496,19 @@ $("chips").addEventListener("click", e => { const b = e.target.closest(".chip");
   state.status = b.dataset.s; if (state.status === "unplayed" && state.sort === "recent") { state.sort = "metacritic"; $("sort").value = "metacritic"; }
   save(); renderChips(); renderList(); });
 $("list").addEventListener("click", e => { const b = e.target.closest("button[data-id]"); if (!b) return;
-  state.open = state.open === b.dataset.id ? null : b.dataset.id; renderList(); });
+  const id = b.dataset.id;
+  if (state.selecting) {
+    if (DATA.games[+id.slice(1)].base_status === "completed") return;
+    state.sel.has(id) ? state.sel.delete(id) : state.sel.add(id);
+  } else state.open = state.open === id ? null : id;
+  renderList(); });
+$("selectBtn").addEventListener("click", () => { state.selecting = !state.selecting; state.sel.clear(); renderList(); });
+$("selbar").addEventListener("click", e => {
+  if (e.target.id === "selAll") { visibleRows().forEach(x => { if (x.base_status !== "completed") state.sel.add("g" + DATA.games.indexOf(x)); }); renderList(); }
+  else if (e.target.id === "selClear") { state.sel.clear(); renderList(); }
+  else if (e.target.closest("a[data-act]")) setTimeout(() => { state.selecting = false; state.sel.clear(); renderList(); }, 300);
+  else if (e.target.closest("a[data-part]")) e.target.closest("a[data-part]").classList.add("visited");
+});
 $("q").addEventListener("input", e => { state.q = e.target.value; renderList(); });
 $("sort").addEventListener("change", e => { state.sort = e.target.value; save(); renderList(); });
 

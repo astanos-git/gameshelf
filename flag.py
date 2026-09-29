@@ -1,8 +1,8 @@
-"""Save a Beaten / Dropped flag from a GitHub issue into docs/flags.json.
+"""Save Beaten / Dropped flags from a GitHub issue into docs/flags.json.
 
-Run by .github/workflows/flag.yml when you tap a flag button on the dashboard.
-Env: ISSUE_BODY (contains "game: <name>" and "flag: beaten|dropped|none"), ISSUE_CREATED (ISO time).
-Writes a one-line result to flag_result.txt for the issue comment.
+Run by .github/workflows/flag.yml when you use the flag buttons on the dashboard.
+The issue body holds one "flag: beaten|dropped|none" line and one or more "game: <name>" lines.
+Env: ISSUE_BODY, ISSUE_CREATED (ISO time). Writes the reply to flag_result.txt.
 """
 from __future__ import annotations
 
@@ -18,28 +18,45 @@ RESULT = ROOT / "flag_result.txt"
 LABELS = {"beaten": "Beaten", "dropped": "Dropped"}
 
 
-def parse(body: str) -> tuple[str | None, str | None]:
-    game = re.search(r"^game:\s*(.+?)\s*$", body or "", re.M | re.I)
+def parse(body: str) -> tuple[list[str], str | None]:
+    games = [g.strip() for g in re.findall(r"^game:[ \t]*(.+?)[ \t]*$", body or "", re.M | re.I)]
     flag = re.search(r"^flag:\s*(\w+)\s*$", body or "", re.M | re.I)
-    return (game.group(1) if game else None), (flag.group(1).lower() if flag else None)
+    return list(dict.fromkeys(g for g in games if g)), (flag.group(1).lower() if flag else None)
 
 
 def apply(body: str, created: str) -> str:
-    game, flag = parse(body)
-    if not game or flag not in ("beaten", "dropped", "none"):
-        return "Couldn't read this request. Use the buttons on the dashboard to flag a game."
-    names = {g["name"] for g in json.loads(DATA.read_text())["games"]} if DATA.exists() else set()
-    if names and game not in names:
-        return f"No game called “{game}” on the dashboard, so nothing was changed."
+    games, flag = parse(body)
+    if not games or flag not in ("beaten", "dropped", "none"):
+        return "Couldn't read this request. Use the buttons on the dashboard to flag games."
 
+    status = {g["name"]: g.get("status") for g in json.loads(DATA.read_text())["games"]} if DATA.exists() else {}
     flags = json.loads(FLAGS.read_text()) if FLAGS.exists() else {}
-    if flag == "none":
-        msg = f"Removed the flag from {game}." if flags.pop(game, None) else f"{game} had no flag, so nothing changed."
-    else:
-        flags[game] = {"flag": flag, "at": created}
-        msg = f"{game} is now marked as {LABELS[flag]}."
+    done, skipped = [], []
+    for game in games:
+        if status and game not in status:
+            skipped.append(f"{game} (not on the dashboard)")
+        elif flag == "none":
+            if flags.pop(game, None):
+                done.append(game)
+            else:
+                skipped.append(f"{game} (had no flag)")
+        elif status.get(game) == "completed":
+            skipped.append(f"{game} (already completed)")
+        else:
+            flags[game] = {"flag": flag, "at": created}
+            done.append(game)
     FLAGS.write_text(json.dumps(flags, indent=1, sort_keys=True, ensure_ascii=False) + "\n")
-    return msg + " The dashboard updates in about a minute."
+
+    n = f"{len(done)} game{'s' if len(done) != 1 else ''}"
+    lines = []
+    if done:
+        lead = f"Removed the flag from {n}" if flag == "none" else f"Marked {n} as {LABELS[flag]}"
+        lines.append(f"{lead}: " + ", ".join(done) + ".")
+    if skipped:
+        lines.append("Skipped: " + ", ".join(skipped) + ".")
+    if done:
+        lines.append("The dashboard updates in about a minute.")
+    return "\n\n".join(lines)
 
 
 if __name__ == "__main__":
