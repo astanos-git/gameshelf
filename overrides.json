@@ -1,0 +1,4 @@
+{
+  "_help": "Fix wrong Metacritic matches: map the game name exactly as shown on the dashboard to its RAWG slug (the last part of its rawg.io/games/... URL), or to null for no match.",
+  "Example Game Name As Shown": "example-rawg-slug"
+}
