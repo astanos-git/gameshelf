@@ -492,7 +492,7 @@ def fill_metacritic(games: list[dict], previous_games: list[dict]) -> None:
 
     # 2. Wikipedia's review box for what's still missing (cached, so it survives Wikipedia being down)
     enrich_wikipedia([g for g in missing if not g.get("metacritic")])
-    print(f"Metacritic: {sum(1 for g in missing if g.get('metacritic'))} of {len(missing)} gaps filled "
+    print(f"::notice::Metacritic: {sum(1 for g in missing if g.get('metacritic'))} of {len(missing)} gaps filled "
           f"({sum(1 for g in missing if g.get('metacritic_source') == 'wikidata')} Wikidata, "
           f"{sum(1 for g in missing if g.get('metacritic_source') == 'wikipedia')} Wikipedia)")
 
@@ -501,6 +501,7 @@ def fill_metacritic(games: list[dict], previous_games: list[dict]) -> None:
 
 WIKI_API = "https://en.wikipedia.org/w/api.php"
 WIKI_CACHE = ROOT / "wikipedia_cache.json"
+WIKI_VERSION = 2       # bump to redo every lookup after improving matching
 WIKI_RETRY_DAYS = 30  # retry games without a score after this long (new releases get reviewed)
 WIKI_HEADERS = {"User-Agent": "GameShelf/1.0 (personal PSN dashboard; github.com)"}
 PLATFORM_ORDER = ["PS5", "PS4"]
@@ -529,50 +530,66 @@ def clean_title(title: str) -> str:
     return norm(re.sub(r"\s*\((\d{4} )?video game\)$", "", title))
 
 
-def wikipedia_lookup(name: str) -> dict:
+def wiki_get(params: dict) -> dict:
+    """Call the Wikipedia API, waiting and retrying when it asks us to slow down."""
+    for attempt in range(4):
+        r = requests.get(WIKI_API, headers=WIKI_HEADERS, timeout=20, params={**params, "format": "json", "maxlag": 5})
+        data = r.json() if r.headers.get("content-type", "").startswith("application/json") else {}
+        throttled = r.status_code in (429, 503) or data.get("error", {}).get("code") in ("maxlag", "ratelimited")
+        if not throttled:
+            r.raise_for_status()
+            if "error" in data:
+                raise RuntimeError(data["error"].get("info", "Wikipedia API error"))
+            return data
+        time.sleep(int(r.headers.get("Retry-After", 0) or 0) or 5 * (attempt + 1))
+    raise RuntimeError("Wikipedia kept asking to slow down")
+
+
+def wikipedia_lookup(name: str, year: str | None = None) -> dict:
     """Find the game's Wikipedia article and read its Metacritic score."""
     query = search_name(name)
-    r = requests.get(WIKI_API, headers=WIKI_HEADERS, timeout=20, params={
-        "action": "query", "list": "search", "srsearch": f"{query} video game", "srlimit": 5, "format": "json"})
-    r.raise_for_status()
+    data = wiki_get({"action": "query", "list": "search", "srsearch": f"{query} video game", "srlimit": 6})
     target = norm(query)
-    titles = [h["title"] for h in r.json().get("query", {}).get("search", [])]
-    title = next((t for t in titles if clean_title(t) == target), None)
+    titles = [h["title"] for h in data.get("query", {}).get("search", [])]
+    exact = [t for t in titles if clean_title(t) == target]
+    # Remakes share a name with the original: prefer the article for the release year, e.g. "(2024 video game)".
+    title = next((t for t in exact if year and f"({year} video game)" in t), None) or next(iter(exact), None)
     if not title:
         close = [(difflib.SequenceMatcher(None, clean_title(t), target).ratio(), t) for t in titles]
         best = max(close, default=(0, None))
         title = best[1] if best[0] >= 0.85 else None
     if not title:
         return {}
-    r = requests.get(WIKI_API, headers=WIKI_HEADERS, timeout=20, params={
-        "action": "parse", "page": title, "prop": "wikitext", "redirects": 1, "format": "json", "formatversion": 2})
-    r.raise_for_status()
-    score = parse_metacritic(r.json().get("parse", {}).get("wikitext", ""))
+    data = wiki_get({"action": "parse", "page": title, "prop": "wikitext", "redirects": 1, "formatversion": 2})
+    score = parse_metacritic(data.get("parse", {}).get("wikitext", ""))
     return {"title": title, "score": score} if score else {"title": title}
 
 
 def enrich_wikipedia(games: list[dict]) -> None:
     cache = json.loads(WIKI_CACHE.read_text()) if WIKI_CACHE.exists() else {}
     today = datetime.now(timezone.utc).date()
-    looked_up, failures = 0, 0
+    looked_up, failures, errors = 0, 0, []
     for g in games:
         info = cache.get(g["name"])
-        stale = info is not None and not info.get("score") and \
-            (today - datetime.fromisoformat(info.get("checked", "2000-01-01")).date()).days > WIKI_RETRY_DAYS
-        if (info is None or stale) and failures < 5:
+        stale = info is not None and (info.get("v", 1) < WIKI_VERSION or not info.get("score") and
+            (today - datetime.fromisoformat(info.get("checked", "2000-01-01")).date()).days > WIKI_RETRY_DAYS)
+        if (info is None or stale) and failures < 8:
             try:
-                info = {**wikipedia_lookup(g["name"]), "checked": today.isoformat()}
+                info = {**wikipedia_lookup(g["name"], (g.get("released") or "")[:4] or None),
+                        "checked": today.isoformat(), "v": WIKI_VERSION}
                 cache[g["name"]] = info
                 looked_up += 1
                 failures = 0
-                time.sleep(0.5)
             except Exception as e:
                 failures += 1
-                print(f"  Wikipedia failed for {g['name']!r}: {e}")
+                errors.append(f"{g['name']}: {type(e).__name__}: {str(e)[:120]}")
+                time.sleep(5 * failures)
+            time.sleep(1)
         if info and info.get("score"):
             g["metacritic"], g["metacritic_source"] = info["score"], "wikipedia"
     WIKI_CACHE.write_text(json.dumps(cache, indent=1, sort_keys=True, ensure_ascii=False))
-    print(f"Wikipedia: {looked_up} lookups")
+    print(f"::notice::Wikipedia: {looked_up} lookups, {len(errors)} errors" + (f" (first: {errors[0]})" if errors else "")
+          + (" - stopped early, the rest continue next refresh" if failures >= 8 else ""))
 
 
 # ---------------------------------------------------------------- main
