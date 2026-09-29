@@ -501,11 +501,12 @@ def fill_metacritic(games: list[dict], previous_games: list[dict]) -> None:
 
 WIKI_API = "https://en.wikipedia.org/w/api.php"
 WIKI_CACHE = ROOT / "wikipedia_cache.json"
-WIKI_VERSION = 2       # bump to redo every lookup after improving matching
+WIKI_VERSION = 3       # bump to redo every lookup after improving matching
 WIKI_RETRY_DAYS = 30  # retry games without a score after this long (new releases get reviewed)
 WIKI_HEADERS = {"User-Agent": "GameShelf/1.0 (personal PSN dashboard; github.com)"}
 PLATFORM_ORDER = ["PS5", "PS4"]
-MARKUP = re.compile(r"<ref[^>]*/>|<ref.*?</ref>|\{\{[^{}]*\}\}|'{2,3}", re.S)
+REFS = re.compile(r"<ref[^>]*/>|<ref.*?</ref>|\{\{\s*(cite|efn|sfn|refn|citation|dead link)[^{}]*\}\}|'{2,3}", re.S | re.I)
+TEMPLATE_OPEN = re.compile(r"\{\{\s*[^{}|]*\|")  # {{nowrap| ... }} -> keep the inside
 
 
 def parse_metacritic(wikitext: str) -> int | None:
@@ -515,8 +516,9 @@ def parse_metacritic(wikitext: str) -> int | None:
     m = re.search(r"\|\s*MC\s*=(.*?)(?=\n\s*\||\n\s*\}\})", wikitext, re.S)
     if not m:
         return None
-    value = MARKUP.sub(" ", m.group(1))
-    scores = re.findall(r"(?:\b([A-Za-z0-9]+)\s*:\s*)?\b(\d{1,3})\s*/\s*100\b", value)
+    value = TEMPLATE_OPEN.sub(" ", REFS.sub(" ", m.group(1))).replace("}}", " ")
+    # "PS5: 89/100" or "(PS5) 89/100" or just "89/100"
+    scores = re.findall(r"(?:\(?\b([A-Za-z0-9]+)\)?\s*:?\s+)?\b(\d{1,3})\s*/\s*100\b", value)
     if not scores:
         return None
     by_plat = {p.upper(): int(v) for p, v in scores if p}
@@ -571,7 +573,7 @@ def enrich_wikipedia(games: list[dict]) -> None:
     looked_up, failures, errors = 0, 0, []
     for g in games:
         info = cache.get(g["name"])
-        stale = info is not None and (info.get("v", 1) < WIKI_VERSION or not info.get("score") and
+        stale = info is not None and not info.get("score") and (info.get("v", 1) < WIKI_VERSION or
             (today - datetime.fromisoformat(info.get("checked", "2000-01-01")).date()).days > WIKI_RETRY_DAYS)
         if (info is None or stale) and failures < 8:
             try:
