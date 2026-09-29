@@ -366,13 +366,13 @@ SEARCH_NOISE = re.compile(
 
 def search_name(name: str) -> str:
     s = name.replace("’", "'").replace("\xa0", " ").replace("Ⅲ", "III")
-    s = re.sub(r"[™®©]", "", s)
+    s = re.sub(r"\s+", " ", re.sub(r"[™®©]", " ", s))
     s = SEARCH_NOISE.sub(" ", s)
     s = re.sub(r"\s*[—–]\s*remastered$|\s+vr$|\s+\([^)]*\)$|\s+trophy set$", "", s.strip(), flags=re.I)
     return re.sub(r"\s+", " ", s).strip(" -–:")
 
 
-HLTB_VERSION = 2  # bump to retry earlier misses after improving matching
+HLTB_VERSION = 3  # bump to retry earlier misses after improving matching
 
 
 def enrich_hltb(games: list[dict]) -> None:
@@ -392,12 +392,20 @@ def enrich_hltb(games: list[dict]) -> None:
         name = g["name"]
         query = overrides.get(loose(name)) or search_name(name)
         info = cache.get(name)
-        if info is not None and (info.get("query", query) != query or (not info.get("url") and info.get("v", 1) < HLTB_VERSION)):
-            info = None  # override changed, or a miss from an older matching method -> look up again
+        if info is not None:
+            if info.get("url"):
+                if loose(name) in overrides and info.get("query") != query:
+                    info = None  # you changed the override -> look up again
+            elif info.get("query") != query or info.get("v", 1) < HLTB_VERSION:
+                info = None  # a miss from an older matching method -> try again
         if info is None and hltb and failures < 5:
             try:
-                results = hltb.search(query, similarity_case_sensitive=False) or []
-                best = max(results, key=lambda r: r.similarity, default=None)
+                best = None
+                for q in dict.fromkeys([query, query.replace(":", " "), query.split(" - ")[0]]):  # simpler variants on a miss
+                    results = hltb.search(re.sub(r"\s+", " ", q).strip(), similarity_case_sensitive=False) or []
+                    best = max(results, key=lambda r: r.similarity, default=None)
+                    if best and best.similarity >= 0.6:
+                        break
                 if best and best.similarity >= 0.6:
                     info = {"query": query, "name": best.game_name, "url": best.game_web_link,
                             "main": best.main_story or None, "extra": best.main_extra or None,

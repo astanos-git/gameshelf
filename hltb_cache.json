@@ -1636,8 +1636,12 @@
   "url": "https://howlongtobeat.com/game/69805"
  },
  "LittleBigPlanet™3": {
-  "query": "LittleBigPlanet3",
-  "v": 2
+  "complete": 19.3,
+  "extra": 10.71,
+  "main": 5.96,
+  "name": "LittleBigPlanet 3",
+  "query": "LittleBigPlanet 3",
+  "url": "https://howlongtobeat.com/game/19550"
  },
  "Lords of the Fallen": {
   "complete": 91.35,
@@ -1760,8 +1764,12 @@
   "url": "https://howlongtobeat.com/game/129956"
  },
  "Middle-earth™: Shadow of Mordor™": {
-  "query": "Middle-earth: Shadow of Mordor",
-  "v": 2
+  "complete": 32.93,
+  "extra": 23.94,
+  "main": 15.71,
+  "name": "Middle-Earth: Shadow of Mordor",
+  "query": "Middle-earth : Shadow of Mordor",
+  "url": "https://howlongtobeat.com/game/18006"
  },
  "Mighty No. 9": {
   "complete": 15.97,
@@ -2044,8 +2052,12 @@
   "url": "https://howlongtobeat.com/game/15221"
  },
  "Persona®5 Strikers": {
-  "query": "Persona5 Strikers",
-  "v": 2
+  "complete": 70.61,
+  "extra": 45.88,
+  "main": 35.18,
+  "name": "Persona 5 Strikers",
+  "query": "Persona 5 Strikers",
+  "url": "https://howlongtobeat.com/game/72069"
  },
  "Powers": {
   "complete": null,
