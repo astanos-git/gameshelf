@@ -369,6 +369,9 @@ def search_name(name: str) -> str:
     return re.sub(r"\s+", " ", s).strip(" -–:")
 
 
+HLTB_VERSION = 2  # bump to retry earlier misses after improving matching
+
+
 def enrich_hltb(games: list[dict]) -> None:
     """Add HowLongToBeat times (hours). Unofficial and best-effort: any failure leaves the fields empty."""
     cache = json.loads(HLTB_CACHE.read_text()) if HLTB_CACHE.exists() else {}
@@ -385,18 +388,18 @@ def enrich_hltb(games: list[dict]) -> None:
         name = g["name"]
         query = overrides.get(name) or search_name(name)
         info = cache.get(name)
-        if info is not None and info.get("query", query) != query:
-            info = None  # override changed -> look up again
+        if info is not None and (info.get("query", query) != query or (not info.get("url") and info.get("v", 1) < HLTB_VERSION)):
+            info = None  # override changed, or a miss from an older matching method -> look up again
         if info is None and hltb and failures < 5:
             try:
-                results = hltb.search(query) or []
+                results = hltb.search(query, similarity_case_sensitive=False) or []
                 best = max(results, key=lambda r: r.similarity, default=None)
                 if best and best.similarity >= 0.6:
                     info = {"query": query, "name": best.game_name, "url": best.game_web_link,
                             "main": best.main_story or None, "extra": best.main_extra or None,
                             "complete": best.completionist or None}
                 else:
-                    info = {"query": query}  # no confident match; remembered so we don't retry
+                    info = {"query": query, "v": HLTB_VERSION}  # no confident match; remembered so we don't retry
                 cache[name] = info
                 looked_up += 1
                 failures = 0
