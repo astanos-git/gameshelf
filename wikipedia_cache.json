@@ -1,21 +1,692 @@
 {
+ "A Plague Tale: Requiem": {
+  "checked": "2026-09-29",
+  "score": 83,
+  "title": "A Plague Tale: Requiem",
+  "v": 2
+ },
+ "Alan Wake 2": {
+  "checked": "2026-09-29",
+  "score": 89,
+  "title": "Alan Wake 2",
+  "v": 2
+ },
+ "Alan Wake Remastered": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Alone in the Dark": {
+  "checked": "2026-09-29",
+  "score": 67,
+  "title": "Alone in the Dark (2024 video game)",
+  "v": 2
+ },
+ "Amnesia Collection": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Another World - 20th Anniversary Edition": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Arise: A simple story": {
+  "checked": "2026-09-29",
+  "title": "Arise: A Simple Story",
+  "v": 2
+ },
+ "Balatro": {
+  "checked": "2026-09-29",
+  "score": 90,
+  "title": "Balatro",
+  "v": 2
+ },
+ "Batman": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Battlefield™ 1": {
+  "checked": "2026-09-29",
+  "title": "Battlefield 1",
+  "v": 2
+ },
+ "Before Your Eyes": {
+  "checked": "2026-09-29",
+  "score": 77,
+  "title": "Before Your Eyes",
+  "v": 2
+ },
+ "Big Walk": {
+  "checked": "2026-09-29",
+  "score": 75,
+  "title": "Big Walk",
+  "v": 2
+ },
+ "BioShock Infinite: The Complete Edition": {
+  "checked": "2026-09-29",
+  "score": 94,
+  "title": "BioShock Infinite",
+  "v": 2
+ },
+ "Black Myth: Wukong": {
+  "checked": "2026-09-29",
+  "score": 76,
+  "title": "Black Myth: Wukong",
+  "v": 2
+ },
+ "Blasphemous 2": {
+  "checked": "2026-09-29",
+  "score": 84,
+  "title": "Blasphemous 2",
+  "v": 2
+ },
+ "Blue Prince": {
+  "checked": "2026-09-29",
+  "score": 92,
+  "title": "Blue Prince",
+  "v": 2
+ },
+ "Bob l'éponge: The Cosmic Shake": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Bye Sweet Carole": {
+  "checked": "2026-09-29",
+  "score": 74,
+  "title": "Bye Sweet Carole",
+  "v": 2
+ },
+ "Bō: Path of the Teal Lotus": {
+  "checked": "2026-09-29",
+  "score": 77,
+  "title": "Bō: Path of the Teal Lotus",
+  "v": 2
+ },
+ "COCOON": {
+  "checked": "2026-09-29",
+  "score": 88,
+  "title": "Cocoon (video game)",
+  "v": 2
+ },
+ "Clair Obscur: Expedition 33": {
+  "checked": "2026-09-29",
+  "score": 92,
+  "title": "Clair Obscur: Expedition 33",
+  "v": 2
+ },
+ "Claire": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Core Keeper": {
+  "checked": "2026-09-29",
+  "title": "Core Keeper",
+  "v": 2
+ },
+ "DEATH STRANDING 2: ON THE BEACH": {
+  "checked": "2026-09-29",
+  "score": 89,
+  "title": "Death Stranding 2: On the Beach",
+  "v": 2
+ },
+ "DEATH STRANDING™": {
+  "checked": "2026-09-29",
+  "score": 85,
+  "title": "Death Stranding",
+  "v": 2
+ },
+ "DRAGON BALL: THE BREAKERS": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "DREDGE": {
+  "checked": "2026-09-29",
+  "score": 80,
+  "title": "Dredge (video game)",
+  "v": 2
+ },
+ "Death's Door": {
+  "checked": "2026-09-29",
+  "score": 85,
+  "title": "Death's Door (video game)",
+  "v": 2
+ },
+ "Disney Epic Mickey: Rebrushed": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Dispatch": {
+  "checked": "2026-09-29",
+  "score": 87,
+  "title": "Dispatch (video game)",
+  "v": 2
+ },
+ "Dragon Age™: The Veilguard": {
+  "checked": "2026-09-29",
+  "score": 82,
+  "title": "Dragon Age: The Veilguard",
+  "v": 2
+ },
+ "Dragon's Crown": {
+  "checked": "2026-09-29",
+  "score": 82,
+  "title": "Dragon's Crown",
+  "v": 2
+ },
+ "Dragon's Dogma 2": {
+  "checked": "2026-09-29",
+  "score": 88,
+  "title": "Dragon's Dogma 2",
+  "v": 2
+ },
+ "Dreams™": {
+  "checked": "2026-09-29",
+  "score": 89,
+  "title": "Dreams (video game)",
+  "v": 2
+ },
+ "EA SPORTS FC™ 24": {
+  "checked": "2026-09-29",
+  "title": "EA Sports FC 24",
+  "v": 2
+ },
+ "EA SPORTS FC™ 25": {
+  "checked": "2026-09-29",
+  "score": 77,
+  "title": "EA Sports FC 25",
+  "v": 2
+ },
+ "EA SPORTS FC™ 26": {
+  "checked": "2026-09-29",
+  "score": 78,
+  "title": "EA Sports FC 26",
+  "v": 2
+ },
+ "EA SPORTS™ WRC": {
+  "checked": "2026-09-29",
+  "score": 80,
+  "title": "EA Sports WRC",
+  "v": 2
+ },
+ "ENDER MAGNOLIA: Bloom in the Mist": {
+  "checked": "2026-09-29",
+  "score": 83,
+  "title": "Ender Magnolia: Bloom in the Mist",
+  "v": 2
+ },
+ "Endling - Extinction is Forever": {
+  "checked": "2026-09-29",
+  "score": 75,
+  "title": "Endling: Extinction is Forever",
+  "v": 2
+ },
+ "FINAL FANTASY VII REBIRTH": {
+  "checked": "2026-09-29",
+  "score": 92,
+  "title": "Final Fantasy VII Rebirth",
+  "v": 2
+ },
+ "Fortnite": {
+  "checked": "2026-09-29",
+  "title": "Fortnite",
+  "v": 2
+ },
  "Game of Thrones": {
   "checked": "2026-09-29",
-  "title": "Game of Thrones (2014 video game)"
+  "title": "Game of Thrones (2012 video game)",
+  "v": 2
+ },
+ "Ghostrunner": {
+  "checked": "2026-09-29",
+  "score": 78,
+  "title": "Ghostrunner",
+  "v": 2
+ },
+ "Ghostrunner 2": {
+  "checked": "2026-09-29",
+  "score": 81,
+  "title": "Ghostrunner 2",
+  "v": 2
+ },
+ "Goat Simulator 3": {
+  "checked": "2026-09-29",
+  "score": 68,
+  "title": "Goat Simulator 3",
+  "v": 2
+ },
+ "HITMAN™ 2": {
+  "checked": "2026-09-29",
+  "score": 82,
+  "title": "Hitman 2 (2018 video game)",
+  "v": 2
+ },
+ "Hell is Us": {
+  "checked": "2026-09-29",
+  "score": 78,
+  "title": "Hell Is Us",
+  "v": 2
+ },
+ "Hellblade II: Senua’s Saga": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Hello Neighbor 2": {
+  "checked": "2026-09-29",
+  "score": 38,
+  "title": "Hello Neighbor",
+  "v": 2
+ },
+ "High On Life": {
+  "checked": "2026-09-29",
+  "score": 69,
+  "title": "High on Life (video game)",
+  "v": 2
+ },
+ "Hogwarts Legacy : L'Héritage de Poudlard": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Hollow Knight: Silksong": {
+  "checked": "2026-09-29",
+  "score": 90,
+  "title": "Hollow Knight: Silksong",
+  "v": 2
+ },
+ "Horizon Call of the Mountain™": {
+  "checked": "2026-09-29",
+  "score": 79,
+  "title": "Horizon Call of the Mountain",
+  "v": 2
+ },
+ "INDIKA": {
+  "checked": "2026-09-29",
+  "score": 80,
+  "title": "Indika (video game)",
+  "v": 2
+ },
+ "Immortals of Aveum™": {
+  "checked": "2026-09-29",
+  "title": "Immortals of Aveum",
+  "v": 2
+ },
+ "Journey to Foundation": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Jurassic World Evolution 2": {
+  "checked": "2026-09-29",
+  "score": 77,
+  "title": "Jurassic World Evolution 2",
+  "v": 2
+ },
+ "Jusant": {
+  "checked": "2026-09-29",
+  "score": 85,
+  "title": "Jusant",
+  "v": 2
+ },
+ "King's Quest": {
+  "checked": "2026-09-29",
+  "title": "King's Quest (2015 video game)",
+  "v": 2
+ },
+ "Knowledge is Power™": {
+  "checked": "2026-09-29",
+  "title": "Knowledge is Power (video game)",
+  "v": 2
+ },
+ "LEGO® 2K Drive": {
+  "checked": "2026-09-29",
+  "score": 73,
+  "title": "Lego 2K Drive",
+  "v": 2
+ },
+ "LEGO® Builder's Journey": {
+  "checked": "2026-09-29",
+  "score": 77,
+  "title": "Lego Builder's Journey",
+  "v": 2
+ },
+ "LEGO® Horizon Adventures™": {
+  "checked": "2026-09-29",
+  "score": 70,
+  "title": "Lego Horizon Adventures",
+  "v": 2
+ },
+ "Lies of P": {
+  "checked": "2026-09-29",
+  "score": 80,
+  "title": "Lies of P",
+  "v": 2
+ },
+ "Lords of the Fallen": {
+  "checked": "2026-09-29",
+  "score": 75,
+  "title": "Lords of the Fallen (2023 video game)",
+  "v": 2
+ },
+ "Lost Records: Bloom & Rage": {
+  "checked": "2026-09-29",
+  "score": 75,
+  "title": "Lost Records: Bloom & Rage",
+  "v": 2
+ },
+ "MIO: Memories in Orbit": {
+  "checked": "2026-09-29",
+  "score": 81,
+  "title": "MIO: Memories in Orbit",
+  "v": 2
+ },
+ "Mafia: Trilogy": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Marvel's Spider-Man 2": {
+  "checked": "2026-09-29",
+  "score": 90,
+  "title": "Marvel's Spider-Man 2",
+  "v": 2
+ },
+ "Metaphor: ReFantazio": {
+  "checked": "2026-09-29",
+  "score": 92,
+  "title": "Metaphor: ReFantazio",
+  "v": 2
+ },
+ "Minecraft Legends": {
+  "checked": "2026-09-29",
+  "score": 65,
+  "title": "Minecraft Legends",
+  "v": 2
+ },
+ "Moss II VR": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Moss VR": {
+  "checked": "2026-09-29",
+  "score": 85,
+  "title": "Moss (video game)",
+  "v": 2
+ },
+ "NBA 2K23": {
+  "checked": "2026-09-29",
+  "score": 78,
+  "title": "NBA 2K23",
+  "v": 2
  },
  "Netflix": {
   "checked": "2026-09-29",
-  "title": "Netflix"
+  "title": "Netflix",
+  "v": 2
+ },
+ "Neva": {
+  "checked": "2026-09-29",
+  "score": 87,
+  "title": "Neva (video game)",
+  "v": 2
+ },
+ "Nickelodeon All-Star Brawl": {
+  "checked": "2026-09-29",
+  "score": 65,
+  "title": "Nickelodeon All-Star Brawl",
+  "v": 2
+ },
+ "Nine Sols": {
+  "checked": "2026-09-29",
+  "score": 84,
+  "title": "Nine Sols",
+  "v": 2
+ },
+ "OlliOlli World": {
+  "checked": "2026-09-29",
+  "score": 84,
+  "title": "OlliOlli World",
+  "v": 2
  },
  "P.T.": {
   "checked": "2026-09-29",
-  "title": "P.T. (video game)"
+  "title": "P.T. (video game)",
+  "v": 2
+ },
+ "PAC-MAN WORLD Re-PAC": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Pacific Drive": {
+  "checked": "2026-09-29",
+  "score": 79,
+  "title": "Pacific Drive (video game)",
+  "v": 2
+ },
+ "Pepper Grinder": {
+  "checked": "2026-09-29",
+  "score": 78,
+  "title": "Pepper Grinder",
+  "v": 2
  },
  "Powers": {
-  "checked": "2026-09-29"
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Ratchet & Clank™": {
+  "checked": "2026-09-29",
+  "score": 88,
+  "title": "Ratchet & Clank (2002 video game)",
+  "v": 2
+ },
+ "Resident Evil Re:Verse": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Roblox": {
+  "checked": "2026-09-29",
+  "title": "Roblox",
+  "v": 2
+ },
+ "RoboCop: Rogue City": {
+  "checked": "2026-09-29",
+  "score": 72,
+  "title": "RoboCop: Rogue City",
+  "v": 2
+ },
+ "SHINOBI: Art of Vengeance": {
+  "checked": "2026-09-29",
+  "score": 85,
+  "title": "Shinobi: Art of Vengeance",
+  "v": 2
+ },
+ "SILENT HILL 2": {
+  "checked": "2026-09-29",
+  "score": 87,
+  "title": "Silent Hill 2 (2024 video game)",
+  "v": 2
+ },
+ "SILENT HILL f": {
+  "checked": "2026-09-29",
+  "score": 86,
+  "title": "Silent Hill f",
+  "v": 2
+ },
+ "SILENT HILL: The Short Message": {
+  "checked": "2026-09-29",
+  "score": 52,
+  "title": "Silent Hill: The Short Message",
+  "v": 2
+ },
+ "STAR WARS Jedi: Survivor™": {
+  "checked": "2026-09-29",
+  "score": 85,
+  "title": "Star Wars Jedi: Survivor",
+  "v": 2
+ },
+ "Skul: The Hero Slayer": {
+  "checked": "2026-09-29",
+  "title": "Skul: The Hero Slayer",
+  "v": 2
+ },
+ "Sniper Elite: Resistance": {
+  "checked": "2026-09-29",
+  "score": 70,
+  "title": "Sniper Elite: Resistance",
+  "v": 2
+ },
+ "Song in the Smoke Rekindled": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Sonic Colours: Ultimate": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Split Fiction": {
+  "checked": "2026-09-29",
+  "score": 91,
+  "title": "Split Fiction",
+  "v": 2
  },
  "Spotify": {
   "checked": "2026-09-29",
-  "title": "Spotify"
+  "title": "Spotify",
+  "v": 2
+ },
+ "Star Wars: Tales from the Galaxy's Edge - Enhanced Edition": {
+  "checked": "2026-09-29",
+  "title": "Star Wars: Tales from the Galaxy's Edge",
+  "v": 2
+ },
+ "StarBlood Arena™": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Still Wakes the Deep": {
+  "checked": "2026-09-29",
+  "score": 77,
+  "title": "Still Wakes the Deep",
+  "v": 2
+ },
+ "Suicide Squad: Kill the Justice League": {
+  "checked": "2026-09-29",
+  "score": 63,
+  "title": "Suicide Squad: Kill the Justice League",
+  "v": 2
+ },
+ "Sword of the Sea": {
+  "checked": "2026-09-29",
+  "score": 82,
+  "title": "Sword of the Sea",
+  "v": 2
+ },
+ "THE PLAYROOM": {
+  "checked": "2026-09-29",
+  "title": "The Playroom (2013 video game)",
+  "v": 2
+ },
+ "Teenage Mutant Ninja Turtles: The Cowabunga Collection": {
+  "checked": "2026-09-29",
+  "score": 83,
+  "title": "Teenage Mutant Ninja Turtles: The Cowabunga Collection",
+  "v": 2
+ },
+ "The Alters": {
+  "checked": "2026-09-29",
+  "score": 85,
+  "title": "The Alters",
+  "v": 2
+ },
+ "The Dark Pictures Anthology: The Devil in Me": {
+  "checked": "2026-09-29",
+  "score": 69,
+  "title": "The Dark Pictures Anthology: The Devil in Me",
+  "v": 2
+ },
+ "The Last Faith": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "The Midnight Walk": {
+  "checked": "2026-09-29",
+  "score": 79,
+  "title": "The Midnight Walk",
+  "v": 2
+ },
+ "The Plucky Squire (Le Vaillant Petit Page)": {
+  "checked": "2026-09-29",
+  "score": 72,
+  "title": "The Plucky Squire",
+  "v": 2
+ },
+ "The Room VR: A Dark Matter": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "The Texas Chain Saw Massacre": {
+  "checked": "2026-09-29",
+  "score": 72,
+  "title": "The Texas Chain Saw Massacre (2023 video game)",
+  "v": 2
+ },
+ "Tomb Raider I-III Remastered Starring Lara Croft": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Trek to Yomi": {
+  "checked": "2026-09-29",
+  "score": 71,
+  "title": "Trek to Yomi",
+  "v": 2
+ },
+ "UNCHARTED: Legacy of Thieves Collection": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "Ultros": {
+  "checked": "2026-09-29",
+  "score": 79,
+  "title": "Ultros",
+  "v": 2
+ },
+ "Until Dawn™": {
+  "checked": "2026-09-29",
+  "score": 79,
+  "title": "Until Dawn",
+  "v": 2
+ },
+ "Until Then": {
+  "checked": "2026-09-29",
+  "score": 76,
+  "title": "Until Then",
+  "v": 2
+ },
+ "Viewfinder": {
+  "checked": "2026-09-29",
+  "score": 84,
+  "title": "Viewfinder (video game)",
+  "v": 2
+ },
+ "WUCHANG: Fallen Feathers": {
+  "checked": "2026-09-29",
+  "score": 74,
+  "title": "Wuchang: Fallen Feathers",
+  "v": 2
+ },
+ "Weird West: Definitive Edition": {
+  "checked": "2026-09-29",
+  "score": 76,
+  "title": "Weird West (video game)",
+  "v": 2
+ },
+ "Wobbly Life": {
+  "checked": "2026-09-29",
+  "v": 2
+ },
+ "YouTube": {
+  "checked": "2026-09-29",
+  "title": "YouTube",
+  "v": 2
+ },
+ "despelote": {
+  "checked": "2026-09-29",
+  "title": "Despelote",
+  "v": 2
  }
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T20:57:54+00:00",
+ "generated_at": "2026-09-29T21:08:54+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -67,7 +67,7 @@
    "hours_by_year": {
     "2026": 29.2
    },
-   "metacritic": null,
+   "metacritic": 92,
    "genres": [
     "Adventure",
     "Action",
@@ -75,7 +75,7 @@
    ],
    "released": "2024-10-11",
    "rawg_slug": "metaphor-refantazio",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 65.4,
     "extra": 88.34,
@@ -126,14 +126,14 @@
    "hours_by_year": {
     "2026": 0.9
    },
-   "metacritic": null,
+   "metacritic": 79,
    "genres": [
     "Indie",
     "Adventure"
    ],
    "released": "2024-02-13",
    "rawg_slug": "ultros",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 11.12,
     "extra": 19.0,
@@ -195,7 +195,7 @@
    "hours_by_year": {
     "2026": 16.4
    },
-   "metacritic": null,
+   "metacritic": 77,
    "genres": [
     "Indie",
     "Adventure",
@@ -203,7 +203,7 @@
    ],
    "released": "2024-07-17",
    "rawg_slug": "bo-path-of-the-teal-lotus",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 10.2,
     "extra": 13.61,
@@ -315,7 +315,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 70,
    "genres": [
     "Shooter",
     "Adventure",
@@ -323,7 +323,7 @@
    ],
    "released": "2025-01-30",
    "rawg_slug": "sniper-elite-resistance",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 8.92,
     "extra": 13.84,
@@ -572,14 +572,14 @@
    "hours_by_year": {
     "2026": 22.7
    },
-   "metacritic": null,
+   "metacritic": 87,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2024-10-08",
    "rawg_slug": "silent-hill-2-remake",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 16.07,
     "extra": 18.74,
@@ -650,14 +650,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 75,
    "genres": [
     "Casual",
     "Action"
    ],
    "released": "2018-12-14",
    "rawg_slug": "big-crown-showdown",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 11.82,
     "extra": 13.84,
@@ -699,14 +699,14 @@
    "status": "started",
    "last_activity": "2026-07-31T21:02:19.290000+00:00",
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 78,
    "genres": [
     "Simulation",
     "Sports"
    ],
    "released": "2025-09-25",
    "rawg_slug": "ea-sports-fc-26",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 30.89,
     "extra": 153.1,
@@ -787,13 +787,13 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 81,
    "genres": [
     "Platformer"
    ],
    "released": "2026-01-19",
    "rawg_slug": "mio-memories-in-orbit",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 15.25,
     "extra": 21.58,
@@ -825,7 +825,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 90,
    "genres": [
     "Indie",
     "Platformer",
@@ -834,7 +834,7 @@
    ],
    "released": "2025-09-04",
    "rawg_slug": "hollow-knight-silksong",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 28.25,
     "extra": 47.28,
@@ -904,13 +904,13 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 85,
    "genres": [
     "Adventure"
    ],
    "released": "2025-06-13",
    "rawg_slug": "the-alters",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 19.69,
     "extra": 25.11,
@@ -1061,7 +1061,7 @@
    "hours_by_year": {
     "2026": 12.7
    },
-   "metacritic": null,
+   "metacritic": 85,
    "genres": [
     "Indie",
     "Action",
@@ -1069,7 +1069,7 @@
    ],
    "released": "2021-07-20",
    "rawg_slug": "acid-nerve-deaths-door",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 9.2,
     "extra": 11.93,
@@ -1225,14 +1225,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 77,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2024-06-18",
    "rawg_slug": "still-wakes-the-deep",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 4.65,
     "extra": 5.66,
@@ -1294,7 +1294,7 @@
    "hours_by_year": {
     "2026": 55.8
    },
-   "metacritic": null,
+   "metacritic": 76,
    "genres": [
     "Adventure",
     "Action",
@@ -1302,7 +1302,7 @@
    ],
    "released": "2024-08-20",
    "rawg_slug": "black-myth-wu-kong",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 37.72,
     "extra": 48.38,
@@ -1399,7 +1399,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 74,
    "genres": [
     "Adventure",
     "Action",
@@ -1407,7 +1407,7 @@
    ],
    "released": "2025-07-23",
    "rawg_slug": "wuchang-fallen-feathers",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 30.29,
     "extra": 38.82,
@@ -1477,14 +1477,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 75,
    "genres": [
     "Action",
     "RPG"
    ],
    "released": "2023-10-13",
    "rawg_slug": "lords-of-the-fallen-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 28.38,
     "extra": 42.23,
@@ -1534,14 +1534,14 @@
    "hours_by_year": {
     "2026": 2.8
    },
-   "metacritic": null,
+   "metacritic": 82,
    "genres": [
     "Indie",
     "Adventure"
    ],
    "released": "2025-08-19",
    "rawg_slug": "sword-of-the-sea",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 2.76,
     "extra": 3.85,
@@ -1657,14 +1657,14 @@
    "hours_by_year": {
     "2026": 1.0
    },
-   "metacritic": null,
+   "metacritic": 85,
    "genres": [
     "Platformer",
     "Action"
    ],
    "released": "2025-08-29",
    "rawg_slug": "shinobi-art-of-vengeance",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 10.01,
     "extra": 13.94,
@@ -1734,14 +1734,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 75,
    "genres": [
     "Indie",
     "Adventure"
    ],
    "released": "2025-02-17",
    "rawg_slug": "lost-records-bloom-rage",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 11.21,
     "extra": 13.31,
@@ -1772,7 +1772,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 74,
    "genres": [
     "Indie",
     "Platformer",
@@ -1780,7 +1780,7 @@
    ],
    "released": "2025-10-08",
    "rawg_slug": "bye-sweet-carole",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 7.75,
     "extra": 8.57,
@@ -1876,13 +1876,13 @@
    "hours_by_year": {
     "2026": 5.1
    },
-   "metacritic": null,
+   "metacritic": 80,
    "genres": [
     "Adventure"
    ],
    "released": "2024-05-02",
    "rawg_slug": "indika",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 4.1,
     "extra": 4.51,
@@ -2048,14 +2048,14 @@
    "hours_by_year": {
     "2026": 1.5
    },
-   "metacritic": null,
+   "metacritic": 77,
    "genres": [
     "Simulation",
     "Sports"
    ],
    "released": "2024-09-26",
    "rawg_slug": "ea-sports-fc-25",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 47.73,
     "extra": 140.37,
@@ -2303,14 +2303,14 @@
     "2025": 20.5,
     "2026": 7.7
    },
-   "metacritic": null,
+   "metacritic": 78,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2025-09-04",
    "rawg_slug": "hell-is-us",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 21.3,
     "extra": 28.68,
@@ -2396,14 +2396,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 79,
    "genres": [
     "Indie",
     "Adventure"
    ],
    "released": "2025-05-07",
    "rawg_slug": "the-midnight-walk",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 5.07,
     "extra": 6.2,
@@ -2434,7 +2434,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 76,
    "genres": [
     "Casual",
     "Indie",
@@ -2442,7 +2442,7 @@
    ],
    "released": "2024-06-25",
    "rawg_slug": "until-then",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 15.98,
     "extra": 21.51,
@@ -2474,7 +2474,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 84,
    "genres": [
     "Indie",
     "Platformer",
@@ -2483,7 +2483,7 @@
    ],
    "released": "2024-05-29",
    "rawg_slug": "nine-sols",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 21.72,
     "extra": 27.38,
@@ -2514,7 +2514,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 92,
    "genres": [
     "Indie",
     "Strategy",
@@ -2523,7 +2523,7 @@
    ],
    "released": "2025-04-10",
    "rawg_slug": "blue-prince",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 18.39,
     "extra": 36.48,
@@ -2555,11 +2555,11 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 78,
    "genres": [],
    "released": null,
    "rawg_slug": null,
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 3.61,
     "extra": 4.32,
@@ -2590,14 +2590,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 91,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2025-03-06",
    "rawg_slug": "split-fiction",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 13.79,
     "extra": 14.75,
@@ -2702,7 +2702,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 70,
    "genres": [
     "Adventure",
     "Action",
@@ -2710,7 +2710,7 @@
    ],
    "released": "2024-11-14",
    "rawg_slug": "lego-horizon-adventures",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 7.07,
     "extra": 11.02,
@@ -2766,7 +2766,7 @@
    "hours_by_year": {
     "2025": 8.7
    },
-   "metacritic": null,
+   "metacritic": 87,
    "genres": [
     "Adventure",
     "Action",
@@ -2776,7 +2776,7 @@
    ],
    "released": "2025-10-22",
    "rawg_slug": "dispatch-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 8.55,
     "extra": 10.3,
@@ -2886,14 +2886,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 69,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2022-11-17",
    "rawg_slug": "the-dark-pictures-anthology-the-devil-in-me",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 7.14,
     "extra": 9.1,
@@ -2966,7 +2966,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 87,
    "genres": [
     "Indie",
     "Adventure",
@@ -2974,7 +2974,7 @@
    ],
    "released": "2024-10-14",
    "rawg_slug": "neva-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 4.07,
     "extra": 4.54,
@@ -3005,7 +3005,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 79,
    "genres": [
     "Racing",
     "Adventure",
@@ -3015,7 +3015,7 @@
    ],
    "released": "2024-02-21",
    "rawg_slug": "pacific-drive",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 21.37,
     "extra": 32.2,
@@ -3046,14 +3046,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 86,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2025-09-24",
    "rawg_slug": "silent-hill-f",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 10.74,
     "extra": 16.53,
@@ -3084,14 +3084,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 89,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2025-06-26",
    "rawg_slug": "death-stranding-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 35.65,
     "extra": 64.44,
@@ -3122,14 +3122,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 72,
    "genres": [
     "Indie",
     "Adventure"
    ],
    "released": "2024-09-17",
    "rawg_slug": "the-plucky-squire",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 8.39,
     "extra": 9.34,
@@ -3179,14 +3179,14 @@
    "hours_by_year": {
     "2025": 4.4
    },
-   "metacritic": null,
+   "metacritic": 85,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2023-04-27",
    "rawg_slug": "star-wars-jedi-survivor",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 20.6,
     "extra": 33.92,
@@ -3243,14 +3243,14 @@
    "hours_by_year": {
     "2025": 32.5
    },
-   "metacritic": null,
+   "metacritic": 90,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2023-10-20",
    "rawg_slug": "marvels-spider-man-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 17.18,
     "extra": 23.92,
@@ -3281,7 +3281,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 80,
    "genres": [
     "Arcade",
     "Fighting",
@@ -3289,7 +3289,7 @@
    ],
    "released": "2010-08-10",
    "rawg_slug": "ea-sports-mma",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 14.88,
     "extra": 26.82,
@@ -3339,14 +3339,14 @@
    "hours_by_year": {
     "2025": 23.6
    },
-   "metacritic": null,
+   "metacritic": 83,
    "genres": [
     "Action",
     "RPG"
    ],
    "released": "2025-01-22",
    "rawg_slug": "ender-magnolia-bloom-in-the-mist",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 17.37,
     "extra": 20.6,
@@ -3453,7 +3453,7 @@
    "hours_by_year": {
     "2025": 7.2
    },
-   "metacritic": null,
+   "metacritic": 85,
    "genres": [
     "Indie",
     "Adventure",
@@ -3461,7 +3461,7 @@
    ],
    "released": "2023-10-30",
    "rawg_slug": "jusant",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 4.52,
     "extra": 5.84,
@@ -3493,7 +3493,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 88,
    "genres": [
     "Indie",
     "Adventure",
@@ -3501,7 +3501,7 @@
    ],
    "released": "2023-09-29",
    "rawg_slug": "cocoon-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 5.0,
     "extra": 5.3,
@@ -3533,7 +3533,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 68,
    "genres": [
     "Casual",
     "Adventure",
@@ -3542,7 +3542,7 @@
    ],
    "released": "2022-11-17",
    "rawg_slug": "goat-simulator-3",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 7.46,
     "extra": 11.33,
@@ -3616,13 +3616,13 @@
    "hours_by_year": {
     "2025": 81.5
    },
-   "metacritic": null,
+   "metacritic": 92,
    "genres": [
     "RPG"
    ],
    "released": "2025-04-24",
    "rawg_slug": "clair-obscur-expedition-33",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 29.27,
     "extra": 46.25,
@@ -3732,14 +3732,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 84,
    "genres": [
     "Indie",
     "Adventure"
    ],
    "released": "2023-07-17",
    "rawg_slug": "v-i-e-w-f-i-n-d-e-r",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 4.1,
     "extra": 5.15,
@@ -3809,14 +3809,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 80,
    "genres": [
     "Action",
     "RPG"
    ],
    "released": "2023-09-19",
    "rawg_slug": "lies-of-p",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 28.33,
     "extra": 36.29,
@@ -3926,7 +3926,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 84,
    "genres": [
     "Indie",
     "Platformer",
@@ -3935,7 +3935,7 @@
    ],
    "released": "2023-08-23",
    "rawg_slug": "blasphemous-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 16.49,
     "extra": 20.82,
@@ -4073,13 +4073,13 @@
    "hours_by_year": {
     "2025": 30.7
    },
-   "metacritic": null,
+   "metacritic": 89,
    "genres": [
     "Action"
    ],
    "released": "2023-10-27",
    "rawg_slug": "alan-wake-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 19.06,
     "extra": 26.27,
@@ -4130,7 +4130,7 @@
    "hours_by_year": {
     "2025": 1.3
    },
-   "metacritic": null,
+   "metacritic": 90,
    "genres": [
     "Casual",
     "Strategy",
@@ -4138,7 +4138,7 @@
    ],
    "released": "2024-02-20",
    "rawg_slug": "balatro",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 7.74,
     "extra": 46.45,
@@ -4169,14 +4169,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 67,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2024-03-20",
    "rawg_slug": "alone-in-the-dark-2022",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 7.73,
     "extra": 10.58,
@@ -4309,14 +4309,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 72,
    "genres": [
     "Indie",
     "Action"
    ],
    "released": "2023-08-18",
    "rawg_slug": "the-texas-chain-saw-massacre",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 2.02,
     "extra": 19.43,
@@ -4347,14 +4347,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 72,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2023-11-02",
    "rawg_slug": "robocop-rogue-city",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 11.77,
     "extra": 15.39,
@@ -4583,7 +4583,7 @@
     "2024": 52.7,
     "2025": 34.9
    },
-   "metacritic": null,
+   "metacritic": 92,
    "genres": [
     "Adventure",
     "Action",
@@ -4591,7 +4591,7 @@
    ],
    "released": "2024-02-29",
    "rawg_slug": "final-fantasy-vii-rebirth",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 48.55,
     "extra": 91.37,
@@ -4622,13 +4622,13 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 82,
    "genres": [
     "RPG"
    ],
    "released": "2024-10-31",
    "rawg_slug": "dragon-age-4-tba",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 28.79,
     "extra": 62.15,
@@ -4660,7 +4660,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 83,
    "genres": [
     "Arcade",
     "Adventure",
@@ -4668,7 +4668,7 @@
    ],
    "released": "2022-08-30",
    "rawg_slug": "teenage-mutant-ninja-turtles-the-cowabunga-collect",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 9.88,
     "extra": 13.16,
@@ -4739,7 +4739,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 69,
    "genres": [
     "Shooter",
     "Adventure",
@@ -4747,7 +4747,7 @@
    ],
    "released": "2022-12-13",
    "rawg_slug": "high-on-life",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 9.22,
     "extra": 12.8,
@@ -4882,13 +4882,13 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 63,
    "genres": [
     "Action"
    ],
    "released": "2024-02-02",
    "rawg_slug": "suicide-squad-kill-the-justice-league",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 12.06,
     "extra": 18.92,
@@ -4977,7 +4977,7 @@
    "hours_by_year": {
     "2024": 27.9
    },
-   "metacritic": null,
+   "metacritic": 88,
    "genres": [
     "Adventure",
     "Action",
@@ -4985,7 +4985,7 @@
    ],
    "released": "2024-03-21",
    "rawg_slug": "dragons-dogma-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 31.76,
     "extra": 56.26,
@@ -5216,14 +5216,14 @@
    "hours_by_year": {
     "2024": 1.9
    },
-   "metacritic": null,
+   "metacritic": 80,
    "genres": [
     "Adventure",
     "RPG"
    ],
    "released": "2023-03-29",
    "rawg_slug": "dredge",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 9.68,
     "extra": 12.9,
@@ -5273,14 +5273,14 @@
    "hours_by_year": {
     "2024": 19.1
    },
-   "metacritic": null,
+   "metacritic": 83,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2022-10-17",
    "rawg_slug": "a-plague-tale-requiem",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 16.96,
     "extra": 19.55,
@@ -5873,13 +5873,13 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 81,
    "genres": [
     "Action"
    ],
    "released": "2023-10-26",
    "rawg_slug": "ghostrunner-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 8.43,
     "extra": 11.01,
@@ -5987,13 +5987,13 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 65,
    "genres": [
     "Adventure"
    ],
    "released": "2023-04-18",
    "rawg_slug": "minecraft-legends",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 9.64,
     "extra": 13.65,
@@ -6024,13 +6024,13 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 52,
    "genres": [
     "Action"
    ],
    "released": "2024-02-01",
    "rawg_slug": "silent-hill-the-short-message",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 2.04,
     "extra": 2.12,
@@ -6150,13 +6150,13 @@
     "2023": 3.5,
     "2024": 1.0
    },
-   "metacritic": null,
+   "metacritic": 79,
    "genres": [
     "Adventure"
    ],
    "released": "2023-02-22",
    "rawg_slug": "horizon-call-of-the-mountain",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 8.3,
     "extra": 10.05,
@@ -6250,7 +6250,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 38,
    "genres": [
     "Indie",
     "Strategy",
@@ -6259,7 +6259,7 @@
    ],
    "released": "2022-12-05",
    "rawg_slug": "hello-neighbor-2-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 4.28,
     "extra": 5.38,
@@ -6638,14 +6638,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 73,
    "genres": [
     "Racing",
     "Arcade"
    ],
    "released": "2023-05-18",
    "rawg_slug": "lego-2k-drive",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 7.32,
     "extra": 15.53,
@@ -6892,13 +6892,13 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 76,
    "genres": [
     "Strategy"
    ],
    "released": "2014-09-23",
    "rawg_slug": "castlestorm-definitive-edition",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 17.09,
     "extra": 24.6,
@@ -7114,14 +7114,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 89,
    "genres": [
     "Platformer",
     "Adventure"
    ],
    "released": "1995-02-11",
    "rawg_slug": "nights-into-dreams",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 2.89,
     "extra": 10.92,
@@ -7172,7 +7172,7 @@
    "hours_by_year": {
     "2023": 2.7
    },
-   "metacritic": null,
+   "metacritic": 71,
    "genres": [
     "Platformer",
     "Adventure",
@@ -7180,7 +7180,7 @@
    ],
    "released": "2022-05-05",
    "rawg_slug": "trek-to-yomi",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 5.02,
     "extra": 6.23,
@@ -7231,7 +7231,7 @@
    "hours_by_year": {
     "2023": 0.9
    },
-   "metacritic": null,
+   "metacritic": 75,
    "genres": [
     "Casual",
     "Indie",
@@ -7240,7 +7240,7 @@
    ],
    "released": "2022-07-19",
    "rawg_slug": "endling",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 3.94,
     "extra": 4.17,
@@ -7335,14 +7335,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 85,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2022-03-31",
    "rawg_slug": "moss-book-ii",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 4.04,
     "extra": 4.67,
@@ -7527,7 +7527,7 @@
    "hours_by_year": {
     "2023": 1.9
    },
-   "metacritic": null,
+   "metacritic": 77,
    "genres": [
     "Shooter",
     "Adventure",
@@ -7539,7 +7539,7 @@
    ],
    "released": "2023-12-07",
    "rawg_slug": "the-day-before-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 1.68,
     "extra": 2.03,
@@ -7571,14 +7571,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 77,
    "genres": [
     "Strategy",
     "Simulation"
    ],
    "released": "2021-11-09",
    "rawg_slug": "jurassic-world-evolution-2-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 6.02,
     "extra": 36.43,
@@ -7610,14 +7610,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 78,
    "genres": [
     "Simulation",
     "Sports"
    ],
    "released": "2022-09-09",
    "rawg_slug": "nba-2k23",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 22.11,
     "extra": 82.3,
@@ -7649,13 +7649,13 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 77,
    "genres": [
     "Adventure"
    ],
    "released": "2023-12-07",
    "rawg_slug": "lego-fortnite",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 2.39,
     "extra": 2.56,
@@ -7916,7 +7916,7 @@
    "hours_by_year": {
     "2023": 2.2
    },
-   "metacritic": null,
+   "metacritic": 84,
    "genres": [
     "Platformer",
     "Indie",
@@ -7925,7 +7925,7 @@
    ],
    "released": "2022-02-07",
    "rawg_slug": "olliolli-world",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 5.37,
     "extra": 11.97,
@@ -8765,13 +8765,13 @@
    "hours_by_year": {
     "2022": 2.3
    },
-   "metacritic": null,
+   "metacritic": 78,
    "genres": [
     "Action"
    ],
    "released": "2020-10-27",
    "rawg_slug": "ghostrunner",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 7.09,
     "extra": 9.27,
@@ -9414,14 +9414,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 65,
    "genres": [
     "Action",
     "Fighting"
    ],
    "released": "2021-10-05",
    "rawg_slug": "nickelodeon-all-star-brawl",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 1.06,
     "extra": 5.11,
@@ -10679,14 +10679,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 82,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2018-11-13",
    "rawg_slug": "hitman-2-prologue",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 10.17,
     "extra": 27.68,
@@ -12209,14 +12209,14 @@
    "hours_by_year": {
     "2020": 55.1
    },
-   "metacritic": null,
+   "metacritic": 85,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2021-09-24",
    "rawg_slug": "death-stranding-directors-cut",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 40.54,
     "extra": 60.06,
@@ -12748,14 +12748,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 94,
    "genres": [
     "Shooter",
     "Action"
    ],
    "released": "2013-07-30",
    "rawg_slug": "bioshock-infinite-clash-in-the-clouds",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 3.16,
     "extra": 5.08,
@@ -14760,14 +14760,14 @@
     "2017": 1.4,
     "2018": 1.1
    },
-   "metacritic": null,
+   "metacritic": 88,
    "genres": [
     "Arcade",
     "Action"
    ],
    "released": "2012-06-27",
    "rawg_slug": "ratchet-clank-collection",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 10.21,
     "extra": 13.35,
@@ -15442,14 +15442,14 @@
    "hours_by_year": {
     "2017": 10.1
    },
-   "metacritic": null,
+   "metacritic": 79,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2024-10-04",
    "rawg_slug": "until-dawn-2",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 8.02,
     "extra": 9.38,
@@ -18519,14 +18519,14 @@
    "status": "started",
    "last_activity": "2013-12-27T13:42:01+00:00",
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 82,
    "genres": [
     "Action",
     "RPG"
    ],
    "released": "2013-07-25",
    "rawg_slug": "dragons-crown",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 14.05,
     "extra": 20.79,
