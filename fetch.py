@@ -20,6 +20,9 @@ import requests
 ROOT = Path(__file__).parent
 OUT = ROOT / "docs" / "data.json"
 CACHE = ROOT / "rawg_cache.json"          # remembers RAWG lookups between runs
+TROPHY_CACHE = ROOT / "trophy_dates.json" # when each trophy was earned, per trophy list
+HLTB_CACHE = ROOT / "hltb_cache.json"     # remembers HowLongToBeat lookups
+TROPHY_BUDGET_S = 35 * 60                 # max time per run spent on trophy dates
 OVERRIDES = ROOT / "overrides.json"       # manual fixes: {"PSN name": "rawg-slug" or null}
 
 # ---------------------------------------------------------------- helpers
@@ -126,7 +129,92 @@ def fetch_psn(npsso: str) -> dict:
         except Exception as e:
             print(f"  trophy/title mapping batch skipped: {e}")
 
+    fetch_trophy_dates(me, trophies)
+
     return {"profile": profile, "trophies": trophies, "stats": stats, "owned": owned, "title_to_np": title_to_np}
+
+
+# ---------------------------------------------------------------- trophy dates
+
+TIER_INDEX = {"bronze": 0, "silver": 1, "gold": 2, "platinum": 3}
+
+
+def fetch_trophy_dates(me, trophies: list[dict]) -> None:
+    """Attach {"YYYY-MM": [bronze, silver, gold, platinum]} to each trophy list.
+
+    Only lists that changed since the last run are fetched (2 requests each), so the
+    first run is slow and later runs are quick. Stops after a time budget and
+    continues on the next refresh.
+    """
+    from psnawp_api.models.trophies import PlatformType
+
+    cache = json.loads(TROPHY_CACHE.read_text()) if TROPHY_CACHE.exists() else {}
+    started, fetched, pending = time.time(), 0, 0
+    for t in trophies:
+        entry = cache.get(t["np_id"])
+        if not entry or entry.get("updated") != t["last_trophy"]:
+            if time.time() - started > TROPHY_BUDGET_S:
+                pending += 1
+            else:
+                try:
+                    plats = [p for p in t["platforms"] if p != "UNKNOWN"]
+                    plat = PlatformType("PS5" if "PS5" in plats else (plats[0] if plats else "PS4"))
+                    months: dict[str, list[int]] = {}
+                    for tr in me.trophies(t["np_id"], plat, include_progress=True, trophy_group_id="all"):
+                        if tr.earned and tr.earned_date_time and tr.trophy_type:
+                            m = months.setdefault(tr.earned_date_time.strftime("%Y-%m"), [0, 0, 0, 0])
+                            m[TIER_INDEX[tr.trophy_type.value]] += 1
+                    entry = cache[t["np_id"]] = {"updated": t["last_trophy"], "months": months}
+                    fetched += 1
+                except Exception as e:
+                    print(f"  trophy dates skipped for {t['name']!r}: {e}")
+        t["months"] = (entry or {}).get("months", {})
+    TROPHY_CACHE.write_text(json.dumps(cache, sort_keys=True, separators=(",", ":")))
+    print(f"  trophy dates: {fetched} lists fetched" + (f", {pending} left for the next refresh" if pending else ""))
+
+
+def add_months(a: dict, b: dict) -> dict:
+    out = {k: list(v) for k, v in a.items()}
+    for k, v in b.items():
+        out[k] = [x + y for x, y in zip(out.get(k, [0, 0, 0, 0]), v)]
+    return out
+
+
+def estimate_hours_by_year(g: dict) -> dict[str, float]:
+    """Split a game's lifetime playtime across years (PSN only gives the total).
+
+    Half is spread evenly over the days between first and last played, half follows
+    when trophies were earned. Falls back to whichever signal exists.
+    """
+    hours = g["hours"]
+    if not hours:
+        return {}
+    first, last = g.get("first_played"), g.get("last_played")
+    by_days: dict[str, float] = {}
+    if first and last:
+        d0, d1 = datetime.fromisoformat(first).date(), datetime.fromisoformat(last).date()
+        span = max((d1 - d0).days, 0) + 1
+        for y in range(d0.year, d1.year + 1):
+            a, b = max(d0, datetime(y, 1, 1).date()), min(d1, datetime(y, 12, 31).date())
+            by_days[str(y)] = ((b - a).days + 1) / span
+    elif last or first:
+        by_days[(last or first)[:4]] = 1.0
+
+    by_trophy: dict[str, float] = {}
+    lo, hi = (first or "0000")[:4], (last or "9999")[:4]
+    counts: dict[str, int] = {}
+    for month, tiers in (g.get("months") or {}).items():
+        if lo <= month[:4] <= hi:
+            counts[month[:4]] = counts.get(month[:4], 0) + sum(tiers)
+    total = sum(counts.values())
+    if total:
+        by_trophy = {y: n / total for y, n in counts.items()}
+
+    if by_days and by_trophy:
+        share = {y: 0.5 * by_days.get(y, 0) + 0.5 * by_trophy.get(y, 0) for y in set(by_days) | set(by_trophy)}
+    else:
+        share = by_days or by_trophy
+    return {y: round(hours * s, 1) for y, s in sorted(share.items()) if round(hours * s, 1) > 0}
 
 
 # ---------------------------------------------------------------- merge
@@ -142,7 +230,7 @@ def build_games(raw: dict) -> list[dict]:
         return games.setdefault(key, {
             "name": name, "image": None, "platforms": set(), "owned": False, "acquired": None,
             "hours": 0.0, "first_played": None, "last_played": None,
-            "progress": None, "earned": None, "defined": None, "last_trophy": None, "has_trophies": False,
+            "progress": None, "earned": None, "defined": None, "last_trophy": None, "has_trophies": False, "months": {},
         })
 
     # 1. Owned games (group PS4/PS5 versions by concept)
@@ -183,6 +271,7 @@ def build_games(raw: dict) -> list[dict]:
         g = row(key, t["name"])
         g["platforms"].update(p for p in t["platforms"] if p != "UNKNOWN")
         g["image"] = g["image"] or t["icon"]
+        g["months"] = add_months(g["months"], t.get("months") or {})  # every list counts toward yearly stats
         if g["progress"] is None or t["progress"] > g["progress"]:
             g.update(progress=t["progress"], earned=t["earned"], defined=t["defined"],
                      last_trophy=t["last_trophy"], has_trophies=True)
@@ -206,6 +295,7 @@ def build_games(raw: dict) -> list[dict]:
         else:
             g["status"] = "unplayed"
         g["last_activity"] = max(filter(None, [g["last_played"], g["last_trophy"]]), default=None)
+        g["hours_by_year"] = estimate_hours_by_year(g)
         out.append(g)
     return out
 
@@ -266,6 +356,62 @@ def rawg_lookup(name: str, slug: str | None, key: str, forced: bool) -> dict:
         return None  # not cached -> retried next run
 
 
+# ---------------------------------------------------------------- HowLongToBeat
+
+SEARCH_NOISE = re.compile(
+    r"[™®©]|\((ps4|ps5)\)|\b(ps5|ps4) version\b|\b(ps4|ps5)( ?(&|and) ?ps5)?\b|"
+    r"\b(digital )?(deluxe|standard|gold|ultimate|complete|definitive|game of the year|goty) edition\b",
+    re.I)
+
+
+def search_name(name: str) -> str:
+    s = SEARCH_NOISE.sub(" ", name)
+    return re.sub(r"\s+", " ", s).strip(" -–:")
+
+
+def enrich_hltb(games: list[dict]) -> None:
+    """Add HowLongToBeat times (hours). Unofficial and best-effort: any failure leaves the fields empty."""
+    cache = json.loads(HLTB_CACHE.read_text()) if HLTB_CACHE.exists() else {}
+    overrides = (json.loads(OVERRIDES.read_text()) if OVERRIDES.exists() else {}).get("hltb", {})
+    try:
+        from howlongtobeatpy import HowLongToBeat
+        hltb = HowLongToBeat()
+    except Exception as e:
+        print(f"HowLongToBeat unavailable: {e}")
+        hltb = None
+
+    looked_up, failures = 0, 0
+    for g in games:
+        name = g["name"]
+        query = overrides.get(name) or search_name(name)
+        info = cache.get(name)
+        if info is not None and info.get("query", query) != query:
+            info = None  # override changed -> look up again
+        if info is None and hltb and failures < 5:
+            try:
+                results = hltb.search(query) or []
+                best = max(results, key=lambda r: r.similarity, default=None)
+                if best and best.similarity >= 0.6:
+                    info = {"query": query, "name": best.game_name, "url": best.game_web_link,
+                            "main": best.main_story or None, "extra": best.main_extra or None,
+                            "complete": best.completionist or None}
+                else:
+                    info = {"query": query}  # no confident match; remembered so we don't retry
+                cache[name] = info
+                looked_up += 1
+                failures = 0
+                time.sleep(1)
+            except Exception as e:
+                failures += 1  # several failures in a row = HLTB is blocking us; stop for this run
+                print(f"  HLTB failed for {name!r}: {e}")
+        info = info or {}
+        g["hltb"] = {k: info[k] for k in ("main", "extra", "complete", "url") if info.get(k)} or None
+
+    HLTB_CACHE.write_text(json.dumps(cache, indent=1, sort_keys=True, ensure_ascii=False))
+    print(f"HLTB: {looked_up} new lookups, {sum(1 for v in cache.values() if v.get('url'))} matched in cache"
+          + (" (stopped early after repeated errors)" if failures >= 5 else ""))
+
+
 # ---------------------------------------------------------------- main
 
 TOKEN_DAYS = 60  # NPSSO tokens last roughly two months
@@ -304,6 +450,7 @@ def main() -> None:
 
     games = build_games(raw)
     enrich(games, os.environ.get("RAWG_API_KEY", "").strip() or None)
+    enrich_hltb(games)
     games.sort(key=lambda g: g["last_activity"] or g["acquired"] or "", reverse=True)
 
     # Track when this token was first used to estimate when it expires.

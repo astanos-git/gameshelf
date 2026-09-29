@@ -1,4 +1,6 @@
 {
-  "_help": "Fix wrong Metacritic matches: map the game name exactly as shown on the dashboard to its RAWG slug (the last part of its rawg.io/games/... URL), or to null for no match.",
-  "Example Game Name As Shown": "example-rawg-slug"
+  "_help": "Fix wrong matches. Top level: game name exactly as shown on the dashboard -> RAWG slug (last part of its rawg.io/games/... URL), or null for no Metacritic score. Under \"hltb\": game name as shown -> the title to search on HowLongToBeat.",
+  "hltb": {
+    "Example Game Name As Shown": "Title As Written On HowLongToBeat"
+  }
 }

@@ -81,6 +81,12 @@ button, select, input { font: inherit; color: inherit; }
 .tier { display: flex; align-items: center; gap: 5px; }
 .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
 .d-platinum { background: var(--plat); } .d-gold { background: var(--gold); } .d-silver { background: var(--silver); } .d-bronze { background: var(--bronze); }
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); }
+.tabs a { padding: 6px 12px 8px; color: var(--muted); text-decoration: none; font: 600 17px var(--display); letter-spacing: .03em; text-transform: uppercase; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.tabs a[aria-current="page"] { color: var(--fg); border-color: var(--accent); }
+.tabs a:hover { color: var(--fg); }
+.hltb { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13.5px; }
+.hltb b { font: 600 13px var(--mono); }
 .updated { width: 100%; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
 .refresh { color: var(--accent); font-weight: 600; text-decoration: none; border: 1px solid var(--accent); border-radius: 999px; padding: 3px 12px; }
 .refresh:hover { background: var(--accent-soft); }
@@ -138,6 +144,7 @@ button, select, input { font: inherit; color: inherit; }
 <div class="wrap">
   <div class="sample" id="sample" hidden>Showing <b>sample data</b>. Your own games appear here after the first successful refresh on GitHub.</div>
   <section class="alert" id="alert" hidden></section>
+  <nav class="tabs"><a href="index.html" aria-current="page">Library</a><a href="stats.html">Stats</a></nav>
 
   <header class="profile">
     <div class="avatar" id="avatar"></div>
@@ -161,6 +168,7 @@ button, select, input { font: inherit; color: inherit; }
         <option value="hours">Hours played</option>
         <option value="progress">Trophy progress</option>
         <option value="left">Trophies left</option>
+        <option value="beat">Time to beat</option>
         <option value="name">Name</option>
       </select>
     </div>
@@ -190,6 +198,9 @@ const SAMPLE = {
     g("Sackboy: A Big Adventure", ["PS5"], 3.2, 8, [4,0,0,0], [39,10,4,1], 79, ["Platformer"], "2020-11-12", "2024-12-26"),
   ]
 };
+const SAMPLE_HLTB = { "Elden Ring": [59, 100, 134], "Astro Bot": [11, 15, 21], "Stray": [5, 6.5, 9], "Horizon Forbidden West": [30, 58, 91],
+  "Final Fantasy VII Rebirth": [45, 74, 107], "Death Stranding Director's Cut": [43, 61, 104], "Kena: Bridge of Spirits": [10, 12.5, 23], "Returnal": [22, 33, 53] };
+SAMPLE.games.forEach(x => { const h = SAMPLE_HLTB[x.name]; if (h) x.hltb = { main: h[0], extra: h[1], complete: h[2] }; });
 function g(name, platforms, hours, progress, earned, defined, metacritic, genres, released, last, owned = true) {
   const t = a => a && { bronze: a[0], silver: a[1], gold: a[2], platinum: a[3] };
   const e = t(earned), d = t(defined), sum = o => o ? Object.values(o).reduce((x, y) => x + y, 0) : 0;
@@ -305,6 +316,7 @@ const SORTS = {
   metacritic: (a, b) => (b.metacritic ?? -1) - (a.metacritic ?? -1),
   hours: (a, b) => (b.hours || 0) - (a.hours || 0),
   progress: (a, b) => (b.progress ?? -1) - (a.progress ?? -1),
+  beat: (a, b) => (a.hltb?.main ?? 1e9) - (b.hltb?.main ?? 1e9),
   left: (a, b) => (b.trophies_total - b.trophies_earned) - (a.trophies_total - a.trophies_earned),
   name: (a, b) => a.name.localeCompare(b.name),
 };
@@ -327,7 +339,7 @@ function renderList() {
         <span class="cover">${pic(x.image, x.name)}</span>
         <span class="main">
           <span class="name">${esc(x.name)}</span>
-          <span class="meta"><span class="pill st-${x.status}">${STATUS_LABEL[x.status]}</span><span>${x.platforms.join(" · ")}</span><span class="num">${hrs}</span></span>
+          <span class="meta"><span class="pill st-${x.status}">${STATUS_LABEL[x.status]}</span><span>${x.platforms.join(" · ")}</span><span class="num">${hrs}</span>${beat(x)}</span>
           ${prog}
         </span>
         <span class="mc ${mcClass(x.metacritic)}" title="Metacritic score">${x.metacritic ?? "n/a"}</span>
@@ -335,6 +347,12 @@ function renderList() {
       ${open ? detail(x, id) : ""}
     </article>`;
   }).join("");
+}
+
+const fmtH = h => h >= 10 ? Math.round(h) + " h" : (Math.round(h * 2) / 2) + " h";
+function beat(x) {
+  const m = x.hltb?.main;
+  return m ? `<span class="num" title="HowLongToBeat, main story">Beat in ~${fmtH(m)}</span>` : "";
 }
 
 function detail(x, id) {
@@ -349,8 +367,9 @@ function detail(x, id) {
     ["Last played", fmtDate(x.last_played)],
     ["Last trophy", fmtDate(x.last_trophy)],
   ];
+  const H = x.hltb, hl = H ? `<div class="hltb"><span>HowLongToBeat</span>${[["Main story", H.main], ["Main + extras", H.extra], ["Completionist", H.complete]].filter(([, v]) => v).map(([k, v]) => `<span>${k} <b>${fmtH(v)}</b></span>`).join("")}${H.url ? `<a href="${esc(H.url)}" target="_blank" rel="noopener">Open</a>` : ""}</div>` : "";
   const link = x.rawg_slug ? `<a href="https://rawg.io/games/${esc(x.rawg_slug)}" target="_blank" rel="noopener">Game page on RAWG</a>` : "";
-  return `<div class="detail" id="${id}-d">${pend}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}</div>`;
+  return `<div class="detail" id="${id}-d">${pend}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}</div>`;
 }
 
 function save() { try { localStorage.setItem("shelf", JSON.stringify({ status: state.status, sort: state.sort })); } catch {} }

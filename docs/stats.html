@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Game Shelf Stats</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Game Shelf">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: tabs → year chips → figures → two top-3 lists side by side → trophies-over-time bars → genre bars */
+:root {
+  --bg: #eef1f6; --surface: #ffffff; --line: #d6dce7; --grid: #e6eaf1; --fg: #141a26; --muted: #5b6477;
+  --accent: #1f5fd6; --accent-soft: #e2ebfb; --bar: #3f78e0;
+  --bronze: #b46f3c; --silver: #8d97a6; --gold: #c99a14; --plat: #5d8fc9;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e1320; --surface: #161d2d; --line: #26304a; --grid: #1f283d; --fg: #e6eaf3; --muted: #95a0b8;
+  --accent: #6a9cff; --accent-soft: #1d2b4d; --bar: #5b8ff5;
+  --bronze: #d08d5a; --silver: #b4bdca; --gold: #e3b93b; --plat: #8fb8ea;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #0e1320; --surface: #161d2d; --line: #26304a; --grid: #1f283d; --fg: #e6eaf3; --muted: #95a0b8;
+  --accent: #6a9cff; --accent-soft: #1d2b4d; --bar: #5b8ff5;
+  --bronze: #d08d5a; --silver: #b4bdca; --gold: #e3b93b; --plat: #8fb8ea;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.45 var(--body); }
+.wrap { max-width: 880px; margin: 0 auto; padding-inline: 16px; padding-block: 16px 48px; display: grid; gap: 18px; }
+h1, h2 { font-family: var(--display); margin: 0; text-wrap: balance; }
+h2 { font-size: 22px; line-height: 1.1; }
+.num { font-variant-numeric: tabular-nums; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+.notice { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 8px; padding: 8px 12px; font-size: 13.5px; }
+
+.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); }
+.tabs a { padding: 6px 12px 8px; color: var(--muted); text-decoration: none; font: 600 17px var(--display); letter-spacing: .03em; text-transform: uppercase; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.tabs a[aria-current="page"] { color: var(--fg); border-color: var(--accent); }
+.tabs a:hover { color: var(--fg); }
+
+.years { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 12px; cursor: pointer; white-space: nowrap; font: 500 14px var(--mono); }
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+.head { display: grid; gap: 2px; }
+.head h1 { font-size: 40px; line-height: 1; }
+
+.figures { display: grid; grid-template-columns: repeat(4, 1fr); border-block: 1px solid var(--line); }
+.fig { padding: 10px 4px; display: grid; }
+.fig + .fig { border-left: 1px solid var(--line); padding-left: 12px; }
+.fig b { font: 600 30px/1.1 var(--display); }
+.fig span { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+@media (max-width: 520px) { .figures { grid-template-columns: repeat(2, 1fr); }
+  .fig:nth-child(3) { border-left: 0; padding-left: 4px; } .fig:nth-child(n+3) { border-top: 1px solid var(--line); } }
+
+.tops { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 640px) { .tops { grid-template-columns: 1fr; } }
+.top { display: grid; gap: 8px; align-content: start; min-width: 0; }
+.top ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.top li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; display: grid; grid-template-columns: 20px 44px 1fr auto; gap: 10px; align-items: center; }
+.rank { font: 700 22px var(--display); color: var(--muted); text-align: center; }
+.top li:first-child .rank { color: var(--accent); }
+.cover { width: 44px; height: 44px; border-radius: 7px; background: var(--accent-soft); display: grid; place-items: center; overflow: hidden; font: 600 15px var(--display); color: var(--accent); }
+.cover img { width: 100%; height: 100%; object-fit: cover; }
+.tname { min-width: 0; display: grid; gap: 2px; }
+.tname b { font-weight: 600; line-height: 1.2; overflow-wrap: anywhere; }
+.tname small { color: var(--muted); font-size: 12px; display: flex; gap: 8px; flex-wrap: wrap; font-family: var(--mono); }
+.tval { font: 600 24px var(--display); text-align: right; line-height: 1; }
+.tval small { display: block; font: 11px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 3px; vertical-align: 1px; }
+.d-platinum { background: var(--plat); } .d-gold { background: var(--gold); } .d-silver { background: var(--silver); } .d-bronze { background: var(--bronze); }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 10px; min-width: 0; }
+.panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.chart { position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { fill: var(--muted); font: 11px var(--mono); }
+.chart .gridline { stroke: var(--grid); stroke-width: 1; }
+.chart .baseline { stroke: var(--line); stroke-width: 1; }
+.chart .bar { fill: var(--bar); pointer-events: none; }
+.chart .hit { fill: transparent; cursor: pointer; }
+.chart .hit:hover + .bar, .chart .hit:focus + .bar, .chart .bar.on { fill: var(--accent); }
+.tip { position: absolute; pointer-events: none; background: var(--fg); color: var(--bg); border-radius: 6px; padding: 5px 8px; font-size: 12.5px; white-space: nowrap; transform: translate(-50%, calc(-100% - 8px)); z-index: 3; }
+
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: transparent; padding: 4px 10px; font-size: 13px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.genres { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.genres li { display: grid; grid-template-columns: minmax(84px, 130px) 1fr 64px; gap: 10px; align-items: center; font-size: 13.5px; }
+.genres .track { height: 14px; }
+.genres .fill { height: 100%; background: var(--bar); border-radius: 0 4px 4px 0; min-width: 2px; }
+.genres .v { font: 12.5px var(--mono); text-align: right; color: var(--fg); }
+.genres .gl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.empty { color: var(--muted); font-size: 14px; padding: 16px 0; margin: 0; }
+</style>
+
+<div class="wrap">
+  <nav class="tabs"><a href="index.html">Library</a><a href="stats.html" aria-current="page">Stats</a></nav>
+  <p class="notice" id="notice" hidden></p>
+
+  <div class="years" id="years" role="group" aria-label="Choose a year"></div>
+
+  <header class="head">
+    <h1 id="title">All time</h1>
+    <p class="note" id="subtitle"></p>
+  </header>
+
+  <section class="figures" id="figures"></section>
+
+  <section class="tops">
+    <div class="top"><h2>Most trophies</h2><ol id="topTrophies"></ol></div>
+    <div class="top"><h2>Most hours played</h2><ol id="topHours"></ol></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head"><h2 id="tlTitle">Trophies by year</h2><span class="note" id="tlNote"></span></div>
+    <div class="chart" id="timeline"></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Genres</h2>
+      <div class="seg" role="group" aria-label="Measure genres by">
+        <button id="gHours" aria-pressed="true">Hours</button><button id="gGames" aria-pressed="false">Games</button>
+      </div>
+    </div>
+    <ul class="genres" id="genres"></ul>
+    <p class="note">A game with several genres counts toward each of them. Genres come from RAWG.</p>
+  </section>
+
+  <p class="note" id="footnote">Trophy counts are exact, from the date each trophy was earned. Hours per year are estimates: PSN only reports each game's total playtime, so it is spread across the years between first and last played, weighted by when you earned trophies. PS3 and Vita games have no playtime.</p>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const TIERS = ["platinum", "gold", "silver", "bronze"];            // display order
+const IDX = { bronze: 0, silver: 1, gold: 2, platinum: 3 };        // order in data
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+let DATA, state = { year: "all", genre: "hours" };
+try { Object.assign(state, JSON.parse(localStorage.getItem("shelf-stats") || "{}")); } catch {}
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const initials = s => (s || "?").replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+const pic = (url, name) => url ? `<img src="${esc(url)}" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode('${initials(name)}'))">` : initials(name);
+const fmt = n => Math.round(n).toLocaleString();
+const sum = a => a.reduce((x, y) => x + y, 0);
+
+/* ---------- per-game numbers for the selected period ---------- */
+function trophiesIn(g, year) {               // -> [b, s, g, p]
+  const out = [0, 0, 0, 0];
+  const months = g.months || {};
+  if (year === "all" && !Object.keys(months).length && g.earned) return [g.earned.bronze, g.earned.silver, g.earned.gold, g.earned.platinum];
+  for (const [m, t] of Object.entries(months)) if (year === "all" || m.startsWith(year)) t.forEach((v, i) => out[i] += v);
+  return out;
+}
+const hoursIn = (g, year) => year === "all" ? (g.hours || 0) : ((g.hours_by_year || {})[year] || 0);
+
+function period(year) {
+  return DATA.games.map(g => ({ g, t: trophiesIn(g, year), h: hoursIn(g, year) }))
+    .map(r => ({ ...r, tt: sum(r.t) }))
+    .filter(r => r.tt > 0 || r.h > 0);
+}
+
+function availableYears() {
+  const ys = new Set();
+  for (const g of DATA.games) {
+    Object.keys(g.months || {}).forEach(m => ys.add(m.slice(0, 4)));
+    Object.keys(g.hours_by_year || {}).forEach(y => ys.add(y));
+  }
+  return [...ys].sort().reverse();
+}
+
+/* ---------- render ---------- */
+function render() {
+  const y = state.year, rows = period(y);
+  document.querySelectorAll("#years .chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.y === y));
+  $("title").textContent = y === "all" ? "All time" : y;
+  const hasMonths = DATA.games.some(g => g.months && Object.keys(g.months).length);
+  $("subtitle").textContent = y === "all" ? `${DATA.games.length} games in your library` :
+    `${rows.length} games with playtime or trophies in ${y}`;
+
+  const T = [0, 0, 0, 0]; rows.forEach(r => r.t.forEach((v, i) => T[i] += v));
+  const hours = sum(rows.map(r => r.h));
+  const est = y === "all" ? "" : " (est.)";
+  $("figures").innerHTML = [[fmt(sum(T)), "Trophies"], [fmt(T[3]), "Platinums"], [fmt(hours), "Hours played" + est], [rows.length, "Games played"]]
+    .map(([v, l]) => `<div class="fig"><b class="num">${v}</b><span>${l}</span></div>`).join("");
+
+  topList("topTrophies", rows.filter(r => r.tt > 0).sort((a, b) => b.tt - a.tt || b.t[3] - a.t[3]).slice(0, 3),
+    r => [fmt(r.tt), "trophies"], r => TIERS.filter(t => r.t[IDX[t]]).map(t => `<span><span class="dot d-${t}"></span>${r.t[IDX[t]]}</span>`).join(""),
+    hasMonths || y === "all" ? "No trophies earned in this period." : "Trophy dates appear after the next refresh.");
+  topList("topHours", rows.filter(r => r.h > 0).sort((a, b) => b.h - a.h).slice(0, 3),
+    r => [fmt(r.h), y === "all" ? "hours" : "hours (est.)"], r => `<span>${r.g.platforms.join(" · ")}</span>`,
+    "No PS4 or PS5 playtime in this period.");
+
+  timeline(y, hasMonths);
+  genres(rows);
+}
+
+function topList(id, rows, val, sub, emptyMsg) {
+  $(id).innerHTML = rows.length ? rows.map((r, i) => {
+    const [v, unit] = val(r);
+    return `<li><span class="rank">${i + 1}</span><span class="cover">${pic(r.g.image, r.g.name)}</span>
+      <span class="tname"><b>${esc(r.g.name)}</b><small>${sub(r)}</small></span>
+      <span class="tval num">${v}<small>${unit}</small></span></li>`;
+  }).join("") : `<p class="empty">${emptyMsg}</p>`;
+}
+
+/* Trophies over time: months of the selected year, or every year for "all time". */
+function timeline(y, hasMonths) {
+  const el = $("timeline");
+  if (!hasMonths) { $("tlTitle").textContent = "Trophies over time"; $("tlNote").textContent = "";
+    el.innerHTML = `<p class="empty">Trophy dates appear after the next refresh. The first one takes longer while your full trophy history loads.</p>`; return; }
+  let points;
+  if (y === "all") {
+    const ys = availableYears().filter(v => DATA.games.some(g => Object.keys(g.months || {}).some(m => m.startsWith(v)))).sort();
+    const lo = +ys[0], hi = +ys[ys.length - 1];
+    points = [];
+    for (let v = lo; v <= hi; v++) points.push({ key: String(v), label: String(v) });
+    $("tlTitle").textContent = "Trophies by year";
+  } else {
+    points = MONTHS.map((m, i) => ({ key: `${y}-${String(i + 1).padStart(2, "0")}`, label: m }));
+    $("tlTitle").textContent = `Trophies by month, ${y}`;
+  }
+  for (const p of points) {
+    p.t = [0, 0, 0, 0];
+    for (const g of DATA.games) for (const [m, t] of Object.entries(g.months || {})) if (m.startsWith(p.key)) t.forEach((v, i) => p.t[i] += v);
+    p.v = sum(p.t);
+  }
+  const best = points.reduce((a, b) => b.v > a.v ? b : a, points[0]);
+  $("tlNote").textContent = best.v ? `Best: ${best.label} (${fmt(best.v)})` : "";
+
+  // geometry
+  const W = Math.max(300, Math.round(el.clientWidth || 640)), H = W < 500 ? 200 : 230, L = 34, R = 6, TOP = 10, B = 24, iw = W - L - R, ih = H - TOP - B;
+  const max = Math.max(1, ...points.map(p => p.v));
+  const step = niceStep(max / 4), top = Math.ceil(max / step) * step;
+  const ticks = []; for (let v = 0; v <= top; v += step) ticks.push(v);
+  const n = points.length, slot = iw / n, gap = Math.max(2, Math.min(slot * 0.25, 10)), bw = slot - gap;
+  const yv = v => TOP + ih - (v / top) * ih;
+  const everyLabel = Math.max(1, Math.ceil(n / Math.floor(iw / 30)));
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc($("tlTitle").textContent)}">`;
+  for (const t of ticks) s += `<line class="gridline" x1="${L}" x2="${W - R}" y1="${yv(t)}" y2="${yv(t)}"/><text x="${L - 6}" y="${yv(t) + 4}" text-anchor="end">${fmt(t)}</text>`;
+  points.forEach((p, i) => {
+    const x = L + i * slot + gap / 2, h = (p.v / top) * ih, y0 = TOP + ih;
+    const r = Math.min(4, bw / 2, h);
+    const path = h > 0 ? `M${x},${y0} V${y0 - h + r} Q${x},${y0 - h} ${x + r},${y0 - h} H${x + bw - r} Q${x + bw},${y0 - h} ${x + bw},${y0 - h + r} V${y0} Z` : "";
+    s += `<rect class="hit" x="${L + i * slot}" y="${TOP}" width="${slot}" height="${ih}" tabindex="0" data-i="${i}"/>`;
+    s += `<path class="bar" d="${path}"/>`;
+    if (i % everyLabel === 0) s += `<text x="${x + bw / 2}" y="${H - 6}" text-anchor="middle">${n > 12 && y === "all" ? "’" + p.label.slice(2) : p.label}</text>`;
+  });
+  s += `<line class="baseline" x1="${L}" x2="${W - R}" y1="${TOP + ih}" y2="${TOP + ih}"/></svg><div class="tip" hidden></div>`;
+  el.innerHTML = s;
+
+  const tip = el.querySelector(".tip"), svg = el.querySelector("svg");
+  const show = e => {
+    const hit = e.target.closest(".hit"); if (!hit) return;
+    const p = points[+hit.dataset.i], box = svg.getBoundingClientRect(), sc = box.width / W;
+    const tiers = TIERS.filter(t => p.t[IDX[t]]).map(t => `${p.t[IDX[t]]} ${t}`).join(", ");
+    tip.innerHTML = `<b>${esc(p.key.length === 4 ? p.key : p.label + " " + y)}</b> · ${fmt(p.v)} trophies${tiers ? "<br>" + tiers : ""}`;
+    const cx = (L + (+hit.dataset.i + 0.5) * slot) * sc;
+    tip.style.left = Math.min(Math.max(cx, 70), box.width - 70) + "px";
+    tip.style.top = (yv(p.v) * sc) + "px";
+    tip.hidden = false;
+  };
+  svg.addEventListener("pointerover", show); svg.addEventListener("focusin", show); svg.addEventListener("click", show);
+  svg.addEventListener("pointerleave", () => tip.hidden = true); svg.addEventListener("focusout", () => tip.hidden = true);
+}
+function niceStep(raw) {
+  const p = 10 ** Math.floor(Math.log10(Math.max(raw, 1)));
+  return [1, 2, 5, 10].map(m => m * p).find(s => s >= raw) || 10 * p;
+}
+
+function genres(rows) {
+  const by = {};
+  for (const r of rows) for (const gn of r.g.genres || []) {
+    const e = by[gn] ||= { hours: 0, games: 0 };
+    e.hours += r.h; e.games += 1;
+  }
+  const key = state.genre;
+  const list = Object.entries(by).map(([name, v]) => ({ name, v: v[key] })).filter(x => x.v > 0).sort((a, b) => b.v - a.v).slice(0, 10);
+  $("gHours").setAttribute("aria-pressed", key === "hours"); $("gGames").setAttribute("aria-pressed", key === "games");
+  if (!list.length) { $("genres").innerHTML = `<li class="empty">No ${key === "hours" ? "playtime" : "games"} with genre data in this period.</li>`; return; }
+  const max = list[0].v;
+  $("genres").innerHTML = list.map(x => `<li title="${esc(x.name)}: ${fmt(x.v)} ${key}">
+    <span class="gl">${esc(x.name)}</span><span class="track"><span class="fill" style="width:${(x.v / max) * 100}%;display:block"></span></span>
+    <span class="v">${fmt(x.v)}${key === "hours" ? " h" : ""}</span></li>`).join("");
+}
+
+function save() { try { localStorage.setItem("shelf-stats", JSON.stringify(state)); } catch {} }
+
+$("years").addEventListener("click", e => { const b = e.target.closest(".chip"); if (!b) return; state.year = b.dataset.y; save(); render(); });
+$("gHours").addEventListener("click", () => { state.genre = "hours"; save(); genres(period(state.year)); });
+$("gGames").addEventListener("click", () => { state.genre = "games"; save(); genres(period(state.year)); });
+
+async function start() {
+  try {
+    const r = await fetch("data.json", { cache: "no-store" });
+    if (!r.ok) throw 0;
+    DATA = await r.json();
+    if (!DATA.games || !DATA.games.length) throw 0;
+  } catch {
+    $("notice").hidden = false;
+    $("notice").textContent = "No game data yet. Stats appear after the first successful refresh.";
+    document.querySelectorAll(".wrap > :not(.tabs):not(#notice)").forEach(n => n.hidden = true);
+    return;
+  }
+  if (!DATA.games.some(g => g.hours_by_year)) {
+    $("notice").hidden = false;
+    $("notice").textContent = "Yearly stats appear after the next refresh. It takes longer than usual the first time, up to about 40 minutes, while your full trophy history loads.";
+  }
+  const ys = availableYears();
+  if (state.year !== "all" && !ys.includes(state.year)) state.year = "all";
+  $("years").innerHTML = [["all", "All time"], ...ys.map(v => [v, v])]
+    .map(([k, l]) => `<button class="chip" data-y="${k}" aria-pressed="false">${l}</button>`).join("");
+  render();
+}
+let lastW = 0;
+addEventListener("resize", () => { const w = $("timeline").clientWidth; if (DATA && Math.abs(w - lastW) > 20) { lastW = w; timeline(state.year, DATA.games.some(g => g.months && Object.keys(g.months).length)); } });
+start();
+</script>

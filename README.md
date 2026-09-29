@@ -2,8 +2,8 @@
 
 A personal PlayStation dashboard you can open from your phone. It shows your games, playtime, trophies (earned and remaining), and Metacritic scores. The data refreshes only when you ask for it.
 
-- **Dashboard:** `docs/index.html`, hosted free on GitHub Pages
-- **Data:** `fetch.py` pulls from PSN (via the unofficial PSNAWP library) and RAWG (for Metacritic scores), then writes `docs/data.json`
+- **Dashboard:** `docs/index.html` (your library) and `docs/stats.html` (yearly stats and genres), hosted free on GitHub Pages
+- **Data:** `fetch.py` pulls from PSN (via the unofficial PSNAWP library) , RAWG (Metacritic scores and genres) and HowLongToBeat (time to beat), then writes `docs/data.json`
 - **Refresh:** a GitHub Action you start with one tap. Nothing runs on your PC.
 
 ---
@@ -50,7 +50,9 @@ Go to **Actions → Refresh game data → Run workflow**. The run takes about 3�
 ## Everyday use
 - **Refresh:** tap **Refresh data** at the top of the dashboard. It opens the workflow on GitHub; tap **Run workflow** and wait a few minutes. You need to be signed in to GitHub, and the GitHub mobile app works too.
 - **Backlog:** the Backlog filter shows owned games you have never started. It sorts by Metacritic score so you can pick the next one to play.
-- **Details:** tap a game to see remaining trophies by grade, genres, and your first and last played dates.
+- **Details:** tap a game to see remaining trophies by grade, HowLongToBeat times, genres, and your first and last played dates.
+- **Time to beat:** each game shows "Beat in ~N h" (HowLongToBeat main story). Sort by **Time to beat** to find short games in your backlog.
+- **Stats:** the Stats tab shows each year, or all time: trophies, platinums, hours played, your top 3 games by trophies and by hours, trophies by month, and a genre breakdown by hours or number of games.
 
 ## Renewing the PSN login (about every two months)
 The NPSSO token can't be renewed automatically: getting a new one requires signing in to Sony, which is protected by captchas and two-step verification. To keep this painless, the dashboard:
@@ -64,6 +66,7 @@ The token itself is never written to the dashboard or the repo. Only a short one
 ## When something goes wrong
 - **"PSN login expired" banner:** follow the renewal steps above.
 - **"Last refresh failed" banner:** Sony's servers returned an error. Try again later. If it keeps happening, see the next point.
+- **Wrong or missing HowLongToBeat time.** In `overrides.json`, under `"hltb"`, map the game name as shown on the dashboard to its title as written on howlongtobeat.com. The fix applies on the next refresh.
 - **Wrong or missing Metacritic score.** Find the game on rawg.io and copy the last part of its URL, for example `ghost-of-tsushima`. Add a line to `overrides.json`: `"Game Name As Shown": "ghost-of-tsushima"`. Use `null` instead of a slug to show no score. The fix applies on the next refresh.
 - **The workflow fails with 403 or connection errors from Sony.** Sony sometimes blocks cloud servers. Fallback: run it once from any computer with Python installed.
   ```bash
@@ -78,5 +81,8 @@ The token itself is never written to the dashboard or the repo. Only a short one
 - **Trophies:** every game with a trophy list, including PS3 and Vita.
 - **Merging versions:** PS4 and PS5 versions of the same game are shown as one row, with their playtime added together. Occasionally a remaster or a game with a regional title shows up as a separate row.
 - **Metacritic:** scores come from RAWG's copy of Metacritic data. Very new or niche games may have no score.
+- **HowLongToBeat:** there is no official API. The script uses an unofficial library that reads the website, so it can break when HowLongToBeat changes its site. If it fails, the refresh still completes and times just stay empty. Updating `howlongtobeatpy` in `requirements.txt` usually fixes it.
+- **Yearly trophies:** exact, from the date each trophy was earned. The first refresh that loads trophy dates takes up to about 40 minutes (two requests per game, deliberately slowed). If it runs out of time, the next refresh picks up where it stopped. After that, only games with new trophies are re-read.
+- **Yearly hours are estimates.** PSN only reports each game's total playtime. The script spreads it across the years between first and last played, weighted by when you earned trophies.
 - **Public page:** `data.json` is public, like your PSN trophy profile. It contains no login details.
 - **Unofficial API:** PSNAWP uses Sony's unofficial app API, which can change without notice. If it breaks, updating the version pinned in `requirements.txt` usually fixes it.
