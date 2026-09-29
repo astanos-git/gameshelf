@@ -1,0 +1,44 @@
+name: Save game flag
+
+# Runs when you tap "Mark as beaten / dropped" on the dashboard and submit the pre-filled issue.
+# Only your own issues are processed, so nobody else can change your flags.
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  flag:
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'Flag ')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Save flag
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_CREATED: ${{ github.event.issue.created_at }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Retry on a fresh copy if another update landed at the same time.
+          for attempt in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python flag.py
+            git add docs/flags.json 2>/dev/null || true
+            git diff --cached --quiet && break
+            git commit -q -m "Flag: $(cat flag_result.txt | head -c 70)"
+            git push -q origin HEAD:main && break
+            sleep $((attempt * 3))
+          done
+
+      - name: Reply and close the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} --body-file flag_result.txt
+          gh issue close ${{ github.event.issue.number }} --repo ${{ github.repository }}

@@ -20,7 +20,7 @@
   --accent-soft: #e2ebfb;
   --bronze: #b46f3c; --silver: #8d97a6; --gold: #c99a14; --plat: #5d8fc9;
   --mc-good: #2f8f3a; --mc-mid: #c28a00; --mc-bad: #c8412f;
-  --st-done: #2f8f3a; --st-started: #1f5fd6; --st-unplayed: #7a6a9e;
+  --st-done: #2f8f3a; --st-started: #1f5fd6; --st-unplayed: #7a6a9e; --st-beaten: #0f7f86; --st-dropped: #7b8394;
   --warn: #9a6b00; --warn-bg: #fdf3d8; --bad: #b3261e; --bad-bg: #fbe4e1;
   --display: "Barlow Condensed", "Arial Narrow", sans-serif;
   --body: "IBM Plex Sans", system-ui, sans-serif;
@@ -32,7 +32,7 @@
   --accent: #6a9cff; --accent-soft: #1d2b4d;
   --bronze: #d08d5a; --silver: #b4bdca; --gold: #e3b93b; --plat: #8fb8ea;
   --mc-good: #5cc26a; --mc-mid: #e0ac2a; --mc-bad: #ec6b58;
-  --st-done: #5cc26a; --st-started: #6a9cff; --st-unplayed: #ad9bd6;
+  --st-done: #5cc26a; --st-started: #6a9cff; --st-unplayed: #ad9bd6; --st-beaten: #4cc3c9; --st-dropped: #8d97aa;
   --warn: #f0c14b; --warn-bg: #3a2f10; --bad: #ff8a7a; --bad-bg: #3d1a17;
   color-scheme: dark;
 } }
@@ -41,7 +41,7 @@
   --accent: #6a9cff; --accent-soft: #1d2b4d;
   --bronze: #d08d5a; --silver: #b4bdca; --gold: #e3b93b; --plat: #8fb8ea;
   --mc-good: #5cc26a; --mc-mid: #e0ac2a; --mc-bad: #ec6b58;
-  --st-done: #5cc26a; --st-started: #6a9cff; --st-unplayed: #ad9bd6;
+  --st-done: #5cc26a; --st-started: #6a9cff; --st-unplayed: #ad9bd6; --st-beaten: #4cc3c9; --st-dropped: #8d97aa;
   --warn: #f0c14b; --warn-bg: #3a2f10; --bad: #ff8a7a; --bad-bg: #3d1a17;
   color-scheme: dark;
 }
@@ -122,6 +122,7 @@ button, select, input { font: inherit; color: inherit; }
 .name { font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
 .meta { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 12.5px; color: var(--muted); }
 .pill { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; border-radius: 4px; padding: 1px 6px; border: 1px solid currentColor; }
+.st-beaten { color: var(--st-beaten); } .st-dropped { color: var(--st-dropped); }
 .st-completed { color: var(--st-done); } .st-started { color: var(--st-started); } .st-unplayed { color: var(--st-unplayed); }
 .prog { display: flex; align-items: center; gap: 8px; font: 12px var(--mono); color: var(--muted); }
 .prog .bar { flex: 1 1 auto; max-width: 220px; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
@@ -137,6 +138,12 @@ button, select, input { font: inherit; color: inherit; }
 .facts dt { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
 .facts dd { margin: 0; }
 .detail a { color: var(--accent); }
+.flagbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-top: 1px dashed var(--line); padding-top: 10px; }
+.flagbar .flagnote { color: var(--muted); font-size: 12.5px; flex-basis: 100%; }
+.detail a.flagbtn { color: var(--fg); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13.5px; font-weight: 500; }
+.detail a.flagbtn:hover { border-color: var(--accent); }
+.detail a.flagbtn.beaten { border-color: var(--st-beaten); color: var(--st-beaten); }
+.detail a.flagbtn.dropped { border-color: var(--st-dropped); color: var(--st-dropped); }
 .empty { text-align: center; color: var(--muted); padding: 32px 0; }
 @media (max-width: 420px) { .game > button { grid-template-columns: 48px 1fr auto; gap: 10px; } .cover { width: 48px; height: 48px; } }
 </style>
@@ -200,6 +207,7 @@ const SAMPLE = {
 };
 const SAMPLE_HLTB = { "Elden Ring": [59, 100, 134], "Astro Bot": [11, 15, 21], "Stray": [5, 6.5, 9], "Horizon Forbidden West": [30, 58, 91],
   "Final Fantasy VII Rebirth": [45, 74, 107], "Death Stranding Director's Cut": [43, 61, 104], "Kena: Bridge of Spirits": [10, 12.5, 23], "Returnal": [22, 33, 53] };
+const SAMPLE_FLAGS = { "Returnal": { flag: "dropped", at: "2025-06-01T10:00:00Z" }, "Gran Turismo 7": { flag: "beaten", at: "2026-07-20T10:00:00Z" } };
 SAMPLE.games.forEach(x => { const h = SAMPLE_HLTB[x.name]; if (h) x.hltb = { main: h[0], extra: h[1], complete: h[2] }; });
 function g(name, platforms, hours, progress, earned, defined, metacritic, genres, released, last, owned = true) {
   const t = a => a && { bronze: a[0], silver: a[1], gold: a[2], platinum: a[3] };
@@ -212,8 +220,23 @@ function g(name, platforms, hours, progress, earned, defined, metacritic, genres
 }
 
 const TIERS = ["platinum", "gold", "silver", "bronze"];
-const STATUS = { all: "All", unplayed: "Backlog", started: "In progress", completed: "Completed" };
-const STATUS_LABEL = { unplayed: "Backlog", started: "In progress", completed: "Completed" };
+const STATUS = { all: "All", unplayed: "Backlog", started: "In progress", beaten: "Beaten", completed: "Completed", dropped: "Dropped" };
+const STATUS_LABEL = { unplayed: "Backlog", started: "In progress", beaten: "Beaten", completed: "Completed", dropped: "Dropped" };
+
+/* Your Beaten / Dropped flags, saved in flags.json. Automatic rules:
+   - platinum earned or 100% trophies -> Completed wins over any flag
+   - Dropped, but new playtime or a trophy after the date you dropped it -> back to its normal status */
+function applyFlags(games, flags) {
+  for (const x of games) {
+    x.base_status = x.base_status || x.status;
+    const f = flags[x.name];
+    x.flag = null;
+    x.status = x.base_status;
+    if (!f || x.base_status === "completed") continue;
+    if (f.flag === "dropped" && x.last_activity && new Date(x.last_activity) > new Date(f.at)) continue;
+    x.flag = f; x.status = f.flag;
+  }
+}
 const $ = id => document.getElementById(id);
 let DATA, state = { status: "all", q: "", sort: "recent", open: null };
 try { Object.assign(state, JSON.parse(localStorage.getItem("shelf") || "{}"), { q: "", open: null }); } catch {}
@@ -355,6 +378,27 @@ function beat(x) {
   return m ? `<span class="num" title="HowLongToBeat, main story">Beat in ~${fmtH(m)}</span>` : "";
 }
 
+function flagBar(x) {
+  const repo = repoUrl();
+  const issue = (flag, label, cls) => {
+    const title = flag === "none" ? `Flag ${x.name}: remove flag` : `Flag ${x.name} as ${flag}`;
+    const body = `Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\ngame: ${x.name}\nflag: ${flag}\n`;
+    return repo ? `<a class="flagbtn ${cls}" target="_blank" rel="noopener" href="${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}">${label}</a>` : "";
+  };
+  let btns = "", note = "";
+  if (x.base_status === "completed") {
+    note = "Completed games can't be flagged: the platinum or 100% trophies already say you finished it.";
+  } else {
+    if (x.status !== "beaten") btns += issue("beaten", "Mark as beaten", "beaten");
+    if (x.status !== "dropped") btns += issue("dropped", "Mark as dropped", "dropped");
+    if (x.flag) btns += issue("none", "Remove flag", "");
+    note = x.flag ? `${STATUS_LABEL[x.flag.flag]} since ${fmtDate(x.flag.at)}. ` : "";
+    note += x.flag?.flag === "dropped" ? "Playing it again clears this at your next refresh." : "Earning the platinum later switches it to Completed automatically.";
+    if (!repo) note += " (Buttons work on your GitHub Pages dashboard.)";
+  }
+  return `<div class="flagbar">${btns}<span class="flagnote">${note}</span></div>`;
+}
+
 function detail(x, id) {
   const pend = x.defined
     ? `<div class="pending">${TIERS.map(t => `<span class="tier"><span class="dot d-${t}"></span>${x.earned[t]}/${x.defined[t]}</span>`).join("")}<span>${x.trophies_total - x.trophies_earned} left</span></div>`
@@ -369,7 +413,7 @@ function detail(x, id) {
   ];
   const H = x.hltb, hl = H ? `<div class="hltb"><span>HowLongToBeat</span>${[["Main story", H.main], ["Main + extras", H.extra], ["Completionist", H.complete]].filter(([, v]) => v).map(([k, v]) => `<span>${k} <b>${fmtH(v)}</b></span>`).join("")}${H.url ? `<a href="${esc(H.url)}" target="_blank" rel="noopener">Open</a>` : ""}</div>` : "";
   const link = x.rawg_slug ? `<a href="https://rawg.io/games/${esc(x.rawg_slug)}" target="_blank" rel="noopener">Game page on RAWG</a>` : "";
-  return `<div class="detail" id="${id}-d">${pend}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}</div>`;
+  return `<div class="detail" id="${id}-d">${pend}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}${flagBar(x)}</div>`;
 }
 
 function save() { try { localStorage.setItem("shelf", JSON.stringify({ status: state.status, sort: state.sort })); } catch {} }
@@ -390,6 +434,9 @@ async function start() {
   } catch { DATA = { ...SAMPLE, isSample: true }; }
   if (!DATA.profile) DATA = { ...SAMPLE, login: DATA.login, isSample: true };  // first refresh failed
   $("sample").hidden = !DATA.isSample;
+  let flags = DATA.isSample ? SAMPLE_FLAGS : {};
+  if (!DATA.isSample) try { const f = await fetch("flags.json", { cache: "no-store" }); if (f.ok) flags = await f.json(); } catch {}
+  applyFlags(DATA.games, flags);
   $("sort").value = state.sort;
   renderLogin(); renderHeader(); renderChips(); renderList();
 }

@@ -52,6 +52,10 @@ Go to **Actions → Refresh game data → Run workflow**. The run takes about 3�
 - **Backlog:** the Backlog filter shows owned games you have never started. It sorts by Metacritic score so you can pick the next one to play.
 - **Details:** tap a game to see remaining trophies by grade, HowLongToBeat times, genres, and your first and last played dates.
 - **Time to beat:** each game shows "Beat in ~N h" (HowLongToBeat main story). Sort by **Time to beat** to find short games in your backlog.
+- **Beaten / Dropped:** tap a game, then **Mark as beaten** (finished without the platinum) or **Mark as dropped**. A pre-filled GitHub page opens; tap **Create** and the dashboard updates in about a minute. Flags are saved in `docs/flags.json`, and refreshes never overwrite them. Two automatic rules apply:
+  - Earning the platinum or 100% of the trophies later turns a Beaten game into **Completed**.
+  - A Dropped game with new playtime or a new trophy after the date you dropped it goes back to its normal status at your next refresh.
+  Only issues you open yourself are processed, so nobody else can change your flags.
 - **Stats:** the Stats tab shows each year, or all time: trophies, platinums, hours played, your top 3 games by trophies and by hours, trophies by month, and a genre breakdown by hours or number of games.
 
 ## Renewing the PSN login (about every two months)
