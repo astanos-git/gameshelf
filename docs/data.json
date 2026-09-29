@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T16:24:13+00:00",
+ "generated_at": "2026-09-29T17:13:00+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -502,7 +502,12 @@
    ],
    "released": "2022-10-27",
    "rawg_slug": "signalis",
-   "hltb": null
+   "hltb": {
+    "main": 9.19,
+    "extra": 11.05,
+    "complete": 13.84,
+    "url": "https://howlongtobeat.com/game/57149"
+   }
   },
   {
    "name": "SILENT HILL 2",
@@ -559,7 +564,12 @@
    ],
    "released": "2024-10-08",
    "rawg_slug": "silent-hill-2-remake",
-   "hltb": null
+   "hltb": {
+    "main": 16.07,
+    "extra": 18.74,
+    "complete": 32.41,
+    "url": "https://howlongtobeat.com/game/114905"
+   }
   },
   {
    "name": "Dying Light 2",
@@ -1530,17 +1540,17 @@
    "last_trophy": "2026-03-20T17:15:35+00:00",
    "has_trophies": true,
    "months": {
-    "2026-03": [
-     10,
-     6,
-     2,
-     1
-    ],
     "2026-02": [
      18,
      9,
      0,
      0
+    ],
+    "2026-03": [
+     10,
+     6,
+     2,
+     1
     ]
    },
    "trophies_earned": 46,
@@ -1798,17 +1808,17 @@
    "last_trophy": "2026-02-01T19:57:23+00:00",
    "has_trophies": true,
    "months": {
-    "2026-02": [
-     0,
-     2,
-     2,
-     1
-    ],
     "2026-01": [
      1,
      4,
      7,
      0
+    ],
+    "2026-02": [
+     0,
+     2,
+     2,
+     1
     ]
    },
    "trophies_earned": 17,
@@ -1825,7 +1835,12 @@
    ],
    "released": "2024-05-02",
    "rawg_slug": "indika",
-   "hltb": null
+   "hltb": {
+    "main": 4.1,
+    "extra": 4.51,
+    "complete": 5.03,
+    "url": "https://howlongtobeat.com/game/139446"
+   }
   },
   {
    "name": "ASTRO's PLAYROOM",
@@ -1854,17 +1869,17 @@
    "last_trophy": "2025-01-27T21:15:42+00:00",
    "has_trophies": true,
    "months": {
-    "2025-01": [
-     20,
-     8,
-     3,
-     1
-    ],
     "2022-10": [
      6,
      5,
      1,
      0
+    ],
+    "2025-01": [
+     20,
+     8,
+     3,
+     1
     ]
    },
    "trophies_earned": 44,
@@ -1886,7 +1901,12 @@
    ],
    "released": "2020-11-12",
    "rawg_slug": "astros-playroom",
-   "hltb": null
+   "hltb": {
+    "main": 2.96,
+    "extra": 4.0,
+    "complete": 5.19,
+    "url": "https://howlongtobeat.com/game/83361"
+   }
   },
   {
    "name": "Hellblade II: Senua’s Saga",
@@ -2014,12 +2034,6 @@
    "last_trophy": "2026-01-16T16:50:28+00:00",
    "has_trophies": true,
    "months": {
-    "2026-01": [
-     13,
-     5,
-     2,
-     1
-    ],
     "2025-02": [
      7,
      3,
@@ -2037,6 +2051,12 @@
      2,
      0,
      0
+    ],
+    "2026-01": [
+     13,
+     5,
+     2,
+     1
     ]
    },
    "trophies_earned": 49,
@@ -2650,16 +2670,16 @@
    "last_trophy": "2025-12-06T22:59:48+00:00",
    "has_trophies": true,
    "months": {
-    "2025-12": [
-     4,
-     3,
-     1,
-     0
-    ],
     "2025-11": [
      8,
      5,
      0,
+     0
+    ],
+    "2025-12": [
+     4,
+     3,
+     1,
      0
     ]
    },
@@ -2946,7 +2966,12 @@
    ],
    "released": "2025-09-24",
    "rawg_slug": "silent-hill-f",
-   "hltb": null
+   "hltb": {
+    "main": 10.74,
+    "extra": 16.53,
+    "complete": 34.86,
+    "url": "https://howlongtobeat.com/game/114901"
+   }
   },
   {
    "name": "DEATH STRANDING 2: ON THE BEACH",
@@ -2978,7 +3003,12 @@
    ],
    "released": "2025-06-26",
    "rawg_slug": "death-stranding-2",
-   "hltb": null
+   "hltb": {
+    "main": 35.65,
+    "extra": 64.44,
+    "complete": 117.21,
+    "url": "https://howlongtobeat.com/game/118225"
+   }
   },
   {
    "name": "The Plucky Squire (Le Vaillant Petit Page)",
@@ -3096,17 +3126,17 @@
    "last_trophy": "2025-11-10T21:33:25+00:00",
    "has_trophies": true,
    "months": {
-    "2025-11": [
-     9,
-     14,
-     2,
-     1
-    ],
     "2025-10": [
      13,
      3,
      0,
      0
+    ],
+    "2025-11": [
+     9,
+     14,
+     2,
+     1
     ]
    },
    "trophies_earned": 42,
@@ -3274,7 +3304,12 @@
    ],
    "released": "2021-09-14",
    "rawg_slug": "deathloop-2",
-   "hltb": null
+   "hltb": {
+    "main": 16.37,
+    "extra": 24.56,
+    "complete": 36.07,
+    "url": "https://howlongtobeat.com/game/68258"
+   }
   },
   {
    "name": "Jusant",
@@ -3365,7 +3400,12 @@
    ],
    "released": "2023-09-29",
    "rawg_slug": "cocoon-2",
-   "hltb": null
+   "hltb": {
+    "main": 5.0,
+    "extra": 5.3,
+    "complete": 5.41,
+    "url": "https://howlongtobeat.com/game/109239"
+   }
   },
   {
    "name": "Goat Simulator 3",
@@ -3434,12 +3474,6 @@
    "last_trophy": "2025-10-09T15:13:58+00:00",
    "has_trophies": true,
    "months": {
-    "2025-10": [
-     4,
-     4,
-     2,
-     1
-    ],
     "2025-06": [
      4,
      0,
@@ -3463,6 +3497,12 @@
      1,
      0,
      0
+    ],
+    "2025-10": [
+     4,
+     4,
+     2,
+     1
     ]
    },
    "trophies_earned": 56,
@@ -3630,7 +3670,12 @@
    ],
    "released": "2020-03-12",
    "rawg_slug": "my-hero-ones-justice-2",
-   "hltb": null
+   "hltb": {
+    "main": 6.03,
+    "extra": 15.02,
+    "complete": 46.54,
+    "url": "https://howlongtobeat.com/game/75861"
+   }
   },
   {
    "name": "Lies of P",
@@ -3887,14 +3932,14 @@
    "last_trophy": "2025-06-24T20:57:55+00:00",
    "has_trophies": true,
    "months": {
-    "2025-05": [
-     17,
+    "2025-03": [
+     23,
      0,
      0,
      0
     ],
-    "2025-03": [
-     23,
+    "2025-05": [
+     17,
      0,
      0,
      0
@@ -4358,6 +4403,12 @@
    "last_trophy": "2025-03-10T13:15:11+00:00",
    "has_trophies": true,
    "months": {
+    "2024-10": [
+     7,
+     0,
+     0,
+     0
+    ],
     "2024-11": [
      16,
      0,
@@ -4387,12 +4438,6 @@
      0,
      0,
      0
-    ],
-    "2024-10": [
-     7,
-     0,
-     0,
-     0
     ]
    },
    "trophies_earned": 46,
@@ -4412,7 +4457,12 @@
    ],
    "released": "2024-02-29",
    "rawg_slug": "final-fantasy-vii-rebirth",
-   "hltb": null
+   "hltb": {
+    "main": 48.55,
+    "extra": 91.37,
+    "complete": 160.83,
+    "url": "https://howlongtobeat.com/game/109434"
+   }
   },
   {
    "name": "Dragon Age™: The Veilguard",
@@ -4598,7 +4648,12 @@
    ],
    "released": "2022-08-26",
    "rawg_slug": "pac-man-world-re-pac",
-   "hltb": null
+   "hltb": {
+    "main": 5.35,
+    "extra": 7.11,
+    "complete": 9.03,
+    "url": "https://howlongtobeat.com/game/109853"
+   }
   },
   {
    "name": "Stray",
@@ -4874,16 +4929,16 @@
    "last_trophy": "2024-10-01T09:35:01+00:00",
    "has_trophies": true,
    "months": {
-    "2024-10": [
-     0,
-     3,
-     2,
-     0
-    ],
     "2024-09": [
      8,
      6,
      1,
+     0
+    ],
+    "2024-10": [
+     0,
+     3,
+     2,
      0
     ]
    },
@@ -5011,7 +5066,12 @@
    ],
    "released": "2023-03-29",
    "rawg_slug": "dredge",
-   "hltb": null
+   "hltb": {
+    "main": 9.68,
+    "extra": 12.9,
+    "complete": 20.87,
+    "url": "https://howlongtobeat.com/game/94128"
+   }
   },
   {
    "name": "A Plague Tale: Requiem",
@@ -5603,7 +5663,12 @@
    ],
    "released": "2022-03-16",
    "rawg_slug": "tunic",
-   "hltb": null
+   "hltb": {
+    "main": 12.31,
+    "extra": 16.68,
+    "complete": 21.65,
+    "url": "https://howlongtobeat.com/game/52546"
+   }
   },
   {
    "name": "Ghostrunner 2",
@@ -6256,10 +6321,10 @@
    "last_trophy": "2024-01-08T20:45:26+00:00",
    "has_trophies": true,
    "months": {
-    "2024-01": [
-     5,
-     4,
-     1,
+    "2023-08": [
+     2,
+     0,
+     0,
      0
     ],
     "2023-09": [
@@ -6274,22 +6339,22 @@
      0,
      0
     ],
+    "2023-11": [
+     2,
+     0,
+     0,
+     0
+    ],
     "2023-12": [
      3,
      1,
      0,
      0
     ],
-    "2023-08": [
-     2,
-     0,
-     0,
-     0
-    ],
-    "2023-11": [
-     2,
-     0,
-     0,
+    "2024-01": [
+     5,
+     4,
+     1,
      0
     ]
    },
@@ -6309,7 +6374,12 @@
    ],
    "released": "2022-02-25",
    "rawg_slug": "elden-ring",
-   "hltb": null
+   "hltb": {
+    "main": 60.1,
+    "extra": 101.32,
+    "complete": 136.21,
+    "url": "https://howlongtobeat.com/game/68151"
+   }
   },
   {
    "name": "Sable",
@@ -6492,7 +6562,11 @@
    ],
    "released": "2022-10-13",
    "rawg_slug": "dragon-ball-the-breakers",
-   "hltb": null
+   "hltb": {
+    "extra": 18.53,
+    "complete": 80.67,
+    "url": "https://howlongtobeat.com/game/100431"
+   }
   },
   {
    "name": "Mafia II: Definitive Edition",
@@ -6768,17 +6842,17 @@
    "last_trophy": "2023-08-13T22:57:21+00:00",
    "has_trophies": true,
    "months": {
-    "2023-08": [
-     0,
-     1,
-     4,
-     1
-    ],
     "2023-07": [
      0,
      0,
      7,
      0
+    ],
+    "2023-08": [
+     0,
+     1,
+     4,
+     1
     ]
    },
    "trophies_earned": 13,
@@ -6984,17 +7058,17 @@
    "last_trophy": "2023-07-22T22:14:05+00:00",
    "has_trophies": true,
    "months": {
-    "2023-07": [
-     7,
-     12,
-     4,
-     1
-    ],
     "2023-06": [
      9,
      3,
      0,
      0
+    ],
+    "2023-07": [
+     7,
+     12,
+     4,
+     1
     ]
    },
    "trophies_earned": 36,
@@ -7644,16 +7718,16 @@
    "last_trophy": "2023-05-01T20:57:36+00:00",
    "has_trophies": true,
    "months": {
-    "2023-05": [
-     4,
-     2,
-     1,
-     0
-    ],
     "2023-04": [
      11,
      3,
      0,
+     0
+    ],
+    "2023-05": [
+     4,
+     2,
+     1,
      0
     ]
    },
@@ -7795,11 +7869,11 @@
    "last_trophy": "2023-04-03T09:44:02+00:00",
    "has_trophies": true,
    "months": {
-    "2023-04": [
+    "2023-01": [
+     9,
      0,
-     2,
-     1,
-     1
+     0,
+     0
     ],
     "2023-02": [
      14,
@@ -7813,11 +7887,11 @@
      0,
      0
     ],
-    "2023-01": [
-     9,
+    "2023-04": [
      0,
-     0,
-     0
+     2,
+     1,
+     1
     ]
    },
    "trophies_earned": 59,
@@ -8492,7 +8566,12 @@
    ],
    "released": "2016-10-25",
    "rawg_slug": "dragon-ball-xenoverse-2",
-   "hltb": null
+   "hltb": {
+    "main": 19.52,
+    "extra": 41.46,
+    "complete": 106.06,
+    "url": "https://howlongtobeat.com/game/40860"
+   }
   },
   {
    "name": "Hoa",
@@ -8758,7 +8837,12 @@
    ],
    "released": "2020-08-27",
    "rawg_slug": "captain-tsubasa-rise-of-new-champions",
-   "hltb": null
+   "hltb": {
+    "main": 11.79,
+    "extra": 22.32,
+    "complete": 54.08,
+    "url": "https://howlongtobeat.com/game/78271"
+   }
   },
   {
    "name": "Little Nightmares",
@@ -8850,6 +8934,12 @@
      0,
      0
     ],
+    "2022-04": [
+     1,
+     0,
+     0,
+     0
+    ],
     "2022-06": [
      2,
      2,
@@ -8866,12 +8956,6 @@
      2,
      1,
      1,
-     0
-    ],
-    "2022-04": [
-     1,
-     0,
-     0,
      0
     ]
    },
@@ -8890,7 +8974,12 @@
    ],
    "released": "2017-01-20",
    "rawg_slug": "gravity-rush-2",
-   "hltb": null
+   "hltb": {
+    "main": 19.15,
+    "extra": 32.86,
+    "complete": 52.21,
+    "url": "https://howlongtobeat.com/game/30313"
+   }
   },
   {
    "name": "FIFA 22",
@@ -9087,7 +9176,12 @@
    ],
    "released": "2018-08-30",
    "rawg_slug": "naruto-to-boruto-shinobi-striker",
-   "hltb": null
+   "hltb": {
+    "main": 7.35,
+    "extra": 29.09,
+    "complete": 162.89,
+    "url": "https://howlongtobeat.com/game/61474"
+   }
   },
   {
    "name": "Horizon Chase Turbo",
@@ -9128,13 +9222,13 @@
      0,
      0
     ],
-    "2020-10": [
+    "2020-02": [
      1,
      0,
      0,
      0
     ],
-    "2020-02": [
+    "2020-10": [
      1,
      0,
      0,
@@ -9202,8 +9296,8 @@
      0,
      0
     ],
-    "2020-03": [
-     3,
+    "2017-08": [
+     1,
      0,
      0,
      0
@@ -9214,8 +9308,8 @@
      0,
      0
     ],
-    "2017-08": [
-     1,
+    "2020-03": [
+     3,
      0,
      0,
      0
@@ -9276,9 +9370,9 @@
    "last_trophy": "2021-10-11T10:09:31+00:00",
    "has_trophies": true,
    "months": {
-    "2017-02": [
+    "2016-12": [
      1,
-     2,
+     0,
      0,
      0
     ],
@@ -9288,15 +9382,9 @@
      0,
      0
     ],
-    "2021-10": [
-     2,
-     0,
-     0,
-     0
-    ],
-    "2016-12": [
+    "2017-02": [
      1,
-     0,
+     2,
      0,
      0
     ],
@@ -9310,6 +9398,12 @@
      0,
      1,
      1,
+     0
+    ],
+    "2021-10": [
+     2,
+     0,
+     0,
      0
     ]
    },
@@ -9485,7 +9579,12 @@
    ],
    "released": "2020-11-05",
    "rawg_slug": "dirt-5",
-   "hltb": null
+   "hltb": {
+    "main": 8.46,
+    "extra": 14.71,
+    "complete": 24.08,
+    "url": "https://howlongtobeat.com/game/83066"
+   }
   },
   {
    "name": "Persona®5 Strikers",
@@ -9830,7 +9929,12 @@
    ],
    "released": "2019-04-26",
    "rawg_slug": "days-gone",
-   "hltb": null
+   "hltb": {
+    "main": 36.58,
+    "extra": 50.62,
+    "complete": 65.68,
+    "url": "https://howlongtobeat.com/game/38003"
+   }
   },
   {
    "name": "Until You Fall",
@@ -10050,17 +10154,17 @@
    "last_trophy": "2021-10-18T20:04:20+00:00",
    "has_trophies": true,
    "months": {
-    "2021-10": [
-     6,
-     11,
-     3,
-     1
-    ],
     "2021-09": [
      16,
      2,
      0,
      0
+    ],
+    "2021-10": [
+     6,
+     11,
+     3,
+     1
     ]
    },
    "trophies_earned": 39,
@@ -10198,7 +10302,12 @@
    ],
    "released": "2020-04-10",
    "rawg_slug": "final-fantasy-vii-remake",
-   "hltb": null
+   "hltb": {
+    "main": 32.26,
+    "extra": 41.13,
+    "complete": 85.82,
+    "url": "https://howlongtobeat.com/game/57686"
+   }
   },
   {
    "name": "Predator: Hunting Grounds",
@@ -10266,7 +10375,12 @@
    ],
    "released": "2018-11-13",
    "rawg_slug": "hitman-2-prologue",
-   "hltb": null
+   "hltb": {
+    "main": 10.17,
+    "extra": 27.68,
+    "complete": 130.26,
+    "url": "https://howlongtobeat.com/game/57478"
+   }
   },
   {
    "name": "STAR WARS™: Squadrons",
@@ -10623,14 +10737,14 @@
    "last_trophy": "2021-04-05T23:31:27+00:00",
    "has_trophies": true,
    "months": {
-    "2021-04": [
-     8,
+    "2021-03": [
+     10,
      0,
      0,
      0
     ],
-    "2021-03": [
-     10,
+    "2021-04": [
+     8,
      0,
      0,
      0
@@ -10942,17 +11056,17 @@
    "last_trophy": "2020-12-04T16:30:20+00:00",
    "has_trophies": true,
    "months": {
-    "2020-12": [
-     0,
-     5,
-     8,
-     1
-    ],
     "2020-11": [
      0,
      0,
      1,
      0
+    ],
+    "2020-12": [
+     0,
+     5,
+     8,
+     1
     ]
    },
    "trophies_earned": 15,
@@ -11093,12 +11207,6 @@
    "last_trophy": "2020-11-06T10:33:13+00:00",
    "has_trophies": true,
    "months": {
-    "2020-11": [
-     11,
-     6,
-     2,
-     1
-    ],
     "2020-09": [
      14,
      1,
@@ -11110,6 +11218,12 @@
      2,
      0,
      0
+    ],
+    "2020-11": [
+     11,
+     6,
+     2,
+     1
     ]
    },
    "trophies_earned": 52,
@@ -11292,16 +11406,16 @@
    "last_trophy": "2020-09-10T15:10:38+00:00",
    "has_trophies": true,
    "months": {
-    "2020-09": [
-     6,
-     8,
-     2,
-     0
-    ],
     "2020-08": [
      4,
      0,
      0,
+     0
+    ],
+    "2020-09": [
+     6,
+     8,
+     2,
      0
     ]
    },
@@ -11419,7 +11533,12 @@
    ],
    "released": "2021-10-19",
    "rawg_slug": "youtubers-life-2",
-   "hltb": null
+   "hltb": {
+    "main": 11.85,
+    "extra": 21.69,
+    "complete": 31.01,
+    "url": "https://howlongtobeat.com/game/37397"
+   }
   },
   {
    "name": "Cuphead",
@@ -11736,7 +11855,12 @@
    ],
    "released": "2021-09-24",
    "rawg_slug": "death-stranding-directors-cut",
-   "hltb": null
+   "hltb": {
+    "main": 40.54,
+    "extra": 60.06,
+    "complete": 112.99,
+    "url": "https://howlongtobeat.com/game/38061"
+   }
   },
   {
    "name": "WIPEOUT™ OMEGA COLLECTION",
@@ -11786,7 +11910,12 @@
    ],
    "released": "2017-06-07",
    "rawg_slug": "wipeout-omega-collection",
-   "hltb": null
+   "hltb": {
+    "main": 14.69,
+    "extra": 26.35,
+    "complete": 34.47,
+    "url": "https://howlongtobeat.com/game/46335"
+   }
   },
   {
    "name": "Burly Men At Sea",
@@ -11896,7 +12025,12 @@
    ],
    "released": "2018-02-06",
    "rawg_slug": "shadow-of-the-colossus-2018",
-   "hltb": null
+   "hltb": {
+    "main": 7.17,
+    "extra": 9.7,
+    "complete": 27.98,
+    "url": "https://howlongtobeat.com/game/52731"
+   }
   },
   {
    "name": "KINGDOM HEARTS Ⅲ",
@@ -12017,7 +12151,12 @@
    ],
    "released": "2015-09-01",
    "rawg_slug": "metal-gear-solid-v-the-phantom-pain",
-   "hltb": null
+   "hltb": {
+    "main": 45.69,
+    "extra": 81.1,
+    "complete": 162.76,
+    "url": "https://howlongtobeat.com/game/5918"
+   }
   },
   {
    "name": "SONIC FORCES",
@@ -12050,7 +12189,12 @@
    ],
    "released": "2017-11-07",
    "rawg_slug": "sonic-forces",
-   "hltb": null
+   "hltb": {
+    "main": 4.06,
+    "extra": 6.21,
+    "complete": 26.98,
+    "url": "https://howlongtobeat.com/game/44859"
+   }
   },
   {
    "name": "ACE COMBAT™ 7: SKIES UNKNOWN",
@@ -12103,7 +12247,12 @@
    ],
    "released": "2019-01-18",
    "rawg_slug": "ace-combat-7",
-   "hltb": null
+   "hltb": {
+    "main": 12.25,
+    "extra": 18.28,
+    "complete": 70.7,
+    "url": "https://howlongtobeat.com/game/53763"
+   }
   },
   {
    "name": "Outlast 2",
@@ -12263,9 +12412,9 @@
    "last_trophy": "2020-02-20T16:15:18+00:00",
    "has_trophies": true,
    "months": {
-    "2020-02": [
-     7,
-     1,
+    "2019-12": [
+     4,
+     0,
      0,
      0
     ],
@@ -12275,9 +12424,9 @@
      0,
      0
     ],
-    "2019-12": [
-     4,
-     0,
+    "2020-02": [
+     7,
+     1,
      0,
      0
     ]
@@ -12403,14 +12552,8 @@
    "last_trophy": "2019-12-09T15:49:11+00:00",
    "has_trophies": true,
    "months": {
-    "2019-11": [
-     9,
-     0,
-     0,
-     0
-    ],
-    "2019-12": [
-     13,
+    "2019-09": [
+     2,
      0,
      0,
      0
@@ -12421,8 +12564,14 @@
      0,
      0
     ],
-    "2019-09": [
-     2,
+    "2019-11": [
+     9,
+     0,
+     0,
+     0
+    ],
+    "2019-12": [
+     13,
      0,
      0,
      0
@@ -12442,7 +12591,12 @@
    ],
    "released": "2015-06-23",
    "rawg_slug": "batman-arkham-knight",
-   "hltb": null
+   "hltb": {
+    "main": 17.18,
+    "extra": 31.5,
+    "complete": 51.33,
+    "url": "https://howlongtobeat.com/game/18005"
+   }
   },
   {
    "name": "Titanfall™ 2",
@@ -12603,6 +12757,12 @@
    "last_trophy": "2019-09-26T11:29:00+00:00",
    "has_trophies": true,
    "months": {
+    "2019-07": [
+     5,
+     0,
+     0,
+     0
+    ],
     "2019-08": [
      24,
      1,
@@ -12613,12 +12773,6 @@
      27,
      1,
      1,
-     0
-    ],
-    "2019-07": [
-     5,
-     0,
-     0,
      0
     ]
    },
@@ -12815,12 +12969,6 @@
    "last_trophy": "2019-05-19T20:54:21+00:00",
    "has_trophies": true,
    "months": {
-    "2019-05": [
-     4,
-     6,
-     5,
-     1
-    ],
     "2019-01": [
      7,
      0,
@@ -12844,6 +12992,12 @@
      3,
      0,
      0
+    ],
+    "2019-05": [
+     4,
+     6,
+     5,
+     1
     ]
    },
    "trophies_earned": 37,
@@ -12973,7 +13127,12 @@
    ],
    "released": "2016-03-11",
    "rawg_slug": "hitman",
-   "hltb": null
+   "hltb": {
+    "main": 10.69,
+    "extra": 23.75,
+    "complete": 92.55,
+    "url": "https://howlongtobeat.com/game/26831"
+   }
   },
   {
    "name": "Marvel's Spider-Man",
@@ -13002,17 +13161,17 @@
    "last_trophy": "2019-01-24T22:26:12+00:00",
    "has_trophies": true,
    "months": {
-    "2019-01": [
-     20,
-     6,
-     2,
-     1
-    ],
     "2018-12": [
      18,
      4,
      0,
      0
+    ],
+    "2019-01": [
+     20,
+     6,
+     2,
+     1
     ]
    },
    "trophies_earned": 51,
@@ -13068,7 +13227,12 @@
    ],
    "released": "2016-12-02",
    "rawg_slug": "steep",
-   "hltb": null
+   "hltb": {
+    "main": 11.93,
+    "extra": 24.35,
+    "complete": 38.08,
+    "url": "https://howlongtobeat.com/game/38010"
+   }
   },
   {
    "name": "RESIDENT EVIL 7 biohazard",
@@ -13126,7 +13290,12 @@
    ],
    "released": "2017-01-23",
    "rawg_slug": "resident-evil-7-biohazard",
-   "hltb": null
+   "hltb": {
+    "main": 9.22,
+    "extra": 12.01,
+    "complete": 28.34,
+    "url": "https://howlongtobeat.com/game/38051"
+   }
   },
   {
    "name": "Iconoclasts",
@@ -13616,7 +13785,12 @@
    ],
    "released": "2017-08-28",
    "rawg_slug": "absolver",
-   "hltb": null
+   "hltb": {
+    "main": 5.11,
+    "extra": 8.0,
+    "complete": 20.19,
+    "url": "https://howlongtobeat.com/game/38126"
+   }
   },
   {
    "name": "Child of Light",
@@ -13873,12 +14047,6 @@
      0,
      0
     ],
-    "2018-05": [
-     10,
-     2,
-     0,
-     0
-    ],
     "2017-11": [
      4,
      0,
@@ -13895,6 +14063,12 @@
      12,
      2,
      1,
+     0
+    ],
+    "2018-05": [
+     10,
+     2,
+     0,
      0
     ]
    },
@@ -14266,7 +14440,12 @@
    ],
    "released": "2015-09-21",
    "rawg_slug": "soma",
-   "hltb": null
+   "hltb": {
+    "main": 9.07,
+    "extra": 10.93,
+    "complete": 11.01,
+    "url": "https://howlongtobeat.com/game/22549"
+   }
   },
   {
    "name": "Never Alone",
@@ -14903,11 +15082,11 @@
    "last_trophy": "2017-10-08T15:07:48+00:00",
    "has_trophies": true,
    "months": {
-    "2017-10": [
-     8,
-     0,
+    "2017-08": [
      1,
-     1
+     0,
+     0,
+     0
     ],
     "2017-09": [
      50,
@@ -14915,11 +15094,11 @@
      0,
      0
     ],
-    "2017-08": [
+    "2017-10": [
+     8,
+     0,
      1,
-     0,
-     0,
-     0
+     1
     ]
    },
    "trophies_earned": 61,
@@ -15365,12 +15544,6 @@
    "last_trophy": "2017-05-13T20:32:28+00:00",
    "has_trophies": true,
    "months": {
-    "2017-05": [
-     2,
-     6,
-     1,
-     0
-    ],
     "2017-02": [
      5,
      0,
@@ -15381,6 +15554,12 @@
      2,
      2,
      0,
+     0
+    ],
+    "2017-05": [
+     2,
+     6,
+     1,
      0
     ]
    },
@@ -15531,7 +15710,12 @@
    ],
    "released": "2015-05-13",
    "rawg_slug": "not-a-hero",
-   "hltb": null
+   "hltb": {
+    "main": 5.08,
+    "extra": 6.56,
+    "complete": 10.34,
+    "url": "https://howlongtobeat.com/game/25034"
+   }
   },
   {
    "name": "LittleBigPlanet™3",
@@ -15778,7 +15962,12 @@
    ],
    "released": "2016-06-28",
    "rawg_slug": "inside",
-   "hltb": null
+   "hltb": {
+    "main": 3.56,
+    "extra": 4.04,
+    "complete": 4.69,
+    "url": "https://howlongtobeat.com/game/21694"
+   }
   },
   {
    "name": "Battlefield™ 1",
@@ -16000,14 +16189,14 @@
    "last_trophy": "2016-12-28T23:43:12+00:00",
    "has_trophies": true,
    "months": {
-    "2016-12": [
-     28,
+    "2016-11": [
+     8,
      0,
      0,
      0
     ],
-    "2016-11": [
-     8,
+    "2016-12": [
+     28,
      0,
      0,
      0
@@ -16099,17 +16288,17 @@
    "last_trophy": "2016-11-21T11:52:33+00:00",
    "has_trophies": true,
    "months": {
-    "2016-11": [
-     12,
-     6,
-     1,
-     1
-    ],
     "2016-10": [
      22,
      6,
      1,
      0
+    ],
+    "2016-11": [
+     12,
+     6,
+     1,
+     1
     ]
    },
    "trophies_earned": 49,
@@ -16227,7 +16416,12 @@
    "genres": [],
    "released": null,
    "rawg_slug": null,
-   "hltb": null
+   "hltb": {
+    "main": 5.28,
+    "extra": 5.71,
+    "complete": 6.87,
+    "url": "https://howlongtobeat.com/game/109164"
+   }
   },
   {
    "name": "Bloodborne™",
@@ -16256,14 +16450,14 @@
    "last_trophy": "2016-08-01T14:53:02+00:00",
    "has_trophies": true,
    "months": {
-    "2016-08": [
-     1,
+    "2016-07": [
+     2,
      0,
      0,
      0
     ],
-    "2016-07": [
-     2,
+    "2016-08": [
+     1,
      0,
      0,
      0
@@ -16324,6 +16518,18 @@
      0,
      0
     ],
+    "2016-02": [
+     5,
+     2,
+     0,
+     0
+    ],
+    "2016-03": [
+     1,
+     2,
+     0,
+     0
+    ],
     "2016-05": [
      2,
      2,
@@ -16339,18 +16545,6 @@
     "2016-07": [
      5,
      0,
-     0,
-     0
-    ],
-    "2016-02": [
-     5,
-     2,
-     0,
-     0
-    ],
-    "2016-03": [
-     1,
-     2,
      0,
      0
     ]
@@ -16683,6 +16877,24 @@
      0,
      0
     ],
+    "2015-07": [
+     2,
+     1,
+     0,
+     0
+    ],
+    "2015-08": [
+     2,
+     0,
+     0,
+     0
+    ],
+    "2015-09": [
+     5,
+     0,
+     0,
+     0
+    ],
     "2015-10": [
      2,
      0,
@@ -16695,28 +16907,10 @@
      0,
      0
     ],
-    "2015-09": [
-     5,
-     0,
-     0,
-     0
-    ],
     "2015-12": [
      5,
      2,
      1,
-     0
-    ],
-    "2015-08": [
-     2,
-     0,
-     0,
-     0
-    ],
-    "2015-07": [
-     2,
-     1,
-     0,
      0
     ]
    },
@@ -16918,7 +17112,12 @@
    ],
    "released": "2013-11-15",
    "rawg_slug": "the-playroom",
-   "hltb": null
+   "hltb": {
+    "main": 0.93,
+    "extra": 2.31,
+    "complete": 2.89,
+    "url": "https://howlongtobeat.com/game/19091"
+   }
   },
   {
    "name": "Middle-earth™: Shadow of Mordor™",
@@ -17059,6 +17258,12 @@
    "last_trophy": "2015-03-29T10:47:26+00:00",
    "has_trophies": true,
    "months": {
+    "2015-01": [
+     2,
+     0,
+     0,
+     0
+    ],
     "2015-02": [
      4,
      0,
@@ -17069,12 +17274,6 @@
      8,
      8,
      1,
-     0
-    ],
-    "2015-01": [
-     2,
-     0,
-     0,
      0
     ]
    },
@@ -17146,7 +17345,12 @@
    ],
    "released": "2010-02-17",
    "rawg_slug": "heavy-rain",
-   "hltb": null
+   "hltb": {
+    "main": 9.99,
+    "extra": 12.06,
+    "complete": 22.16,
+    "url": "https://howlongtobeat.com/game/4377"
+   }
   },
   {
    "name": "Uncharted 2: Among Thieves™ ",
@@ -17235,6 +17439,12 @@
    "last_trophy": "2015-01-03T11:17:09+00:00",
    "has_trophies": true,
    "months": {
+    "2014-09": [
+     2,
+     0,
+     0,
+     0
+    ],
     "2014-10": [
      5,
      0,
@@ -17257,12 +17467,6 @@
      4,
      3,
      1,
-     0
-    ],
-    "2014-09": [
-     2,
-     0,
-     0,
      0
     ]
    },
@@ -17478,6 +17682,12 @@
      0,
      0
     ],
+    "2014-07": [
+     1,
+     0,
+     0,
+     0
+    ],
     "2014-08": [
      1,
      6,
@@ -17488,12 +17698,6 @@
      6,
      6,
      2,
-     0
-    ],
-    "2014-07": [
-     1,
-     0,
-     0,
      0
     ]
    },
@@ -17550,16 +17754,16 @@
      0,
      0
     ],
-    "2014-05": [
-     4,
-     2,
-     2,
-     0
-    ],
     "2014-04": [
      4,
      0,
      0,
+     0
+    ],
+    "2014-05": [
+     4,
+     2,
+     2,
      0
     ]
    },
@@ -17682,15 +17886,15 @@
    "last_trophy": "2013-12-30T21:44:16+00:00",
    "has_trophies": true,
    "months": {
-    "2013-12": [
-     5,
-     1,
-     0,
-     0
-    ],
     "2013-08": [
      2,
      0,
+     0,
+     0
+    ],
+    "2013-12": [
+     5,
+     1,
      0,
      0
     ]
@@ -18284,6 +18488,12 @@
      0,
      0
     ],
+    "2013-03": [
+     3,
+     0,
+     0,
+     0
+    ],
     "2013-04": [
      7,
      0,
@@ -18294,12 +18504,6 @@
      15,
      1,
      2,
-     0
-    ],
-    "2013-03": [
-     3,
-     0,
-     0,
      0
     ]
    },
@@ -18558,7 +18762,12 @@
    ],
    "released": "2010-10-19",
    "rawg_slug": "vanquish",
-   "hltb": null
+   "hltb": {
+    "main": 6.08,
+    "extra": 8.1,
+    "complete": 20.47,
+    "url": "https://howlongtobeat.com/game/10899"
+   }
   },
   {
    "name": "AC Revelations",
@@ -18726,7 +18935,12 @@
    ],
    "released": "2011-09-22",
    "rawg_slug": "dark-souls",
-   "hltb": null
+   "hltb": {
+    "main": 41.67,
+    "extra": 59.19,
+    "complete": 104.73,
+    "url": "https://howlongtobeat.com/game/2224"
+   }
   },
   {
    "name": "Darksiders",
@@ -18755,17 +18969,17 @@
    "last_trophy": "2012-09-12T10:06:05+00:00",
    "has_trophies": true,
    "months": {
-    "2012-09": [
-     5,
-     4,
-     3,
-     1
-    ],
     "2012-08": [
      21,
      9,
      0,
      0
+    ],
+    "2012-09": [
+     5,
+     4,
+     3,
+     1
     ]
    },
    "trophies_earned": 43,
@@ -18928,15 +19142,15 @@
    "last_trophy": "2012-06-25T19:10:35+00:00",
    "has_trophies": true,
    "months": {
-    "2012-06": [
-     18,
-     8,
-     0,
-     0
-    ],
     "2012-05": [
      9,
      0,
+     0,
+     0
+    ],
+    "2012-06": [
+     18,
+     8,
      0,
      0
     ]
@@ -18953,7 +19167,12 @@
    ],
    "released": "2009-05-26",
    "rawg_slug": "infamous",
-   "hltb": null
+   "hltb": {
+    "main": 14.91,
+    "extra": 20.25,
+    "complete": 30.76,
+    "url": "https://howlongtobeat.com/game/4674"
+   }
   },
   {
    "name": "Assassin's Creed II™",
@@ -18982,17 +19201,17 @@
    "last_trophy": "2012-05-01T16:49:11+00:00",
    "has_trophies": true,
    "months": {
-    "2012-05": [
-     2,
-     0,
-     0,
-     1
-    ],
     "2012-04": [
      32,
      15,
      1,
      0
+    ],
+    "2012-05": [
+     2,
+     0,
+     0,
+     1
     ]
    },
    "trophies_earned": 51,
