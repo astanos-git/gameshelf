@@ -501,7 +501,7 @@ def fill_metacritic(games: list[dict], previous_games: list[dict]) -> None:
 
 WIKI_API = "https://en.wikipedia.org/w/api.php"
 WIKI_CACHE = ROOT / "wikipedia_cache.json"
-WIKI_VERSION = 3       # bump to redo every lookup after improving matching
+WIKI_VERSION = 4       # bump to redo every lookup after improving matching
 WIKI_RETRY_DAYS = 30  # retry games without a score after this long (new releases get reviewed)
 WIKI_HEADERS = {"User-Agent": "GameShelf/1.0 (personal PSN dashboard; github.com)"}
 PLATFORM_ORDER = ["PS5", "PS4"]
@@ -509,13 +509,23 @@ REFS = re.compile(r"<ref[^>]*/>|<ref.*?</ref>|\{\{\s*(cite|efn|sfn|refn|citation
 TEMPLATE_OPEN = re.compile(r"\{\{\s*[^{}|]*\|")  # {{nowrap| ... }} -> keep the inside
 
 
-def parse_metacritic(wikitext: str) -> int | None:
-    """Pick the Metacritic score from a game article's {{Video game reviews}} box: PS5, then PS4, then any."""
+def parse_metacritic(wikitext: str) -> int | str | None:
+    """Pick the Metacritic score from a game article's {{Video game reviews}} box: PS5, then PS4, then any.
+
+    Returns "wikidata" when the box says to take the score from Wikidata.
+    """
     if not re.search(r"\{\{\s*Video game (multiple console )?reviews", wikitext, re.I):
         return None
+    # Per-platform fields: | MC_PS5 = 76/100
+    per_plat = {p.upper(): int(v) for p, v in re.findall(r"\|\s*MC_(\w+)\s*=\s*[^\n|]*?\b(\d{1,3})\s*/\s*100", wikitext)}
+    for plat in PLATFORM_ORDER:
+        if plat in per_plat:
+            return per_plat[plat]
     m = re.search(r"\|\s*MC\s*=(.*?)(?=\n\s*\||\n\s*\}\})", wikitext, re.S)
     if not m:
-        return None
+        return next(iter(per_plat.values()), None)
+    if m.group(1).strip().lower() == "wikidata":
+        return "wikidata"
     value = TEMPLATE_OPEN.sub(" ", REFS.sub(" ", m.group(1))).replace("}}", " ")
     # "PS5: 89/100" or "(PS5) 89/100" or just "89/100"
     scores = re.findall(r"(?:\(?\b([A-Za-z0-9]+)\)?\s*:?\s+)?\b(\d{1,3})\s*/\s*100\b", value)
@@ -526,6 +536,25 @@ def parse_metacritic(wikitext: str) -> int | None:
         if plat in by_plat:
             return by_plat[plat]
     return int(scores[0][1])
+
+
+def wikidata_item_score(item: str) -> int | None:
+    """Metacritic critic score stored on one Wikidata item (PS5, then PS4, then any)."""
+    r = requests.get("https://www.wikidata.org/w/api.php", headers=WIKI_HEADERS, timeout=20,
+                     params={"action": "wbgetentities", "ids": item, "props": "claims", "format": "json"})
+    r.raise_for_status()
+    best = None
+    for c in r.json().get("entities", {}).get(item, {}).get("claims", {}).get("P444", []):
+        q = c.get("qualifiers", {})
+        by = [x.get("datavalue", {}).get("value", {}).get("id") for x in q.get("P447", [])]
+        m = re.match(r"^\s*(\d{1,3})\s*/\s*100\s*$", c.get("mainsnak", {}).get("datavalue", {}).get("value", "") or "")
+        if "Q150248" not in by or not m:
+            continue
+        plats = [x.get("datavalue", {}).get("value", {}).get("id") for x in q.get("P400", [])]
+        rank = min((PLATFORM_PREF.get(p, 2) for p in plats), default=2)
+        if best is None or rank < best[0]:
+            best = (rank, int(m.group(1)))
+    return best[1] if best else None
 
 
 def clean_title(title: str) -> str:
@@ -562,8 +591,11 @@ def wikipedia_lookup(name: str, year: str | None = None) -> dict:
         title = best[1] if best[0] >= 0.85 else None
     if not title:
         return {}
-    data = wiki_get({"action": "parse", "page": title, "prop": "wikitext", "redirects": 1, "formatversion": 2})
+    data = wiki_get({"action": "parse", "page": title, "prop": "wikitext|properties", "redirects": 1, "formatversion": 2})
     score = parse_metacritic(data.get("parse", {}).get("wikitext", ""))
+    if score == "wikidata":  # the article pulls its score from its own Wikidata entry
+        item = (data.get("parse", {}).get("properties") or {}).get("wikibase_item")
+        score = wikidata_item_score(item) if item else None
     return {"title": title, "score": score} if score else {"title": title}
 
 
