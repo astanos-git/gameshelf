@@ -34,8 +34,7 @@ def apply(body: str, created: str) -> str:
 
     flags = json.loads(FLAGS.read_text()) if FLAGS.exists() else {}
     if flag == "none":
-        flags.pop(game, None)
-        msg = f"Removed the flag from {game}."
+        msg = f"Removed the flag from {game}." if flags.pop(game, None) else f"{game} had no flag, so nothing changed."
     else:
         flags[game] = {"flag": flag, "at": created}
         msg = f"{game} is now marked as {LABELS[flag]}."
