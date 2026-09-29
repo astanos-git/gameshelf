@@ -6,6 +6,7 @@ Env vars (set as GitHub Actions secrets):
 """
 from __future__ import annotations
 
+import difflib
 import hashlib
 import json
 import os
@@ -433,18 +434,17 @@ WIKIDATA_SPARQL = "https://query.wikidata.org/sparql"
 # Every Metacritic score (P444 "review score", qualified by P447 "review score by" = Metacritic Q150248),
 # with the platform it's for (P400) and the game's RAWG ID (P9968) for exact matching.
 WIKIDATA_QUERY = """
-SELECT ?game ?label ?score ?platform ?rawg WHERE {
+SELECT ?game ?score ?platform ?rawg WHERE {
   ?game p:P444 ?st .
   ?st ps:P444 ?score ; pq:P447 wd:Q150248 .
   OPTIONAL { ?st pq:P400 ?platform }
-  OPTIONAL { ?game wdt:P9968 ?rawg }
-  OPTIONAL { ?game rdfs:label ?label FILTER(LANG(?label) = "en") }
+  ?game wdt:P9968 ?rawg .
 }"""
 PLATFORM_PREF = {"Q63184502": 0, "Q5014725": 1}  # PlayStation 5, PlayStation 4; anything else after
 
 
-def fetch_wikidata_scores() -> tuple[dict, dict]:
-    """Return ({rawg_slug: score}, {normalised name: score}) for all games with a Metacritic critic score."""
+def fetch_wikidata_scores() -> dict:
+    """Return {rawg_slug: score} for games with a Metacritic critic score and a RAWG ID (exact matches only)."""
     r = requests.get(WIKIDATA_SPARQL, params={"query": WIKIDATA_QUERY, "format": "json"}, timeout=90,
                      headers={"User-Agent": "GameShelf/1.0 (personal PSN dashboard; github.com)",
                               "Accept": "application/sparql-results+json"})
@@ -457,17 +457,11 @@ def fetch_wikidata_scores() -> tuple[dict, dict]:
         game = b["game"]["value"]
         plat = b.get("platform", {}).get("value", "").rsplit("/", 1)[-1]
         rank = PLATFORM_PREF.get(plat, 2)
-        cand = (rank, int(m.group(1)), b.get("rawg", {}).get("value"), b.get("label", {}).get("value"))
+        cand = (rank, int(m.group(1)), b["rawg"]["value"].lower())
         if game not in best or rank < best[game][0]:
             best[game] = cand
-    by_rawg, by_name = {}, {}
-    for rank, score, rawg, label in best.values():
-        if rawg:
-            by_rawg[rawg.lower()] = score
-        if label:
-            by_name.setdefault(norm(label), score)
-    print(f"Wikidata: {len(best)} games with a Metacritic score")
-    return by_rawg, by_name
+    print(f"Wikidata: {len(best)} games with a Metacritic score and a RAWG ID")
+    return {rawg: score for _, score, rawg in best.values()}
 
 
 def fill_metacritic(games: list[dict], previous_games: list[dict]) -> None:
@@ -481,23 +475,104 @@ def fill_metacritic(games: list[dict], previous_games: list[dict]) -> None:
     missing = [g for g in games if not g.get("metacritic")]
     if not missing:
         return
+
+    # 1. Wikidata, exact match on RAWG ID
     try:
-        by_rawg, by_name = fetch_wikidata_scores()
+        by_rawg = fetch_wikidata_scores()
     except Exception as e:
-        # Wikidata unreachable: keep whatever it gave last time.
         print(f"Wikidata skipped ({e}); keeping previous scores")
+        by_rawg = None
         old = {p["name"]: p["metacritic"] for p in previous_games if p.get("metacritic_source") == "wikidata"}
         for g in missing:
             if g["name"] in old:
                 g["metacritic"], g["metacritic_source"] = old[g["name"]], "wikidata"
-        return
-    filled = 0
     for g in missing:
-        score = by_rawg.get((g.get("rawg_slug") or "").lower()) or by_name.get(norm(g["name"]))
-        if score:
-            g["metacritic"], g["metacritic_source"] = score, "wikidata"
-            filled += 1
-    print(f"Wikidata filled {filled} of {len(missing)} missing Metacritic scores")
+        if by_rawg and by_rawg.get((g.get("rawg_slug") or "").lower()):
+            g["metacritic"], g["metacritic_source"] = by_rawg[g["rawg_slug"].lower()], "wikidata"
+
+    # 2. Wikipedia's review box for what's still missing (cached, so it survives Wikipedia being down)
+    enrich_wikipedia([g for g in missing if not g.get("metacritic")])
+    print(f"Metacritic: {sum(1 for g in missing if g.get('metacritic'))} of {len(missing)} gaps filled "
+          f"({sum(1 for g in missing if g.get('metacritic_source') == 'wikidata')} Wikidata, "
+          f"{sum(1 for g in missing if g.get('metacritic_source') == 'wikipedia')} Wikipedia)")
+
+
+# ---------------------------------------------------------------- Wikipedia (Metacritic from the review box)
+
+WIKI_API = "https://en.wikipedia.org/w/api.php"
+WIKI_CACHE = ROOT / "wikipedia_cache.json"
+WIKI_RETRY_DAYS = 30  # retry games without a score after this long (new releases get reviewed)
+WIKI_HEADERS = {"User-Agent": "GameShelf/1.0 (personal PSN dashboard; github.com)"}
+PLATFORM_ORDER = ["PS5", "PS4"]
+MARKUP = re.compile(r"<ref[^>]*/>|<ref.*?</ref>|\{\{[^{}]*\}\}|'{2,3}", re.S)
+
+
+def parse_metacritic(wikitext: str) -> int | None:
+    """Pick the Metacritic score from a game article's {{Video game reviews}} box: PS5, then PS4, then any."""
+    if not re.search(r"\{\{\s*Video game (multiple console )?reviews", wikitext, re.I):
+        return None
+    m = re.search(r"\|\s*MC\s*=(.*?)(?=\n\s*\||\n\s*\}\})", wikitext, re.S)
+    if not m:
+        return None
+    value = MARKUP.sub(" ", m.group(1))
+    scores = re.findall(r"(?:\b([A-Za-z0-9]+)\s*:\s*)?\b(\d{1,3})\s*/\s*100\b", value)
+    if not scores:
+        return None
+    by_plat = {p.upper(): int(v) for p, v in scores if p}
+    for plat in PLATFORM_ORDER:
+        if plat in by_plat:
+            return by_plat[plat]
+    return int(scores[0][1])
+
+
+def clean_title(title: str) -> str:
+    return norm(re.sub(r"\s*\((\d{4} )?video game\)$", "", title))
+
+
+def wikipedia_lookup(name: str) -> dict:
+    """Find the game's Wikipedia article and read its Metacritic score."""
+    query = search_name(name)
+    r = requests.get(WIKI_API, headers=WIKI_HEADERS, timeout=20, params={
+        "action": "query", "list": "search", "srsearch": f"{query} video game", "srlimit": 5, "format": "json"})
+    r.raise_for_status()
+    target = norm(query)
+    titles = [h["title"] for h in r.json().get("query", {}).get("search", [])]
+    title = next((t for t in titles if clean_title(t) == target), None)
+    if not title:
+        close = [(difflib.SequenceMatcher(None, clean_title(t), target).ratio(), t) for t in titles]
+        best = max(close, default=(0, None))
+        title = best[1] if best[0] >= 0.85 else None
+    if not title:
+        return {}
+    r = requests.get(WIKI_API, headers=WIKI_HEADERS, timeout=20, params={
+        "action": "parse", "page": title, "prop": "wikitext", "redirects": 1, "format": "json", "formatversion": 2})
+    r.raise_for_status()
+    score = parse_metacritic(r.json().get("parse", {}).get("wikitext", ""))
+    return {"title": title, "score": score} if score else {"title": title}
+
+
+def enrich_wikipedia(games: list[dict]) -> None:
+    cache = json.loads(WIKI_CACHE.read_text()) if WIKI_CACHE.exists() else {}
+    today = datetime.now(timezone.utc).date()
+    looked_up, failures = 0, 0
+    for g in games:
+        info = cache.get(g["name"])
+        stale = info is not None and not info.get("score") and \
+            (today - datetime.fromisoformat(info.get("checked", "2000-01-01")).date()).days > WIKI_RETRY_DAYS
+        if (info is None or stale) and failures < 5:
+            try:
+                info = {**wikipedia_lookup(g["name"]), "checked": today.isoformat()}
+                cache[g["name"]] = info
+                looked_up += 1
+                failures = 0
+                time.sleep(0.5)
+            except Exception as e:
+                failures += 1
+                print(f"  Wikipedia failed for {g['name']!r}: {e}")
+        if info and info.get("score"):
+            g["metacritic"], g["metacritic_source"] = info["score"], "wikipedia"
+    WIKI_CACHE.write_text(json.dumps(cache, indent=1, sort_keys=True, ensure_ascii=False))
+    print(f"Wikipedia: {looked_up} lookups")
 
 
 # ---------------------------------------------------------------- main
