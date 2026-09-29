@@ -24,12 +24,20 @@
   "url": "https://howlongtobeat.com/game/38126"
  },
  "AC Brotherhood": {
-  "query": "AC Brotherhood",
-  "v": 2
+  "complete": 41.58,
+  "extra": 25.66,
+  "main": 15.29,
+  "name": "Assassin's Creed: Brotherhood",
+  "query": "Assassin's Creed Brotherhood",
+  "url": "https://howlongtobeat.com/game/661"
  },
  "AC Revelations": {
-  "query": "AC Revelations",
-  "v": 2
+  "complete": 34.96,
+  "extra": 20.63,
+  "main": 12.45,
+  "name": "Assassin's Creed: Revelations",
+  "query": "Assassin's Creed Revelations",
+  "url": "https://howlongtobeat.com/game/664"
  },
  "ACE COMBAT™ 7: SKIES UNKNOWN": {
   "complete": 70.7,
@@ -200,7 +208,7 @@
   "extra": 31.5,
   "main": 17.18,
   "name": "Batman: Arkham Knight",
-  "query": "BATMAN : ARKHAM KNIGHT",
+  "query": "BATMAN: ARKHAM KNIGHT",
   "url": "https://howlongtobeat.com/game/18005"
  },
  "Balatro": {
@@ -356,8 +364,12 @@
   "url": "https://howlongtobeat.com/game/136426"
  },
  "Bob l'éponge: The Cosmic Shake": {
-  "query": "Bob l'éponge: The Cosmic Shake",
-  "v": 2
+  "complete": 14.31,
+  "extra": 9.3,
+  "main": 7.08,
+  "name": "SpongeBob SquarePants: The Cosmic Shake",
+  "query": "SpongeBob SquarePants: The Cosmic Shake",
+  "url": "https://howlongtobeat.com/game/98115"
  },
  "Borderlands 3": {
   "complete": 84.53,
@@ -420,7 +432,7 @@
   "extra": 7.07,
   "main": 5.55,
   "name": "Call of Duty: Black Ops Cold War",
-  "query": "Call of Duty : Black Ops Cold War",
+  "query": "Call of Duty: Black Ops Cold War",
   "url": "https://howlongtobeat.com/game/82091"
  },
  "Call of Duty®: Black Ops III": {
@@ -428,7 +440,7 @@
   "extra": 15.07,
   "main": 9.04,
   "name": "Call of Duty: Black Ops III",
-  "query": "Call of Duty : Black Ops III",
+  "query": "Call of Duty: Black Ops III",
   "url": "https://howlongtobeat.com/game/27127"
  },
  "Chained Echoes": {
@@ -496,8 +508,12 @@
   "url": "https://howlongtobeat.com/game/104760"
  },
  "Crash Bandicoot™ 4: It’s About Time": {
-  "query": "Crash Bandicoot 4: It’s About Time",
-  "v": 2
+  "complete": 86.15,
+  "extra": 20.4,
+  "main": 10.05,
+  "name": "Crash Bandicoot 4: It's About Time",
+  "query": "Crash Bandicoot 4: It's About Time",
+  "url": "https://howlongtobeat.com/game/80317"
  },
  "CrossCode": {
   "complete": 79.63,
@@ -724,8 +740,12 @@
   "url": "https://howlongtobeat.com/game/25434"
  },
  "Devil May Cry 5 Series": {
-  "query": "Devil May Cry 5 Series",
-  "v": 2
+  "complete": 78.57,
+  "extra": 16.84,
+  "main": 11.14,
+  "name": "Devil May Cry 5",
+  "query": "Devil May Cry 5",
+  "url": "https://howlongtobeat.com/game/57514"
  },
  "DiRT Rally 2.0": {
   "complete": 132.38,
@@ -772,7 +792,7 @@
   "extra": 62.15,
   "main": 28.79,
   "name": "Dragon Age: The Veilguard",
-  "query": "Dragon Age : The Veilguard",
+  "query": "Dragon Age: The Veilguard",
   "url": "https://howlongtobeat.com/game/82090"
  },
  "Dragon's Crown": {
@@ -832,8 +852,12 @@
   "url": "https://howlongtobeat.com/game/171044"
  },
  "EA SPORTS™ FIFA 23": {
-  "query": "EA SPORTS FIFA 23",
-  "v": 2
+  "complete": 189.22,
+  "extra": 99.04,
+  "main": 94.82,
+  "name": "FIFA 23",
+  "query": "FIFA 23",
+  "url": "https://howlongtobeat.com/game/110878"
  },
  "EA SPORTS™ WRC": {
   "complete": 33.96,
@@ -868,8 +892,12 @@
   "url": "https://howlongtobeat.com/game/145828"
  },
  "Endling - Extinction is Forever": {
-  "query": "Endling - Extinction is Forever",
-  "v": 2
+  "complete": 5.73,
+  "extra": 4.17,
+  "main": 3.94,
+  "name": "Endling: Extinction is Forever",
+  "query": "Endling: Extinction is Forever",
+  "url": "https://howlongtobeat.com/game/87488"
  },
  "Erica": {
   "complete": 11.27,
@@ -1135,6 +1163,10 @@
   "query": "Gran Turismo 7",
   "url": "https://howlongtobeat.com/game/81847"
  },
+ "Gran Turismo™ 7": {
+  "query": "Gran Turismo 7",
+  "v": 2
+ },
  "Grand Kingdom": {
   "complete": 109.1,
   "extra": 47.87,
@@ -1212,12 +1244,20 @@
   "url": "https://howlongtobeat.com/game/106639"
  },
  "Hellblade II: Senua’s Saga": {
-  "query": "Hellblade II: Senua’s Saga",
-  "v": 2
+  "complete": 9.32,
+  "extra": 8.02,
+  "main": 7.11,
+  "name": "Hellblade II: Senua's Saga",
+  "query": "Hellblade II: Senua's Saga",
+  "url": "https://howlongtobeat.com/game/72854"
  },
  "Hellblade: Senua’s Sacrifice": {
-  "query": "Hellblade: Senua’s Sacrifice",
-  "v": 2
+  "complete": 9.23,
+  "extra": 8.2,
+  "main": 7.54,
+  "name": "Hellblade: Senua's Sacrifice",
+  "query": "Hellblade: Senua's Sacrifice",
+  "url": "https://howlongtobeat.com/game/41638"
  },
  "Hello Neighbor 2": {
   "complete": 5.99,
@@ -1260,8 +1300,12 @@
   "url": "https://howlongtobeat.com/game/90531"
  },
  "Hogwarts Legacy : L'Héritage de Poudlard": {
-  "query": "Hogwarts Legacy : L'Héritage de Poudlard",
-  "v": 2
+  "complete": 72.19,
+  "extra": 45.28,
+  "main": 26.74,
+  "name": "Hogwarts Legacy",
+  "query": "Hogwarts Legacy",
+  "url": "https://howlongtobeat.com/game/83145"
  },
  "Hollow Knight": {
   "complete": 65.63,
@@ -1352,12 +1396,20 @@
   "url": "https://howlongtobeat.com/game/118227"
  },
  "Indiana Jones et le Cercle Ancien": {
-  "query": "Indiana Jones et le Cercle Ancien",
-  "v": 2
+  "complete": 39.32,
+  "extra": 25.77,
+  "main": 16.17,
+  "name": "Indiana Jones and the Great Circle",
+  "query": "Indiana Jones and the Great Circle",
+  "url": "https://howlongtobeat.com/game/144234"
  },
  "It Takes Two PS4™ & PS5™": {
-  "query": "It Takes Two &",
-  "v": 2
+  "complete": 16.47,
+  "extra": 14.21,
+  "main": 12.84,
+  "name": "It Takes Two",
+  "query": "It Takes Two",
+  "url": "https://howlongtobeat.com/game/80199"
  },
  "Journey": {
   "complete": 5.79,
@@ -1400,12 +1452,20 @@
   "url": "https://howlongtobeat.com/game/26404"
  },
  "KINGDOM HEARTS - HD 1.5+2.5 ReMIX -": {
-  "query": "KINGDOM HEARTS - HD 1.5+2.5 ReMIX",
-  "v": 2
+  "complete": 303.55,
+  "extra": 155.73,
+  "main": 113.14,
+  "name": "Kingdom Hearts HD 1.5 + 2.5 ReMIX",
+  "query": "Kingdom Hearts HD 1.5 + 2.5 ReMIX",
+  "url": "https://howlongtobeat.com/game/42802"
  },
  "KINGDOM HEARTS Ⅲ": {
-  "query": "KINGDOM HEARTS Ⅲ",
-  "v": 2
+  "complete": 64.53,
+  "extra": 40.14,
+  "main": 28.84,
+  "name": "Kingdom Hearts III",
+  "query": "KINGDOM HEARTS III",
+  "url": "https://howlongtobeat.com/game/13157"
  },
  "Kena: Bridge of Spirits PS4 & PS5": {
   "complete": 20.72,
@@ -1472,8 +1532,12 @@
   "url": "https://howlongtobeat.com/game/73040"
  },
  "LEGO® DC Super-Vilains": {
-  "query": "LEGO DC Super-Vilains",
-  "v": 2
+  "complete": 41.66,
+  "extra": 18.65,
+  "main": 10.43,
+  "name": "LEGO DC Super-Villains",
+  "query": "LEGO DC Super-Villains",
+  "url": "https://howlongtobeat.com/game/61868"
  },
  "LEGO® Horizon Adventures™": {
   "complete": 15.8,
@@ -1516,16 +1580,28 @@
   "url": "https://howlongtobeat.com/game/33860"
  },
  "LEGO® Star Wars™ : La Saga Skywalker": {
-  "query": "LEGO Star Wars : La Saga Skywalker",
-  "v": 2
+  "complete": 89.87,
+  "extra": 34.58,
+  "main": 18.52,
+  "name": "LEGO Star Wars: The Skywalker Saga",
+  "query": "LEGO Star Wars: The Skywalker Saga",
+  "url": "https://howlongtobeat.com/game/68261"
  },
  "La Terre du Milieu™: L'Ombre de la Guerre™": {
-  "query": "La Terre du Milieu : L'Ombre de la Guerre",
-  "v": 2
+  "complete": 56.99,
+  "extra": 36.5,
+  "main": 21.03,
+  "name": "Middle-Earth: Shadow of War",
+  "query": "Middle-earth: Shadow of War",
+  "url": "https://howlongtobeat.com/game/44022"
  },
  "Legendary Edition: Mass Effect": {
-  "query": "Legendary Edition: Mass Effect",
-  "v": 2
+  "complete": 138.13,
+  "extra": 101.68,
+  "main": 61.19,
+  "name": "Mass Effect Legendary Edition",
+  "query": "Mass Effect Legendary Edition",
+  "url": "https://howlongtobeat.com/game/84851"
  },
  "Lies of P": {
   "complete": 58.18,
@@ -1560,12 +1636,8 @@
   "url": "https://howlongtobeat.com/game/69805"
  },
  "LittleBigPlanet™3": {
-  "complete": 19.3,
-  "extra": 10.71,
-  "main": 5.96,
-  "name": "LittleBigPlanet 3",
-  "query": "LittleBigPlanet 3",
-  "url": "https://howlongtobeat.com/game/19550"
+  "query": "LittleBigPlanet3",
+  "v": 2
  },
  "Lords of the Fallen": {
   "complete": 91.35,
@@ -1664,12 +1736,20 @@
   "url": "https://howlongtobeat.com/game/79769"
  },
  "Marvel’s Spider-Man: Miles Morales": {
-  "query": "Marvel’s Spider-Man: Miles Morales",
-  "v": 2
+  "complete": 18.55,
+  "extra": 12.54,
+  "main": 7.82,
+  "name": "Marvel's Spider-Man: Miles Morales",
+  "query": "Marvel's Spider-Man: Miles Morales",
+  "url": "https://howlongtobeat.com/game/79859"
  },
  "Mass Effect™ Édition Légendaire": {
-  "query": "Mass Effect Édition Légendaire",
-  "v": 2
+  "complete": 138.13,
+  "extra": 101.68,
+  "main": 61.19,
+  "name": "Mass Effect Legendary Edition",
+  "query": "Mass Effect Legendary Edition",
+  "url": "https://howlongtobeat.com/game/84851"
  },
  "Metaphor: ReFantazio": {
   "complete": 109.25,
@@ -1680,12 +1760,8 @@
   "url": "https://howlongtobeat.com/game/129956"
  },
  "Middle-earth™: Shadow of Mordor™": {
-  "complete": 32.93,
-  "extra": 23.94,
-  "main": 15.71,
-  "name": "Middle-Earth: Shadow of Mordor",
-  "query": "Middle-earth : Shadow of Mordor",
-  "url": "https://howlongtobeat.com/game/18006"
+  "query": "Middle-earth: Shadow of Mordor",
+  "v": 2
  },
  "Mighty No. 9": {
   "complete": 15.97,
@@ -1728,12 +1804,20 @@
   "url": "https://howlongtobeat.com/game/76520"
  },
  "Moss II VR": {
-  "query": "Moss II VR",
-  "v": 2
+  "complete": 7.55,
+  "extra": 6.09,
+  "main": 5.99,
+  "name": "Moss: Book II",
+  "query": "Moss II",
+  "url": "https://howlongtobeat.com/game/104084"
  },
  "Moss VR": {
-  "query": "Moss VR",
-  "v": 2
+  "complete": 6.75,
+  "extra": 4.67,
+  "main": 4.04,
+  "name": "Moss",
+  "query": "Moss",
+  "url": "https://howlongtobeat.com/game/48441"
  },
  "NARUTO TO BORUTO: SHINOBI STRIKER": {
   "complete": 162.89,
@@ -1960,12 +2044,8 @@
   "url": "https://howlongtobeat.com/game/15221"
  },
  "Persona®5 Strikers": {
-  "complete": 70.61,
-  "extra": 45.88,
-  "main": 35.18,
-  "name": "Persona 5 Strikers",
-  "query": "Persona 5 Strikers",
-  "url": "https://howlongtobeat.com/game/72069"
+  "query": "Persona5 Strikers",
+  "v": 2
  },
  "Powers": {
   "complete": null,
@@ -2200,7 +2280,7 @@
   "extra": 11.9,
   "main": 9.09,
   "name": "Star Wars: Squadrons",
-  "query": "STAR WARS : Squadrons",
+  "query": "STAR WARS: Squadrons",
   "url": "https://howlongtobeat.com/game/80090"
  },
  "STEEP": {
@@ -2496,8 +2576,12 @@
   "url": "https://howlongtobeat.com/game/84604"
  },
  "The Dark Pictures Anthology: Little Hope PS5™ & PS4™": {
-  "query": "The Dark Pictures Anthology: Little Hope &",
-  "v": 2
+  "complete": 23.88,
+  "extra": 6.43,
+  "main": 5.07,
+  "name": "The Dark Pictures: Little Hope",
+  "query": "The Dark Pictures Anthology: Little Hope",
+  "url": "https://howlongtobeat.com/game/70075"
  },
  "The Dark Pictures Anthology: Man of Medan PS4 & PS5": {
   "complete": 18.77,
@@ -2596,8 +2680,12 @@
   "url": "https://howlongtobeat.com/game/59868"
  },
  "The Plucky Squire (Le Vaillant Petit Page)": {
-  "query": "The Plucky Squire (Le Vaillant Petit Page)",
-  "v": 2
+  "complete": 10.59,
+  "extra": 9.34,
+  "main": 8.39,
+  "name": "The Plucky Squire",
+  "query": "The Plucky Squire",
+  "url": "https://howlongtobeat.com/game/109109"
  },
  "The Room VR: A Dark Matter": {
   "complete": 4.14,
@@ -2656,8 +2744,12 @@
   "url": "https://howlongtobeat.com/game/10270"
  },
  "The Witcher 3: Wild Hunt — Remastered": {
-  "query": "The Witcher 3: Wild Hunt — Remastered",
-  "v": 2
+  "complete": 175.24,
+  "extra": 103.75,
+  "main": 51.68,
+  "name": "The Witcher 3: Wild Hunt",
+  "query": "The Witcher 3: Wild Hunt",
+  "url": "https://howlongtobeat.com/game/10270"
  },
  "The Witness": {
   "complete": 37.39,
@@ -2816,7 +2908,7 @@
   "extra": 33.14,
   "main": 27.39,
   "name": "Uncharted: The Nathan Drake Collection",
-  "query": "Uncharted : The Nathan Drake Collection",
+  "query": "Uncharted: The Nathan Drake Collection",
   "url": "https://howlongtobeat.com/game/30810"
  },
  "Unravel": {
@@ -3012,8 +3104,12 @@
   "url": "https://howlongtobeat.com/game/94576"
  },
  "flOw trophy set": {
-  "query": "flOw trophy set",
-  "v": 2
+  "complete": 5.15,
+  "extra": 2.54,
+  "main": 1.46,
+  "name": "flOw",
+  "query": "flOw",
+  "url": "https://howlongtobeat.com/game/3607"
  },
  "inFAMOUS™ Second Son": {
   "complete": 22.12,
