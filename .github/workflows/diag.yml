@@ -1,0 +1,14 @@
+name: diag
+on: workflow_dispatch
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for UA in "GameShelf/1.0 (personal PSN dashboard; github.com)" "GameShelf/1.0 (https://github.com/astanos-git/gameshelf)"; do
+            for i in 1 2 3; do
+              out=$(curl -s -w ' HTTP%{http_code}' -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=Alan%20Wake%202%20video%20game&srlimit=3&format=json" | head -c 300 | tr '\n' ' ')
+              echo "::warning::UA=${UA:0:40} try$i -> $out"
+              sleep 0.5
+            done
+          done
