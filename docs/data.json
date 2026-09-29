@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T21:45:48+00:00",
+ "generated_at": "2026-09-29T21:59:14+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -426,6 +426,44 @@
     "extra": 11.06,
     "complete": 26.47,
     "url": "https://howlongtobeat.com/game/171520"
+   }
+  },
+  {
+   "name": "The Witcher 3: Wild Hunt — Remastered",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1412/5YlA3POEEpaAJsUq3eg6U8d6.png",
+   "platforms": [
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-08-26T17:58:54Z",
+   "hours": 0.0,
+   "first_played": null,
+   "last_played": null,
+   "progress": null,
+   "earned": null,
+   "defined": null,
+   "last_trophy": null,
+   "has_trophies": false,
+   "months": {},
+   "trophies_earned": 0,
+   "trophies_total": 0,
+   "platinum": false,
+   "status": "unplayed",
+   "last_activity": null,
+   "hours_by_year": {},
+   "metacritic": 92,
+   "genres": [
+    "Action",
+    "RPG"
+   ],
+   "released": "2015-05-18",
+   "rawg_slug": "the-witcher-3-wild-hunt",
+   "metacritic_source": "rawg",
+   "hltb": {
+    "main": 51.68,
+    "extra": 103.75,
+    "complete": 175.24,
+    "url": "https://howlongtobeat.com/game/10270"
    }
   },
   {
@@ -5603,7 +5641,7 @@
    "hours_by_year": {
     "2024": 11.9
    },
-   "metacritic": null,
+   "metacritic": 76,
    "genres": [
     "Casual",
     "Simulation",
@@ -5611,7 +5649,7 @@
    ],
    "released": "2023-09-22",
    "rawg_slug": "ea-sports-fc-24",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 38.74,
     "extra": 109.03,
@@ -16437,13 +16475,13 @@
     "2016": 8.4,
     "2017": 4.9
    },
-   "metacritic": null,
+   "metacritic": 89,
    "genres": [
     "Shooter"
    ],
    "released": "2017-08-21",
    "rawg_slug": "battlefield-1-revolution",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 6.68,
     "extra": 10.05,
@@ -16735,14 +16773,14 @@
     "2015": 0.2,
     "2016": 13.6
    },
-   "metacritic": null,
+   "metacritic": 58,
    "genres": [
     "Action",
     "RPG"
    ],
    "released": "2012-05-15",
    "rawg_slug": "game-of-thrones",
-   "metacritic_source": null,
+   "metacritic_source": "wikipedia",
    "hltb": {
     "main": 19.32,
     "extra": 25.14,
@@ -17280,14 +17318,13 @@
    }
   },
   {
-   "name": "The Witcher 3: Wild Hunt — Remastered",
+   "name": "The Witcher 3: Wild Hunt",
    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1412/5YlA3POEEpaAJsUq3eg6U8d6.png",
    "platforms": [
-    "PS4",
-    "PS5"
+    "PS4"
    ],
-   "owned": true,
-   "acquired": "2026-08-26T17:58:54Z",
+   "owned": false,
+   "acquired": null,
    "hours": 124.8,
    "first_played": "2015-06-08T08:40:37+00:00",
    "last_played": "2015-12-05T09:06:01+00:00",
@@ -17369,7 +17406,7 @@
    "hltb": {
     "main": 51.68,
     "extra": 103.75,
-    "complete": 175.24,
+    "complete": 175.26,
     "url": "https://howlongtobeat.com/game/10270"
    }
   },
