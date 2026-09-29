@@ -359,13 +359,16 @@ def rawg_lookup(name: str, slug: str | None, key: str, forced: bool) -> dict:
 # ---------------------------------------------------------------- HowLongToBeat
 
 SEARCH_NOISE = re.compile(
-    r"[™®©]|\((ps4|ps5)\)|\b(ps5|ps4) version\b|\b(ps4|ps5)( ?(&|and) ?ps5)?\b|"
+    r"[™®©]|\((ps4|ps5)\)|\b(ps5|ps4) version\b|\b(ps4|ps5)( ?(&|and) ?(ps4|ps5))?\b|"
     r"\b(digital )?(deluxe|standard|gold|ultimate|complete|definitive|game of the year|goty) edition\b",
     re.I)
 
 
 def search_name(name: str) -> str:
-    s = SEARCH_NOISE.sub(" ", name)
+    s = name.replace("’", "'").replace("\xa0", " ").replace("Ⅲ", "III")
+    s = re.sub(r"[™®©]", "", s)
+    s = SEARCH_NOISE.sub(" ", s)
+    s = re.sub(r"\s*[—–]\s*remastered$|\s+vr$|\s+\([^)]*\)$|\s+trophy set$", "", s.strip(), flags=re.I)
     return re.sub(r"\s+", " ", s).strip(" -–:")
 
 
@@ -375,7 +378,8 @@ HLTB_VERSION = 2  # bump to retry earlier misses after improving matching
 def enrich_hltb(games: list[dict]) -> None:
     """Add HowLongToBeat times (hours). Unofficial and best-effort: any failure leaves the fields empty."""
     cache = json.loads(HLTB_CACHE.read_text()) if HLTB_CACHE.exists() else {}
-    overrides = (json.loads(OVERRIDES.read_text()) if OVERRIDES.exists() else {}).get("hltb", {})
+    loose = lambda n: re.sub(r"\s+", " ", n.replace("\xa0", " ")).strip()  # tolerate odd spaces in names
+    overrides = {loose(k): v for k, v in ((json.loads(OVERRIDES.read_text()) if OVERRIDES.exists() else {}).get("hltb", {})).items()}
     try:
         from howlongtobeatpy import HowLongToBeat
         hltb = HowLongToBeat()
@@ -386,7 +390,7 @@ def enrich_hltb(games: list[dict]) -> None:
     looked_up, failures = 0, 0
     for g in games:
         name = g["name"]
-        query = overrides.get(name) or search_name(name)
+        query = overrides.get(loose(name)) or search_name(name)
         info = cache.get(name)
         if info is not None and (info.get("query", query) != query or (not info.get("url") and info.get("v", 1) < HLTB_VERSION)):
             info = None  # override changed, or a miss from an older matching method -> look up again
