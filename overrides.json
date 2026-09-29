@@ -1,5 +1,5 @@
 {
-  "_help": "Fix wrong matches. Top level: game name exactly as shown on the dashboard -> RAWG slug (last part of its rawg.io/games/... URL), or null for no Metacritic score. Under \"hltb\": game name as shown -> the title to search on HowLongToBeat.",
+  "_help": "Fix wrong matches. Top level: game name exactly as shown on the dashboard -> RAWG slug (last part of its rawg.io/games/... URL), or null for no Metacritic score. Under \"hltb\": game name as shown -> the title to search on HowLongToBeat. Under \"metacritic\": game name as shown -> a score you enter yourself (used when no source has one).",
   "hltb": {
     "AC Brotherhood": "Assassin's Creed Brotherhood",
     "AC Revelations": "Assassin's Creed Revelations",
@@ -16,5 +16,6 @@
     "Legendary Edition: Mass Effect": "Mass Effect Legendary Edition",
     "Mass Effect™ Édition Légendaire": "Mass Effect Legendary Edition",
     "Marvel’s Spider-Man: Miles Morales": "Marvel's Spider-Man: Miles Morales"
-  }
+  },
+  "metacritic": {}
 }

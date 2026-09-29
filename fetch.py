@@ -427,6 +427,79 @@ def enrich_hltb(games: list[dict]) -> None:
           + (" (stopped early after repeated errors)" if failures >= 5 else ""))
 
 
+# ---------------------------------------------------------------- Wikidata (Metacritic gap filler)
+
+WIKIDATA_SPARQL = "https://query.wikidata.org/sparql"
+# Every Metacritic score (P444 "review score", qualified by P447 "review score by" = Metacritic Q150248),
+# with the platform it's for (P400) and the game's RAWG ID (P9968) for exact matching.
+WIKIDATA_QUERY = """
+SELECT ?game ?label ?score ?platform ?rawg WHERE {
+  ?game p:P444 ?st .
+  ?st ps:P444 ?score ; pq:P447 wd:Q150248 .
+  OPTIONAL { ?st pq:P400 ?platform }
+  OPTIONAL { ?game wdt:P9968 ?rawg }
+  OPTIONAL { ?game rdfs:label ?label FILTER(LANG(?label) = "en") }
+}"""
+PLATFORM_PREF = {"Q63184502": 0, "Q5014725": 1}  # PlayStation 5, PlayStation 4; anything else after
+
+
+def fetch_wikidata_scores() -> tuple[dict, dict]:
+    """Return ({rawg_slug: score}, {normalised name: score}) for all games with a Metacritic critic score."""
+    r = requests.get(WIKIDATA_SPARQL, params={"query": WIKIDATA_QUERY, "format": "json"}, timeout=90,
+                     headers={"User-Agent": "GameShelf/1.0 (personal PSN dashboard; github.com)",
+                              "Accept": "application/sparql-results+json"})
+    r.raise_for_status()
+    best: dict[str, tuple[int, int, str | None, str | None]] = {}  # game -> (rank, score, rawg, label)
+    for b in r.json()["results"]["bindings"]:
+        m = re.match(r"^\s*(\d{1,3})\s*/\s*100\s*$", b["score"]["value"])  # critic Metascore; skips x/10 user scores
+        if not m:
+            continue
+        game = b["game"]["value"]
+        plat = b.get("platform", {}).get("value", "").rsplit("/", 1)[-1]
+        rank = PLATFORM_PREF.get(plat, 2)
+        cand = (rank, int(m.group(1)), b.get("rawg", {}).get("value"), b.get("label", {}).get("value"))
+        if game not in best or rank < best[game][0]:
+            best[game] = cand
+    by_rawg, by_name = {}, {}
+    for rank, score, rawg, label in best.values():
+        if rawg:
+            by_rawg[rawg.lower()] = score
+        if label:
+            by_name.setdefault(norm(label), score)
+    print(f"Wikidata: {len(best)} games with a Metacritic score")
+    return by_rawg, by_name
+
+
+def fill_metacritic(games: list[dict], previous_games: list[dict]) -> None:
+    """Fill games RAWG has no score for: your manual scores first, then Wikidata."""
+    overrides = (json.loads(OVERRIDES.read_text()) if OVERRIDES.exists() else {}).get("metacritic", {})
+    for g in games:
+        g["metacritic_source"] = "rawg" if g.get("metacritic") else None
+        if g["name"] in overrides and overrides[g["name"]] is not None:
+            g["metacritic"], g["metacritic_source"] = int(overrides[g["name"]]), "manual"
+
+    missing = [g for g in games if not g.get("metacritic")]
+    if not missing:
+        return
+    try:
+        by_rawg, by_name = fetch_wikidata_scores()
+    except Exception as e:
+        # Wikidata unreachable: keep whatever it gave last time.
+        print(f"Wikidata skipped ({e}); keeping previous scores")
+        old = {p["name"]: p["metacritic"] for p in previous_games if p.get("metacritic_source") == "wikidata"}
+        for g in missing:
+            if g["name"] in old:
+                g["metacritic"], g["metacritic_source"] = old[g["name"]], "wikidata"
+        return
+    filled = 0
+    for g in missing:
+        score = by_rawg.get((g.get("rawg_slug") or "").lower()) or by_name.get(norm(g["name"]))
+        if score:
+            g["metacritic"], g["metacritic_source"] = score, "wikidata"
+            filled += 1
+    print(f"Wikidata filled {filled} of {len(missing)} missing Metacritic scores")
+
+
 # ---------------------------------------------------------------- main
 
 TOKEN_DAYS = 60  # NPSSO tokens last roughly two months
@@ -465,6 +538,7 @@ def main() -> None:
 
     games = build_games(raw)
     enrich(games, os.environ.get("RAWG_API_KEY", "").strip() or None)
+    fill_metacritic(games, previous.get("games", []))
     enrich_hltb(games)
     games.sort(key=lambda g: g["last_activity"] or g["acquired"] or "", reverse=True)
 

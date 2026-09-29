@@ -399,7 +399,7 @@ function renderList() {
           <span class="meta"><span class="pill st-${x.status}">${STATUS_LABEL[x.status]}</span><span>${x.platforms.join(" · ")}</span><span class="num">${hrs}</span>${beat(x)}</span>
           ${prog}
         </span>
-        <span class="mc ${mcClass(x.metacritic)}" title="Metacritic score">${x.metacritic ?? "n/a"}</span>
+        <span class="mc ${mcClass(x.metacritic)}" title="${x.metacritic == null ? "No Metacritic score found" : "Metacritic score" + ({ rawg: ", via RAWG", wikidata: ", via Wikidata", manual: ", entered by you" }[x.metacritic_source] || "")}">${x.metacritic ?? "n/a"}</span>
       </button>
       ${open ? detail(x, id) : ""}
     </article>`;
