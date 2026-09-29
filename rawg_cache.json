@@ -1,0 +1,3703 @@
+{
+ "A Plague Tale: Innocence": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 82,
+  "released": "2019-05-13",
+  "slug": "a-plague-tale-innocence"
+ },
+ "A Plague Tale: Requiem": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-10-17",
+  "slug": "a-plague-tale-requiem"
+ },
+ "ABSOLVER": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action",
+   "Fighting"
+  ],
+  "metacritic": 69,
+  "released": "2017-08-28",
+  "slug": "absolver"
+ },
+ "AC Brotherhood": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 88,
+  "released": "2010-11-16",
+  "slug": "assassins-creed-brotherhood-2"
+ },
+ "AC Revelations": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2011-11-15",
+  "slug": "assassins-creed-revelations"
+ },
+ "ACE COMBAT™ 7: SKIES UNKNOWN": {
+  "genres": [
+   "Arcade",
+   "Adventure",
+   "Action",
+   "Simulation"
+  ],
+  "metacritic": 79,
+  "released": "2019-01-18",
+  "slug": "ace-combat-7"
+ },
+ "ARK: Survival Ascended": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG",
+   "Indie",
+   "Massively Multiplayer"
+  ],
+  "metacritic": 70,
+  "released": "2015-06-02",
+  "slug": "ark-survival-evolved"
+ },
+ "ARK: Survival Evolved": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG",
+   "Indie",
+   "Massively Multiplayer"
+  ],
+  "metacritic": 70,
+  "released": "2015-06-02",
+  "slug": "ark-survival-evolved"
+ },
+ "ASTRO BOT": {
+  "genres": [
+   "Platformer",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-09-06",
+  "slug": "astro-bot"
+ },
+ "ASTRO's PLAYROOM": {
+  "genres": [
+   "Platformer",
+   "Action"
+  ],
+  "metacritic": 83,
+  "released": "2020-11-12",
+  "slug": "astros-playroom"
+ },
+ "Alan Wake 2": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-10-27",
+  "slug": "alan-wake-2"
+ },
+ "Alan Wake Remastered": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2021-10-05",
+  "slug": "alan-wake-remastered"
+ },
+ "Alone in the Dark": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-03-20",
+  "slug": "alone-in-the-dark-2022"
+ },
+ "Amnesia Collection": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2016-11-22",
+  "slug": "amnesia-collection"
+ },
+ "Among Us": {
+  "genres": [
+   "Casual",
+   "Action",
+   "Simulation"
+  ],
+  "metacritic": 82,
+  "released": "2018-07-25",
+  "slug": "among-us"
+ },
+ "Another World - 20th Anniversary Edition": {
+  "genres": [
+   "Arcade",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2011-09-22",
+  "slug": "another-world-20th"
+ },
+ "Arise: A simple story": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2019-12-03",
+  "slug": "arise-3"
+ },
+ "Assassin's Creed II™": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2007-11-13",
+  "slug": "assassins-creed"
+ },
+ "Assassin's Creed® Freedom Cry": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 73,
+  "released": "2014-02-18",
+  "slug": "assassins-creed-freedom-cry"
+ },
+ "Assassin's Creed® III": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2007-11-13",
+  "slug": "assassins-creed"
+ },
+ "Assassin's Creed® IV Black Flag": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 85,
+  "released": "2013-10-29",
+  "slug": "assassins-creed-iv-black-flag"
+ },
+ "Assassin's Creed® Odyssey": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 85,
+  "released": "2018-10-05",
+  "slug": "assassins-creed-odyssey"
+ },
+ "Assassin's Creed® Origins": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 81,
+  "released": "2017-10-27",
+  "slug": "assassins-creed-origins"
+ },
+ "Assassin's Creed® Rogue": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2014-11-11",
+  "slug": "assassins-creed-rogue-2"
+ },
+ "Assassin's Creed® Unity": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 71,
+  "released": "2014-11-11",
+  "slug": "assassins-creed-unity-2"
+ },
+ "Axiom Verge 2": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Puzzle",
+   "Indie",
+   "Platformer"
+  ],
+  "metacritic": 76,
+  "released": "2021-08-11",
+  "slug": "axiom-verge-2"
+ },
+ "BATMAN™: ARKHAM KNIGHT": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 81,
+  "released": "2015-06-23",
+  "slug": "batman-arkham-knight"
+ },
+ "Balatro": {
+  "genres": [
+   "Casual",
+   "Strategy",
+   "Indie"
+  ],
+  "metacritic": null,
+  "released": "2024-02-20",
+  "slug": "balatro"
+ },
+ "Batman": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2001-10-15",
+  "slug": "batman-vengeance"
+ },
+ "Batman: Arkham City™": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 94,
+  "released": "2011-10-18",
+  "slug": "batman-arkham-city-2"
+ },
+ "Battlefield™ 1": {
+  "genres": [
+   "Shooter"
+  ],
+  "metacritic": null,
+  "released": "2017-08-21",
+  "slug": "battlefield-1-revolution"
+ },
+ "Battlefield™ 2042": {
+  "genres": [
+   "Casual",
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2021-11-12",
+  "slug": "battlefield-6"
+ },
+ "Battlefield™ 6": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2025-10-10",
+  "slug": "battlefield-6-2"
+ },
+ "Battlefield™ V": {
+  "genres": [
+   "Massively Multiplayer",
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 77,
+  "released": "2018-11-20",
+  "slug": "battlefield-v"
+ },
+ "Before Your Eyes": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action",
+   "Casual",
+   "Simulation",
+   "Indie",
+   "Massively Multiplayer"
+  ],
+  "metacritic": null,
+  "released": "2023-12-07",
+  "slug": "the-day-before-2"
+ },
+ "Beyond: Two Souls™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 73,
+  "released": "2013-10-07",
+  "slug": "beyond-two-souls"
+ },
+ "Big Walk": {
+  "genres": [
+   "Casual",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2018-12-14",
+  "slug": "big-crown-showdown"
+ },
+ "BioShock Infinite": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 94,
+  "released": "2013-03-26",
+  "slug": "bioshock-infinite"
+ },
+ "BioShock Infinite: The Complete Edition": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2013-07-30",
+  "slug": "bioshock-infinite-clash-in-the-clouds"
+ },
+ "BioShock: The Collection": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 83,
+  "released": "2016-09-13",
+  "slug": "bioshock-the-collection"
+ },
+ "Black Desert": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG",
+   "Strategy",
+   "Simulation",
+   "Massively Multiplayer"
+  ],
+  "metacritic": 73,
+  "released": "2014-12-01",
+  "slug": "black-desert-online"
+ },
+ "Black Myth: Wukong": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2024-08-20",
+  "slug": "black-myth-wu-kong"
+ },
+ "Blasphemous": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 78,
+  "released": "2019-09-09",
+  "slug": "blasphemous"
+ },
+ "Blasphemous 2": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-08-23",
+  "slug": "blasphemous-2"
+ },
+ "Bloodborne™": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 92,
+  "released": "2015-03-24",
+  "slug": "bloodborne"
+ },
+ "Blue Prince": {
+  "genres": [
+   "Indie",
+   "Strategy",
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": null,
+  "released": "2025-04-10",
+  "slug": "blue-prince"
+ },
+ "Bob l'éponge: The Cosmic Shake": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-01-31",
+  "slug": "spongebob-squarepants-the-cosmic-shake"
+ },
+ "Borderlands 3": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 83,
+  "released": "2019-09-13",
+  "slug": "borderlands-3"
+ },
+ "Bound": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 71,
+  "released": "2016-08-16",
+  "slug": "bound"
+ },
+ "Burly Men At Sea": {
+  "genres": [
+   "Casual",
+   "Indie",
+   "Adventure",
+   "RPG"
+  ],
+  "metacritic": 82,
+  "released": "2016-09-29",
+  "slug": "burly-men-at-sea"
+ },
+ "Bye Sweet Carole": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2025-10-08",
+  "slug": "bye-sweet-carole"
+ },
+ "Bō: Path of the Teal Lotus": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-07-17",
+  "slug": "bo-path-of-the-teal-lotus"
+ },
+ "CAPTAIN TSUBASA: RISE OF NEW CHAMPIONS": {
+  "genres": [
+   "Casual",
+   "Action",
+   "RPG",
+   "Sports"
+  ],
+  "metacritic": 72,
+  "released": "2020-08-27",
+  "slug": "captain-tsubasa-rise-of-new-champions"
+ },
+ "COCOON": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": null,
+  "released": "2023-09-29",
+  "slug": "cocoon-2"
+ },
+ "Call of Duty®: Black Ops Cold War": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 76,
+  "released": "2020-11-13",
+  "slug": "call-of-duty-black-ops-cold-war"
+ },
+ "Call of Duty®: Black Ops III": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 73,
+  "released": "2015-11-06",
+  "slug": "cod-black-ops-iii"
+ },
+ "Chained Echoes": {
+  "genres": [
+   "Indie",
+   "RPG"
+  ],
+  "metacritic": 89,
+  "released": "2022-12-08",
+  "slug": "chained-echoes"
+ },
+ "Child of Light": {
+  "genres": [
+   "Indie",
+   "RPG"
+  ],
+  "metacritic": 77,
+  "released": "2014-04-29",
+  "slug": "child-of-light"
+ },
+ "Chivalry 2": {
+  "genres": [
+   "Action",
+   "Fighting"
+  ],
+  "metacritic": 78,
+  "released": "2021-06-08",
+  "slug": "chivalry-2"
+ },
+ "Clair Obscur: Expedition 33": {
+  "genres": [
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2025-04-24",
+  "slug": "clair-obscur-expedition-33"
+ },
+ "Claire": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action",
+   "Simulation"
+  ],
+  "metacritic": null,
+  "released": "2014-01-22",
+  "slug": "claire"
+ },
+ "Conan Exiles": {
+  "genres": [
+   "Massively Multiplayer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 67,
+  "released": "2017-01-30",
+  "slug": "conan-exiles"
+ },
+ "Control": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 84,
+  "released": "2019-08-27",
+  "slug": "control"
+ },
+ "Core Keeper": {
+  "genres": [
+   "Adventure",
+   "RPG",
+   "Casual",
+   "Strategy",
+   "Indie"
+  ],
+  "metacritic": null,
+  "released": "2015-03-02",
+  "slug": "runestone-keeper"
+ },
+ "Crash Bandicoot™ 4: It’s About Time": {
+  "genres": [
+   "Platformer",
+   "Action"
+  ],
+  "metacritic": 84,
+  "released": "2020-10-01",
+  "slug": "crash-bandicoot-4-its-about-time"
+ },
+ "CrossCode": {
+  "genres": [
+   "Action",
+   "RPG",
+   "Puzzle"
+  ],
+  "metacritic": 82,
+  "released": "2015-03-03",
+  "slug": "crosscode"
+ },
+ "Cuphead": {
+  "genres": [
+   "Platformer",
+   "Indie",
+   "Action"
+  ],
+  "metacritic": 87,
+  "released": "2017-09-29",
+  "slug": "cuphead"
+ },
+ "Cyberpunk 2077": {
+  "genres": [
+   "Shooter",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 73,
+  "released": "2020-12-10",
+  "slug": "cyberpunk-2077"
+ },
+ "DARK SOULS": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 89,
+  "released": "2011-09-22",
+  "slug": "dark-souls"
+ },
+ "DAYS GONE": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2019-04-26",
+  "slug": "days-gone"
+ },
+ "DEATH STRANDING 2: ON THE BEACH": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2025-06-26",
+  "slug": "death-stranding-2"
+ },
+ "DEATH STRANDING™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2021-09-24",
+  "slug": "death-stranding-directors-cut"
+ },
+ "DEATHLOOP": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 88,
+  "released": "2021-09-14",
+  "slug": "deathloop-2"
+ },
+ "DIRT 5": {
+  "genres": [
+   "Racing",
+   "Arcade"
+  ],
+  "metacritic": 79,
+  "released": "2020-11-05",
+  "slug": "dirt-5"
+ },
+ "DOOM": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 83,
+  "released": "1993-12-10",
+  "slug": "doom-2"
+ },
+ "DRAGON BALL XENOVERSE 2": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Fighting",
+   "Casual",
+   "Massively Multiplayer"
+  ],
+  "metacritic": 74,
+  "released": "2016-10-25",
+  "slug": "dragon-ball-xenoverse-2"
+ },
+ "DRAGON BALL: THE BREAKERS": {
+  "genres": [
+   "Casual",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-10-13",
+  "slug": "dragon-ball-the-breakers"
+ },
+ "DREDGE": {
+  "genres": [
+   "Adventure",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2023-03-29",
+  "slug": "dredge"
+ },
+ "Darkest Dungeon": {
+  "genres": [
+   "Strategy",
+   "Indie",
+   "RPG"
+  ],
+  "metacritic": 84,
+  "released": "2016-01-18",
+  "slug": "darkest-dungeon"
+ },
+ "Darksiders": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 83,
+  "released": "2010-01-05",
+  "slug": "darksiders"
+ },
+ "Darksiders II": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 83,
+  "released": "2012-08-14",
+  "slug": "darksiders-ii"
+ },
+ "Darksiders III": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 65,
+  "released": "2018-11-27",
+  "slug": "darksiders-iii"
+ },
+ "Day of the Tentacle Remastered": {
+  "genres": [
+   "Family",
+   "Adventure"
+  ],
+  "metacritic": 86,
+  "released": "2016-03-21",
+  "slug": "day-of-the-tentacle-remastered"
+ },
+ "DayZ": {
+  "genres": [
+   "Indie",
+   "Massively Multiplayer",
+   "Action"
+  ],
+  "metacritic": 44,
+  "released": "2013-12-16",
+  "slug": "dayz"
+ },
+ "Dead Space": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-01-27",
+  "slug": "dead-space-5"
+ },
+ "Dead Space™": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2008-10-13",
+  "slug": "dead-space"
+ },
+ "Dead Space™ 2": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2008-10-13",
+  "slug": "dead-space"
+ },
+ "Dead by Daylight": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 72,
+  "released": "2016-06-14",
+  "slug": "dead-by-daylight"
+ },
+ "Death's Door": {
+  "genres": [
+   "Indie",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2021-07-20",
+  "slug": "acid-nerve-deaths-door"
+ },
+ "Deep Rock Galactic": {
+  "genres": [
+   "Indie",
+   "Action"
+  ],
+  "metacritic": 84,
+  "released": "2020-05-13",
+  "slug": "deep-rock-galactic"
+ },
+ "Destiny 2": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 82,
+  "released": "2017-09-06",
+  "slug": "destiny-2"
+ },
+ "Detroit: Become Human™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 79,
+  "released": "2018-05-25",
+  "slug": "detroit-become-human"
+ },
+ "Deus Ex: Mankind Divided™": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 83,
+  "released": "2016-08-22",
+  "slug": "deus-ex-mankind-divided"
+ },
+ "Devil May Cry 5 Series": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 88,
+  "released": "2019-03-08",
+  "slug": "devil-may-cry-5"
+ },
+ "DiRT Rally 2.0": {
+  "genres": [
+   "Racing",
+   "Simulation",
+   "Sports"
+  ],
+  "metacritic": 83,
+  "released": "2019-02-26",
+  "slug": "dirt-rally-20"
+ },
+ "Diablo® IV": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 90,
+  "released": "2023-06-06",
+  "slug": "diablo-iv"
+ },
+ "Dishonored": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 91,
+  "released": "2012-09-25",
+  "slug": "dishonored"
+ },
+ "Disney Epic Mickey: Rebrushed": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-09-24",
+  "slug": "disney-epic-mickey-rebrushed"
+ },
+ "Dispatch": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Casual",
+   "Strategy",
+   "Indie"
+  ],
+  "metacritic": null,
+  "released": "2025-10-22",
+  "slug": "dispatch-2"
+ },
+ "Dragon Age™: The Veilguard": {
+  "genres": [
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2024-10-31",
+  "slug": "dragon-age-4-tba"
+ },
+ "Dragon's Crown": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2013-07-25",
+  "slug": "dragons-crown"
+ },
+ "Dragon's Dogma 2": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2024-03-21",
+  "slug": "dragons-dogma-2"
+ },
+ "Dreams™": {
+  "genres": [
+   "Platformer",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "1995-02-11",
+  "slug": "nights-into-dreams"
+ },
+ "Dying Light 2": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 77,
+  "released": "2022-02-04",
+  "slug": "dying-light-2"
+ },
+ "EA SPORTS FC™ 24": {
+  "genres": [
+   "Casual",
+   "Simulation",
+   "Sports"
+  ],
+  "metacritic": null,
+  "released": "2023-09-22",
+  "slug": "ea-sports-fc-24"
+ },
+ "EA SPORTS FC™ 25": {
+  "genres": [
+   "Simulation",
+   "Sports"
+  ],
+  "metacritic": null,
+  "released": "2024-09-26",
+  "slug": "ea-sports-fc-25"
+ },
+ "EA SPORTS FC™ 26": {
+  "genres": [
+   "Simulation",
+   "Sports"
+  ],
+  "metacritic": null,
+  "released": "2025-09-25",
+  "slug": "ea-sports-fc-26"
+ },
+ "EA SPORTS™ FIFA 23": {
+  "genres": [
+   "Sports"
+  ],
+  "metacritic": 79,
+  "released": "2015-09-22",
+  "slug": "ea-sports-fifa-16"
+ },
+ "EA SPORTS™ WRC": {
+  "genres": [
+   "Arcade",
+   "Fighting",
+   "Sports"
+  ],
+  "metacritic": null,
+  "released": "2010-08-10",
+  "slug": "ea-sports-mma"
+ },
+ "ELDEN RING": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 95,
+  "released": "2022-02-25",
+  "slug": "elden-ring"
+ },
+ "ENDER LILIES: Quietus of the Knights": {
+  "genres": [
+   "Platformer",
+   "Indie",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 86,
+  "released": "2021-06-22",
+  "slug": "ender-lilies-quietus-of-the-knights"
+ },
+ "ENDER MAGNOLIA: Bloom in the Mist": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2025-01-22",
+  "slug": "ender-magnolia-bloom-in-the-mist"
+ },
+ "Endling - Extinction is Forever": {
+  "genres": [
+   "Casual",
+   "Indie",
+   "Adventure",
+   "Simulation"
+  ],
+  "metacritic": null,
+  "released": "2022-07-19",
+  "slug": "endling"
+ },
+ "Erica": {
+  "genres": [
+   "Casual",
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": 74,
+  "released": "2019-08-19",
+  "slug": "erica"
+ },
+ "Everybody's Gone To The Rapture™": {
+  "genres": [
+   "Casual",
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": 76,
+  "released": "2015-08-11",
+  "slug": "everybodys-gone-to-the-rapture"
+ },
+ "Evil Dead: The Game": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 73,
+  "released": "2022-05-13",
+  "slug": "evil-dead-the-game"
+ },
+ "Evil West": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 74,
+  "released": "2022-11-21",
+  "slug": "evil-west"
+ },
+ "FIFA 12": {
+  "genres": [
+   "Sports"
+  ],
+  "metacritic": 85,
+  "released": "2011-09-27",
+  "slug": "fifa-12"
+ },
+ "FIFA 15": {
+  "genres": [
+   "Sports"
+  ],
+  "metacritic": 82,
+  "released": "2014-09-20",
+  "slug": "fifa-15"
+ },
+ "FIFA 17": {
+  "genres": [
+   "Sports"
+  ],
+  "metacritic": 85,
+  "released": "2016-09-27",
+  "slug": "ea-sports-fifa-17"
+ },
+ "FIFA 22": {
+  "genres": [
+   "Sports"
+  ],
+  "metacritic": 76,
+  "released": "2021-09-27",
+  "slug": "fifa-22-xbox-one"
+ },
+ "FINAL FANTASY VII REBIRTH": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2024-02-29",
+  "slug": "final-fantasy-vii-rebirth"
+ },
+ "FINAL FANTASY VII REMAKE": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 87,
+  "released": "2020-04-10",
+  "slug": "final-fantasy-vii-remake"
+ },
+ "Fallout 4": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 84,
+  "released": "2015-11-09",
+  "slug": "fallout-4"
+ },
+ "Fallout 76": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 51,
+  "released": "2018-11-14",
+  "slug": "fallout-76"
+ },
+ "Farpoint": {
+  "genres": [
+   "Shooter"
+  ],
+  "metacritic": 71,
+  "released": "2017-05-16",
+  "slug": "farpoint"
+ },
+ "Firewatch": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": 81,
+  "released": "2016-02-08",
+  "slug": "firewatch"
+ },
+ "Flower": {
+  "genres": [
+   "Arcade",
+   "Family",
+   "Casual",
+   "Adventure"
+  ],
+  "metacritic": 89,
+  "released": "2009-02-12",
+  "slug": "flower"
+ },
+ "For Honor": {
+  "genres": [
+   "Massively Multiplayer",
+   "Action"
+  ],
+  "metacritic": 76,
+  "released": "2017-02-13",
+  "slug": "for-honor"
+ },
+ "Fortnite": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2017-09-26",
+  "slug": "fornite-battle-royale"
+ },
+ "Friday the 13th: The Game": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 61,
+  "released": "2017-05-25",
+  "slug": "friday-the-13th-the-game"
+ },
+ "GRAVITY RUSH™ 2": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2017-01-20",
+  "slug": "gravity-rush-2"
+ },
+ "GRIS": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": 83,
+  "released": "2018-12-13",
+  "slug": "gris"
+ },
+ "Game of Thrones": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2012-05-15",
+  "slug": "game-of-thrones"
+ },
+ "Generation Zero": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 49,
+  "released": "2019-03-26",
+  "slug": "generation-zero-2019"
+ },
+ "Ghost of Tsushima": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 83,
+  "released": "2020-07-17",
+  "slug": "ghost-of-tsushima"
+ },
+ "Ghostrunner": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2020-10-27",
+  "slug": "ghostrunner"
+ },
+ "Ghostrunner 2": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-10-26",
+  "slug": "ghostrunner-2"
+ },
+ "Ghostwire: Tokyo": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 78,
+  "released": "2022-03-24",
+  "slug": "ghostwire-tokio"
+ },
+ "Goat Simulator": {
+  "genres": [
+   "Casual",
+   "Indie",
+   "Action",
+   "Simulation"
+  ],
+  "metacritic": 62,
+  "released": "2014-04-01",
+  "slug": "goat-simulator"
+ },
+ "Goat Simulator 3": {
+  "genres": [
+   "Casual",
+   "Adventure",
+   "Action",
+   "Simulation"
+  ],
+  "metacritic": null,
+  "released": "2022-11-17",
+  "slug": "goat-simulator-3"
+ },
+ "God of War": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 94,
+  "released": "2005-03-22",
+  "slug": "god-of-war"
+ },
+ "God of War Ragnarök": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-11-09",
+  "slug": "god-of-war-ragnarok"
+ },
+ "God of War® III Remastered": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 81,
+  "released": "2015-07-14",
+  "slug": "god-of-war-iii-remastered"
+ },
+ "Godfall": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 60,
+  "released": "2020-11-12",
+  "slug": "godfall"
+ },
+ "Gran Turismo® 7": {
+  "genres": [
+   "Racing"
+  ],
+  "metacritic": 84,
+  "released": "2022-03-04",
+  "slug": "gran-turismo-7"
+ },
+ "Grand Kingdom": {
+  "genres": [
+   "Strategy",
+   "RPG"
+  ],
+  "metacritic": 77,
+  "released": "2015-11-19",
+  "slug": "grand-kingdom"
+ },
+ "Grand Theft Auto V": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 92,
+  "released": "2013-09-17",
+  "slug": "grand-theft-auto-v"
+ },
+ "Gravity Rush™ Remastered": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2016-02-02",
+  "slug": "gravity-rush-remastered"
+ },
+ "GreedFall": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 74,
+  "released": "2019-09-10",
+  "slug": "greedfall"
+ },
+ "HEAVY RAIN™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2010-02-17",
+  "slug": "heavy-rain"
+ },
+ "HITMAN™": {
+  "genres": [
+   "Shooter",
+   "Action",
+   "Simulation"
+  ],
+  "metacritic": 83,
+  "released": "2016-03-11",
+  "slug": "hitman"
+ },
+ "HITMAN™ 2": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2018-11-13",
+  "slug": "hitman-2-prologue"
+ },
+ "HOT WHEELS UNLEASHED™ 2 - Turbocharged": {
+  "genres": [
+   "Racing"
+  ],
+  "metacritic": 74,
+  "released": "2021-09-27",
+  "slug": "hot-wheels-unleashed"
+ },
+ "Heavenly Bodies": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Simulation"
+  ],
+  "metacritic": 80,
+  "released": "2021-12-07",
+  "slug": "heavenly-bodies-2"
+ },
+ "Hell is Us": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2025-09-04",
+  "slug": "hell-is-us"
+ },
+ "Hellblade II: Senua’s Saga": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-05-21",
+  "slug": "senuas-saga-hellblade-ii"
+ },
+ "Hellblade: Senua’s Sacrifice": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 83,
+  "released": "2017-08-07",
+  "slug": "hellblade-senuas-sacrifice"
+ },
+ "Hello Neighbor 2": {
+  "genres": [
+   "Indie",
+   "Strategy",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-12-05",
+  "slug": "hello-neighbor-2-2"
+ },
+ "Here They Lie™": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": 62,
+  "released": "2016-10-13",
+  "slug": "here-they-lie"
+ },
+ "High On Life": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-12-13",
+  "slug": "high-on-life"
+ },
+ "Hitman: Absolution™": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 79,
+  "released": "2012-11-19",
+  "slug": "hitman-absolution"
+ },
+ "Hoa": {
+  "genres": [
+   "Casual",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 70,
+  "released": "2021-08-24",
+  "slug": "hoa"
+ },
+ "Hogwarts Legacy : L'Héritage de Poudlard": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2023-02-10",
+  "slug": "hogwarts-legacy"
+ },
+ "Hollow Knight": {
+  "genres": [
+   "Platformer",
+   "Indie",
+   "Action"
+  ],
+  "metacritic": 88,
+  "released": "2017-02-23",
+  "slug": "hollow-knight"
+ },
+ "Hollow Knight: Silksong": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2025-09-04",
+  "slug": "hollow-knight-silksong"
+ },
+ "Horizon Call of the Mountain™": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2023-02-22",
+  "slug": "horizon-call-of-the-mountain"
+ },
+ "Horizon Chase Turbo": {
+  "genres": [
+   "Racing",
+   "Action",
+   "Casual",
+   "Sports",
+   "Indie"
+  ],
+  "metacritic": 78,
+  "released": "2018-05-15",
+  "slug": "horizon-chase-turbo"
+ },
+ "Horizon Forbidden West": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 86,
+  "released": "2022-02-18",
+  "slug": "horizon-zero-dawn-2"
+ },
+ "Horizon Zero Dawn™": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 83,
+  "released": "2017-11-07",
+  "slug": "horizon-zero-dawn-the-frozen-wilds"
+ },
+ "I Have No Mouth, and I Must Scream": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 88,
+  "released": "2016-10-21",
+  "slug": "battlefield-1"
+ },
+ "INDIKA": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2024-05-02",
+  "slug": "indika"
+ },
+ "INSIDE": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Puzzle",
+   "Indie",
+   "Platformer"
+  ],
+  "metacritic": 87,
+  "released": "2016-06-28",
+  "slug": "inside"
+ },
+ "Iconoclasts": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2018-01-23",
+  "slug": "iconoclasts"
+ },
+ "Immortals of Aveum™": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-08-21",
+  "slug": "immortals-of-aveum"
+ },
+ "Indiana Jones et le Cercle Ancien": {
+  "genres": [
+   "Family",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 78,
+  "released": "2007-01-01",
+  "slug": "lego-indiana-jones"
+ },
+ "It Takes Two PS4™ & PS5™": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 88,
+  "released": "2021-03-26",
+  "slug": "it-takes-two-2"
+ },
+ "Journey": {
+  "genres": [
+   "Family",
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": 92,
+  "released": "2012-03-13",
+  "slug": "journey"
+ },
+ "Journey to Foundation": {
+  "genres": [
+   "Shooter",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2023-10-26",
+  "slug": "journey-to-foundation"
+ },
+ "Jurassic World Evolution 2": {
+  "genres": [
+   "Strategy",
+   "Simulation"
+  ],
+  "metacritic": null,
+  "released": "2021-11-09",
+  "slug": "jurassic-world-evolution-2-2"
+ },
+ "Jusant": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-10-30",
+  "slug": "jusant"
+ },
+ "Just Cause 3": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2015-11-30",
+  "slug": "just-cause-3"
+ },
+ "KINGDOM HEARTS - HD 1.5+2.5 ReMIX -": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 86,
+  "released": "2017-03-28",
+  "slug": "kingdom-hearts-hd-1525-remix"
+ },
+ "KINGDOM HEARTS Ⅲ": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 82,
+  "released": "2019-01-25",
+  "slug": "kingdom-hearts-iii"
+ },
+ "Kena: Bridge of Spirits PS4 & PS5": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action",
+   "Strategy",
+   "Indie"
+  ],
+  "metacritic": 80,
+  "released": "2021-09-21",
+  "slug": "kena-bridge-of-spirits"
+ },
+ "Killzone 2": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 91,
+  "released": "2009-02-25",
+  "slug": "killzone-2"
+ },
+ "King's Quest": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2015-07-28",
+  "slug": "kings-quest"
+ },
+ "Knowledge is Power™": {
+  "genres": [
+   "Strategy"
+  ],
+  "metacritic": null,
+  "released": "2018-11-05",
+  "slug": "knowledge-is-power-decades"
+ },
+ "L.A. Noire": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 83,
+  "released": "2011-05-17",
+  "slug": "la-noire"
+ },
+ "LEGO®  Harry Potter™ Collection": {
+  "genres": [
+   "Family",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 79,
+  "released": "2010-06-03",
+  "slug": "lego-harry-potter"
+ },
+ "LEGO® 2K Drive": {
+  "genres": [
+   "Racing",
+   "Arcade"
+  ],
+  "metacritic": null,
+  "released": "2023-05-18",
+  "slug": "lego-2k-drive"
+ },
+ "LEGO® Builder's Journey": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2023-12-07",
+  "slug": "lego-fortnite"
+ },
+ "LEGO® DC Super-Vilains": {
+  "genres": [
+   "Family",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2018-10-15",
+  "slug": "lego-dc-super-villains"
+ },
+ "LEGO® Horizon Adventures™": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Puzzle"
+  ],
+  "metacritic": null,
+  "released": "2024-11-14",
+  "slug": "lego-horizon-adventures"
+ },
+ "LEGO® Jurassic World™": {
+  "genres": [
+   "Family",
+   "Adventure",
+   "Action",
+   "Puzzle"
+  ],
+  "metacritic": 72,
+  "released": "2015-06-11",
+  "slug": "lego-jurassic-world"
+ },
+ "LEGO® MARVEL Super Heroes": {
+  "genres": [
+   "Family",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 78,
+  "released": "2013-10-22",
+  "slug": "lego-marvel"
+ },
+ "LEGO® MARVEL Super Heroes 2": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2017-11-14",
+  "slug": "lego-marvel-super-heroes-2"
+ },
+ "LEGO® MARVEL's Avengers": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 67,
+  "released": "2016-01-26",
+  "slug": "lego-marvels-avengers"
+ },
+ "LEGO® Star Wars™ : La Saga Skywalker": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2022-04-05",
+  "slug": "lego-star-wars-the-sywalker-saga"
+ },
+ "La Terre du Milieu™: L'Ombre de la Guerre™": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2012-07-12",
+  "slug": "la-mulana"
+ },
+ "Legendary Edition: Mass Effect": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 88,
+  "released": "2021-05-14",
+  "slug": "mass-effect-legendary-edition"
+ },
+ "Lies of P": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2023-09-19",
+  "slug": "lies-of-p"
+ },
+ "Life Is Strange™": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": 83,
+  "released": "2015-01-29",
+  "slug": "life-is-strange-episode-1-2"
+ },
+ "Little Nightmares": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 81,
+  "released": "2017-04-27",
+  "slug": "little-nightmares"
+ },
+ "Little Nightmares II": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 82,
+  "released": "2021-02-10",
+  "slug": "little-nightmares-ii"
+ },
+ "LittleBigPlanet™3": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": 79,
+  "released": "2014-11-18",
+  "slug": "littlebigplanet-3"
+ },
+ "Lords of the Fallen": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2023-10-13",
+  "slug": "lords-of-the-fallen-2"
+ },
+ "Lost Records: Bloom & Rage": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2025-02-17",
+  "slug": "lost-records-bloom-rage"
+ },
+ "METAL GEAR SOLID V: THE PHANTOM PAIN": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 91,
+  "released": "2015-09-01",
+  "slug": "metal-gear-solid-v-the-phantom-pain"
+ },
+ "MIO: Memories in Orbit": {
+  "genres": [
+   "Platformer"
+  ],
+  "metacritic": null,
+  "released": "2026-01-19",
+  "slug": "mio-memories-in-orbit"
+ },
+ "MY HERO ONE'S JUSTICE 2": {
+  "genres": [
+   "Action",
+   "Fighting"
+  ],
+  "metacritic": 66,
+  "released": "2020-03-12",
+  "slug": "my-hero-ones-justice-2"
+ },
+ "Mad Max": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 73,
+  "released": "2015-08-31",
+  "slug": "mad-max"
+ },
+ "Mafia II": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 77,
+  "released": "2010-08-24",
+  "slug": "mafia-ii"
+ },
+ "Mafia II: Definitive Edition": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 65,
+  "released": "2020-05-19",
+  "slug": "mafia-ii-definitive-edition"
+ },
+ "Mafia: Definitive Edition": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 78,
+  "released": "2020-09-25",
+  "slug": "mafia"
+ },
+ "Mafia: Trilogy": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2020-09-25",
+  "slug": "mafia-trilogy"
+ },
+ "Marvel's Spider-Man": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 87,
+  "released": "2018-09-07",
+  "slug": "marvels-spider-man"
+ },
+ "Marvel's Spider-Man 2": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-10-20",
+  "slug": "marvels-spider-man-2"
+ },
+ "Marvel’s Spider-Man: Miles Morales": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2020-11-12",
+  "slug": "marvels-spider-man-miles-morales"
+ },
+ "Mass Effect™ Édition Légendaire": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 88,
+  "released": "2021-05-14",
+  "slug": "mass-effect-legendary-edition"
+ },
+ "Metaphor: ReFantazio": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2024-10-11",
+  "slug": "metaphor-refantazio"
+ },
+ "Middle-earth™: Shadow of Mordor™": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 85,
+  "released": "2014-09-30",
+  "slug": "shadow-of-mordor"
+ },
+ "Mighty No. 9": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 52,
+  "released": "2016-06-21",
+  "slug": "mighty-no-9"
+ },
+ "Minecraft Legends": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2023-04-18",
+  "slug": "minecraft-legends"
+ },
+ "Monster Hunter: World": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 89,
+  "released": "2018-01-26",
+  "slug": "monster-hunter-world-2"
+ },
+ "Mortal Kombat X": {
+  "genres": [
+   "Action",
+   "Fighting"
+  ],
+  "metacritic": 76,
+  "released": "2015-04-07",
+  "slug": "mortal-kombat-x"
+ },
+ "Mortal Shell": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 75,
+  "released": "2020-08-18",
+  "slug": "mortal-shell"
+ },
+ "Moss II VR": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-03-31",
+  "slug": "moss-book-ii"
+ },
+ "Moss VR": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-03-31",
+  "slug": "moss-book-ii"
+ },
+ "NARUTO TO BORUTO: SHINOBI STRIKER": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 62,
+  "released": "2018-08-30",
+  "slug": "naruto-to-boruto-shinobi-striker"
+ },
+ "NBA 2K20": {
+  "genres": [
+   "Action",
+   "Simulation",
+   "Sports"
+  ],
+  "metacritic": 76,
+  "released": "2019-09-05",
+  "slug": "nba-2k20"
+ },
+ "NBA 2K23": {
+  "genres": [
+   "Simulation",
+   "Sports"
+  ],
+  "metacritic": null,
+  "released": "2022-09-09",
+  "slug": "nba-2k23"
+ },
+ "NOT A HERO": {
+  "genres": [
+   "Indie",
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 75,
+  "released": "2015-05-13",
+  "slug": "not-a-hero"
+ },
+ "Need for Speed™ Hot Pursuit Remastered": {
+  "genres": [
+   "Racing",
+   "Action",
+   "Sports"
+  ],
+  "metacritic": 75,
+  "released": "2020-11-06",
+  "slug": "need-for-speed-hot-pursuit-remastered"
+ },
+ "Need for Speed™ Payback": {
+  "genres": [
+   "Racing",
+   "Arcade"
+  ],
+  "metacritic": 61,
+  "released": "2017-11-07",
+  "slug": "need-for-speed-payback"
+ },
+ "Need for Speed™ Unbound": {
+  "genres": [
+   "Racing",
+   "Arcade"
+  ],
+  "metacritic": 66,
+  "released": "2015-11-03",
+  "slug": "need-for-speed"
+ },
+ "Netflix": {},
+ "Neva": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": null,
+  "released": "2024-10-14",
+  "slug": "neva-2"
+ },
+ "Never Alone": {
+  "genres": [
+   "Casual",
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": 70,
+  "released": "2014-11-18",
+  "slug": "never-alone"
+ },
+ "Ni no Kuni: Wrath of the White Witch": {
+  "genres": [
+   "RPG"
+  ],
+  "metacritic": 84,
+  "released": "2011-11-17",
+  "slug": "ni-no-kuni-wrath-of-the-white-witch"
+ },
+ "Nickelodeon All-Star Brawl": {
+  "genres": [
+   "Action",
+   "Fighting"
+  ],
+  "metacritic": null,
+  "released": "2021-10-05",
+  "slug": "nickelodeon-all-star-brawl"
+ },
+ "NieR:Automata": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 86,
+  "released": "2017-03-17",
+  "slug": "nierautomata"
+ },
+ "Night in the Woods": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": 88,
+  "released": "2017-02-21",
+  "slug": "night-in-the-woods"
+ },
+ "Nine Sols": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-05-29",
+  "slug": "nine-sols"
+ },
+ "Nioh": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 88,
+  "released": "2017-02-07",
+  "slug": "nioh"
+ },
+ "Nioh 2": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 85,
+  "released": "2020-03-13",
+  "slug": "nioh-2"
+ },
+ "No Man's Sky": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG",
+   "Simulation",
+   "Indie",
+   "Massively Multiplayer"
+  ],
+  "metacritic": 75,
+  "released": "2016-08-09",
+  "slug": "no-mans-sky"
+ },
+ "Old Man's Journey": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Puzzle",
+   "Casual",
+   "Indie"
+  ],
+  "metacritic": 77,
+  "released": "2017-05-18",
+  "slug": "old-mans-journey"
+ },
+ "OlliOlli World": {
+  "genres": [
+   "Platformer",
+   "Indie",
+   "Action",
+   "Sports"
+  ],
+  "metacritic": null,
+  "released": "2022-02-07",
+  "slug": "olliolli-world"
+ },
+ "Outer Wilds": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": 84,
+  "released": "2019-05-29",
+  "slug": "outer-wilds"
+ },
+ "Outlast 2": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 76,
+  "released": "2017-04-24",
+  "slug": "outlast-2"
+ },
+ "P.T.": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2014-08-12",
+  "slug": "pt"
+ },
+ "PAC-MAN WORLD Re-PAC": {
+  "genres": [
+   "Racing",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-08-26",
+  "slug": "pac-man-world-re-pac"
+ },
+ "PGA TOUR 2K21": {
+  "genres": [
+   "Simulation",
+   "Sports"
+  ],
+  "metacritic": 75,
+  "released": "2020-08-21",
+  "slug": "pga-tour-2k21"
+ },
+ "Pacific Drive": {
+  "genres": [
+   "Racing",
+   "Adventure",
+   "Action",
+   "Simulation",
+   "Indie"
+  ],
+  "metacritic": null,
+  "released": "2024-02-21",
+  "slug": "pacific-drive"
+ },
+ "Pepper Grinder": {},
+ "Persona 5": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 93,
+  "released": "2016-09-15",
+  "slug": "persona-5"
+ },
+ "Persona®5 Strikers": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 80,
+  "released": "2020-02-20",
+  "slug": "persona-5-strikers"
+ },
+ "Powers": {
+  "genres": [
+   "Casual",
+   "Strategy",
+   "Arcade",
+   "Simulation",
+   "Indie"
+  ],
+  "metacritic": null,
+  "released": "2014-09-03",
+  "slug": "kitty-powers-matchmaker"
+ },
+ "Predator: Hunting Grounds": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 59,
+  "released": "2020-04-24",
+  "slug": "predator-hunting-grounds"
+ },
+ "Psychonauts 2": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 88,
+  "released": "2021-08-24",
+  "slug": "psychonauts-2"
+ },
+ "RESIDENT EVIL 7 biohazard": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 85,
+  "released": "2017-01-23",
+  "slug": "resident-evil-7-biohazard"
+ },
+ "Rad TV": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 67,
+  "released": "2018-02-19",
+  "slug": "rad-rodgers"
+ },
+ "Ratchet & Clank™": {
+  "genres": [
+   "Arcade",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2012-06-27",
+  "slug": "ratchet-clank-collection"
+ },
+ "Rayman® Legends": {
+  "genres": [
+   "Platformer"
+  ],
+  "metacritic": 89,
+  "released": "2013-08-29",
+  "slug": "rayman-legends"
+ },
+ "Red Dead Redemption": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 95,
+  "released": "2010-05-18",
+  "slug": "red-dead-redemption"
+ },
+ "Red Dead Redemption 2": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 96,
+  "released": "2018-10-26",
+  "slug": "red-dead-redemption-2"
+ },
+ "Remnant: From the Ashes": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 76,
+  "released": "2019-08-20",
+  "slug": "remnant-from-the-ashes"
+ },
+ "Resident Evil Re:Verse": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-10-28",
+  "slug": "reverse-4"
+ },
+ "Resident Evil Village": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 83,
+  "released": "2021-05-07",
+  "slug": "resident-evil-village"
+ },
+ "Rez Infinite": {
+  "genres": [
+   "Casual",
+   "Indie",
+   "Action"
+  ],
+  "metacritic": 91,
+  "released": "2016-10-13",
+  "slug": "rez-infinite"
+ },
+ "RiME": {
+  "genres": [
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": 78,
+  "released": "2017-05-25",
+  "slug": "rime"
+ },
+ "Rise of the Tomb Raider": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2015-11-10",
+  "slug": "rise-of-the-tomb-raider"
+ },
+ "Roblox": {
+  "genres": [
+   "Racing",
+   "Shooter",
+   "Adventure",
+   "Action",
+   "RPG",
+   "Fighting",
+   "Puzzle",
+   "Strategy",
+   "Arcade",
+   "Simulation",
+   "Sports",
+   "Card",
+   "Family",
+   "Board Games",
+   "Educational",
+   "Casual",
+   "Indie",
+   "Massively Multiplayer",
+   "Platformer"
+  ],
+  "metacritic": null,
+  "released": "2006-09-01",
+  "slug": "roblox"
+ },
+ "RoboCop: Rogue City": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-11-02",
+  "slug": "robocop-rogue-city"
+ },
+ "SHADOW OF THE COLOSSUS™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 91,
+  "released": "2018-02-06",
+  "slug": "shadow-of-the-colossus-2018"
+ },
+ "SHINOBI: Art of Vengeance": {
+  "genres": [
+   "Platformer",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2025-08-29",
+  "slug": "shinobi-art-of-vengeance"
+ },
+ "SIGNALIS": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 82,
+  "released": "2022-10-27",
+  "slug": "signalis"
+ },
+ "SILENT HILL 2": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-10-08",
+  "slug": "silent-hill-2-remake"
+ },
+ "SILENT HILL f": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2025-09-24",
+  "slug": "silent-hill-f"
+ },
+ "SILENT HILL: The Short Message": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-02-01",
+  "slug": "silent-hill-the-short-message"
+ },
+ "SOMA": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 84,
+  "released": "2015-09-21",
+  "slug": "soma"
+ },
+ "SONIC FORCES": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 58,
+  "released": "2017-11-07",
+  "slug": "sonic-forces"
+ },
+ "STAR WARS Jedi: Fallen Order™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2019-11-15",
+  "slug": "jedi-the-fallen-order"
+ },
+ "STAR WARS Jedi: Survivor™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-04-27",
+  "slug": "star-wars-jedi-survivor"
+ },
+ "STAR WARS™ Battlefront™": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 76,
+  "released": "2004-09-20",
+  "slug": "star-wars-battlefront-3"
+ },
+ "STAR WARS™ Battlefront™ II": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2017-11-17",
+  "slug": "star-wars-battlefront-2"
+ },
+ "STAR WARS™: Squadrons": {
+  "genres": [
+   "Action",
+   "Simulation"
+  ],
+  "metacritic": 79,
+  "released": "2020-10-02",
+  "slug": "star-wars-squadrons"
+ },
+ "STEEP": {
+  "genres": [
+   "Action",
+   "Simulation",
+   "Sports"
+  ],
+  "metacritic": 72,
+  "released": "2016-12-02",
+  "slug": "steep"
+ },
+ "SUPERHOT": {
+  "genres": [
+   "Shooter",
+   "Indie",
+   "Action"
+  ],
+  "metacritic": 82,
+  "released": "2016-02-24",
+  "slug": "superhot"
+ },
+ "Sable": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2021-09-23",
+  "slug": "sable"
+ },
+ "Sackboy: A Big Adventure": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 81,
+  "released": "2020-11-12",
+  "slug": "sackboy-a-big-adventure-2"
+ },
+ "Saints Row": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 84,
+  "released": "2011-11-15",
+  "slug": "saints-row-the-third"
+ },
+ "Salt and Sanctuary": {
+  "genres": [
+   "Platformer",
+   "Indie",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 84,
+  "released": "2016-03-15",
+  "slug": "salt-and-sanctuary"
+ },
+ "Shadow of the Tomb Raider": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 78,
+  "released": "2018-09-14",
+  "slug": "shadow-of-the-tomb-raider"
+ },
+ "Sifu": {
+  "genres": [
+   "Action",
+   "Fighting"
+  ],
+  "metacritic": 79,
+  "released": "2022-02-08",
+  "slug": "sifu"
+ },
+ "Skul: The Hero Slayer": {
+  "genres": [
+   "Arcade"
+  ],
+  "metacritic": null,
+  "released": "2008-06-26",
+  "slug": "guitar-hero-aerosmith"
+ },
+ "Sniper Elite 4": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 78,
+  "released": "2017-02-13",
+  "slug": "sniper-elite-4"
+ },
+ "Sniper Elite: Resistance": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2025-01-30",
+  "slug": "sniper-elite-resistance"
+ },
+ "Soldats Inconnus : Mémoires de la Grande Guerre": {
+  "genres": [
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": 80,
+  "released": "2014-06-24",
+  "slug": "valiant-hearts-the-great-war"
+ },
+ "Song in the Smoke Rekindled": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2024-09-16",
+  "slug": "enotria-the-last-song"
+ },
+ "Sonic Colours: Ultimate": {
+  "genres": [
+   "Casual",
+   "Platformer",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2021-09-07",
+  "slug": "sonic-colors-ultimate"
+ },
+ "Split Fiction": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2025-03-06",
+  "slug": "split-fiction"
+ },
+ "Spotify": {},
+ "Star Wars: Tales from the Galaxy's Edge - Enhanced Edition": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": null,
+  "slug": "star-wars-tales-from-the-galaxy-edge-enhanced-edit"
+ },
+ "StarBlood Arena™": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2017-04-11",
+  "slug": "starblood-arena"
+ },
+ "Stardew Valley": {
+  "genres": [
+   "Indie",
+   "RPG",
+   "Simulation"
+  ],
+  "metacritic": 89,
+  "released": "2016-02-25",
+  "slug": "stardew-valley"
+ },
+ "Still Wakes the Deep": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-06-18",
+  "slug": "still-wakes-the-deep"
+ },
+ "Stranded Deep": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 65,
+  "released": "2015-01-23",
+  "slug": "stranded-deep"
+ },
+ "Stray": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Puzzle",
+   "Indie",
+   "Platformer"
+  ],
+  "metacritic": 82,
+  "released": "2022-07-19",
+  "slug": "stray-2"
+ },
+ "Street Fighter V": {
+  "genres": [
+   "Action",
+   "Fighting"
+  ],
+  "metacritic": 74,
+  "released": "2016-02-15",
+  "slug": "street-fighter-v"
+ },
+ "Streets of Rage 4": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action",
+   "Fighting"
+  ],
+  "metacritic": 84,
+  "released": "2020-04-30",
+  "slug": "streets-of-rage-4"
+ },
+ "Subnautica: Below Zero": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": 80,
+  "released": "2021-05-14",
+  "slug": "subnautica-below-zero"
+ },
+ "Suicide Squad: Kill the Justice League": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-02-02",
+  "slug": "suicide-squad-kill-the-justice-league"
+ },
+ "Sword of the Sea": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2025-08-19",
+  "slug": "sword-of-the-sea"
+ },
+ "THE PLAYROOM": {
+  "genres": [
+   "Arcade"
+  ],
+  "metacritic": null,
+  "released": "2013-11-15",
+  "slug": "the-playroom"
+ },
+ "TUNIC": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2022-03-16",
+  "slug": "tunic"
+ },
+ "Tails of Iron": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 82,
+  "released": "2021-09-16",
+  "slug": "tails-of-iron"
+ },
+ "Tales from the Borderlands": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": 85,
+  "released": "2015-10-21",
+  "slug": "tales-from-the-borderlands"
+ },
+ "Team Sonic Racing": {
+  "genres": [
+   "Racing"
+  ],
+  "metacritic": 72,
+  "released": "2019-05-21",
+  "slug": "team-sonic-racing"
+ },
+ "Teenage Mutant Ninja Turtles: The Cowabunga Collection": {
+  "genres": [
+   "Arcade",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-08-30",
+  "slug": "teenage-mutant-ninja-turtles-the-cowabunga-collect"
+ },
+ "The Alters": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2025-06-13",
+  "slug": "the-alters"
+ },
+ "The Artful Escape": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2021-09-09",
+  "slug": "the-artful-escape"
+ },
+ "The Callisto Protocol": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 69,
+  "released": "2022-12-01",
+  "slug": "the-calisto-protocol"
+ },
+ "The Dark Pictures Anthology: House of Ashes": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 73,
+  "released": "2021-10-22",
+  "slug": "the-dark-pictures-anthology-house-of-ashes"
+ },
+ "The Dark Pictures Anthology: Little Hope PS5™ & PS4™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 70,
+  "released": "2020-10-30",
+  "slug": "the-dark-pictures-anthology-little-hope"
+ },
+ "The Dark Pictures Anthology: Man of Medan PS4 & PS5": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 71,
+  "released": "2019-08-30",
+  "slug": "man-of-medan"
+ },
+ "The Dark Pictures Anthology: The Devil in Me": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-11-17",
+  "slug": "the-dark-pictures-anthology-the-devil-in-me"
+ },
+ "The Evil Within": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 68,
+  "released": "2014-10-12",
+  "slug": "the-evil-within"
+ },
+ "The Last Faith": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-11-15",
+  "slug": "the-last-faith"
+ },
+ "The Last Guardian™": {
+  "genres": [
+   "Action",
+   "Puzzle"
+  ],
+  "metacritic": 82,
+  "released": "2016-10-25",
+  "slug": "the-last-guardian"
+ },
+ "The Last of Us™": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 93,
+  "released": "2020-06-19",
+  "slug": "the-last-of-us-part-2"
+ },
+ "The Last of Us™ Part II": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 93,
+  "released": "2020-06-19",
+  "slug": "the-last-of-us-part-2"
+ },
+ "The Last of Us™ Remastered": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 93,
+  "released": "2020-06-19",
+  "slug": "the-last-of-us-part-2"
+ },
+ "The Midnight Walk": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2025-05-07",
+  "slug": "the-midnight-walk"
+ },
+ "The Order: 1886": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 63,
+  "released": "2015-01-13",
+  "slug": "the-order-1886"
+ },
+ "The Pathless": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 78,
+  "released": "2020-11-12",
+  "slug": "the-pathless"
+ },
+ "The Persistence": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 78,
+  "released": "2018-07-24",
+  "slug": "the-persistence"
+ },
+ "The Plucky Squire (Le Vaillant Petit Page)": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2024-09-17",
+  "slug": "the-plucky-squire"
+ },
+ "The Room VR: A Dark Matter": {
+  "genres": [
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": null,
+  "released": "2020-03-26",
+  "slug": "the-room-vr-a-dark-matter"
+ },
+ "The Texas Chain Saw Massacre": {
+  "genres": [
+   "Indie",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-08-18",
+  "slug": "the-texas-chain-saw-massacre"
+ },
+ "The Unfinished Swan": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": 81,
+  "released": "2012-10-16",
+  "slug": "the-unfinished-swan"
+ },
+ "The Vanishing of Ethan Carter": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 82,
+  "released": "2014-09-25",
+  "slug": "the-vanishing-of-ethan-carter"
+ },
+ "The Walking Dead": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 92,
+  "released": "2012-04-23",
+  "slug": "the-walking-dead"
+ },
+ "The Walking Dead: Saints & Sinners": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG",
+   "Strategy",
+   "Simulation",
+   "Indie"
+  ],
+  "metacritic": 80,
+  "released": "2020-01-23",
+  "slug": "the-walking-dead-saints-sinners"
+ },
+ "The Witcher 3: Wild Hunt": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 92,
+  "released": "2015-05-18",
+  "slug": "the-witcher-3-wild-hunt"
+ },
+ "The Witness": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": 87,
+  "released": "2016-01-25",
+  "slug": "the-witness"
+ },
+ "The Wolf Among Us": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": 82,
+  "released": "2013-10-10",
+  "slug": "the-wolf-among-us"
+ },
+ "This War of Mine: The Little Ones": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 82,
+  "released": "2016-01-29",
+  "slug": "this-war-of-mine-the-little-ones"
+ },
+ "Thumper": {
+  "genres": [
+   "Indie",
+   "Action"
+  ],
+  "metacritic": 85,
+  "released": "2016-10-10",
+  "slug": "thumper"
+ },
+ "Titan Souls": {
+  "genres": [
+   "Indie",
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2015-04-13",
+  "slug": "titan-souls"
+ },
+ "Titanfall™ 2": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 87,
+  "released": "2016-10-28",
+  "slug": "titanfall-2"
+ },
+ "Tom Clancy's The Division™": {
+  "genres": [
+   "Shooter",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 80,
+  "released": "2016-03-07",
+  "slug": "tom-clancys-the-division"
+ },
+ "Tomb Raider": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2013-03-05",
+  "slug": "tomb-raider"
+ },
+ "Tomb Raider I-III Remastered Starring Lara Croft": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-02-13",
+  "slug": "tomb-raider-i-iii-remastered"
+ },
+ "Trackmania Turbo": {
+  "genres": [
+   "Racing",
+   "Massively Multiplayer"
+  ],
+  "metacritic": 79,
+  "released": "2016-03-22",
+  "slug": "trackmania-turbo"
+ },
+ "Trek to Yomi": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-05-05",
+  "slug": "trek-to-yomi"
+ },
+ "Trials Fusion™": {
+  "genres": [
+   "Racing"
+  ],
+  "metacritic": 80,
+  "released": "2014-04-15",
+  "slug": "trials-fusion"
+ },
+ "UNCHARTED: Legacy of Thieves Collection": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2022-01-28",
+  "slug": "uncharted-legacy-of-thieves-collection"
+ },
+ "Ultros": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2024-02-13",
+  "slug": "ultros"
+ },
+ "Uncanny Valley": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 67,
+  "released": "2015-04-23",
+  "slug": "uncanny-valley"
+ },
+ "Uncharted 2: Among Thieves™ ": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 96,
+  "released": "2009-10-13",
+  "slug": "uncharted-2-among-thieves"
+ },
+ "Uncharted 3: Drake's Deception™": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 92,
+  "released": "2011-11-01",
+  "slug": "uncharted-3-drakes-deception"
+ },
+ "Uncharted: Drake's Fortune™": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 88,
+  "released": "2007-11-19",
+  "slug": "uncharted-drakes-fortune"
+ },
+ "Uncharted: The Lost Legacy™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 85,
+  "released": "2017-08-22",
+  "slug": "uncharted-the-lost-legacy"
+ },
+ "Uncharted™: The Nathan Drake Collection": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2015-10-09",
+  "slug": "uncharted-the-nathan-drake-collection"
+ },
+ "Unravel": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Puzzle",
+   "Arcade",
+   "Platformer"
+  ],
+  "metacritic": 78,
+  "released": "2016-02-09",
+  "slug": "unravel"
+ },
+ "Until Dawn™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-10-04",
+  "slug": "until-dawn-2"
+ },
+ "Until Then": {
+  "genres": [
+   "Casual",
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2024-06-25",
+  "slug": "until-then"
+ },
+ "Until You Fall": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2020-09-29",
+  "slug": "until-you-fall"
+ },
+ "Untitled Goose Game": {
+  "genres": [
+   "Indie",
+   "Family",
+   "Action",
+   "Puzzle"
+  ],
+  "metacritic": 80,
+  "released": "2019-09-20",
+  "slug": "untitled-goose-game"
+ },
+ "VANQUISH": {
+  "genres": [
+   "Indie",
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 79,
+  "released": "2010-10-19",
+  "slug": "vanquish"
+ },
+ "Vampyr": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 70,
+  "released": "2018-06-04",
+  "slug": "vampyr"
+ },
+ "Viewfinder": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2023-07-17",
+  "slug": "v-i-e-w-f-i-n-d-e-r"
+ },
+ "Visage": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action",
+   "Simulation"
+  ],
+  "metacritic": 80,
+  "released": "2020-10-30",
+  "slug": "visage"
+ },
+ "WATCH_DOGS™": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 77,
+  "released": "2014-05-27",
+  "slug": "watch-dogs"
+ },
+ "WIPEOUT™ OMEGA COLLECTION": {
+  "genres": [
+   "Racing"
+  ],
+  "metacritic": 85,
+  "released": "2017-06-07",
+  "slug": "wipeout-omega-collection"
+ },
+ "WUCHANG: Fallen Feathers": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2025-07-23",
+  "slug": "wuchang-fallen-feathers"
+ },
+ "Weird West: Definitive Edition": {
+  "genres": [
+   "Strategy"
+  ],
+  "metacritic": null,
+  "released": "2014-09-23",
+  "slug": "castlestorm-definitive-edition"
+ },
+ "What Remains of Edith Finch": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": 89,
+  "released": "2017-04-23",
+  "slug": "what-remains-of-edith-finch"
+ },
+ "Wobbly Life": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Casual",
+   "Simulation",
+   "Indie"
+  ],
+  "metacritic": null,
+  "released": "2020-07-08",
+  "slug": "wobbly-life"
+ },
+ "Wolfenstein® II: The New Colossus™": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2017-10-25",
+  "slug": "wolfenstein-2-the-new-colossus"
+ },
+ "Worms Battlegrounds": {
+  "genres": [
+   "Strategy"
+  ],
+  "metacritic": 66,
+  "released": "2014-05-30",
+  "slug": "worms-battlegrounds"
+ },
+ "Worms Rumble": {
+  "genres": [
+   "Shooter",
+   "Action",
+   "Casual",
+   "Strategy",
+   "Indie",
+   "Platformer"
+  ],
+  "metacritic": 67,
+  "released": "2020-12-01",
+  "slug": "worms-rumble"
+ },
+ "XCOM 2": {
+  "genres": [
+   "Strategy",
+   "RPG"
+  ],
+  "metacritic": 88,
+  "released": "2016-02-04",
+  "slug": "xcom-2"
+ },
+ "Yakuza Kiwami": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG",
+   "Fighting"
+  ],
+  "metacritic": 83,
+  "released": "2016-01-21",
+  "slug": "yakuza-kiwami"
+ },
+ "Yakuza: Like A Dragon": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 85,
+  "released": "2020-01-16",
+  "slug": "yakuza-7"
+ },
+ "YouTube": {
+  "genres": [
+   "Adventure",
+   "Casual",
+   "Strategy",
+   "Simulation",
+   "Indie"
+  ],
+  "metacritic": null,
+  "released": "2021-10-19",
+  "slug": "youtubers-life-2"
+ },
+ "Zombie Army 4: Dead War": {
+  "genres": [
+   "Shooter",
+   "Arcade",
+   "Action"
+  ],
+  "metacritic": 76,
+  "released": "2020-02-04",
+  "slug": "zombie-army-dead-war-4"
+ },
+ "despelote": {},
+ "flOw trophy set": {
+  "genres": [
+   "Racing",
+   "Adventure",
+   "Puzzle",
+   "Arcade",
+   "Simulation",
+   "Indie"
+  ],
+  "metacritic": 71,
+  "released": "2006-04-14",
+  "slug": "flow"
+ },
+ "inFAMOUS™ Second Son": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2014-03-21",
+  "slug": "infamous-second-son"
+ },
+ "inFamous": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 85,
+  "released": "2009-05-26",
+  "slug": "infamous"
+ }
+}
