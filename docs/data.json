@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-29T17:42:31+00:00",
+ "generated_at": "2026-09-29T20:46:36+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -75,6 +75,7 @@
    ],
    "released": "2024-10-11",
    "rawg_slug": "metaphor-refantazio",
+   "metacritic_source": null,
    "hltb": {
     "main": 65.4,
     "extra": 88.34,
@@ -132,6 +133,7 @@
    ],
    "released": "2024-02-13",
    "rawg_slug": "ultros",
+   "metacritic_source": null,
    "hltb": {
     "main": 11.12,
     "extra": 19.0,
@@ -201,6 +203,7 @@
    ],
    "released": "2024-07-17",
    "rawg_slug": "bo-path-of-the-teal-lotus",
+   "metacritic_source": null,
    "hltb": {
     "main": 10.2,
     "extra": 13.61,
@@ -238,6 +241,7 @@
    ],
    "released": "2022-12-08",
    "rawg_slug": "chained-echoes",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 35.34,
     "extra": 45.36,
@@ -279,6 +283,7 @@
    ],
    "released": "2020-07-08",
    "rawg_slug": "wobbly-life",
+   "metacritic_source": null,
    "hltb": {
     "main": 14.03,
     "extra": 20.0,
@@ -318,6 +323,7 @@
    ],
    "released": "2025-01-30",
    "rawg_slug": "sniper-elite-resistance",
+   "metacritic_source": null,
    "hltb": {
     "main": 8.92,
     "extra": 13.84,
@@ -357,6 +363,7 @@
    ],
    "released": "2019-08-27",
    "rawg_slug": "control",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.7,
     "extra": 19.23,
@@ -406,13 +413,14 @@
    "hours_by_year": {
     "2026": 5.1
    },
-   "metacritic": null,
+   "metacritic": 83,
    "genres": [
     "Shooter",
     "Action"
    ],
    "released": "2025-10-10",
    "rawg_slug": "battlefield-6-2",
+   "metacritic_source": "wikidata",
    "hltb": {
     "main": 6.05,
     "extra": 11.06,
@@ -450,6 +458,7 @@
    ],
    "released": "2015-05-18",
    "rawg_slug": "the-witcher-3-wild-hunt",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 51.68,
     "extra": 103.75,
@@ -507,6 +516,7 @@
    ],
    "released": "2022-10-27",
    "rawg_slug": "signalis",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.19,
     "extra": 11.05,
@@ -569,6 +579,7 @@
    ],
    "released": "2024-10-08",
    "rawg_slug": "silent-hill-2-remake",
+   "metacritic_source": null,
    "hltb": {
     "main": 16.07,
     "extra": 18.74,
@@ -608,6 +619,7 @@
    ],
    "released": "2022-02-04",
    "rawg_slug": "dying-light-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 24.42,
     "extra": 49.51,
@@ -645,6 +657,7 @@
    ],
    "released": "2018-12-14",
    "rawg_slug": "big-crown-showdown",
+   "metacritic_source": null,
    "hltb": {
     "main": 11.82,
     "extra": 13.84,
@@ -693,6 +706,7 @@
    ],
    "released": "2025-09-25",
    "rawg_slug": "ea-sports-fc-26",
+   "metacritic_source": null,
    "hltb": {
     "main": 30.89,
     "extra": 153.1,
@@ -742,6 +756,7 @@
    ],
    "released": "2017-09-26",
    "rawg_slug": "fornite-battle-royale",
+   "metacritic_source": null,
    "hltb": {
     "main": 66.1,
     "extra": 180.2,
@@ -778,6 +793,7 @@
    ],
    "released": "2026-01-19",
    "rawg_slug": "mio-memories-in-orbit",
+   "metacritic_source": null,
    "hltb": {
     "main": 15.25,
     "extra": 21.58,
@@ -818,6 +834,7 @@
    ],
    "released": "2025-09-04",
    "rawg_slug": "hollow-knight-silksong",
+   "metacritic_source": null,
    "hltb": {
     "main": 28.25,
     "extra": 47.28,
@@ -856,6 +873,7 @@
    ],
    "released": "2016-10-21",
    "rawg_slug": "battlefield-1",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.01,
     "extra": 7.67,
@@ -892,6 +910,7 @@
    ],
    "released": "2025-06-13",
    "rawg_slug": "the-alters",
+   "metacritic_source": null,
    "hltb": {
     "main": 19.69,
     "extra": 25.11,
@@ -931,6 +950,7 @@
    ],
    "released": "2015-03-03",
    "rawg_slug": "crosscode",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 35.74,
     "extra": 55.26,
@@ -990,6 +1010,7 @@
    ],
    "released": "2021-09-09",
    "rawg_slug": "the-artful-escape",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 4.15,
     "extra": 4.49,
@@ -1048,6 +1069,7 @@
    ],
    "released": "2021-07-20",
    "rawg_slug": "acid-nerve-deaths-door",
+   "metacritic_source": null,
    "hltb": {
     "main": 9.2,
     "extra": 11.93,
@@ -1113,6 +1135,7 @@
    ],
    "released": "2018-12-13",
    "rawg_slug": "gris",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 3.55,
     "extra": 4.15,
@@ -1171,6 +1194,7 @@
    ],
    "released": "2019-09-20",
    "rawg_slug": "untitled-goose-game",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 3.02,
     "extra": 4.08,
@@ -1208,6 +1232,7 @@
    ],
    "released": "2024-06-18",
    "rawg_slug": "still-wakes-the-deep",
+   "metacritic_source": null,
    "hltb": {
     "main": 4.65,
     "extra": 5.66,
@@ -1277,6 +1302,7 @@
    ],
    "released": "2024-08-20",
    "rawg_slug": "black-myth-wu-kong",
+   "metacritic_source": null,
    "hltb": {
     "main": 37.72,
     "extra": 48.38,
@@ -1342,6 +1368,7 @@
    ],
    "released": "2006-09-01",
    "rawg_slug": "roblox",
+   "metacritic_source": null,
    "hltb": {
     "main": 21.67,
     "extra": 77.32,
@@ -1380,6 +1407,7 @@
    ],
    "released": "2025-07-23",
    "rawg_slug": "wuchang-fallen-feathers",
+   "metacritic_source": null,
    "hltb": {
     "main": 30.29,
     "extra": 38.82,
@@ -1418,6 +1446,7 @@
    ],
    "released": "2024-02-13",
    "rawg_slug": "tomb-raider-i-iii-remastered",
+   "metacritic_source": null,
    "hltb": {
     "main": 38.24,
     "extra": 70.37,
@@ -1455,6 +1484,7 @@
    ],
    "released": "2023-10-13",
    "rawg_slug": "lords-of-the-fallen-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 28.38,
     "extra": 42.23,
@@ -1511,6 +1541,7 @@
    ],
    "released": "2025-08-19",
    "rawg_slug": "sword-of-the-sea",
+   "metacritic_source": null,
    "hltb": {
     "main": 2.76,
     "extra": 3.85,
@@ -1575,6 +1606,7 @@
    ],
    "released": "2007-01-01",
    "rawg_slug": "lego-indiana-jones",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 16.17,
     "extra": 25.77,
@@ -1632,6 +1664,7 @@
    ],
    "released": "2025-08-29",
    "rawg_slug": "shinobi-art-of-vengeance",
+   "metacritic_source": null,
    "hltb": {
     "main": 10.01,
     "extra": 13.94,
@@ -1670,6 +1703,7 @@
    ],
    "released": "2021-05-14",
    "rawg_slug": "subnautica-below-zero",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 20.2,
     "extra": 26.38,
@@ -1707,6 +1741,7 @@
    ],
    "released": "2025-02-17",
    "rawg_slug": "lost-records-bloom-rage",
+   "metacritic_source": null,
    "hltb": {
     "main": 11.21,
     "extra": 13.31,
@@ -1745,6 +1780,7 @@
    ],
    "released": "2025-10-08",
    "rawg_slug": "bye-sweet-carole",
+   "metacritic_source": null,
    "hltb": {
     "main": 7.75,
     "extra": 8.57,
@@ -1784,6 +1820,7 @@
    ],
    "released": "2020-11-12",
    "rawg_slug": "the-pathless",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.12,
     "extra": 9.25,
@@ -1845,6 +1882,7 @@
    ],
    "released": "2024-05-02",
    "rawg_slug": "indika",
+   "metacritic_source": null,
    "hltb": {
     "main": 4.1,
     "extra": 4.51,
@@ -1911,6 +1949,7 @@
    ],
    "released": "2020-11-12",
    "rawg_slug": "astros-playroom",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 2.96,
     "extra": 4.0,
@@ -1966,6 +2005,7 @@
    ],
    "released": "2024-05-21",
    "rawg_slug": "senuas-saga-hellblade-ii",
+   "metacritic_source": null,
    "hltb": {
     "main": 7.11,
     "extra": 8.02,
@@ -2015,6 +2055,7 @@
    ],
    "released": "2024-09-26",
    "rawg_slug": "ea-sports-fc-25",
+   "metacritic_source": null,
    "hltb": {
     "main": 47.73,
     "extra": 140.37,
@@ -2083,13 +2124,14 @@
     "2025": 13.9,
     "2026": 4.4
    },
-   "metacritic": null,
+   "metacritic": 94,
    "genres": [
     "Platformer",
     "Action"
    ],
    "released": "2024-09-06",
    "rawg_slug": "astro-bot",
+   "metacritic_source": "wikidata",
    "hltb": {
     "url": "https://howlongtobeat.com/game/182443"
    }
@@ -2127,6 +2169,7 @@
    ],
    "released": "2015-03-02",
    "rawg_slug": "runestone-keeper",
+   "metacritic_source": null,
    "hltb": {
     "main": 38.79,
     "extra": 51.81,
@@ -2164,6 +2207,7 @@
    ],
    "released": "2015-11-03",
    "rawg_slug": "need-for-speed",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 23.11,
     "extra": 30.77,
@@ -2202,6 +2246,7 @@
    ],
    "released": "2024-09-24",
    "rawg_slug": "disney-epic-mickey-rebrushed",
+   "metacritic_source": null,
    "hltb": {
     "main": 10.33,
     "extra": 13.99,
@@ -2265,6 +2310,7 @@
    ],
    "released": "2025-09-04",
    "rawg_slug": "hell-is-us",
+   "metacritic_source": null,
    "hltb": {
     "main": 21.3,
     "extra": 28.68,
@@ -2319,6 +2365,7 @@
    "genres": [],
    "released": null,
    "rawg_slug": null,
+   "metacritic_source": null,
    "hltb": {
     "main": 1.9,
     "extra": 2.04,
@@ -2356,6 +2403,7 @@
    ],
    "released": "2025-05-07",
    "rawg_slug": "the-midnight-walk",
+   "metacritic_source": null,
    "hltb": {
     "main": 5.07,
     "extra": 6.2,
@@ -2394,6 +2442,7 @@
    ],
    "released": "2024-06-25",
    "rawg_slug": "until-then",
+   "metacritic_source": null,
    "hltb": {
     "main": 15.98,
     "extra": 21.51,
@@ -2434,6 +2483,7 @@
    ],
    "released": "2024-05-29",
    "rawg_slug": "nine-sols",
+   "metacritic_source": null,
    "hltb": {
     "main": 21.72,
     "extra": 27.38,
@@ -2473,6 +2523,7 @@
    ],
    "released": "2025-04-10",
    "rawg_slug": "blue-prince",
+   "metacritic_source": null,
    "hltb": {
     "main": 18.39,
     "extra": 36.48,
@@ -2508,6 +2559,7 @@
    "genres": [],
    "released": null,
    "rawg_slug": null,
+   "metacritic_source": null,
    "hltb": {
     "main": 3.61,
     "extra": 4.32,
@@ -2545,6 +2597,7 @@
    ],
    "released": "2025-03-06",
    "rawg_slug": "split-fiction",
+   "metacritic_source": null,
    "hltb": {
     "main": 13.79,
     "extra": 14.75,
@@ -2618,6 +2671,7 @@
    ],
    "released": "2021-03-26",
    "rawg_slug": "it-takes-two-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.84,
     "extra": 14.21,
@@ -2656,6 +2710,7 @@
    ],
    "released": "2024-11-14",
    "rawg_slug": "lego-horizon-adventures",
+   "metacritic_source": null,
    "hltb": {
     "main": 7.07,
     "extra": 11.02,
@@ -2721,6 +2776,7 @@
    ],
    "released": "2025-10-22",
    "rawg_slug": "dispatch-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 8.55,
     "extra": 10.3,
@@ -2759,6 +2815,7 @@
    ],
    "released": "2020-10-30",
    "rawg_slug": "the-dark-pictures-anthology-little-hope",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.07,
     "extra": 6.43,
@@ -2797,6 +2854,7 @@
    ],
    "released": "2021-10-22",
    "rawg_slug": "the-dark-pictures-anthology-house-of-ashes",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.04,
     "extra": 7.19,
@@ -2835,6 +2893,7 @@
    ],
    "released": "2022-11-17",
    "rawg_slug": "the-dark-pictures-anthology-the-devil-in-me",
+   "metacritic_source": null,
    "hltb": {
     "main": 7.14,
     "extra": 9.1,
@@ -2875,6 +2934,7 @@
    ],
    "released": "2020-10-30",
    "rawg_slug": "visage",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.21,
     "extra": 12.46,
@@ -2914,6 +2974,7 @@
    ],
    "released": "2024-10-14",
    "rawg_slug": "neva-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 4.07,
     "extra": 4.54,
@@ -2954,6 +3015,7 @@
    ],
    "released": "2024-02-21",
    "rawg_slug": "pacific-drive",
+   "metacritic_source": null,
    "hltb": {
     "main": 21.37,
     "extra": 32.2,
@@ -2991,6 +3053,7 @@
    ],
    "released": "2025-09-24",
    "rawg_slug": "silent-hill-f",
+   "metacritic_source": null,
    "hltb": {
     "main": 10.74,
     "extra": 16.53,
@@ -3028,6 +3091,7 @@
    ],
    "released": "2025-06-26",
    "rawg_slug": "death-stranding-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 35.65,
     "extra": 64.44,
@@ -3065,6 +3129,7 @@
    ],
    "released": "2024-09-17",
    "rawg_slug": "the-plucky-squire",
+   "metacritic_source": null,
    "hltb": {
     "main": 8.39,
     "extra": 9.34,
@@ -3121,6 +3186,7 @@
    ],
    "released": "2023-04-27",
    "rawg_slug": "star-wars-jedi-survivor",
+   "metacritic_source": null,
    "hltb": {
     "main": 20.6,
     "extra": 33.92,
@@ -3184,6 +3250,7 @@
    ],
    "released": "2023-10-20",
    "rawg_slug": "marvels-spider-man-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 17.18,
     "extra": 23.92,
@@ -3222,6 +3289,7 @@
    ],
    "released": "2010-08-10",
    "rawg_slug": "ea-sports-mma",
+   "metacritic_source": null,
    "hltb": {
     "main": 14.88,
     "extra": 26.82,
@@ -3278,6 +3346,7 @@
    ],
    "released": "2025-01-22",
    "rawg_slug": "ender-magnolia-bloom-in-the-mist",
+   "metacritic_source": null,
    "hltb": {
     "main": 17.37,
     "extra": 20.6,
@@ -3334,6 +3403,7 @@
    ],
    "released": "2021-09-14",
    "rawg_slug": "deathloop-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 16.37,
     "extra": 24.56,
@@ -3391,6 +3461,7 @@
    ],
    "released": "2023-10-30",
    "rawg_slug": "jusant",
+   "metacritic_source": null,
    "hltb": {
     "main": 4.52,
     "extra": 5.84,
@@ -3422,7 +3493,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 65,
    "genres": [
     "Indie",
     "Adventure",
@@ -3430,6 +3501,7 @@
    ],
    "released": "2023-09-29",
    "rawg_slug": "cocoon-2",
+   "metacritic_source": "wikidata",
    "hltb": {
     "main": 5.0,
     "extra": 5.3,
@@ -3470,6 +3542,7 @@
    ],
    "released": "2022-11-17",
    "rawg_slug": "goat-simulator-3",
+   "metacritic_source": null,
    "hltb": {
     "main": 7.46,
     "extra": 11.33,
@@ -3549,6 +3622,7 @@
    ],
    "released": "2025-04-24",
    "rawg_slug": "clair-obscur-expedition-33",
+   "metacritic_source": null,
    "hltb": {
     "main": 29.27,
     "extra": 46.25,
@@ -3587,6 +3661,7 @@
    ],
    "released": "2016-02-25",
    "rawg_slug": "stardew-valley",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 53.37,
     "extra": 94.9,
@@ -3625,6 +3700,7 @@
    ],
    "released": "2021-08-24",
    "rawg_slug": "psychonauts-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 15.1,
     "extra": 19.49,
@@ -3663,6 +3739,7 @@
    ],
    "released": "2023-07-17",
    "rawg_slug": "v-i-e-w-f-i-n-d-e-r",
+   "metacritic_source": null,
    "hltb": {
     "main": 4.1,
     "extra": 5.15,
@@ -3700,6 +3777,7 @@
    ],
    "released": "2020-03-12",
    "rawg_slug": "my-hero-ones-justice-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.03,
     "extra": 15.02,
@@ -3738,6 +3816,7 @@
    ],
    "released": "2023-09-19",
    "rawg_slug": "lies-of-p",
+   "metacritic_source": null,
    "hltb": {
     "main": 28.33,
     "extra": 36.29,
@@ -3776,6 +3855,7 @@
    ],
    "released": "2013-12-16",
    "rawg_slug": "dayz",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 50.46,
     "extra": 91.53,
@@ -3814,6 +3894,7 @@
    ],
    "released": "2023-06-06",
    "rawg_slug": "diablo-iv",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 25.84,
     "extra": 48.94,
@@ -3854,6 +3935,7 @@
    ],
    "released": "2023-08-23",
    "rawg_slug": "blasphemous-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 16.49,
     "extra": 20.82,
@@ -3891,6 +3973,7 @@
    ],
    "released": "2016-01-26",
    "rawg_slug": "lego-marvels-avengers",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 8.41,
     "extra": 18.86,
@@ -3928,6 +4011,7 @@
    ],
    "released": "2017-11-14",
    "rawg_slug": "lego-marvel-super-heroes-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.75,
     "extra": 26.01,
@@ -3995,6 +4079,7 @@
    ],
    "released": "2023-10-27",
    "rawg_slug": "alan-wake-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 19.06,
     "extra": 26.27,
@@ -4053,6 +4138,7 @@
    ],
    "released": "2024-02-20",
    "rawg_slug": "balatro",
+   "metacritic_source": null,
    "hltb": {
     "main": 7.74,
     "extra": 46.45,
@@ -4083,13 +4169,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 9,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2024-03-20",
    "rawg_slug": "alone-in-the-dark-2022",
+   "metacritic_source": "wikidata",
    "hltb": {
     "main": 7.73,
     "extra": 10.58,
@@ -4149,6 +4236,7 @@
    ],
    "released": "2022-04-05",
    "rawg_slug": "lego-star-wars-the-sywalker-saga",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 18.52,
     "extra": 34.58,
@@ -4189,6 +4277,7 @@
    ],
    "released": "2015-06-02",
    "rawg_slug": "ark-survival-evolved",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 276.52,
     "extra": 399.75,
@@ -4220,13 +4309,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 91,
    "genres": [
     "Indie",
     "Action"
    ],
    "released": "2023-08-18",
    "rawg_slug": "the-texas-chain-saw-massacre",
+   "metacritic_source": "wikidata",
    "hltb": {
     "main": 2.02,
     "extra": 19.43,
@@ -4264,6 +4354,7 @@
    ],
    "released": "2023-11-02",
    "rawg_slug": "robocop-rogue-city",
+   "metacritic_source": null,
    "hltb": {
     "main": 11.77,
     "extra": 15.39,
@@ -4311,6 +4402,7 @@
    ],
    "released": "2021-09-27",
    "rawg_slug": "hot-wheels-unleashed",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 8.95,
     "extra": 15.69,
@@ -4369,6 +4461,7 @@
    ],
    "released": "2021-02-10",
    "rawg_slug": "little-nightmares-ii",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.67,
     "extra": 6.65,
@@ -4409,6 +4502,7 @@
    ],
    "released": "2023-11-15",
    "rawg_slug": "the-last-faith",
+   "metacritic_source": null,
    "hltb": {
     "main": 16.31,
     "extra": 19.7,
@@ -4497,6 +4591,7 @@
    ],
    "released": "2024-02-29",
    "rawg_slug": "final-fantasy-vii-rebirth",
+   "metacritic_source": null,
    "hltb": {
     "main": 48.55,
     "extra": 91.37,
@@ -4533,6 +4628,7 @@
    ],
    "released": "2024-10-31",
    "rawg_slug": "dragon-age-4-tba",
+   "metacritic_source": null,
    "hltb": {
     "main": 28.79,
     "extra": 62.15,
@@ -4572,6 +4668,7 @@
    ],
    "released": "2022-08-30",
    "rawg_slug": "teenage-mutant-ninja-turtles-the-cowabunga-collect",
+   "metacritic_source": null,
    "hltb": {
     "main": 9.88,
     "extra": 13.16,
@@ -4610,6 +4707,7 @@
    ],
    "released": "2021-09-07",
    "rawg_slug": "sonic-colors-ultimate",
+   "metacritic_source": null,
    "hltb": {
     "main": 4.99,
     "extra": 8.82,
@@ -4649,6 +4747,7 @@
    ],
    "released": "2022-12-13",
    "rawg_slug": "high-on-life",
+   "metacritic_source": null,
    "hltb": {
     "main": 9.22,
     "extra": 12.8,
@@ -4688,6 +4787,7 @@
    ],
    "released": "2022-08-26",
    "rawg_slug": "pac-man-world-re-pac",
+   "metacritic_source": null,
    "hltb": {
     "main": 5.35,
     "extra": 7.11,
@@ -4751,6 +4851,7 @@
    ],
    "released": "2022-07-19",
    "rawg_slug": "stray-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.15,
     "extra": 6.67,
@@ -4787,6 +4888,7 @@
    ],
    "released": "2024-02-02",
    "rawg_slug": "suicide-squad-kill-the-justice-league",
+   "metacritic_source": null,
    "hltb": {
     "main": 12.06,
     "extra": 18.92,
@@ -4825,6 +4927,7 @@
    ],
    "released": "2020-11-06",
    "rawg_slug": "need-for-speed-hot-pursuit-remastered",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 16.58,
     "extra": 22.31,
@@ -4882,6 +4985,7 @@
    ],
    "released": "2024-03-21",
    "rawg_slug": "dragons-dogma-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 31.76,
     "extra": 56.26,
@@ -4940,6 +5044,7 @@
    ],
    "released": "2021-05-14",
    "rawg_slug": "mass-effect-legendary-edition",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 61.19,
     "extra": 101.68,
@@ -5002,6 +5107,7 @@
    ],
    "released": "2021-05-14",
    "rawg_slug": "mass-effect-legendary-edition",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 61.19,
     "extra": 101.68,
@@ -5059,6 +5165,7 @@
    ],
    "released": "2022-12-01",
    "rawg_slug": "the-calisto-protocol",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.11,
     "extra": 12.09,
@@ -5116,6 +5223,7 @@
    ],
    "released": "2023-03-29",
    "rawg_slug": "dredge",
+   "metacritic_source": null,
    "hltb": {
     "main": 9.68,
     "extra": 12.9,
@@ -5172,6 +5280,7 @@
    ],
    "released": "2022-10-17",
    "rawg_slug": "a-plague-tale-requiem",
+   "metacritic_source": null,
    "hltb": {
     "main": 16.96,
     "extra": 19.55,
@@ -5242,6 +5351,7 @@
    ],
    "released": "2020-12-10",
    "rawg_slug": "cyberpunk-2077",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 26.14,
     "extra": 63.22,
@@ -5282,6 +5392,7 @@
    ],
    "released": "2018-02-19",
    "rawg_slug": "rad-rodgers",
+   "metacritic_source": "rawg",
    "hltb": null
   },
   {
@@ -5334,6 +5445,7 @@
    ],
    "released": "2021-10-05",
    "rawg_slug": "alan-wake-remastered",
+   "metacritic_source": null,
    "hltb": {
     "main": 10.39,
     "extra": 14.19,
@@ -5398,6 +5510,7 @@
    ],
    "released": "2019-05-29",
    "rawg_slug": "outer-wilds",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 17.09,
     "extra": 22.73,
@@ -5438,6 +5551,7 @@
    ],
    "released": "2019-09-13",
    "rawg_slug": "borderlands-3",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 23.43,
     "extra": 46.57,
@@ -5477,6 +5591,7 @@
    ],
    "released": "2018-07-25",
    "rawg_slug": "among-us",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.01,
     "extra": 17.85,
@@ -5534,6 +5649,7 @@
    ],
    "released": "2023-09-22",
    "rawg_slug": "ea-sports-fc-24",
+   "metacritic_source": null,
    "hltb": {
     "main": 38.74,
     "extra": 109.03,
@@ -5571,6 +5687,7 @@
    ],
    "released": "2023-01-31",
    "rawg_slug": "spongebob-squarepants-the-cosmic-shake",
+   "metacritic_source": null,
    "hltb": {
     "main": 7.08,
     "extra": 9.3,
@@ -5610,6 +5727,7 @@
    ],
    "released": "2020-04-30",
    "rawg_slug": "streets-of-rage-4",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 3.18,
     "extra": 6.33,
@@ -5684,6 +5802,7 @@
    ],
    "released": "2023-02-10",
    "rawg_slug": "hogwarts-legacy",
+   "metacritic_source": null,
    "hltb": {
     "main": 26.74,
     "extra": 45.28,
@@ -5723,6 +5842,7 @@
    ],
    "released": "2022-03-16",
    "rawg_slug": "tunic",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.31,
     "extra": 16.68,
@@ -5759,6 +5879,7 @@
    ],
    "released": "2023-10-26",
    "rawg_slug": "ghostrunner-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 8.43,
     "extra": 11.01,
@@ -5795,6 +5916,7 @@
    ],
    "released": "2008-06-26",
    "rawg_slug": "guitar-hero-aerosmith",
+   "metacritic_source": null,
    "hltb": {
     "main": 20.61,
     "extra": 40.98,
@@ -5833,6 +5955,7 @@
    ],
    "released": "2023-08-21",
    "rawg_slug": "immortals-of-aveum",
+   "metacritic_source": null,
    "hltb": {
     "main": 14.26,
     "extra": 20.36,
@@ -5870,6 +5993,7 @@
    ],
    "released": "2023-04-18",
    "rawg_slug": "minecraft-legends",
+   "metacritic_source": null,
    "hltb": {
     "main": 9.64,
     "extra": 13.65,
@@ -5906,6 +6030,7 @@
    ],
    "released": "2024-02-01",
    "rawg_slug": "silent-hill-the-short-message",
+   "metacritic_source": null,
    "hltb": {
     "main": 2.04,
     "extra": 2.12,
@@ -5968,6 +6093,7 @@
    ],
    "released": "2022-03-04",
    "rawg_slug": "gran-turismo-7",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 25.54,
     "extra": 47.43,
@@ -6030,6 +6156,7 @@
    ],
    "released": "2023-02-22",
    "rawg_slug": "horizon-call-of-the-mountain",
+   "metacritic_source": null,
    "hltb": {
     "main": 8.3,
     "extra": 10.05,
@@ -6091,6 +6218,7 @@
    ],
    "released": "2022-03-24",
    "rawg_slug": "ghostwire-tokio",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.4,
     "extra": 22.9,
@@ -6131,6 +6259,7 @@
    ],
    "released": "2022-12-05",
    "rawg_slug": "hello-neighbor-2-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 4.28,
     "extra": 5.38,
@@ -6188,6 +6317,7 @@
    ],
    "released": "2019-12-03",
    "rawg_slug": "arise-3",
+   "metacritic_source": null,
    "hltb": {
     "main": 4.11,
     "extra": 4.58,
@@ -6245,6 +6375,7 @@
    ],
    "released": "2022-02-08",
    "rawg_slug": "sifu",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.76,
     "extra": 14.0,
@@ -6300,13 +6431,14 @@
    "hours_by_year": {
     "2024": 22.8
    },
-   "metacritic": null,
+   "metacritic": 89,
    "genres": [
     "Adventure",
     "Action"
    ],
    "released": "2023-01-27",
    "rawg_slug": "dead-space-5",
+   "metacritic_source": "wikidata",
    "hltb": {
     "main": 12.15,
     "extra": 16.21,
@@ -6346,6 +6478,7 @@
    ],
    "released": "2022-11-21",
    "rawg_slug": "evil-west",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.78,
     "extra": 13.26,
@@ -6434,6 +6567,7 @@
    ],
    "released": "2022-02-25",
    "rawg_slug": "elden-ring",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 60.1,
     "extra": 101.32,
@@ -6472,6 +6606,7 @@
    ],
    "released": "2021-09-23",
    "rawg_slug": "sable",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.52,
     "extra": 14.2,
@@ -6510,6 +6645,7 @@
    ],
    "released": "2023-05-18",
    "rawg_slug": "lego-2k-drive",
+   "metacritic_source": null,
    "hltb": {
     "main": 7.32,
     "extra": 15.53,
@@ -6548,6 +6684,7 @@
    ],
    "released": "2020-03-26",
    "rawg_slug": "the-room-vr-a-dark-matter",
+   "metacritic_source": null,
    "hltb": {
     "main": 3.83,
     "extra": 4.09,
@@ -6585,6 +6722,7 @@
    ],
    "released": "2023-10-26",
    "rawg_slug": "journey-to-foundation",
+   "metacritic_source": null,
    "hltb": {
     "main": 6.38,
     "extra": 8.63,
@@ -6622,6 +6760,7 @@
    ],
    "released": "2022-10-13",
    "rawg_slug": "dragon-ball-the-breakers",
+   "metacritic_source": null,
    "hltb": {
     "extra": 18.53,
     "complete": 80.67,
@@ -6658,6 +6797,7 @@
    ],
    "released": "2020-05-19",
    "rawg_slug": "mafia-ii-definitive-edition",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.12,
     "extra": 16.5,
@@ -6720,6 +6860,7 @@
    ],
    "released": "2015-09-22",
    "rawg_slug": "ea-sports-fifa-16",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 94.82,
     "extra": 99.04,
@@ -6757,6 +6898,7 @@
    ],
    "released": "2014-09-23",
    "rawg_slug": "castlestorm-definitive-edition",
+   "metacritic_source": null,
    "hltb": {
     "main": 17.09,
     "extra": 24.6,
@@ -6798,6 +6940,7 @@
    ],
    "released": "2014-12-01",
    "rawg_slug": "black-desert-online",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 92.86,
     "extra": 287.31,
@@ -6835,6 +6978,7 @@
    ],
    "released": "2019-03-26",
    "rawg_slug": "generation-zero-2019",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 18.09,
     "extra": 49.28,
@@ -6873,6 +7017,7 @@
    ],
    "released": "2011-11-15",
    "rawg_slug": "saints-row-the-third",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.6,
     "extra": 27.24,
@@ -6938,6 +7083,7 @@
    ],
    "released": "2017-05-18",
    "rawg_slug": "old-mans-journey",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 1.58,
     "extra": 1.76,
@@ -6975,6 +7121,7 @@
    ],
    "released": "1995-02-11",
    "rawg_slug": "nights-into-dreams",
+   "metacritic_source": null,
    "hltb": {
     "main": 2.89,
     "extra": 10.92,
@@ -7033,6 +7180,7 @@
    ],
    "released": "2022-05-05",
    "rawg_slug": "trek-to-yomi",
+   "metacritic_source": null,
    "hltb": {
     "main": 5.02,
     "extra": 6.23,
@@ -7092,6 +7240,7 @@
    ],
    "released": "2022-07-19",
    "rawg_slug": "endling",
+   "metacritic_source": null,
    "hltb": {
     "main": 3.94,
     "extra": 4.17,
@@ -7149,12 +7298,13 @@
    "hours_by_year": {
     "2023": 65.6
    },
-   "metacritic": null,
+   "metacritic": 94,
    "genres": [
     "Action"
    ],
    "released": "2022-11-09",
    "rawg_slug": "god-of-war-ragnarok",
+   "metacritic_source": "wikidata",
    "hltb": {
     "main": 26.58,
     "extra": 40.68,
@@ -7192,6 +7342,7 @@
    ],
    "released": "2022-03-31",
    "rawg_slug": "moss-book-ii",
+   "metacritic_source": null,
    "hltb": {
     "main": 4.04,
     "extra": 4.67,
@@ -7229,6 +7380,7 @@
    ],
    "released": "2022-03-31",
    "rawg_slug": "moss-book-ii",
+   "metacritic_source": null,
    "hltb": {
     "main": 5.99,
     "extra": 6.09,
@@ -7267,6 +7419,7 @@
    ],
    "released": "2020-11-13",
    "rawg_slug": "call-of-duty-black-ops-cold-war",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.55,
     "extra": 7.07,
@@ -7324,6 +7477,7 @@
    ],
    "released": "2016-10-10",
    "rawg_slug": "thumper",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.75,
     "extra": 13.88,
@@ -7373,7 +7527,7 @@
    "hours_by_year": {
     "2023": 1.9
    },
-   "metacritic": null,
+   "metacritic": 77,
    "genres": [
     "Shooter",
     "Adventure",
@@ -7385,6 +7539,7 @@
    ],
    "released": "2023-12-07",
    "rawg_slug": "the-day-before-2",
+   "metacritic_source": "wikidata",
    "hltb": {
     "main": 1.68,
     "extra": 2.03,
@@ -7423,6 +7578,7 @@
    ],
    "released": "2021-11-09",
    "rawg_slug": "jurassic-world-evolution-2-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 6.02,
     "extra": 36.43,
@@ -7461,6 +7617,7 @@
    ],
    "released": "2022-09-09",
    "rawg_slug": "nba-2k23",
+   "metacritic_source": null,
    "hltb": {
     "main": 22.11,
     "extra": 82.3,
@@ -7498,6 +7655,7 @@
    ],
    "released": "2023-12-07",
    "rawg_slug": "lego-fortnite",
+   "metacritic_source": null,
    "hltb": {
     "main": 2.39,
     "extra": 2.56,
@@ -7536,6 +7694,7 @@
    ],
    "released": "2016-10-13",
    "rawg_slug": "rez-infinite",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 2.03,
     "extra": 2.77,
@@ -7608,6 +7767,7 @@
    ],
    "released": "2016-08-09",
    "rawg_slug": "no-mans-sky",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 32.44,
     "extra": 77.08,
@@ -7646,6 +7806,7 @@
    ],
    "released": "2021-06-08",
    "rawg_slug": "chivalry-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 13.37,
     "extra": 43.26,
@@ -7704,6 +7865,7 @@
    ],
    "released": "2020-11-12",
    "rawg_slug": "sackboy-a-big-adventure-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.05,
     "extra": 17.11,
@@ -7763,6 +7925,7 @@
    ],
    "released": "2022-02-07",
    "rawg_slug": "olliolli-world",
+   "metacritic_source": null,
    "hltb": {
     "main": 5.37,
     "extra": 11.97,
@@ -7826,6 +7989,7 @@
    ],
    "released": "2019-11-15",
    "rawg_slug": "jedi-the-fallen-order",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 17.27,
     "extra": 22.29,
@@ -7875,6 +8039,7 @@
    ],
    "released": "2010-06-03",
    "rawg_slug": "lego-harry-potter",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 26.2,
     "extra": 32.18,
@@ -7915,6 +8080,7 @@
    ],
    "released": "2021-09-16",
    "rawg_slug": "tails-of-iron",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.41,
     "extra": 9.68,
@@ -7990,6 +8156,7 @@
    ],
    "released": "2022-02-18",
    "rawg_slug": "horizon-zero-dawn-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 28.72,
     "extra": 62.83,
@@ -8021,7 +8188,7 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 63,
    "genres": [
     "Casual",
     "Shooter",
@@ -8030,6 +8197,7 @@
    ],
    "released": "2021-11-12",
    "rawg_slug": "battlefield-6",
+   "metacritic_source": "wikidata",
    "hltb": {
     "main": 42.45,
     "extra": 136.58,
@@ -8071,6 +8239,7 @@
    ],
    "released": "2024-09-16",
    "rawg_slug": "enotria-the-last-song",
+   "metacritic_source": null,
    "hltb": {
     "main": 14.6,
     "complete": 20.0,
@@ -8108,6 +8277,7 @@
    ],
    "released": null,
    "rawg_slug": "star-wars-tales-from-the-galaxy-edge-enhanced-edit",
+   "metacritic_source": null,
    "hltb": {
     "main": 3.4,
     "extra": 6.07,
@@ -8145,6 +8315,7 @@
    ],
    "released": "2020-09-25",
    "rawg_slug": "mafia",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 16.16,
     "extra": 18.26,
@@ -8182,6 +8353,7 @@
    ],
    "released": "2022-05-13",
    "rawg_slug": "evil-dead-the-game",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 3.42,
     "extra": 25.79,
@@ -8238,6 +8410,7 @@
    ],
    "released": "2020-11-12",
    "rawg_slug": "marvels-spider-man-miles-morales",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.82,
     "extra": 12.54,
@@ -8301,6 +8474,7 @@
    ],
    "released": "2017-03-17",
    "rawg_slug": "nierautomata",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 21.31,
     "extra": 37.59,
@@ -8342,6 +8516,7 @@
    ],
    "released": "2021-08-11",
    "rawg_slug": "axiom-verge-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 8.58,
     "extra": 11.36,
@@ -8380,6 +8555,7 @@
    ],
    "released": "2018-11-14",
    "rawg_slug": "fallout-76",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 36.32,
     "extra": 118.86,
@@ -8438,6 +8614,7 @@
    ],
    "released": "2021-12-07",
    "rawg_slug": "heavenly-bodies-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 4.8,
     "extra": 6.25,
@@ -8507,6 +8684,7 @@
    ],
    "released": "2021-05-07",
    "rawg_slug": "resident-evil-village",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.85,
     "extra": 12.93,
@@ -8544,6 +8722,7 @@
    ],
    "released": "2020-03-13",
    "rawg_slug": "nioh-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 44.76,
     "extra": 73.12,
@@ -8592,6 +8771,7 @@
    ],
    "released": "2020-10-27",
    "rawg_slug": "ghostrunner",
+   "metacritic_source": null,
    "hltb": {
     "main": 7.09,
     "extra": 9.27,
@@ -8651,6 +8831,7 @@
    ],
    "released": "2016-10-25",
    "rawg_slug": "dragon-ball-xenoverse-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 19.52,
     "extra": 41.46,
@@ -8709,6 +8890,7 @@
    ],
    "released": "2021-08-24",
    "rawg_slug": "hoa",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 2.28,
     "extra": 2.68,
@@ -8769,6 +8951,7 @@
    ],
    "released": "2021-09-21",
    "rawg_slug": "kena-bridge-of-spirits",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.28,
     "extra": 14.44,
@@ -8807,6 +8990,7 @@
    ],
    "released": "2016-02-24",
    "rawg_slug": "superhot",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 2.38,
     "extra": 5.12,
@@ -8864,6 +9048,7 @@
    ],
    "released": "2019-08-30",
    "rawg_slug": "man-of-medan",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 4.42,
     "extra": 5.52,
@@ -8922,6 +9107,7 @@
    ],
    "released": "2020-08-27",
    "rawg_slug": "captain-tsubasa-rise-of-new-champions",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.79,
     "extra": 22.32,
@@ -8979,6 +9165,7 @@
    ],
    "released": "2017-04-27",
    "rawg_slug": "little-nightmares",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 3.57,
     "extra": 5.17,
@@ -9059,6 +9246,7 @@
    ],
    "released": "2017-01-20",
    "rawg_slug": "gravity-rush-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 19.15,
     "extra": 32.86,
@@ -9115,6 +9303,7 @@
    ],
    "released": "2021-09-27",
    "rawg_slug": "fifa-22-xbox-one",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 63.35,
     "extra": 128.88,
@@ -9154,6 +9343,7 @@
    ],
    "released": "2020-01-16",
    "rawg_slug": "yakuza-7",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 46.12,
     "extra": 68.01,
@@ -9192,6 +9382,7 @@
    ],
    "released": "2020-10-01",
    "rawg_slug": "crash-bandicoot-4-its-about-time",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.05,
     "extra": 20.4,
@@ -9230,6 +9421,7 @@
    ],
    "released": "2021-10-05",
    "rawg_slug": "nickelodeon-all-star-brawl",
+   "metacritic_source": null,
    "hltb": {
     "main": 1.06,
     "extra": 5.11,
@@ -9266,6 +9458,7 @@
    ],
    "released": "2018-08-30",
    "rawg_slug": "naruto-to-boruto-shinobi-striker",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.35,
     "extra": 29.09,
@@ -9346,6 +9539,7 @@
    ],
    "released": "2018-05-15",
    "rawg_slug": "horizon-chase-turbo",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.2,
     "extra": 15.43,
@@ -9426,6 +9620,7 @@
    ],
    "released": "2013-08-29",
    "rawg_slug": "rayman-legends",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.04,
     "extra": 16.19,
@@ -9517,6 +9712,7 @@
    ],
    "released": "2016-09-27",
    "rawg_slug": "ea-sports-fifa-17",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 23.75,
     "extra": 146.31,
@@ -9553,6 +9749,7 @@
    ],
    "released": "2019-05-21",
    "rawg_slug": "team-sonic-racing",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 8.95,
     "extra": 13.87,
@@ -9593,6 +9790,7 @@
    ],
    "released": "2015-06-02",
    "rawg_slug": "ark-survival-evolved",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 67.02,
     "extra": 313.74,
@@ -9631,6 +9829,7 @@
    ],
    "released": "2020-05-13",
    "rawg_slug": "deep-rock-galactic",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 43.09,
     "extra": 135.82,
@@ -9669,6 +9868,7 @@
    ],
    "released": "2020-11-05",
    "rawg_slug": "dirt-5",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 8.46,
     "extra": 14.71,
@@ -9707,6 +9907,7 @@
    ],
    "released": "2020-02-20",
    "rawg_slug": "persona-5-strikers",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 35.18,
     "extra": 45.88,
@@ -9745,6 +9946,7 @@
    ],
    "released": "2018-07-24",
    "rawg_slug": "the-persistence",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.47,
     "extra": 15.75,
@@ -9782,6 +9984,7 @@
    ],
    "released": "2020-08-18",
    "rawg_slug": "mortal-shell",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.69,
     "extra": 14.21,
@@ -9820,6 +10023,7 @@
    ],
    "released": "2018-10-15",
    "rawg_slug": "lego-dc-super-villains",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.43,
     "extra": 18.65,
@@ -9858,6 +10062,7 @@
    ],
    "released": "2020-11-12",
    "rawg_slug": "godfall",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.65,
     "extra": 18.62,
@@ -9895,6 +10100,7 @@
    ],
    "released": "2022-10-28",
    "rawg_slug": "reverse-4",
+   "metacritic_source": null,
    "hltb": {
     "main": 2.08,
     "extra": 3.61,
@@ -9963,6 +10169,7 @@
    ],
    "released": "2017-11-07",
    "rawg_slug": "need-for-speed-payback",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 18.87,
     "extra": 27.42,
@@ -10024,6 +10231,7 @@
    ],
    "released": "2019-04-26",
    "rawg_slug": "days-gone",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 36.58,
     "extra": 50.62,
@@ -10062,6 +10270,7 @@
    ],
    "released": "2020-09-29",
    "rawg_slug": "until-you-fall",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.69,
     "extra": 8.32,
@@ -10103,6 +10312,7 @@
    ],
    "released": "2020-01-23",
    "rawg_slug": "the-walking-dead-saints-sinners",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.39,
     "extra": 13.66,
@@ -10159,6 +10369,7 @@
    ],
    "released": "2017-04-23",
    "rawg_slug": "what-remains-of-edith-finch",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 2.12,
     "extra": 2.53,
@@ -10215,6 +10426,7 @@
    ],
    "released": "2020-08-21",
    "rawg_slug": "pga-tour-2k21",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 21.57,
     "extra": 29.68,
@@ -10279,6 +10491,7 @@
    ],
    "released": "2021-06-22",
    "rawg_slug": "ender-lilies-quietus-of-the-knights",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.4,
     "extra": 18.64,
@@ -10316,6 +10529,7 @@
    ],
    "released": "2015-04-07",
    "rawg_slug": "mortal-kombat-x",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.69,
     "extra": 16.87,
@@ -10397,6 +10611,7 @@
    ],
    "released": "2020-04-10",
    "rawg_slug": "final-fantasy-vii-remake",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 32.26,
     "extra": 41.13,
@@ -10434,6 +10649,7 @@
    ],
    "released": "2020-04-24",
    "rawg_slug": "predator-hunting-grounds",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 15.1,
     "complete": 24.0,
@@ -10470,6 +10686,7 @@
    ],
    "released": "2018-11-13",
    "rawg_slug": "hitman-2-prologue",
+   "metacritic_source": null,
    "hltb": {
     "main": 10.17,
     "extra": 27.68,
@@ -10507,6 +10724,7 @@
    ],
    "released": "2020-10-02",
    "rawg_slug": "star-wars-squadrons",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.09,
     "extra": 11.9,
@@ -10567,6 +10785,7 @@
    ],
    "released": "2011-09-22",
    "rawg_slug": "another-world-20th",
+   "metacritic_source": null,
    "hltb": {
     "main": 2.34,
     "extra": 2.51,
@@ -10631,6 +10850,7 @@
    ],
    "released": "2016-09-15",
    "rawg_slug": "persona-5",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 97.55,
     "extra": 113.46,
@@ -10669,6 +10889,7 @@
    ],
    "released": "2015-01-23",
    "rawg_slug": "stranded-deep",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 22.74,
     "extra": 36.58,
@@ -10708,6 +10929,7 @@
    ],
    "released": "2018-11-20",
    "rawg_slug": "battlefield-v",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.25,
     "extra": 9.78,
@@ -10746,6 +10968,7 @@
    ],
    "released": "2020-02-04",
    "rawg_slug": "zombie-army-dead-war-4",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.72,
     "extra": 18.55,
@@ -10803,6 +11026,7 @@
    ],
    "released": "2018-01-26",
    "rawg_slug": "monster-hunter-world-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 46.57,
     "extra": 115.25,
@@ -10864,6 +11088,7 @@
    ],
    "released": "2019-03-08",
    "rawg_slug": "devil-may-cry-5",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.14,
     "extra": 16.84,
@@ -10900,6 +11125,7 @@
    ],
    "released": "2017-05-16",
    "rawg_slug": "farpoint",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.07,
     "extra": 7.06,
@@ -10937,6 +11163,7 @@
    ],
    "released": "2019-08-20",
    "rawg_slug": "remnant-from-the-ashes",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 13.26,
     "extra": 20.99,
@@ -10975,6 +11202,7 @@
    ],
    "released": "2019-09-10",
    "rawg_slug": "greedfall",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 23.28,
     "extra": 41.28,
@@ -11030,6 +11258,7 @@
    ],
    "released": "2018-10-26",
    "rawg_slug": "red-dead-redemption-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 50.75,
     "extra": 84.62,
@@ -11086,6 +11315,7 @@
    ],
    "released": "2019-05-13",
    "rawg_slug": "a-plague-tale-innocence",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.95,
     "extra": 12.6,
@@ -11128,6 +11358,7 @@
    ],
    "released": "2020-12-01",
    "rawg_slug": "worms-rumble",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 13.89,
     "complete": 103.43,
@@ -11190,6 +11421,7 @@
    ],
    "released": "2017-08-07",
    "rawg_slug": "hellblade-senuas-sacrifice",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.54,
     "extra": 8.2,
@@ -11247,6 +11479,7 @@
    ],
    "released": "2017-02-23",
    "rawg_slug": "hollow-knight",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 26.98,
     "extra": 41.62,
@@ -11288,6 +11521,7 @@
    "genres": [],
    "released": null,
    "rawg_slug": null,
+   "metacritic_source": null,
    "hltb": null
   },
   {
@@ -11352,6 +11586,7 @@
    ],
    "released": "2020-07-17",
    "rawg_slug": "ghost-of-tsushima",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 25.14,
     "extra": 46.3,
@@ -11391,6 +11626,7 @@
    ],
    "released": "2012-07-12",
    "rawg_slug": "la-mulana",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 21.03,
     "extra": 36.5,
@@ -11429,6 +11665,7 @@
    ],
    "released": "2018-06-04",
    "rawg_slug": "vampyr",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 16.83,
     "extra": 29.48,
@@ -11487,6 +11724,7 @@
    ],
    "released": "2019-09-09",
    "rawg_slug": "blasphemous",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 14.0,
     "extra": 20.03,
@@ -11550,6 +11788,7 @@
    ],
    "released": "2020-06-19",
    "rawg_slug": "the-last-of-us-part-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 24.11,
     "extra": 29.51,
@@ -11606,6 +11845,7 @@
    ],
    "released": "2016-02-15",
    "rawg_slug": "street-fighter-v",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 3.36,
     "extra": 24.08,
@@ -11648,6 +11888,7 @@
    ],
    "released": "2021-10-19",
    "rawg_slug": "youtubers-life-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 11.85,
     "extra": 21.69,
@@ -11705,6 +11946,7 @@
    ],
    "released": "2017-09-29",
    "rawg_slug": "cuphead",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.57,
     "extra": 16.08,
@@ -11774,6 +12016,7 @@
    ],
    "released": "2020-06-19",
    "rawg_slug": "the-last-of-us-part-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 14.71,
     "extra": 18.57,
@@ -11832,6 +12075,7 @@
    ],
    "released": "2015-06-11",
    "rawg_slug": "lego-jurassic-world",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.25,
     "extra": 17.51,
@@ -11870,6 +12114,7 @@
    ],
    "released": "2019-09-05",
    "rawg_slug": "nba-2k20",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 49.85,
     "extra": 123.76,
@@ -11908,6 +12153,7 @@
    ],
    "released": "2019-08-19",
    "rawg_slug": "erica",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 1.92,
     "extra": 3.29,
@@ -11970,6 +12216,7 @@
    ],
    "released": "2021-09-24",
    "rawg_slug": "death-stranding-directors-cut",
+   "metacritic_source": null,
    "hltb": {
     "main": 40.54,
     "extra": 60.06,
@@ -12025,6 +12272,7 @@
    ],
    "released": "2017-06-07",
    "rawg_slug": "wipeout-omega-collection",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 14.69,
     "extra": 26.35,
@@ -12084,6 +12332,7 @@
    ],
    "released": "2016-09-29",
    "rawg_slug": "burly-men-at-sea",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 0.46,
     "extra": 1.09,
@@ -12140,6 +12389,7 @@
    ],
    "released": "2018-02-06",
    "rawg_slug": "shadow-of-the-colossus-2018",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.17,
     "extra": 9.7,
@@ -12177,6 +12427,7 @@
    ],
    "released": "2019-01-25",
    "rawg_slug": "kingdom-hearts-iii",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 28.84,
     "extra": 40.14,
@@ -12215,6 +12466,7 @@
    ],
    "released": "2019-02-26",
    "rawg_slug": "dirt-rally-20",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 13.08,
     "extra": 46.42,
@@ -12271,6 +12523,7 @@
    ],
    "released": "2015-09-01",
    "rawg_slug": "metal-gear-solid-v-the-phantom-pain",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 45.69,
     "extra": 81.1,
@@ -12309,6 +12562,7 @@
    ],
    "released": "2017-11-07",
    "rawg_slug": "sonic-forces",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 4.06,
     "extra": 6.21,
@@ -12367,6 +12621,7 @@
    ],
    "released": "2019-01-18",
    "rawg_slug": "ace-combat-7",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.25,
     "extra": 18.28,
@@ -12424,6 +12679,7 @@
    ],
    "released": "2017-04-24",
    "rawg_slug": "outlast-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.22,
     "extra": 8.89,
@@ -12461,6 +12717,7 @@
    ],
    "released": "2016-09-13",
    "rawg_slug": "bioshock-the-collection",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 35.07,
     "extra": 49.14,
@@ -12498,6 +12755,7 @@
    ],
    "released": "2013-07-30",
    "rawg_slug": "bioshock-infinite-clash-in-the-clouds",
+   "metacritic_source": null,
    "hltb": {
     "main": 3.16,
     "extra": 5.08,
@@ -12567,6 +12825,7 @@
    ],
    "released": "2017-03-28",
    "rawg_slug": "kingdom-hearts-hd-1525-remix",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 113.14,
     "extra": 155.73,
@@ -12606,6 +12865,7 @@
    ],
    "released": "2014-04-01",
    "rawg_slug": "goat-simulator",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 2.16,
     "extra": 6.54,
@@ -12643,6 +12903,7 @@
    ],
    "released": "2015-10-09",
    "rawg_slug": "uncharted-the-nathan-drake-collection",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 27.39,
     "extra": 33.14,
@@ -12716,6 +12977,7 @@
    ],
    "released": "2015-06-23",
    "rawg_slug": "batman-arkham-knight",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 17.18,
     "extra": 31.5,
@@ -12753,6 +13015,7 @@
    ],
    "released": "2016-10-28",
    "rawg_slug": "titanfall-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.09,
     "extra": 8.31,
@@ -12790,6 +13053,7 @@
    ],
    "released": "2017-02-07",
    "rawg_slug": "nioh",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 35.3,
     "extra": 64.08,
@@ -12848,6 +13112,7 @@
    ],
    "released": "2015-04-23",
    "rawg_slug": "uncanny-valley",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 1.51,
     "extra": 2.98,
@@ -12916,6 +13181,7 @@
    ],
    "released": "2018-09-14",
    "rawg_slug": "shadow-of-the-tomb-raider",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.65,
     "extra": 23.02,
@@ -12954,6 +13220,7 @@
    ],
    "released": "2018-11-27",
    "rawg_slug": "darksiders-iii",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 14.18,
     "extra": 19.0,
@@ -12992,6 +13259,7 @@
    ],
    "released": "2017-02-13",
    "rawg_slug": "sniper-elite-4",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.7,
     "extra": 17.88,
@@ -13060,6 +13328,7 @@
    ],
    "released": "2018-05-25",
    "rawg_slug": "detroit-become-human",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.08,
     "extra": 15.75,
@@ -13139,6 +13408,7 @@
    ],
    "released": "2005-03-22",
    "rawg_slug": "god-of-war",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 20.57,
     "extra": 32.91,
@@ -13177,6 +13447,7 @@
    ],
    "released": "2017-01-30",
    "rawg_slug": "conan-exiles",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 39.58,
     "extra": 117.9,
@@ -13214,6 +13485,7 @@
    ],
    "released": "2015-07-28",
    "rawg_slug": "kings-quest",
+   "metacritic_source": null,
    "hltb": {
     "main": 19.38,
     "extra": 21.02,
@@ -13252,6 +13524,7 @@
    ],
    "released": "2016-03-11",
    "rawg_slug": "hitman",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.69,
     "extra": 23.75,
@@ -13314,6 +13587,7 @@
    ],
    "released": "2018-09-07",
    "rawg_slug": "marvels-spider-man",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 17.01,
     "extra": 25.62,
@@ -13352,6 +13626,7 @@
    ],
    "released": "2016-12-02",
    "rawg_slug": "steep",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.93,
     "extra": 24.35,
@@ -13415,6 +13690,7 @@
    ],
    "released": "2017-01-23",
    "rawg_slug": "resident-evil-7-biohazard",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.22,
     "extra": 12.01,
@@ -13454,6 +13730,7 @@
    ],
    "released": "2018-01-23",
    "rawg_slug": "iconoclasts",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.01,
     "extra": 13.3,
@@ -13491,6 +13768,7 @@
    ],
    "released": "2018-10-05",
    "rawg_slug": "assassins-creed-odyssey",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 45.67,
     "extra": 85.55,
@@ -13530,6 +13808,7 @@
    ],
    "released": "2016-01-21",
    "rawg_slug": "yakuza-kiwami",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 17.96,
     "extra": 33.16,
@@ -13616,6 +13895,7 @@
    ],
    "released": "2017-10-27",
    "rawg_slug": "assassins-creed-origins",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 30.18,
     "extra": 52.6,
@@ -13653,6 +13933,7 @@
    ],
    "released": "2017-05-25",
    "rawg_slug": "friday-the-13th-the-game",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.52,
     "extra": 26.27,
@@ -13690,6 +13971,7 @@
    ],
    "released": "2015-07-14",
    "rawg_slug": "god-of-war-iii-remastered",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.0,
     "extra": 11.07,
@@ -13727,6 +14009,7 @@
    ],
    "released": "2017-09-06",
    "rawg_slug": "destiny-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.24,
     "extra": 45.8,
@@ -13764,6 +14047,7 @@
    ],
    "released": "2020-09-25",
    "rawg_slug": "mafia-trilogy",
+   "metacritic_source": null,
    "hltb": {
     "main": 61.0,
     "extra": 86.95,
@@ -13799,6 +14083,7 @@
    ],
    "released": "2016-10-13",
    "rawg_slug": "here-they-lie",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 2.79,
     "extra": 2.92,
@@ -13835,6 +14120,7 @@
    ],
    "released": "2016-06-14",
    "rawg_slug": "dead-by-daylight",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 77.35,
     "extra": 373.13,
@@ -13871,6 +14157,7 @@
    ],
    "released": "2018-11-05",
    "rawg_slug": "knowledge-is-power-decades",
+   "metacritic_source": null,
    "hltb": {
     "main": 1.41,
     "extra": 8.62,
@@ -13910,6 +14197,7 @@
    ],
    "released": "2017-08-28",
    "rawg_slug": "absolver",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.11,
     "extra": 8.0,
@@ -13966,6 +14254,7 @@
    ],
    "released": "2014-04-29",
    "rawg_slug": "child-of-light",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.19,
     "extra": 13.48,
@@ -14003,6 +14292,7 @@
    ],
    "released": "2015-11-06",
    "rawg_slug": "cod-black-ops-iii",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.04,
     "extra": 15.07,
@@ -14039,6 +14329,7 @@
    ],
    "released": "2014-04-15",
    "rawg_slug": "trials-fusion",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.8,
     "extra": 22.15,
@@ -14076,6 +14367,7 @@
    ],
    "released": "2016-02-04",
    "rawg_slug": "xcom-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 33.24,
     "extra": 48.14,
@@ -14132,6 +14424,7 @@
    ],
    "released": "2016-06-21",
    "rawg_slug": "mighty-no-9",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 4.99,
     "extra": 8.79,
@@ -14214,6 +14507,7 @@
    ],
    "released": "2017-11-07",
    "rawg_slug": "horizon-zero-dawn-the-frozen-wilds",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 22.51,
     "extra": 44.07,
@@ -14271,6 +14565,7 @@
    ],
    "released": "2012-10-16",
    "rawg_slug": "the-unfinished-swan",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 2.49,
     "extra": 3.07,
@@ -14332,6 +14627,7 @@
    ],
    "released": "2017-02-21",
    "rawg_slug": "night-in-the-woods",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 8.93,
     "extra": 12.25,
@@ -14369,6 +14665,7 @@
    ],
    "released": "2015-08-31",
    "rawg_slug": "mad-max",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 20.11,
     "extra": 38.88,
@@ -14406,6 +14703,7 @@
    ],
    "released": "2016-03-22",
    "rawg_slug": "trackmania-turbo",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 14.05,
     "extra": 35.22,
@@ -14469,6 +14767,7 @@
    ],
    "released": "2012-06-27",
    "rawg_slug": "ratchet-clank-collection",
+   "metacritic_source": null,
    "hltb": {
     "main": 10.21,
     "extra": 13.35,
@@ -14508,6 +14807,7 @@
    ],
    "released": "2014-01-22",
    "rawg_slug": "claire",
+   "metacritic_source": null,
    "hltb": {
     "main": 3.46,
     "extra": 5.05,
@@ -14565,6 +14865,7 @@
    ],
    "released": "2015-09-21",
    "rawg_slug": "soma",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.07,
     "extra": 10.93,
@@ -14635,6 +14936,7 @@
    ],
    "released": "2014-11-18",
    "rawg_slug": "never-alone",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 3.06,
     "extra": 3.73,
@@ -14693,6 +14995,7 @@
    ],
    "released": "2017-11-17",
    "rawg_slug": "star-wars-battlefront-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.72,
     "extra": 18.38,
@@ -14755,6 +15058,7 @@
    ],
    "released": "2017-10-25",
    "rawg_slug": "wolfenstein-2-the-new-colossus",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.75,
     "extra": 17.09,
@@ -14792,6 +15096,7 @@
    ],
    "released": "2015-11-19",
    "rawg_slug": "grand-kingdom",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 22.63,
     "extra": 47.87,
@@ -14828,6 +15133,7 @@
    ],
    "released": "2017-04-11",
    "rawg_slug": "starblood-arena",
+   "metacritic_source": null,
    "hltb": {
     "main": 3.0,
     "url": "https://howlongtobeat.com/game/51964"
@@ -14880,6 +15186,7 @@
    ],
    "released": "2017-08-22",
    "rawg_slug": "uncharted-the-lost-legacy",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.09,
     "extra": 8.56,
@@ -14938,6 +15245,7 @@
    ],
    "released": "2022-01-28",
    "rawg_slug": "uncharted-legacy-of-thieves-collection",
+   "metacritic_source": null,
    "hltb": {
     "main": 20.69,
     "extra": 25.39,
@@ -14975,6 +15283,7 @@
    ],
    "released": "2016-08-22",
    "rawg_slug": "deus-ex-mankind-divided",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 16.07,
     "extra": 31.03,
@@ -15005,13 +15314,14 @@
    "status": "unplayed",
    "last_activity": null,
    "hours_by_year": {},
-   "metacritic": null,
+   "metacritic": 69,
    "genres": [
     "Shooter",
     "Action"
    ],
    "released": "2001-10-15",
    "rawg_slug": "batman-vengeance",
+   "metacritic_source": "wikidata",
    "hltb": {
     "url": "https://howlongtobeat.com/game/116335"
    }
@@ -15045,6 +15355,7 @@
    ],
    "released": "2016-08-16",
    "rawg_slug": "bound",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 2.13,
     "extra": 3.21,
@@ -15081,6 +15392,7 @@
    ],
    "released": "2014-05-30",
    "rawg_slug": "worms-battlegrounds",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.08,
     "extra": 15.22,
@@ -15137,6 +15449,7 @@
    ],
    "released": "2024-10-04",
    "rawg_slug": "until-dawn-2",
+   "metacritic_source": null,
    "hltb": {
     "main": 8.02,
     "extra": 9.38,
@@ -15173,6 +15486,7 @@
    ],
    "released": "2016-11-22",
    "rawg_slug": "amnesia-collection",
+   "metacritic_source": null,
    "hltb": {
     "main": 13.66,
     "extra": 14.2,
@@ -15240,6 +15554,7 @@
    ],
    "released": "2015-01-29",
    "rawg_slug": "life-is-strange-episode-1-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 14.14,
     "extra": 16.44,
@@ -15276,6 +15591,7 @@
    ],
    "released": "2014-03-21",
    "rawg_slug": "infamous-second-son",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.29,
     "extra": 15.1,
@@ -15332,6 +15648,7 @@
    ],
    "released": "2016-10-25",
    "rawg_slug": "the-last-guardian",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.9,
     "extra": 13.14,
@@ -15369,6 +15686,7 @@
    ],
    "released": "2014-02-18",
    "rawg_slug": "assassins-creed-freedom-cry",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 4.17,
     "extra": 6.04,
@@ -15406,6 +15724,7 @@
    ],
    "released": "2015-11-30",
    "rawg_slug": "just-cause-3",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 18.34,
     "extra": 37.94,
@@ -15462,6 +15781,7 @@
    ],
    "released": "2017-05-25",
    "rawg_slug": "rime",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.72,
     "extra": 6.89,
@@ -15520,6 +15840,7 @@
    ],
    "released": "2016-03-07",
    "rawg_slug": "tom-clancys-the-division",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 24.24,
     "extra": 47.96,
@@ -15577,6 +15898,7 @@
    ],
    "released": "2014-09-25",
    "rawg_slug": "the-vanishing-of-ethan-carter",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 3.76,
     "extra": 4.16,
@@ -15635,6 +15957,7 @@
    ],
    "released": "2016-03-15",
    "rawg_slug": "salt-and-sanctuary",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 16.42,
     "extra": 21.52,
@@ -15703,6 +16026,7 @@
    ],
    "released": "1993-12-10",
    "rawg_slug": "doom-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.41,
     "extra": 13.38,
@@ -15739,6 +16063,7 @@
    ],
    "released": "2015-10-21",
    "rawg_slug": "tales-from-the-borderlands",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.6,
     "extra": 11.11,
@@ -15796,6 +16121,7 @@
    ],
    "released": "2016-01-25",
    "rawg_slug": "the-witness",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 16.92,
     "extra": 24.1,
@@ -15835,6 +16161,7 @@
    ],
    "released": "2015-05-13",
    "rawg_slug": "not-a-hero",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.08,
     "extra": 6.56,
@@ -15873,6 +16200,7 @@
    ],
    "released": "2014-11-18",
    "rawg_slug": "littlebigplanet-3",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.96,
     "extra": 10.71,
@@ -15928,6 +16256,7 @@
    ],
    "released": "2016-01-29",
    "rawg_slug": "this-war-of-mine-the-little-ones",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.01,
     "extra": 12.38,
@@ -15989,6 +16318,7 @@
    ],
    "released": "2016-02-02",
    "rawg_slug": "gravity-rush-remastered",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.89,
     "extra": 13.17,
@@ -16028,6 +16358,7 @@
    ],
    "released": "2017-02-13",
    "rawg_slug": "for-honor",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.03,
     "extra": 10.95,
@@ -16087,6 +16418,7 @@
    ],
    "released": "2016-06-28",
    "rawg_slug": "inside",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 3.56,
     "extra": 4.04,
@@ -16149,6 +16481,7 @@
    ],
    "released": "2017-08-21",
    "rawg_slug": "battlefield-1-revolution",
+   "metacritic_source": null,
    "hltb": {
     "main": 6.68,
     "extra": 10.05,
@@ -16186,6 +16519,7 @@
    ],
    "released": "2015-04-13",
    "rawg_slug": "titan-souls",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 3.14,
     "extra": 4.02,
@@ -16223,6 +16557,7 @@
    ],
    "released": "2016-03-21",
    "rawg_slug": "day-of-the-tentacle-remastered",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 5.2,
     "extra": 5.78,
@@ -16280,6 +16615,7 @@
    ],
    "released": "2015-08-11",
    "rawg_slug": "everybodys-gone-to-the-rapture",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 4.52,
     "extra": 6.08,
@@ -16341,6 +16677,7 @@
    ],
    "released": "2015-11-10",
    "rawg_slug": "rise-of-the-tomb-raider",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 13.3,
     "extra": 21.87,
@@ -16379,6 +16716,7 @@
    ],
    "released": "2016-01-18",
    "rawg_slug": "darkest-dungeon",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 56.75,
     "extra": 85.32,
@@ -16435,13 +16773,14 @@
     "2015": 0.2,
     "2016": 13.6
    },
-   "metacritic": null,
+   "metacritic": 80,
    "genres": [
     "Action",
     "RPG"
    ],
    "released": "2012-05-15",
    "rawg_slug": "game-of-thrones",
+   "metacritic_source": "wikidata",
    "hltb": {
     "main": 19.32,
     "extra": 25.14,
@@ -16504,6 +16843,7 @@
    ],
    "released": "2016-02-08",
    "rawg_slug": "firewatch",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 4.07,
     "extra": 4.67,
@@ -16541,6 +16881,7 @@
    "genres": [],
    "released": null,
    "rawg_slug": null,
+   "metacritic_source": null,
    "hltb": {
     "main": 5.28,
     "extra": 5.71,
@@ -16603,6 +16944,7 @@
    ],
    "released": "2015-03-24",
    "rawg_slug": "bloodborne",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 32.19,
     "extra": 43.36,
@@ -16689,6 +17031,7 @@
    ],
    "released": "2015-11-09",
    "rawg_slug": "fallout-4",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 27.79,
     "extra": 83.3,
@@ -16731,6 +17074,7 @@
    ],
    "released": "2016-02-09",
    "rawg_slug": "unravel",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.15,
     "extra": 8.17,
@@ -16794,6 +17138,7 @@
    ],
    "released": "2014-06-24",
    "rawg_slug": "valiant-hearts-the-great-war",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.59,
     "extra": 7.41,
@@ -16851,6 +17196,7 @@
    ],
    "released": "2014-10-12",
    "rawg_slug": "the-evil-within",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 15.32,
     "extra": 20.04,
@@ -16906,6 +17252,7 @@
    ],
    "released": "2013-10-10",
    "rawg_slug": "the-wolf-among-us",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 8.63,
     "extra": 9.31,
@@ -16962,6 +17309,7 @@
    ],
    "released": "2015-01-13",
    "rawg_slug": "the-order-1886",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.17,
     "extra": 8.32,
@@ -17054,6 +17402,7 @@
    ],
    "released": "2015-05-18",
    "rawg_slug": "the-witcher-3-wild-hunt",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 51.68,
     "extra": 103.75,
@@ -17091,6 +17440,7 @@
    ],
    "released": "2004-09-20",
    "rawg_slug": "star-wars-battlefront-3",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.32,
     "extra": 14.95,
@@ -17152,6 +17502,7 @@
    ],
    "released": "2014-11-11",
    "rawg_slug": "assassins-creed-unity-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 17.21,
     "extra": 35.17,
@@ -17192,6 +17543,7 @@
    ],
    "released": "2014-09-03",
    "rawg_slug": "kitty-powers-matchmaker",
+   "metacritic_source": null,
    "hltb": {
     "url": "https://howlongtobeat.com/game/63011"
    }
@@ -17237,6 +17589,7 @@
    ],
    "released": "2013-11-15",
    "rawg_slug": "the-playroom",
+   "metacritic_source": null,
    "hltb": {
     "main": 0.93,
     "extra": 2.31,
@@ -17293,6 +17646,7 @@
    ],
    "released": "2014-09-30",
    "rawg_slug": "shadow-of-mordor",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 15.71,
     "extra": 23.94,
@@ -17349,6 +17703,7 @@
    ],
    "released": "2014-09-20",
    "rawg_slug": "fifa-15",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 79.22,
     "extra": 154.44,
@@ -17415,6 +17770,7 @@
    ],
    "released": "2014-11-11",
    "rawg_slug": "assassins-creed-rogue-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.82,
     "extra": 22.3,
@@ -17470,6 +17826,7 @@
    ],
    "released": "2010-02-17",
    "rawg_slug": "heavy-rain",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.99,
     "extra": 12.06,
@@ -17530,6 +17887,7 @@
    ],
    "released": "2009-10-13",
    "rawg_slug": "uncharted-2-among-thieves",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.36,
     "extra": 12.28,
@@ -17607,6 +17965,7 @@
    ],
    "released": "2013-10-29",
    "rawg_slug": "assassins-creed-iv-black-flag",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 23.42,
     "extra": 41.07,
@@ -17643,6 +18002,7 @@
    ],
    "released": "2014-08-12",
    "rawg_slug": "pt",
+   "metacritic_source": null,
    "hltb": {
     "main": 1.57,
     "extra": 2.94,
@@ -17709,6 +18069,7 @@
    ],
    "released": "2013-03-26",
    "rawg_slug": "bioshock-infinite",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.55,
     "extra": 16.18,
@@ -17769,6 +18130,7 @@
    ],
    "released": "2012-04-23",
    "rawg_slug": "the-walking-dead",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 0.53,
     "url": "https://howlongtobeat.com/game/66845"
@@ -17839,6 +18201,7 @@
    ],
    "released": "2014-05-27",
    "rawg_slug": "watch-dogs",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 19.45,
     "extra": 31.89,
@@ -17904,6 +18267,7 @@
    ],
    "released": "2013-03-05",
    "rawg_slug": "tomb-raider",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 11.32,
     "extra": 15.47,
@@ -17977,6 +18341,7 @@
    ],
    "released": "2013-10-22",
    "rawg_slug": "lego-marvel",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.27,
     "extra": 24.0,
@@ -18038,6 +18403,7 @@
    ],
    "released": "2012-03-13",
    "rawg_slug": "journey",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 2.0,
     "extra": 2.51,
@@ -18103,6 +18469,7 @@
    ],
    "released": "2011-11-01",
    "rawg_slug": "uncharted-3-drakes-deception",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.1,
     "extra": 10.7,
@@ -18159,6 +18526,7 @@
    ],
    "released": "2013-07-25",
    "rawg_slug": "dragons-crown",
+   "metacritic_source": null,
    "hltb": {
     "main": 14.05,
     "extra": 20.79,
@@ -18213,6 +18581,7 @@
    ],
    "released": "2012-11-19",
    "rawg_slug": "hitman-absolution",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.3,
     "extra": 19.85,
@@ -18278,6 +18647,7 @@
    ],
    "released": "2013-09-17",
    "rawg_slug": "grand-theft-auto-v",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 32.06,
     "extra": 51.24,
@@ -18338,6 +18708,7 @@
    ],
    "released": "2013-10-07",
    "rawg_slug": "beyond-two-souls",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 10.65,
     "extra": 12.4,
@@ -18396,6 +18767,7 @@
    ],
    "released": "2006-04-14",
    "rawg_slug": "flow",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 1.46,
     "extra": 2.54,
@@ -18452,6 +18824,7 @@
    ],
    "released": "2009-02-12",
    "rawg_slug": "flower",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 1.98,
     "extra": 2.56,
@@ -18517,6 +18890,7 @@
    ],
    "released": "2011-11-17",
    "rawg_slug": "ni-no-kuni-wrath-of-the-white-witch",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 44.08,
     "extra": 56.23,
@@ -18578,6 +18952,7 @@
    ],
    "released": "2020-06-19",
    "rawg_slug": "the-last-of-us-part-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 15.28,
     "extra": 17.58,
@@ -18650,6 +19025,7 @@
    ],
    "released": "2012-08-14",
    "rawg_slug": "darksiders-ii",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 21.59,
     "extra": 29.18,
@@ -18710,6 +19086,7 @@
    ],
    "released": "2008-10-13",
    "rawg_slug": "dead-space",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 9.11,
     "extra": 11.55,
@@ -18771,6 +19148,7 @@
    ],
    "released": "2012-09-25",
    "rawg_slug": "dishonored",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.16,
     "extra": 18.54,
@@ -18836,6 +19214,7 @@
    ],
    "released": "2007-11-13",
    "rawg_slug": "assassins-creed",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 16.45,
     "extra": 31.28,
@@ -18892,6 +19271,7 @@
    ],
    "released": "2010-10-19",
    "rawg_slug": "vanquish",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 6.08,
     "extra": 8.1,
@@ -18957,6 +19337,7 @@
    ],
    "released": "2011-11-15",
    "rawg_slug": "assassins-creed-revelations",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.45,
     "extra": 20.63,
@@ -19016,6 +19397,7 @@
    ],
    "released": "2011-09-27",
    "rawg_slug": "fifa-12",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 61.91,
     "extra": 67.59,
@@ -19070,6 +19452,7 @@
    ],
    "released": "2011-09-22",
    "rawg_slug": "dark-souls",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 41.67,
     "extra": 59.19,
@@ -19129,6 +19512,7 @@
    ],
    "released": "2010-01-05",
    "rawg_slug": "darksiders",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 17.07,
     "extra": 20.42,
@@ -19188,6 +19572,7 @@
    ],
    "released": "2010-11-16",
    "rawg_slug": "assassins-creed-brotherhood-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 15.29,
     "extra": 25.66,
@@ -19248,6 +19633,7 @@
    ],
    "released": "2010-05-18",
    "rawg_slug": "red-dead-redemption",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 17.6,
     "extra": 25.88,
@@ -19307,6 +19693,7 @@
    ],
    "released": "2009-05-26",
    "rawg_slug": "infamous",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 14.91,
     "extra": 20.25,
@@ -19366,6 +19753,7 @@
    ],
    "released": "2007-11-13",
    "rawg_slug": "assassins-creed",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 19.29,
     "extra": 26.17,
@@ -19425,6 +19813,7 @@
    ],
    "released": "2011-10-18",
    "rawg_slug": "batman-arkham-city-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.65,
     "extra": 22.14,
@@ -19479,6 +19868,7 @@
    ],
    "released": "2007-11-19",
    "rawg_slug": "uncharted-drakes-fortune",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 8.05,
     "extra": 9.49,
@@ -19533,6 +19923,7 @@
    ],
    "released": "2008-10-13",
    "rawg_slug": "dead-space",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.15,
     "extra": 16.21,
@@ -19587,6 +19978,7 @@
    ],
    "released": "2010-08-24",
    "rawg_slug": "mafia-ii",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 12.12,
     "extra": 16.5,
@@ -19641,6 +20033,7 @@
    ],
    "released": "2009-02-25",
    "rawg_slug": "killzone-2",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 7.55,
     "extra": 10.8,
@@ -19702,6 +20095,7 @@
    ],
    "released": "2011-05-17",
    "rawg_slug": "la-noire",
+   "metacritic_source": "rawg",
    "hltb": {
     "main": 22.3,
     "extra": 29.45,
