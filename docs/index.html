@@ -406,12 +406,13 @@ function renderChips() {
     `<button class="chip" data-s="${k}" aria-pressed="${state.status === k}">${v}<small>${count(k)}</small></button>`).join("");
 }
 
+const beatTime = x => x.hltb?.extra || x.hltb?.main || null;   // HowLongToBeat Main + Extras (Main Story if missing)
 const SORTS = {
   recent: (a, b) => (b.last_activity || b.acquired || "").localeCompare(a.last_activity || a.acquired || ""),
   metacritic: (a, b) => (b.metacritic ?? -1) - (a.metacritic ?? -1),
   hours: (a, b) => (b.hours || 0) - (a.hours || 0),
   progress: (a, b) => (b.progress ?? -1) - (a.progress ?? -1),
-  beat: (a, b) => (a.hltb?.main ?? 1e9) - (b.hltb?.main ?? 1e9),
+  beat: (a, b) => (beatTime(a) ?? 1e9) - (beatTime(b) ?? 1e9),
   left: (a, b) => (b.trophies_total - b.trophies_earned) - (a.trophies_total - a.trophies_earned),
   name: (a, b) => a.name.localeCompare(b.name),
 };
@@ -456,8 +457,8 @@ let RATINGS = {};
 const myScore = x => { const r = RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean); return r ? `<span class="mine" title="Your rating">You ${r.score}</span>` : ""; };
 const fmtH = h => h >= 10 ? Math.round(h) + " h" : (Math.round(h * 2) / 2) + " h";
 function beat(x) {
-  const m = x.hltb?.main;
-  return m ? `<span class="num" title="HowLongToBeat, main story">Beat in ~${fmtH(m)}</span>` : "";
+  const m = beatTime(x);
+  return m ? `<span class="num" title="HowLongToBeat, main story + extras">Beat in ~${fmtH(m)}</span>` : "";
 }
 
 function issueUrl(flag, names) {

@@ -51,7 +51,7 @@ Go to **Actions → Refresh game data → Run workflow**. The run takes about 3�
 - **Refresh:** tap **Refresh data** at the top of the dashboard. It opens the workflow on GitHub; tap **Run workflow** and wait a few minutes. You need to be signed in to GitHub, and the GitHub mobile app works too.
 - **Backlog:** the Backlog filter shows owned games you have never started. It sorts by Metacritic score so you can pick the next one to play.
 - **Details:** tap a game to see remaining trophies by grade, HowLongToBeat times, genres, and your first and last played dates.
-- **Time to beat:** each game shows "Beat in ~N h" (HowLongToBeat main story). Sort by **Time to beat** to find short games in your backlog.
+- **Time to beat:** each game shows "Beat in ~N h" (HowLongToBeat Main + Extras). Sort by **Time to beat** to find short games in your backlog.
 - **Beaten / Dropped:** tap a game, then **Mark as beaten** (finished without the platinum) or **Mark as dropped**. A pre-filled GitHub page opens; tap **Create** and the dashboard updates in about a minute. Flags are saved in `docs/flags.json`, and refreshes never overwrite them. Two automatic rules apply:
   - Earning the platinum or 100% of the trophies later turns a Beaten game into **Completed**.
   - A Dropped game with new playtime or a new trophy after the date you dropped it goes back to its normal status at your next refresh.

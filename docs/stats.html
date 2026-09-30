@@ -395,6 +395,7 @@ function rarest(y) {
 }
 
 
+const beatTime = x => x.hltb?.extra || x.hltb?.main || null;   // HowLongToBeat Main + Extras (Main Story if missing)
 /* ---------- extra data: flags, ratings ---------- */
 let FLAGS = {}, RATINGS = {};
 const flagOf = x => FLAGS[x.name] || (x.aliases || []).map(n => FLAGS[n]).find(Boolean);
@@ -514,8 +515,8 @@ function pace(y) {
     const fin = finishedAt(x); if (!fin || !(x.hours > 0) || !x.hltb) return null;
     if (y !== "all" && yearOf(fin) !== y) return null;
     const full = !!x.platinum_at || x.status === "completed";
-    const ref = full ? (x.hltb.complete || x.hltb.extra) : x.hltb.main;
-    return ref ? { x, ratio: x.hours / ref, ref, kind: full ? "completionist" : "main story" } : null;
+    const ref = full ? (x.hltb.complete || x.hltb.extra) : beatTime(x);
+    return ref ? { x, ratio: x.hours / ref, ref, kind: full ? "completionist" : "main + extras" } : null;
   }).filter(Boolean);
   if (rows.length < 2) { $("pace").innerHTML = `<p class="empty">Needs at least two finished PS4/PS5 games with a HowLongToBeat time in this period.</p>`; return; }
   const m = median(rows.map(r => r.ratio));
@@ -526,7 +527,7 @@ function pace(y) {
   for (const r of rows) for (const g of r.x.genres || []) (byGenre[g] ||= []).push(r.ratio);
   const genreRows = Object.entries(byGenre).filter(([, a]) => a.length >= 3).map(([g, a]) => [g, median(a), a.length]).sort((a, b) => b[1] - a[1]).slice(0, 6);
   $("pace").innerHTML = `<p class="big"><b>${m.toFixed(1)}×</b> the typical time: ${verdict}.</p>
-    <p class="note">Median over ${rows.length} finished games: your hours against HowLongToBeat (main story for Beaten, completionist for platinum or 100%).</p>
+    <p class="note">Median over ${rows.length} finished games: your hours against HowLongToBeat (main + extras for Beaten, completionist for platinum or 100%).</p>
     <div class="two"><div><h3>Fastest</h3><ul>${sorted.slice(0, 3).map(line).join("")}</ul></div><div><h3>Slowest</h3><ul>${sorted.slice(-3).reverse().map(line).join("")}</ul></div></div>
     ${genreRows.length ? `<h3>By genre</h3><table class="tbl"><thead><tr><th>Genre</th><th>Pace</th><th>Games</th></tr></thead><tbody>${genreRows.map(([g, v, n]) => `<tr><td>${esc(g)}</td><td class="num">${v.toFixed(1)}×</td><td class="num">${n}</td></tr>`).join("")}</tbody></table>` : ""}`;
 }
@@ -536,9 +537,9 @@ function backlog(y) {
   const eff = x => { const f = flagOf(x); if (x.status === "completed" || !f) return x.status;
     if (f.flag === "dropped" && x.last_activity && new Date(x.last_activity) > new Date(f.at)) return x.status; return f.flag; };
   const todo = DATA.games.filter(x => x.owned && eff(x) === "unplayed");
-  const withTime = todo.filter(x => x.hltb?.main), hours = sum(withTime.map(x => x.hltb.main));
-  const inProg = DATA.games.filter(x => eff(x) === "started" && x.hltb?.main);
-  const left = sum(inProg.map(x => Math.max(0, x.hltb.main - (x.hours || 0))));
+  const withTime = todo.filter(x => beatTime(x)), hours = sum(withTime.map(beatTime));
+  const inProg = DATA.games.filter(x => eff(x) === "started" && beatTime(x));
+  const left = sum(inProg.map(x => Math.max(0, beatTime(x) - (x.hours || 0))));
   const years = {};
   const bump = (yr, k) => { if (!yr) return; (years[yr] ||= { bought: 0, started: 0, finished: 0 })[k]++; };
   for (const x of DATA.games) { if (x.owned) bump(yearOf(x.acquired), "bought"); bump(yearOf(startedAt(x)), "started"); bump(yearOf(finishedAt(x)), "finished"); }
@@ -548,7 +549,7 @@ function backlog(y) {
       <div><b>${fmt(hours)} h</b><span>To beat them all</span></div>
       <div><b>${fmt(left)} h</b><span>Left in games in progress</span></div>
       <div><b>${fmt((hours + left) / 2 / 52)} yrs</b><span>At 2 h a week…</span></div></div>
-    <p class="note">HowLongToBeat main-story times; ${todo.length - withTime.length} backlog games have no time and aren't counted.</p>
+    <p class="note">HowLongToBeat Main + Extras times; ${todo.length - withTime.length} backlog games have no time and aren't counted.</p>
     <div class="tblwrap"><table class="tbl"><thead><tr><th>Year</th><th>Bought</th><th>Started</th><th>Finished</th><th>Backlog</th></tr></thead><tbody>
     ${rows.map(([yr, v]) => { const net = v.bought - v.finished; return `<tr class="${yr === y ? "sel" : ""}"><td>${yr}</td><td class="num">${v.bought}</td><td class="num">${v.started}</td><td class="num">${v.finished}</td><td class="num ${net > 0 ? "up" : net < 0 ? "down" : ""}">${net > 0 ? "+" : ""}${net}</td></tr>`; }).join("")}
     </tbody></table></div>

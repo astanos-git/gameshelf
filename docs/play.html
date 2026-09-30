@@ -108,7 +108,7 @@ section { display: grid; gap: 10px; }
     <div id="pick"></div>
     <h2>Top picks</h2>
     <ol class="list" id="picks"></ol>
-    <p class="note">Ranked by Metacritic score. Length is HowLongToBeat's main story time; games without one only appear under "Any length".</p>
+    <p class="note">Ranked by Metacritic score. Length is HowLongToBeat's Main + Extras time; games without one only appear under "Any length".</p>
   </section>
 
   <section>
@@ -132,6 +132,7 @@ const initials = s => (s || "?").replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filt
 const pic = (url, name) => url ? `<img src="${esc(url)}" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode('${initials(name)}'))">` : initials(name);
 const mcClass = m => m == null ? "none" : m >= 75 ? "good" : m >= 50 ? "mid" : "bad";
 const fmtH = h => h >= 10 ? Math.round(h) + " h" : (Math.round(h * 2) / 2) + " h";
+const beatTime = x => x.hltb?.extra || x.hltb?.main || null;   // HowLongToBeat Main + Extras (Main Story if missing)
 const LENGTHS = { any: ["Any length", () => true], short: ["Under 10 h", h => h && h < 10], medium: ["10–30 h", h => h >= 10 && h <= 30], long: ["30 h +", h => h > 30] };
 const POOLS = { backlog: "Backlog", both: "Backlog + in progress" };
 let DATA, state = { length: "any", pool: "backlog", genre: "" };
@@ -151,13 +152,13 @@ function applyFlags(games, flags) {
 function pool() {
   const fit = LENGTHS[state.length][1];
   return DATA.games.filter(x => (x.eff === "unplayed" && x.owned) || (state.pool === "both" && x.eff === "started"))
-    .filter(x => fit(x.hltb?.main))
+    .filter(x => fit(beatTime(x)))
     .filter(x => !state.genre || (x.genres || []).includes(state.genre));
 }
 
 function card(x, eyebrow) {
   const why = [x.metacritic != null ? `Metacritic <b>${x.metacritic}</b>` : "No Metacritic score",
-    x.hltb?.main ? `~<b>${fmtH(x.hltb.main)}</b> to beat` : null,
+    beatTime(x) ? `~<b>${fmtH(beatTime(x))}</b> to beat` : null,
     (x.genres || []).slice(0, 3).join(", ") || null,
     x.eff === "started" ? `In progress · ${x.progress ?? 0}% trophies` : (x.acquired ? `Owned since ${new Date(x.acquired).getFullYear()}` : null)].filter(Boolean);
   return `<div class="pick"><span class="cover">${pic(x.image, x.name)}</span>
@@ -168,10 +169,10 @@ function render() {
   $("lengths").innerHTML = Object.entries(LENGTHS).map(([k, [l]]) => `<button class="chip" data-len="${k}" aria-pressed="${state.length === k}">${l}</button>`).join("");
   $("pools").innerHTML = Object.entries(POOLS).map(([k, l]) => `<button class="chip" data-pool="${k}" aria-pressed="${state.pool === k}">${l}</button>`).join("");
   const p = pool();
-  const picks = [...p].sort((a, b) => (b.metacritic ?? 0) - (a.metacritic ?? 0) || (a.hltb?.main ?? 999) - (b.hltb?.main ?? 999)).slice(0, 5);
+  const picks = [...p].sort((a, b) => (b.metacritic ?? 0) - (a.metacritic ?? 0) || (beatTime(a) ?? 999) - (beatTime(b) ?? 999)).slice(0, 5);
   $("picks").innerHTML = picks.length ? picks.map(x => `<li class="item"><span class="cover">${pic(x.image, x.name)}</span>
       <span class="main"><span class="name">${esc(x.name)}</span>
-      <span class="meta">${x.hltb?.main ? `<span>~${fmtH(x.hltb.main)}</span>` : ""}<span>${esc((x.genres || []).slice(0, 2).join(", "))}</span>${x.eff === "started" ? "<span>In progress</span>" : ""}</span></span>
+      <span class="meta">${beatTime(x) ? `<span>~${fmtH(beatTime(x))}</span>` : ""}<span>${esc((x.genres || []).slice(0, 2).join(", "))}</span>${x.eff === "started" ? "<span>In progress</span>" : ""}</span></span>
       <span class="mc ${mcClass(x.metacritic)}">${x.metacritic ?? "n/a"}</span></li>`).join("")
     : `<p class="empty">Nothing matches. Try another length or genre.</p>`;
   $("surprise").disabled = !p.length;
