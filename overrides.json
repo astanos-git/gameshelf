@@ -1,20 +1,24 @@
 {
-  "_help": "Fix wrong matches. Top level: game name exactly as shown on the dashboard -> RAWG slug (last part of its rawg.io/games/... URL), or null for no Metacritic score. Under \"hltb\": game name as shown -> the title to search on HowLongToBeat. Under \"metacritic\": game name as shown -> a score you enter yourself (used when no source has one).",
+  "_help": "Fix names and matches. \"names\": a game's name as PlayStation gives it -> the name to show (use it when a store name comes through translated). Top level: game name as shown -> RAWG slug (last part of its rawg.io/games/... URL), or null for no Metacritic score. \"hltb\": game name as shown -> the title to search on HowLongToBeat. \"metacritic\": game name as shown -> a score you enter yourself.",
+  "names": {
+    "The Plucky Squire (Le Vaillant Petit Page)": "The Plucky Squire",
+    "Bob l'éponge: The Cosmic Shake": "SpongeBob SquarePants: The Cosmic Shake",
+    "LEGO® DC Super-Vilains": "LEGO® DC Super-Villains",
+    "La Terre du Milieu™: L'Ombre de la Guerre™": "Middle-earth™: Shadow of War™",
+    "Soldats Inconnus : Mémoires de la Grande Guerre": "Valiant Hearts: The Great War",
+    "Hogwarts Legacy : L'Héritage de Poudlard": "Hogwarts Legacy",
+    "Indiana Jones et le Cercle Ancien": "Indiana Jones and the Great Circle",
+    "LEGO® Star Wars™ : La Saga Skywalker": "LEGO® Star Wars™: The Skywalker Saga",
+    "Mass Effect™ Édition Légendaire": "Mass Effect™ Legendary Edition"
+  },
   "hltb": {
     "AC Brotherhood": "Assassin's Creed Brotherhood",
     "AC Revelations": "Assassin's Creed Revelations",
-    "Bob l'éponge: The Cosmic Shake": "SpongeBob SquarePants: The Cosmic Shake",
     "Devil May Cry 5 Series": "Devil May Cry 5",
     "EA SPORTS™ FIFA 23": "FIFA 23",
     "Endling - Extinction is Forever": "Endling: Extinction is Forever",
-    "Hogwarts Legacy : L'Héritage de Poudlard": "Hogwarts Legacy",
-    "Indiana Jones et le Cercle Ancien": "Indiana Jones and the Great Circle",
     "KINGDOM HEARTS - HD 1.5+2.5 ReMIX -": "Kingdom Hearts HD 1.5 + 2.5 ReMIX",
-    "LEGO® DC Super-Vilains": "LEGO DC Super-Villains",
-    "LEGO® Star Wars™ : La Saga Skywalker": "LEGO Star Wars: The Skywalker Saga",
-    "La Terre du Milieu™: L'Ombre de la Guerre™": "Middle-earth: Shadow of War",
     "Legendary Edition: Mass Effect": "Mass Effect Legendary Edition",
-    "Mass Effect™ Édition Légendaire": "Mass Effect Legendary Edition",
     "Marvel’s Spider-Man: Miles Morales": "Marvel's Spider-Man: Miles Morales"
   },
   "metacritic": {}

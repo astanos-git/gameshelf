@@ -256,7 +256,7 @@ const STATUS_LABEL = { unplayed: "Backlog", started: "In progress", beaten: "Bea
 function applyFlags(games, flags) {
   for (const x of games) {
     x.base_status = x.base_status || x.status;
-    const f = flags[x.name];
+    const f = flags[x.name] || (x.aliases || []).map(n => flags[n]).find(Boolean);  // flags saved under an older name
     x.flag = null;
     x.status = x.base_status;
     if (!f || x.base_status === "completed") continue;

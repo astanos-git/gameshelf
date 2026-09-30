@@ -218,6 +218,15 @@ def estimate_hours_by_year(g: dict) -> dict[str, float]:
     return {y: round(hours * s, 1) for y, s in sorted(share.items()) if round(hours * s, 1) > 0}
 
 
+def loose(name: str) -> str:
+    """Compare names ignoring odd spaces (PSN uses non-breaking spaces in some titles)."""
+    return re.sub(r"\s+", " ", (name or "").replace("\xa0", " ")).strip()
+
+
+def names_override() -> dict:
+    return (json.loads(OVERRIDES.read_text()) if OVERRIDES.exists() else {}).get("names", {})
+
+
 # ---------------------------------------------------------------- merge
 
 def build_games(raw: dict) -> list[dict]:
@@ -227,12 +236,17 @@ def build_games(raw: dict) -> list[dict]:
     key_of_concept: dict[str, str] = {}
     key_of_np: dict[str, str] = {}
 
-    def row(key: str, name: str) -> dict:
-        return games.setdefault(key, {
-            "name": name, "image": None, "platforms": set(), "owned": False, "acquired": None,
+    NAME_RANK = {"owned": 0, "trophies": 1, "playtime": 2}  # store names can be localized (e.g. French)
+
+    def row(key: str, name: str, source: str) -> dict:
+        g = games.setdefault(key, {
+            "name": name, "names": {}, "image": None, "platforms": set(), "owned": False, "acquired": None,
             "hours": 0.0, "first_played": None, "last_played": None,
             "progress": None, "earned": None, "defined": None, "last_trophy": None, "has_trophies": False, "months": {},
         })
+        if name:
+            g["names"].setdefault(name, NAME_RANK[source])
+        return g
 
     # 1. Owned games (group PS4/PS5 versions by concept)
     for o in raw["owned"]:
@@ -241,7 +255,7 @@ def build_games(raw: dict) -> list[dict]:
             key_of_concept[o["concept_id"]] = key
         if o["title_id"]:
             key_of_title[o["title_id"]] = key
-        g = row(key, o["name"])
+        g = row(key, o["name"], "owned")
         g["owned"] = True
         g["platforms"].add(o["platform"])
         g["image"] = g["image"] or o["image"]
@@ -252,7 +266,7 @@ def build_games(raw: dict) -> list[dict]:
     for s in raw["stats"]:
         key = key_of_title.get(s["title_id"]) or norm(s["name"])
         key_of_title.setdefault(s["title_id"], key)
-        g = row(key, s["name"])
+        g = row(key, s["name"], "playtime")
         if s["platform"]:
             g["platforms"].add(s["platform"])
         g["image"] = g["image"] or s["image"]
@@ -269,7 +283,7 @@ def build_games(raw: dict) -> list[dict]:
     # 3. Trophies (if several lists map to one game, keep the most advanced one)
     for t in raw["trophies"]:
         key = key_of_np.get(t["np_id"]) or norm(t["name"])
-        g = row(key, t["name"])
+        g = row(key, t["name"], "trophies")
         g["platforms"].update(p for p in t["platforms"] if p != "UNKNOWN")
         g["image"] = g["image"] or t["icon"]
         g["months"] = add_months(g["months"], t.get("months") or {})  # every list counts toward yearly stats
@@ -277,8 +291,14 @@ def build_games(raw: dict) -> list[dict]:
             g.update(progress=t["progress"], earned=t["earned"], defined=t["defined"],
                      last_trophy=t["last_trophy"], has_trophies=True)
 
+    english = {loose(k): v for k, v in names_override().items()}
     out = []
     for g in games.values():
+        # Display the original name: your English-name list first, then playtime > trophy list > store name.
+        seen = g.pop("names")
+        best = max(seen, key=lambda n: seen[n]) if seen else g["name"]
+        g["name"] = next((english[loose(n)] for n in seen if loose(n) in english), best)
+        g["aliases"] = sorted(n for n in seen if n != g["name"])
         g["platforms"] = sorted(g["platforms"])
         if g["defined"]:
             earned_n = sum(g["earned"].values())
@@ -379,7 +399,6 @@ HLTB_VERSION = 3  # bump to retry earlier misses after improving matching
 def enrich_hltb(games: list[dict]) -> None:
     """Add HowLongToBeat times (hours). Unofficial and best-effort: any failure leaves the fields empty."""
     cache = json.loads(HLTB_CACHE.read_text()) if HLTB_CACHE.exists() else {}
-    loose = lambda n: re.sub(r"\s+", " ", n.replace("\xa0", " ")).strip()  # tolerate odd spaces in names
     overrides = {loose(k): v for k, v in ((json.loads(OVERRIDES.read_text()) if OVERRIDES.exists() else {}).get("hltb", {})).items()}
     try:
         from howlongtobeatpy import HowLongToBeat

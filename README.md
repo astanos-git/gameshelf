@@ -81,6 +81,7 @@ The token itself is never written to the dashboard or the repo. Only a short one
   Then upload the new `docs/data.json` and `rawg_cache.json` to the repo.
 
 ## What the data covers, and its limits
+- **Game names:** your store list comes from the Swiss PlayStation Store, which translates some titles into French. The dashboard shows the original name instead: the name from your playtime or trophy list when there is one, otherwise the `"names"` list in `overrides.json`. Add a line there if a translated name ever shows up. Flags follow a game when its name changes.
 - **Playtime:** PS4 and PS5 games only. Sony doesn't track playtime for PS3 or Vita.
 - **Owned games:** PS4 and PS5 **digital** purchases, including claimed PS Plus games. Disc-only games show up only after you've earned a trophy or played them.
 - **Trophies:** every game with a trophy list, including PS3 and Vita.

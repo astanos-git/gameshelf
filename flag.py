@@ -29,10 +29,15 @@ def apply(body: str, created: str) -> str:
     if not games or flag not in ("beaten", "dropped", "none"):
         return "Couldn't read this request. Use the buttons on the dashboard to flag games."
 
-    status = {g["name"]: g.get("status") for g in json.loads(DATA.read_text())["games"]} if DATA.exists() else {}
+    data = json.loads(DATA.read_text())["games"] if DATA.exists() else []
+    status = {g["name"]: g.get("status") for g in data}
+    current = {a: g["name"] for g in data for a in g.get("aliases", [])}  # older names -> name shown now
     flags = json.loads(FLAGS.read_text()) if FLAGS.exists() else {}
+    for old, new in current.items():  # move flags saved under an older name
+        if old in flags and new not in flags:
+            flags[new] = flags.pop(old)
     done, skipped = [], []
-    for game in games:
+    for game in [current.get(g, g) for g in games]:
         if status and game not in status:
             skipped.append(f"{game} (not on the dashboard)")
         elif flag == "none":
