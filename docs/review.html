@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Game Shelf Year in Review</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Game Shelf">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: tabs → year chips → poster hero (giant year + headline numbers) → game of the year → cards grid → platinums */
+:root {
+  --bg: #eef1f6; --surface: #ffffff; --line: #d6dce7; --fg: #141a26; --muted: #5b6477;
+  --accent: #1f5fd6; --accent-soft: #e2ebfb; --hero: #10204a; --hero-fg: #f2f5fb; --hero-muted: #a9b6d6;
+  --bronze: #b46f3c; --silver: #8d97a6; --gold: #c99a14; --plat: #5d8fc9; --up: #2f8f3a; --down: #c8412f;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e1320; --surface: #161d2d; --line: #26304a; --fg: #e6eaf3; --muted: #95a0b8;
+  --accent: #6a9cff; --accent-soft: #1d2b4d; --hero: #1a2d63; --hero-fg: #f2f5fb; --hero-muted: #a9b6d6;
+  --bronze: #d08d5a; --silver: #b4bdca; --gold: #e3b93b; --plat: #8fb8ea; --up: #5cc26a; --down: #ec6b58;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #0e1320; --surface: #161d2d; --line: #26304a; --fg: #e6eaf3; --muted: #95a0b8;
+  --accent: #6a9cff; --accent-soft: #1d2b4d; --hero: #1a2d63; --hero-fg: #f2f5fb; --hero-muted: #a9b6d6;
+  --bronze: #d08d5a; --silver: #b4bdca; --gold: #e3b93b; --plat: #8fb8ea; --up: #5cc26a; --down: #ec6b58;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.45 var(--body); }
+.wrap { max-width: 880px; margin: 0 auto; padding-inline: 16px; padding-block: 16px 48px; display: grid; gap: 18px; }
+h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; }
+.num { font-variant-numeric: tabular-nums; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+.tabs a { white-space: nowrap; padding: 6px 8px 8px; color: var(--muted); text-decoration: none; font: 600 16px var(--display); letter-spacing: .02em; text-transform: uppercase; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.tabs a[aria-current="page"] { color: var(--fg); border-color: var(--accent); }
+.years { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.chip { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 12px; cursor: pointer; white-space: nowrap; font: 500 14px var(--mono); }
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+
+/* The poster: the one bold moment on the page */
+.hero { background: var(--hero); color: var(--hero-fg); border-radius: 18px; padding: 22px 20px 20px; display: grid; gap: 14px; overflow: hidden; position: relative; }
+.hero::after { content: ""; position: absolute; right: -40px; top: -40px; width: 220px; height: 220px; border-radius: 50%;
+  border: 22px solid color-mix(in srgb, var(--plat) 35%, transparent); pointer-events: none; }
+.hero .kicker { font: 600 13px var(--body); text-transform: uppercase; letter-spacing: .14em; color: var(--hero-muted); }
+.hero h1 { font-size: clamp(88px, 26vw, 168px); line-height: .82; font-weight: 800; letter-spacing: -.01em; }
+.hero .line { font-size: 17px; max-width: 34ch; color: var(--hero-fg); position: relative; z-index: 1; }
+.big4 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 16px; position: relative; z-index: 1; }
+.big4 div { display: grid; min-width: 0; }
+.big4 b { font: 700 38px/1 var(--display); }
+.big4 span { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--hero-muted); }
+.big4 em { font: 500 12px var(--mono); font-style: normal; }
+.big4 em.up { color: #8fe39b; } .big4 em.down { color: #ffb0a4; }
+@media (max-width: 480px) { .big4 { grid-template-columns: 1fr 1fr; } }
+
+.goty { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center; }
+.goty .cover { width: 120px; height: 120px; border-radius: 12px; font-size: 32px; }
+.goty h2 { font-size: 30px; line-height: 1; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); font-weight: 600; }
+@media (max-width: 420px) { .goty { grid-template-columns: 84px 1fr; } .goty .cover { width: 84px; height: 84px; } }
+.cover { background: var(--accent-soft); display: grid; place-items: center; overflow: hidden; font: 600 16px var(--display); color: var(--accent); }
+.cover img { width: 100%; height: 100%; object-fit: cover; }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+@media (max-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.card b { font: 600 22px/1.1 var(--display); overflow-wrap: anywhere; }
+.card .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.card .sub { font-size: 12.5px; color: var(--muted); }
+
+.plats h2 { font-size: 22px; }
+.plats ol { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.plats li { display: grid; grid-template-columns: 12px 1fr auto; gap: 10px; align-items: baseline; font-size: 14px; }
+.plats li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--plat); align-self: center; }
+.plats .d { font: 12px var(--mono); color: var(--muted); }
+.empty { color: var(--muted); padding: 16px 0; margin: 0; }
+#page { display: grid; gap: 14px; }
+</style>
+
+<div class="wrap">
+  <nav class="tabs"><a href="index.html">Library</a><a href="play.html">Play next</a><a href="stats.html">Stats</a><a href="review.html" aria-current="page">Review</a></nav>
+  <div class="years" id="years" role="group" aria-label="Choose a year"></div>
+  <div id="page"></div>
+  <p class="note">Trophies and dates are exact. Hours are estimates: PSN only gives each game's total playtime (PS4/PS5 only).</p>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const initials = s => (s || "?").replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+const pic = (url, name) => url ? `<img src="${esc(url)}" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode('${initials(name)}'))">` : initials(name);
+const fmt = n => Math.round(n).toLocaleString();
+const sum = a => a.reduce((x, y) => x + y, 0);
+const fmtDate = s => new Date(s).toLocaleDateString(undefined, { month: "long", day: "numeric" });
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const DAYS = ["Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays", "Sundays"];
+let DATA, FLAGS = {}, RATINGS = {}, year;
+const pick = (map, x) => map[x.name] || (x.aliases || []).map(n => map[n]).find(Boolean);
+
+function statsFor(y) {
+  const G = DATA.games, ins = DATA.insights || {};
+  const trophies = g => sum(Object.entries(g.months || {}).filter(([m]) => m.startsWith(y)).flatMap(([, t]) => t));
+  const plats = g => sum(Object.entries(g.months || {}).filter(([m]) => m.startsWith(y)).map(([, t]) => t[3]));
+  const hours = g => (g.hours_by_year || {})[y] || 0;
+  const played = G.filter(g => trophies(g) > 0 || hours(g) > 0);
+  const started = G.filter(g => [g.first_played, g.first_trophy_at].filter(Boolean).sort()[0]?.startsWith(y));
+  const finished = G.filter(g => { const f = pick(FLAGS, g);
+    const beatenAt = f && f.flag === "beaten" ? (g.last_activity && g.last_activity < f.at ? g.last_activity : f.at) : null;
+    const at = g.platinum_at || (g.status === "completed" ? g.last_trophy : null) || beatenAt;
+    return at && String(new Date(at).getFullYear()) === y; });
+  const months = Array(12).fill(0);
+  for (const g of G) for (const [m, t] of Object.entries(g.months || {})) if (m.startsWith(y)) months[+m.slice(5) - 1] += sum(t);
+  const genres = {};
+  for (const g of played) for (const gn of g.genres || []) genres[gn] = (genres[gn] || 0) + hours(g);
+  const days = Object.entries(ins.days || {}).filter(([d]) => d.startsWith(y)).sort();
+  let streak = 0, run = 0, prev = null;
+  for (const [d] of days) { const t = Date.parse(d + "T12:00:00Z"); run = prev && t - prev === 864e5 ? run + 1 : 1; streak = Math.max(streak, run); prev = t; }
+  const wh = (ins.weekday_hour || {})[y];
+  const byDay = wh ? Array.from({ length: 7 }, (_, d) => sum(wh.slice(d * 24, d * 24 + 24))) : null;
+  const byHour = wh ? Array.from({ length: 24 }, (_, h) => sum(Array.from({ length: 7 }, (_, d) => wh[d * 24 + h]))) : null;
+  const rare = G.flatMap(g => (g.rare || []).filter(r => r.at?.startsWith(y)).map(r => ({ ...r, game: g.name }))).sort((a, b) => a.r - b.r)[0];
+  const rated = G.map(g => ({ g, r: pick(RATINGS, g) })).filter(o => o.r && played.includes(o.g)).sort((a, b) => b.r.score - a.r.score)[0];
+  return {
+    trophies: sum(played.map(trophies)), plats: sum(played.map(plats)), hours: sum(played.map(hours)),
+    played, started: started.length, finished,
+    byHours: [...played].sort((a, b) => hours(b) - hours(a)), byTrophies: [...played].sort((a, b) => trophies(b) - trophies(a)),
+    hoursOf: hours, trophiesOf: trophies, months, genres, days, streak, byDay, byHour, rare, rated,
+    platList: ((ins.milestones || []).filter(m => m.kind === "platinum" && m.at.startsWith(y))),
+  };
+}
+
+const THIS_YEAR = String(new Date().getFullYear());
+function delta(now, before) {
+  if (!before || year === THIS_YEAR) return "";   // a year still in progress can't be compared fairly
+  const p = Math.round(100 * (now - before) / before);
+  return p === 0 ? `<em>same as last year</em>` : `<em class="${p > 0 ? "up" : "down"}">${p > 0 ? "+" : ""}${p}% vs ${+year - 1}</em>`;
+}
+
+function persona(s) {
+  if (!s.byHour) return null;
+  const total = sum(s.byHour), night = sum(s.byHour.slice(22)) + sum(s.byHour.slice(0, 5)), morning = sum(s.byHour.slice(5, 11));
+  const weekend = s.byDay[5] + s.byDay[6];
+  if (night / total > .35) return ["Night owl", `${Math.round(100 * night / total)}% of your trophies came after 22:00`];
+  if (morning / total > .3) return ["Early bird", `${Math.round(100 * morning / total)}% of your trophies came before 11:00`];
+  if (weekend / total > .45) return ["Weekend warrior", `${Math.round(100 * weekend / total)}% of your trophies came on weekends`];
+  return ["Steady player", "Your trophies are spread across the week"];
+}
+
+function render() {
+  document.querySelectorAll("#years .chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.y === year));
+  const s = statsFor(year), prev = statsFor(String(+year - 1));
+  if (!s.played.length) { $("page").innerHTML = `<p class="empty">No playtime or trophies recorded in ${year}.</p>`; return; }
+  const goty = s.byHours.find(g => s.hoursOf(g) > 0) || s.byTrophies[0];
+  const runner = s.byHours.filter(g => g !== goty && s.hoursOf(g) > 0).slice(0, 2);
+  const topMonth = s.months.indexOf(Math.max(...s.months));
+  const topGenre = Object.entries(s.genres).sort((a, b) => b[1] - a[1])[0];
+  const busiest = s.days.reduce((a, b) => (b[1] > (a?.[1] || 0) ? b : a), null);
+  const who = persona(s);
+  const line = `${s.played.length} games, ${fmt(s.trophies)} trophies${s.plats ? ` and ${s.plats} platinum${s.plats > 1 ? "s" : ""}` : ""}. ${goty ? `Most of it spent in ${goty.name}.` : ""}`;
+  const cards = [
+    s.byTrophies[0] && ["Most trophies", s.byTrophies[0].name, `${s.trophiesOf(s.byTrophies[0])} trophies`],
+    s.rare && ["Rarest trophy", s.rare.n, `${s.rare.game} · ${s.rare.r}% of players`],
+    topGenre && topGenre[1] > 0 && ["Top genre", topGenre[0], `~${fmt(topGenre[1])} h`],
+    s.months[topMonth] && ["Busiest month", MONTHS[topMonth], `${s.months[topMonth]} trophies`],
+    busiest && ["Biggest day", fmtDate(busiest[0]), `${busiest[1]} trophies`],
+    s.streak > 1 && ["Longest streak", `${s.streak} days`, "in a row with a trophy"],
+    s.byDay && ["Favourite day", DAYS[s.byDay.indexOf(Math.max(...s.byDay))], `peak hour ${String(s.byHour.indexOf(Math.max(...s.byHour))).padStart(2, "0")}:00`],
+    who && [who[0], "", who[1]],
+    ["Started · finished", `${s.started} · ${s.finished.length}`, "new games started · games finished"],
+    s.rated && ["Your top rating", s.rated.g.name, `${s.rated.r.score}/10`],
+  ].filter(Boolean);
+  $("page").innerHTML = `
+    <section class="hero">
+      <span class="kicker">${year === THIS_YEAR ? "Your year so far on PlayStation" : "Your year on PlayStation"}</span>
+      <h1>${year}</h1>
+      <p class="line">${esc(line)}</p>
+      <div class="big4">
+        <div><b class="num">${fmt(s.trophies)}</b><span>Trophies</span>${delta(s.trophies, prev.trophies)}</div>
+        <div><b class="num">${s.plats}</b><span>Platinums</span>${delta(s.plats, prev.plats)}</div>
+        <div><b class="num">${fmt(s.hours)}</b><span>Hours (est.)</span>${delta(s.hours, prev.hours)}</div>
+      </div>
+    </section>
+    ${goty ? `<section class="goty"><span class="cover">${pic(goty.image, goty.name)}</span>
+      <div><span class="eyebrow">Your game of the year</span><h2>${esc(goty.name)}</h2>
+      <p class="note">~${fmt(s.hoursOf(goty))} h · ${s.trophiesOf(goty)} trophies${goty.metacritic ? ` · Metacritic ${goty.metacritic}` : ""}</p>
+      ${runner.length ? `<p class="note">Runners-up: ${runner.map(g => `${esc(g.name)} (~${fmt(s.hoursOf(g))} h)`).join(", ")}</p>` : ""}</div></section>` : ""}
+    <section class="cards">${cards.map(([l, b, sub]) => `<div class="card"><span class="lbl">${l}</span>${b ? `<b>${esc(b)}</b>` : ""}<span class="sub">${esc(sub)}</span></div>`).join("")}</section>
+    ${s.platList.length ? `<section class="plats"><h2>Platinums of ${year}</h2><ol>${s.platList.map(m => `<li><span>${esc(m.game)}</span><span class="d">${fmtDate(m.at)}${m.r != null ? ` · ${m.r}%` : ""}</span></li>`).join("")}</ol></section>` : ""}`;
+}
+
+document.addEventListener("click", e => { const b = e.target.closest("#years .chip"); if (b) { year = b.dataset.y; try { localStorage.setItem("shelf-review", year); } catch {} render(); } });
+
+async function start() {
+  try { DATA = await (await fetch("data.json", { cache: "no-store" })).json(); } catch { $("page").innerHTML = `<p class="empty">No game data yet.</p>`; return; }
+  for (const [file, set] of [["flags.json", v => FLAGS = v], ["ratings.json", v => RATINGS = v]])
+    try { const r = await fetch(file, { cache: "no-store" }); if (r.ok) set(await r.json()); } catch {}
+  const ys = [...new Set(DATA.games.flatMap(g => [...Object.keys(g.months || {}).map(m => m.slice(0, 4)), ...Object.keys(g.hours_by_year || {})]))].sort().reverse();
+  let saved = null; try { saved = localStorage.getItem("shelf-review"); } catch {}
+  year = ys.includes(saved) ? saved : ys[0];
+  $("years").innerHTML = ys.map(v => `<button class="chip" data-y="${v}" aria-pressed="false">${v}</button>`).join("");
+  if (year) render(); else $("page").innerHTML = `<p class="empty">Appears after your first refresh.</p>`;
+}
+start();
+</script>

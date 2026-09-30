@@ -255,6 +255,9 @@ def loose(name: str) -> str:
 TRANSLATED = re.compile(r"[éèêàçùâîôû]|\b(l'|d'|le|la|les|du|des|et|de|el|los|der|die|und)\b", re.I)
 
 
+PLATFORM_SUFFIX = re.compile(r"\s*[-–:]?\s*\b(PS4™?\s*(&|and)\s*PS5™?|PS5™?\s*(&|and)\s*PS4™?|PS[45] Version|\(PS[45]\))\s*$", re.I)
+
+
 def looks_translated(name: str) -> bool:
     """The Swiss store translates some titles into French: prefer the playtime/trophy name for those."""
     return bool(TRANSLATED.search(name.replace("’", "'")))
@@ -339,6 +342,7 @@ def build_games(raw: dict) -> list[dict]:
         seen = g.pop("names")
         best = max(seen, key=lambda n: seen[n]) if seen else g["name"]
         g["name"] = next((english[loose(n)] for n in seen if loose(n) in english), best)
+        g["name"] = PLATFORM_SUFFIX.sub("", g["name"]).strip() or g["name"]   # "Kena PS4 & PS5" -> "Kena"
         g["aliases"] = sorted(n for n in seen if n != g["name"])
         g["trophy_lists"].sort(key=lambda x: -x["progress"])  # most advanced list first
         g["platforms"] = sorted(g["platforms"])
@@ -687,6 +691,66 @@ def enrich_wikipedia(games: list[dict]) -> None:
           + (" - stopped early, the rest continue next refresh" if failures >= 8 else ""))
 
 
+
+# ---------------------------------------------------------------- insights (from the saved trophy lists)
+
+LOCAL_TZ = "Europe/Zurich"
+COUNT_MILESTONES = [1, 100, 250, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 5000, 6000, 7500, 10000]
+
+
+def load_trophy_file(list_id: str) -> list[dict]:
+    path = TROPHY_DIR / f"{list_id}.json"
+    return json.loads(path.read_text())["trophies"] if path.exists() else []
+
+
+def build_insights(games: list[dict]) -> dict:
+    """Activity by day / weekday / hour (Swiss time), milestones, and per-game trophy facts.
+
+    Adds to each game: first_trophy_at, platinum_at, missing_n and easy (its most common missing trophies).
+    """
+    from zoneinfo import ZoneInfo
+    tz = ZoneInfo(LOCAL_TZ)
+    earned = []                   # (local datetime, trophy, game)
+    for g in games:
+        first = plat = None
+        best_missing, missing_n = [], 0
+        for i, lst in enumerate(g.get("trophy_lists") or []):
+            rows = load_trophy_file(lst["id"])
+            for t in rows:
+                if t.get("e") and t.get("at"):
+                    when = datetime.fromisoformat(t["at"]).astimezone(tz)
+                    earned.append((when, t, g))
+                    first = min(first, t["at"]) if first else t["at"]
+                    if t.get("t") == "platinum":
+                        plat = min(plat, t["at"]) if plat else t["at"]
+            if i == 0:  # the most advanced list decides what's left to do
+                missing = [t for t in rows if not t.get("e")]
+                missing_n = len(missing)
+                best_missing = sorted(missing, key=lambda t: -(t.get("r") or 0))[:3]
+        g["first_trophy_at"], g["platinum_at"] = first, plat
+        g["missing_n"] = missing_n
+        g["easy"] = [{k: t.get(k) for k in ("n", "t", "r", "h", "p")} for t in best_missing]
+
+    earned.sort(key=lambda x: x[0])
+    days: dict[str, int] = {}
+    wh: dict[str, list[int]] = {}   # year -> 7x24 counts (Monday first), plus "all"
+    for when, _, _ in earned:
+        days[when.strftime("%Y-%m-%d")] = days.get(when.strftime("%Y-%m-%d"), 0) + 1
+        for key in (str(when.year), "all"):
+            wh.setdefault(key, [0] * 168)[when.weekday() * 24 + when.hour] += 1
+
+    milestones = []
+    for n, (when, t, g) in enumerate(earned, start=1):
+        base = {"at": t["at"], "game": g["name"], "trophy": t.get("n"), "t": t.get("t"), "r": t.get("r"), "i": t.get("i")}
+        if n in COUNT_MILESTONES:
+            milestones.append({"kind": "first" if n == 1 else "count", "n": n, **base})
+        if t.get("t") == "platinum":
+            milestones.append({"kind": "platinum", **base})
+    print(f"::notice::Insights: {len(earned)} dated trophies, {len(days)} active days, "
+          f"{sum(1 for m in milestones if m['kind'] == 'platinum')} platinums")
+    return {"tz": LOCAL_TZ, "days": days, "weekday_hour": wh, "milestones": milestones}
+
+
 # ---------------------------------------------------------------- main
 
 TOKEN_DAYS = 60  # NPSSO tokens last roughly two months
@@ -728,6 +792,11 @@ def main() -> None:
     fill_metacritic(games, previous.get("games", []))
     enrich_hltb(games)
     games.sort(key=lambda g: g["last_activity"] or g["acquired"] or "", reverse=True)
+    try:
+        insights = build_insights(games)
+    except Exception as e:  # extras only: never block a refresh
+        print(f"::warning::Insights skipped: {e}")
+        insights = previous.get("insights", {})
 
     # Track when this token was first used to estimate when it expires.
     fp = token_fingerprint(npsso)
@@ -741,6 +810,7 @@ def main() -> None:
         "login": {"fingerprint": fp, "since": since, "expires_estimate": expires},
         "profile": raw["profile"],
         "games": games,
+        "insights": insights,
     }, indent=1, ensure_ascii=False))
     print(f"Wrote {len(games)} games to {OUT.name}; token in use since {since[:10]}")
 

@@ -15,6 +15,7 @@ ROOT = Path(__file__).parent
 FLAGS = ROOT / "docs" / "flags.json"
 DATA = ROOT / "docs" / "data.json"
 RESULT = ROOT / "flag_result.txt"
+RATINGS = ROOT / "docs" / "ratings.json"
 LABELS = {"beaten": "Beaten", "dropped": "Dropped"}
 
 
@@ -24,8 +25,29 @@ def parse(body: str) -> tuple[list[str], str | None]:
     return list(dict.fromkeys(g for g in games if g)), (flag.group(1).lower() if flag else None)
 
 
+def apply_rating(games: list[str], value: str, created: str) -> str:
+    """Save (or clear) your own 1-10 score for a game."""
+    data = json.loads(DATA.read_text())["games"] if DATA.exists() else []
+    current = {a: g["name"] for g in data for a in g.get("aliases", [])}
+    names = {g["name"] for g in data}
+    game = current.get(games[0], games[0])
+    if names and game not in names:
+        return f"No game called “{game}” on the dashboard, so nothing was changed."
+    ratings = json.loads(RATINGS.read_text()) if RATINGS.exists() else {}
+    if value == "none":
+        msg = f"Removed your rating for {game}." if ratings.pop(game, None) else f"{game} had no rating, so nothing changed."
+    else:
+        ratings[game] = {"score": int(value), "at": created}
+        msg = f"Rated {game} {int(value)}/10."
+    RATINGS.write_text(json.dumps(ratings, indent=1, sort_keys=True, ensure_ascii=False) + "\n")
+    return msg + " The dashboard updates in about a minute."
+
+
 def apply(body: str, created: str) -> str:
     games, flag = parse(body)
+    rating = re.search(r"^rating:\s*(10|[1-9]|none)\s*$", body or "", re.M | re.I)
+    if games and rating:
+        return apply_rating(games, rating.group(1).lower(), created)
     if not games or flag not in ("beaten", "dropped", "none"):
         return "Couldn't read this request. Use the buttons on the dashboard to flag games."
 

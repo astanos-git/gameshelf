@@ -43,8 +43,8 @@ button { font: inherit; color: inherit; }
 .note { font-size: 13px; color: var(--muted); margin: 0; }
 .notice { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 8px; padding: 8px 12px; font-size: 13.5px; }
 
-.tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); }
-.tabs a { padding: 6px 12px 8px; color: var(--muted); text-decoration: none; font: 600 17px var(--display); letter-spacing: .03em; text-transform: uppercase; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+.tabs a { white-space: nowrap; padding: 6px 8px 8px; color: var(--muted); text-decoration: none; font: 600 16px var(--display); letter-spacing: .02em; text-transform: uppercase; border-bottom: 2px solid transparent; margin-bottom: -1px; }
 .tabs a[aria-current="page"] { color: var(--fg); border-color: var(--accent); }
 .tabs a:hover { color: var(--fg); }
 
@@ -103,11 +103,52 @@ button { font: inherit; color: inherit; }
 .genres .fill { height: 100%; background: var(--bar); border-radius: 0 4px 4px 0; min-width: 2px; }
 .genres .v { font: 12.5px var(--mono); text-align: right; color: var(--fg); }
 .genres .gl { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.panel ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; } @media (max-width: 560px) { .two { grid-template-columns: 1fr; } }
+.two > div { min-width: 0; }
+.facts4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+@media (max-width: 560px) { .facts4 { grid-template-columns: 1fr 1fr; } }
+.facts4 div { display: grid; min-width: 0; }
+.facts4 b { font: 600 24px/1.1 var(--display); }
+.facts4 span { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+.big { margin: 0; font-size: 16px; } .big b { font: 600 30px var(--display); }
+.callout { margin: 0; background: var(--accent-soft); border-radius: 8px; padding: 8px 12px; font-size: 14px; }
+.hm { display: grid; grid-template-columns: 30px repeat(24, 1fr); gap: 2px; align-items: center; }
+.hm-l { font: 11px var(--mono); color: var(--muted); }
+.hm-x { font: 10px var(--mono); color: var(--muted); }
+.hm-c { aspect-ratio: 1; border-radius: 2px; background: var(--grid); display: block; min-width: 0; }
+.hm-c.l1 { background: color-mix(in srgb, var(--bar) 25%, var(--surface)); }
+.hm-c.l2 { background: color-mix(in srgb, var(--bar) 50%, var(--surface)); }
+.hm-c.l3 { background: color-mix(in srgb, var(--bar) 75%, var(--surface)); }
+.hm-c.l4 { background: var(--bar); }
+.hm-key { display: flex; gap: 3px; align-items: center; font-size: 11px; color: var(--muted); justify-content: flex-end; }
+.hm-key .hm-c { width: 12px; }
+.ms { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-left: 2px solid var(--line); }
+.ms li { display: grid; grid-template-columns: 96px 1fr auto; gap: 10px; padding: 6px 0 6px 12px; position: relative; font-size: 14px; align-items: baseline; }
+.ms li::before { content: ""; position: absolute; left: -6px; top: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--surface); border: 2px solid var(--muted); }
+.ms li.ms-platinum::before { background: var(--plat); border-color: var(--plat); }
+.ms li.ms-first::before, .ms li.ms-count::before { border-color: var(--accent); }
+.ms-when { font: 12px var(--mono); color: var(--muted); }
+.ms-what { min-width: 0; overflow-wrap: anywhere; }
+.ms-r { font: 12px var(--mono); color: var(--muted); }
+@media (max-width: 420px) { .ms li { grid-template-columns: 1fr auto; } .ms-when { grid-column: 1 / -1; } }
+.chart .ref { stroke: var(--line); stroke-dasharray: 4 4; }
+.chart .qlabel { fill: var(--muted); font: italic 11px var(--body); }
+.chart .pt { fill: var(--bar); fill-opacity: .75; stroke: var(--surface); stroke-width: 1.5; cursor: pointer; }
+.chart .pt:hover, .chart .pt:focus { fill: var(--accent); fill-opacity: 1; }
+.tblwrap { overflow-x: auto; }
+.tbl { border-collapse: collapse; width: 100%; font-size: 14px; }
+.tbl th { text-align: left; font: 600 11px var(--body); text-transform: uppercase; letter-spacing: .07em; color: var(--muted); padding: 4px 8px; border-bottom: 1px solid var(--line); }
+.tbl td { padding: 5px 8px; border-bottom: 1px solid var(--grid); }
+.tbl td.num, .tbl th:not(:first-child) { text-align: right; }
+.tbl tr.sel td { background: var(--accent-soft); font-weight: 600; }
+.tbl .up { color: var(--muted); } .tbl .down { color: var(--accent); font-weight: 600; }
 .empty { color: var(--muted); font-size: 14px; padding: 16px 0; margin: 0; }
 </style>
 
 <div class="wrap">
-  <nav class="tabs"><a href="index.html">Library</a><a href="stats.html" aria-current="page">Stats</a></nav>
+  <nav class="tabs"><a href="index.html">Library</a><a href="play.html">Play next</a><a href="stats.html" aria-current="page">Stats</a><a href="review.html">Review</a></nav>
   <p class="notice" id="notice" hidden></p>
 
   <div class="years" id="years" role="group" aria-label="Choose a year"></div>
@@ -144,6 +185,18 @@ button { font: inherit; color: inherit; }
     <ul class="genres" id="genres"></ul>
     <p class="note">A game with several genres counts toward each of them. Genres come from RAWG.</p>
   </section>
+
+  <section class="panel"><div class="panel-head"><h2>When you play</h2></div><div id="when"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>Milestones</h2></div><div id="milestones"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>Critics vs you</h2><span class="note">Metacritic against hours played</span></div>
+    <div class="chart" id="scatter"></div><div class="two" id="criticLists"></div>
+    <h3>Your ratings</h3><div id="ratingsCmp"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>Your pace</h2><span class="note">vs HowLongToBeat</span></div><div id="pace"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>Backlog</h2><span class="note">Right now, and year by year</span></div><div id="backlog"></div></section>
 
   <p class="note" id="footnote">Trophy counts are exact, from the date each trophy was earned. Hours per year are estimates: PSN only reports each game's total playtime, so it is spread across the years between first and last played, weighted by when you earned trophies. PS3 and Vita games have no playtime.</p>
 </div>
@@ -210,6 +263,7 @@ function render() {
     "No PS4 or PS5 playtime in this period.");
 
   rarest(y);
+  extras(y);
   timeline(y, hasMonths);
   genres(rows);
 }
@@ -294,6 +348,169 @@ function rarest(y) {
     : `<p class="empty">${DATA.games.some(g => g.rare && g.rare.length) ? "No trophies earned in this period." : "Trophy rarity appears after the next refresh."}</p>`;
 }
 
+
+/* ---------- extra data: flags, ratings ---------- */
+let FLAGS = {}, RATINGS = {};
+const flagOf = x => FLAGS[x.name] || (x.aliases || []).map(n => FLAGS[n]).find(Boolean);
+const ratingOf = x => RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean);
+const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const DAYS_LONG = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const fmtDate = s => s ? new Date(s).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "—";
+const yearOf = s => s ? String(new Date(s).getFullYear()) : null;
+const median = a => { const b = [...a].sort((x, y) => x - y); return b.length ? (b.length % 2 ? b[(b.length - 1) / 2] : (b[b.length / 2 - 1] + b[b.length / 2]) / 2) : null; };
+
+// Started = first playtime or first trophy. Finished = platinum, 100%, or your Beaten flag.
+function startedAt(x) { return [x.first_played, x.first_trophy_at].filter(Boolean).sort()[0] || null; }
+function finishedAt(x) {
+  if (x.platinum_at) return x.platinum_at;
+  if (x.status === "completed") return x.last_trophy;
+  const f = flagOf(x);
+  return f && f.flag === "beaten" ? (x.last_activity && x.last_activity < f.at ? x.last_activity : f.at) : null;
+}
+
+/* ---------- 7. When you play ---------- */
+function whenYouPlay(y) {
+  const ins = DATA.insights || {};
+  const wh = (ins.weekday_hour || {})[y === "all" ? "all" : y];
+  if (!wh) { $("when").innerHTML = `<p class="empty">${ins.days ? "No trophies earned in this period." : "Appears after the next refresh."}</p>`; return; }
+  const max = Math.max(...wh), total = sum(wh);
+  const byDay = DAYS.map((_, d) => sum(wh.slice(d * 24, d * 24 + 24)));
+  const byHour = Array.from({ length: 24 }, (_, h) => sum(DAYS.map((_, d) => wh[d * 24 + h])));
+  const days = Object.entries(ins.days || {}).filter(([d]) => y === "all" || d.startsWith(y)).sort();
+  // longest run of consecutive days with at least one trophy
+  let best = { n: 0 }, run = 0, prev = null, runStart = null;
+  for (const [d] of days) {
+    const t = Date.parse(d + "T12:00:00Z");
+    run = prev && t - prev === 864e5 ? run + 1 : 1; if (run === 1) runStart = d;
+    if (run > best.n) best = { n: run, from: runStart, to: d };
+    prev = t;
+  }
+  const busiest = days.reduce((a, b) => (b[1] > (a?.[1] || 0) ? b : a), null);
+  const peak = byHour.indexOf(Math.max(...byHour));
+  const night = sum(byHour.slice(22)) + sum(byHour.slice(0, 5)), weekend = byDay[5] + byDay[6];
+  const facts = [
+    [DAYS_LONG[byDay.indexOf(Math.max(...byDay))], "Favourite day"],
+    [`${String(peak).padStart(2, "0")}:00`, "Peak hour"],
+    [`${best.n} day${best.n === 1 ? "" : "s"}`, "Longest streak"],
+    [busiest ? `${busiest[1]}` : "—", busiest ? `Most in a day · ${fmtDate(busiest[0])}` : "Most in a day"],
+  ];
+  const level = v => v === 0 ? 0 : Math.min(4, Math.ceil((v / max) * 4));
+  const cells = DAYS.map((dn, d) => `<span class="hm-l">${dn}</span>` + Array.from({ length: 24 }, (_, h) => {
+    const v = wh[d * 24 + h];
+    return `<span class="hm-c l${level(v)}" title="${DAYS_LONG[d]} ${String(h).padStart(2, "0")}:00 · ${v} troph${v === 1 ? "y" : "ies"}"></span>`;
+  }).join("")).join("");
+  const axis = `<span></span>` + Array.from({ length: 24 }, (_, h) => `<span class="hm-x">${h % 6 === 0 ? String(h).padStart(2, "0") : ""}</span>`).join("");
+  $("when").innerHTML = `<div class="facts4">${facts.map(([v, l]) => `<div><b>${v}</b><span>${l}</span></div>`).join("")}</div>
+    <div class="hm" role="img" aria-label="Trophies by weekday and hour">${cells}${axis}</div>
+    <div class="hm-key"><span>Fewer</span>${[0, 1, 2, 3, 4].map(l => `<span class="hm-c l${l}"></span>`).join("")}<span>More</span></div>
+    <p class="note">${Math.round(100 * night / total)}% of your trophies came between 22:00 and 05:00, ${Math.round(100 * weekend / total)}% at the weekend. Swiss time, based on when trophies were earned, so sessions without a trophy don't count.</p>
+    ${best.n > 1 ? `<p class="note">Longest streak: ${fmtDate(best.from)} to ${fmtDate(best.to)}.</p>` : ""}`;
+}
+
+/* ---------- 9. Milestones ---------- */
+function milestones(y) {
+  const ms = ((DATA.insights || {}).milestones || []).filter(m => y === "all" || m.at.startsWith(y));
+  if (!ms.length) { $("milestones").innerHTML = `<p class="empty">${DATA.insights ? "No milestones in this period." : "Appears after the next refresh."}</p>`; return; }
+  const plats = ((DATA.insights || {}).milestones || []).filter(m => m.kind === "platinum" && (y === "all" || m.at.startsWith(y)) && m.r != null);
+  const rarestPlat = plats.sort((a, b) => a.r - b.r)[0];
+  const label = m => m.kind === "first" ? "First trophy" : m.kind === "count" ? `Trophy #${m.n.toLocaleString()}` : "Platinum";
+  $("milestones").innerHTML = (rarestPlat ? `<p class="callout">Rarest platinum: <b>${esc(rarestPlat.game)}</b>, which ${rarestPlat.r}% of players have.</p>` : "") +
+    `<ol class="ms">${ms.map(m => `<li class="ms-${m.kind}"><span class="ms-when">${fmtDate(m.at)}</span>
+      <span class="ms-what"><b>${label(m)}</b> ${m.kind === "platinum" ? esc(m.game) : `${esc(m.trophy)} <span class="note">· ${esc(m.game)}</span>`}</span>
+      <span class="ms-r">${m.r != null ? m.r + "%" : ""}</span></li>`).join("")}</ol>`;
+}
+
+/* ---------- 8 + 11. Critics vs you ---------- */
+function critics(y) {
+  const pts = DATA.games.filter(x => x.metacritic != null && hoursIn(x, y) >= 0.5).map(x => ({ x, mc: x.metacritic, h: hoursIn(x, y) }));
+  const el = $("scatter");
+  if (pts.length < 3) { el.innerHTML = `<p class="empty">Not enough played games with a Metacritic score in this period.</p>`; $("criticLists").innerHTML = ""; }
+  else {
+    const W = Math.max(300, Math.round(el.clientWidth || 640)), H = W < 500 ? 240 : 280, L = 38, R = 10, T = 10, B = 30;
+    const iw = W - L - R, ih = H - T - B;
+    const x0 = Math.min(40, Math.floor(Math.min(...pts.map(p => p.mc)) / 10) * 10), x1 = 100;
+    const hMax = Math.max(...pts.map(p => p.h)), yTicks = [1, 3, 10, 30, 100, 300].filter(v => v <= hMax * 1.2);
+    const ly = v => Math.log10(Math.max(v, 0.5)), y0 = ly(0.5), y1 = ly(Math.max(hMax, 10) * 1.1);
+    const sx = v => L + ((v - x0) / (x1 - x0)) * iw, sy = v => T + ih - ((ly(v) - y0) / (y1 - y0)) * ih;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Metacritic score against hours played">`;
+    for (const t of yTicks) s += `<line class="gridline" x1="${L}" x2="${W - R}" y1="${sy(t)}" y2="${sy(t)}"/><text x="${L - 6}" y="${sy(t) + 4}" text-anchor="end">${t}h</text>`;
+    for (let v = x0; v <= x1; v += 10) s += `<text x="${sx(v)}" y="${H - 10}" text-anchor="middle">${v}</text>`;
+    s += `<line class="ref" x1="${sx(75)}" x2="${sx(75)}" y1="${T}" y2="${T + ih}"/><line class="ref" x1="${L}" x2="${W - R}" y1="${sy(20)}" y2="${sy(20)}"/>`;
+    s += `<text class="qlabel" x="${L + 6}" y="${T + 12}">Hidden gems</text><text class="qlabel" x="${W - R - 6}" y="${T + ih - 6}" text-anchor="end">Acclaimed, little played</text>`;
+    s += pts.map((p, i) => `<circle class="pt" data-i="${i}" cx="${sx(p.mc).toFixed(1)}" cy="${sy(p.h).toFixed(1)}" r="4.5" tabindex="0"/>`).join("");
+    s += `<line class="baseline" x1="${L}" x2="${W - R}" y1="${T + ih}" y2="${T + ih}"/></svg><div class="tip" hidden></div>`;
+    el.innerHTML = s;
+    const tip = el.querySelector(".tip"), svg = el.querySelector("svg");
+    const show = e => { const c = e.target.closest(".pt"); if (!c) return; const p = pts[+c.dataset.i], box = svg.getBoundingClientRect(), k = box.width / W, r = ratingOf(p.x);
+      tip.innerHTML = `<b>${esc(p.x.name)}</b><br>Metacritic ${p.mc} · ${fmt(p.h)} h${y === "all" ? "" : " (est.)"}${r ? ` · you ${r.score}/10` : ""}`;
+      tip.style.left = Math.min(Math.max(sx(p.mc) * k, 90), box.width - 90) + "px"; tip.style.top = (sy(p.h) * k) + "px"; tip.hidden = false; };
+    svg.addEventListener("pointerover", show); svg.addEventListener("focusin", show); svg.addEventListener("click", show);
+    svg.addEventListener("pointerleave", () => tip.hidden = true); svg.addEventListener("focusout", () => tip.hidden = true);
+    const gems = pts.filter(p => p.mc < 75 && p.h >= 20).sort((a, b) => b.h - a.h).slice(0, 3);
+    const skipped = DATA.games.filter(x => x.metacritic >= 88 && y === "all" && x.hours > 0 && x.hours < 3 && x.status !== "completed").sort((a, b) => b.metacritic - a.metacritic).slice(0, 3);
+    const li = (x, extra) => `<li><b>${esc(x.name)}</b> <span class="note">${extra}</span></li>`;
+    $("criticLists").innerHTML = `<div><h3>Hidden gems</h3>${gems.length ? `<ul>${gems.map(p => li(p.x, `Metacritic ${p.mc} · ${fmt(p.h)} h`)).join("")}</ul>` : `<p class="note">None in this period.</p>`}</div>` +
+      (y === "all" ? `<div><h3>Acclaimed, barely played</h3>${skipped.length ? `<ul>${skipped.map(x => li(x, `Metacritic ${x.metacritic} · ${fmt(x.hours || 0)} h`)).join("")}</ul>` : `<p class="note">None: well done.</p>`}</div>` : "");
+  }
+  // Your ratings vs Metacritic
+  const rated = DATA.games.map(x => ({ x, r: ratingOf(x) })).filter(o => o.r && o.x.metacritic != null && (y === "all" || yearOf(finishedAt(o.x) || o.r.at) === y));
+  if (!rated.length) { $("ratingsCmp").innerHTML = `<p class="note">Rate games from the Library (open a game, tap a score) to compare your taste with the critics here.</p>`; return; }
+  const diffs = rated.map(o => ({ ...o, d: o.r.score * 10 - o.x.metacritic }));
+  const avg = sum(diffs.map(o => o.d)) / diffs.length;
+  const top = [...diffs].sort((a, b) => Math.abs(b.d) - Math.abs(a.d)).slice(0, 4);
+  $("ratingsCmp").innerHTML = `<p>You rated <b>${rated.length}</b> game${rated.length === 1 ? "" : "s"}. On average you score games <b>${Math.abs(avg).toFixed(0)} points ${avg >= 0 ? "higher" : "lower"}</b> than Metacritic (your score × 10).</p>
+    <ul>${top.map(o => `<li><b>${esc(o.x.name)}</b> <span class="note">you ${o.r.score}/10 · Metacritic ${o.x.metacritic} · ${o.d >= 0 ? "+" : ""}${o.d}</span></li>`).join("")}</ul>`;
+}
+
+/* ---------- 6. Your pace vs HowLongToBeat ---------- */
+function pace(y) {
+  const rows = DATA.games.map(x => {
+    const fin = finishedAt(x); if (!fin || !(x.hours > 0) || !x.hltb) return null;
+    if (y !== "all" && yearOf(fin) !== y) return null;
+    const full = !!x.platinum_at || x.status === "completed";
+    const ref = full ? (x.hltb.complete || x.hltb.extra) : x.hltb.main;
+    return ref ? { x, ratio: x.hours / ref, ref, kind: full ? "completionist" : "main story" } : null;
+  }).filter(Boolean);
+  if (rows.length < 2) { $("pace").innerHTML = `<p class="empty">Needs at least two finished PS4/PS5 games with a HowLongToBeat time in this period.</p>`; return; }
+  const m = median(rows.map(r => r.ratio));
+  const verdict = m < 0.9 ? "quicker than most players" : m > 1.1 ? "slower than most players: you take your time" : "right on the typical pace";
+  const sorted = [...rows].sort((a, b) => a.ratio - b.ratio);
+  const line = r => `<li><b>${esc(r.x.name)}</b> <span class="note">${fmt(r.x.hours)} h vs ~${fmt(r.ref)} h ${r.kind} · ${r.ratio.toFixed(1)}×</span></li>`;
+  const byGenre = {};
+  for (const r of rows) for (const g of r.x.genres || []) (byGenre[g] ||= []).push(r.ratio);
+  const genreRows = Object.entries(byGenre).filter(([, a]) => a.length >= 3).map(([g, a]) => [g, median(a), a.length]).sort((a, b) => b[1] - a[1]).slice(0, 6);
+  $("pace").innerHTML = `<p class="big"><b>${m.toFixed(1)}×</b> the typical time: ${verdict}.</p>
+    <p class="note">Median over ${rows.length} finished games: your hours against HowLongToBeat (main story for Beaten, completionist for platinum or 100%).</p>
+    <div class="two"><div><h3>Fastest</h3><ul>${sorted.slice(0, 3).map(line).join("")}</ul></div><div><h3>Slowest</h3><ul>${sorted.slice(-3).reverse().map(line).join("")}</ul></div></div>
+    ${genreRows.length ? `<h3>By genre</h3><table class="tbl"><thead><tr><th>Genre</th><th>Pace</th><th>Games</th></tr></thead><tbody>${genreRows.map(([g, v, n]) => `<tr><td>${esc(g)}</td><td class="num">${v.toFixed(1)}×</td><td class="num">${n}</td></tr>`).join("")}</tbody></table>` : ""}`;
+}
+
+/* ---------- 4. Backlog ---------- */
+function backlog(y) {
+  const eff = x => { const f = flagOf(x); if (x.status === "completed" || !f) return x.status;
+    if (f.flag === "dropped" && x.last_activity && new Date(x.last_activity) > new Date(f.at)) return x.status; return f.flag; };
+  const todo = DATA.games.filter(x => x.owned && eff(x) === "unplayed");
+  const withTime = todo.filter(x => x.hltb?.main), hours = sum(withTime.map(x => x.hltb.main));
+  const inProg = DATA.games.filter(x => eff(x) === "started" && x.hltb?.main);
+  const left = sum(inProg.map(x => Math.max(0, x.hltb.main - (x.hours || 0))));
+  const years = {};
+  const bump = (yr, k) => { if (!yr) return; (years[yr] ||= { bought: 0, started: 0, finished: 0 })[k]++; };
+  for (const x of DATA.games) { if (x.owned) bump(yearOf(x.acquired), "bought"); bump(yearOf(startedAt(x)), "started"); bump(yearOf(finishedAt(x)), "finished"); }
+  const rows = Object.entries(years).sort((a, b) => b[0].localeCompare(a[0]));
+  $("backlog").innerHTML = `<div class="facts4">
+      <div><b>${todo.length}</b><span>Games never started</span></div>
+      <div><b>${fmt(hours)} h</b><span>To beat them all</span></div>
+      <div><b>${fmt(left)} h</b><span>Left in games in progress</span></div>
+      <div><b>${fmt((hours + left) / 2 / 52)} yrs</b><span>At 2 h a week…</span></div></div>
+    <p class="note">HowLongToBeat main-story times; ${todo.length - withTime.length} backlog games have no time and aren't counted.</p>
+    <div class="tblwrap"><table class="tbl"><thead><tr><th>Year</th><th>Bought</th><th>Started</th><th>Finished</th><th>Backlog</th></tr></thead><tbody>
+    ${rows.map(([yr, v]) => { const net = v.bought - v.finished; return `<tr class="${yr === y ? "sel" : ""}"><td>${yr}</td><td class="num">${v.bought}</td><td class="num">${v.started}</td><td class="num">${v.finished}</td><td class="num ${net > 0 ? "up" : net < 0 ? "down" : ""}">${net > 0 ? "+" : ""}${net}</td></tr>`; }).join("")}
+    </tbody></table></div>
+    <p class="note">Bought: PS4/PS5 digital purchases. Finished: platinum, 100%, or marked Beaten. Backlog shows bought minus finished.</p>`;
+}
+
+function extras(y) { whenYouPlay(y); milestones(y); critics(y); pace(y); backlog(y); }
+
 function niceStep(raw) {
   const p = 10 ** Math.floor(Math.log10(Math.max(raw, 1)));
   return [1, 2, 5, 10].map(m => m * p).find(s => s >= raw) || 10 * p;
@@ -337,6 +554,8 @@ async function start() {
     $("notice").hidden = false;
     $("notice").textContent = "Yearly stats appear after the next refresh. It takes longer than usual the first time, up to about 40 minutes, while your full trophy history loads.";
   }
+  for (const [file, set] of [["flags.json", v => FLAGS = v], ["ratings.json", v => RATINGS = v]])
+    try { const r = await fetch(file, { cache: "no-store" }); if (r.ok) set(await r.json()); } catch {}
   const ys = availableYears();
   if (state.year !== "all" && !ys.includes(state.year)) state.year = "all";
   $("years").innerHTML = [["all", "All time"], ...ys.map(v => [v, v])]
@@ -344,6 +563,6 @@ async function start() {
   render();
 }
 let lastW = 0;
-addEventListener("resize", () => { const w = $("timeline").clientWidth; if (DATA && Math.abs(w - lastW) > 20) { lastW = w; timeline(state.year, DATA.games.some(g => g.months && Object.keys(g.months).length)); } });
+addEventListener("resize", () => { const w = $("timeline").clientWidth; if (DATA && Math.abs(w - lastW) > 20) { lastW = w; timeline(state.year, DATA.games.some(g => g.months && Object.keys(g.months).length)); critics(state.year); } });
 start();
 </script>
