@@ -1,0 +1,24 @@
+name: diag
+on: workflow_dispatch
+jobs:
+  d:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python3 - <<'PY'
+          import json, urllib.request, urllib.parse
+          slugs = sorted({g["rawg_slug"] for g in json.load(open("docs/data.json"))["games"] if g.get("rawg_slug")})
+          vals = " ".join(json.dumps(s) for s in slugs)
+          q = f"""SELECT ?rawg ?seriesLabel ?devLabel ?pubLabel WHERE {{ VALUES ?rawg {{ {vals} }} ?g wdt:P9968 ?rawg .
+            OPTIONAL {{ ?g wdt:P179 ?series }} OPTIONAL {{ ?g wdt:P178 ?dev }} OPTIONAL {{ ?g wdt:P123 ?pub }}
+            SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" }} }}"""
+          req = urllib.request.Request("https://query.wikidata.org/sparql", data=urllib.parse.urlencode({"query": q, "format": "json"}).encode(),
+                                       headers={"User-Agent": "GameShelf/1.0 (https://github.com/astanos-git/gameshelf)", "Accept": "application/sparql-results+json"})
+          rows = json.load(urllib.request.urlopen(req, timeout=60))["results"]["bindings"]
+          found = {r["rawg"]["value"] for r in rows}
+          ser = {r["rawg"]["value"] for r in rows if "seriesLabel" in r}
+          dev = {r["rawg"]["value"] for r in rows if "devLabel" in r}
+          print(f"::warning::slugs {len(slugs)} | on Wikidata {len(found)} | with series {len(ser)} | with developer {len(dev)}")
+          print("::warning::series sample: " + ", ".join(sorted({r['seriesLabel']['value'] for r in rows if 'seriesLabel' in r})[:25]))
+          PY
