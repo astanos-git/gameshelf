@@ -1571,6 +1571,14 @@
   "query": "Indiana Jones and the Great Circle",
   "url": "https://howlongtobeat.com/game/144234"
  },
+ "It Takes Two": {
+  "complete": 16.47,
+  "extra": 14.21,
+  "main": 12.84,
+  "name": "It Takes Two",
+  "query": "It Takes Two",
+  "url": "https://howlongtobeat.com/game/80199"
+ },
  "It Takes Two  PS4™ & PS5™": {
   "complete": 16.47,
   "extra": 14.21,
@@ -2926,6 +2934,14 @@
   "name": "The Dark Pictures: House of Ashes",
   "query": "The Dark Pictures Anthology: House of Ashes",
   "url": "https://howlongtobeat.com/game/84604"
+ },
+ "The Dark Pictures Anthology: Little Hope": {
+  "complete": 23.88,
+  "extra": 6.43,
+  "main": 5.07,
+  "name": "The Dark Pictures: Little Hope",
+  "query": "The Dark Pictures Anthology: Little Hope",
+  "url": "https://howlongtobeat.com/game/70075"
  },
  "The Dark Pictures Anthology: Little Hope PS5™ & PS4™": {
   "complete": 23.88,

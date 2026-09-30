@@ -1879,6 +1879,16 @@
   "released": "2007-01-01",
   "slug": "lego-indiana-jones"
  },
+ "It Takes Two": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 88,
+  "released": "2021-03-26",
+  "slug": "it-takes-two-2"
+ },
  "It Takes Two  PS4™ & PS5™": {
   "genres": [
    "Platformer",
@@ -3493,6 +3503,15 @@
   "metacritic": 73,
   "released": "2021-10-22",
   "slug": "the-dark-pictures-anthology-house-of-ashes"
+ },
+ "The Dark Pictures Anthology: Little Hope": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 70,
+  "released": "2020-10-30",
+  "slug": "the-dark-pictures-anthology-little-hope"
  },
  "The Dark Pictures Anthology: Little Hope PS5™ & PS4™": {
   "genres": [
