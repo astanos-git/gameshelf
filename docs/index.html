@@ -562,7 +562,7 @@ function detail(x, id) {
         <span class="seg" role="group" aria-label="Show trophies">${[["all", "All"], ["missing", "Missing"], ["earned", "Earned"]].map(([k, l]) => `<button data-tf="${k}" aria-pressed="${state.tfilter === k}">${l}</button>`).join("")}</span>
         <select data-ts aria-label="Sort trophies">${[["order", "Game order"], ["rare", "Rarest first"], ["common", "Most common first"]].map(([k, l]) => `<option value="${k}"${state.tsort === k ? " selected" : ""}>${l}</option>`).join("")}</select>
       </div><div class="tl-body"><p class="flagnote">Loading trophies…</p></div></section>` : "";
-  return `<div class="detail" id="${id}-d">${pend}${tl}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}${ratingBar(x)}${flagBar(x)}</div>`;
+  return `<div class="detail" id="${id}-d">${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}${ratingBar(x)}${flagBar(x)}${pend}${tl}</div>`;
 }
 
 /* Trophy lists live in trophies/<list id>.json and load when you open a game. */
