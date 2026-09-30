@@ -442,7 +442,7 @@ function critics(y) {
     el.innerHTML = s;
     const tip = el.querySelector(".tip"), svg = el.querySelector("svg");
     const show = e => { const c = e.target.closest(".pt"); if (!c) return; const p = pts[+c.dataset.i], box = svg.getBoundingClientRect(), k = box.width / W, r = ratingOf(p.x);
-      tip.innerHTML = `<b>${esc(p.x.name)}</b><br>Metacritic ${p.mc} · ${fmt(p.h)} h${y === "all" ? "" : " (est.)"}${r ? ` · you ${r.score}/10` : ""}`;
+      tip.innerHTML = `<b>${esc(p.x.name)}</b><br>Metacritic ${p.mc} · ${fmt(p.h)} h${y === "all" ? "" : " (est.)"}${r ? ` · you ${r.score}` : ""}`;
       tip.style.left = Math.min(Math.max(sx(p.mc) * k, 90), box.width - 90) + "px"; tip.style.top = (sy(p.h) * k) + "px"; tip.hidden = false; };
     svg.addEventListener("pointerover", show); svg.addEventListener("focusin", show); svg.addEventListener("click", show);
     svg.addEventListener("pointerleave", () => tip.hidden = true); svg.addEventListener("focusout", () => tip.hidden = true);
@@ -454,12 +454,12 @@ function critics(y) {
   }
   // Your ratings vs Metacritic
   const rated = DATA.games.map(x => ({ x, r: ratingOf(x) })).filter(o => o.r && o.x.metacritic != null && (y === "all" || yearOf(finishedAt(o.x) || o.r.at) === y));
-  if (!rated.length) { $("ratingsCmp").innerHTML = `<p class="note">Rate games from the Library (open a game, tap a score) to compare your taste with the critics here.</p>`; return; }
-  const diffs = rated.map(o => ({ ...o, d: o.r.score * 10 - o.x.metacritic }));
+  if (!rated.length) { $("ratingsCmp").innerHTML = `<p class="note">Rate games from the Library (open a game, slide to a score, tap Save) to compare your taste with the critics here.</p>`; return; }
+  const diffs = rated.map(o => ({ ...o, d: o.r.score - o.x.metacritic }));
   const avg = sum(diffs.map(o => o.d)) / diffs.length;
   const top = [...diffs].sort((a, b) => Math.abs(b.d) - Math.abs(a.d)).slice(0, 4);
-  $("ratingsCmp").innerHTML = `<p>You rated <b>${rated.length}</b> game${rated.length === 1 ? "" : "s"}. On average you score games <b>${Math.abs(avg).toFixed(0)} points ${avg >= 0 ? "higher" : "lower"}</b> than Metacritic (your score × 10).</p>
-    <ul>${top.map(o => `<li><b>${esc(o.x.name)}</b> <span class="note">you ${o.r.score}/10 · Metacritic ${o.x.metacritic} · ${o.d >= 0 ? "+" : ""}${o.d}</span></li>`).join("")}</ul>`;
+  $("ratingsCmp").innerHTML = `<p>You rated <b>${rated.length}</b> game${rated.length === 1 ? "" : "s"}. On average you score games <b>${Math.abs(avg).toFixed(0)} points ${avg >= 0 ? "higher" : "lower"}</b> than Metacritic.</p>
+    <ul>${top.map(o => `<li><b>${esc(o.x.name)}</b> <span class="note">you ${o.r.score} · Metacritic ${o.x.metacritic} · ${o.d >= 0 ? "+" : ""}${o.d}</span></li>`).join("")}</ul>`;
 }
 
 /* ---------- 6. Your pace vs HowLongToBeat ---------- */

@@ -177,7 +177,7 @@ function render() {
     s.byDay && ["Favourite day", DAYS[s.byDay.indexOf(Math.max(...s.byDay))], `peak hour ${String(s.byHour.indexOf(Math.max(...s.byHour))).padStart(2, "0")}:00`],
     who && [who[0], "", who[1]],
     ["Started · finished", `${s.started} · ${s.finished.length}`, "new games started · games finished"],
-    s.rated && ["Your top rating", s.rated.g.name, `${s.rated.r.score}/10`],
+    s.rated && ["Your top rating", s.rated.g.name, `${s.rated.r.score}/100`],
   ].filter(Boolean);
   $("page").innerHTML = `
     <section class="hero">

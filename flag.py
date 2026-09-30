@@ -26,7 +26,7 @@ def parse(body: str) -> tuple[list[str], str | None]:
 
 
 def apply_rating(games: list[str], value: str, created: str) -> str:
-    """Save (or clear) your own 1-10 score for a game."""
+    """Save (or clear) your own 0-100 score for a game."""
     data = json.loads(DATA.read_text())["games"] if DATA.exists() else []
     current = {a: g["name"] for g in data for a in g.get("aliases", [])}
     names = {g["name"] for g in data}
@@ -38,14 +38,14 @@ def apply_rating(games: list[str], value: str, created: str) -> str:
         msg = f"Removed your rating for {game}." if ratings.pop(game, None) else f"{game} had no rating, so nothing changed."
     else:
         ratings[game] = {"score": int(value), "at": created}
-        msg = f"Rated {game} {int(value)}/10."
+        msg = f"Rated {game} {int(value)}/100."
     RATINGS.write_text(json.dumps(ratings, indent=1, sort_keys=True, ensure_ascii=False) + "\n")
     return msg + " The dashboard updates in about a minute."
 
 
 def apply(body: str, created: str) -> str:
     games, flag = parse(body)
-    rating = re.search(r"^rating:\s*(10|[1-9]|none)\s*$", body or "", re.M | re.I)
+    rating = re.search(r"^rating:\s*(100|[1-9]?\d|none)\s*$", body or "", re.M | re.I)
     if games and rating:
         return apply_rating(games, rating.group(1).lower(), created)
     if not games or flag not in ("beaten", "dropped", "none"):

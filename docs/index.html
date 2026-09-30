@@ -139,10 +139,15 @@ button, select, input { font: inherit; color: inherit; }
 .facts dd { margin: 0; }
 .detail a { color: var(--accent); }
 .rating { display: grid; gap: 6px; }
-.rating .scale { display: flex; flex-wrap: wrap; gap: 4px; }
-.rating .scale a { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: var(--fg); font: 600 16px var(--display); }
-.rating .scale a:hover { border-color: var(--accent); }
-.rating .scale a.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.rater { display: grid; grid-template-columns: auto 1fr auto auto; gap: 8px; align-items: center; }
+.rater .val { width: 44px; height: 40px; border-radius: 6px; display: grid; place-items: center; font: 600 20px var(--display); color: #fff; background: var(--muted); }
+.rater .val.good { background: var(--mc-good); } .rater .val.mid { background: var(--mc-mid); } .rater .val.bad { background: var(--mc-bad); }
+.rater input[type=range] { width: 100%; min-width: 0; accent-color: var(--accent); height: 28px; }
+.rater .step { width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font: 600 18px var(--display); cursor: pointer; }
+.rater-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.detail a.save { background: var(--accent); color: #fff; border-radius: 8px; padding: 6px 14px; text-decoration: none; font-weight: 600; font-size: 14px; }
+.detail a.save.same { background: var(--line); color: var(--muted); pointer-events: none; }
+
 .mine { font: 600 12px var(--mono); color: var(--accent); }
 .tlist { display: grid; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; }
 .tl-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
@@ -435,7 +440,7 @@ function renderList() {
 }
 
 let RATINGS = {};
-const myScore = x => { const r = RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean); return r ? `<span class="mine" title="Your rating">You ${r.score}/10</span>` : ""; };
+const myScore = x => { const r = RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean); return r ? `<span class="mine" title="Your rating">You ${r.score}</span>` : ""; };
 const fmtH = h => h >= 10 ? Math.round(h) + " h" : (Math.round(h * 2) / 2) + " h";
 function beat(x) {
   const m = x.hltb?.main;
@@ -488,18 +493,37 @@ function renderSelBar() {
 
 function rateUrl(name, value) {
   const repo = repoUrl(); if (!repo) return null;
-  const title = value === "none" ? `Rate ${name}: remove rating` : `Rate ${name}: ${value}/10`;
+  const title = value === "none" ? `Rate ${name}: remove rating` : `Rate ${name}: ${value}/100`;
   const body = `Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\nrating: ${value}\ngame: ${name}\n`;
   return `${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
 }
 
+const ratingOf = x => RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean);
+
 function ratingBar(x) {
-  const r = RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean);
-  const repo = repoUrl();
-  const scale = repo ? Array.from({ length: 10 }, (_, i) => i + 1).map(v => `<a href="${rateUrl(x.name, v)}" target="_blank" rel="noopener" class="${r?.score === v ? "on" : ""}" aria-label="Rate ${v} out of 10">${v}</a>`).join("") : "";
-  const clear = r && repo ? ` <a href="${rateUrl(x.name, "none")}" target="_blank" rel="noopener">Remove</a>` : "";
-  const note = r ? `Your rating: ${r.score}/10${x.metacritic != null ? ` · Metacritic ${x.metacritic}` : ""}.${clear}` : "Your rating: tap a score.";
-  return `<div class="rating"><span class="flagnote">${note}${repo ? "" : " (Buttons work on your GitHub Pages dashboard.)"}</span><div class="scale">${scale}</div></div>`;
+  const r = ratingOf(x), repo = repoUrl();
+  const start = r ? r.score : (x.metacritic ?? 70);   // start from your score, or the critics' as a reference point
+  const note = r ? `Your rating: <b>${r.score}</b>/100${x.metacritic != null ? ` · Metacritic ${x.metacritic}` : ""}.` : `Rate it from 0 to 100${x.metacritic != null ? ` (starts at the Metacritic score, ${x.metacritic})` : ""}.`;
+  return `<div class="rating" data-name="${esc(x.name)}" data-saved="${r ? r.score : ""}">
+    <span class="flagnote">${note}${repo ? "" : " (Saving works on your GitHub Pages dashboard.)"}</span>
+    <div class="rater"><span class="val ${mcClass(start)}" aria-live="polite">${start}</span>
+      <input type="range" min="0" max="100" step="1" value="${start}" aria-label="Your rating, 0 to 100">
+      <button class="step" data-step="-1" aria-label="One point lower">−</button><button class="step" data-step="1" aria-label="One point higher">+</button></div>
+    <div class="rater-actions">${repo ? `<a class="save${r ? " same" : ""}" target="_blank" rel="noopener" href="${rateUrl(x.name, start)}">${r ? "Saved" : `Save ${start}`}</a>` : ""}
+      ${r && repo ? `<a href="${rateUrl(x.name, "none")}" target="_blank" rel="noopener">Remove rating</a>` : ""}</div></div>`;
+}
+
+function syncRater(box, v) {
+  v = Math.max(0, Math.min(100, v));
+  box.querySelector("input").value = v;
+  const val = box.querySelector(".val"); val.textContent = v; val.className = "val " + mcClass(v);
+  const save = box.querySelector("a.save");
+  if (save) {
+    const same = String(v) === box.dataset.saved;
+    save.classList.toggle("same", same);
+    save.textContent = same ? "Saved" : `Save ${v}`;
+    save.href = rateUrl(box.dataset.name, v);
+  }
 }
 
 function flagBar(x) {
@@ -590,6 +614,8 @@ $("selbar").addEventListener("click", e => {
   else if (e.target.closest("a[data-act]")) setTimeout(() => { state.selecting = false; state.sel.clear(); renderList(); }, 300);
   else if (e.target.closest("a[data-part]")) e.target.closest("a[data-part]").classList.add("visited");
 });
+$("list").addEventListener("input", e => { if (e.target.matches(".rater input")) syncRater(e.target.closest(".rating"), +e.target.value); });
+$("list").addEventListener("click", e => { const st = e.target.closest(".rater .step"); if (st) { const box = st.closest(".rating"); syncRater(box, +box.querySelector("input").value + +st.dataset.step); } });
 $("list").addEventListener("change", e => { if (e.target.matches("[data-ts]")) { state.tsort = e.target.value; renderTrophies(); } });
 $("q").addEventListener("input", e => { state.q = e.target.value; renderList(); });
 $("sort").addEventListener("change", e => { state.sort = e.target.value; save(); renderList(); });
