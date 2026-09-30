@@ -140,8 +140,28 @@ def fetch_psn(npsso: str) -> dict:
 TIER_INDEX = {"bronze": 0, "silver": 1, "gold": 2, "platinum": 3}
 
 
+TROPHY_VERSION = 2   # bump to re-read every trophy list (2: keep full trophy details)
+TROPHY_DIR = ROOT / "docs" / "trophies"
+
+
+def trophy_row(tr) -> dict:
+    """One trophy, with short keys to keep the files small."""
+    rate = tr.trophy_earn_rate
+    row = {"id": tr.trophy_id, "n": tr.trophy_name, "d": tr.trophy_detail, "t": tr.trophy_type.value if tr.trophy_type else None,
+           "i": tr.trophy_icon_url, "g": tr.trophy_group_id, "e": bool(tr.earned),
+           "at": iso(tr.earned_date_time) if tr.earned else None,
+           "r": round(float(rate), 1) if rate not in (None, "") else None}
+    if tr.trophy_hidden:
+        row["h"] = True
+    target = getattr(tr, "trophy_progress_target_value", None)
+    if target and not tr.earned:
+        row["p"] = f"{tr.progress or 0}/{target}"
+    return row
+
+
 def fetch_trophy_dates(me, trophies: list[dict]) -> None:
-    """Attach {"YYYY-MM": [bronze, silver, gold, platinum]} to each trophy list.
+    """Read each trophy list: save full details to docs/trophies/<list>.json and attach
+    {"YYYY-MM": [bronze, silver, gold, platinum]} plus your rarest earned trophies.
 
     Only lists that changed since the last run are fetched (2 requests each), so the
     first run is slow and later runs are quick. Stops after a time budget and
@@ -153,7 +173,7 @@ def fetch_trophy_dates(me, trophies: list[dict]) -> None:
     started, fetched, pending = time.time(), 0, 0
     for t in trophies:
         entry = cache.get(t["np_id"])
-        if not entry or entry.get("updated") != t["last_trophy"]:
+        if not entry or entry.get("updated") != t["last_trophy"] or entry.get("v", 1) < TROPHY_VERSION:
             if time.time() - started > TROPHY_BUDGET_S:
                 pending += 1
             else:
@@ -161,15 +181,24 @@ def fetch_trophy_dates(me, trophies: list[dict]) -> None:
                     plats = [p for p in t["platforms"] if p != "UNKNOWN"]
                     plat = PlatformType("PS5" if "PS5" in plats else (plats[0] if plats else "PS4"))
                     months: dict[str, list[int]] = {}
+                    rows = []
                     for tr in me.trophies(t["np_id"], plat, include_progress=True, trophy_group_id="all"):
+                        rows.append(trophy_row(tr))
                         if tr.earned and tr.earned_date_time and tr.trophy_type:
                             m = months.setdefault(tr.earned_date_time.strftime("%Y-%m"), [0, 0, 0, 0])
                             m[TIER_INDEX[tr.trophy_type.value]] += 1
-                    entry = cache[t["np_id"]] = {"updated": t["last_trophy"], "months": months}
+                    TROPHY_DIR.mkdir(parents=True, exist_ok=True)
+                    (TROPHY_DIR / f"{t['np_id']}.json").write_text(json.dumps(
+                        {"list": t["name"], "platforms": t["platforms"], "trophies": rows},
+                        ensure_ascii=False, separators=(",", ":")))
+                    rare = sorted((r for r in rows if r["e"] and r["r"] is not None), key=lambda r: r["r"])[:5]
+                    entry = cache[t["np_id"]] = {"updated": t["last_trophy"], "months": months, "v": TROPHY_VERSION,
+                                                 "rare": [{k: r[k] for k in ("n", "t", "r", "at", "i")} for r in rare]}
                     fetched += 1
                 except Exception as e:
                     print(f"  trophy dates skipped for {t['name']!r}: {e}")
         t["months"] = (entry or {}).get("months", {})
+        t["rare"] = (entry or {}).get("rare", [])
     TROPHY_CACHE.write_text(json.dumps(cache, sort_keys=True, separators=(",", ":")))
     print(f"  trophy dates: {fetched} lists fetched" + (f", {pending} left for the next refresh" if pending else ""))
 
@@ -223,6 +252,14 @@ def loose(name: str) -> str:
     return re.sub(r"\s+", " ", (name or "").replace("\xa0", " ")).strip()
 
 
+TRANSLATED = re.compile(r"[éèêàçùâîôû]|\b(l'|d'|le|la|les|du|des|et|de|el|los|der|die|und)\b", re.I)
+
+
+def looks_translated(name: str) -> bool:
+    """The Swiss store translates some titles into French: prefer the playtime/trophy name for those."""
+    return bool(TRANSLATED.search(name.replace("’", "'")))
+
+
 def names_override() -> dict:
     return (json.loads(OVERRIDES.read_text()) if OVERRIDES.exists() else {}).get("names", {})
 
@@ -236,16 +273,18 @@ def build_games(raw: dict) -> list[dict]:
     key_of_concept: dict[str, str] = {}
     key_of_np: dict[str, str] = {}
 
-    NAME_RANK = {"owned": 0, "trophies": 1, "playtime": 2}  # store names can be localized (e.g. French)
+    NAME_RANK = {"owned": 2, "playtime": 1, "trophies": 0}  # store name first, unless it's translated
 
     def row(key: str, name: str, source: str) -> dict:
         g = games.setdefault(key, {
             "name": name, "names": {}, "image": None, "platforms": set(), "owned": False, "acquired": None,
             "hours": 0.0, "first_played": None, "last_played": None,
-            "progress": None, "earned": None, "defined": None, "last_trophy": None, "has_trophies": False, "months": {},
+            "progress": None, "earned": None, "defined": None, "last_trophy": None, "has_trophies": False, "months": {}, "trophy_lists": [], "rare": [],
         })
+        name = re.sub(r"\s+Trophies$", "", (name or "").strip())  # some trophy lists are called "<game> Trophies"
         if name:
-            g["names"].setdefault(name, NAME_RANK[source])
+            rank = -1 if source == "owned" and looks_translated(name) else NAME_RANK[source]
+            g["names"][name] = max(g["names"].get(name, -9), rank)
         return g
 
     # 1. Owned games (group PS4/PS5 versions by concept)
@@ -287,6 +326,8 @@ def build_games(raw: dict) -> list[dict]:
         g["platforms"].update(p for p in t["platforms"] if p != "UNKNOWN")
         g["image"] = g["image"] or t["icon"]
         g["months"] = add_months(g["months"], t.get("months") or {})  # every list counts toward yearly stats
+        g["trophy_lists"].append({"id": t["np_id"], "platforms": [p for p in t["platforms"] if p != "UNKNOWN"], "progress": t["progress"]})
+        g["rare"] = sorted(g["rare"] + (t.get("rare") or []), key=lambda r: r["r"])[:5]
         if g["progress"] is None or t["progress"] > g["progress"]:
             g.update(progress=t["progress"], earned=t["earned"], defined=t["defined"],
                      last_trophy=t["last_trophy"], has_trophies=True)
@@ -299,6 +340,7 @@ def build_games(raw: dict) -> list[dict]:
         best = max(seen, key=lambda n: seen[n]) if seen else g["name"]
         g["name"] = next((english[loose(n)] for n in seen if loose(n) in english), best)
         g["aliases"] = sorted(n for n in seen if n != g["name"])
+        g["trophy_lists"].sort(key=lambda x: -x["progress"])  # most advanced list first
         g["platforms"] = sorted(g["platforms"])
         if g["defined"]:
             earned_n = sum(g["earned"].values())

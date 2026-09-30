@@ -57,7 +57,8 @@ Go to **Actions → Refresh game data → Run workflow**. The run takes about 3�
   - A Dropped game with new playtime or a new trophy after the date you dropped it goes back to its normal status at your next refresh.
   Only issues you open yourself are processed, so nobody else can change your flags.
 - **Flag several games at once:** tap **Select** (next to the sort menu), tap the games you want, or use **Select all shown** for the current filter or search, then choose an action in the bar at the bottom. Everything goes into one GitHub page, so it's still just one tap on **Create**. Very large selections (roughly 150+ games) are split into Part 1, Part 2 and so on; open each part and tap Create. Completed games can't be selected.
-- **Stats:** the Stats tab shows each year, or all time: trophies, platinums, hours played, your top 3 games by trophies and by hours, trophies by month, and a genre breakdown by hours or number of games.
+- **Trophies:** tap a game to see its full trophy list: name, description, grade, the % of players who have it, and when you earned it. Filter to **Missing** and sort by **Most common first** to find the easiest ones left. Hidden trophies stay hidden until you tap them. Rarity % is updated whenever a game's list changes, meaning when you earn a trophy in it.
+- **Stats:** the Stats tab shows each year, or all time: trophies, platinums, hours played, your top 3 games by trophies and by hours, your 5 rarest trophies, trophies by month, and a genre breakdown by hours or number of games.
 
 ## Renewing the PSN login (about every two months)
 The NPSSO token can't be renewed automatically: getting a new one requires signing in to Sony, which is protected by captchas and two-step verification. To keep this painless, the dashboard:
@@ -81,7 +82,7 @@ The token itself is never written to the dashboard or the repo. Only a short one
   Then upload the new `docs/data.json` and `rawg_cache.json` to the repo.
 
 ## What the data covers, and its limits
-- **Game names:** your store list comes from the Swiss PlayStation Store, which translates some titles into French. The dashboard shows the original name instead: the name from your playtime or trophy list when there is one, otherwise the `"names"` list in `overrides.json`. Add a line there if a translated name ever shows up. Flags follow a game when its name changes.
+- **Game names:** your store list comes from the Swiss PlayStation Store, which translates some titles into French. When a store name looks translated, the dashboard shows the name from your playtime or trophy list instead, or the one in the `"names"` list in `overrides.json`. Add a line there if a translated name ever shows up. Flags follow a game when its name changes.
 - **Playtime:** PS4 and PS5 games only. Sony doesn't track playtime for PS3 or Vita.
 - **Owned games:** PS4 and PS5 **digital** purchases, including claimed PS Plus games. Disc-only games show up only after you've earned a trophy or played them.
 - **Trophies:** every game with a trophy list, including PS3 and Vita.

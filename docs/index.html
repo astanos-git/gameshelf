@@ -138,6 +138,27 @@ button, select, input { font: inherit; color: inherit; }
 .facts dt { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
 .facts dd { margin: 0; }
 .detail a { color: var(--accent); }
+.tlist { display: grid; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; }
+.tl-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tl-head b { font: 600 18px var(--display); margin-right: auto; }
+.tl-head .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.tl-head .seg button { border: 0; background: transparent; padding: 4px 10px; font-size: 13px; cursor: pointer; }
+.tl-head .seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.tl-head select { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; font-size: 13px; }
+.tl-body { display: grid; gap: 10px; }
+.tl-sub { font: 600 12px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
+.trophy { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; }
+.trophy.got .ticon img { box-shadow: 0 0 0 2px var(--st-done); }
+.trophy:not(.got) .ticon img { filter: grayscale(1); opacity: .6; }
+.ticon { width: 40px; height: 40px; border-radius: 6px; overflow: hidden; background: var(--accent-soft); }
+.ticon img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+.tname { min-width: 0; display: grid; gap: 1px; }
+.tname b { font-weight: 600; font-size: 14px; line-height: 1.25; overflow-wrap: anywhere; }
+.tname span, .tname summary { font-size: 12.5px; color: var(--muted); line-height: 1.35; }
+.tname summary { cursor: pointer; }
+.tmeta { text-align: right; font: 12px var(--mono); color: var(--muted); display: grid; gap: 2px; justify-items: end; }
+.tmeta .rate { font-weight: 500; color: var(--fg); }
+.tmeta .rate.ultra { color: var(--plat); }
 .flagbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-top: 1px dashed var(--line); padding-top: 10px; }
 .flagbar .flagnote { color: var(--muted); font-size: 12.5px; flex-basis: 100%; }
 .detail a.flagbtn { color: var(--fg); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13.5px; font-weight: 500; }
@@ -265,7 +286,7 @@ function applyFlags(games, flags) {
   }
 }
 const $ = id => document.getElementById(id);
-let DATA, state = { status: "all", q: "", sort: "recent", open: null, selecting: false, sel: new Set() };
+let DATA, state = { status: "all", q: "", sort: "recent", open: null, selecting: false, sel: new Set(), tfilter: "all", tsort: "order" };
 try { Object.assign(state, JSON.parse(localStorage.getItem("shelf") || "{}"), { q: "", open: null }); } catch {}
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -404,6 +425,7 @@ function renderList() {
       ${open ? detail(x, id) : ""}
     </article>`;
   }).join("");
+  renderTrophies();
 }
 
 const fmtH = h => h >= 10 ? Math.round(h) + " h" : (Math.round(h * 2) / 2) + " h";
@@ -487,7 +509,39 @@ function detail(x, id) {
   ];
   const H = x.hltb, hl = H ? `<div class="hltb"><span>HowLongToBeat</span>${[["Main story", H.main], ["Main + extras", H.extra], ["Completionist", H.complete]].filter(([, v]) => v).map(([k, v]) => `<span>${k} <b>${fmtH(v)}</b></span>`).join("")}${H.url ? `<a href="${esc(H.url)}" target="_blank" rel="noopener">Open</a>` : ""}</div>` : "";
   const link = x.rawg_slug ? `<a href="https://rawg.io/games/${esc(x.rawg_slug)}" target="_blank" rel="noopener">Game page on RAWG</a>` : "";
-  return `<div class="detail" id="${id}-d">${pend}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}${flagBar(x)}</div>`;
+  const tl = x.trophy_lists?.length ? `<section class="tlist" data-game="${id}">
+      <div class="tl-head"><b>Trophies</b>
+        <span class="seg" role="group" aria-label="Show trophies">${[["all", "All"], ["missing", "Missing"], ["earned", "Earned"]].map(([k, l]) => `<button data-tf="${k}" aria-pressed="${state.tfilter === k}">${l}</button>`).join("")}</span>
+        <select data-ts aria-label="Sort trophies">${[["order", "Game order"], ["rare", "Rarest first"], ["common", "Most common first"]].map(([k, l]) => `<option value="${k}"${state.tsort === k ? " selected" : ""}>${l}</option>`).join("")}</select>
+      </div><div class="tl-body"><p class="flagnote">Loading trophies…</p></div></section>` : "";
+  return `<div class="detail" id="${id}-d">${pend}${tl}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}${flagBar(x)}</div>`;
+}
+
+/* Trophy lists live in trophies/<list id>.json and load when you open a game. */
+const TROPHIES = {};
+const loadList = id => TROPHIES[id] ||= fetch(`trophies/${encodeURIComponent(id)}.json`, { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
+const rarity = r => r == null ? "" : r < 5 ? "Ultra rare" : r < 15 ? "Very rare" : r < 50 ? "Rare" : "Common";
+
+async function renderTrophies() {
+  const box = document.querySelector(".tlist"); if (!box) return;
+  const x = DATA.games[+box.dataset.game.slice(1)];
+  const lists = await Promise.all(x.trophy_lists.map(l => loadList(l.id).then(d => ({ ...l, d }))));
+  const body = box.querySelector(".tl-body"); if (!body.isConnected) return;
+  const avail = lists.filter(l => l.d);
+  if (!avail.length) { body.innerHTML = `<p class="flagnote">Trophy details appear after your next refresh.</p>`; return; }
+  const sorts = { order: (a, b) => a.id - b.id, rare: (a, b) => (a.r ?? 101) - (b.r ?? 101), common: (a, b) => (b.r ?? -1) - (a.r ?? -1) };
+  body.innerHTML = avail.map(l => {
+    const rows = l.d.trophies.filter(t => state.tfilter === "all" || (state.tfilter === "earned") === t.e).sort(sorts[state.tsort]);
+    const head = avail.length > 1 ? `<div class="tl-sub">${esc(l.platforms.join(" · ") || "Trophy list")} · ${l.progress}%</div>` : "";
+    const list = rows.map(t => {
+      const desc = t.h && !t.e ? `<details><summary>Hidden trophy · tap to reveal</summary><span>${esc(t.d)}</span></details>` : `<span>${esc(t.d)}</span>`;
+      const when = t.e ? (t.at ? fmtDate(t.at) : "Earned") : (t.p ? `${t.p} done` : "Not earned");
+      return `<div class="trophy${t.e ? " got" : ""}"><span class="ticon">${t.i ? `<img src="${esc(t.i)}" alt="" loading="lazy" onerror="this.remove()">` : ""}</span>
+        <span class="tname"><b><span class="dot d-${t.t}" title="${t.t}"></span> ${esc(t.n)}</b>${desc}</span>
+        <span class="tmeta">${t.r != null ? `<span class="rate${t.r < 5 ? " ultra" : ""}" title="${rarity(t.r)}">${t.r}%</span>` : ""}<span>${when}</span></span></div>`;
+    }).join("");
+    return head + (list || `<p class="flagnote">${state.tfilter === "missing" ? "Nothing missing here." : "No trophies earned yet."}</p>`);
+  }).join("");
 }
 
 function save() { try { localStorage.setItem("shelf", JSON.stringify({ status: state.status, sort: state.sort })); } catch {} }
@@ -495,7 +549,10 @@ function save() { try { localStorage.setItem("shelf", JSON.stringify({ status: s
 $("chips").addEventListener("click", e => { const b = e.target.closest(".chip"); if (!b) return;
   state.status = b.dataset.s; if (state.status === "unplayed" && state.sort === "recent") { state.sort = "metacritic"; $("sort").value = "metacritic"; }
   save(); renderChips(); renderList(); });
-$("list").addEventListener("click", e => { const b = e.target.closest("button[data-id]"); if (!b) return;
+$("list").addEventListener("click", e => {
+  const tf = e.target.closest("button[data-tf]");
+  if (tf) { state.tfilter = tf.dataset.tf; document.querySelectorAll("[data-tf]").forEach(b => b.setAttribute("aria-pressed", b === tf)); renderTrophies(); return; }
+  const b = e.target.closest("button[data-id]"); if (!b) return;
   const id = b.dataset.id;
   if (state.selecting) {
     if (DATA.games[+id.slice(1)].base_status === "completed") return;
@@ -509,6 +566,7 @@ $("selbar").addEventListener("click", e => {
   else if (e.target.closest("a[data-act]")) setTimeout(() => { state.selecting = false; state.sel.clear(); renderList(); }, 300);
   else if (e.target.closest("a[data-part]")) e.target.closest("a[data-part]").classList.add("visited");
 });
+$("list").addEventListener("change", e => { if (e.target.matches("[data-ts]")) { state.tsort = e.target.value; renderTrophies(); } });
 $("q").addEventListener("input", e => { state.q = e.target.value; renderList(); });
 $("sort").addEventListener("change", e => { state.sort = e.target.value; save(); renderList(); });
 

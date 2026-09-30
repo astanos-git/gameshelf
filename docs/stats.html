@@ -68,6 +68,8 @@ button { font: inherit; color: inherit; }
 .top { display: grid; gap: 8px; align-content: start; min-width: 0; }
 .top ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .top li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; display: grid; grid-template-columns: 20px 44px 1fr auto; gap: 10px; align-items: center; }
+.top li.rare { grid-template-columns: 20px 44px 1fr auto; }
+.top li.rare .cover img { border-radius: 7px; }
 .rank { font: 700 22px var(--display); color: var(--muted); text-align: center; }
 .top li:first-child .rank { color: var(--accent); }
 .cover { width: 44px; height: 44px; border-radius: 7px; background: var(--accent-soft); display: grid; place-items: center; overflow: hidden; font: 600 15px var(--display); color: var(--accent); }
@@ -120,6 +122,11 @@ button { font: inherit; color: inherit; }
   <section class="tops">
     <div class="top"><h2>Most trophies</h2><ol id="topTrophies"></ol></div>
     <div class="top"><h2>Most hours played</h2><ol id="topHours"></ol></div>
+  </section>
+
+  <section class="top">
+    <h2>Rarest trophies</h2>
+    <ol id="rareList"></ol>
   </section>
 
   <section class="panel">
@@ -202,6 +209,7 @@ function render() {
     r => [fmt(r.h), y === "all" ? "hours" : "hours (est.)"], r => `<span>${r.g.platforms.join(" · ")}</span>`,
     "No PS4 or PS5 playtime in this period.");
 
+  rarest(y);
   timeline(y, hasMonths);
   genres(rows);
 }
@@ -274,6 +282,18 @@ function timeline(y, hasMonths) {
   svg.addEventListener("pointerover", show); svg.addEventListener("focusin", show); svg.addEventListener("click", show);
   svg.addEventListener("pointerleave", () => tip.hidden = true); svg.addEventListener("focusout", () => tip.hidden = true);
 }
+/* Your rarest earned trophies in the period: lowest % of players who have them. */
+function rarest(y) {
+  const all = DATA.games.flatMap(g => (g.rare || []).map(r => ({ ...r, game: g.name })))
+    .filter(r => r.at && (y === "all" || r.at.startsWith(y)))
+    .sort((a, b) => a.r - b.r).slice(0, 5);
+  $("rareList").innerHTML = all.length ? all.map((r, i) => `<li class="rare"><span class="rank">${i + 1}</span>
+      <span class="cover">${r.i ? `<img src="${esc(r.i)}" alt="" loading="lazy" onerror="this.remove()">` : ""}</span>
+      <span class="tname"><b><span class="dot d-${r.t}"></span>${esc(r.n)}</b><small>${esc(r.game)} · ${new Date(r.at).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" })}</small></span>
+      <span class="tval num">${r.r}%<small>of players</small></span></li>`).join("")
+    : `<p class="empty">${DATA.games.some(g => g.rare && g.rare.length) ? "No trophies earned in this period." : "Trophy rarity appears after the next refresh."}</p>`;
+}
+
 function niceStep(raw) {
   const p = 10 ** Math.floor(Math.log10(Math.max(raw, 1)));
   return [1, 2, 5, 10].map(m => m * p).find(s => s >= raw) || 10 * p;
