@@ -1,0 +1,2754 @@
+{
+ "a-plague-tale-innocence": {
+  "developers": [
+   "Asobo Studio"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "a-plague-tale-requiem": {
+  "developers": [
+   "Asobo Studio"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "absolver": {
+  "developers": [
+   "Sloclap"
+  ],
+  "publishers": [
+   "Devolver Digital"
+  ],
+  "series": []
+ },
+ "ace-combat-7": {
+  "developers": [
+   "Bandai Namco Entertainment",
+   "Bandai Namco Studios"
+  ],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": [
+   "Ace Combat"
+  ]
+ },
+ "acid-nerve-deaths-door": {
+  "developers": [
+   "Acid Nerve"
+  ],
+  "publishers": [
+   "Devolver Digital"
+  ],
+  "series": []
+ },
+ "alan-wake-2": {
+  "developers": [],
+  "publishers": [],
+  "series": [
+   "Alan Wake"
+  ]
+ },
+ "alan-wake-remastered": {
+  "developers": [],
+  "publishers": [],
+  "series": [
+   "Alan Wake"
+  ]
+ },
+ "alone-in-the-dark-2022": {
+  "developers": [
+   "Pieces Interactive"
+  ],
+  "publishers": [
+   "THQ Nordic"
+  ],
+  "series": [
+   "Alone in the Dark"
+  ]
+ },
+ "amnesia-collection": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "among-us": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "another-world-20th": {
+  "developers": [
+   "Éric Chahi",
+   "Delphine Software International"
+  ],
+  "publishers": [
+   "Interplay Entertainment",
+   "U.S. Gold"
+  ],
+  "series": []
+ },
+ "arise-3": {
+  "developers": [
+   "Piccolo Studio"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "ark-survival-evolved": {
+  "developers": [
+   "Studio Wildcard",
+   "Virtual Basement LLC"
+  ],
+  "publishers": [
+   "Studio Wildcard"
+  ],
+  "series": []
+ },
+ "assassins-creed-brotherhood-2": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "assassins-creed-freedom-cry": {
+  "developers": [
+   "Jairzinho"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "assassins-creed-iv-black-flag": {
+  "developers": [
+   "Ubisoft Romania",
+   "Ubisoft Kyiv",
+   "Ubisoft Annecy",
+   "Ubisoft Quebec"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "assassins-creed-odyssey": {
+  "developers": [
+   "Ubisoft Quebec"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "assassins-creed-origins": {
+  "developers": [
+   "Ubisoft Romania",
+   "Ubisoft Kyiv",
+   "Ubisoft Shanghai",
+   "Ubisoft Chengdu"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "assassins-creed-revelations": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "assassins-creed-rogue-2": {
+  "developers": [
+   "Ubisoft Sofia"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "assassins-creed-unity-2": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "astro-bot": {
+  "developers": [],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "axiom-verge-2": {
+  "developers": [
+   "Thomas Happ Games"
+  ],
+  "publishers": [
+   "Thomas Happ Games"
+  ],
+  "series": []
+ },
+ "balatro": {
+  "developers": [
+   "LocalThunk"
+  ],
+  "publishers": [
+   "Playstack"
+  ],
+  "series": []
+ },
+ "batman-arkham-knight": {
+  "developers": [
+   "Rocksteady Studios"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": []
+ },
+ "battlefield-1": {
+  "developers": [
+   "DICE"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Battlefield"
+  ]
+ },
+ "battlefield-6": {
+  "developers": [
+   "DICE",
+   "Criterion Games",
+   "EA Gothenburg",
+   "Ripple Effect Studios"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Battlefield"
+  ]
+ },
+ "battlefield-6-2": {
+  "developers": [
+   "DICE",
+   "Criterion Games",
+   "Motive Studio",
+   "Ripple Effect Studios"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Battlefield"
+  ]
+ },
+ "battlefield-v": {
+  "developers": [
+   "DICE"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Battlefield"
+  ]
+ },
+ "beyond-two-souls": {
+  "developers": [
+   "Quantic Dream"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "big-crown-showdown": {
+  "developers": [],
+  "publishers": [
+   "Fireshine Games"
+  ],
+  "series": []
+ },
+ "bioshock-infinite": {
+  "developers": [
+   "2K",
+   "Aspyr",
+   "Irrational Games"
+  ],
+  "publishers": [
+   "2K"
+  ],
+  "series": [
+   "BioShock"
+  ]
+ },
+ "bioshock-the-collection": {
+  "developers": [
+   "Blind Squirrel Entertainment"
+  ],
+  "publishers": [
+   "2K"
+  ],
+  "series": [
+   "BioShock"
+  ]
+ },
+ "black-desert-online": {
+  "developers": [
+   "Pearl Abyss"
+  ],
+  "publishers": [
+   "Pearl Abyss"
+  ],
+  "series": []
+ },
+ "black-myth-wu-kong": {
+  "developers": [
+   "Game Science"
+  ],
+  "publishers": [
+   "Game Science"
+  ],
+  "series": [
+   "Black Myth"
+  ]
+ },
+ "blasphemous": {
+  "developers": [],
+  "publishers": [
+   "Team17",
+   "Selecta Visión"
+  ],
+  "series": []
+ },
+ "blasphemous-2": {
+  "developers": [],
+  "publishers": [
+   "Team17"
+  ],
+  "series": []
+ },
+ "bo-path-of-the-teal-lotus": {
+  "developers": [],
+  "publishers": [
+   "Humble Games"
+  ],
+  "series": []
+ },
+ "borderlands-3": {
+  "developers": [
+   "Gearbox Software"
+  ],
+  "publishers": [
+   "2K"
+  ],
+  "series": [
+   "Borderlands"
+  ]
+ },
+ "burly-men-at-sea": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "bye-sweet-carole": {
+  "developers": [],
+  "publishers": [
+   "Maximum Entertainment"
+  ],
+  "series": []
+ },
+ "captain-tsubasa-rise-of-new-champions": {
+  "developers": [
+   "Tamsoft"
+  ],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": [
+   "Captain Tsubasa"
+  ]
+ },
+ "chained-echoes": {
+  "developers": [
+   "Ark Heiral"
+  ],
+  "publishers": [
+   "Deck13 Interactive"
+  ],
+  "series": []
+ },
+ "child-of-light": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "chivalry-2": {
+  "developers": [
+   "Torn Banner Studios"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "clair-obscur-expedition-33": {
+  "developers": [
+   "Sandfall Interactive"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "claire": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "cocoon-2": {
+  "developers": [
+   "Geometric Interactive"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "cod-black-ops-iii": {
+  "developers": [
+   "Treyarch"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "conan-exiles": {
+  "developers": [
+   "Funcom"
+  ],
+  "publishers": [
+   "Funcom"
+  ],
+  "series": []
+ },
+ "control": {
+  "developers": [],
+  "publishers": [
+   "505 Games"
+  ],
+  "series": []
+ },
+ "crash-bandicoot-4-its-about-time": {
+  "developers": [
+   "Toys for Bob"
+  ],
+  "publishers": [],
+  "series": [
+   "Crash Bandicoot"
+  ]
+ },
+ "crosscode": {
+  "developers": [
+   "Radical Fish Games"
+  ],
+  "publishers": [
+   "Deck13 Interactive",
+   "WhisperGames",
+   "Dangen Entertainment",
+   "Inin Games"
+  ],
+  "series": []
+ },
+ "cuphead": {
+  "developers": [
+   "Studio MDHR"
+  ],
+  "publishers": [
+   "Studio MDHR"
+  ],
+  "series": []
+ },
+ "cyberpunk-2077": {
+  "developers": [
+   "CD Projekt RED"
+  ],
+  "publishers": [
+   "CD Projekt RED",
+   "Bandai Namco Entertainment",
+   "Warner Bros. Games",
+   "Softclub",
+   "CD Projekt",
+   "Spike Chunsoft"
+  ],
+  "series": []
+ },
+ "dark-souls": {
+  "developers": [
+   "FromSoftware"
+  ],
+  "publishers": [
+   "FromSoftware"
+  ],
+  "series": [
+   "Dark Souls"
+  ]
+ },
+ "darkest-dungeon": {
+  "developers": [
+   "Red Hook Studios"
+  ],
+  "publishers": [
+   "Red Hook Studios"
+  ],
+  "series": [
+   "Darkest Dungeon"
+  ]
+ },
+ "darksiders": {
+  "developers": [
+   "Vigil Games"
+  ],
+  "publishers": [
+   "THQ"
+  ],
+  "series": [
+   "Darksiders"
+  ]
+ },
+ "darksiders-ii": {
+  "developers": [
+   "Vigil Games"
+  ],
+  "publishers": [
+   "THQ"
+  ],
+  "series": [
+   "Darksiders"
+  ]
+ },
+ "darksiders-iii": {
+  "developers": [
+   "Gunfire Games"
+  ],
+  "publishers": [
+   "THQ Nordic"
+  ],
+  "series": [
+   "Darksiders"
+  ]
+ },
+ "day-of-the-tentacle-remastered": {
+  "developers": [
+   "Lucasfilm Games",
+   "Double Fine"
+  ],
+  "publishers": [
+   "Lucasfilm Games"
+  ],
+  "series": []
+ },
+ "days-gone": {
+  "developers": [
+   "Bend Studio"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "PlayStation PC LLC"
+  ],
+  "series": []
+ },
+ "dayz": {
+  "developers": [
+   "Bohemia Interactive"
+  ],
+  "publishers": [
+   "Bohemia Interactive"
+  ],
+  "series": []
+ },
+ "dead-by-daylight": {
+  "developers": [],
+  "publishers": [
+   "505 Games",
+   "Starbreeze Studios"
+  ],
+  "series": []
+ },
+ "dead-space": {
+  "developers": [
+   "Visceral Games"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Dead Space"
+  ]
+ },
+ "dead-space-5": {
+  "developers": [
+   "Motive Studio"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Dead Space"
+  ]
+ },
+ "death-stranding-directors-cut": {
+  "developers": [],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "deathloop-2": {
+  "developers": [
+   "Arkane Studios"
+  ],
+  "publishers": [
+   "Bethesda Softworks"
+  ],
+  "series": []
+ },
+ "deep-rock-galactic": {
+  "developers": [
+   "Ghost Ship Games"
+  ],
+  "publishers": [
+   "Coffee Stain Studios"
+  ],
+  "series": []
+ },
+ "destiny-2": {
+  "developers": [
+   "Bungie"
+  ],
+  "publishers": [
+   "Bungie"
+  ],
+  "series": [
+   "Destiny"
+  ]
+ },
+ "detroit-become-human": {
+  "developers": [
+   "Quantic Dream"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "Quantic Dream"
+  ],
+  "series": []
+ },
+ "deus-ex-mankind-divided": {
+  "developers": [
+   "Feral Interactive",
+   "Eidos Montreal",
+   "Nixxes Software"
+  ],
+  "publishers": [
+   "Square Enix",
+   "Feral Interactive"
+  ],
+  "series": []
+ },
+ "devil-may-cry-5": {
+  "developers": [
+   "Capcom"
+  ],
+  "publishers": [
+   "Capcom"
+  ],
+  "series": []
+ },
+ "diablo-iv": {
+  "developers": [
+   "Blizzard Entertainment"
+  ],
+  "publishers": [
+   "Activision Blizzard"
+  ],
+  "series": [
+   "Diablo"
+  ]
+ },
+ "dirt-5": {
+  "developers": [
+   "Codemasters"
+  ],
+  "publishers": [
+   "Codemasters"
+  ],
+  "series": [
+   "Colin McRae Rally and Dirt"
+  ]
+ },
+ "dirt-rally-20": {
+  "developers": [
+   "Codemasters"
+  ],
+  "publishers": [],
+  "series": [
+   "Colin McRae Rally and Dirt"
+  ]
+ },
+ "dishonored": {
+  "developers": [
+   "Arkane Studios"
+  ],
+  "publishers": [
+   "Bethesda Softworks"
+  ],
+  "series": [
+   "Dishonored"
+  ]
+ },
+ "dragon-ball-the-breakers": {
+  "developers": [
+   "Dimps"
+  ],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": [
+   "Dragon Ball"
+  ]
+ },
+ "dragon-ball-xenoverse-2": {
+  "developers": [
+   "Dimps"
+  ],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": [
+   "Dragon Ball",
+   "Dragon Ball Xenoverse"
+  ]
+ },
+ "dragons-dogma-2": {
+  "developers": [
+   "Capcom"
+  ],
+  "publishers": [
+   "Capcom"
+  ],
+  "series": []
+ },
+ "dredge": {
+  "developers": [
+   "Black Salt Games"
+  ],
+  "publishers": [
+   "Team17"
+  ],
+  "series": []
+ },
+ "dying-light-2": {
+  "developers": [],
+  "publishers": [
+   "Square Enix",
+   "Deep Silver"
+  ],
+  "series": [
+   "Dying Light"
+  ]
+ },
+ "ea-sports-fc-26": {
+  "developers": [
+   "EA Vancouver"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": []
+ },
+ "ea-sports-fifa-16": {
+  "developers": [
+   "EA Vancouver"
+  ],
+  "publishers": [
+   "EA Sports"
+  ],
+  "series": []
+ },
+ "elden-ring": {
+  "developers": [
+   "FromSoftware"
+  ],
+  "publishers": [
+   "Bandai Namco Entertainment",
+   "FromSoftware"
+  ],
+  "series": [
+   "Elden Ring"
+  ]
+ },
+ "ender-lilies-quietus-of-the-knights": {
+  "developers": [
+   "Live Wire"
+  ],
+  "publishers": [
+   "Binary Haze Interactive"
+  ],
+  "series": [
+   "Ender"
+  ]
+ },
+ "ender-magnolia-bloom-in-the-mist": {
+  "developers": [
+   "Live Wire"
+  ],
+  "publishers": [
+   "Binary Haze Interactive"
+  ],
+  "series": [
+   "Ender"
+  ]
+ },
+ "erica": {
+  "developers": [],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "everybodys-gone-to-the-rapture": {
+  "developers": [
+   "The Chinese Room"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "PlayStation Mobile, Inc."
+  ],
+  "series": []
+ },
+ "evil-dead-the-game": {
+  "developers": [
+   "Saber Interactive"
+  ],
+  "publishers": [
+   "Saber Interactive",
+   "Boss Team Games"
+  ],
+  "series": []
+ },
+ "evil-west": {
+  "developers": [
+   "Flying Wild Hog"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "fallout-4": {
+  "developers": [
+   "Bethesda Game Studios"
+  ],
+  "publishers": [
+   "Bethesda Softworks"
+  ],
+  "series": []
+ },
+ "fallout-76": {
+  "developers": [
+   "Bethesda Game Studios"
+  ],
+  "publishers": [
+   "Bethesda Softworks"
+  ],
+  "series": []
+ },
+ "fifa-15": {
+  "developers": [
+   "EA Vancouver"
+  ],
+  "publishers": [
+   "EA Sports"
+  ],
+  "series": []
+ },
+ "final-fantasy-vii-remake": {
+  "developers": [
+   "Square Enix",
+   "Square Enix Business Division 1"
+  ],
+  "publishers": [
+   "Square Enix"
+  ],
+  "series": [
+   "Compilation of Final Fantasy VII",
+   "Final Fantasy VII Remake"
+  ]
+ },
+ "firewatch": {
+  "developers": [
+   "Campo Santo"
+  ],
+  "publishers": [
+   "Panic"
+  ],
+  "series": []
+ },
+ "flow": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "flower": {
+  "developers": [],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "for-honor": {
+  "developers": [
+   "Ubisoft Blue Byte"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "fornite-battle-royale": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "friday-the-13th-the-game": {
+  "developers": [
+   "IllFonic",
+   "Gun Interactive"
+  ],
+  "publishers": [
+   "Gun Interactive"
+  ],
+  "series": []
+ },
+ "game-of-thrones": {
+  "developers": [
+   "Cyanide"
+  ],
+  "publishers": [],
+  "series": [
+   "Game of Thrones"
+  ]
+ },
+ "generation-zero-2019": {
+  "developers": [
+   "Avalanche Studios Group"
+  ],
+  "publishers": [
+   "Avalanche Studios Group"
+  ],
+  "series": []
+ },
+ "ghost-of-tsushima": {
+  "developers": [],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": [
+   "Ghost of Tsushima"
+  ]
+ },
+ "ghostrunner": {
+  "developers": [
+   "3D Realms",
+   "Slipgate Ironworks",
+   "One More Level"
+  ],
+  "publishers": [
+   "505 Games",
+   "All in! Games"
+  ],
+  "series": [
+   "Ghostrunner"
+  ]
+ },
+ "ghostrunner-2": {
+  "developers": [
+   "One More Level"
+  ],
+  "publishers": [
+   "505 Games"
+  ],
+  "series": [
+   "Ghostrunner"
+  ]
+ },
+ "ghostwire-tokio": {
+  "developers": [
+   "Tango Gameworks"
+  ],
+  "publishers": [
+   "Bethesda Softworks"
+  ],
+  "series": []
+ },
+ "goat-simulator": {
+  "developers": [
+   "Coffee Stain Studios"
+  ],
+  "publishers": [
+   "Coffee Stain Publishing"
+  ],
+  "series": []
+ },
+ "goat-simulator-3": {
+  "developers": [
+   "Coffee Stain Studios",
+   "Coffee Stain North"
+  ],
+  "publishers": [
+   "Coffee Stain Publishing"
+  ],
+  "series": []
+ },
+ "god-of-war-ragnarok": {
+  "developers": [
+   "Santa Monica Studio",
+   "Jetpack Interactive"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "godfall": {
+  "developers": [
+   "Counterplay Games Inc."
+  ],
+  "publishers": [
+   "Gearbox Software"
+  ],
+  "series": []
+ },
+ "gran-turismo-7": {
+  "developers": [
+   "Polyphony Digital"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "grand-theft-auto-v": {
+  "developers": [
+   "Rockstar New England",
+   "Rockstar Toronto",
+   "Rockstar London"
+  ],
+  "publishers": [
+   "Take-Two Interactive",
+   "Softclub"
+  ],
+  "series": [
+   "Grand Theft Auto"
+  ]
+ },
+ "greedfall": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "gris": {
+  "developers": [
+   "Nomada Studio"
+  ],
+  "publishers": [
+   "Devolver Digital"
+  ],
+  "series": []
+ },
+ "heavenly-bodies-2": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "heavy-rain": {
+  "developers": [
+   "Quantic Dream",
+   "Virtuos"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "hellblade-senuas-sacrifice": {
+  "developers": [
+   "Ninja Theory"
+  ],
+  "publishers": [
+   "Ninja Theory"
+  ],
+  "series": []
+ },
+ "hello-neighbor-2-2": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "high-on-life": {
+  "developers": [],
+  "publishers": [
+   "Xbox Game Studios"
+  ],
+  "series": []
+ },
+ "hitman": {
+  "developers": [],
+  "publishers": [
+   "Square Enix",
+   "Feral Interactive",
+   "Warner Bros. Games"
+  ],
+  "series": [
+   "Hitman"
+  ]
+ },
+ "hitman-absolution": {
+  "developers": [
+   "Feral Interactive",
+   "Nixxes Software"
+  ],
+  "publishers": [
+   "Square Enix"
+  ],
+  "series": [
+   "Hitman"
+  ]
+ },
+ "hoa": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "hollow-knight": {
+  "developers": [
+   "Team Cherry"
+  ],
+  "publishers": [
+   "Team Cherry"
+  ],
+  "series": []
+ },
+ "hollow-knight-silksong": {
+  "developers": [
+   "Team Cherry"
+  ],
+  "publishers": [
+   "Team Cherry"
+  ],
+  "series": []
+ },
+ "horizon-call-of-the-mountain": {
+  "developers": [
+   "Guerrilla Games",
+   "Firesprite",
+   "Guerrilla and Firesprite"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "horizon-chase-turbo": {
+  "developers": [
+   "Aquiris Game Studio"
+  ],
+  "publishers": [
+   "Aquiris Game Studio"
+  ],
+  "series": [
+   "Horizon Chase"
+  ]
+ },
+ "horizon-zero-dawn-2": {
+  "developers": [
+   "Sony Interactive Entertainment",
+   "Guerrilla Games"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "hot-wheels-unleashed": {
+  "developers": [
+   "Milestone S.r.l."
+  ],
+  "publishers": [
+   "Milestone S.r.l."
+  ],
+  "series": [
+   "Hot Wheels"
+  ]
+ },
+ "iconoclasts": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "immortals-of-aveum": {
+  "developers": [
+   "Ascendant Studios"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": []
+ },
+ "indiana-jones-and-the-great-circle": {
+  "developers": [],
+  "publishers": [
+   "Bethesda Softworks"
+  ],
+  "series": [
+   "Indiana Jones"
+  ]
+ },
+ "indika": {
+  "developers": [],
+  "publishers": [
+   "11 Bit Studios"
+  ],
+  "series": []
+ },
+ "inside": {
+  "developers": [
+   "Playdead"
+  ],
+  "publishers": [
+   "Playdead"
+  ],
+  "series": []
+ },
+ "it-takes-two-2": {
+  "developers": [],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": []
+ },
+ "jedi-the-fallen-order": {
+  "developers": [
+   "Criterion Games",
+   "Respawn Entertainment",
+   "Panic Button"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Star Wars video game",
+   "Star Wars Jedi"
+  ]
+ },
+ "journey": {
+  "developers": [],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "jurassic-world-evolution-2-2": {
+  "developers": [
+   "Frontier Developments"
+  ],
+  "publishers": [
+   "Frontier Developments"
+  ],
+  "series": []
+ },
+ "jusant": {
+  "developers": [
+   "Don’t Nod"
+  ],
+  "publishers": [
+   "Don’t Nod"
+  ],
+  "series": []
+ },
+ "just-cause-3": {
+  "developers": [
+   "Avalanche Studios Group"
+  ],
+  "publishers": [
+   "Square Enix"
+  ],
+  "series": []
+ },
+ "kena-bridge-of-spirits": {
+  "developers": [
+   "Ember Lab"
+  ],
+  "publishers": [
+   "Ember Lab"
+  ],
+  "series": []
+ },
+ "kings-quest": {
+  "developers": [],
+  "publishers": [],
+  "series": [
+   "King's Quest"
+  ]
+ },
+ "kitty-powers-matchmaker": {
+  "developers": [],
+  "publishers": [
+   "Mastertronic Group"
+  ],
+  "series": []
+ },
+ "knowledge-is-power-decades": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "la-noire": {
+  "developers": [
+   "Team Bondi"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "lego-2k-drive": {
+  "developers": [
+   "Visual Concepts"
+  ],
+  "publishers": [
+   "2K"
+  ],
+  "series": [
+   "Lego",
+   "2K Drive"
+  ]
+ },
+ "lego-dc-super-villains": {
+  "developers": [],
+  "publishers": [],
+  "series": [
+   "Lego Batman"
+  ]
+ },
+ "lego-harry-potter": {
+  "developers": [
+   "Traveller's Tales"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": [
+   "Lego Harry Potter"
+  ]
+ },
+ "lego-jurassic-world": {
+  "developers": [
+   "Traveller's Tales"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": [
+   "Lego"
+  ]
+ },
+ "lego-marvel": {
+  "developers": [
+   "TT Games"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": [
+   "Lego Marvel Super Heroes"
+  ]
+ },
+ "lego-marvel-super-heroes-2": {
+  "developers": [
+   "TT Games"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": [
+   "Lego Marvel Super Heroes"
+  ]
+ },
+ "lego-marvels-avengers": {
+  "developers": [
+   "Traveller's Tales"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": [
+   "Lego Marvel Super Heroes"
+  ]
+ },
+ "lego-star-wars-the-sywalker-saga": {
+  "developers": [
+   "Traveller's Tales"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": [
+   "Lego Star Wars"
+  ]
+ },
+ "lies-of-p": {
+  "developers": [
+   "Round 8 Studio"
+  ],
+  "publishers": [
+   "Neowiz"
+  ],
+  "series": []
+ },
+ "life-is-strange-episode-1-2": {
+  "developers": [
+   "Don’t Nod"
+  ],
+  "publishers": [
+   "Square Enix",
+   "Feral Interactive"
+  ],
+  "series": [
+   "Life Is Strange"
+  ]
+ },
+ "little-nightmares": {
+  "developers": [
+   "Tarsier Studios"
+  ],
+  "publishers": [
+   "Bandai Namco Holdings",
+   "Bandai Namco Entertainment"
+  ],
+  "series": []
+ },
+ "little-nightmares-ii": {
+  "developers": [
+   "Tarsier Studios"
+  ],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": []
+ },
+ "mad-max": {
+  "developers": [
+   "Avalanche Studios Group"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": []
+ },
+ "mafia": {
+  "developers": [],
+  "publishers": [
+   "2K"
+  ],
+  "series": [
+   "Mafia"
+  ]
+ },
+ "mafia-ii-definitive-edition": {
+  "developers": [],
+  "publishers": [
+   "2K"
+  ],
+  "series": [
+   "Mafia"
+  ]
+ },
+ "mafia-trilogy": {
+  "developers": [],
+  "publishers": [
+   "2K"
+  ],
+  "series": [
+   "Mafia"
+  ]
+ },
+ "man-of-medan": {
+  "developers": [],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": []
+ },
+ "marvels-spider-man": {
+  "developers": [
+   "Insomniac Games"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": [
+   "Spider-Man"
+  ]
+ },
+ "marvels-spider-man-2": {
+  "developers": [
+   "Insomniac Games",
+   "Nixxes Software"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "PlayStation PC LLC"
+  ],
+  "series": [
+   "Spider-Man"
+  ]
+ },
+ "marvels-spider-man-miles-morales": {
+  "developers": [
+   "Insomniac Games"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "PlayStation PC LLC"
+  ],
+  "series": [
+   "Spider-Man"
+  ]
+ },
+ "mass-effect-legendary-edition": {
+  "developers": [],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": []
+ },
+ "metal-gear-solid-v-the-phantom-pain": {
+  "developers": [],
+  "publishers": [
+   "Konami"
+  ],
+  "series": [
+   "Metal Gear"
+  ]
+ },
+ "middle-earth-shadow-of-war": {
+  "developers": [
+   "Monolith Productions"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": []
+ },
+ "mighty-no-9": {
+  "developers": [
+   "Inti Creates"
+  ],
+  "publishers": [
+   "Deep Silver"
+  ],
+  "series": []
+ },
+ "minecraft-legends": {
+  "developers": [
+   "Mojang Studios",
+   "Blackbird Interactive"
+  ],
+  "publishers": [
+   "Xbox Game Studios"
+  ],
+  "series": [
+   "Minecraft"
+  ]
+ },
+ "monster-hunter-world-2": {
+  "developers": [
+   "Capcom"
+  ],
+  "publishers": [
+   "Capcom"
+  ],
+  "series": []
+ },
+ "mortal-kombat-x": {
+  "developers": [
+   "NetherRealm Studios"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": [
+   "Mortal Kombat"
+  ]
+ },
+ "mortal-shell": {
+  "developers": [
+   "Cold Symmetry"
+  ],
+  "publishers": [
+   "Playstack"
+  ],
+  "series": []
+ },
+ "moss-book-ii": {
+  "developers": [
+   "Polyarc"
+  ],
+  "publishers": [
+   "Polyarc"
+  ],
+  "series": [
+   "Moss"
+  ]
+ },
+ "my-hero-ones-justice-2": {
+  "developers": [],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": []
+ },
+ "naruto-to-boruto-shinobi-striker": {
+  "developers": [
+   "Soleil"
+  ],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": []
+ },
+ "nba-2k20": {
+  "developers": [
+   "Visual Concepts"
+  ],
+  "publishers": [
+   "2K Sports"
+  ],
+  "series": [
+   "NBA 2K"
+  ]
+ },
+ "nba-2k23": {
+  "developers": [
+   "Visual Concepts"
+  ],
+  "publishers": [
+   "Take-Two Interactive",
+   "2K"
+  ],
+  "series": [
+   "NBA 2K"
+  ]
+ },
+ "need-for-speed-hot-pursuit-remastered": {
+  "developers": [
+   "Stellar Entertainment",
+   "Criterion Games"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Need for Speed Hot Pursuit",
+   "Need for Speed"
+  ]
+ },
+ "need-for-speed-payback": {
+  "developers": [
+   "EA Gothenburg"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Need for Speed"
+  ]
+ },
+ "neva-2": {
+  "developers": [
+   "Nomada Studio"
+  ],
+  "publishers": [
+   "Devolver Digital"
+  ],
+  "series": []
+ },
+ "never-alone": {
+  "developers": [],
+  "publishers": [
+   "E-Line Media"
+  ],
+  "series": []
+ },
+ "ni-no-kuni-wrath-of-the-white-witch": {
+  "developers": [
+   "Level-5"
+  ],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": [
+   "Ni no Kuni"
+  ]
+ },
+ "nickelodeon-all-star-brawl": {
+  "developers": [],
+  "publishers": [
+   "Maximum Games"
+  ],
+  "series": []
+ },
+ "nierautomata": {
+  "developers": [],
+  "publishers": [
+   "Square Enix"
+  ],
+  "series": [
+   "Drakengard"
+  ]
+ },
+ "night-in-the-woods": {
+  "developers": [
+   "Infinite Fall"
+  ],
+  "publishers": [
+   "Finji"
+  ],
+  "series": []
+ },
+ "nights-into-dreams": {
+  "developers": [
+   "Sonic Team"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "nine-sols": {
+  "developers": [
+   "Red Candle Games"
+  ],
+  "publishers": [
+   "Red Candle Games"
+  ],
+  "series": []
+ },
+ "nioh-2": {
+  "developers": [
+   "Team Ninja"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "no-mans-sky": {
+  "developers": [
+   "Hello Games"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "Hello Games"
+  ],
+  "series": []
+ },
+ "not-a-hero": {
+  "developers": [
+   "Devolver Digital",
+   "Roll7"
+  ],
+  "publishers": [
+   "Devolver Digital"
+  ],
+  "series": []
+ },
+ "old-mans-journey": {
+  "developers": [
+   "Broken Rules"
+  ],
+  "publishers": [
+   "Broken Rules"
+  ],
+  "series": []
+ },
+ "olliolli-world": {
+  "developers": [
+   "Roll7"
+  ],
+  "publishers": [
+   "Private Division"
+  ],
+  "series": [
+   "OlliOlli"
+  ]
+ },
+ "outer-wilds": {
+  "developers": [
+   "Mobius Digital"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "outlast-2": {
+  "developers": [
+   "Red Barrels"
+  ],
+  "publishers": [
+   "Warner Bros. Games",
+   "Red Barrels"
+  ],
+  "series": [
+   "Outlast"
+  ]
+ },
+ "pac-man-world-re-pac": {
+  "developers": [
+   "Now Production"
+  ],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": [
+   "Pac-Man World"
+  ]
+ },
+ "pacific-drive": {
+  "developers": [
+   "Ironwood Studios"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "persona-5-strikers": {
+  "developers": [
+   "Omega Force"
+  ],
+  "publishers": [],
+  "series": [
+   "Persona",
+   "Dynasty Warriors",
+   "Persona 5"
+  ]
+ },
+ "pga-tour-2k21": {
+  "developers": [],
+  "publishers": [],
+  "series": [
+   "PGA Tour 2K"
+  ]
+ },
+ "predator-hunting-grounds": {
+  "developers": [
+   "IllFonic"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "psychonauts-2": {
+  "developers": [
+   "Double Fine"
+  ],
+  "publishers": [
+   "Xbox Game Studios"
+  ],
+  "series": [
+   "Psychonauts"
+  ]
+ },
+ "rad-rodgers": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "rayman-legends": {
+  "developers": [],
+  "publishers": [],
+  "series": [
+   "Rayman"
+  ]
+ },
+ "red-dead-redemption-2": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "remnant-from-the-ashes": {
+  "developers": [
+   "Gunfire Games"
+  ],
+  "publishers": [
+   "Arc Games"
+  ],
+  "series": []
+ },
+ "resident-evil-7-biohazard": {
+  "developers": [
+   "Capcom"
+  ],
+  "publishers": [
+   "Capcom"
+  ],
+  "series": []
+ },
+ "resident-evil-village": {
+  "developers": [
+   "Capcom"
+  ],
+  "publishers": [
+   "Capcom"
+  ],
+  "series": []
+ },
+ "reverse-4": {
+  "developers": [
+   "Capcom"
+  ],
+  "publishers": [
+   "Capcom"
+  ],
+  "series": []
+ },
+ "rez-infinite": {
+  "developers": [
+   "Resonair",
+   "Monstars"
+  ],
+  "publishers": [
+   "Enhance"
+  ],
+  "series": [
+   "Rez"
+  ]
+ },
+ "rime": {
+  "developers": [
+   "Tantalus Media"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "rise-of-the-tomb-raider": {
+  "developers": [
+   "Crystal Dynamics",
+   "Eidos Montreal"
+  ],
+  "publishers": [
+   "Square Enix",
+   "Feral Interactive"
+  ],
+  "series": [
+   "Tomb Raider",
+   "Tomb Raider: Survivor Trilogy"
+  ]
+ },
+ "robocop-rogue-city": {
+  "developers": [],
+  "publishers": [
+   "Nacon"
+  ],
+  "series": []
+ },
+ "runestone-keeper": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "sable": {
+  "developers": [
+   "Shedworks"
+  ],
+  "publishers": [
+   "Raw Fury"
+  ],
+  "series": []
+ },
+ "sackboy-a-big-adventure-2": {
+  "developers": [
+   "Sumo Digital"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": [
+   "LittleBigPlanet"
+  ]
+ },
+ "saints-row-the-third": {
+  "developers": [],
+  "publishers": [
+   "THQ"
+  ],
+  "series": []
+ },
+ "salt-and-sanctuary": {
+  "developers": [
+   "Ska Studios"
+  ],
+  "publishers": [
+   "Ska Studios"
+  ],
+  "series": []
+ },
+ "senuas-saga-hellblade-ii": {
+  "developers": [
+   "Ninja Theory"
+  ],
+  "publishers": [
+   "Xbox Game Studios"
+  ],
+  "series": []
+ },
+ "shadow-of-mordor": {
+  "developers": [
+   "Feral Interactive",
+   "Monolith Productions"
+  ],
+  "publishers": [
+   "Feral Interactive",
+   "Warner Bros. Games"
+  ],
+  "series": []
+ },
+ "shadow-of-the-tomb-raider": {
+  "developers": [
+   "Crystal Dynamics",
+   "Eidos Montreal",
+   "Nixxes Software"
+  ],
+  "publishers": [
+   "Square Enix"
+  ],
+  "series": [
+   "Tomb Raider",
+   "Tomb Raider: Survivor Trilogy"
+  ]
+ },
+ "shinobi-art-of-vengeance": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "sifu": {
+  "developers": [
+   "Sloclap"
+  ],
+  "publishers": [
+   "Sloclap"
+  ],
+  "series": []
+ },
+ "signalis": {
+  "developers": [
+   "rose-engine"
+  ],
+  "publishers": [
+   "Playism",
+   "Humble Games"
+  ],
+  "series": []
+ },
+ "silent-hill-2-remake": {
+  "developers": [
+   "Bloober Team"
+  ],
+  "publishers": [
+   "Konami"
+  ],
+  "series": [
+   "Silent Hill"
+  ]
+ },
+ "silent-hill-f": {
+  "developers": [
+   "NeoBards Entertainment"
+  ],
+  "publishers": [
+   "Konami Digital Entertainment"
+  ],
+  "series": [
+   "Silent Hill"
+  ]
+ },
+ "sniper-elite-4": {
+  "developers": [
+   "Rebellion Developments"
+  ],
+  "publishers": [
+   "Rebellion Developments"
+  ],
+  "series": [
+   "Sniper Elite"
+  ]
+ },
+ "soma": {
+  "developers": [
+   "Frictional Games"
+  ],
+  "publishers": [
+   "Frictional Games"
+  ],
+  "series": []
+ },
+ "sonic-colors-ultimate": {
+  "developers": [
+   "Blind Squirrel Entertainment"
+  ],
+  "publishers": [],
+  "series": [
+   "Sonic the Hedgehog"
+  ]
+ },
+ "sonic-forces": {
+  "developers": [
+   "Sonic Team"
+  ],
+  "publishers": [
+   "Softclub"
+  ],
+  "series": [
+   "Sonic the Hedgehog"
+  ]
+ },
+ "spongebob-squarepants-the-cosmic-shake": {
+  "developers": [
+   "Purple Lamp"
+  ],
+  "publishers": [
+   "THQ Nordic"
+  ],
+  "series": [
+   "SpongeBob SquarePants video games"
+  ]
+ },
+ "star-wars-battlefront-2": {
+  "developers": [
+   "DICE",
+   "Criterion Games",
+   "Motive Studio"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Star Wars: Battlefront"
+  ]
+ },
+ "star-wars-battlefront-3": {
+  "developers": [
+   "Pandemic Studios"
+  ],
+  "publishers": [
+   "Lucasfilm Games"
+  ],
+  "series": [
+   "Star Wars: Battlefront"
+  ]
+ },
+ "star-wars-jedi-survivor": {
+  "developers": [
+   "Respawn Entertainment"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Star Wars video game",
+   "Star Wars Jedi"
+  ]
+ },
+ "star-wars-squadrons": {
+  "developers": [
+   "Motive Studio"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": []
+ },
+ "stardew-valley": {
+  "developers": [
+   "Eric Barone",
+   "ConcernedApe LLC"
+  ],
+  "publishers": [
+   "ConcernedApe LLC"
+  ],
+  "series": []
+ },
+ "steep": {
+  "developers": [
+   "Ubisoft Annecy"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "stranded-deep": {
+  "developers": [
+   "Beam Team Games"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "stray-2": {
+  "developers": [
+   "BlueTwelve Studio"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "street-fighter-v": {
+  "developers": [
+   "Capcom",
+   "Dimps"
+  ],
+  "publishers": [
+   "Capcom"
+  ],
+  "series": []
+ },
+ "streets-of-rage-4": {
+  "developers": [
+   "Guard Crush Games"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "subnautica-below-zero": {
+  "developers": [
+   "Unknown Worlds Entertainment"
+  ],
+  "publishers": [
+   "Unknown Worlds Entertainment"
+  ],
+  "series": [
+   "Subnautica"
+  ]
+ },
+ "suicide-squad-kill-the-justice-league": {
+  "developers": [
+   "Rocksteady Studios"
+  ],
+  "publishers": [
+   "Warner Bros. Games"
+  ],
+  "series": []
+ },
+ "superhot": {
+  "developers": [
+   "Superhot Team"
+  ],
+  "publishers": [
+   "Superhot Team"
+  ],
+  "series": []
+ },
+ "tails-of-iron": {
+  "developers": [],
+  "publishers": [
+   "United Label"
+  ],
+  "series": []
+ },
+ "tales-from-the-borderlands": {
+  "developers": [
+   "Telltale Games"
+  ],
+  "publishers": [
+   "Telltale Games"
+  ],
+  "series": []
+ },
+ "team-sonic-racing": {
+  "developers": [
+   "Sumo Digital"
+  ],
+  "publishers": [],
+  "series": [
+   "Sonic the Hedgehog"
+  ]
+ },
+ "teenage-mutant-ninja-turtles-the-cowabunga-collect": {
+  "developers": [],
+  "publishers": [
+   "Konami",
+   "Nickelodeon",
+   "Konami Digital Entertainment, Inc."
+  ],
+  "series": []
+ },
+ "the-alters": {
+  "developers": [
+   "11 Bit Studios"
+  ],
+  "publishers": [
+   "11 Bit Studios"
+  ],
+  "series": []
+ },
+ "the-artful-escape": {
+  "developers": [
+   "Beethoven and Dinosaur"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "the-dark-pictures-anthology-house-of-ashes": {
+  "developers": [],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": []
+ },
+ "the-dark-pictures-anthology-little-hope": {
+  "developers": [],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": []
+ },
+ "the-dark-pictures-anthology-the-devil-in-me": {
+  "developers": [],
+  "publishers": [
+   "Bandai Namco Entertainment"
+  ],
+  "series": []
+ },
+ "the-evil-within": {
+  "developers": [
+   "Tango Gameworks"
+  ],
+  "publishers": [
+   "Bethesda Softworks"
+  ],
+  "series": [
+   "The Evil Within"
+  ]
+ },
+ "the-last-faith": {
+  "developers": [],
+  "publishers": [
+   "Playstack"
+  ],
+  "series": []
+ },
+ "the-last-of-us-part-2": {
+  "developers": [
+   "Naughty Dog"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "the-pathless": {
+  "developers": [
+   "Giant Squid"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "the-persistence": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "the-plucky-squire": {
+  "developers": [],
+  "publishers": [
+   "Devolver Digital"
+  ],
+  "series": []
+ },
+ "the-room-vr-a-dark-matter": {
+  "developers": [
+   "Fireproof Studios"
+  ],
+  "publishers": [
+   "Fireproof Studios"
+  ],
+  "series": [
+   "The Room"
+  ]
+ },
+ "the-texas-chain-saw-massacre": {
+  "developers": [
+   "Sumo Nottingham"
+  ],
+  "publishers": [
+   "Gun Interactive"
+  ],
+  "series": []
+ },
+ "the-unfinished-swan": {
+  "developers": [
+   "Santa Monica Studio",
+   "Giant Sparrow"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "the-vanishing-of-ethan-carter": {
+  "developers": [
+   "The Astronauts"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "the-walking-dead": {
+  "developers": [
+   "Telltale Games"
+  ],
+  "publishers": [
+   "Telltale Games"
+  ],
+  "series": [
+   "The Walking Dead"
+  ]
+ },
+ "the-witcher-3-wild-hunt": {
+  "developers": [
+   "CD Projekt RED"
+  ],
+  "publishers": [
+   "Namco",
+   "cdp.pl",
+   "CD Projekt RED",
+   "Warner Bros. Games"
+  ],
+  "series": [
+   "The Witcher"
+  ]
+ },
+ "the-witness": {
+  "developers": [
+   "Thekla"
+  ],
+  "publishers": [
+   "Thekla"
+  ],
+  "series": []
+ },
+ "the-wolf-among-us": {
+  "developers": [
+   "LCG Entertainment, Inc."
+  ],
+  "publishers": [
+   "Telltale Games"
+  ],
+  "series": [
+   "The Wolf Among Us"
+  ]
+ },
+ "this-war-of-mine-the-little-ones": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "thumper": {
+  "developers": [
+   "Drool"
+  ],
+  "publishers": [
+   "Drool"
+  ],
+  "series": []
+ },
+ "titan-souls": {
+  "developers": [
+   "Acid Nerve"
+  ],
+  "publishers": [
+   "Devolver Digital"
+  ],
+  "series": []
+ },
+ "titanfall-2": {
+  "developers": [
+   "Respawn Entertainment"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": [
+   "Titanfall"
+  ]
+ },
+ "tom-clancys-the-division": {
+  "developers": [
+   "Red Storm Entertainment",
+   "Ubisoft Reflections",
+   "Ubisoft Annecy"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "tomb-raider": {
+  "developers": [
+   "Crystal Dynamics",
+   "Eidos Montreal",
+   "Nixxes Software"
+  ],
+  "publishers": [
+   "Square Enix",
+   "Eidos Interactive"
+  ],
+  "series": [
+   "Tomb Raider",
+   "Tomb Raider: Survivor Trilogy"
+  ]
+ },
+ "tomb-raider-i-iii-remastered": {
+  "developers": [
+   "Aspyr"
+  ],
+  "publishers": [
+   "Aspyr"
+  ],
+  "series": [
+   "Tomb Raider"
+  ]
+ },
+ "trackmania-turbo": {
+  "developers": [
+   "Nadeo"
+  ],
+  "publishers": [],
+  "series": [
+   "TrackMania"
+  ]
+ },
+ "trek-to-yomi": {
+  "developers": [
+   "Flying Wild Hog"
+  ],
+  "publishers": [
+   "Devolver Digital"
+  ],
+  "series": []
+ },
+ "trials-fusion": {
+  "developers": [
+   "RedLynx"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "tunic": {
+  "developers": [
+   "Isometricorp Games"
+  ],
+  "publishers": [
+   "Finji"
+  ],
+  "series": []
+ },
+ "ultros": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "uncanny-valley": {
+  "developers": [
+   "Cowardly Creations"
+  ],
+  "publishers": [
+   "Cowardly Creations",
+   "Digerati"
+  ],
+  "series": []
+ },
+ "uncharted-legacy-of-thieves-collection": {
+  "developers": [
+   "Naughty Dog",
+   "Iron Galaxy Studios"
+  ],
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "PlayStation PC LLC"
+  ],
+  "series": [
+   "Uncharted"
+  ]
+ },
+ "unravel": {
+  "developers": [
+   "Coldwood Interactive"
+  ],
+  "publishers": [
+   "Electronic Arts"
+  ],
+  "series": []
+ },
+ "until-dawn-2": {
+  "developers": [],
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "series": []
+ },
+ "until-then": {
+  "developers": [],
+  "publishers": [
+   "Modus Games"
+  ],
+  "series": []
+ },
+ "until-you-fall": {
+  "developers": [
+   "Schell Games"
+  ],
+  "publishers": [
+   "Schell Games"
+  ],
+  "series": []
+ },
+ "untitled-goose-game": {
+  "developers": [
+   "House House"
+  ],
+  "publishers": [
+   "Panic"
+  ],
+  "series": []
+ },
+ "v-i-e-w-f-i-n-d-e-r": {
+  "developers": [],
+  "publishers": [
+   "Thunderful"
+  ],
+  "series": []
+ },
+ "valiant-hearts-the-great-war": {
+  "developers": [],
+  "publishers": [],
+  "series": [
+   "Valiant Hearts"
+  ]
+ },
+ "vampyr": {
+  "developers": [
+   "Don’t Nod"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "vanquish": {
+  "developers": [],
+  "publishers": [],
+  "series": []
+ },
+ "visage": {
+  "developers": [
+   "SadSquare Studio"
+  ],
+  "publishers": [
+   "SadSquare Studio"
+  ],
+  "series": []
+ },
+ "watch-dogs": {
+  "developers": [],
+  "publishers": [],
+  "series": [
+   "Watch Dogs"
+  ]
+ },
+ "what-remains-of-edith-finch": {
+  "developers": [
+   "Giant Sparrow"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "wobbly-life": {
+  "developers": [
+   "RubberBandGames"
+  ],
+  "publishers": [
+   "Curve Games",
+   "RubberBandGames"
+  ],
+  "series": []
+ },
+ "wolfenstein-2-the-new-colossus": {
+  "developers": [],
+  "publishers": [
+   "Bethesda Softworks"
+  ],
+  "series": [
+   "Wolfenstein"
+  ]
+ },
+ "worms-battlegrounds": {
+  "developers": [
+   "Team17"
+  ],
+  "publishers": [],
+  "series": []
+ },
+ "worms-rumble": {
+  "developers": [
+   "Team17"
+  ],
+  "publishers": [
+   "Team17"
+  ],
+  "series": []
+ },
+ "wuchang-fallen-feathers": {
+  "developers": [
+   "Leenzee"
+  ],
+  "publishers": [
+   "505 Games",
+   "Bilibili"
+  ],
+  "series": []
+ },
+ "xcom-2": {
+  "developers": [
+   "Feral Interactive",
+   "Firaxis Games"
+  ],
+  "publishers": [
+   "2K"
+  ],
+  "series": [
+   "X-COM"
+  ]
+ },
+ "yakuza-7": {
+  "developers": [
+   "Ryu ga Gotoku Studio"
+  ],
+  "publishers": [],
+  "series": [
+   "Yakuza"
+  ]
+ },
+ "yakuza-kiwami": {
+  "developers": [],
+  "publishers": [],
+  "series": [
+   "Yakuza"
+  ]
+ },
+ "youtubers-life-2": {
+  "developers": [
+   "U-Play Online"
+  ],
+  "publishers": [
+   "Raiser Games"
+  ],
+  "series": [
+   "Youtubers Life"
+  ]
+ },
+ "zombie-army-dead-war-4": {
+  "developers": [
+   "Rebellion Developments"
+  ],
+  "publishers": [
+   "Rebellion Developments"
+  ],
+  "series": [
+   "Sniper Elite"
+  ]
+ }
+}
