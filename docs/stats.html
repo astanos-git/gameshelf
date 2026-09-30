@@ -144,6 +144,31 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
 .tbl td.num, .tbl th:not(:first-child) { text-align: right; }
 .tbl tr.sel td { background: var(--accent-soft); font-weight: 600; }
 .tbl .up { color: var(--muted); } .tbl .down { color: var(--accent); font-weight: 600; }
+.genres.wide li { grid-template-columns: minmax(70px, 110px) 1fr 104px; }
+.big b.word { font: 600 18px var(--body); }
+.tbl th, .tbl td { padding-inline: 6px; }
+.jump { display: flex; gap: 14px; font-size: 13.5px; flex-wrap: wrap; }
+.jump a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.part { font-size: 30px; line-height: 1; margin-top: 10px; padding-top: 12px; border-top: 2px solid var(--fg); scroll-margin-top: 12px; }
+.head { scroll-margin-top: 12px; }
+.chart .line { fill: none; stroke: var(--bar); stroke-width: 2; }
+.chart .end, .chart .hov { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
+.chart .cross { stroke: var(--muted); stroke-dasharray: 3 3; }
+.chart .hitarea { fill: transparent; }
+.chart .yearband { fill: var(--accent-soft); }
+.chart .tm-group { fill: var(--grid); }
+.chart .tm-tile { fill: var(--bar); cursor: pointer; }
+.chart .tm-tile.more { fill: var(--muted); }
+.chart .tm-tile:hover { fill: var(--accent); fill-opacity: 1 !important; }
+.chart text.tm-glabel { fill: var(--fg); font: 600 11px var(--body); }
+.chart text.tm-label { fill: #fff; font: 600 11px var(--body); pointer-events: none; }
+.chart text.tm-sub { fill: #fff; font: 10px var(--mono); opacity: .85; pointer-events: none; }
+.series { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.series li { display: grid; gap: 3px; border-bottom: 1px solid var(--grid); padding-bottom: 8px; }
+.sr-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.sr-bar { display: flex; gap: 8px; align-items: center; }
+.sr-bar .bar { flex: 0 1 200px; height: 6px; background: var(--grid); border-radius: 3px; overflow: hidden; }
+.sr-bar .bar i { display: block; height: 100%; background: var(--bar); }
 .empty { color: var(--muted); font-size: 14px; padding: 16px 0; margin: 0; }
 </style>
 
@@ -152,8 +177,9 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
   <p class="notice" id="notice" hidden></p>
 
   <div class="years" id="years" role="group" aria-label="Choose a year"></div>
+  <nav class="jump" aria-label="Jump to"><a href="#overview">Overview</a><a href="#trophies">Trophies</a><a href="#habits">Habits</a><a href="#collection">Collection</a></nav>
 
-  <header class="head">
+  <header class="head" id="overview">
     <h1 id="title">All time</h1>
     <p class="note" id="subtitle"></p>
   </header>
@@ -165,6 +191,8 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
     <div class="top"><h2>Most hours played</h2><ol id="topHours"></ol></div>
   </section>
 
+  <h1 class="part" id="trophies">Trophies</h1>
+
   <section class="top">
     <h2>Rarest trophies</h2>
     <ol id="rareList"></ol>
@@ -174,6 +202,26 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
     <div class="panel-head"><h2 id="tlTitle">Trophies by year</h2><span class="note" id="tlNote"></span></div>
     <div class="chart" id="timeline"></div>
   </section>
+
+  <section class="panel"><div class="panel-head"><h2>Milestones</h2></div><div id="milestones"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>Trophy level</h2><span class="note" id="lvlNote"></span></div><div class="chart" id="levelChart"></div><p class="note" id="lvlProj"></p></section>
+
+  <section class="panel"><div class="panel-head"><h2>Rarity profile</h2></div><div id="rarityProf"></div></section>
+
+  <h1 class="part" id="habits">Habits</h1>
+
+  <section class="panel"><div class="panel-head"><h2>When you play</h2></div><div id="when"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>Your pace</h2><span class="note">vs HowLongToBeat</span></div><div id="pace"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>New releases or catching up?</h2></div><div id="releaseLag"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>Finish rate</h2></div><div id="finishRate"></div></section>
+
+  <h1 class="part" id="collection">Collection</h1>
+
+  <section class="panel"><div class="panel-head"><h2>Where your hours went</h2><span class="note">Grouped by main genre</span></div><div class="chart" id="treemap"></div></section>
 
   <section class="panel">
     <div class="panel-head">
@@ -186,15 +234,13 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
     <p class="note">A game with several genres counts toward each of them. Genres come from RAWG.</p>
   </section>
 
-  <section class="panel"><div class="panel-head"><h2>When you play</h2></div><div id="when"></div></section>
+  <section class="panel"><div class="panel-head"><h2>Series</h2><span class="note">All time · from Wikidata</span></div><div id="seriesList"></div></section>
 
-  <section class="panel"><div class="panel-head"><h2>Milestones</h2></div><div id="milestones"></div></section>
+  <section class="panel"><div class="panel-head"><h2>Favourite studios</h2><div class="seg" role="group" aria-label="Show"><button id="sDev" aria-pressed="true">Developers</button><button id="sPub" aria-pressed="false">Publishers</button></div></div><div id="studios"></div></section>
 
   <section class="panel"><div class="panel-head"><h2>Critics vs you</h2><span class="note">Metacritic against hours played</span></div>
     <div class="chart" id="scatter"></div><div class="two" id="criticLists"></div>
     <h3>Your ratings</h3><div id="ratingsCmp"></div></section>
-
-  <section class="panel"><div class="panel-head"><h2>Your pace</h2><span class="note">vs HowLongToBeat</span></div><div id="pace"></div></section>
 
   <section class="panel"><div class="panel-head"><h2>Backlog</h2><span class="note">Right now, and year by year</span></div><div id="backlog"></div></section>
 
@@ -509,7 +555,196 @@ function backlog(y) {
     <p class="note">Bought: PS4/PS5 digital purchases. Finished: platinum, 100%, or marked Beaten. Backlog shows bought minus finished.</p>`;
 }
 
-function extras(y) { whenYouPlay(y); milestones(y); critics(y); pace(y); backlog(y); }
+function extras(y) { whenYouPlay(y); milestones(y); critics(y); pace(y); backlog(y); extras2(y); }
+
+/* ---------- 3. Trophy level history (PSN's level formula since 2020) ---------- */
+const POINTS = [15, 30, 90, 300];   // bronze, silver, gold, platinum
+const LEVEL_STEPS = [[100, 60], [200, 90], [300, 450], [400, 900], [500, 1350], [600, 1800], [700, 2250], [800, 2700], [900, 3150], [999, 3600]];
+function levelFromPoints(p) {
+  let level = 1;
+  for (const [upTo, cost] of LEVEL_STEPS) {
+    const n = Math.min(upTo - level, Math.floor(p / cost));
+    level += n; p -= n * cost;
+    if (level < upTo) return level + p / cost;
+  }
+  return 999;
+}
+function pointsForLevel(target) {
+  let level = 1, p = 0;
+  for (const [upTo, cost] of LEVEL_STEPS) { const n = Math.max(0, Math.min(upTo, target) - level); p += n * cost; level += n; if (level >= target) break; }
+  return p;
+}
+function levelHistory(y) {
+  const byMonth = {};
+  for (const g of DATA.games) for (const [m, t] of Object.entries(g.months || {})) byMonth[m] = (byMonth[m] || 0) + t.reduce((a, v, i) => a + v * POINTS[i], 0);
+  const months = Object.keys(byMonth).sort();
+  const el = $("levelChart");
+  if (!months.length) { el.innerHTML = `<p class="empty">Appears after the next refresh.</p>`; $("lvlProj").textContent = ""; return; }
+  // continuous month range
+  const series = []; let [yy, mm] = months[0].split("-").map(Number); const [ly, lm] = months[months.length - 1].split("-").map(Number); let pts = 0;
+  while (yy < ly || (yy === ly && mm <= lm)) { const k = `${yy}-${String(mm).padStart(2, "0")}`; pts += byMonth[k] || 0; series.push({ k, pts, lvl: levelFromPoints(pts) }); if (++mm > 12) { mm = 1; yy++; } }
+  const last = series[series.length - 1], profile = DATA.profile?.trophy_level;
+  $("lvlNote").textContent = `Level ${Math.floor(last.lvl)} (${Math.round((last.lvl % 1) * 100)}%)`;
+  const W = Math.max(300, Math.round(el.clientWidth || 640)), H = W < 500 ? 200 : 230, L = 40, R = 10, T = 10, B = 26, iw = W - L - R, ih = H - T - B;
+  const maxL = Math.ceil(last.lvl / 50) * 50, sx = i => L + (i / Math.max(1, series.length - 1)) * iw, sy = v => T + ih - (v / maxL) * ih;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Trophy level over time">`;
+  for (let v = 0; v <= maxL; v += maxL > 200 ? 100 : 50) s += `<line class="gridline" x1="${L}" x2="${W - R}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${L - 6}" y="${sy(v) + 4}" text-anchor="end">${v}</text>`;
+  const years = [...new Set(series.map(p => p.k.slice(0, 4)))], every = Math.ceil(years.length / Math.floor(iw / 44));
+  years.forEach((yr, i) => { if (i % every) return; const idx = series.findIndex(p => p.k.startsWith(yr)); s += `<text x="${sx(idx)}" y="${H - 8}" text-anchor="middle">${yr}</text>`; });
+  if (y !== "all") { const a = series.findIndex(p => p.k.startsWith(y)), b = series.map(p => p.k.slice(0, 4)).lastIndexOf(y);
+    if (a >= 0) s += `<rect class="yearband" x="${sx(a)}" y="${T}" width="${Math.max(2, sx(b) - sx(a))}" height="${ih}"/>`; }
+  s += `<path class="line" d="${series.map((p, i) => `${i ? "L" : "M"}${sx(i).toFixed(1)},${sy(p.lvl).toFixed(1)}`).join("")}"/>`;
+  s += `<circle class="end" cx="${sx(series.length - 1)}" cy="${sy(last.lvl)}" r="4"/><line class="cross" x1="0" x2="0" y1="${T}" y2="${T + ih}" hidden/><circle class="hov" r="4" hidden/>`;
+  s += `<line class="baseline" x1="${L}" x2="${W - R}" y1="${T + ih}" y2="${T + ih}"/><rect class="hitarea" x="${L}" y="${T}" width="${iw}" height="${ih}"/></svg><div class="tip" hidden></div>`;
+  el.innerHTML = s;
+  const svg = el.querySelector("svg"), tip = el.querySelector(".tip"), cross = svg.querySelector(".cross"), hov = svg.querySelector(".hov");
+  const move = e => { const box = svg.getBoundingClientRect(), k = box.width / W, x = (e.clientX - box.left) / k;
+    const i = Math.max(0, Math.min(series.length - 1, Math.round(((x - L) / iw) * (series.length - 1)))), p = series[i];
+    cross.setAttribute("x1", sx(i)); cross.setAttribute("x2", sx(i)); cross.hidden = false; hov.setAttribute("cx", sx(i)); hov.setAttribute("cy", sy(p.lvl)); hov.hidden = false;
+    const [py, pm] = p.k.split("-"); tip.innerHTML = `<b>${MONTHS[+pm - 1]} ${py}</b> · level ${Math.floor(p.lvl)}`;
+    tip.style.left = Math.min(Math.max(sx(i) * k, 70), box.width - 70) + "px"; tip.style.top = (sy(p.lvl) * k) + "px"; tip.hidden = false; };
+  svg.addEventListener("pointermove", move); svg.addEventListener("pointerleave", () => { tip.hidden = cross.hidden = hov.hidden = true; });
+  // projection from the last 12 months
+  const recent = series.slice(-12), perMonth = (recent[recent.length - 1].pts - (series[series.length - 13]?.pts ?? 0)) / recent.length;
+  const target = Math.floor(last.lvl / 50) * 50 + 50, need = pointsForLevel(target) - last.pts, monthsNeeded = perMonth > 0 ? Math.ceil(need / perMonth) : null;
+  const when = monthsNeeded ? new Date(new Date().getFullYear(), new Date().getMonth() + monthsNeeded, 1).toLocaleDateString(undefined, { month: "long", year: "numeric" }) : null;
+  const gained = y === "all" ? "" : (() => { const a = series.find(p => p.k.startsWith(y)), b = [...series].reverse().find(p => p.k.startsWith(y)), before = series[series.indexOf(a) - 1];
+    return a ? `In ${y} you went from level ${Math.floor(before ? before.lvl : 1)} to ${Math.floor(b.lvl)}. ` : ""; })();
+  $("lvlProj").textContent = gained + (when ? `At your pace over the last 12 months (${fmt(perMonth)} points a month), you'll reach level ${target} around ${when}.` : "")
+    + (profile && Math.abs(profile - Math.floor(last.lvl)) > 1 ? ` Rebuilt from your trophy dates; PSN shows level ${profile}.` : " Rebuilt from your trophy dates with PSN's current level formula.");
+}
+
+/* ---------- 4. Rarity profile ---------- */
+function rarityProfile(y) {
+  const r = ((DATA.insights || {}).rarity || {})[y === "all" ? "all" : y], all = ((DATA.insights || {}).rarity || {}).all;
+  if (!r) { $("rarityProf").innerHTML = `<p class="empty">${DATA.insights?.rarity ? "No trophies earned in this period." : "Appears after the next refresh."}</p>`; return; }
+  const labels = ["Ultra rare", "Very rare", "Rare", "Common"], total = sum(r.buckets), max = Math.max(...r.buckets);
+  const vs = y !== "all" && all ? ` (all time: ${all.score})` : "";
+  $("rarityProf").innerHTML = `<p class="big"><b>${r.score}</b> hunter score${vs}</p>
+    <p class="note">0 means trophies everyone gets, 50 means trophies 10% of players have, 100 means 1% or rarer. Your score is the average over your trophies. Ultra rare: under 5% of players · very rare: 5–15% · rare: 15–50% · common: 50% and more.</p>
+    <ul class="genres wide">${r.buckets.map((v, i) => `<li><span class="gl">${labels[i]}</span><span class="track"><span class="fill" style="width:${(v / max) * 100}%;display:block"></span></span><span class="v">${v} · ${Math.round(100 * v / total)}%</span></li>`).join("")}</ul>`;
+}
+
+/* ---------- 5. New releases or catching up? ---------- */
+function releaseLag(y) {
+  const rows = DATA.games.map(x => { const st = startedAt(x); if (!st || !x.released) return null;
+    const days = Math.max(0, (new Date(st) - new Date(x.released)) / 864e5); return { x, st, days }; })
+    .filter(r => r && (y === "all" || yearOf(r.st) === y));
+  if (rows.length < 3) { $("releaseLag").innerHTML = `<p class="empty">Not enough games with a release date started in this period.</p>`; return; }
+  const B = [["First month", d => d <= 31], ["First year", d => d > 31 && d <= 365], ["1–3 years", d => d > 365 && d <= 1095], ["3+ years", d => d > 1095]];
+  const counts = B.map(([, f]) => rows.filter(r => f(r.days)).length), max = Math.max(...counts);
+  const med = median(rows.map(r => r.days)), medTxt = med < 60 ? `${Math.round(med)} days` : med < 730 ? `${Math.round(med / 30.4)} months` : `${(med / 365).toFixed(1)} years`;
+  const share = Math.round(100 * counts[0] / rows.length);
+  const verdict = share >= 40 ? "mostly a day-one player" : med > 1095 ? "mostly catching up on older games" : "a mix of new releases and catching up";
+  let trend = "";
+  if (y === "all") {
+    const by = {}; for (const r of rows) (by[yearOf(r.st)] ||= []).push(r.days);
+    const yrs = Object.keys(by).sort().reverse().filter(k => by[k].length >= 3).slice(0, 8);
+    trend = `<div class="tblwrap"><table class="tbl"><thead><tr><th>Started in</th><th>Games</th><th>Median delay</th><th>At launch</th></tr></thead><tbody>${yrs.map(k => { const m = median(by[k]);
+      return `<tr><td>${k}</td><td class="num">${by[k].length}</td><td class="num">${m < 60 ? Math.round(m) + " d" : m < 730 ? Math.round(m / 30.4) + " mo" : (m / 365).toFixed(1) + " y"}</td><td class="num">${Math.round(100 * by[k].filter(d => d <= 31).length / by[k].length)}%</td></tr>`; }).join("")}</tbody></table></div>`;
+  }
+  $("releaseLag").innerHTML = `<p class="big">You're <b class="word">${verdict}</b>.</p>
+    <p class="note">Median delay between a game's release and when you started it: ${medTxt}, over ${rows.length} games. Release dates from RAWG; "started" is your first playtime or trophy.</p>
+    <ul class="genres wide">${B.map(([l], i) => `<li><span class="gl">${l}</span><span class="track"><span class="fill" style="width:${(counts[i] / max) * 100}%;display:block"></span></span><span class="v">${counts[i]}</span></li>`).join("")}</ul>${trend}`;
+}
+
+/* ---------- 6. Finish rate ---------- */
+function finishRate(y) {
+  const started = DATA.games.filter(x => { const st = startedAt(x); return st && (y === "all" || yearOf(st) === y); });
+  if (started.length < 3) { $("finishRate").innerHTML = `<p class="empty">Not enough games started in this period.</p>`; return; }
+  const done = x => !!finishedAt(x), dropped = x => { const f = flagOf(x); return f && f.flag === "dropped" && !(x.last_activity && new Date(x.last_activity) > new Date(f.at)); };
+  const nDone = started.filter(done).length, nDrop = started.filter(dropped).length;
+  const byG = {};
+  for (const x of started) for (const g of x.genres || []) { const e = byG[g] ||= [0, 0]; e[1]++; if (done(x)) e[0]++; }
+  const gRows = Object.entries(byG).filter(([, [, n]]) => n >= 3).sort((a, b) => b[1][0] / b[1][1] - a[1][0] / a[1][1]).slice(0, 8);
+  $("finishRate").innerHTML = `<p class="big"><b>${Math.round(100 * nDone / started.length)}%</b> of the games you started${y === "all" ? "" : ` in ${y}`} are finished.</p>
+    <p class="note">${nDone} finished, ${nDrop} dropped, ${started.length - nDone - nDrop} still open, out of ${started.length} started. Finished means platinum, 100% or marked Beaten.</p>
+    <ul class="genres wide">${gRows.map(([g, [d, n]]) => `<li><span class="gl">${esc(g)}</span><span class="track"><span class="fill" style="width:${(100 * d / n)}%;display:block"></span></span><span class="v">${Math.round(100 * d / n)}% · ${d}/${n}</span></li>`).join("")}</ul>`;
+}
+
+/* ---------- 7. Where your hours went (treemap) ---------- */
+function squarify(items, x, y, w, h) {   // items: [{v}] sorted desc -> adds {x,y,w,h}
+  const out = [], total = items.reduce((a, b) => a + b.v, 0); if (!total) return out;
+  const scale = (w * h) / total; let rest = items.map(i => ({ ...i, a: i.v * scale }));
+  while (rest.length) {
+    const short = Math.min(w, h); let row = [rest[0]], worst = Infinity;
+    const ratio = r => { const s = r.reduce((a, b) => a + b.a, 0), mx = Math.max(...r.map(i => i.a)), mn = Math.min(...r.map(i => i.a)); return Math.max((short * short * mx) / (s * s), (s * s) / (short * short * mn)); };
+    worst = ratio(row);
+    for (let i = 1; i < rest.length; i++) { const next = [...row, rest[i]], r = ratio(next); if (r > worst) break; row = next; worst = r; }
+    const s = row.reduce((a, b) => a + b.a, 0), thick = s / short; let off = 0;
+    for (const it of row) { const len = it.a / thick;
+      out.push(w >= h ? { ...it, x, y: y + off, w: thick, h: len } : { ...it, x: x + off, y, w: len, h: thick }); off += len; }
+    if (w >= h) { x += thick; w -= thick; } else { y += thick; h -= thick; }
+    rest = rest.slice(row.length);
+  }
+  return out;
+}
+function treemap(y) {
+  const el = $("treemap"), games = DATA.games.map(x => ({ x, v: hoursIn(x, y) })).filter(g => g.v >= 0.5);
+  if (!games.length) { el.innerHTML = `<p class="empty">No PS4/PS5 playtime in this period.</p>`; return; }
+  const total = sum(games.map(g => g.v)), byGenre = {};
+  for (const g of games) (byGenre[(g.x.genres || [])[0] || "Other"] ||= []).push(g);
+  let groups = Object.entries(byGenre).map(([name, gs]) => ({ name, gs: gs.sort((a, b) => b.v - a.v), v: sum(gs.map(g => g.v)) })).sort((a, b) => b.v - a.v);
+  if (groups.length > 8) { const rest = groups.slice(7); groups = [...groups.slice(0, 7), { name: "Other genres", gs: rest.flatMap(g => g.gs).sort((a, b) => b.v - a.v), v: sum(rest.map(g => g.v)) }]; }
+  const W = Math.max(300, Math.round(el.clientWidth || 640)), H = W < 500 ? 420 : 380;
+  const boxes = squarify(groups, 0, 0, W, H);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Hours by game, grouped by genre">`, tiles = [];
+  for (const b of boxes) {
+    const pad = 2, head = b.h > 34 && b.w > 60 ? 16 : 0;
+    s += `<rect class="tm-group" x="${b.x + 1}" y="${b.y + 1}" width="${Math.max(0, b.w - 2)}" height="${Math.max(0, b.h - 2)}"/>`;
+    if (head) s += `<text class="tm-glabel" x="${b.x + 6}" y="${b.y + 13}">${esc(b.name)} · ${fmt(b.v)} h</text>`;
+    // small games merged so tiles stay readable
+    const big = b.gs.filter(g => g.v / total >= 0.004), small = b.gs.filter(g => g.v / total < 0.004);
+    const items = [...big.map(g => ({ v: g.v, g })), ...(small.length ? [{ v: sum(small.map(g => g.v)), more: small.length }] : [])];
+    for (const t of squarify(items, b.x + pad, b.y + pad + head, b.w - 2 * pad, b.h - 2 * pad - head)) {
+      const i = tiles.push(t) - 1, share = t.v / total;
+      s += `<rect class="tm-tile ${t.more ? "more" : ""}" data-i="${i}" x="${t.x + 1}" y="${t.y + 1}" width="${Math.max(0, t.w - 2)}" height="${Math.max(0, t.h - 2)}" style="fill-opacity:${Math.min(1, 0.35 + share * 12).toFixed(2)}"/>`;
+      if (t.w > 52 && t.h > 30) { const name = t.more ? `${t.more} more` : t.g.x.name, max = Math.floor((t.w - 10) / 6.4);
+        s += `<text class="tm-label" x="${t.x + 6}" y="${t.y + 16}">${esc(name.length > max ? name.slice(0, max - 1) + "…" : name)}</text><text class="tm-sub" x="${t.x + 6}" y="${t.y + 29}">${fmt(t.v)} h</text>`; }
+    }
+  }
+  s += `</svg><div class="tip" hidden></div>`;
+  el.innerHTML = s;
+  const svg = el.querySelector("svg"), tip = el.querySelector(".tip");
+  svg.addEventListener("pointerover", e => { const r = e.target.closest(".tm-tile"); if (!r) return; const t = tiles[+r.dataset.i], box = svg.getBoundingClientRect(), k = box.width / W;
+    tip.innerHTML = t.more ? `<b>${t.more} smaller games</b> · ${fmt(t.v)} h` : `<b>${esc(t.g.x.name)}</b><br>${fmt(t.v)} h${y === "all" ? "" : " (est.)"} · ${Math.round(100 * t.v / total)}% of your time`;
+    tip.style.left = Math.min(Math.max((t.x + t.w / 2) * k, 90), box.width - 90) + "px"; tip.style.top = ((t.y + 8) * k) + "px"; tip.hidden = false; });
+  svg.addEventListener("pointerleave", () => tip.hidden = true);
+}
+
+/* ---------- 8. Series ---------- */
+let seriesAll = false;
+function seriesView() {
+  if (!DATA.games.some(x => x.series)) { $("seriesList").innerHTML = `<p class="empty">Appears after the next refresh.</p>`; return; }
+  const by = {};
+  for (const x of DATA.games) for (const s of x.series || []) (by[s] ||= []).push(x);
+  const rows = Object.entries(by).filter(([, gs]) => gs.length >= 2).map(([name, gs]) => ({ name, gs, hours: sum(gs.map(g => g.hours || 0)),
+      done: gs.filter(g => finishedAt(g)).length, todo: gs.filter(g => g.owned && !startedAt(g)) })).sort((a, b) => b.hours - a.hours || b.gs.length - a.gs.length);
+  const shown = seriesAll ? rows : rows.slice(0, 10);
+  $("seriesList").innerHTML = `<ul class="series">${shown.map(r => `<li><div class="sr-head"><b>${esc(r.name)}</b><span class="note">${r.gs.length} games · ${fmt(r.hours)} h</span></div>
+      <div class="sr-bar"><span class="bar"><i style="width:${(100 * r.done / r.gs.length)}%"></i></span><span class="note">${r.done}/${r.gs.length} finished</span></div>
+      ${r.todo.length ? `<p class="note">In your backlog: ${r.todo.map(g => esc(g.name)).join(", ")}</p>` : ""}</li>`).join("")}</ul>
+    ${!seriesAll && rows.length > 10 ? `<button class="chip" id="seriesMore">Show all ${rows.length} series</button>` : ""}
+    <p class="note">Series with at least two of your games. Wikidata knows the series for about half of your library, so smaller franchises may be missing.</p>`;
+}
+
+/* ---------- 9. Favourite studios ---------- */
+let studioKind = "developers";
+function studios(y) {
+  if (!DATA.games.some(x => x.developers)) { $("studios").innerHTML = `<p class="empty">Appears after the next refresh.</p>`; return; }
+  const by = {};
+  for (const x of DATA.games) { const h = hoursIn(x, y); if (h <= 0 && y !== "all") continue;
+    for (const st of x[studioKind] || []) { const e = by[st] ||= { h: 0, games: 0, mc: [], mine: [] }; e.h += h; e.games++; if (x.metacritic != null) e.mc.push(x.metacritic); const r = ratingOf(x); if (r) e.mine.push(r.score); } }
+  const rows = Object.entries(by).filter(([, e]) => e.h > 0).sort((a, b) => b[1].h - a[1].h).slice(0, 10);
+  const avg = a => a.length ? Math.round(sum(a) / a.length) : "—";
+  $("studios").innerHTML = rows.length ? `<div class="tblwrap"><table class="tbl"><thead><tr><th>${studioKind === "developers" ? "Developer" : "Publisher"}</th><th>Hours</th><th>Games</th><th title="Metacritic">MC</th><th>You</th></tr></thead><tbody>
+    ${rows.map(([n, e]) => `<tr><td>${esc(n)}</td><td class="num">${fmt(e.h)}</td><td class="num">${e.games}</td><td class="num">${avg(e.mc)}</td><td class="num">${avg(e.mine)}</td></tr>`).join("")}</tbody></table></div>
+    <p class="note">Ranked by your hours${y === "all" ? "" : ` in ${y} (est.)`}. MC (Metacritic) and "You" (your rating) are averages over their games. Studios from Wikidata.</p>`
+    : `<p class="empty">No playtime with a known studio in this period.</p>`;
+}
+
+function extras2(y) { levelHistory(y); rarityProfile(y); releaseLag(y); finishRate(y); treemap(y); seriesView(); studios(y); }
+
 
 function niceStep(raw) {
   const p = 10 ** Math.floor(Math.log10(Math.max(raw, 1)));
@@ -535,6 +770,9 @@ function genres(rows) {
 function save() { try { localStorage.setItem("shelf-stats", JSON.stringify(state)); } catch {} }
 
 $("years").addEventListener("click", e => { const b = e.target.closest(".chip"); if (!b) return; state.year = b.dataset.y; save(); render(); });
+$("sDev").addEventListener("click", () => { studioKind = "developers"; $("sDev").setAttribute("aria-pressed", true); $("sPub").setAttribute("aria-pressed", false); studios(state.year); });
+$("sPub").addEventListener("click", () => { studioKind = "publishers"; $("sPub").setAttribute("aria-pressed", true); $("sDev").setAttribute("aria-pressed", false); studios(state.year); });
+document.addEventListener("click", e => { if (e.target.id === "seriesMore") { seriesAll = true; seriesView(); } });
 $("gHours").addEventListener("click", () => { state.genre = "hours"; save(); genres(period(state.year)); });
 $("gGames").addEventListener("click", () => { state.genre = "games"; save(); genres(period(state.year)); });
 
@@ -563,6 +801,6 @@ async function start() {
   render();
 }
 let lastW = 0;
-addEventListener("resize", () => { const w = $("timeline").clientWidth; if (DATA && Math.abs(w - lastW) > 20) { lastW = w; timeline(state.year, DATA.games.some(g => g.months && Object.keys(g.months).length)); critics(state.year); } });
+addEventListener("resize", () => { const w = $("timeline").clientWidth; if (DATA && Math.abs(w - lastW) > 20) { lastW = w; timeline(state.year, DATA.games.some(g => g.months && Object.keys(g.months).length)); critics(state.year); levelHistory(state.year); treemap(state.year); } });
 start();
 </script>

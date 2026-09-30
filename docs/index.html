@@ -157,6 +157,19 @@ button, select, input { font: inherit; color: inherit; }
 .tl-head .seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
 .tl-head select { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; font-size: 13px; }
 .tl-body { display: grid; gap: 10px; }
+.tl-group { display: flex; justify-content: space-between; gap: 8px; font: 600 13px var(--body); color: var(--fg); border-bottom: 1px solid var(--line); padding: 8px 0 4px; }
+.tl-group .num { font: 12px var(--mono); color: var(--muted); }
+.tguide { font-size: 12px; color: var(--accent); text-decoration: none; }
+.tguide:hover { text-decoration: underline; }
+.tl-head .tguide { margin-right: auto; font-size: 13px; }
+.tl-head b { margin-right: 0 !important; }
+.dlc { display: grid; gap: 4px; background: var(--bg); border-radius: 8px; padding: 8px 10px; }
+.dlc-row { display: grid; grid-template-columns: 1fr 70px 44px; gap: 8px; align-items: center; font-size: 13px; }
+.dlc-row > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.dlc-row .bar { height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.dlc-row .bar i { display: block; height: 100%; background: var(--accent); }
+.dlc-row.done .bar i { background: var(--st-done); }
+.dlc-row .num { font: 12px var(--mono); color: var(--muted); text-align: right; }
 .tl-sub { font: 600 12px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
 .trophy { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; }
 .trophy.got .ticon img { box-shadow: 0 0 0 2px var(--st-done); }
@@ -558,10 +571,10 @@ function detail(x, id) {
   const H = x.hltb, hl = H ? `<div class="hltb"><span>HowLongToBeat</span>${[["Main story", H.main], ["Main + extras", H.extra], ["Completionist", H.complete]].filter(([, v]) => v).map(([k, v]) => `<span>${k} <b>${fmtH(v)}</b></span>`).join("")}${H.url ? `<a href="${esc(H.url)}" target="_blank" rel="noopener">Open</a>` : ""}</div>` : "";
   const link = x.rawg_slug ? `<a href="https://rawg.io/games/${esc(x.rawg_slug)}" target="_blank" rel="noopener">Game page on RAWG</a>` : "";
   const tl = x.trophy_lists?.length ? `<section class="tlist" data-game="${id}">
-      <div class="tl-head"><b>Trophies</b>
+      <div class="tl-head"><b>Trophies</b><a class="tguide" href="${listGuideUrl(x.name)}" target="_blank" rel="noopener">Trophy guide</a>
         <span class="seg" role="group" aria-label="Show trophies">${[["all", "All"], ["missing", "Missing"], ["earned", "Earned"]].map(([k, l]) => `<button data-tf="${k}" aria-pressed="${state.tfilter === k}">${l}</button>`).join("")}</span>
         <select data-ts aria-label="Sort trophies">${[["order", "Game order"], ["rare", "Rarest first"], ["common", "Most common first"]].map(([k, l]) => `<option value="${k}"${state.tsort === k ? " selected" : ""}>${l}</option>`).join("")}</select>
-      </div><div class="tl-body"><p class="flagnote">Loading trophies…</p></div></section>` : "";
+      </div>${dlcSummary(x)}<div class="tl-body"><p class="flagnote">Loading trophies…</p></div></section>` : "";
   return `<div class="detail" id="${id}-d">${pend}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}${ratingBar(x)}${flagBar(x)}${tl}</div>`;
 }
 
@@ -578,19 +591,41 @@ async function renderTrophies() {
   const avail = lists.filter(l => l.d);
   if (!avail.length) { body.innerHTML = `<p class="flagnote">Trophy details appear after your next refresh.</p>`; return; }
   const sorts = { order: (a, b) => a.id - b.id, rare: (a, b) => (a.r ?? 101) - (b.r ?? 101), common: (a, b) => (b.r ?? -1) - (a.r ?? -1) };
+  const row = t => {
+    const desc = t.h && !t.e ? `<details><summary>Hidden trophy · tap to reveal</summary><span>${esc(t.d)}</span></details>` : `<span>${esc(t.d)}</span>`;
+    const when = t.e ? (t.at ? fmtDate(t.at) : "Earned") : (t.p ? `${t.p} done` : "Not earned");
+    const guide = t.e ? "" : `<a class="tguide" href="${guideUrl(x.name, t.n)}" target="_blank" rel="noopener">Guide</a>`;
+    return `<div class="trophy${t.e ? " got" : ""}"><span class="ticon">${t.i ? `<img src="${esc(t.i)}" alt="" loading="lazy" onerror="this.remove()">` : ""}</span>
+      <span class="tname"><b><span class="dot d-${t.t}" title="${t.t}"></span> ${esc(t.n)}</b>${desc}</span>
+      <span class="tmeta">${t.r != null ? `<span class="rate${t.r < 5 ? " ultra" : ""}" title="${rarity(t.r)}">${t.r}%</span>` : ""}<span>${when}</span>${guide}</span></div>`;
+  };
   body.innerHTML = avail.map(l => {
-    const rows = l.d.trophies.filter(t => state.tfilter === "all" || (state.tfilter === "earned") === t.e).sort(sorts[state.tsort]);
     const head = avail.length > 1 ? `<div class="tl-sub">${esc(l.platforms.join(" · ") || "Trophy list")} · ${l.progress}%</div>` : "";
-    const list = rows.map(t => {
-      const desc = t.h && !t.e ? `<details><summary>Hidden trophy · tap to reveal</summary><span>${esc(t.d)}</span></details>` : `<span>${esc(t.d)}</span>`;
-      const when = t.e ? (t.at ? fmtDate(t.at) : "Earned") : (t.p ? `${t.p} done` : "Not earned");
-      return `<div class="trophy${t.e ? " got" : ""}"><span class="ticon">${t.i ? `<img src="${esc(t.i)}" alt="" loading="lazy" onerror="this.remove()">` : ""}</span>
-        <span class="tname"><b><span class="dot d-${t.t}" title="${t.t}"></span> ${esc(t.n)}</b>${desc}</span>
-        <span class="tmeta">${t.r != null ? `<span class="rate${t.r < 5 ? " ultra" : ""}" title="${rarity(t.r)}">${t.r}%</span>` : ""}<span>${when}</span></span></div>`;
+    // Split by base game and DLC packs when the list has DLC
+    const groups = {};
+    for (const t of l.d.trophies) (groups[t.g || "default"] ||= []).push(t);
+    const ids = Object.keys(groups).sort((a, b) => (a === "default" ? -1 : b === "default" ? 1 : a.localeCompare(b)));  // base game first
+    const parts = ids.map(gid => {
+      const all = groups[gid], got = all.filter(t => t.e).length;
+      const rows = all.filter(t => state.tfilter === "all" || (state.tfilter === "earned") === t.e).sort(sorts[state.tsort]);
+      const label = gid === "default" ? "Base game" : (l.groups?.[gid] || `DLC ${gid}`);
+      const sub = ids.length > 1 ? `<div class="tl-group"><span>${esc(label)}</span><span class="num">${got}/${all.length}${got === all.length ? " · done" : ""}</span></div>` : "";
+      return rows.length ? sub + rows.map(row).join("") : (ids.length > 1 && state.tfilter !== "all" ? "" : sub);
     }).join("");
-    return head + (list || `<p class="flagnote">${state.tfilter === "missing" ? "Nothing missing here." : "No trophies earned yet."}</p>`);
+    return head + (parts || `<p class="flagnote">${state.tfilter === "missing" ? "Nothing missing here." : "No trophies earned yet."}</p>`);
   }).join("");
 }
+
+function dlcSummary(x) {
+  if (!x.dlc?.length) return "";
+  const multi = new Set(x.dlc.map(d => d.list)).size > 1;
+  return `<div class="dlc">${x.dlc.map(d => { const done = d.earned === d.total;
+    return `<span class="dlc-row${done ? " done" : ""}"><span>${esc(d.name)}${multi ? ` <span class="note">(${esc(d.platforms.join("/"))})</span>` : ""}</span>
+      <span class="bar"><i style="width:${Math.round(100 * d.earned / d.total)}%"></i></span><span class="num">${d.earned}/${d.total}</span></span>`; }).join("")}</div>`;
+}
+
+const guideUrl = (game, trophy) => `https://www.google.com/search?q=${encodeURIComponent(`"${game}" "${trophy}" trophy guide`)}`;
+const listGuideUrl = game => `https://psnprofiles.com/search/guides?q=${encodeURIComponent(game.replace(/[™®]/g, ""))}`;
 
 function save() { try { localStorage.setItem("shelf", JSON.stringify({ status: state.status, sort: state.sort })); } catch {} }
 

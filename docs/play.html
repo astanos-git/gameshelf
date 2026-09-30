@@ -116,6 +116,13 @@ section { display: grid; gap: 10px; }
     <p class="note">Games at 70% or more. Under each game: the missing trophies most players have, so likely the easiest left.</p>
     <ol class="list" id="close"></ol>
   </section>
+
+  <section>
+    <h1>DLC to finish</h1>
+    <p class="note">DLC packs with trophies left, for games whose main game you've finished or whose DLC you've started. Fewest trophies left first.</p>
+    <ol class="list" id="dlcList"></ol>
+    <button class="chip" id="dlcMore" hidden>Show all</button>
+  </section>
 </div>
 
 <script>
@@ -193,6 +200,24 @@ function closest() {
   }).join("") : `<p class="empty">No game at 70% or more right now.</p>`;
 }
 
+let dlcAll = false;
+function dlcToFinish() {
+  const rows = DATA.games.map(x => {
+    const open = (x.dlc || []).filter(d => d.earned < d.total);
+    const baseDone = !!x.platinum_at || x.status === "completed" || x.eff === "beaten";
+    return open.length && (baseDone || open.some(d => d.earned > 0)) ? { x, open, left: open.reduce((a, d) => a + d.total - d.earned, 0) } : null;
+  }).filter(Boolean).sort((a, b) => a.left - b.left);
+  const shown = dlcAll ? rows : rows.slice(0, 10);
+  $("dlcList").innerHTML = shown.length ? shown.map(({ x, open, left }) => `<li class="item"><span class="cover">${pic(x.image, x.name)}</span>
+      <span class="main"><span class="name">${esc(x.name)}</span>
+        <span class="easy">${open.map(d => `<span>${esc(d.name)}<span class="r">${d.earned}/${d.total}</span></span>`).join("")}</span></span>
+      <span class="left num">${left}<small>left</small></span></li>`).join("")
+    : `<p class="empty">${DATA.games.some(x => x.dlc) ? "No DLC left in games you've finished." : "Appears after the next refresh."}</p>`;
+  $("dlcMore").hidden = dlcAll || rows.length <= 10;
+  $("dlcMore").textContent = `Show all ${rows.length}`;
+}
+$("dlcMore").addEventListener("click", () => { dlcAll = true; dlcToFinish(); });
+
 function save() { try { localStorage.setItem("shelf-play", JSON.stringify(state)); } catch {} }
 document.addEventListener("click", e => {
   const len = e.target.closest("[data-len]"), pl = e.target.closest("[data-pool]");
@@ -209,7 +234,7 @@ async function start() {
   const genres = [...new Set(DATA.games.filter(x => x.eff === "unplayed" || x.eff === "started").flatMap(x => x.genres || []))].sort();
   if (state.genre && !genres.includes(state.genre)) state.genre = "";
   $("genre").innerHTML = `<option value="">All genres</option>` + genres.map(g => `<option${g === state.genre ? " selected" : ""}>${esc(g)}</option>`).join("");
-  render(); closest();
+  render(); closest(); dlcToFinish();
 }
 start();
 </script>

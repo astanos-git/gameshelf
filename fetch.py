@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import difflib
 import hashlib
+import math
 import json
 import os
 import re
@@ -85,6 +86,8 @@ def fetch_psn(npsso: str) -> dict:
             "earned": trophy_set(t.earned_trophies),
             "defined": trophy_set(t.defined_trophies),
             "last_trophy": iso(t.last_updated_datetime),
+            "has_groups": bool(t.has_trophy_groups),
+            "set_version": t.trophy_set_version,
         })
     print(f"  {len(trophies)} trophy lists")
 
@@ -131,6 +134,7 @@ def fetch_psn(npsso: str) -> dict:
             print(f"  trophy/title mapping batch skipped: {e}")
 
     fetch_trophy_dates(me, trophies)
+    fetch_group_names(me, trophies)
 
     return {"profile": profile, "trophies": trophies, "stats": stats, "owned": owned, "title_to_np": title_to_np}
 
@@ -329,7 +333,8 @@ def build_games(raw: dict) -> list[dict]:
         g["platforms"].update(p for p in t["platforms"] if p != "UNKNOWN")
         g["image"] = g["image"] or t["icon"]
         g["months"] = add_months(g["months"], t.get("months") or {})  # every list counts toward yearly stats
-        g["trophy_lists"].append({"id": t["np_id"], "platforms": [p for p in t["platforms"] if p != "UNKNOWN"], "progress": t["progress"]})
+        g["trophy_lists"].append({"id": t["np_id"], "platforms": [p for p in t["platforms"] if p != "UNKNOWN"], "progress": t["progress"],
+                                  "groups": t.get("group_names") or {}})
         g["rare"] = sorted(g["rare"] + (t.get("rare") or []), key=lambda r: r["r"])[:5]
         if g["progress"] is None or t["progress"] > g["progress"]:
             g.update(progress=t["progress"], earned=t["earned"], defined=t["defined"],
@@ -692,6 +697,78 @@ def enrich_wikipedia(games: list[dict]) -> None:
 
 
 
+
+# ---------------------------------------------------------------- DLC group names
+
+GROUP_CACHE = ROOT / "trophy_groups.json"   # {list id: {"v": trophy set version, "names": {group id: name}}}
+GROUP_BUDGET_S = 10 * 60
+
+
+def fetch_group_names(me, trophies: list[dict]) -> None:
+    """Names of the base game and DLC packs for lists that have DLC (1 request each, cached)."""
+    from psnawp_api.models.trophies import PlatformType
+    cache = json.loads(GROUP_CACHE.read_text()) if GROUP_CACHE.exists() else {}
+    started, fetched = time.time(), 0
+    for t in trophies:
+        entry = cache.get(t["np_id"])
+        if t.get("has_groups") and (not entry or entry.get("v") != t.get("set_version")) and time.time() - started < GROUP_BUDGET_S:
+            try:
+                plats = [p for p in t["platforms"] if p != "UNKNOWN"]
+                plat = PlatformType("PS5" if "PS5" in plats else (plats[0] if plats else "PS4"))
+                summary = me.trophy_groups_summary(t["np_id"], plat)
+                entry = cache[t["np_id"]] = {"v": t.get("set_version"),
+                                             "names": {g.trophy_group_id: g.trophy_group_name for g in summary.trophy_groups}}
+                fetched += 1
+            except Exception as e:
+                print(f"  DLC names skipped for {t['name']!r}: {e}")
+        t["group_names"] = (entry or {}).get("names", {})
+    GROUP_CACHE.write_text(json.dumps(cache, sort_keys=True, ensure_ascii=False, separators=(",", ":")))
+    print(f"  DLC names: {fetched} lists fetched")
+
+
+# ---------------------------------------------------------------- Wikidata: franchise, developer, publisher
+
+ABOUT_CACHE = ROOT / "wikidata_about.json"
+
+
+def fetch_about(slugs: list[str]) -> dict:
+    """{rawg slug: {"series": [...], "developers": [...], "publishers": [...]}} in one query; cached if Wikidata is down."""
+    cache = json.loads(ABOUT_CACHE.read_text()) if ABOUT_CACHE.exists() else {}
+    if not slugs:
+        return cache
+    values = " ".join(json.dumps(s) for s in sorted(set(slugs)))
+    query = f"""SELECT ?rawg ?seriesLabel ?devLabel ?pubLabel WHERE {{
+      VALUES ?rawg {{ {values} }} ?g wdt:P9968 ?rawg .
+      OPTIONAL {{ ?g wdt:P179 ?series }} OPTIONAL {{ ?g wdt:P178 ?dev }} OPTIONAL {{ ?g wdt:P123 ?pub }}
+      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" }} }}"""
+    try:
+        r = requests.post(WIKIDATA_SPARQL, data={"query": query, "format": "json"}, timeout=90,
+                          headers={"User-Agent": "GameShelf/1.0 (https://github.com/astanos-git/gameshelf)",
+                                   "Accept": "application/sparql-results+json"})
+        r.raise_for_status()
+        about: dict[str, dict[str, list[str]]] = {}
+        for b in r.json()["results"]["bindings"]:
+            a = about.setdefault(b["rawg"]["value"], {"series": [], "developers": [], "publishers": []})
+            for key, field in (("seriesLabel", "series"), ("devLabel", "developers"), ("pubLabel", "publishers")):
+                v = b.get(key, {}).get("value")
+                if v and not re.fullmatch(r"Q\d+", v) and v not in a[field]:   # skip items without an English label
+                    a[field].append(v)
+        ABOUT_CACHE.write_text(json.dumps(about, sort_keys=True, ensure_ascii=False, indent=1))
+        print(f"::notice::Wikidata: {sum(1 for a in about.values() if a['series'])} games with a series, "
+              f"{sum(1 for a in about.values() if a['developers'])} with a developer")
+        return about
+    except Exception as e:
+        print(f"::warning::Wikidata series/studios skipped ({e}); keeping the last ones")
+        return cache
+
+
+def add_about(games: list[dict]) -> None:
+    about = fetch_about([g["rawg_slug"] for g in games if g.get("rawg_slug")])
+    for g in games:
+        a = about.get(g.get("rawg_slug") or "", {})
+        g["series"], g["developers"], g["publishers"] = a.get("series", []), a.get("developers", []), a.get("publishers", [])
+
+
 # ---------------------------------------------------------------- insights (from the saved trophy lists)
 
 LOCAL_TZ = "Europe/Zurich"
@@ -701,6 +778,27 @@ COUNT_MILESTONES = [1, 100, 250, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 
 def load_trophy_file(list_id: str) -> list[dict]:
     path = TROPHY_DIR / f"{list_id}.json"
     return json.loads(path.read_text())["trophies"] if path.exists() else []
+
+
+def hunter_points(rate: float) -> float:
+    """0 for a trophy everyone has, 50 at 10% of players, 100 at 1% or rarer."""
+    return max(0.0, min(100.0, 50 * math.log10(100 / max(rate, 0.01))))
+
+
+def dlc_progress(g: dict) -> list[dict]:
+    """Earned / total per DLC pack (every group except the base game), across the game's trophy lists."""
+    out = []
+    for lst in g.get("trophy_lists") or []:
+        counts: dict[str, list[int]] = {}
+        for t in load_trophy_file(lst["id"]):
+            c = counts.setdefault(t.get("g") or "default", [0, 0])
+            c[0] += 1 if t.get("e") else 0
+            c[1] += 1
+        for gid, (e, n) in sorted(counts.items()):
+            if gid != "default":
+                out.append({"list": lst["id"], "id": gid, "name": (lst.get("groups") or {}).get(gid) or f"DLC {gid}",
+                            "platforms": lst["platforms"], "earned": e, "total": n})
+    return out
 
 
 def build_insights(games: list[dict]) -> dict:
@@ -728,6 +826,7 @@ def build_insights(games: list[dict]) -> dict:
                 missing_n = len(missing)
                 best_missing = sorted(missing, key=lambda t: -(t.get("r") or 0))[:3]
         g["first_trophy_at"], g["platinum_at"] = first, plat
+        g["dlc"] = dlc_progress(g)
         g["missing_n"] = missing_n
         g["easy"] = [{k: t.get(k) for k in ("n", "t", "r", "h", "p")} for t in best_missing]
 
@@ -739,6 +838,17 @@ def build_insights(games: list[dict]) -> dict:
         for key in (str(when.year), "all"):
             wh.setdefault(key, [0] * 168)[when.weekday() * 24 + when.hour] += 1
 
+    rarity: dict[str, dict] = {}   # year -> {"buckets": [ultra, very rare, rare, common], "score": hunter score}
+    for when, t, _ in earned:
+        if t.get("r") is None:
+            continue
+        for key in (str(when.year), "all"):
+            e = rarity.setdefault(key, {"buckets": [0, 0, 0, 0], "sum": 0.0, "n": 0})
+            e["buckets"][0 if t["r"] < 5 else 1 if t["r"] < 15 else 2 if t["r"] < 50 else 3] += 1
+            e["sum"] += hunter_points(t["r"]); e["n"] += 1
+    for e in rarity.values():
+        e["score"] = round(e.pop("sum") / e.pop("n"))
+
     milestones = []
     for n, (when, t, g) in enumerate(earned, start=1):
         base = {"at": t["at"], "game": g["name"], "trophy": t.get("n"), "t": t.get("t"), "r": t.get("r"), "i": t.get("i")}
@@ -748,7 +858,7 @@ def build_insights(games: list[dict]) -> dict:
             milestones.append({"kind": "platinum", **base})
     print(f"::notice::Insights: {len(earned)} dated trophies, {len(days)} active days, "
           f"{sum(1 for m in milestones if m['kind'] == 'platinum')} platinums")
-    return {"tz": LOCAL_TZ, "days": days, "weekday_hour": wh, "milestones": milestones}
+    return {"tz": LOCAL_TZ, "days": days, "weekday_hour": wh, "milestones": milestones, "rarity": rarity}
 
 
 # ---------------------------------------------------------------- main
@@ -790,6 +900,7 @@ def main() -> None:
     games = build_games(raw)
     enrich(games, os.environ.get("RAWG_API_KEY", "").strip() or None)
     fill_metacritic(games, previous.get("games", []))
+    add_about(games)
     enrich_hltb(games)
     games.sort(key=lambda g: g["last_activity"] or g["acquired"] or "", reverse=True)
     try:

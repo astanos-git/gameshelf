@@ -85,6 +85,24 @@ button { font: inherit; color: inherit; }
 .plats .d { font: 12px var(--mono); color: var(--muted); }
 .empty { color: var(--muted); padding: 16px 0; margin: 0; }
 #page { display: grid; gap: 14px; }
+.goals { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: grid; gap: 12px; }
+.goals h2 { font-size: 22px; }
+.goal { display: grid; gap: 4px; }
+.goal-head { display: flex; justify-content: space-between; font-size: 14px; }
+.goal-head b { font: 600 18px var(--display); }
+.gbar { position: relative; height: 10px; background: var(--line); border-radius: 5px; overflow: visible; }
+.gbar i { display: block; height: 100%; background: var(--accent); border-radius: 5px; }
+.gbar .pace { position: absolute; top: -3px; width: 2px; height: 16px; background: var(--fg); border-radius: 1px; }
+.note.ok { color: var(--up); font-weight: 600; }
+.goalform summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 14px; }
+.gf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0 8px; }
+@media (max-width: 520px) { .gf { grid-template-columns: 1fr 1fr; } }
+.gf label { display: grid; gap: 3px; font-size: 12px; color: var(--muted); }
+.gf input { font: 600 18px var(--display); padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); width: 100%; min-width: 0; }
+.gf-actions { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; }
+.gf-actions a { color: var(--accent); font-size: 14px; }
+.gf-actions a.save { background: var(--accent); color: #fff; border-radius: 8px; padding: 6px 14px; text-decoration: none; font-weight: 600; }
+.gf-actions a.save.off { background: var(--line); color: var(--muted); pointer-events: none; }
 </style>
 
 <div class="wrap">
@@ -104,7 +122,49 @@ const sum = a => a.reduce((x, y) => x + y, 0);
 const fmtDate = s => new Date(s).toLocaleDateString(undefined, { month: "long", day: "numeric" });
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const DAYS = ["Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays", "Sundays"];
-let DATA, FLAGS = {}, RATINGS = {}, year;
+let DATA, FLAGS = {}, RATINGS = {}, GOALS = {}, year;
+const GOAL_KEYS = [["platinums", "Platinums"], ["finished", "Games finished"], ["trophies", "Trophies"], ["hours", "Hours played"]];
+
+function repoUrl() {
+  const h = location.hostname; if (!h.endsWith(".github.io")) return null;
+  const owner = h.split(".")[0], repo = location.pathname.split("/").filter(Boolean)[0] || `${owner}.github.io`;
+  return `https://github.com/${owner}/${repo}`;
+}
+function goalUrl(y, values, clear) {
+  const repo = repoUrl(); if (!repo) return null;
+  const lines = clear ? "clear: yes\n" : GOAL_KEYS.filter(([k]) => values[k] > 0).map(([k]) => `${k}: ${values[k]}\n`).join("");
+  const body = `Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\ngoal: ${y}\n${lines}`;
+  return `${repo}/issues/new?title=${encodeURIComponent(`Goal ${y}${clear ? ": clear" : ""}`)}&body=${encodeURIComponent(body)}`;
+}
+
+function goalsBlock(s) {
+  const g = GOALS[year] || {}, has = GOAL_KEYS.some(([k]) => g[k]);
+  const now = { platinums: s.plats, finished: s.finished.length, trophies: s.trophies, hours: Math.round(s.hours) };
+  const today = new Date(), start = new Date(+year, 0, 1), end = new Date(+year + 1, 0, 1);
+  const elapsed = year === THIS_YEAR ? (today - start) / (end - start) : 1;
+  const bars = GOAL_KEYS.filter(([k]) => g[k]).map(([k, label]) => {
+    const pct = Math.min(100, Math.round(100 * now[k] / g[k])), expected = Math.round(g[k] * elapsed);
+    const state = now[k] >= g[k] ? "Reached" : year !== THIS_YEAR ? "Missed" : now[k] >= expected ? "On track" : `Behind: about ${expected} by now`;
+    return `<div class="goal"><div class="goal-head"><span>${label}</span><span class="num"><b>${fmt(now[k])}</b> / ${fmt(g[k])}</span></div>
+      <div class="gbar"><i style="width:${pct}%"></i>${year === THIS_YEAR ? `<span class="pace" style="left:${Math.round(elapsed * 100)}%" title="Where you'd be at an even pace"></span>` : ""}</div>
+      <span class="note ${now[k] >= g[k] ? "ok" : ""}">${state}</span></div>`;
+  }).join("");
+  const repo = repoUrl();
+  const form = `<details class="goalform"${has ? "" : " open"}><summary>${has ? "Change goals" : `Set goals for ${year}`}</summary>
+    <div class="gf">${GOAL_KEYS.map(([k, label]) => `<label><span>${label}</span><input type="number" min="0" max="999999" inputmode="numeric" data-goal="${k}" value="${g[k] || ""}" placeholder="—"></label>`).join("")}</div>
+    ${repo ? `<div class="gf-actions"><a class="save" id="goalSave" target="_blank" rel="noopener" href="#">Save goals</a>${has ? `<a href="${goalUrl(year, {}, true)}" target="_blank" rel="noopener">Clear goals</a>` : ""}</div>`
+      : `<p class="note">Saving works on your GitHub Pages dashboard.</p>`}
+    <p class="note">Leave a box empty to skip that goal. Saved the same way as flags: tap Create on the GitHub page that opens.</p></details>`;
+  return `<section class="goals"><h2>Goals for ${year}</h2>${bars || `<p class="note">No goals set for ${year} yet.</p>`}${form}</section>`;
+}
+
+function syncGoalLink() {
+  const a = document.getElementById("goalSave"); if (!a) return;
+  const values = {}; document.querySelectorAll("[data-goal]").forEach(i => values[i.dataset.goal] = Math.max(0, parseInt(i.value, 10) || 0));
+  const any = Object.values(values).some(v => v > 0);
+  a.href = any ? goalUrl(year, values) : "#"; a.classList.toggle("off", !any);
+}
+document.addEventListener("input", e => { if (e.target.matches("[data-goal]")) syncGoalLink(); });
 const pick = (map, x) => map[x.name] || (x.aliases || []).map(n => map[n]).find(Boolean);
 
 function statsFor(y) {
@@ -159,7 +219,7 @@ function persona(s) {
 function render() {
   document.querySelectorAll("#years .chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.y === year));
   const s = statsFor(year), prev = statsFor(String(+year - 1));
-  if (!s.played.length) { $("page").innerHTML = `<p class="empty">No playtime or trophies recorded in ${year}.</p>`; return; }
+  if (!s.played.length) { $("page").innerHTML = goalsBlock(s) + `<p class="empty">No playtime or trophies recorded in ${year} yet.</p>`; syncGoalLink(); return; }
   const goty = s.byHours.find(g => s.hoursOf(g) > 0) || s.byTrophies[0];
   const runner = s.byHours.filter(g => g !== goty && s.hoursOf(g) > 0).slice(0, 2);
   const topMonth = s.months.indexOf(Math.max(...s.months));
@@ -190,6 +250,7 @@ function render() {
         <div><b class="num">${fmt(s.hours)}</b><span>Hours (est.)</span>${delta(s.hours, prev.hours)}</div>
       </div>
     </section>
+    ${goalsBlock(s)}
     ${goty ? `<section class="goty"><span class="cover">${pic(goty.image, goty.name)}</span>
       <div><span class="eyebrow">Your game of the year</span><h2>${esc(goty.name)}</h2>
       <p class="note">~${fmt(s.hoursOf(goty))} h · ${s.trophiesOf(goty)} trophies${goty.metacritic ? ` · Metacritic ${goty.metacritic}` : ""}</p>
@@ -198,13 +259,16 @@ function render() {
     ${s.platList.length ? `<section class="plats"><h2>Platinums of ${year}</h2><ol>${s.platList.map(m => `<li><span>${esc(m.game)}</span><span class="d">${fmtDate(m.at)}${m.r != null ? ` · ${m.r}%` : ""}</span></li>`).join("")}</ol></section>` : ""}`;
 }
 
+const _render = render;
+render = function () { _render(); syncGoalLink(); };
 document.addEventListener("click", e => { const b = e.target.closest("#years .chip"); if (b) { year = b.dataset.y; try { localStorage.setItem("shelf-review", year); } catch {} render(); } });
 
 async function start() {
   try { DATA = await (await fetch("data.json", { cache: "no-store" })).json(); } catch { $("page").innerHTML = `<p class="empty">No game data yet.</p>`; return; }
-  for (const [file, set] of [["flags.json", v => FLAGS = v], ["ratings.json", v => RATINGS = v]])
+  for (const [file, set] of [["flags.json", v => FLAGS = v], ["ratings.json", v => RATINGS = v], ["goals.json", v => GOALS = v]])
     try { const r = await fetch(file, { cache: "no-store" }); if (r.ok) set(await r.json()); } catch {}
   const ys = [...new Set(DATA.games.flatMap(g => [...Object.keys(g.months || {}).map(m => m.slice(0, 4)), ...Object.keys(g.hours_by_year || {})]))].sort().reverse();
+  if (!ys.includes(THIS_YEAR)) ys.unshift(THIS_YEAR);
   let saved = null; try { saved = localStorage.getItem("shelf-review"); } catch {}
   year = ys.includes(saved) ? saved : ys[0];
   $("years").innerHTML = ys.map(v => `<button class="chip" data-y="${v}" aria-pressed="false">${v}</button>`).join("");

@@ -16,6 +16,8 @@ FLAGS = ROOT / "docs" / "flags.json"
 DATA = ROOT / "docs" / "data.json"
 RESULT = ROOT / "flag_result.txt"
 RATINGS = ROOT / "docs" / "ratings.json"
+GOALS = ROOT / "docs" / "goals.json"
+GOAL_KEYS = {"platinums": "platinums", "finished": "games finished", "trophies": "trophies", "hours": "hours played"}
 LABELS = {"beaten": "Beaten", "dropped": "Dropped"}
 
 
@@ -43,7 +45,29 @@ def apply_rating(games: list[str], value: str, created: str) -> str:
     return msg + " The dashboard updates in about a minute."
 
 
+def apply_goals(body: str, created: str) -> str | None:
+    """Yearly goals: a "goal: <year>" line, then any of "platinums: 6", "finished: 20", "trophies: 500", "hours: 300"."""
+    year = re.search(r"^goal:\s*(\d{4})\s*$", body or "", re.M | re.I)
+    if not year:
+        return None
+    y = year.group(1)
+    goals = json.loads(GOALS.read_text()) if GOALS.exists() else {}
+    if re.search(r"^clear:\s*yes\s*$", body, re.M | re.I):
+        msg = f"Removed your goals for {y}." if goals.pop(y, None) else f"No goals for {y}, so nothing changed."
+    else:
+        new = {k: int(m.group(1)) for k in GOAL_KEYS if (m := re.search(rf"^{k}:\s*(\d{{1,6}})\s*$", body, re.M | re.I)) and int(m.group(1)) > 0}
+        if not new:
+            return "Couldn't read any goal. Use the goal form on the Review page."
+        goals[y] = {**new, "at": created}
+        msg = f"Goals for {y}: " + ", ".join(f"{v} {GOAL_KEYS[k]}" for k, v in new.items()) + "."
+    GOALS.write_text(json.dumps(goals, indent=1, sort_keys=True) + "\n")
+    return msg + " The dashboard updates in about a minute."
+
+
 def apply(body: str, created: str) -> str:
+    goal_msg = apply_goals(body, created)
+    if goal_msg:
+        return goal_msg
     games, flag = parse(body)
     rating = re.search(r"^rating:\s*(100|[1-9]?\d|none)\s*$", body or "", re.M | re.I)
     if games and rating:
