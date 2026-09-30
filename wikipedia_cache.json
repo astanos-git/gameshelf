@@ -11,6 +11,12 @@
   "title": "Alan Wake 2",
   "v": 2
  },
+ "Alan Wake II": {
+  "checked": "2026-09-30",
+  "score": 89,
+  "title": "Alan Wake 2",
+  "v": 4
+ },
  "Alan Wake Remastered": {
   "checked": "2026-09-29",
   "v": 4
@@ -25,8 +31,18 @@
   "checked": "2026-09-29",
   "v": 4
  },
+ "Another World": {
+  "checked": "2026-09-30",
+  "score": 53,
+  "title": "Another World (video game)",
+  "v": 4
+ },
  "Another World - 20th Anniversary Edition": {
   "checked": "2026-09-29",
+  "v": 4
+ },
+ "Arise Trophies": {
+  "checked": "2026-09-30",
   "v": 4
  },
  "Arise: A simple story": {
@@ -203,11 +219,21 @@
   "title": "EA Sports FC 26",
   "v": 2
  },
+ "EA SPORTS FC™ 26 Trophies": {
+  "checked": "2026-09-30",
+  "v": 4
+ },
  "EA SPORTS™ WRC": {
   "checked": "2026-09-29",
   "score": 80,
   "title": "EA Sports WRC",
   "v": 2
+ },
+ "ELDEN RING™": {
+  "checked": "2026-09-30",
+  "score": 96,
+  "title": "Elden Ring",
+  "v": 4
  },
  "ENDER MAGNOLIA: Bloom in the Mist": {
   "checked": "2026-09-29",
@@ -215,11 +241,20 @@
   "title": "Ender Magnolia: Bloom in the Mist",
   "v": 2
  },
+ "Endling": {
+  "checked": "2026-09-30",
+  "title": "Endling",
+  "v": 4
+ },
  "Endling - Extinction is Forever": {
   "checked": "2026-09-29",
   "score": 75,
   "title": "Endling: Extinction is Forever",
   "v": 2
+ },
+ "FIFA 23 Trophies": {
+  "checked": "2026-09-30",
+  "v": 4
  },
  "FINAL FANTASY VII REBIRTH": {
   "checked": "2026-09-29",
@@ -230,6 +265,12 @@
  "Fortnite": {
   "checked": "2026-09-29",
   "title": "Fortnite",
+  "v": 4
+ },
+ "Fortnite: Save the World": {
+  "checked": "2026-09-30",
+  "score": 78,
+  "title": "Fortnite Save the World",
   "v": 4
  },
  "Game of Thrones": {
@@ -284,6 +325,12 @@
   "title": "High on Life (video game)",
   "v": 2
  },
+ "Hogwarts Legacy": {
+  "checked": "2026-09-30",
+  "score": 84,
+  "title": "Hogwarts Legacy",
+  "v": 4
+ },
  "Hogwarts Legacy : L'Héritage de Poudlard": {
   "checked": "2026-09-29",
   "v": 4
@@ -293,6 +340,12 @@
   "score": 90,
   "title": "Hollow Knight: Silksong",
   "v": 2
+ },
+ "Horizon Call of the Mountain": {
+  "checked": "2026-09-30",
+  "score": 79,
+  "title": "Horizon Call of the Mountain",
+  "v": 4
  },
  "Horizon Call of the Mountain™": {
   "checked": "2026-09-29",
@@ -309,6 +362,12 @@
  "Immortals of Aveum™": {
   "checked": "2026-09-29",
   "title": "Immortals of Aveum",
+  "v": 4
+ },
+ "Indiana Jones and the Great Circle": {
+  "checked": "2026-09-30",
+  "score": 87,
+  "title": "Indiana Jones and the Great Circle",
   "v": 4
  },
  "Journey to Foundation": {
@@ -383,6 +442,12 @@
   "checked": "2026-09-29",
   "v": 4
  },
+ "Marvel's Spider-Man 2": {
+  "checked": "2026-09-30",
+  "score": 90,
+  "title": "Marvel's Spider-Man 2",
+  "v": 4
+ },
  "Marvel's Spider-Man 2": {
   "checked": "2026-09-29",
   "score": 90,
@@ -445,6 +510,12 @@
   "score": 84,
   "title": "OlliOlli World",
   "v": 2
+ },
+ "OlliOlli World\n": {
+  "checked": "2026-09-30",
+  "score": 84,
+  "title": "OlliOlli World",
+  "v": 4
  },
  "P.T.": {
   "checked": "2026-09-29",
@@ -522,6 +593,12 @@
   "title": "Star Wars Jedi: Survivor",
   "v": 2
  },
+ "Senua's Saga: Hellblade II": {
+  "checked": "2026-09-30",
+  "score": 81,
+  "title": "Senua's Saga: Hellblade II",
+  "v": 4
+ },
  "Skul: The Hero Slayer": {
   "checked": "2026-09-29",
   "title": "Skul: The Hero Slayer",
@@ -537,6 +614,10 @@
   "checked": "2026-09-29",
   "v": 4
  },
+ "Song in the Smoke: Rekindled": {
+  "checked": "2026-09-30",
+  "v": 4
+ },
  "Sonic Colours: Ultimate": {
   "checked": "2026-09-29",
   "v": 4
@@ -546,6 +627,12 @@
   "score": 91,
   "title": "Split Fiction",
   "v": 2
+ },
+ "SpongeBob SquarePants: The Cosmic Shake": {
+  "checked": "2026-09-30",
+  "score": 70,
+  "title": "SpongeBob SquarePants: The Cosmic Shake",
+  "v": 4
  },
  "Spotify": {
   "checked": "2026-09-29",
@@ -572,6 +659,12 @@
   "score": 63,
   "title": "Suicide Squad: Kill the Justice League",
   "v": 2
+ },
+ "Sword Of The Sea": {
+  "checked": "2026-09-30",
+  "score": 88,
+  "title": "Sword of the Sea",
+  "v": 4
  },
  "Sword of the Sea": {
   "checked": "2026-09-29",
@@ -611,6 +704,12 @@
   "score": 79,
   "title": "The Midnight Walk",
   "v": 2
+ },
+ "The Plucky Squire": {
+  "checked": "2026-09-30",
+  "score": 77,
+  "title": "The Plucky Squire",
+  "v": 4
  },
  "The Plucky Squire (Le Vaillant Petit Page)": {
   "checked": "2026-09-29",

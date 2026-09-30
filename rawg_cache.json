@@ -105,6 +105,14 @@
   "released": "2023-10-27",
   "slug": "alan-wake-2"
  },
+ "Alan Wake II": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-10-27",
+  "slug": "alan-wake-2"
+ },
  "Alan Wake Remastered": {
   "genres": [
    "Adventure",
@@ -141,6 +149,17 @@
   "released": "2018-07-25",
   "slug": "among-us"
  },
+ "Another World": {
+  "genres": [
+   "Arcade",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2011-09-22",
+  "slug": "another-world-20th"
+ },
  "Another World - 20th Anniversary Edition": {
   "genres": [
    "Arcade",
@@ -151,6 +170,16 @@
   "metacritic": null,
   "released": "2011-09-22",
   "slug": "another-world-20th"
+ },
+ "Arise Trophies": {
+  "genres": [
+   "Indie",
+   "Platformer",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2019-12-03",
+  "slug": "arise-3"
  },
  "Arise: A simple story": {
   "genres": [
@@ -537,6 +566,17 @@
   "released": "2015-11-06",
   "slug": "cod-black-ops-iii"
  },
+ "Captain Tsubasa: Rise of New Champions": {
+  "genres": [
+   "Casual",
+   "Action",
+   "RPG",
+   "Sports"
+  ],
+  "metacritic": 72,
+  "released": "2020-08-27",
+  "slug": "captain-tsubasa-rise-of-new-champions"
+ },
  "Chained Echoes": {
   "genres": [
    "Indie",
@@ -671,6 +711,15 @@
   "released": "2019-04-26",
   "slug": "days-gone"
  },
+ "DEATH STRANDING": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 84,
+  "released": "2019-11-08",
+  "slug": "death-stranding"
+ },
  "DEATH STRANDING 2: ON THE BEACH": {
   "genres": [
    "Adventure",
@@ -698,6 +747,15 @@
   "released": "2021-09-14",
   "slug": "deathloop-2"
  },
+ "DETROIT: BECOME HUMAN": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 79,
+  "released": "2018-05-25",
+  "slug": "detroit-become-human"
+ },
  "DIRT 5": {
   "genres": [
    "Racing",
@@ -715,6 +773,15 @@
   "metacritic": 83,
   "released": "1993-12-10",
   "slug": "doom-2"
+ },
+ "DOOM®": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 85,
+  "released": "2016-05-12",
+  "slug": "doom"
  },
  "DRAGON BALL XENOVERSE 2": {
   "genres": [
@@ -848,6 +915,15 @@
   "released": "2021-07-20",
   "slug": "acid-nerve-deaths-door"
  },
+ "Deathloop": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 88,
+  "released": "2021-09-14",
+  "slug": "deathloop-2"
+ },
  "Deep Rock Galactic": {
   "genres": [
    "Indie",
@@ -883,6 +959,14 @@
   "metacritic": 83,
   "released": "2016-08-22",
   "slug": "deus-ex-mankind-divided"
+ },
+ "Devil May Cry 5": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 88,
+  "released": "2019-03-08",
+  "slug": "devil-may-cry-5"
  },
  "Devil May Cry 5 Series": {
   "genres": [
@@ -1016,6 +1100,15 @@
   "released": "2025-09-25",
   "slug": "ea-sports-fc-26"
  },
+ "EA SPORTS FC™ 26 Trophies": {
+  "genres": [
+   "Simulation",
+   "Sports"
+  ],
+  "metacritic": null,
+  "released": "2025-09-25",
+  "slug": "ea-sports-fc-26"
+ },
  "EA SPORTS™ FIFA 23": {
   "genres": [
    "Sports"
@@ -1043,6 +1136,26 @@
   "released": "2022-02-25",
   "slug": "elden-ring"
  },
+ "ELDEN RING™": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2024-06-21",
+  "slug": "elden-ring-shadow-of-the-erdtree"
+ },
+ "ENDER LILIES : Quietus of the Knights": {
+  "genres": [
+   "Platformer",
+   "Indie",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 86,
+  "released": "2021-06-22",
+  "slug": "ender-lilies-quietus-of-the-knights"
+ },
  "ENDER LILIES: Quietus of the Knights": {
   "genres": [
    "Platformer",
@@ -1062,6 +1175,17 @@
   "metacritic": null,
   "released": "2025-01-22",
   "slug": "ender-magnolia-bloom-in-the-mist"
+ },
+ "Endling": {
+  "genres": [
+   "Casual",
+   "Indie",
+   "Adventure",
+   "Simulation"
+  ],
+  "metacritic": null,
+  "released": "2022-07-19",
+  "slug": "endling"
  },
  "Endling - Extinction is Forever": {
   "genres": [
@@ -1083,6 +1207,16 @@
   "metacritic": 74,
   "released": "2019-08-19",
   "slug": "erica"
+ },
+ "Everybody's Gone To The Rapture": {
+  "genres": [
+   "Casual",
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": 76,
+  "released": "2015-08-11",
+  "slug": "everybodys-gone-to-the-rapture"
  },
  "Everybody's Gone To The Rapture™": {
   "genres": [
@@ -1143,6 +1277,15 @@
   "metacritic": 76,
   "released": "2021-09-27",
   "slug": "fifa-22-xbox-one"
+ },
+ "FIFA 23 Trophies": {
+  "genres": [
+   "Simulation",
+   "Sports"
+  ],
+  "metacritic": null,
+  "released": "2022-09-27",
+  "slug": "fifa-23-2"
  },
  "FINAL FANTASY VII REBIRTH": {
   "genres": [
@@ -1228,6 +1371,16 @@
   "metacritic": null,
   "released": "2017-09-26",
   "slug": "fornite-battle-royale"
+ },
+ "Fortnite: Save the World": {
+  "genres": [
+   "Shooter",
+   "Strategy",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2017-07-21",
+  "slug": "fortnite"
  },
  "Friday the 13th: The Game": {
   "genres": [
@@ -1444,6 +1597,17 @@
   "released": "2018-11-13",
   "slug": "hitman-2-prologue"
  },
+ "HOA": {
+  "genres": [
+   "Casual",
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 70,
+  "released": "2021-08-24",
+  "slug": "hoa"
+ },
  "HOT WHEELS UNLEASHED™ 2 - Turbocharged": {
   "genres": [
    "Racing"
@@ -1478,6 +1642,16 @@
   "metacritic": null,
   "released": "2024-05-21",
   "slug": "senuas-saga-hellblade-ii"
+ },
+ "Hellblade: Senua's Sacrifice": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 83,
+  "released": "2017-08-07",
+  "slug": "hellblade-senuas-sacrifice"
  },
  "Hellblade: Senua’s Sacrifice": {
   "genres": [
@@ -1538,6 +1712,15 @@
   "released": "2021-08-24",
   "slug": "hoa"
  },
+ "Hogwarts Legacy": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2023-02-10",
+  "slug": "hogwarts-legacy"
+ },
  "Hogwarts Legacy : L'Héritage de Poudlard": {
   "genres": [
    "Action",
@@ -1568,6 +1751,14 @@
   "released": "2025-09-04",
   "slug": "hollow-knight-silksong"
  },
+ "Horizon Call of the Mountain": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2023-02-22",
+  "slug": "horizon-call-of-the-mountain"
+ },
  "Horizon Call of the Mountain™": {
   "genres": [
    "Adventure"
@@ -1597,6 +1788,15 @@
   "metacritic": 86,
   "released": "2022-02-18",
   "slug": "horizon-zero-dawn-2"
+ },
+ "Horizon Zero Dawn": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 89,
+  "released": "2017-02-28",
+  "slug": "horizon-zero-dawn"
  },
  "Horizon Zero Dawn™": {
   "genres": [
@@ -1658,6 +1858,16 @@
   "released": "2023-08-21",
   "slug": "immortals-of-aveum"
  },
+ "Indiana Jones and the Great Circle": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-12-09",
+  "slug": "indiana-jones-and-the-great-circle"
+ },
  "Indiana Jones et le Cercle Ancien": {
   "genres": [
    "Family",
@@ -1668,6 +1878,16 @@
   "metacritic": 78,
   "released": "2007-01-01",
   "slug": "lego-indiana-jones"
+ },
+ "It Takes Two  PS4™ & PS5™": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 88,
+  "released": "2021-03-26",
+  "slug": "it-takes-two-2"
  },
  "It Takes Two PS4™ & PS5™": {
   "genres": [
@@ -1735,6 +1955,15 @@
   "released": "2017-03-28",
   "slug": "kingdom-hearts-hd-1525-remix"
  },
+ "KINGDOM HEARTS FINAL MIX": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 85,
+  "released": "2002-12-26",
+  "slug": "kingdom-hearts-final-mix"
+ },
  "KINGDOM HEARTS Ⅲ": {
   "genres": [
    "Action",
@@ -1743,6 +1972,18 @@
   "metacritic": 82,
   "released": "2019-01-25",
   "slug": "kingdom-hearts-iii"
+ },
+ "Kena: Bridge of Spirits": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action",
+   "Strategy",
+   "Indie"
+  ],
+  "metacritic": 80,
+  "released": "2021-09-21",
+  "slug": "kena-bridge-of-spirits"
  },
  "Kena: Bridge of Spirits PS4 & PS5": {
   "genres": [
@@ -1829,6 +2070,24 @@
   "released": "2018-10-15",
   "slug": "lego-dc-super-villains"
  },
+ "LEGO® DC Super-Villains": {
+  "genres": [
+   "Family",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2018-10-15",
+  "slug": "lego-dc-super-villains"
+ },
+ "LEGO® Harry Potter™ Collection: Years 5-7": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2011-11-11",
+  "slug": "lego-harry-potter-years-5-7"
+ },
  "LEGO® Horizon Adventures™": {
   "genres": [
    "Adventure",
@@ -1877,6 +2136,16 @@
   "metacritic": 67,
   "released": "2016-01-26",
   "slug": "lego-marvels-avengers"
+ },
+ "LEGO® Star Wars™: The Skywalker Saga": {
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2022-04-05",
+  "slug": "lego-star-wars-the-sywalker-saga"
  },
  "LEGO® Star Wars™ : La Saga Skywalker": {
   "genres": [
@@ -2054,6 +2323,23 @@
   "released": "2018-09-07",
   "slug": "marvels-spider-man"
  },
+ "Marvel's Spider-Man 2": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-10-20",
+  "slug": "marvels-spider-man-2"
+ },
+ "Marvel's Spider-Man: Miles Morales": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2020-11-12",
+  "slug": "marvels-spider-man-miles-morales"
+ },
  "Marvel's Spider-Man 2": {
   "genres": [
    "Adventure",
@@ -2070,6 +2356,17 @@
   "metacritic": 86,
   "released": "2020-11-12",
   "slug": "marvels-spider-man-miles-morales"
+ },
+ "Mass Effect™ Legendary Edition": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 88,
+  "released": "2021-05-14",
+  "slug": "mass-effect-legendary-edition"
  },
  "Mass Effect™ Édition Légendaire": {
   "genres": [
@@ -2100,6 +2397,15 @@
   "metacritic": 85,
   "released": "2014-09-30",
   "slug": "shadow-of-mordor"
+ },
+ "Middle-earth™: Shadow of War™": {
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 82,
+  "released": "2017-09-27",
+  "slug": "middle-earth-shadow-of-war"
  },
  "Mighty No. 9": {
   "genres": [
@@ -2277,6 +2583,14 @@
   "released": "2017-03-17",
   "slug": "nierautomata"
  },
+ "Night In The Woods": {
+  "genres": [
+   "Adventure"
+  ],
+  "metacritic": 88,
+  "released": "2017-02-21",
+  "slug": "night-in-the-woods"
+ },
  "Night in the Woods": {
   "genres": [
    "Adventure"
@@ -2326,6 +2640,19 @@
   "released": "2016-08-09",
   "slug": "no-mans-sky"
  },
+ "No Man's Sky Trophies": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG",
+   "Simulation",
+   "Indie",
+   "Massively Multiplayer"
+  ],
+  "metacritic": 75,
+  "released": "2016-08-09",
+  "slug": "no-mans-sky"
+ },
  "Old Man's Journey": {
   "genres": [
    "Adventure",
@@ -2339,6 +2666,17 @@
   "slug": "old-mans-journey"
  },
  "OlliOlli World": {
+  "genres": [
+   "Platformer",
+   "Indie",
+   "Action",
+   "Sports"
+  ],
+  "metacritic": null,
+  "released": "2022-02-07",
+  "slug": "olliolli-world"
+ },
+ "OlliOlli World\n": {
   "genres": [
    "Platformer",
    "Indie",
@@ -2488,6 +2826,14 @@
   "metacritic": null,
   "released": "2012-06-27",
   "slug": "ratchet-clank-collection"
+ },
+ "Rayman Legends": {
+  "genres": [
+   "Platformer"
+  ],
+  "metacritic": 89,
+  "released": "2013-08-29",
+  "slug": "rayman-legends"
  },
  "Rayman® Legends": {
   "genres": [
@@ -2678,6 +3024,15 @@
   "released": "2017-11-07",
   "slug": "sonic-forces"
  },
+ "STAR WARS Jedi: Fallen Order": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 80,
+  "released": "2019-11-15",
+  "slug": "jedi-the-fallen-order"
+ },
  "STAR WARS Jedi: Fallen Order™": {
   "genres": [
    "Adventure",
@@ -2715,6 +3070,16 @@
   "released": "2017-11-17",
   "slug": "star-wars-battlefront-2"
  },
+ "STAR WARS™ Battlefront™ II Trophies": {
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2017-11-17",
+  "slug": "star-wars-battlefront-2"
+ },
  "STAR WARS™: Squadrons": {
   "genres": [
    "Action",
@@ -2733,6 +3098,15 @@
   "metacritic": 72,
   "released": "2016-12-02",
   "slug": "steep"
+ },
+ "STREET FIGHTER V": {
+  "genres": [
+   "Action",
+   "Fighting"
+  ],
+  "metacritic": 74,
+  "released": "2016-02-15",
+  "slug": "street-fighter-v"
  },
  "SUPERHOT": {
   "genres": [
@@ -2783,6 +3157,33 @@
   "metacritic": 84,
   "released": "2016-03-15",
   "slug": "salt-and-sanctuary"
+ },
+ "Senua's Saga: Hellblade II": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2024-05-21",
+  "slug": "senuas-saga-hellblade-ii"
+ },
+ "Shadow of The Tomb Raider": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 78,
+  "released": "2018-09-14",
+  "slug": "shadow-of-the-tomb-raider"
+ },
+ "Shadow of the Colossus": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": 91,
+  "released": "2005-10-18",
+  "slug": "shadow-of-the-colossus-2"
  },
  "Shadow of the Tomb Raider": {
   "genres": [
@@ -2850,6 +3251,17 @@
   "released": "2024-09-16",
   "slug": "enotria-the-last-song"
  },
+ "Song in the Smoke: Rekindled": {
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "metacritic": null,
+  "released": "2024-09-16",
+  "slug": "enotria-the-last-song"
+ },
  "Sonic Colours: Ultimate": {
   "genres": [
    "Casual",
@@ -2868,6 +3280,14 @@
   "metacritic": null,
   "released": "2025-03-06",
   "slug": "split-fiction"
+ },
+ "SpongeBob SquarePants: The Cosmic Shake": {
+  "genres": [
+   "Action"
+  ],
+  "metacritic": null,
+  "released": "2023-01-31",
+  "slug": "spongebob-squarepants-the-cosmic-shake"
  },
  "Spotify": {},
  "Star Wars: Tales from the Galaxy's Edge - Enhanced Edition": {
@@ -2963,6 +3383,15 @@
   "metacritic": null,
   "released": "2024-02-02",
   "slug": "suicide-squad-kill-the-justice-league"
+ },
+ "Sword Of The Sea": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2025-08-19",
+  "slug": "sword-of-the-sea"
  },
  "Sword of the Sea": {
   "genres": [
@@ -3073,6 +3502,15 @@
   "metacritic": 70,
   "released": "2020-10-30",
   "slug": "the-dark-pictures-anthology-little-hope"
+ },
+ "The Dark Pictures Anthology: Man of Medan": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 71,
+  "released": "2019-08-30",
+  "slug": "man-of-medan"
  },
  "The Dark Pictures Anthology: Man of Medan PS4 & PS5": {
   "genres": [
@@ -3189,6 +3627,15 @@
   "metacritic": 78,
   "released": "2018-07-24",
   "slug": "the-persistence"
+ },
+ "The Plucky Squire": {
+  "genres": [
+   "Indie",
+   "Adventure"
+  ],
+  "metacritic": null,
+  "released": "2024-09-17",
+  "slug": "the-plucky-squire"
  },
  "The Plucky Squire (Le Vaillant Petit Page)": {
   "genres": [
@@ -3429,6 +3876,15 @@
   "released": "2011-11-01",
   "slug": "uncharted-3-drakes-deception"
  },
+ "Uncharted 4: A Thief’s End™": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 93,
+  "released": "2016-05-10",
+  "slug": "uncharted-4-a-thiefs-end"
+ },
  "Uncharted: Drake's Fortune™": {
   "genres": [
    "Shooter",
@@ -3467,6 +3923,15 @@
   "metacritic": 78,
   "released": "2016-02-09",
   "slug": "unravel"
+ },
+ "Until Dawn": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 79,
+  "released": "2015-08-25",
+  "slug": "until-dawn"
  },
  "Until Dawn™": {
   "genres": [
@@ -3518,6 +3983,15 @@
   "metacritic": 79,
   "released": "2010-10-19",
   "slug": "vanquish"
+ },
+ "Valiant Hearts: The Great War": {
+  "genres": [
+   "Adventure",
+   "Puzzle"
+  ],
+  "metacritic": 80,
+  "released": "2014-06-24",
+  "slug": "valiant-hearts-the-great-war"
  },
  "Vampyr": {
   "genres": [
@@ -3604,6 +4078,15 @@
   "metacritic": null,
   "released": "2020-07-08",
   "slug": "wobbly-life"
+ },
+ "Wolfenstein® II: The New Colossus": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 86,
+  "released": "2017-10-25",
+  "slug": "wolfenstein-2-the-new-colossus"
  },
  "Wolfenstein® II: The New Colossus™": {
   "genres": [
