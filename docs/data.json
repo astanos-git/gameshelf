@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30T07:11:00+00:00",
+ "generated_at": "2026-10-01T14:07:56+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -8,10 +8,10 @@
  "profile": {
   "online_id": "cwil79",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
-  "trophy_level": 328,
-  "level_progress": 98,
+  "trophy_level": 329,
+  "level_progress": 0,
   "earned": {
-   "bronze": 2739,
+   "bronze": 2740,
    "silver": 645,
    "gold": 211,
    "platinum": 22
@@ -29,10 +29,10 @@
    "acquired": "2025-03-12T19:51:00Z",
    "hours": 29.2,
    "first_played": "2026-08-23T09:10:05.600000+00:00",
-   "last_played": "2026-09-27T16:07:58.990000+00:00",
-   "progress": 21,
+   "last_played": "2026-10-01T13:09:15.900000+00:00",
+   "progress": 22,
    "earned": {
-    "bronze": 14,
+    "bronze": 15,
     "silver": 0,
     "gold": 0,
     "platinum": 0
@@ -43,7 +43,7 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-09-26T02:04:21+00:00",
+   "last_trophy": "2026-10-01T13:46:57+00:00",
    "has_trophies": true,
    "months": {
     "2026-08": [
@@ -57,6 +57,12 @@
      0,
      0,
      0
+    ],
+    "2026-10": [
+     1,
+     0,
+     0,
+     0
     ]
    },
    "trophy_lists": [
@@ -65,53 +71,53 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 21,
+     "progress": 22,
      "groups": {}
     }
    ],
    "rare": [
     {
-     "at": "2026-09-21T09:04:33+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/6cfe9197-5c40-4e1c-8886-30989caf9d39.PNG",
+     "n": "Chef in Training",
+     "t": "bronze",
+     "r": 18.3,
+     "at": "2026-10-01T13:46:57+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/fd3d44f6-a941-48bd-a2dd-8dfc14e69e34.PNG"
+    },
+    {
      "n": "What's Yours is Mine",
+     "t": "bronze",
      "r": 61.0,
-     "t": "bronze"
+     "at": "2026-09-21T09:04:33+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/6cfe9197-5c40-4e1c-8886-30989caf9d39.PNG"
     },
     {
-     "at": "2026-09-18T21:12:04+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/b04fbab2-691a-4d11-94c0-53980c76de7b.PNG",
      "n": "Tactical Strike",
+     "t": "bronze",
      "r": 62.6,
-     "t": "bronze"
+     "at": "2026-09-18T21:12:04+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/b04fbab2-691a-4d11-94c0-53980c76de7b.PNG"
     },
     {
-     "at": "2026-09-26T02:04:22+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/87441551-4216-4db5-895d-4983d301f00d.PNG",
      "n": "Dark Truths",
+     "t": "bronze",
      "r": 65.1,
-     "t": "bronze"
+     "at": "2026-09-26T02:04:22+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/87441551-4216-4db5-895d-4983d301f00d.PNG"
     },
     {
-     "at": "2026-09-21T09:39:32+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/144cda5e-9818-4b1f-8b75-95e54fde8f61.PNG",
      "n": "Archetype Adept",
+     "t": "bronze",
      "r": 67.7,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-09-21T09:22:16+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/3224b886-e1d3-4e06-a247-21b6152e0e0a.PNG",
-     "n": "Monster Hunter",
-     "r": 69.0,
-     "t": "bronze"
+     "at": "2026-09-21T09:39:32+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/144cda5e-9818-4b1f-8b75-95e54fde8f61.PNG"
     }
    ],
    "aliases": [],
-   "trophies_earned": 14,
+   "trophies_earned": 15,
    "trophies_total": 44,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-09-27T16:07:58.990000+00:00",
+   "last_activity": "2026-10-01T13:46:57+00:00",
    "hours_by_year": {
     "2026": 29.2
    },
@@ -136,7 +142,7 @@
    "first_trophy_at": "2026-08-26T20:16:43+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 30,
+   "missing_n": 29,
    "easy": [
     {
      "n": "Stray Elements",
@@ -330,8 +336,8 @@
      ],
      "progress": 35,
      "groups": {
-      "default": "Bō: Path of the Teal Lotus",
-      "001": "Tanuki Kabuki"
+      "001": "Tanuki Kabuki",
+      "default": "Bō: Path of the Teal Lotus"
      }
     }
    ],
@@ -697,8 +703,8 @@
      ],
      "progress": 1,
      "groups": {
-      "default": "Battlefield™ 6",
-      "001": "BATTLEFIELD™ REDSEC"
+      "001": "BATTLEFIELD™ REDSEC",
+      "default": "Battlefield™ 6"
      }
     }
    ],
@@ -2901,8 +2907,8 @@
      ],
      "progress": 84,
      "groups": {
-      "default": "Indiana Jones and the Great Circle",
-      "001": "The Order of Giants"
+      "001": "The Order of Giants",
+      "default": "Indiana Jones and the Great Circle"
      }
     }
    ],
@@ -3529,9 +3535,9 @@
      ],
      "progress": 85,
      "groups": {
-      "default": "ASTRO’s PLAYROOM",
       "001": "ASTRO’s PLAYROOM [ADD-ON]",
-      "002": "ASTRO’s PLAYROOM [ADD-ON] "
+      "002": "ASTRO’s PLAYROOM [ADD-ON] ",
+      "default": "ASTRO’s PLAYROOM"
      }
     }
    ],
@@ -3945,11 +3951,11 @@
      ],
      "progress": 82,
      "groups": {
-      "default": "ASTRO BOT",
       "001": "ASTRO BOT [STELLAR SPEEDWAY]",
       "002": "ASTRO BOT [WINTER WONDER]",
       "003": "ASTRO BOT [VICIOUS VOID]",
-      "004": "ASTRO BOT [VICIOUS VOID 2]"
+      "004": "ASTRO BOT [VICIOUS VOID 2]",
+      "default": "ASTRO BOT"
      }
     }
    ],
@@ -5811,8 +5817,8 @@
      ],
      "progress": 97,
      "groups": {
-      "default": "Marvel's Spider-Man 2",
-      "001": "New Game+"
+      "001": "New Game+",
+      "default": "Marvel's Spider-Man 2"
      }
     }
    ],
@@ -6126,8 +6132,8 @@
      ],
      "progress": 16,
      "groups": {
-      "default": "Deathloop",
-      "001": "Golden Loop Update"
+      "001": "Golden Loop Update",
+      "default": "Deathloop"
      }
     }
    ],
@@ -7201,9 +7207,9 @@
      ],
      "progress": 69,
      "groups": {
-      "default": "Alan Wake II",
       "001": "Night Springs",
-      "002": "The Lake House"
+      "002": "The Lake House",
+      "default": "Alan Wake II"
      }
     }
    ],
@@ -7834,11 +7840,11 @@
      ],
      "progress": 0,
      "groups": {
-      "default": "HOT WHEELS UNLEASHED™ 2 - Turbocharged",
       "001": "HOT WHEELS UNLEASHED™ 2 - Turbocharged - AcceleRacers Expansion Pack",
       "002": "HOT WHEELS UNLEASHED™ 2 - Turbocharged - Made in Italy Expansion Pack",
       "003": "HOT WHEELS UNLEASHED™ 2 - Turbocharged - Fast & Furious Expansion Pack\t",
-      "004": "HOT WHEELS UNLEASHED™ 2 - Turbocharged - Alien Encounters Expansion Pack"
+      "004": "HOT WHEELS UNLEASHED™ 2 - Turbocharged - Alien Encounters Expansion Pack",
+      "default": "HOT WHEELS UNLEASHED™ 2 - Turbocharged"
      }
     }
    ],
@@ -9264,12 +9270,12 @@
      ],
      "progress": 7,
      "groups": {
-      "default": "The Callisto Protocol",
       "001": "New Game Plus",
       "002": "Hardcore Mode",
       "003": "Contagion Mode",
       "004": "Riot Mode",
-      "005": "Final Transmission"
+      "005": "Final Transmission",
+      "default": "The Callisto Protocol"
      }
     }
    ],
@@ -9458,9 +9464,9 @@
      ],
      "progress": 2,
      "groups": {
-      "default": "DREDGE",
       "001": "The Pale Reach",
-      "002": "The Iron Rig"
+      "002": "The Iron Rig",
+      "default": "DREDGE"
      }
     }
    ],
@@ -9751,8 +9757,8 @@
      ],
      "progress": 21,
      "groups": {
-      "default": "Cyberpunk 2077",
-      "001": "Phantom Liberty"
+      "001": "Phantom Liberty",
+      "default": "Cyberpunk 2077"
      }
     }
    ],
@@ -9958,9 +9964,9 @@
      ],
      "progress": 50,
      "groups": {
-      "default": "Alan Wake Remastered",
       "001": "The Signal",
-      "002": "The Writer"
+      "002": "The Writer",
+      "default": "Alan Wake Remastered"
      }
     }
    ],
@@ -10127,9 +10133,9 @@
      ],
      "progress": 16,
      "groups": {
-      "default": "Outer Wilds",
       "001": "Echoes of the Eye",
-      "002": "Echoes of the Eye "
+      "002": "Echoes of the Eye ",
+      "default": "Outer Wilds"
      }
     }
    ],
@@ -11417,8 +11423,8 @@
      ],
      "progress": 39,
      "groups": {
-      "default": "Ghostwire: Tokyo",
-      "001": "Spider's Thread Update"
+      "001": "Spider's Thread Update",
+      "default": "Ghostwire: Tokyo"
      }
     }
    ],
@@ -11762,9 +11768,9 @@
      ],
      "progress": 2,
      "groups": {
-      "default": "Sifu",
       "001": "Sifu Arenas",
-      "002": "Sifu Arenas 2"
+      "002": "Sifu Arenas 2",
+      "default": "Sifu"
      }
     }
    ],
@@ -12329,8 +12335,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "Lego",
-    "2K Drive"
+    "2K Drive",
+    "Lego"
    ],
    "developers": [
     "Visual Concepts"
@@ -13394,8 +13400,8 @@
      ],
      "progress": 84,
      "groups": {
-      "default": "God of War Ragnarök",
-      "001": "God of War Ragnarök: Valhalla"
+      "001": "God of War Ragnarök: Valhalla",
+      "default": "God of War Ragnarök"
      }
     }
    ],
@@ -14205,8 +14211,8 @@
      ],
      "progress": 13,
      "groups": {
-      "default": "No Man's Sky Trophies",
-      "001": "Path Finder Update"
+      "001": "Path Finder Update",
+      "default": "No Man's Sky Trophies"
      }
     },
     {
@@ -14216,8 +14222,8 @@
      ],
      "progress": 0,
      "groups": {
-      "default": "No Man's Sky Trophies",
-      "001": "Path Finder Update"
+      "001": "Path Finder Update",
+      "default": "No Man's Sky Trophies"
      }
     }
    ],
@@ -14585,9 +14591,9 @@
      ],
      "progress": 6,
      "groups": {
-      "default": "OlliOlli World\n",
       "001": "VOID Riders",
-      "002": "Finding the Flowzone"
+      "002": "Finding the Flowzone",
+      "default": "OlliOlli World\n"
      }
     }
    ],
@@ -15078,9 +15084,9 @@
      ],
      "progress": 70,
      "groups": {
-      "default": "Horizon Forbidden West",
       "001": "New Game+",
-      "002": "Horizon Forbidden West: Burning Shores"
+      "002": "Horizon Forbidden West: Burning Shores",
+      "default": "Horizon Forbidden West"
      }
     }
    ],
@@ -16039,8 +16045,8 @@
      ],
      "progress": 27,
      "groups": {
-      "default": "Resident Evil Village",
-      "001": "Winters' Expansion"
+      "001": "Winters' Expansion",
+      "default": "Resident Evil Village"
      }
     }
    ],
@@ -16238,8 +16244,8 @@
      ],
      "progress": 0,
      "groups": {
-      "default": "Ghostrunner",
-      "001": "Project_HEL"
+      "001": "Project_HEL",
+      "default": "Ghostrunner"
      }
     }
    ],
@@ -16359,11 +16365,11 @@
      ],
      "progress": 2,
      "groups": {
-      "default": "DRAGON BALL XENOVERSE 2",
       "001": "Version 1.12 Additional Trophies",
       "002": "DRAGON BALL XENOVERSE 2 Extra Pack 1",
       "003": "Version 1.14 Additional Trophies",
-      "004": "DRAGON BALL XENOVERSE 2 Extra Pack 2"
+      "004": "DRAGON BALL XENOVERSE 2 Extra Pack 2",
+      "default": "DRAGON BALL XENOVERSE 2"
      }
     }
    ],
@@ -17131,10 +17137,10 @@
      ],
      "progress": 12,
      "groups": {
-      "default": "Little Nightmares",
       "001": "The Depths",
       "002": "The Hideaway",
-      "003": "The Residence"
+      "003": "The Residence",
+      "default": "Little Nightmares"
      }
     }
    ],
@@ -17332,8 +17338,8 @@
      ],
      "progress": 25,
      "groups": {
-      "default": "GRAVITY RUSH™ 2",
-      "001": "Another Story: The Ark of Time – Raven’s Choice"
+      "001": "Another Story: The Ark of Time – Raven’s Choice",
+      "default": "GRAVITY RUSH™ 2"
      }
     }
    ],
@@ -17840,8 +17846,8 @@
      ],
      "progress": 8,
      "groups": {
-      "default": "Horizon Chase Turbo",
-      "001": "Senna Forever"
+      "001": "Senna Forever",
+      "default": "Horizon Chase Turbo"
      }
     }
    ],
@@ -18885,8 +18891,8 @@
      ],
      "progress": 9,
      "groups": {
-      "default": "Need for Speed™ Payback",
-      "001": "Speedcross Pack"
+      "001": "Speedcross Pack",
+      "default": "Need for Speed™ Payback"
      }
     }
    ],
@@ -19046,10 +19052,10 @@
      ],
      "progress": 6,
      "groups": {
-      "default": "DAYS GONE",
       "001": "DAYS GONE: Survival Mode",
       "002": "DAYS GONE: Challenge Mode",
-      "003": "DAYS GONE: New Game+"
+      "003": "DAYS GONE: New Game+",
+      "default": "DAYS GONE"
      }
     }
    ],
@@ -20612,9 +20618,9 @@
      ],
      "progress": 24,
      "groups": {
-      "default": "Devil May Cry 5",
       "001": "Bloody Palace\n",
-      "002": "Vergil"
+      "002": "Vergil",
+      "default": "Devil May Cry 5"
      }
     }
    ],
@@ -21561,12 +21567,12 @@
      ],
      "progress": 64,
      "groups": {
-      "default": "Ghost of Tsushima",
       "001": "Ghost of Tsushima: Legends Mode",
       "002": "New Game+",
       "003": "Iki Island: Story",
       "004": "Iki Island: Exploration",
-      "005": "Legends: Rivals and Mastery Challenges"
+      "005": "Legends: Rivals and Mastery Challenges",
+      "default": "Ghost of Tsushima"
      }
     }
    ],
@@ -22012,8 +22018,8 @@
      ],
      "progress": 53,
      "groups": {
-      "default": "The Last of Us™ Part II",
-      "001": "Grounded Mode"
+      "001": "Grounded Mode",
+      "default": "The Last of Us™ Part II"
      }
     }
    ],
@@ -22354,9 +22360,9 @@
      ],
      "progress": 33,
      "groups": {
-      "default": "Cuphead",
       "001": "The Delicious Last Course",
-      "002": "The Delicious Last Course"
+      "002": "The Delicious Last Course",
+      "default": "Cuphead"
      }
     }
    ],
@@ -22531,11 +22537,11 @@
      ],
      "progress": 8,
      "groups": {
-      "default": "The Last of Us™ Remastered",
       "001": "Left Behind",
       "002": "Reclaimed Territories",
       "003": "Abandoned Territories",
-      "004": "Grounded Mode"
+      "004": "Grounded Mode",
+      "default": "The Last of Us™ Remastered"
      }
     }
    ],
@@ -24415,7 +24421,6 @@
      ],
      "progress": 24,
      "groups": {
-      "default": "BATMAN™: ARKHAM KNIGHT",
       "001": "A Matter of Family",
       "002": "Harley Quinn Story pack",
       "003": "Red Hood Story pack",
@@ -24431,7 +24436,8 @@
       "013": "Rogue Challenges",
       "014": "Season of Infamy",
       "015": "Original Arkham Batmobile",
-      "016": "Community Challenge Pack"
+      "016": "Community Challenge Pack",
+      "default": "BATMAN™: ARKHAM KNIGHT"
      }
     }
    ],
@@ -24970,14 +24976,14 @@
      ],
      "progress": 44,
      "groups": {
-      "default": "Shadow of The Tomb Raider",
       "001": "The Forge",
       "002": "The Pillar",
       "003": "The Nightmare",
       "004": "The Price of Survival",
       "005": "The Serpent's Heart",
       "006": "The Grand Caiman",
-      "007": "The Path Home"
+      "007": "The Path Home",
+      "default": "Shadow of The Tomb Raider"
      }
     }
    ],
@@ -25765,11 +25771,11 @@
      ],
      "progress": 62,
      "groups": {
-      "default": "Marvel's Spider-Man",
       "001": "New Game+",
       "002": "CTNS: The Heist",
       "003": "CTNS: Turf Wars",
-      "004": "CTNS: Silver Lining"
+      "004": "CTNS: Silver Lining",
+      "default": "Marvel's Spider-Man"
      }
     }
    ],
@@ -26011,11 +26017,11 @@
      ],
      "progress": 24,
      "groups": {
-      "default": "Resident Evil 7: Biohazard",
       "001": "Banned Footage Vol. 1",
       "002": "Banned Footage Vol. 2",
       "003": "End of Zoe",
-      "004": "Not a Hero"
+      "004": "Not a Hero",
+      "default": "Resident Evil 7: Biohazard"
      }
     }
    ],
@@ -26385,10 +26391,10 @@
      ],
      "progress": 59,
      "groups": {
-      "default": "Assassin's Creed® Origins",
       "001": "Assassin’s Creed® Origins The Hidden Ones",
       "002": "Discovery Tour: Ancient Egypt",
-      "003": "Assassin's Creed® Origins The Curse of the Pharaohs"
+      "003": "Assassin's Creed® Origins The Curse of the Pharaohs",
+      "default": "Assassin's Creed® Origins"
      }
     }
    ],
@@ -27386,10 +27392,10 @@
      ],
      "progress": 69,
      "groups": {
-      "default": "Horizon Zero Dawn",
       "001": "New Game+",
       "002": "The Frozen Wilds - Quests",
-      "003": "The Frozen Wilds - Feats"
+      "003": "The Frozen Wilds - Feats",
+      "default": "Horizon Zero Dawn"
      }
     }
    ],
@@ -28257,8 +28263,8 @@
      ],
      "progress": 19,
      "groups": {
-      "default": "Never Alone",
-      "001": "Never Alone: Foxtales"
+      "001": "Never Alone: Foxtales",
+      "default": "Never Alone"
      }
     }
    ],
@@ -28410,8 +28416,8 @@
      ],
      "progress": 42,
      "groups": {
-      "default": "STAR WARS™ Battlefront™ II Trophies",
-      "001": "Resurrection"
+      "001": "Resurrection",
+      "default": "STAR WARS™ Battlefront™ II Trophies"
      }
     }
    ],
@@ -28575,10 +28581,10 @@
      ],
      "progress": 25,
      "groups": {
-      "default": "Wolfenstein® II: The New Colossus",
       "001": "Adventures of Gunslinger Joe",
       "002": "The Diaries of Agent Silent Death",
-      "003": "The Deeds of Captain Wilkins"
+      "003": "The Deeds of Captain Wilkins",
+      "default": "Wolfenstein® II: The New Colossus"
      }
     }
    ],
@@ -28980,8 +28986,8 @@
      ],
      "progress": 20,
      "groups": {
-      "default": "Uncharted 4: A Thief’s End™",
-      "001": "Uncharted 4: Survival"
+      "001": "Uncharted 4: Survival",
+      "default": "Uncharted 4: A Thief’s End™"
      }
     }
    ],
@@ -30085,10 +30091,10 @@
      ],
      "progress": 2,
      "groups": {
-      "default": "Tom Clancy's The Division™",
       "001": "Tom Clancy's The Division™ Expansion I: Underground",
       "002": "Tom Clancy's The Division™ Expansion II: Survival",
-      "003": "Tom Clancy's The Division™ Expansion III: Last Stand"
+      "003": "Tom Clancy's The Division™ Expansion III: Last Stand",
+      "default": "Tom Clancy's The Division™"
      }
     }
    ],
@@ -30497,12 +30503,12 @@
      ],
      "progress": 29,
      "groups": {
-      "default": "DOOM®",
       "001": "DOOM®: Expansion Pack 1",
       "002": "DOOM®: Expansion Pack 2",
       "003": "DOOM®: Arcade Mode",
       "004": "DOOM®: Expansion Pack 3",
-      "005": "DOOM®: Update 6.66"
+      "005": "DOOM®: Update 6.66",
+      "default": "DOOM®"
      }
     }
    ],
@@ -31102,10 +31108,10 @@
      ],
      "progress": 50,
      "groups": {
-      "default": "Gravity Rush™ Remastered",
       "001": "Maid Pack",
       "002": "Spy Pack",
-      "003": "Special Forces Pack"
+      "003": "Special Forces Pack",
+      "default": "Gravity Rush™ Remastered"
      }
     }
    ],
@@ -31473,11 +31479,11 @@
      ],
      "progress": 9,
      "groups": {
-      "default": "Battlefield™ 1",
       "001": "Battlefield™ 1 They Shall Not Pass",
       "002": "Battlefield™ 1 In the Name of the Tsar",
       "003": "Battlefield™ 1 Turning Tides",
-      "004": "Battlefield™ 1 Apocalypse"
+      "004": "Battlefield™ 1 Apocalypse",
+      "default": "Battlefield™ 1"
      }
     }
    ],
@@ -31883,12 +31889,12 @@
      ],
      "progress": 26,
      "groups": {
-      "default": "Rise of the Tomb Raider",
       "001": "Endurance",
       "002": "Baba Yaga",
       "003": "Cold Darkness\n",
       "004": "Croft Manor",
-      "005": "Endurance Co-op"
+      "005": "Endurance Co-op",
+      "default": "Rise of the Tomb Raider"
      }
     }
    ],
@@ -32270,8 +32276,8 @@
      ],
      "progress": 84,
      "groups": {
-      "default": "Firewatch",
-      "001": "Firewatch Audio Tour"
+      "001": "Firewatch Audio Tour",
+      "default": "Firewatch"
      }
     }
    ],
@@ -32478,8 +32484,8 @@
      ],
      "progress": 3,
      "groups": {
-      "default": "Bloodborne",
-      "001": "Bloodborne: The Old Hunters "
+      "001": "Bloodborne: The Old Hunters ",
+      "default": "Bloodborne"
      }
     }
    ],
@@ -32645,13 +32651,13 @@
      ],
      "progress": 35,
      "groups": {
-      "default": "Fallout 4",
       "001": "Automatron",
       "002": "Wasteland Workshop",
       "003": "Far Harbor",
       "004": "Contraptions Workshop",
       "005": "Vault-Tec Workshop",
-      "006": "Nuka-World"
+      "006": "Nuka-World",
+      "default": "Fallout 4"
      }
     }
    ],
@@ -33050,10 +33056,10 @@
      ],
      "progress": 3,
      "groups": {
-      "default": "The Evil Within",
       "001": "The Assignment",
       "002": "The Consequence",
-      "003": "The Executioner"
+      "003": "The Executioner",
+      "default": "The Evil Within"
      }
     }
    ],
@@ -33532,9 +33538,9 @@
      ],
      "progress": 35,
      "groups": {
-      "default": "The Witcher 3: Wild Hunt",
       "001": "Hearts of Stone",
-      "002": "Blood and Wine"
+      "002": "Blood and Wine",
+      "default": "The Witcher 3: Wild Hunt"
      }
     }
    ],
@@ -33762,8 +33768,8 @@
      ],
      "progress": 59,
      "groups": {
-      "default": "Assassin's Creed® Unity",
-      "001": "Assassin's Creed® Unity : Dead Kings"
+      "001": "Assassin's Creed® Unity : Dead Kings",
+      "default": "Assassin's Creed® Unity"
      }
     }
    ],
@@ -33954,11 +33960,11 @@
      ],
      "progress": 0,
      "groups": {
-      "default": "THE PLAYROOM",
       "001": "TOY MAKER",
       "002": "MY ALIEN BUDDY",
       "003": "NINJA BOTS",
-      "004": "AR STUDIO"
+      "004": "AR STUDIO",
+      "default": "THE PLAYROOM"
      }
     }
    ],
@@ -34099,9 +34105,9 @@
      ],
      "progress": 9,
      "groups": {
-      "default": "Middle-earth: Shadow of Mordor",
       "001": "Lord of the Hunt",
-      "002": "The Bright Lord"
+      "002": "The Bright Lord",
+      "default": "Middle-earth: Shadow of Mordor"
      }
     }
    ],
@@ -34684,9 +34690,9 @@
      ],
      "progress": 47,
      "groups": {
-      "default": "Uncharted 2: Among Thieves™ ",
       "001": "DLC",
-      "002": "UNCHARTED 2: Among Thieves™ Siege Expansion Pack"
+      "002": "UNCHARTED 2: Among Thieves™ Siege Expansion Pack",
+      "default": "Uncharted 2: Among Thieves™ "
      }
     }
    ],
@@ -34866,9 +34872,9 @@
      ],
      "progress": 57,
      "groups": {
-      "default": "Assassin's Creed® IV Black Flag",
       "001": "Assassin's Creed® IV Black Flag: Blackbeard’s Wrath",
-      "002": "Assassin's Creed® IV Black Flag: Freedom Cry"
+      "002": "Assassin's Creed® IV Black Flag: Freedom Cry",
+      "default": "Assassin's Creed® IV Black Flag"
      }
     }
    ],
@@ -35088,10 +35094,10 @@
      ],
      "progress": 13,
      "groups": {
-      "default": "BioShock Infinite",
       "001": "Clash in the Clouds",
       "002": "Burial at Sea - Episode 1",
-      "003": "Burial at Sea - Episode 2"
+      "003": "Burial at Sea - Episode 2",
+      "default": "BioShock Infinite"
      }
     }
    ],
@@ -35271,8 +35277,8 @@
      ],
      "progress": 67,
      "groups": {
-      "default": "The Walking Dead",
-      "001": "400 Days"
+      "001": "400 Days",
+      "default": "The Walking Dead"
      }
     }
    ],
@@ -35440,8 +35446,8 @@
      ],
      "progress": 64,
      "groups": {
-      "default": "WATCH_DOGS™",
-      "001": "Bad Blood"
+      "001": "Bad Blood",
+      "default": "WATCH_DOGS™"
      }
     }
    ],
@@ -36055,12 +36061,12 @@
      ],
      "progress": 30,
      "groups": {
-      "default": "Uncharted 3: Drake's Deception™",
       "001": "DLC 1 Trophies (Flashback 1)",
       "002": "DLC 2 Trophies (Fort Coop)",
       "003": "DLC 3 Trophies (Flashback 2)",
       "004": "DLC 4 Trophies (Shades)",
-      "005": "DLC 5 Trophies (U3 Maps)"
+      "005": "DLC 5 Trophies (U3 Maps)",
+      "default": "Uncharted 3: Drake's Deception™"
      }
     }
    ],
@@ -36506,8 +36512,8 @@
      ],
      "progress": 19,
      "groups": {
-      "default": "Grand Theft Auto V",
-      "001": "Grand Theft Auto Online: Heists"
+      "001": "Grand Theft Auto Online: Heists",
+      "default": "Grand Theft Auto V"
      }
     }
    ],
@@ -37178,11 +37184,11 @@
      ],
      "progress": 5,
      "groups": {
-      "default": "The Last of Us™",
       "001": "Left Behind",
       "002": "Reclaimed Territories",
       "003": "Abandoned Territories",
-      "004": "Grounded Mode"
+      "004": "Grounded Mode",
+      "default": "The Last of Us™"
      }
     }
    ],
@@ -37519,8 +37525,8 @@
      ],
      "progress": 40,
      "groups": {
-      "default": "Dead Space™ 2",
-      "001": "Dead Space™ 2: Severed"
+      "001": "Dead Space™ 2: Severed",
+      "default": "Dead Space™ 2"
      }
     }
    ],
@@ -37678,10 +37684,10 @@
      ],
      "progress": 24,
      "groups": {
-      "default": "Dishonored",
       "001": "Dunwall City Trials",
       "002": "The Knife of Dunwall",
-      "003": "The Brigmore Witches"
+      "003": "The Brigmore Witches",
+      "default": "Dishonored"
      }
     }
    ],
@@ -37866,11 +37872,11 @@
      ],
      "progress": 43,
      "groups": {
-      "default": "Assassin's Creed® III",
       "001": "The Battle Hardened Pack",
       "002": "The Tyranny of King Washington Episode 1: The Infamy",
       "003": "The Tyranny of King Washington Episode 2: The Betrayal",
-      "004": "The Tyranny of King Washington Episode 3: The Redemption"
+      "004": "The Tyranny of King Washington Episode 3: The Redemption",
+      "default": "Assassin's Creed® III"
      }
     }
    ],
@@ -38192,10 +38198,10 @@
      ],
      "progress": 42,
      "groups": {
-      "default": "AC Revelations",
       "001": "Multiplayer Character Pack",
       "002": "Multiplayer Map Pack",
-      "003": "The Lost Archive\n"
+      "003": "The Lost Archive\n",
+      "default": "AC Revelations"
      }
     }
    ],
@@ -38366,8 +38372,8 @@
      ],
      "progress": 10,
      "groups": {
-      "default": "FIFA 12",
-      "001": "UEFA EURO 2012™"
+      "001": "UEFA EURO 2012™",
+      "default": "FIFA 12"
      }
     }
    ],
@@ -38779,8 +38785,8 @@
      ],
      "progress": 60,
      "groups": {
-      "default": "AC Brotherhood",
-      "001": "Da Vinci Disappearance"
+      "001": "Da Vinci Disappearance",
+      "default": "AC Brotherhood"
      }
     }
    ],
@@ -38931,11 +38937,11 @@
      ],
      "progress": 24,
      "groups": {
-      "default": "Red Dead Redemption",
       "001": "Outlaws To The End Co-Op Pack",
       "002": "Legends and Killers Pack",
       "003": "Liars and Cheats Pack",
-      "004": "Undead Nightmare"
+      "004": "Undead Nightmare",
+      "default": "Red Dead Redemption"
      }
     }
    ],
@@ -39371,11 +39377,11 @@
      ],
      "progress": 54,
      "groups": {
-      "default": "Batman: Arkham City™",
       "001": "Catwoman DLC",
       "002": "Robin DLC",
       "003": "Nightwing DLC",
-      "004": "Harley PDLC"
+      "004": "Harley PDLC",
+      "default": "Batman: Arkham City™"
      }
     }
    ],
@@ -39822,9 +39828,9 @@
      ],
      "progress": 49,
      "groups": {
-      "default": "Mafia II",
       "001": "Jimmy's Vendetta",
-      "002": "Joe's Adventures"
+      "002": "Joe's Adventures",
+      "default": "Mafia II"
      }
     }
    ],
@@ -40106,11 +40112,11 @@
      ],
      "progress": 47,
      "groups": {
-      "default": "L.A. Noire",
       "001": "A Slip of the Tongue",
       "002": "The Naked City",
       "003": "Nicholson Electroplating",
-      "004": "Reefer Madness"
+      "004": "Reefer Madness",
+      "default": "L.A. Noire"
      }
     }
    ],
@@ -41347,7 +41353,8 @@
    "2026-09-21": 3,
    "2026-09-25": 9,
    "2026-09-26": 1,
-   "2026-09-27": 2
+   "2026-09-27": 2,
+   "2026-10-01": 1
   },
   "weekday_hour": {
    "2011": [
@@ -41608,7 +41615,7 @@
     19,
     27,
     44,
-    49,
+    50,
     38,
     32,
     17,
@@ -44158,7 +44165,7 @@
     2,
     0,
     0,
-    3,
+    4,
     2,
     1,
     0,
@@ -44555,7 +44562,7 @@
     "buckets": [
      58,
      481,
-     2094,
+     2095,
      984
     ],
     "score": 25
@@ -44690,7 +44697,7 @@
     "buckets": [
      1,
      45,
-     145,
+     146,
      52
     ],
     "score": 27
