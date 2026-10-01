@@ -122,21 +122,55 @@ def fetch_psn(npsso: str) -> dict:
     except Exception as e:
         print(f"  owned games skipped: {e}")
 
-    # Map trophy lists to PS4/PS5 title IDs so versions/names line up.
-    title_to_np = {}
-    ids = sorted({x["title_id"] for x in stats + owned if x.get("title_id")})
-    for i in range(0, len(ids), 5):
-        try:
-            for t in me.trophy_titles_for_title(ids[i:i + 5]):
-                if t.np_title_id and t.np_communication_id:
-                    title_to_np[t.np_title_id] = t.np_communication_id
-        except Exception as e:
-            print(f"  trophy/title mapping batch skipped: {e}")
+    title_to_np = map_titles(me, stats, owned)
 
     fetch_trophy_dates(me, trophies)
     fetch_group_names(me, trophies)
 
     return {"profile": profile, "trophies": trophies, "stats": stats, "owned": owned, "title_to_np": title_to_np}
+
+
+# ---------------------------------------------------------------- title IDs -> trophy lists
+
+TITLE_CACHE = ROOT / "title_map.json"   # {title id: trophy list id, or {"none": date checked}}
+TITLE_RETRY_DAYS = 30
+
+
+def map_titles(me, stats: list[dict], owned: list[dict]) -> dict:
+    """Map PS4/PS5 title IDs to trophy lists so versions and names line up.
+
+    A title's trophy list never changes, so known matches are kept and only new titles are
+    looked up (5 per request). Titles without a list yet (often games never started) are
+    checked again once you play them, or after 30 days.
+    """
+    cache = json.loads(TITLE_CACHE.read_text()) if TITLE_CACHE.exists() else {}
+    today = datetime.now(timezone.utc).date().isoformat()
+    last_played = {s["title_id"]: (s.get("last_played") or "")[:10] for s in stats if s.get("title_id")}
+
+    def needs_lookup(tid: str) -> bool:
+        hit = cache.get(tid)
+        if hit is None:
+            return True
+        if isinstance(hit, str):
+            return False
+        checked = hit.get("none", "2000-01-01")
+        played_since = last_played.get(tid, "") > checked
+        old = (datetime.fromisoformat(today) - datetime.fromisoformat(checked)).days > TITLE_RETRY_DAYS
+        return played_since or old
+
+    ids = sorted(t for t in {x["title_id"] for x in stats + owned if x.get("title_id")} if needs_lookup(t))
+    for i in range(0, len(ids), 5):
+        batch = ids[i:i + 5]
+        try:
+            found = {t.np_title_id: t.np_communication_id for t in me.trophy_titles_for_title(batch)
+                     if t.np_title_id and t.np_communication_id}
+            for tid in batch:
+                cache[tid] = found.get(tid) or {"none": today}
+        except Exception as e:
+            print(f"  trophy/title mapping batch skipped: {e}")
+    TITLE_CACHE.write_text(json.dumps(cache, indent=1, sort_keys=True))
+    print(f"  title matching: {len(ids)} looked up, {sum(1 for v in cache.values() if isinstance(v, str))} known")
+    return {tid: np for tid, np in cache.items() if isinstance(np, str)}
 
 
 # ---------------------------------------------------------------- trophy dates
