@@ -89,11 +89,25 @@ section { display: grid; gap: 10px; }
 .left { font: 600 24px var(--display); text-align: right; line-height: 1; }
 .left small { display: block; font: 11px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .empty { color: var(--muted); padding: 12px 0; margin: 0; }
+.wk-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.wk .item { grid-template-columns: 96px 1fr auto; align-items: start; border-color: var(--accent); }
+.wk .cover { width: 96px; height: 64px; border-radius: 8px; }
+.wk .why { font-size: 13px; color: var(--fg); line-height: 1.4; }
+.wk .name a { color: inherit; text-decoration: none; }
+.wk .name a:hover { text-decoration: underline; }
+.wk .owned { font-size: 12px; color: var(--muted); }
+@media (max-width: 420px) { .wk .item { grid-template-columns: 72px 1fr auto; } .wk .cover { width: 72px; height: 52px; } }
 @media (max-width: 420px) { .pick { grid-template-columns: 72px 1fr; } .pick .cover { width: 72px; height: 72px; } }
 </style>
 
 <div class="wrap">
   <nav class="tabs"><a href="index.html">Library</a><a href="play.html" aria-current="page">Play next</a><a href="stats.html">Stats</a><a href="review.html">Review</a></nav>
+
+  <section id="weekly" hidden>
+    <div class="wk-head"><h1>This week's picks</h1><span class="note" id="wkWhen"></span></div>
+    <p class="note" id="wkProfile"></p>
+    <ol class="list wk" id="wkList"></ol>
+  </section>
 
   <section>
     <h1>What should I play next?</h1>
@@ -219,6 +233,22 @@ function dlcToFinish() {
 }
 $("dlcMore").addEventListener("click", () => { dlcAll = true; dlcToFinish(); });
 
+async function weekly() {
+  let R; try { const r = await fetch("recommendations.json", { cache: "no-store" }); if (!r.ok) return; R = await r.json(); } catch { return; }
+  if (!R.picks?.length) return;
+  const owned = new Set(DATA.games.map(g => g.rawg_slug).filter(Boolean));
+  const d = new Date(R.generated_at);
+  $("wkWhen").textContent = `Updated ${d.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long" })} · new picks every Monday`;
+  const pr = R.profile || {};
+  $("wkProfile").textContent = pr.top_tags?.length ? `Based on your taste for ${pr.top_genres.slice(0, 3).join(", ")} and ${pr.top_tags.slice(0, 4).map(t => t.toLowerCase()).join(", ")} games, usually around ${pr.usual_length} h.` : "";
+  $("wkList").innerHTML = R.picks.map(p => `<li class="item"><span class="cover">${pic(p.image, p.name)}</span>
+    <span class="main"><span class="name"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a></span>
+      <span class="meta"><span>${esc(p.platforms.join(" · "))}</span>${p.released ? `<span>${new Date(p.released).getFullYear()}</span>` : ""}${p.length ? `<span>~${p.length} h</span>` : ""}<span>${esc(p.genres.join(", "))}</span></span>
+      <span class="why">${esc(p.why)}</span>${owned.has(p.slug) ? `<span class="owned">Already in your library now</span>` : ""}</span>
+    <span class="mc ${mcClass(p.metacritic)}">${p.metacritic ?? "n/a"}</span></li>`).join("");
+  $("weekly").hidden = false;
+}
+
 function save() { try { localStorage.setItem("shelf-play", JSON.stringify(state)); } catch {} }
 document.addEventListener("click", e => {
   const len = e.target.closest("[data-len]"), pl = e.target.closest("[data-pool]");
@@ -235,7 +265,7 @@ async function start() {
   const genres = [...new Set(DATA.games.filter(x => x.eff === "unplayed" || x.eff === "started").flatMap(x => x.genres || []))].sort();
   if (state.genre && !genres.includes(state.genre)) state.genre = "";
   $("genre").innerHTML = `<option value="">All genres</option>` + genres.map(g => `<option${g === state.genre ? " selected" : ""}>${esc(g)}</option>`).join("");
-  render(); closest(); dlcToFinish();
+  render(); closest(); dlcToFinish(); weekly();
 }
 start();
 </script>
