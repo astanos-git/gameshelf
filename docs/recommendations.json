@@ -1,22 +1,23 @@
 {
  "week": "2026-W40",
- "generated_at": "2026-10-01T19:02:54+00:00",
+ "generated_at": "2026-10-01T19:07:31+00:00",
  "picks": [
   {
-   "slug": "god-of-war-2",
-   "name": "God of War (2018)",
-   "image": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
-   "metacritic": 94,
-   "released": "2018-04-20",
+   "slug": "shadows-die-twice",
+   "name": "Sekiro: Shadows Die Twice",
+   "image": "https://media.rawg.io/media/games/67f/67f62d1f062a6164f57575e0604ee9f6.jpg",
+   "metacritic": 90,
+   "released": "2019-03-22",
    "genres": [
-    "Action"
+    "Action",
+    "RPG"
    ],
    "platforms": [
     "PS4"
    ],
-   "length": 33,
-   "why": "Close to Death's Door, which you enjoyed; matches your taste for atmospheric, story rich, exploration; about 33 h.",
-   "url": "https://rawg.io/games/god-of-war-2"
+   "length": 43,
+   "why": "Close to God of War, which you enjoyed; matches your taste for atmospheric, story rich, exploration; about 43 h.",
+   "url": "https://rawg.io/games/shadows-die-twice"
   },
   {
    "slug": "hades-2018",
@@ -70,9 +71,22 @@
    "RPG",
    "Open World",
    "Action RPG",
-   "Female Protagonist"
+   "Fantasy"
   ],
   "usual_length": 17
  },
- "history": []
+ "history": [
+  {
+   "slug": "shadows-die-twice",
+   "week": "2026-W40"
+  },
+  {
+   "slug": "hades-2018",
+   "week": "2026-W40"
+  },
+  {
+   "slug": "ratchet-clank-rift-apart",
+   "week": "2026-W40"
+  }
+ ]
 }
