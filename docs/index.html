@@ -310,7 +310,7 @@ function applyFlags(games, flags) {
   }
 }
 const $ = id => document.getElementById(id);
-let DATA, state = { status: "all", q: "", sort: "recent", open: null, selecting: false, sel: new Set(), tfilter: "all", tsort: "order" };
+let DATA, state = { status: "all", q: "", sort: "recent", open: null, selecting: false, sel: new Set(), tfilter: "all", tsort: "order", twhen: "any" };
 try { Object.assign(state, JSON.parse(localStorage.getItem("shelf") || "{}"), { q: "", open: null }); } catch {}
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -574,7 +574,10 @@ function detail(x, id) {
   const tl = x.trophy_lists?.length ? `<section class="tlist" data-game="${id}">
       <div class="tl-head"><b>Trophies</b><a class="tguide" href="${listGuideUrl(x.name)}" target="_blank" rel="noopener">Trophy guide</a>
         <span class="seg" role="group" aria-label="Show trophies">${[["all", "All"], ["missing", "Missing"], ["earned", "Earned"]].map(([k, l]) => `<button data-tf="${k}" aria-pressed="${state.tfilter === k}">${l}</button>`).join("")}</span>
-        <select data-ts aria-label="Sort trophies">${[["order", "Game order"], ["rare", "Rarest first"], ["common", "Most common first"]].map(([k, l]) => `<option value="${k}"${state.tsort === k ? " selected" : ""}>${l}</option>`).join("")}</select>
+        <select data-ts aria-label="Sort trophies">${[["order", "Game order"], ["newest", "Newest earned first"], ["oldest", "Oldest earned first"], ["rare", "Rarest first"], ["common", "Most common first"]].map(([k, l]) => `<option value="${k}"${state.tsort === k ? " selected" : ""}>${l}</option>`).join("")}</select>
+        <select data-tw aria-label="Earned in">${[["any", "Earned any time"], ["30d", "Last 30 days"], ["90d", "Last 3 months"],
+          ...[...new Set(Object.keys(x.months || {}).map(m => m.slice(0, 4)))].sort().reverse().map(y => [y, `Earned in ${y}`])]
+          .map(([k, l]) => `<option value="${k}"${state.twhen === k ? " selected" : ""}>${l}</option>`).join("")}</select>
       </div>${dlcSummary(x)}<div class="tl-body"><p class="flagnote">Loading trophies…</p></div></section>` : "";
   return `<div class="detail" id="${id}-d">${pend}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}${ratingBar(x)}${flagBar(x)}${tl}</div>`;
 }
@@ -591,7 +594,12 @@ async function renderTrophies() {
   const body = box.querySelector(".tl-body"); if (!body.isConnected) return;
   const avail = lists.filter(l => l.d);
   if (!avail.length) { body.innerHTML = `<p class="flagnote">Trophy details appear after your next refresh.</p>`; return; }
-  const sorts = { order: (a, b) => a.id - b.id, rare: (a, b) => (a.r ?? 101) - (b.r ?? 101), common: (a, b) => (b.r ?? -1) - (a.r ?? -1) };
+  const sorts = { order: (a, b) => a.id - b.id, rare: (a, b) => (a.r ?? 101) - (b.r ?? 101), common: (a, b) => (b.r ?? -1) - (a.r ?? -1),
+    newest: (a, b) => (b.at || "").localeCompare(a.at || "") || a.id - b.id,          // not-earned trophies go last
+    oldest: (a, b) => (!a.at) - (!b.at) || (a.at || "").localeCompare(b.at || "") || a.id - b.id };
+  // "Earned in": only trophies earned in that period
+  const since = { "30d": 30, "90d": 91 }[state.twhen];
+  const inPeriod = t => state.twhen === "any" || (t.e && t.at && (since ? Date.now() - new Date(t.at) <= since * 864e5 : new Date(t.at).getFullYear() === +state.twhen));
   const row = t => {
     const desc = t.h && !t.e ? `<details><summary>Hidden trophy · tap to reveal</summary><span>${esc(t.d)}</span></details>` : `<span>${esc(t.d)}</span>`;
     const when = t.e ? (t.at ? fmtDate(t.at) : "Earned") : (t.p ? `${t.p} done` : "Not earned");
@@ -608,12 +616,14 @@ async function renderTrophies() {
     const ids = Object.keys(groups).sort((a, b) => (a === "default" ? -1 : b === "default" ? 1 : a.localeCompare(b)));  // base game first
     const parts = ids.map(gid => {
       const all = groups[gid], got = all.filter(t => t.e).length;
-      const rows = all.filter(t => state.tfilter === "all" || (state.tfilter === "earned") === t.e).sort(sorts[state.tsort]);
+      const rows = all.filter(t => (state.tfilter === "all" || (state.tfilter === "earned") === t.e) && inPeriod(t)).sort(sorts[state.tsort]);
       const label = gid === "default" ? "Base game" : (l.groups?.[gid] || `DLC ${gid}`);
       const sub = ids.length > 1 ? `<div class="tl-group"><span>${esc(label)}</span><span class="num">${got}/${all.length}${got === all.length ? " · done" : ""}</span></div>` : "";
-      return rows.length ? sub + rows.map(row).join("") : (ids.length > 1 && state.tfilter !== "all" ? "" : sub);
+      return rows.length ? sub + rows.map(row).join("") : (ids.length > 1 && (state.tfilter !== "all" || state.twhen !== "any") ? "" : sub);
     }).join("");
-    return head + (parts || `<p class="flagnote">${state.tfilter === "missing" ? "Nothing missing here." : "No trophies earned yet."}</p>`);
+    const empty = state.twhen !== "any" ? (state.tfilter === "missing" ? "Missing trophies have no earned date: set “Earned any time” to see them." : "No trophies earned in this period.")
+      : state.tfilter === "missing" ? "Nothing missing here." : "No trophies earned yet.";
+    return head + (parts || `<p class="flagnote">${empty}</p>`);
   }).join("");
 }
 
@@ -652,7 +662,10 @@ $("selbar").addEventListener("click", e => {
 });
 $("list").addEventListener("input", e => { if (e.target.matches(".rater input")) syncRater(e.target.closest(".rating"), +e.target.value); });
 $("list").addEventListener("click", e => { const st = e.target.closest(".rater .step"); if (st) { const box = st.closest(".rating"); syncRater(box, +box.querySelector("input").value + +st.dataset.step); } });
-$("list").addEventListener("change", e => { if (e.target.matches("[data-ts]")) { state.tsort = e.target.value; renderTrophies(); } });
+$("list").addEventListener("change", e => {
+  if (e.target.matches("[data-ts]")) { state.tsort = e.target.value; renderTrophies(); }
+  if (e.target.matches("[data-tw]")) { state.twhen = e.target.value; renderTrophies(); }
+});
 $("q").addEventListener("input", e => { state.q = e.target.value; renderList(); });
 $("sort").addEventListener("change", e => { state.sort = e.target.value; save(); renderList(); });
 
