@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01T14:15:08+00:00",
+ "generated_at": "2026-10-01T19:05:01+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -790,64 +790,6 @@
      "p": null
     }
    ]
-  },
-  {
-   "name": "The Witcher 3: Wild Hunt — Remastered",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1412/5YlA3POEEpaAJsUq3eg6U8d6.png",
-   "platforms": [
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-08-26T17:58:54Z",
-   "hours": 0.0,
-   "first_played": null,
-   "last_played": null,
-   "progress": null,
-   "earned": null,
-   "defined": null,
-   "last_trophy": null,
-   "has_trophies": false,
-   "months": {},
-   "trophy_lists": [],
-   "rare": [],
-   "aliases": [],
-   "trophies_earned": 0,
-   "trophies_total": 0,
-   "platinum": false,
-   "status": "unplayed",
-   "last_activity": null,
-   "hours_by_year": {},
-   "metacritic": 92,
-   "genres": [
-    "Action",
-    "RPG"
-   ],
-   "released": "2015-05-18",
-   "rawg_slug": "the-witcher-3-wild-hunt",
-   "metacritic_source": "rawg",
-   "series": [
-    "The Witcher"
-   ],
-   "developers": [
-    "CD Projekt RED"
-   ],
-   "publishers": [
-    "Namco",
-    "cdp.pl",
-    "CD Projekt RED",
-    "Warner Bros. Games"
-   ],
-   "hltb": {
-    "main": 51.68,
-    "extra": 103.75,
-    "complete": 175.24,
-    "url": "https://howlongtobeat.com/game/10270"
-   },
-   "first_trophy_at": null,
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 0,
-   "easy": []
   },
   {
    "name": "SIGNALIS",
@@ -25544,12 +25486,18 @@
    "genres": [
     "Action"
    ],
-   "released": "2005-03-22",
-   "rawg_slug": "god-of-war",
+   "released": "2018-04-20",
+   "rawg_slug": "god-of-war-2",
    "metacritic_source": "rawg",
    "series": [],
-   "developers": [],
-   "publishers": [],
+   "developers": [
+    "Santa Monica Studio",
+    "Jetpack Interactive"
+   ],
+   "publishers": [
+    "Sony Interactive Entertainment",
+    "PlayStation PC LLC"
+   ],
    "hltb": {
     "main": 20.57,
     "extra": 32.91,
@@ -33461,13 +33409,14 @@
    ]
   },
   {
-   "name": "The Witcher 3: Wild Hunt",
+   "name": "The Witcher 3: Wild Hunt — Remastered",
    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1412/5YlA3POEEpaAJsUq3eg6U8d6.png",
    "platforms": [
-    "PS4"
+    "PS4",
+    "PS5"
    ],
-   "owned": false,
-   "acquired": null,
+   "owned": true,
+   "acquired": "2026-08-26T17:58:54Z",
    "hours": 124.8,
    "first_played": "2015-06-08T08:40:37+00:00",
    "last_played": "2015-12-05T09:06:01+00:00",
@@ -33581,7 +33530,9 @@
      "t": "silver"
     }
    ],
-   "aliases": [],
+   "aliases": [
+    "The Witcher 3: Wild Hunt"
+   ],
    "trophies_earned": 26,
    "trophies_total": 79,
    "platinum": false,
@@ -33613,7 +33564,7 @@
    "hltb": {
     "main": 51.68,
     "extra": 103.75,
-    "complete": 175.26,
+    "complete": 175.24,
     "url": "https://howlongtobeat.com/game/10270"
    },
    "first_trophy_at": "2015-06-20T08:34:01+00:00",
