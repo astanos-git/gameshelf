@@ -184,14 +184,15 @@ def main() -> None:
 
     profile = build_profile(games, flags, ratings, key)
     owned_slugs = {g["rawg_slug"] for g in games if g.get("rawg_slug")}
-    owned_names = {norm(n) for g in games for n in [g["name"], *g.get("aliases", [])]}
+    same = lambda n: norm(re.sub(r"\(\d{4}\)", "", n))   # "God of War (2018)" is the same game as "God of War"
+    owned_names = {same(n) for g in games for n in [g["name"], *g.get("aliases", [])]}
     # games recommended in the last 12 weeks (a re-run in the same week may pick again)
     earlier = [h["slug"] for h in previous.get("history", []) if h.get("week") != week]
     recent = set(earlier[: HISTORY_WEEKS * PICKS])
 
     scored = []
     for slug, x in candidates(profile, key).items():
-        if slug in owned_slugs or norm(x["name"]) in owned_names or slug in recent:
+        if slug in owned_slugs or same(x["name"]) in owned_names or slug in recent:
             continue
         if not {"PlayStation 5", "PlayStation 4"} & {p["platform"]["name"] for p in x.get("platforms") or []}:
             continue
