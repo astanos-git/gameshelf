@@ -11,6 +11,7 @@
 <style>
 /* Layout: tabs → year chips → figures → two top-3 lists side by side → trophies-over-time bars → genre bars */
 :root {
+  --you: #1f6fe0; --crit: #c2560f; --aligned: #8a93a3;
   --bg: #eef1f6; --surface: #ffffff; --line: #d6dce7; --grid: #e6eaf1; --fg: #141a26; --muted: #5b6477;
   --accent: #1f5fd6; --accent-soft: #e2ebfb; --bar: #3f78e0;
   --bronze: #b46f3c; --silver: #8d97a6; --gold: #c99a14; --plat: #5d8fc9;
@@ -22,12 +23,14 @@
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #0e1320; --surface: #161d2d; --line: #26304a; --grid: #1f283d; --fg: #e6eaf3; --muted: #95a0b8;
   --accent: #6a9cff; --accent-soft: #1d2b4d; --bar: #5b8ff5;
+  --you: #4f8df0; --crit: #d4733a; --aligned: #666d7a;
   --bronze: #d08d5a; --silver: #b4bdca; --gold: #e3b93b; --plat: #8fb8ea;
   color-scheme: dark;
 } }
 :root[data-theme="dark"] {
   --bg: #0e1320; --surface: #161d2d; --line: #26304a; --grid: #1f283d; --fg: #e6eaf3; --muted: #95a0b8;
   --accent: #6a9cff; --accent-soft: #1d2b4d; --bar: #5b8ff5;
+  --you: #4f8df0; --crit: #d4733a; --aligned: #666d7a;
   --bronze: #d08d5a; --silver: #b4bdca; --gold: #e3b93b; --plat: #8fb8ea;
   color-scheme: dark;
 }
@@ -133,6 +136,22 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
 .ms-what { min-width: 0; overflow-wrap: anywhere; }
 .ms-r { font: 12px var(--mono); color: var(--muted); }
 @media (max-width: 420px) { .ms li { grid-template-columns: 1fr auto; } .ms-when { grid-column: 1 / -1; } }
+.chart .band { fill: color-mix(in srgb, var(--aligned) 18%, transparent); }
+.chart .diag { stroke: var(--aligned); stroke-dasharray: 5 4; stroke-width: 1.5; }
+.chart .rp { stroke: var(--surface); stroke-width: 1.5; cursor: pointer; }
+.chart .rp.up { fill: var(--you); } .chart .rp.dn { fill: var(--crit); } .chart .rp.al { fill: var(--aligned); }
+.chart .rp:hover, .chart .rp:focus { stroke: var(--fg); stroke-width: 2; }
+.chart .gap { stroke-width: 2; } .chart .gap.up { stroke: var(--you); } .chart .gap.dn { stroke: var(--crit); }
+.chart text.plabel { fill: var(--fg); font: 600 11px var(--body); }
+.chart text.axis-t { fill: var(--muted); font: 11px var(--body); }
+.agree { display: grid; gap: 6px; }
+.seg-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; gap: 2px; }
+.seg-bar i.up, .k.up { background: var(--you); } .seg-bar i.al, .k.al { background: var(--aligned); } .seg-bar i.dn, .k.dn { background: var(--crit); }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--fg); }
+.legend span { display: inline-flex; gap: 5px; align-items: center; }
+.k { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; } @media (max-width: 640px) { .three { grid-template-columns: 1fr; } }
+.three > div { min-width: 0; }
 .chart .ref { stroke: var(--line); stroke-dasharray: 4 4; }
 .chart .qlabel { fill: var(--muted); font: italic 11px var(--body); }
 .chart .pt { fill: var(--bar); fill-opacity: .75; stroke: var(--surface); stroke-width: 1.5; cursor: pointer; }
@@ -240,7 +259,7 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
 
   <section class="panel"><div class="panel-head"><h2>Critics vs you</h2><span class="note">Metacritic against hours played</span></div>
     <div class="chart" id="scatter"></div><div class="two" id="criticLists"></div>
-    <h3>Your ratings</h3><div id="ratingsCmp"></div></section>
+    <h3>Your ratings vs Metacritic</h3><div class="chart" id="ratingsChart"></div><div id="ratingsCmp"></div></section>
 
   <section class="panel"><div class="panel-head"><h2>Backlog</h2><span class="note">Right now, and year by year</span></div><div id="backlog"></div></section>
 
@@ -499,14 +518,71 @@ function critics(y) {
     $("criticLists").innerHTML = `<div><h3>Hidden gems</h3>${gems.length ? `<ul>${gems.map(p => li(p.x, `Metacritic ${p.mc} · ${fmt(p.h)} h`)).join("")}</ul>` : `<p class="note">None in this period.</p>`}</div>` +
       (y === "all" ? `<div><h3>Acclaimed, barely played</h3>${skipped.length ? `<ul>${skipped.map(x => li(x, `Metacritic ${x.metacritic} · ${fmt(x.hours || 0)} h`)).join("")}</ul>` : `<p class="note">None: well done.</p>`}</div>` : "");
   }
-  // Your ratings vs Metacritic
-  const rated = DATA.games.map(x => ({ x, r: ratingOf(x) })).filter(o => o.r && o.x.metacritic != null && (y === "all" || yearOf(finishedAt(o.x) || o.r.at) === y));
-  if (!rated.length) { $("ratingsCmp").innerHTML = `<p class="note">Rate games from the Library (open a game, slide to a score, tap Save) to compare your taste with the critics here.</p>`; return; }
-  const diffs = rated.map(o => ({ ...o, d: o.r.score - o.x.metacritic }));
-  const avg = sum(diffs.map(o => o.d)) / diffs.length;
-  const top = [...diffs].sort((a, b) => Math.abs(b.d) - Math.abs(a.d)).slice(0, 4);
-  $("ratingsCmp").innerHTML = `<p>You rated <b>${rated.length}</b> game${rated.length === 1 ? "" : "s"}. On average you score games <b>${Math.abs(avg).toFixed(0)} points ${avg >= 0 ? "higher" : "lower"}</b> than Metacritic.</p>
-    <ul>${top.map(o => `<li><b>${esc(o.x.name)}</b> <span class="note">you ${o.r.score} · Metacritic ${o.x.metacritic} · ${o.d >= 0 ? "+" : ""}${o.d}</span></li>`).join("")}</ul>`;
+  ratingsVsCritics(y);
+}
+
+/* ---------- Your ratings vs Metacritic: gaps and alignments ---------- */
+const ALIGN = 5;   // within 5 points = aligned
+function ratingsVsCritics(y) {
+  const rated = DATA.games.map(x => ({ x, r: ratingOf(x) })).filter(o => o.r && o.x.metacritic != null && (y === "all" || yearOf(finishedAt(o.x) || o.r.at) === y))
+    .map(o => ({ ...o, me: o.r.score, mc: o.x.metacritic, d: o.r.score - o.x.metacritic }));
+  const box = $("ratingsCmp");
+  if (rated.length < 3) { box.innerHTML = `<p class="note">${rated.length ? "Rate a few more games" : "Rate games from the Library (open a game, slide to a score, tap Save)"} to compare your taste with the critics here.</p>`; return; }
+  const kind = o => Math.abs(o.d) <= ALIGN ? "al" : o.d > 0 ? "up" : "dn";
+  const n = { al: 0, up: 0, dn: 0 }; rated.forEach(o => n[kind(o)]++);
+  const avg = sum(rated.map(o => o.d)) / rated.length;
+  // correlation: do you rank games the same way as critics, even if your scale differs?
+  const mx = sum(rated.map(o => o.mc)) / rated.length, my = sum(rated.map(o => o.me)) / rated.length;
+  const cov = sum(rated.map(o => (o.mc - mx) * (o.me - my))), vx = sum(rated.map(o => (o.mc - mx) ** 2)), vy = sum(rated.map(o => (o.me - my) ** 2));
+  const corr = vx && vy ? cov / Math.sqrt(vx * vy) : 0;
+  const corrTxt = corr > .7 ? "you mostly rank games the same way as critics" : corr > .4 ? "you broadly agree with critics on which games are better" : corr > .1 ? "your taste only loosely follows the critics" : "your taste is independent of the critics";
+
+  // chart: Metacritic (x) against your score (y), diagonal = same score
+  const el = $("ratingsChart");
+  const W = Math.max(300, Math.round(el.clientWidth || 640)), H = Math.min(W, 420), L = 38, R = 12, T = 24, B = 32, iw = W - L - R, ih = H - T - B;
+  const lo = Math.max(0, Math.floor((Math.min(...rated.map(o => Math.min(o.me, o.mc))) - 5) / 10) * 10), hi = 100;
+  const sx = v => L + ((v - lo) / (hi - lo)) * iw, sy = v => T + ih - ((v - lo) / (hi - lo)) * ih;
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Your rating against Metacritic">`;
+  for (let v = lo; v <= hi; v += 10) svg += `<line class="gridline" x1="${L}" x2="${W - R}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${L - 6}" y="${sy(v) + 4}" text-anchor="end">${v}</text><text x="${sx(v)}" y="${H - 14}" text-anchor="middle">${v}</text>`;
+  svg += `<text class="axis-t" x="${W - R}" y="${H - 1}" text-anchor="end">Metacritic →</text><text class="axis-t" x="${L - 6}" y="${T - 10}" text-anchor="end">You</text>`;
+  // aligned band (±5) and the diagonal
+  svg += `<polygon class="band" points="${sx(lo)},${sy(lo + ALIGN)} ${sx(hi - ALIGN)},${sy(hi)} ${sx(hi)},${sy(hi)} ${sx(hi)},${sy(hi - ALIGN)} ${sx(lo + ALIGN)},${sy(lo)} ${sx(lo)},${sy(lo)}"/>`;
+  svg += `<line class="diag" x1="${sx(lo)}" y1="${sy(lo)}" x2="${sx(hi)}" y2="${sy(hi)}"/>`;
+  svg += `<text class="qlabel" x="${sx(lo) + 6}" y="${T + 12}">You liked it more</text><text class="qlabel" x="${W - R - 6}" y="${T + ih - 6}" text-anchor="end">Critics liked it more</text>`;
+  // gap lines from the diagonal for the biggest gaps, then points (aligned first so gaps sit on top)
+  const order = [...rated].sort((a, b) => Math.abs(a.d) - Math.abs(b.d));
+  const labelled = new Set([...rated].sort((a, b) => Math.abs(b.d) - Math.abs(a.d)).slice(0, 3).filter(o => Math.abs(o.d) > ALIGN));
+  for (const o of labelled) svg += `<line class="gap ${kind(o)}" x1="${sx(o.mc)}" y1="${sy(o.mc)}" x2="${sx(o.mc)}" y2="${sy(o.me)}"/>`;
+  svg += order.map(o => `<circle class="rp ${kind(o)}" data-i="${rated.indexOf(o)}" cx="${sx(o.mc).toFixed(1)}" cy="${sy(o.me).toFixed(1)}" r="5.5" tabindex="0"/>`).join("");
+  // direct labels for the biggest gaps; nudge apart when two would overlap
+  const max = W < 500 ? 16 : 24, placed = [];
+  for (const o of [...labelled].sort((a, b) => sy(a.me) - sy(b.me))) {
+    const left = sx(o.mc) > L + iw * .55, name = o.x.name.replace(/[™®]/g, ""), short = name.length > max ? name.slice(0, max - 1) + "…" : name;
+    const wEst = short.length * 6.2, x0 = left ? sx(o.mc) - 9 - wEst : sx(o.mc) + 9;
+    let yv = sy(o.me) + 4;
+    while (placed.some(p => Math.abs(p.y - yv) < 13 && x0 < p.x1 && x0 + wEst > p.x0)) yv += 13;
+    placed.push({ y: yv, x0, x1: x0 + wEst });
+    svg += `<text class="plabel" x="${left ? sx(o.mc) - 9 : sx(o.mc) + 9}" y="${yv}" text-anchor="${left ? "end" : "start"}">${esc(short)}</text>`;
+  }
+  svg += `</svg><div class="tip" hidden></div>`;
+  el.innerHTML = svg;
+  const sv = el.querySelector("svg"), tip = el.querySelector(".tip");
+  const show = e => { const c = e.target.closest(".rp"); if (!c) return; const o = rated[+c.dataset.i], b = sv.getBoundingClientRect(), k = b.width / W;
+    tip.innerHTML = `<b>${esc(o.x.name)}</b><br>You ${o.me} · Metacritic ${o.mc} · ${Math.abs(o.d) <= ALIGN ? "aligned" : (o.d > 0 ? "+" : "") + o.d}`;
+    tip.style.left = Math.min(Math.max(sx(o.mc) * k, 90), b.width - 90) + "px"; tip.style.top = (sy(o.me) * k) + "px"; tip.hidden = false; };
+  sv.addEventListener("pointerover", show); sv.addEventListener("focusin", show); sv.addEventListener("click", show);
+  sv.addEventListener("pointerleave", () => tip.hidden = true); sv.addEventListener("focusout", () => tip.hidden = true);
+
+  const li = o => `<li><b>${esc(o.x.name)}</b> <span class="note">you ${o.me} · MC ${o.mc} · ${o.d > 0 ? "+" : ""}${o.d}</span></li>`;
+  const up = rated.filter(o => o.d > ALIGN).sort((a, b) => b.d - a.d).slice(0, 3), dn = rated.filter(o => o.d < -ALIGN).sort((a, b) => a.d - b.d).slice(0, 3);
+  const al = rated.filter(o => Math.abs(o.d) <= ALIGN).sort((a, b) => Math.abs(a.d) - Math.abs(b.d) || b.mc - a.mc).slice(0, 3);
+  box.innerHTML = `<div class="agree">
+      <span class="seg-bar"><i class="up" style="flex:${n.up}"></i><i class="al" style="flex:${n.al}"></i><i class="dn" style="flex:${n.dn}"></i></span>
+      <span class="legend"><span><i class="k up"></i>You liked more · ${n.up}</span><span><i class="k al"></i>Aligned (±${ALIGN}) · ${n.al}</span><span><i class="k dn"></i>Critics liked more · ${n.dn}</span></span></div>
+    <p>Over <b>${rated.length}</b> rated games you score on average <b>${Math.abs(avg).toFixed(0)} points ${avg >= 0 ? "higher" : "lower"}</b> than Metacritic, and ${corrTxt} (correlation ${corr.toFixed(2)}).</p>
+    <div class="three"><div><h3>You liked more</h3>${up.length ? `<ul>${up.map(li).join("")}</ul>` : `<p class="note">None.</p>`}</div>
+      <div><h3>Critics liked more</h3>${dn.length ? `<ul>${dn.map(li).join("")}</ul>` : `<p class="note">None.</p>`}</div>
+      <div><h3>Spot on</h3>${al.length ? `<ul>${al.map(li).join("")}</ul>` : `<p class="note">None.</p>`}</div></div>`;
 }
 
 /* ---------- 6. Your pace vs HowLongToBeat ---------- */
