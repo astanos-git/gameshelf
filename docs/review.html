@@ -154,7 +154,7 @@ function goalsBlock(s) {
     <div class="gf">${GOAL_KEYS.map(([k, label]) => `<label><span>${label}</span><input type="number" min="0" max="999999" inputmode="numeric" data-goal="${k}" value="${g[k] || ""}" placeholder="—"></label>`).join("")}</div>
     ${repo ? `<div class="gf-actions"><a class="save" id="goalSave" target="_blank" rel="noopener" href="#">Save goals</a>${has ? `<a href="${goalUrl(year, {}, true)}" target="_blank" rel="noopener">Clear goals</a>` : ""}</div>`
       : `<p class="note">Saving works on your GitHub Pages dashboard.</p>`}
-    <p class="note">Leave a box empty to skip that goal. Saved the same way as flags: tap Create on the GitHub page that opens.</p></details>`;
+    <p class="note">Leave a box empty to skip that goal. Saving adds it to your pending changes; send them all at once from the bar at the bottom.</p></details>`;
   return `<section class="goals"><h2>Goals for ${year}</h2>${bars || `<p class="note">No goals set for ${year} yet.</p>`}${form}</section>`;
 }
 
@@ -276,3 +276,4 @@ async function start() {
 }
 start();
 </script>
+<script src="pending.js"></script>

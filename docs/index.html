@@ -500,10 +500,10 @@ function renderSelBar() {
     return `<span class="parts">${label}: ${parts.map((c, i) => `<a class="act ${cls}" data-part href="${issueUrl(flag, c)}" target="_blank" rel="noopener">Part ${i + 1}</a>`).join("")}</span>`;
   };
   const anyFlag = picked.some(x => x.flag);
-  let note = n ? "Opens one pre-filled GitHub page for all selected games. Tap Create to save." : "Tap games to select them. Completed games can't be flagged.";
+  let note = n ? "Adds the change for all selected games to your pending changes. Send them all at once from the bar at the bottom." : "Tap games to select them. Completed games can't be flagged.";
   const nParts = n ? chunks("dropped", names).length : 1;
   if (n && !repoUrl()) note = "Flag buttons work on your GitHub Pages dashboard.";
-  else if (nParts > 1) note = `That's a lot of games for one GitHub page, so it's split into ${nParts} parts. Open each part and tap Create, then tap Done.`;
+  else if (nParts > 1) note = `That's a lot of games, so it's split into ${nParts} parts: tap each part to add it to your pending changes, then tap Done.`;
   $("selbarIn").innerHTML = `
     <div class="selrow"><b class="num">${n} selected</b>
       <button class="lnk" id="selAll">Select all shown</button>${n ? '<button class="lnk" id="selClear">Clear</button>' : ""}</div>
@@ -703,3 +703,4 @@ async function start() {
 }
 start();
 </script>
+<script src="pending.js"></script>

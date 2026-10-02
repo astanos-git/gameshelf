@@ -1011,3 +1011,4 @@ let lastW = 0;
 addEventListener("resize", () => { const w = $("timeline").clientWidth; if (DATA && Math.abs(w - lastW) > 20) { lastW = w; timeline(state.year, DATA.games.some(g => g.months && Object.keys(g.months).length)); critics(state.year); levelHistory(state.year); treemap(state.year); } });
 start();
 </script>
+<script src="pending.js"></script>

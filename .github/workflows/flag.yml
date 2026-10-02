@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   flag:
-    if: github.event.issue.user.login == github.repository_owner && (startsWith(github.event.issue.title, 'Flag ') || startsWith(github.event.issue.title, 'Rate ') || startsWith(github.event.issue.title, 'Goal ') || startsWith(github.event.issue.title, 'Up next') || startsWith(github.event.issue.title, 'Wishlist') || startsWith(github.event.issue.title, 'Pick '))
+    if: github.event.issue.user.login == github.repository_owner && (startsWith(github.event.issue.title, 'Flag ') || startsWith(github.event.issue.title, 'Rate ') || startsWith(github.event.issue.title, 'Goal ') || startsWith(github.event.issue.title, 'Up next') || startsWith(github.event.issue.title, 'Wishlist') || startsWith(github.event.issue.title, 'Pick ') || startsWith(github.event.issue.title, 'Batch'))
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -31,7 +31,7 @@ jobs:
             python flag.py
             git add docs/flags.json docs/ratings.json docs/goals.json docs/queue.json docs/wishlist.json docs/pick_feedback.json 2>/dev/null || true
             git diff --cached --quiet && break
-            git commit -q -m "Flag: $(cat flag_result.txt | head -c 70)"
+            git commit -q -m "Saved from dashboard: $(head -c 70 flag_result.txt | head -1)"
             git push -q origin HEAD:main && break
             sleep $((attempt * 3))
           done

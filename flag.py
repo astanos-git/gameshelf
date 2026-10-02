@@ -200,7 +200,19 @@ def apply(body: str, created: str) -> str:
     return "\n\n".join(lines)
 
 
+def apply_batch(body: str, created: str) -> str:
+    """Several changes in one request, separated by "---" lines (sent from the dashboard's pending changes)."""
+    blocks = [b for b in re.split(r"^\s*---\s*$", body or "", flags=re.M) if re.search(r"^\s*[a-z]+:\s*\S", b, re.M | re.I)]
+    if len(blocks) <= 1:
+        return apply(body, created)
+    lines = [f"Saved {len(blocks)} changes:"]
+    for n, block in enumerate(blocks, start=1):
+        msg = apply(block, created).replace(" The dashboard updates in about a minute.", "").replace("\n\nThe dashboard updates in about a minute.", "")
+        lines.append(f"{n}. " + msg.replace("\n\n", " ").strip())
+    return "\n".join(lines) + "\n\nThe dashboard updates in about a minute."
+
+
 if __name__ == "__main__":
-    result = apply(os.environ.get("ISSUE_BODY", ""), os.environ.get("ISSUE_CREATED", ""))
+    result = apply_batch(os.environ.get("ISSUE_BODY", ""), os.environ.get("ISSUE_CREATED", ""))
     RESULT.write_text(result)
     print(result)
