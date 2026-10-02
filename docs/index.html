@@ -187,6 +187,8 @@ button, select, input { font: inherit; color: inherit; }
 .flagbar .flagnote { color: var(--muted); font-size: 12.5px; flex-basis: 100%; }
 .detail a.flagbtn { color: var(--fg); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13.5px; font-weight: 500; }
 .detail a.flagbtn:hover { border-color: var(--accent); }
+.detail a.flagbtn.queue { border-color: var(--accent); color: var(--accent); }
+.chip.torate[aria-pressed="false"] { border-color: var(--accent); color: var(--accent); }
 .detail a.flagbtn.beaten { border-color: var(--st-beaten); color: var(--st-beaten); }
 .detail a.flagbtn.dropped { border-color: var(--st-dropped); color: var(--st-dropped); }
 @media (max-width: 520px) { .row2 { flex-wrap: wrap; } .row2 input { flex-basis: 100%; } .row2 select { flex: 1 1 auto; min-width: 0; } }
@@ -400,10 +402,14 @@ function renderHeader() {
   $("figures").innerHTML = figs.map(([v, l]) => `<div class="fig"><b class="num">${v}</b><span>${l}</span></div>`).join("");
 }
 
+// Finished (platinum, 100% or Beaten) but not rated yet
+const toRate = x => (x.status === "completed" || x.status === "beaten") && !ratingOf(x);
 function renderChips() {
-  const count = s => s === "all" ? DATA.games.length : DATA.games.filter(x => x.status === s).length;
-  $("chips").innerHTML = Object.entries(STATUS).map(([k, v]) =>
-    `<button class="chip" data-s="${k}" aria-pressed="${state.status === k}">${v}<small>${count(k)}</small></button>`).join("");
+  const count = s => s === "all" ? DATA.games.length : s === "torate" ? DATA.games.filter(toRate).length : DATA.games.filter(x => x.status === s).length;
+  const chips = { ...STATUS, ...(count("torate") ? { torate: "To rate" } : {}) };
+  if (state.status === "torate" && !count("torate")) state.status = "all";
+  $("chips").innerHTML = Object.entries(chips).map(([k, v]) =>
+    `<button class="chip${k === "torate" ? " torate" : ""}" data-s="${k}" aria-pressed="${state.status === k}">${v}<small>${count(k)}</small></button>`).join("");
 }
 
 const beatTime = x => x.hltb?.extra || x.hltb?.main || null;   // HowLongToBeat Main + Extras (Main Story if missing)
@@ -420,7 +426,7 @@ const SORTS = {
 function visibleRows() {
   const q = state.q.trim().toLowerCase();
   return DATA.games
-    .filter(x => state.status === "all" || x.status === state.status)
+    .filter(x => state.status === "all" || (state.status === "torate" ? toRate(x) : x.status === state.status))
     .filter(x => !q || x.name.toLowerCase().includes(q) || (x.genres || []).some(gn => gn.toLowerCase().includes(q)))
     .sort(SORTS[state.sort]);
 }
@@ -540,6 +546,16 @@ function syncRater(box, v) {
   }
 }
 
+let QUEUE = [];
+function queueBar(x) {
+  const repo = repoUrl(); if (!repo || x.base_status === "completed") return "";
+  const inQ = QUEUE.includes(x.name) || (x.aliases || []).some(a => QUEUE.includes(a)), pos = QUEUE.indexOf(x.name) + 1;
+  const url = (action, title) => `${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(`Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\nqueue: ${action}\ngame: ${x.name}\n`)}`;
+  return `<div class="flagbar">${inQ ? `<span class="flagnote">#${pos} in Up next (reorder it on Play next).</span><a class="flagbtn" target="_blank" rel="noopener" href="${url("remove", `Up next: remove ${x.name}`)}">Remove from Up next</a>`
+    : QUEUE.length >= 5 ? `<span class="flagnote">Up next is full (5 games). Remove one on Play next to add this.</span>`
+    : `<a class="flagbtn queue" target="_blank" rel="noopener" href="${url("add", `Up next: add ${x.name}`)}">+ Add to Up next</a>`}</div>`;
+}
+
 function flagBar(x) {
   const repo = repoUrl();
   const issue = (flag, label, cls) => repo ? `<a class="flagbtn ${cls}" target="_blank" rel="noopener" href="${issueUrl(flag, [x.name])}">${label}</a>` : "";
@@ -579,7 +595,7 @@ function detail(x, id) {
           ...[...new Set(Object.keys(x.months || {}).map(m => m.slice(0, 4)))].sort().reverse().map(y => [y, `Earned in ${y}`])]
           .map(([k, l]) => `<option value="${k}"${state.twhen === k ? " selected" : ""}>${l}</option>`).join("")}</select>
       </div>${dlcSummary(x)}<div class="tl-body"><p class="flagnote">Loading trophies…</p></div></section>` : "";
-  return `<div class="detail" id="${id}-d">${pend}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}${ratingBar(x)}${flagBar(x)}${tl}</div>`;
+  return `<div class="detail" id="${id}-d">${pend}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}${queueBar(x)}${ratingBar(x)}${flagBar(x)}${tl}</div>`;
 }
 
 /* Trophy lists live in trophies/<list id>.json and load when you open a game. */
@@ -681,6 +697,7 @@ async function start() {
   if (!DATA.isSample) try { const f = await fetch("flags.json", { cache: "no-store" }); if (f.ok) flags = await f.json(); } catch {}
   applyFlags(DATA.games, flags);
   if (!DATA.isSample) try { const r = await fetch("ratings.json", { cache: "no-store" }); if (r.ok) RATINGS = await r.json(); } catch {}
+  if (!DATA.isSample) try { const r = await fetch("queue.json", { cache: "no-store" }); if (r.ok) QUEUE = await r.json(); } catch {}
   $("sort").value = state.sort;
   renderLogin(); renderHeader(); renderChips(); renderList();
 }

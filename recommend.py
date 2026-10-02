@@ -23,7 +23,7 @@ from pathlib import Path
 
 import requests
 
-from fetch import norm, search_name
+from fetch import IGNORED_TAGS, norm, search_name
 
 ROOT = Path(__file__).parent
 DOCS = ROOT / "docs"
@@ -32,15 +32,6 @@ TAGS_CACHE = ROOT / "rawg_tags.json"      # tags of your own games (fetched once
 API = "https://api.rawg.io/api"
 HISTORY_WEEKS = 12
 PICKS = 3
-IGNORED_TAGS = {  # technical or too generic to describe taste
-    "singleplayer", "multiplayer", "steam-achievements", "full-controller-support", "steam-cloud", "steam-trading-cards",
-    "controller", "achievements", "partial-controller-support", "cloud-saves", "online-co-op", "co-op", "online-multiplayer",
-    "great-soundtrack", "3d", "2d", "first-person", "third-person", "steam-leaderboards", "in-app-purchases", "console",
-    "playstation-trophies", "ps4-pro", "hdr-available", "dualsense", "ray-tracing", "exclusive", "true-exclusive",
-    "steam-workshop", "includes-level-editor", "stats", "remote-play-together", "split-screen", "pvp", "pve",
-    "local-co-op", "local-multiplayer", "cross-platform-multiplayer", "online-pvp", "mmo", "free-to-play", "early-access",
-    "tutorial", "voice-acting", "game-of-the-year", "remake", "remaster", "classic", "steam-turn-notifications",
-}
 
 
 def get(path: str, key: str, **params) -> dict:
@@ -77,7 +68,7 @@ def engagement(g: dict, flags: dict, ratings: dict) -> float:
     return w
 
 
-def build_profile(games: list[dict], flags: dict, ratings: dict, key: str) -> dict:
+def build_profile(games: list[dict], flags: dict, ratings: dict, key: str, feedback: dict | None = None) -> dict:
     played = [g for g in games if (g.get("hours") or 0) > 0 or (g.get("progress") or 0) > 0]
     scored = sorted(((engagement(g, flags, ratings), g) for g in played), key=lambda x: -abs(x[0]))
     genre_w: dict[str, float] = {}
@@ -103,6 +94,16 @@ def build_profile(games: list[dict], flags: dict, ratings: dict, key: str) -> di
                 tag_w[slug_t] = tag_w.get(slug_t, 0) + w
                 tag_names[slug_t] = name_t
     TAGS_CACHE.write_text(json.dumps(cache, sort_keys=True, indent=1))
+
+    # Your 👍 / 👎 on past picks: like a game you enjoyed (+4) or dropped (-4)
+    for fb in (feedback or {}).values():
+        w = 4.0 if fb.get("feedback") == "up" else -4.0
+        for gn in fb.get("genres", []):
+            genre_w[gn] = genre_w.get(gn, 0) + w / 2
+        for slug_t, name_t in fb.get("tags", []):
+            if slug_t not in IGNORED_TAGS:
+                tag_w[slug_t] = tag_w.get(slug_t, 0) + w
+                tag_names.setdefault(slug_t, name_t)
 
     lengths = sorted(g["hltb"].get("extra") or g["hltb"].get("main") for w, g in scored
                      if w > 3 and g.get("hltb") and (g["hltb"].get("extra") or g["hltb"].get("main")))
@@ -169,6 +170,32 @@ def hltb_extra(name: str) -> float | None:
     return None
 
 
+# ---------------------------------------------------------------- weekly snapshot (for the Monday digest)
+
+SNAPSHOTS = DOCS / "snapshots.json"
+
+
+def save_snapshot(games: list[dict], now: datetime) -> None:
+    """Hours per game each Monday, so the digest can show what you played last week (PSN only gives totals)."""
+    snaps = load(SNAPSHOTS, [])
+    day = now.date().isoformat()
+    snaps = [s for s in snaps if s["date"] != day]
+    snaps.append({"date": day, "hours": {g["name"]: g["hours"] for g in games if g.get("hours")},
+                  "trophies": sum(g.get("trophies_earned") or 0 for g in games)})
+    SNAPSHOTS.write_text(json.dumps(snaps[-12:], ensure_ascii=False, separators=(",", ":")))
+
+
+def clean_wishlist(games: list[dict]) -> None:
+    """Drop wishlist entries for games now in your library."""
+    path = DOCS / "wishlist.json"
+    wl = load(path, {})
+    owned = {g.get("rawg_slug") for g in games}
+    left = {k: v for k, v in wl.items() if k not in owned}
+    if len(left) != len(wl):
+        path.write_text(json.dumps(left, indent=1, sort_keys=True, ensure_ascii=False) + "\n")
+        print(f"  wishlist: removed {len(wl) - len(left)} game(s) now in your library")
+
+
 # ---------------------------------------------------------------- main
 
 def main() -> None:
@@ -178,11 +205,13 @@ def main() -> None:
     data = load(DOCS / "data.json", {})
     games = data.get("games", [])
     flags, ratings = load(DOCS / "flags.json", {}), load(DOCS / "ratings.json", {})
+    feedback, wishlist = load(DOCS / "pick_feedback.json", {}), load(DOCS / "wishlist.json", {})
     previous = load(OUT, {})
     now = datetime.now(timezone.utc)
     week = f"{now.isocalendar().year}-W{now.isocalendar().week:02d}"
 
-    profile = build_profile(games, flags, ratings, key)
+    profile = build_profile(games, flags, ratings, key, feedback)
+    save_snapshot(games, now)
     owned_slugs = {g["rawg_slug"] for g in games if g.get("rawg_slug")}
     same = lambda n: norm(re.sub(r"\(\d{4}\)", "", n))   # "God of War (2018)" is the same game as "God of War"
     owned_names = {same(n) for g in games for n in [g["name"], *g.get("aliases", [])]}
@@ -192,7 +221,8 @@ def main() -> None:
 
     scored = []
     for slug, x in candidates(profile, key).items():
-        if slug in owned_slugs or same(x["name"]) in owned_names or slug in recent:
+        if slug in owned_slugs or same(x["name"]) in owned_names or slug in recent or slug in wishlist \
+                or feedback.get(slug, {}).get("feedback") == "down":
             continue
         if not {"PlayStation 5", "PlayStation 4"} & {p["platform"]["name"] for p in x.get("platforms") or []}:
             continue
@@ -240,6 +270,7 @@ def main() -> None:
                           if p["platform"]["name"] in ("PlayStation 5", "PlayStation 4")],
             "length": round(c["length"]) if c.get("length") else None, "why": "; ".join(why) + ".",
             "url": f"https://rawg.io/games/{x['slug']}",
+            "tags": [[t["slug"], t["name"]] for t in x.get("tags") or [] if t.get("language") == "eng" and t["slug"] not in IGNORED_TAGS][:10],
         })
 
     history = [{"slug": p["slug"], "week": week} for p in out_picks] + [h for h in previous.get("history", []) if h.get("week") != week]
@@ -250,6 +281,7 @@ def main() -> None:
                     "usual_length": round(profile["pref_len"])},
         "history": history[:60],
     }, indent=1, ensure_ascii=False))
+    clean_wishlist(games)
     print("::notice::This week's picks: " + " | ".join(f"{p['name']} ({p['metacritic']})" for p in out_picks))
 
 

@@ -166,6 +166,35 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
 .genres.wide li { grid-template-columns: minmax(70px, 110px) 1fr 104px; }
 .big b.word { font: 600 18px var(--body); }
 .tbl th, .tbl td { padding-inline: 6px; }
+.panel > * { min-width: 0; }
+.calwrap { overflow-x: auto; padding-bottom: 4px; }
+.calm { display: grid; gap: 2px; font: 10px var(--mono); color: var(--muted); height: 14px; }
+.calm span { white-space: nowrap; }
+.cal { display: flex; gap: 2px; }
+.cw { display: grid; grid-template-rows: repeat(7, 11px); gap: 2px; }
+.cd { width: 11px; height: 11px; border-radius: 2px; background: var(--grid); display: inline-block; }
+.cd.out { background: transparent; }
+.cd.l1 { background: color-mix(in srgb, var(--bar) 30%, var(--surface)); } .cd.l2 { background: color-mix(in srgb, var(--bar) 55%, var(--surface)); }
+.cd.l3 { background: color-mix(in srgb, var(--bar) 80%, var(--surface)); } .cd.l4 { background: var(--bar); }
+.cd.plat { outline: 2px solid var(--plat); outline-offset: -1px; box-shadow: 0 0 0 1px var(--surface); }
+.calkey { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; font-size: 12px; color: var(--muted); margin-top: 6px; }
+.calkey .keys { display: inline-flex; gap: 3px; align-items: center; }
+.taste { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 12px; align-items: center; }
+@media (max-width: 560px) { .taste { grid-template-columns: 1fr; } }
+.radar { width: 100%; max-width: 440px; height: auto; overflow: visible; justify-self: center; }
+.radar .ring { fill: none; stroke: var(--grid); }
+.radar .spoke { stroke: var(--grid); }
+.radar .shape { fill: color-mix(in srgb, var(--bar) 30%, transparent); stroke: var(--bar); stroke-width: 2; }
+.radar .rdot { fill: var(--bar); stroke: var(--surface); stroke-width: 1.5; }
+.radar .rlabel { fill: var(--fg); font: 600 14px var(--body); }
+.hof { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+@media (max-width: 560px) { .hof { grid-template-columns: repeat(2, 1fr); } }
+.hof li { display: grid; gap: 4px; min-width: 0; }
+.hcover { position: relative; aspect-ratio: 1; max-width: 100%; border-radius: 10px; overflow: hidden; background: var(--accent-soft); display: grid; place-items: center; font: 600 18px var(--display); color: var(--accent); }
+.hcover img { width: 100%; height: 100%; object-fit: cover; }
+.hrank { position: absolute; top: 4px; left: 4px; background: var(--fg); color: var(--bg); font: 700 13px var(--display); border-radius: 4px; padding: 0 6px; }
+.hscore { position: absolute; bottom: 4px; right: 4px; background: var(--accent); color: #fff; font: 700 15px var(--display); border-radius: 5px; padding: 1px 6px; }
+.hname { font-size: 12px; line-height: 1.25; overflow-wrap: anywhere; }
 .jump { display: flex; gap: 14px; font-size: 13.5px; flex-wrap: wrap; }
 .jump a { color: var(--accent); text-decoration: none; font-weight: 600; }
 .part { font-size: 30px; line-height: 1; margin-top: 10px; padding-top: 12px; border-top: 2px solid var(--fg); scroll-margin-top: 12px; }
@@ -196,7 +225,7 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
   <p class="notice" id="notice" hidden></p>
 
   <div class="years" id="years" role="group" aria-label="Choose a year"></div>
-  <nav class="jump" aria-label="Jump to"><a href="#overview">Overview</a><a href="#trophies">Trophies</a><a href="#habits">Habits</a><a href="#collection">Collection</a></nav>
+  <nav class="jump" aria-label="Jump to"><a href="#overview">Overview</a><a href="#trophies">Trophies</a><a href="#habits">Habits</a><a href="#taste">Taste</a><a href="#collection">Collection</a></nav>
 
   <header class="head" id="overview">
     <h1 id="title">All time</h1>
@@ -222,6 +251,8 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
     <div class="chart" id="timeline"></div>
   </section>
 
+  <section class="panel"><div class="panel-head"><h2>Trophy calendar</h2><span class="note">Each square is a day</span></div><div id="calendar"></div></section>
+
   <section class="panel"><div class="panel-head"><h2>Milestones</h2></div><div id="milestones"></div></section>
 
   <section class="panel"><div class="panel-head"><h2>Trophy level</h2><span class="note" id="lvlNote"></span></div><div class="chart" id="levelChart"></div><p class="note" id="lvlProj"></p></section>
@@ -237,6 +268,18 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
   <section class="panel"><div class="panel-head"><h2>New releases or catching up?</h2></div><div id="releaseLag"></div></section>
 
   <section class="panel"><div class="panel-head"><h2>Finish rate</h2></div><div id="finishRate"></div></section>
+
+  <h1 class="part" id="taste">Taste</h1>
+
+  <section class="panel"><div class="panel-head"><h2>Taste map</h2><span class="note">All time</span></div><div id="tasteMap"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>Critics vs you</h2><span class="note">Metacritic against hours played</span></div>
+    <div class="chart" id="scatter"></div><div class="two" id="criticLists"></div>
+    <h3>Your ratings vs Metacritic</h3><div class="chart" id="ratingsChart"></div><div id="ratingsCmp"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>Rating patterns</h2><span class="note">All time</span></div><div id="patterns"></div></section>
+
+  <section class="panel"><div class="panel-head"><h2>Hall of fame</h2><span class="note">Your top 10 by your rating</span></div><div id="hof"></div></section>
 
   <h1 class="part" id="collection">Collection</h1>
 
@@ -257,9 +300,6 @@ h3 { font: 600 16px var(--display); margin: 6px 0 2px; text-transform: uppercase
 
   <section class="panel"><div class="panel-head"><h2>Favourite studios</h2><div class="seg" role="group" aria-label="Show"><button id="sDev" aria-pressed="true">Developers</button><button id="sPub" aria-pressed="false">Publishers</button></div></div><div id="studios"></div></section>
 
-  <section class="panel"><div class="panel-head"><h2>Critics vs you</h2><span class="note">Metacritic against hours played</span></div>
-    <div class="chart" id="scatter"></div><div class="two" id="criticLists"></div>
-    <h3>Your ratings vs Metacritic</h3><div class="chart" id="ratingsChart"></div><div id="ratingsCmp"></div></section>
 
   <section class="panel"><div class="panel-head"><h2>Backlog</h2><span class="note">Right now, and year by year</span></div><div id="backlog"></div></section>
 
@@ -820,7 +860,97 @@ function studios(y) {
     : `<p class="empty">No playtime with a known studio in this period.</p>`;
 }
 
-function extras2(y) { levelHistory(y); rarityProfile(y); releaseLag(y); finishRate(y); treemap(y); seriesView(); studios(y); }
+
+/* ---------- 9. Trophy calendar ---------- */
+function trophyCalendar(y) {
+  const days = DATA.insights?.days || {}, el = $("calendar");
+  if (!Object.keys(days).length) { el.innerHTML = `<p class="empty">Appears after the next refresh.</p>`; return; }
+  const platDays = new Set((DATA.insights?.milestones || []).filter(m => m.kind === "platinum").map(m => new Date(m.at).toLocaleDateString("sv-SE")));
+  const end = y === "all" ? new Date() : new Date(+y, 11, 31), start = y === "all" ? new Date(end - 364 * 864e5) : new Date(+y, 0, 1);
+  const first = new Date(start - ((start.getDay() + 6) % 7) * 864e5);      // Monday on or before start
+  const level = n => n === 0 ? 0 : n <= 2 ? 1 : n <= 5 ? 2 : n <= 10 ? 3 : 4;
+  let cols = "", months = "", total = 0, active = 0, lastMonth = -1, w = 0;
+  for (let d = new Date(first); d <= end; w++) {
+    let col = "";
+    for (let i = 0; i < 7; i++, d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1)) {
+      const k = d.toLocaleDateString("sv-SE"), n = days[k] || 0, inRange = d >= start && d <= end;
+      if (inRange) { total += n; if (n) active++; }
+      col += inRange ? `<span class="cd l${level(n)}${platDays.has(k) ? " plat" : ""}" title="${d.toLocaleDateString(undefined, { weekday: "short", day: "numeric", month: "short", year: "numeric" })}: ${n} troph${n === 1 ? "y" : "ies"}${platDays.has(k) ? " · platinum" : ""}"></span>` : `<span class="cd out"></span>`;
+      if (i === 0 && d.getMonth() !== lastMonth && inRange) { months += `<span style="grid-column:${w + 1}">${MONTHS[d.getMonth()].slice(0, 3)}</span>`; lastMonth = d.getMonth(); }
+    }
+    cols += `<div class="cw">${col}</div>`;
+  }
+  el.innerHTML = `<div class="calwrap"><div class="calm" style="grid-template-columns:repeat(${w},11px)">${months}</div><div class="cal">${cols}</div></div>
+    <div class="calkey"><span>${total.toLocaleString()} trophies on ${active} days${y === "all" ? " in the last 12 months" : ` in ${y}`}</span>
+      <span class="keys">Fewer${[0, 1, 2, 3, 4].map(l => `<span class="cd l${l}"></span>`).join("")}More · <span class="cd l2 plat"></span> platinum</span></div>`;
+  const wrap = el.querySelector(".calwrap"); wrap.scrollLeft = wrap.scrollWidth;
+}
+
+/* ---------- 1. Taste map ---------- */
+function engagement(x) {
+  const f = flagOf(x), r = ratingOf(x);
+  let w = Math.sqrt(x.hours || 0) + 0.15 * Math.sqrt(x.progress || 0);
+  if (x.platinum || x.status === "completed") w += 4;
+  if (f?.flag === "beaten") w += 3;
+  if (f?.flag === "dropped") w = -Math.max(2, w * .5);
+  if (r) w += (r.score - 65) / 6;
+  return w;
+}
+function tasteMap() {
+  const games = DATA.games.filter(x => x.tags?.length && ((x.hours || 0) > 0 || (x.progress || 0) > 0));
+  if (games.length < 5) { $("tasteMap").innerHTML = `<p class="empty">Appears after the next refresh (it needs the RAWG tags of your games).</p>`; return; }
+  const T = {};
+  for (const x of games) { const w = engagement(x), r = ratingOf(x);
+    for (const [slug, name] of x.tags) { const t = T[slug] ||= { name, w: 0, n: 0, rs: [] }; t.w += w; t.n++; if (r) t.rs.push(r.score); } }
+  const top = Object.values(T).filter(t => t.n >= 3 && t.w > 0).sort((a, b) => b.w - a.w).slice(0, 8);
+  if (top.length < 3) { $("tasteMap").innerHTML = `<p class="empty">Not enough tagged games yet.</p>`; return; }
+  const max = top[0].w, S = 300, c = S / 2, R = 88, n = top.length, pad = 70;
+  const pt = (i, v) => { const a = -Math.PI / 2 + (2 * Math.PI * i) / n; return [c + Math.cos(a) * R * v, c + Math.sin(a) * R * v]; };
+  let svg = `<svg viewBox="${-pad} 0 ${S + 2 * pad} ${S}" class="radar" role="img" aria-label="Your taste by tag">`;
+  for (const ring of [.25, .5, .75, 1]) svg += `<polygon class="ring" points="${top.map((_, i) => pt(i, ring).join(",")).join(" ")}"/>`;
+  top.forEach((t, i) => { const [x, y] = pt(i, 1), [lx, ly] = pt(i, 1.2), anchor = Math.abs(lx - c) < 8 ? "middle" : lx > c ? "start" : "end";
+    svg += `<line class="spoke" x1="${c}" y1="${c}" x2="${x}" y2="${y}"/><text class="rlabel" x="${lx}" y="${ly + 4}" text-anchor="${anchor}">${esc(t.name)}</text>`; });
+  svg += `<polygon class="shape" points="${top.map((t, i) => pt(i, Math.max(.06, t.w / max)).join(",")).join(" ")}"/>`;
+  svg += top.map((t, i) => { const [x, y] = pt(i, Math.max(.06, t.w / max)); return `<circle class="rdot" cx="${x}" cy="${y}" r="3.5"/>`; }).join("") + `</svg>`;
+  const avg = a => a.length ? Math.round(sum(a) / a.length) : null;
+  $("tasteMap").innerHTML = `<div class="taste">${svg}<div class="tblwrap"><table class="tbl"><thead><tr><th>Tag</th><th>Games</th><th title="Your average rating">You</th></tr></thead><tbody>
+    ${top.map(t => `<tr><td>${esc(t.name)}</td><td class="num">${t.n}</td><td class="num">${avg(t.rs) ?? "—"}</td></tr>`).join("")}</tbody></table></div></div>
+    <p class="note">The further out, the more that tag runs through the games you play long, finish and rate highly (dropped games count against). "You" is your average rating for those games. Tags from RAWG; all time.</p>`;
+}
+
+/* ---------- 2. Why you rate low (or high) ---------- */
+function ratingPatterns() {
+  const rated = DATA.games.map(x => ({ x, r: ratingOf(x) })).filter(o => o.r && o.x.metacritic != null).map(o => ({ ...o, d: o.r.score - o.x.metacritic }));
+  const el = $("patterns");
+  if (rated.length < 8) { el.innerHTML = `<p class="empty">Rate a few more games (at least 8 with a Metacritic score) to see patterns.</p>`; return; }
+  const len = x => { const b = beatTime(x); return b == null ? null : b < 10 ? "Under 10 h" : b <= 30 ? "10–30 h" : "Over 30 h"; };
+  const feats = x => [...new Set([...(x.genres || []).map(g => `Genre: ${g}`), ...(x.tags || []).map(t => t[1]), len(x) && `Length: ${len(x)}`,
+    x.metacritic >= 90 ? "Acclaimed (MC 90+)" : null, (x.released || "") >= "2023" ? "Recent release (2023+)" : null].filter(Boolean))];
+  const share = (grp, f) => grp.filter(o => feats(o.x).includes(f)).length;
+  const all = [...new Set(rated.flatMap(o => feats(o.x)))];
+  const side = grp => {
+    if (grp.length < 3) return null;
+    return all.map(f => ({ f, k: share(grp, f), p: share(grp, f) / grp.length, base: share(rated, f) / rated.length }))
+      .filter(o => o.k >= 2 && o.p - o.base >= .15).sort((a, b) => (b.p - b.base) - (a.p - a.base)).slice(0, 4);
+  };
+  const lo = rated.filter(o => o.d < -5), hi = rated.filter(o => o.d > 5);
+  const list = (rows, grp) => rows === null ? `<p class="note">Needs at least 3 games in this group (you have ${grp.length}).</p>`
+    : rows.length ? `<ul>${rows.map(o => `<li><b>${esc(o.f)}</b> <span class="note">${o.k} of ${grp.length} (${Math.round(o.p * 100)}%) vs ${Math.round(o.base * 100)}% of all your rated games</span></li>`).join("")}</ul>`
+    : `<p class="note">No clear pattern yet.</p>`;
+  el.innerHTML = `<div class="two"><div><h3>When you rate below critics</h3>${list(side(lo), lo)}</div><div><h3>When you rate above critics</h3>${list(side(hi), hi)}</div></div>
+    <p class="note">What stands out in each group compared with all ${rated.length} games you've rated. "Below/above" means more than 5 points from Metacritic. With few ratings these are hints, not rules.</p>`;
+}
+
+/* ---------- 3. Hall of fame ---------- */
+function hallOfFame() {
+  const top = DATA.games.map(x => ({ x, r: ratingOf(x) })).filter(o => o.r).sort((a, b) => b.r.score - a.r.score || (b.x.hours || 0) - (a.x.hours || 0)).slice(0, 10);
+  $("hof").innerHTML = top.length >= 3 ? `<ol class="hof">${top.map((o, i) => `<li><span class="hcover">${pic(o.x.image, o.x.name)}<span class="hrank">${i + 1}</span><span class="hscore">${o.r.score}</span></span><span class="hname">${esc(o.x.name)}</span></li>`).join("")}</ol>`
+    : `<p class="empty">Rate at least 3 games to build your hall of fame.</p>`;
+}
+
+function extras3(y) { trophyCalendar(y); tasteMap(); ratingPatterns(); hallOfFame(); }
+
+function extras2(y) { extras3(y); levelHistory(y); rarityProfile(y); releaseLag(y); finishRate(y); treemap(y); seriesView(); studios(y); }
 
 
 function niceStep(raw) {

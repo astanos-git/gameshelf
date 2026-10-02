@@ -19,6 +19,94 @@ RATINGS = ROOT / "docs" / "ratings.json"
 GOALS = ROOT / "docs" / "goals.json"
 GOAL_KEYS = {"platinums": "platinums", "finished": "games finished", "trophies": "trophies", "hours": "hours played"}
 LABELS = {"beaten": "Beaten", "dropped": "Dropped"}
+QUEUE = ROOT / "docs" / "queue.json"
+WISHLIST = ROOT / "docs" / "wishlist.json"
+FEEDBACK = ROOT / "docs" / "pick_feedback.json"
+RECS = ROOT / "docs" / "recommendations.json"
+QUEUE_MAX = 5
+
+
+def _load(p: Path, default):
+    return json.loads(p.read_text()) if p.exists() else default
+
+
+def _save(p: Path, value) -> None:
+    p.write_text(json.dumps(value, indent=1, sort_keys=isinstance(value, dict), ensure_ascii=False) + "\n")
+
+
+def apply_queue(body: str) -> str | None:
+    """Up next: "queue: add|remove|set" and one or more "game:" lines (set = the full list in order)."""
+    m = re.search(r"^queue:\s*(add|remove|set)\s*$", body or "", re.M | re.I)
+    if not m:
+        return None
+    action = m.group(1).lower()
+    data = _load(DATA, {}).get("games", [])
+    current = {a: g["name"] for g in data for a in g.get("aliases", [])}
+    names = {g["name"] for g in data}
+    games = [current.get(g, g) for g in parse(body)[0]]
+    unknown = [g for g in games if names and g not in names]
+    games = [g for g in games if g not in unknown]
+    queue = [current.get(g, g) for g in _load(QUEUE, [])]
+    if action == "set":
+        queue = games
+    elif action == "add":
+        queue += [g for g in games if g not in queue]
+    else:
+        queue = [g for g in queue if g not in games]
+    dropped = queue[QUEUE_MAX:]
+    queue = list(dict.fromkeys(queue))[:QUEUE_MAX]
+    _save(QUEUE, queue)
+    msg = "Up next: " + (", ".join(f"{i + 1}. {g}" for i, g in enumerate(queue)) if queue else "empty") + "."
+    if dropped:
+        msg += f" Up next holds {QUEUE_MAX} games, so {', '.join(dropped)} didn't fit."
+    if unknown:
+        msg += f" Not on the dashboard: {', '.join(unknown)}."
+    return msg + " The dashboard updates in about a minute."
+
+
+def apply_wish(body: str, created: str) -> str | None:
+    """Wishlist (dashboard only): "wish: add|remove", "slug:" and, when adding, "name:"."""
+    m = re.search(r"^wish:\s*(add|remove)\s*$", body or "", re.M | re.I)
+    if not m:
+        return None
+    slug = re.search(r"^slug:\s*([a-z0-9-]+)\s*$", body, re.M)
+    if not slug:
+        return "Couldn't read this request. Use the wishlist buttons on the dashboard."
+    slug = slug.group(1)
+    wl = _load(WISHLIST, {})
+    if m.group(1).lower() == "remove":
+        gone = wl.pop(slug, None)
+        _save(WISHLIST, wl)
+        return (f"Removed {gone['name']} from your wishlist." if gone else "That game wasn't on your wishlist.") + " The dashboard updates in about a minute."
+    pick = next((p for p in _load(RECS, {}).get("picks", []) if p["slug"] == slug), None)
+    name = re.search(r"^name:\s*(.+?)\s*$", body, re.M)
+    info = {k: pick.get(k) for k in ("name", "image", "metacritic", "released", "genres", "platforms", "length", "url")} if pick else \
+        {"name": name.group(1) if name else slug, "url": f"https://rawg.io/games/{slug}"}
+    wl[slug] = {**info, "added": created}
+    _save(WISHLIST, wl)
+    return f"Added {wl[slug]['name']} to your wishlist. The dashboard updates in about a minute."
+
+
+def apply_feedback(body: str, created: str) -> str | None:
+    """👍 / 👎 on a weekly pick: "feedback: up|down|none" and "slug:"."""
+    m = re.search(r"^feedback:\s*(up|down|none)\s*$", body or "", re.M | re.I)
+    if not m:
+        return None
+    slug = re.search(r"^slug:\s*([a-z0-9-]+)\s*$", body, re.M)
+    if not slug:
+        return "Couldn't read this request. Use the buttons under this week's picks."
+    slug, fb = slug.group(1), m.group(1).lower()
+    store = _load(FEEDBACK, {})
+    if fb == "none":
+        gone = store.pop(slug, None)
+        _save(FEEDBACK, store)
+        return (f"Removed your feedback on {gone['name']}." if gone else "No feedback to remove.") + " The dashboard updates in about a minute."
+    pick = next((p for p in _load(RECS, {}).get("picks", []) if p["slug"] == slug), None) or store.get(slug) or {"name": slug}
+    store[slug] = {"feedback": fb, "at": created, "name": pick.get("name"), "genres": pick.get("genres", []), "tags": pick.get("tags", [])}
+    _save(FEEDBACK, store)
+    return (f"Noted: you like the look of {store[slug]['name']}. Future picks will lean towards games like it."
+            if fb == "up" else f"Noted: {store[slug]['name']} isn't for you. It won't be suggested again, and similar games will rank lower.") \
+        + " The dashboard updates in about a minute."
 
 
 def parse(body: str) -> tuple[list[str], str | None]:
@@ -65,9 +153,11 @@ def apply_goals(body: str, created: str) -> str | None:
 
 
 def apply(body: str, created: str) -> str:
-    goal_msg = apply_goals(body, created)
-    if goal_msg:
-        return goal_msg
+    for handler in (lambda: apply_goals(body, created), lambda: apply_queue(body),
+                    lambda: apply_wish(body, created), lambda: apply_feedback(body, created)):
+        msg = handler()
+        if msg:
+            return msg
     games, flag = parse(body)
     rating = re.search(r"^rating:\s*(100|[1-9]?\d|none)\s*$", body or "", re.M | re.I)
     if games and rating:

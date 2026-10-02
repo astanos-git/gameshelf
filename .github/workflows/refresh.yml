@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: refresh
+  group: gameshelf-data
   cancel-in-progress: false
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data.json
           if [ -d docs/trophies ]; then git add docs/trophies; fi
-          for f in rawg_cache.json trophy_dates.json hltb_cache.json wikipedia_cache.json trophy_groups.json wikidata_about.json title_map.json; do
+          for f in rawg_cache.json trophy_dates.json hltb_cache.json wikipedia_cache.json trophy_groups.json wikidata_about.json title_map.json rawg_tags.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
           git diff --cached --quiet || git commit -m "Refresh game data"

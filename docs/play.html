@@ -89,6 +89,30 @@ section { display: grid; gap: 10px; }
 .left { font: 600 24px var(--display); text-align: right; line-height: 1; }
 .left small { display: block; font: 11px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .empty { color: var(--muted); padding: 12px 0; margin: 0; }
+.digest { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: grid; gap: 8px; }
+.digest p { margin: 0; font-size: 14px; }
+.dg-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.dg-figs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.dg-figs div { display: grid; } .dg-figs b { font: 600 26px/1 var(--display); } .dg-figs span { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+.dg-goals { color: var(--muted); }
+.uq { grid-template-columns: 28px 1fr auto; }
+.rank { font: 700 22px var(--display); color: var(--accent); text-align: center; }
+.qbtns { display: flex; gap: 4px; }
+.qbtns button { width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); cursor: pointer; font-size: 14px; }
+.qbtns button:disabled { opacity: .35; cursor: default; }
+a.act { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; font-size: 13px; text-decoration: none; color: var(--fg); }
+a.act:hover { border-color: var(--accent); } a.act.on { background: var(--accent-soft); border-color: var(--accent); }
+a.act.primary { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; padding: 6px 14px; border-radius: 8px; }
+.pact { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 4px; }
+.budget { display: flex; gap: 8px; align-items: center; font-size: 14px; }
+.budget input { width: 90px; font: 600 18px var(--display); padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); }
+.tblwrap { overflow-x: auto; }
+.tbl { border-collapse: collapse; width: 100%; font-size: 14px; }
+.tbl th { text-align: left; font: 600 11px var(--body); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: 4px 6px; border-bottom: 1px solid var(--line); }
+.tbl td { padding: 6px; border-bottom: 1px solid var(--line); }
+.tbl td.num, .tbl th:nth-child(n+2):not(:last-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.lvl { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 1px 7px; border-radius: 4px; border: 1px solid currentColor; }
+.lvl.easy { color: var(--mc-good); } .lvl.medium { color: var(--mc-mid); } .lvl.hard { color: var(--mc-bad); }
 .wk-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .wk .item { grid-template-columns: 96px 1fr auto; align-items: start; border-color: var(--accent); }
 .wk .cover { width: 96px; height: 64px; border-radius: 8px; }
@@ -103,10 +127,23 @@ section { display: grid; gap: 10px; }
 <div class="wrap">
   <nav class="tabs"><a href="index.html">Library</a><a href="play.html" aria-current="page">Play next</a><a href="stats.html">Stats</a><a href="review.html">Review</a></nav>
 
+  <section class="digest" id="digest"></section>
+
+  <section>
+    <h1>Up next</h1>
+    <div id="upnext"></div>
+  </section>
+
   <section id="weekly" hidden>
     <div class="wk-head"><h1>This week's picks</h1><span class="note" id="wkWhen"></span></div>
     <p class="note" id="wkProfile"></p>
     <ol class="list wk" id="wkList"></ol>
+    <p class="note">👍 / 👎 teach next week's picks; 👎 also means that game won't come back.</p>
+  </section>
+
+  <section>
+    <h1>Wishlist</h1>
+    <ol class="list" id="wishList"></ol>
   </section>
 
   <section>
@@ -126,9 +163,22 @@ section { display: grid; gap: 10px; }
   </section>
 
   <section>
+    <h1>Season planner</h1>
+    <div class="row"><label class="budget">How many hours do you have? <input id="budget" type="number" min="1" max="2000" value="40" inputmode="numeric"></label></div>
+    <div id="plan"></div>
+    <p class="note">Picks the best mix of backlog and in-progress games that fits your hours (Metacritic counts most, games in Up next get priority, varied genres get a small bonus). Uses HowLongToBeat Main + Extras (time left for games in progress).</p>
+  </section>
+
+  <section>
     <h1>Closest to platinum</h1>
     <p class="note">Games at 70% or more. Under each game: the missing trophies most players have, so likely the easiest left.</p>
     <ol class="list" id="close"></ol>
+  </section>
+
+  <section>
+    <h1>Next platinum: how hard?</h1>
+    <p class="note">Games in progress that have a platinum. "Platinum" is the share of players who have it; "Rare left" counts your missing trophies that under 10% of players have. Easiest first.</p>
+    <div id="platHard"></div>
   </section>
 
   <section>
@@ -244,10 +294,146 @@ async function weekly() {
   $("wkList").innerHTML = R.picks.map(p => `<li class="item"><span class="cover">${pic(p.image, p.name)}</span>
     <span class="main"><span class="name"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a></span>
       <span class="meta"><span>${esc(p.platforms.join(" · "))}</span>${p.released ? `<span>${new Date(p.released).getFullYear()}</span>` : ""}${p.length ? `<span>~${p.length} h</span>` : ""}<span>${esc(p.genres.join(", "))}</span></span>
-      <span class="why">${esc(p.why)}</span>${owned.has(p.slug) ? `<span class="owned">Already in your library now</span>` : ""}</span>
+      <span class="why">${esc(p.why)}</span>${pickActions(p)}${owned.has(p.slug) ? `<span class="owned">Already in your library now</span>` : ""}</span>
     <span class="mc ${mcClass(p.metacritic)}">${p.metacritic ?? "n/a"}</span></li>`).join("");
   $("weekly").hidden = false;
 }
+
+
+/* ---------- saving through GitHub (same as flags) ---------- */
+function repoUrl() {
+  const h = location.hostname; if (!h.endsWith(".github.io")) return null;
+  const owner = h.split(".")[0], repo = location.pathname.split("/").filter(Boolean)[0] || `${owner}.github.io`;
+  return `https://github.com/${owner}/${repo}`;
+}
+function issueUrl(title, lines) {
+  const repo = repoUrl(); if (!repo) return null;
+  const body = `Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\n${lines.join("\n")}\n`;
+  return `${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+}
+const act = (url, label, cls = "") => url ? `<a class="act ${cls}" href="${url}" target="_blank" rel="noopener">${label}</a>` : "";
+const getJSON = async (f, d) => { try { const r = await fetch(f, { cache: "no-store" }); return r.ok ? await r.json() : d; } catch { return d; } };
+let QUEUE = [], WISH = {}, FEEDBACK = {}, SNAPS = [], GOALS = {}, FLAGS = {};
+const byName = n => DATA.games.find(g => g.name === n || (g.aliases || []).includes(n));
+const sum = a => a.reduce((x, y) => x + y, 0);
+const left = x => { const b = beatTime(x); return b ? Math.max(1, Math.round(b - (x.eff === "started" ? (x.hours || 0) : 0))) : null; };
+
+/* ---------- 12. Monday digest ---------- */
+function digest() {
+  const today = new Date(), dow = (today.getDay() + 6) % 7;              // Monday = 0
+  const end = new Date(today.getFullYear(), today.getMonth(), today.getDate() - dow);   // this Monday 00:00
+  const start = new Date(end - 7 * 864e5), key = d => d.toLocaleDateString("sv-SE");    // YYYY-MM-DD
+  const inWeek = s => s && new Date(s) >= start && new Date(s) < end;
+  const days = Object.entries(DATA.insights?.days || {}).filter(([d]) => d >= key(start) && d < key(end));
+  const trophies = sum(days.map(([, n]) => n));
+  const plats = (DATA.insights?.milestones || []).filter(m => m.kind === "platinum" && inWeek(m.at));
+  // hours: difference between the last two Monday snapshots
+  let hoursTxt = `<span class="note">Hours per game appear from next Monday, once there are two weekly snapshots.</span>`;
+  if (SNAPS.length >= 2) {
+    const [a, b] = SNAPS.slice(-2), delta = Object.entries(b.hours).map(([n, h]) => [n, h - (a.hours[n] || 0)]).filter(([, d]) => d >= 0.2).sort((x, y) => y[1] - x[1]);
+    hoursTxt = delta.length ? `<b>${fmtH(sum(delta.map(d => d[1])))}</b> played: ${delta.slice(0, 3).map(([n, d]) => `${esc(n)} (${fmtH(d)})`).join(", ")}${delta.length > 3 ? `, +${delta.length - 3} more` : ""}`
+      : "No PS4/PS5 playtime last week.";
+  }
+  const started = DATA.games.filter(g => inWeek([g.first_played, g.first_trophy_at].filter(Boolean).sort()[0]));
+  const y = String(today.getFullYear()), G = GOALS[y];
+  let goals = "";
+  if (G) {
+    const fin = DATA.games.filter(g => { const f = FLAGS[g.name]; const at = g.platinum_at || (g.status === "completed" ? g.last_trophy : null) || (f?.flag === "beaten" ? (g.last_activity && g.last_activity < f.at ? g.last_activity : f.at) : null); return at && at.startsWith(y); }).length;
+    const now = { platinums: sum(DATA.games.flatMap(g => Object.entries(g.months || {}).filter(([m]) => m.startsWith(y)).map(([, t]) => t[3]))),
+      trophies: sum(DATA.games.flatMap(g => Object.entries(g.months || {}).filter(([m]) => m.startsWith(y)).map(([, t]) => sum(t)))),
+      hours: Math.round(sum(DATA.games.map(g => (g.hours_by_year || {})[y] || 0))), finished: fin };
+    const L = { platinums: "platinums", finished: "finished", trophies: "trophies", hours: "hours" };
+    goals = `<p class="dg-goals">Goals ${y}: ${Object.keys(L).filter(k => G[k]).map(k => `<b>${now[k]}</b>/${G[k]} ${L[k]}`).join(" · ")}</p>`;
+  }
+  const fmtD = d => d.toLocaleDateString(undefined, { day: "numeric", month: "short" });
+  $("digest").innerHTML = `<div class="dg-head"><h2>Last week</h2><span class="note">${fmtD(start)} – ${fmtD(new Date(end - 864e5))}</span></div>
+    <div class="dg-figs"><div><b>${trophies}</b><span>trophies</span></div><div><b>${plats.length}</b><span>platinum${plats.length === 1 ? "" : "s"}</span></div><div><b>${days.length}</b><span>days played</span></div><div><b>${started.length}</b><span>new games</span></div></div>
+    <p>${hoursTxt}</p>${plats.length ? `<p>Platinum: ${plats.map(p => `<b>${esc(p.game)}</b>`).join(", ")} 🏆</p>` : ""}${goals}`;
+}
+
+/* ---------- 4. Up next ---------- */
+let qDraft = null;   // local reordering before saving
+function upNext() {
+  const list = (qDraft || QUEUE).map(n => ({ n, g: byName(n) })).filter(o => o.g);
+  const changed = qDraft && qDraft.join("|") !== QUEUE.join("|");
+  $("upnext").innerHTML = list.length ? `<ol class="list">${list.map(({ n, g }, i) => `<li class="item uq"><span class="rank">${i + 1}</span>
+      <span class="main"><span class="name">${esc(g.name)}</span><span class="meta">${left(g) ? `<span>~${left(g)} h ${g.eff === "started" ? "left" : "to beat"}</span>` : ""}<span>${g.eff === "started" ? `In progress · ${g.progress ?? 0}%` : "Not started"}</span>${g.metacritic ? `<span>MC ${g.metacritic}</span>` : ""}</span></span>
+      <span class="qbtns"><button data-q="up" data-i="${i}" ${i ? "" : "disabled"} aria-label="Move up">↑</button><button data-q="down" data-i="${i}" ${i < list.length - 1 ? "" : "disabled"} aria-label="Move down">↓</button><button data-q="del" data-i="${i}" aria-label="Remove">✕</button></span></li>`).join("")}</ol>
+      ${changed ? `<div class="row">${act(issueUrl("Up next: new order", ["queue: set", ...(qDraft.length ? qDraft.map(n => `game: ${n}`) : [])]), "Save order", "primary")}<button class="chip" data-q="reset">Undo</button></div>` : ""}`
+    : `<p class="empty">Nothing queued. Open a game in the Library and tap <b>Add to Up next</b> (up to 5).</p>`;
+}
+
+/* ---------- 7 + 6. feedback and wishlist on the weekly picks ---------- */
+function pickActions(p) {
+  const fb = FEEDBACK[p.slug]?.feedback, wished = !!WISH[p.slug];
+  const up = act(issueUrl(`Pick 👍 ${p.name}`, ["feedback: up", `slug: ${p.slug}`]), "👍", fb === "up" ? "on" : "");
+  const down = act(issueUrl(`Pick 👎 ${p.name}`, ["feedback: down", `slug: ${p.slug}`]), "👎", fb === "down" ? "on" : "");
+  const wl = wished ? `<span class="note">On your wishlist</span>` : act(issueUrl(`Wishlist: add ${p.name}`, ["wish: add", `slug: ${p.slug}`, `name: ${p.name}`]), "+ Wishlist");
+  return repoUrl() ? `<span class="pact">${up}${down}${wl}${fb ? `<span class="note">${fb === "up" ? "You liked this pick" : "Not for you"}</span>` : ""}</span>` : "";
+}
+
+function wishlist() {
+  const owned = new Set(DATA.games.map(g => g.rawg_slug));
+  const items = Object.entries(WISH).filter(([s]) => !owned.has(s)).sort((a, b) => (b[1].added || "").localeCompare(a[1].added || ""));
+  $("wishList").innerHTML = items.length ? items.map(([s, w]) => `<li class="item"><span class="cover">${pic(w.image, w.name)}</span>
+      <span class="main"><span class="name"><a href="${esc(w.url)}" target="_blank" rel="noopener">${esc(w.name)}</a></span>
+      <span class="meta">${w.platforms?.length ? `<span>${esc(w.platforms.join(" · "))}</span>` : ""}${w.length ? `<span>~${w.length} h</span>` : ""}${w.genres?.length ? `<span>${esc(w.genres.join(", "))}</span>` : ""}<span>added ${new Date(w.added).toLocaleDateString(undefined, { day: "numeric", month: "short" })}</span></span>
+      ${act(issueUrl(`Wishlist: remove ${w.name}`, ["wish: remove", `slug: ${s}`]), "Remove")}</span>
+      <span class="mc ${mcClass(w.metacritic)}">${w.metacritic ?? "n/a"}</span></li>`).join("")
+    : `<p class="empty">Empty. Tap <b>+ Wishlist</b> on a weekly pick to keep it here. Games disappear from the list once they're in your library.</p>`;
+}
+
+/* ---------- 5. Season planner ---------- */
+function planner() {
+  const budget = Math.max(1, +$("budget").value || 40);
+  const cands = DATA.games.filter(x => ((x.eff === "unplayed" && x.owned) || x.eff === "started") && left(x))
+    .map(x => ({ x, h: left(x), v: Math.max(1, (x.metacritic ?? 70) - 60) * Math.sqrt(left(x)) + (x.eff === "started" ? 10 : 0) }));
+  // Up next games go in first, in your order, as long as they fit
+  const fixed = []; let room = budget;
+  for (const n of QUEUE) { const c = cands.find(o => o.x.name === n || (o.x.aliases || []).includes(n)); if (c && c.h <= room) { fixed.push(c); room -= c.h; } }
+  const rest = cands.filter(c => !fixed.includes(c) && c.h <= room);
+  // Then the best combination for the hours left (knapsack); value grows with quality and, more slowly, with length
+  const cap = Math.min(room, 400), best = Array(cap + 1).fill(0), take = Array.from({ length: cap + 1 }, () => []);
+  for (const c of rest) for (let h = cap; h >= c.h; h--) {
+    // small bonus for a genre not yet in the plan keeps the mix varied
+    const g = (c.x.genres || ["?"])[0], fresh = take[h - c.h].every(o => (o.x.genres || ["?"])[0] !== g) ? 4 : 0;
+    const v = best[h - c.h] + c.v + fresh;
+    if (v > best[h]) { best[h] = v; take[h] = [...take[h - c.h], c]; }
+  }
+  const plan = [...fixed, ...take[best.indexOf(Math.max(...best))].sort((a, b) => b.v - a.v)];
+  const used = plan.reduce((a, c) => a + c.h, 0);
+  $("plan").innerHTML = plan.length ? `<p><b>${plan.length}</b> game${plan.length === 1 ? "" : "s"}, about <b>${used} h</b> of your ${budget} h${budget > 400 + plan.filter(c => fixed.includes(c)).reduce((a, c) => a + c.h, 0) ? " (the planner looks up to 400 h ahead)" : ""}.</p><ol class="list">${plan.map(c => `<li class="item"><span class="cover">${pic(c.x.image, c.x.name)}</span>
+      <span class="main"><span class="name">${esc(c.x.name)}</span><span class="meta"><span>~${c.h} h${c.x.eff === "started" ? " left" : ""}</span><span>${esc((c.x.genres || []).slice(0, 2).join(", "))}</span>${QUEUE.includes(c.x.name) ? "<span>Up next</span>" : ""}</span></span>
+      <span class="mc ${mcClass(c.x.metacritic)}">${c.x.metacritic ?? "n/a"}</span></li>`).join("")}</ol>`
+    : `<p class="empty">No game fits in ${budget} h. Try a bigger budget.</p>`;
+}
+
+/* ---------- 10. Platinum difficulty ---------- */
+function platDifficulty() {
+  const rows = DATA.games.filter(x => x.plat_rate != null && !x.platinum_at && x.eff !== "dropped" && (x.progress || 0) > 0)
+    .map(x => { const level = x.rare_missing === 0 && x.plat_rate >= 10 ? "Easy" : (x.rare_missing >= 3 || x.plat_rate < 5) ? "Hard" : "Medium";
+      return { x, level, ease: x.rare_missing * 10 + (100 - x.progress) / 5 - x.plat_rate / 3 }; })
+    .sort((a, b) => a.ease - b.ease).slice(0, 12);
+  $("platHard").innerHTML = rows.length ? `<div class="tblwrap"><table class="tbl"><thead><tr><th>Game</th><th>You</th><th>Platinum</th><th>Rare left</th><th></th></tr></thead><tbody>
+    ${rows.map(r => `<tr><td>${esc(r.x.name)}</td><td class="num">${r.x.progress}%</td><td class="num">${r.x.plat_rate}%</td><td class="num">${r.x.rare_missing}/${r.x.missing_n}</td><td><span class="lvl ${r.level.toLowerCase()}">${r.level}</span></td></tr>`).join("")}</tbody></table></div>`
+    : `<p class="empty">Appears after the next refresh.</p>`;
+}
+
+async function extrasStart() {
+  [QUEUE, WISH, FEEDBACK, SNAPS, GOALS, FLAGS] = await Promise.all([getJSON("queue.json", []), getJSON("wishlist.json", {}), getJSON("pick_feedback.json", {}),
+    getJSON("snapshots.json", []), getJSON("goals.json", {}), getJSON("flags.json", {})]);
+  digest(); upNext(); wishlist(); planner(); platDifficulty();
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-q]"); if (!b) return;
+  const q = [...(qDraft || QUEUE)], i = +b.dataset.i;
+  if (b.dataset.q === "reset") { qDraft = null; return upNext(); }
+  if (b.dataset.q === "up") [q[i - 1], q[i]] = [q[i], q[i - 1]];
+  if (b.dataset.q === "down") [q[i + 1], q[i]] = [q[i], q[i + 1]];
+  if (b.dataset.q === "del") q.splice(i, 1);
+  qDraft = q; upNext();
+});
+document.addEventListener("input", e => { if (e.target.id === "budget") planner(); });
 
 function save() { try { localStorage.setItem("shelf-play", JSON.stringify(state)); } catch {} }
 document.addEventListener("click", e => {
@@ -265,6 +451,7 @@ async function start() {
   const genres = [...new Set(DATA.games.filter(x => x.eff === "unplayed" || x.eff === "started").flatMap(x => x.genres || []))].sort();
   if (state.genre && !genres.includes(state.genre)) state.genre = "";
   $("genre").innerHTML = `<option value="">All genres</option>` + genres.map(g => `<option${g === state.genre ? " selected" : ""}>${esc(g)}</option>`).join("");
+  await extrasStart();
   render(); closest(); dlcToFinish(); weekly();
 }
 start();

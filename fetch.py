@@ -532,6 +532,39 @@ def enrich_hltb(games: list[dict]) -> None:
           + (" (stopped early after repeated errors)" if failures >= 5 else ""))
 
 
+IGNORED_TAGS = {  # technical or too generic to describe taste
+    "singleplayer", "multiplayer", "steam-achievements", "full-controller-support", "steam-cloud", "steam-trading-cards",
+    "controller", "achievements", "partial-controller-support", "cloud-saves", "online-co-op", "co-op", "online-multiplayer",
+    "great-soundtrack", "3d", "2d", "first-person", "third-person", "steam-leaderboards", "in-app-purchases", "console",
+    "playstation-trophies", "ps4-pro", "hdr-available", "dualsense", "ray-tracing", "exclusive", "true-exclusive",
+    "steam-workshop", "includes-level-editor", "stats", "remote-play-together", "split-screen", "pvp", "pve",
+    "local-co-op", "local-multiplayer", "cross-platform-multiplayer", "online-pvp", "mmo", "free-to-play", "early-access",
+    "tutorial", "voice-acting", "game-of-the-year", "remake", "remaster", "classic", "steam-turn-notifications",
+}
+TAGS_CACHE = ROOT / "rawg_tags.json"      # RAWG tags per game slug: [[slug, name], ...]
+
+
+def enrich_tags(games: list[dict], key: str | None) -> None:
+    """RAWG tags (story rich, open world, souls-like...) for every game, fetched once per game."""
+    cache = json.loads(TAGS_CACHE.read_text()) if TAGS_CACHE.exists() else {}
+    fetched, failures = 0, 0
+    for g in games:
+        slug = g.get("rawg_slug")
+        if slug and slug not in cache and key and failures < 5:
+            try:
+                r = requests.get(f"https://api.rawg.io/api/games/{slug}", params={"key": key}, timeout=20)
+                r.raise_for_status()
+                cache[slug] = [[t["slug"], t["name"]] for t in r.json().get("tags", []) if t.get("language") == "eng"]
+                fetched += 1; failures = 0
+                time.sleep(0.25)
+            except Exception as e:
+                failures += 1
+                print(f"  tags skipped for {g['name']!r}: {e}")
+        g["tags"] = [[s_, n] for s_, n in cache.get(slug or "", []) if s_ not in IGNORED_TAGS][:12]
+    TAGS_CACHE.write_text(json.dumps(cache, sort_keys=True, indent=1))
+    print(f"RAWG tags: {fetched} new, {sum(1 for g in games if g['tags'])} games with tags")
+
+
 # ---------------------------------------------------------------- Wikidata (Metacritic gap filler)
 
 WIKIDATA_SPARQL = "https://query.wikidata.org/sparql"
@@ -858,6 +891,9 @@ def build_insights(games: list[dict]) -> dict:
             if i == 0:  # the most advanced list decides what's left to do
                 missing = [t for t in rows if not t.get("e")]
                 missing_n = len(missing)
+                plat_row = next((t for t in rows if t.get("t") == "platinum"), None)
+                g["plat_rate"] = plat_row.get("r") if plat_row else None
+                g["rare_missing"] = sum(1 for t in missing if t.get("r") is not None and t["r"] < 10)
                 best_missing = sorted(missing, key=lambda t: -(t.get("r") or 0))[:3]
         g["first_trophy_at"], g["platinum_at"] = first, plat
         g["dlc"] = dlc_progress(g)
@@ -935,6 +971,7 @@ def main() -> None:
     enrich(games, os.environ.get("RAWG_API_KEY", "").strip() or None)
     fill_metacritic(games, previous.get("games", []))
     add_about(games)
+    enrich_tags(games, os.environ.get("RAWG_API_KEY", "").strip() or None)
     enrich_hltb(games)
     games.sort(key=lambda g: g["last_activity"] or g["acquired"] or "", reverse=True)
     try:
