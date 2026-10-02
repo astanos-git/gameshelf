@@ -45,7 +45,7 @@ section { display: grid; gap: 10px; }
 .dg-figs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .dg-figs div { display: grid; } .dg-figs b { font: 600 26px/1 var(--display); } .dg-figs span { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
 .dg-goals { color: var(--muted); }
-.uq { grid-template-columns: 28px 1fr auto; }
+.uq { grid-template-columns: 22px 52px 1fr auto; gap: 10px; }
 .rank { font: 700 22px var(--display); color: var(--accent); text-align: center; }
 .qbtns { display: flex; gap: 4px; }
 .qbtns button { width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); cursor: pointer; font-size: 14px; }
@@ -314,8 +314,8 @@ let qDraft = null;   // local reordering before saving
 function upNext() {
   const list = (qDraft || QUEUE).map(n => ({ n, g: byName(n) })).filter(o => o.g);
   const changed = qDraft && qDraft.join("|") !== QUEUE.join("|");
-  $("upnext").innerHTML = list.length ? `<ol class="list">${list.map(({ n, g }, i) => `<li class="item uq"><span class="rank">${i + 1}</span>
-      <span class="main"><span class="name">${esc(g.name)}</span><span class="meta">${left(g) ? `<span>~${left(g)} h ${g.eff === "started" ? "left" : "to beat"}</span>` : ""}<span>${g.eff === "started" ? `In progress · ${g.progress ?? 0}%` : "Not started"}</span>${g.metacritic ? `<span>MC ${g.metacritic}</span>` : ""}</span></span>
+  $("upnext").innerHTML = list.length ? `<ol class="list">${list.map(({ n, g }, i) => `<li class="item uq"><span class="rank">${i + 1}</span><span class="cover">${pic(g.image, g.name)}</span>
+      <span class="main"><span class="name">${esc(g.name)}</span>${left(g) ? `<span class="meta"><span>~${left(g)} h ${g.eff === "started" ? "left" : "to beat"}</span></span>` : ""}</span>
       <span class="qbtns"><button data-q="up" data-i="${i}" ${i ? "" : "disabled"} aria-label="Move up">↑</button><button data-q="down" data-i="${i}" ${i < list.length - 1 ? "" : "disabled"} aria-label="Move down">↓</button><button data-q="del" data-i="${i}" aria-label="Remove">✕</button></span></li>`).join("")}</ol>
       ${changed ? `<div class="row">${act(issueUrl("Up next: new order", ["queue: set", ...(qDraft.length ? qDraft.map(n => `game: ${n}`) : [])]), "Save order", "primary")}<button class="chip" data-q="reset">Undo</button></div>` : ""}`
     : `<p class="empty">Nothing queued yet. Open a game in the Library and tap <b>+ Up next</b> (up to 5 games).</p>`;
