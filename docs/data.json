@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-02T09:45:32+00:00",
+ "generated_at": "2026-10-02T09:52:36+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -300,7 +300,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "metroidvania",
+     "Metroidvania"
+    ],
+    [
+     "roguelite",
+     "Roguelite"
+    ],
+    [
+     "stylized",
+     "Stylized"
+    ],
+    [
+     "hand-drawn",
+     "Hand-drawn"
+    ],
+    [
+     "protagonistka",
+     "Протагонистка"
+    ]
+   ],
    "hltb": {
     "main": 11.12,
     "extra": 19.0,
@@ -594,7 +643,28 @@
    "publishers": [
     "Deck13 Interactive"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "pixel-graphics",
+     "Pixel Graphics"
+    ],
+    [
+     "role-playing",
+     "role-playing"
+    ],
+    [
+     "turn-based",
+     "Turn-Based"
+    ]
+   ],
    "hltb": {
     "main": 35.34,
     "extra": 45.36,
@@ -653,7 +723,32 @@
     "Curve Games",
     "RubberBandGames"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "physics",
+     "Physics"
+    ],
+    [
+     "party",
+     "party"
+    ],
+    [
+     "sharedsplit-screen-co-op",
+     "Shared/Split Screen Co-op"
+    ]
+   ],
    "hltb": {
     "main": 14.03,
     "extra": 20.0,
@@ -705,7 +800,44 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "war",
+     "War"
+    ],
+    [
+     "world-war-ii",
+     "World War II"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ],
+    [
+     "sniper",
+     "Sniper"
+    ]
+   ],
    "hltb": {
     "main": 8.92,
     "extra": 13.84,
@@ -759,7 +891,56 @@
    "publishers": [
     "505 Games"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "metroidvania",
+     "Metroidvania"
+    ],
+    [
+     "detective",
+     "Detective"
+    ],
+    [
+     "3rd-person-perspective",
+     "3rd-Person Perspective"
+    ],
+    [
+     "supernatural",
+     "Supernatural"
+    ],
+    [
+     "abstract",
+     "Abstract"
+    ],
+    [
+     "realism",
+     "realism"
+    ]
+   ],
    "hltb": {
     "main": 11.7,
     "extra": 19.23,
@@ -857,7 +1038,56 @@
    "publishers": [
     "Electronic Arts"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "tactical",
+     "Tactical"
+    ],
+    [
+     "war",
+     "War"
+    ],
+    [
+     "realistic",
+     "Realistic"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "military",
+     "Military"
+    ],
+    [
+     "destruction",
+     "Destruction"
+    ]
+   ],
    "hltb": {
     "main": 6.05,
     "extra": 11.06,
@@ -1012,7 +1242,44 @@
     "Playism",
     "Humble Games"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "pixel-graphics",
+     "Pixel Graphics"
+    ],
+    [
+     "retro",
+     "Retro"
+    ],
+    [
+     "anime",
+     "Anime"
+    ],
+    [
+     "survival-horror",
+     "Survival Horror"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ]
+   ],
    "hltb": {
     "main": 9.19,
     "extra": 11.05,
@@ -1276,7 +1543,56 @@
     "Square Enix",
     "Deep Silver"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "zombies",
+     "Zombies"
+    ],
+    [
+     "combat",
+     "combat"
+    ]
+   ],
    "hltb": {
     "main": 24.42,
     "extra": 49.51,
@@ -1328,7 +1644,28 @@
    "publishers": [
     "Fireshine Games"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "3d-platformer",
+     "3D Platformer"
+    ],
+    [
+     "party",
+     "party"
+    ]
+   ],
    "hltb": {
     "main": 11.82,
     "extra": 13.84,
@@ -1402,7 +1739,56 @@
    "publishers": [
     "Electronic Arts"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "realistic",
+     "Realistic"
+    ],
+    [
+     "competitive",
+     "Competitive"
+    ],
+    [
+     "sharedsplit-screen-co-op",
+     "Shared/Split Screen Co-op"
+    ],
+    [
+     "modern",
+     "Modern"
+    ],
+    [
+     "sharedsplit-screen-pvp",
+     "Shared/Split Screen PvP"
+    ],
+    [
+     "esports",
+     "esports"
+    ],
+    [
+     "stereo-sound",
+     "Stereo Sound"
+    ],
+    [
+     "adjustable-difficulty",
+     "Adjustable Difficulty"
+    ],
+    [
+     "subtitle-options",
+     "Subtitle Options"
+    ]
+   ],
    "hltb": {
     "main": 30.89,
     "extra": 153.1,
@@ -1670,7 +2056,44 @@
    "publishers": [
     "Team Cherry"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "difficult",
+     "Difficult"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "dark-fantasy",
+     "Dark Fantasy"
+    ],
+    [
+     "side-scroller",
+     "Side Scroller"
+    ],
+    [
+     "metroidvania",
+     "Metroidvania"
+    ],
+    [
+     "hand-drawn",
+     "Hand-drawn"
+    ],
+    [
+     "gothic",
+     "Gothic"
+    ]
+   ],
    "hltb": {
     "main": 28.25,
     "extra": 47.28,
@@ -1727,7 +2150,56 @@
    "publishers": [
     "Electronic Arts"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "war",
+     "War"
+    ],
+    [
+     "mature",
+     "Mature"
+    ],
+    [
+     "physics",
+     "Physics"
+    ],
+    [
+     "historical",
+     "Historical"
+    ],
+    [
+     "military",
+     "Military"
+    ],
+    [
+     "story",
+     "Story"
+    ],
+    [
+     "steam-trading-cards-2",
+     "Steam Trading Cards"
+    ]
+   ],
    "hltb": {
     "main": 6.01,
     "extra": 7.67,
@@ -1780,7 +2252,56 @@
    "publishers": [
     "11 Bit Studios"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "space",
+     "Space"
+    ],
+    [
+     "war",
+     "War"
+    ],
+    [
+     "crafting",
+     "Crafting"
+    ],
+    [
+     "futuristic",
+     "Futuristic"
+    ],
+    [
+     "story",
+     "Story"
+    ],
+    [
+     "steam-trading-cards-2",
+     "Steam Trading Cards"
+    ],
+    [
+     "management",
+     "Management"
+    ],
+    [
+     "base-building",
+     "Base Building"
+    ]
+   ],
    "hltb": {
     "main": 19.69,
     "extra": 25.11,
@@ -1839,7 +2360,56 @@
     "Dangen Entertainment",
     "Inin Games"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "difficult",
+     "Difficult"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "action-rpg",
+     "Action RPG"
+    ],
+    [
+     "pixel-graphics",
+     "Pixel Graphics"
+    ],
+    [
+     "retro",
+     "Retro"
+    ],
+    [
+     "anime",
+     "Anime"
+    ],
+    [
+     "role-playing",
+     "role-playing"
+    ]
+   ],
    "hltb": {
     "main": 35.74,
     "extra": 55.26,
@@ -1958,7 +2528,48 @@
     "Beethoven and Dinosaur"
    ],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "steam-trading-cards-2",
+     "Steam Trading Cards"
+    ],
+    [
+     "music",
+     "Music"
+    ],
+    [
+     "stylized",
+     "Stylized"
+    ],
+    [
+     "character",
+     "character"
+    ],
+    [
+     "beautiful",
+     "Beautiful"
+    ],
+    [
+     "psychedelic",
+     "Psychedelic"
+    ],
+    [
+     "relationship",
+     "relationship"
+    ]
+   ],
    "hltb": {
     "main": 4.15,
     "extra": 4.49,
@@ -2280,7 +2891,32 @@
    "publishers": [
     "Devolver Digital"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "cute",
+     "Cute"
+    ],
+    [
+     "relaxing",
+     "Relaxing"
+    ],
+    [
+     "drama",
+     "Drama"
+    ],
+    [
+     "relaxation",
+     "relaxation"
+    ]
+   ],
    "hltb": {
     "main": 3.55,
     "extra": 4.15,
@@ -2424,7 +3060,28 @@
    "publishers": [
     "Panic"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "comedy",
+     "Comedy"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "humor",
+     "humor"
+    ],
+    [
+     "hilarious",
+     "hilarious"
+    ]
+   ],
    "hltb": {
     "main": 3.02,
     "extra": 4.08,
@@ -2498,7 +3155,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "captions-available",
+     "Captions available"
+    ],
+    [
+     "dark-fantasy",
+     "Dark Fantasy"
+    ],
+    [
+     "walking-simulator",
+     "Walking Simulator"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ],
+    [
+     "lovecraftian",
+     "Lovecraftian"
+    ]
+   ],
    "hltb": {
     "main": 4.65,
     "extra": 5.66,
@@ -2847,7 +3553,56 @@
     "505 Games",
     "Bilibili"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "difficult",
+     "Difficult"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "action-rpg",
+     "Action RPG"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "hack-and-slash",
+     "Hack and Slash"
+    ]
+   ],
    "hltb": {
     "main": 30.29,
     "extra": 38.82,
@@ -2904,7 +3659,52 @@
    "publishers": [
     "Aspyr"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "steam-trading-cards-2",
+     "Steam Trading Cards"
+    ],
+    [
+     "protagonistka",
+     "Протагонистка"
+    ],
+    [
+     "old-school",
+     "Old School"
+    ],
+    [
+     "remeik",
+     "Ремейк"
+    ]
+   ],
    "hltb": {
     "main": 38.24,
     "extra": 70.37,
@@ -3070,7 +3870,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "surreal",
+     "Surreal"
+    ],
+    [
+     "stylized",
+     "Stylized"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ],
+    [
+     "minimalist",
+     "Minimalist"
+    ],
+    [
+     "nature",
+     "nature"
+    ]
+   ],
    "hltb": {
     "main": 2.76,
     "extra": 3.85,
@@ -3423,7 +4272,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "retro",
+     "Retro"
+    ],
+    [
+     "hack-and-slash",
+     "Hack and Slash"
+    ],
+    [
+     "side-scroller",
+     "Side Scroller"
+    ],
+    [
+     "steam-trading-cards-2",
+     "Steam Trading Cards"
+    ],
+    [
+     "metroidvania",
+     "Metroidvania"
+    ],
+    [
+     "hand-drawn",
+     "Hand-drawn"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ],
+    [
+     "ninja",
+     "Ninja"
+    ],
+    [
+     "2d-platformer-3",
+     "2D Platformer"
+    ],
+    [
+     "2d-platformer-4",
+     "2D-платформер"
+    ],
+    [
+     "custom-volume-controls",
+     "Custom Volume Controls"
+    ],
+    [
+     "playable-without-timed-input",
+     "Playable without Timed Input"
+    ]
+   ],
    "hltb": {
     "main": 10.01,
     "extra": 13.94,
@@ -3504,7 +4402,48 @@
    "publishers": [
     "Unknown Worlds Entertainment"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "survival-horror",
+     "Survival Horror"
+    ],
+    [
+     "crafting",
+     "Crafting"
+    ],
+    [
+     "aliens",
+     "Aliens"
+    ],
+    [
+     "base-building",
+     "Base Building"
+    ],
+    [
+     "underwater",
+     "Underwater"
+    ]
+   ],
    "hltb": {
     "main": 20.2,
     "extra": 26.38,
@@ -3554,7 +4493,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "choices-matter",
+     "Choices Matter"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "multiple-endings",
+     "Multiple Endings"
+    ],
+    [
+     "surreal",
+     "Surreal"
+    ],
+    [
+     "stylized",
+     "Stylized"
+    ],
+    [
+     "1990s",
+     "1990's"
+    ],
+    [
+     "romance",
+     "Romance"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ]
+   ],
    "hltb": {
     "main": 11.21,
     "extra": 13.31,
@@ -3607,7 +4595,56 @@
    "publishers": [
     "Maximum Entertainment"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "survival-horror",
+     "Survival Horror"
+    ],
+    [
+     "dark-fantasy",
+     "Dark Fantasy"
+    ],
+    [
+     "cartoony",
+     "Cartoony"
+    ],
+    [
+     "narration",
+     "Narration"
+    ],
+    [
+     "cartoon",
+     "Cartoon"
+    ]
+   ],
    "hltb": {
     "main": 7.75,
     "extra": 8.57,
@@ -3661,7 +4698,56 @@
     "Giant Squid"
    ],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "3d-platformer",
+     "3D Platformer"
+    ],
+    [
+     "puzzles",
+     "puzzles"
+    ],
+    [
+     "protagonistka",
+     "Протагонистка"
+    ],
+    [
+     "epic",
+     "Epic"
+    ],
+    [
+     "nature",
+     "nature"
+    ],
+    [
+     "offline",
+     "offline"
+    ]
+   ],
    "hltb": {
     "main": 6.12,
     "extra": 9.25,
@@ -3782,7 +4868,56 @@
    "publishers": [
     "11 Bit Studios"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "mature",
+     "Mature"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "walking-simulator",
+     "Walking Simulator"
+    ],
+    [
+     "linear",
+     "Linear"
+    ],
+    [
+     "surreal",
+     "Surreal"
+    ]
+   ],
    "hltb": {
     "main": 4.1,
     "extra": 4.51,
@@ -4173,7 +5308,52 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "realistic",
+     "Realistic"
+    ],
+    [
+     "competitive",
+     "Competitive"
+    ],
+    [
+     "soundtrack",
+     "Soundtrack"
+    ],
+    [
+     "sharedsplit-screen-co-op",
+     "Shared/Split Screen Co-op"
+    ],
+    [
+     "modern",
+     "Modern"
+    ],
+    [
+     "sharedsplit-screen-pvp",
+     "Shared/Split Screen PvP"
+    ],
+    [
+     "capitalism",
+     "Capitalism"
+    ],
+    [
+     "esports",
+     "esports"
+    ],
+    [
+     "football-soccer-2",
+     "Football (Soccer)"
+    ]
+   ],
    "hltb": {
     "main": 47.73,
     "extra": 140.37,
@@ -4453,7 +5633,52 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "pixel-graphics",
+     "Pixel Graphics"
+    ],
+    [
+     "role-playing",
+     "role-playing"
+    ],
+    [
+     "point-click",
+     "Point & Click"
+    ],
+    [
+     "turn-based",
+     "Turn-Based"
+    ],
+    [
+     "roguelike",
+     "Roguelike"
+    ],
+    [
+     "roguelite",
+     "Roguelite"
+    ],
+    [
+     "dungeon-crawler",
+     "Dungeon Crawler"
+    ],
+    [
+     "strategy-rpg",
+     "Strategy RPG"
+    ],
+    [
+     "pixel-art",
+     "pixel-art"
+    ]
+   ],
    "hltb": {
     "main": 38.79,
     "extra": 51.81,
@@ -4503,7 +5728,40 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "top-down",
+     "Top-Down"
+    ],
+    [
+     "steam-trading-cards-2",
+     "Steam Trading Cards"
+    ],
+    [
+     "driving",
+     "Driving"
+    ],
+    [
+     "destruction",
+     "Destruction"
+    ],
+    [
+     "movie",
+     "Movie"
+    ],
+    [
+     "street-racing-2",
+     "street racing"
+    ]
+   ],
    "hltb": {
     "main": 23.11,
     "extra": 30.77,
@@ -4554,7 +5812,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "cute",
+     "Cute"
+    ],
+    [
+     "choices-matter",
+     "Choices Matter"
+    ],
+    [
+     "side-scroller",
+     "Side Scroller"
+    ],
+    [
+     "magic",
+     "Magic"
+    ],
+    [
+     "multiple-endings",
+     "Multiple Endings"
+    ],
+    [
+     "story",
+     "Story"
+    ],
+    [
+     "3d-platformer",
+     "3D Platformer"
+    ]
+   ],
    "hltb": {
     "main": 10.33,
     "extra": 13.99,
@@ -4920,7 +6227,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "dark-fantasy",
+     "Dark Fantasy"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "vr",
+     "VR"
+    ],
+    [
+     "hand-drawn",
+     "Hand-drawn"
+    ]
+   ],
    "hltb": {
     "main": 5.07,
     "extra": 6.2,
@@ -4973,7 +6329,56 @@
    "publishers": [
     "Modus Games"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "pixel-graphics",
+     "Pixel Graphics"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "side-scroller",
+     "Side Scroller"
+    ],
+    [
+     "multiple-endings",
+     "Multiple Endings"
+    ],
+    [
+     "visual-novel",
+     "Visual Novel"
+    ],
+    [
+     "linear",
+     "Linear"
+    ],
+    [
+     "drama",
+     "Drama"
+    ],
+    [
+     "romance",
+     "Romance"
+    ],
+    [
+     "emotional",
+     "Emotional"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ]
+   ],
    "hltb": {
     "main": 15.98,
     "extra": 21.51,
@@ -5030,7 +6435,56 @@
    "publishers": [
     "Red Candle Games"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "difficult",
+     "Difficult"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "dark-fantasy",
+     "Dark Fantasy"
+    ],
+    [
+     "metroidvania",
+     "Metroidvania"
+    ],
+    [
+     "hand-drawn",
+     "Hand-drawn"
+    ],
+    [
+     "comic-book",
+     "Comic Book"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ],
+    [
+     "souls-like",
+     "Souls-like"
+    ]
+   ],
    "hltb": {
     "main": 21.72,
     "extra": 27.38,
@@ -5082,7 +6536,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "replay-value",
+     "Replay Value"
+    ],
+    [
+     "walking-simulator",
+     "Walking Simulator"
+    ],
+    [
+     "roguelite",
+     "Roguelite"
+    ],
+    [
+     "stylized",
+     "Stylized"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ],
+    [
+     "level-editor",
+     "Level Editor"
+    ],
+    [
+     "investigation",
+     "Investigation"
+    ],
+    [
+     "nonlinear",
+     "Nonlinear"
+    ]
+   ],
    "hltb": {
     "main": 18.39,
     "extra": 36.48,
@@ -5180,7 +6683,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "sexual-content",
+     "Sexual Content"
+    ],
+    [
+     "3d-platformer",
+     "3D Platformer"
+    ],
+    [
+     "protagonistka",
+     "Протагонистка"
+    ],
+    [
+     "lgbtq-2",
+     "LGBTQ+"
+    ],
+    [
+     "political",
+     "Political"
+    ],
+    [
+     "co-op-campaign",
+     "Co-op Campaign"
+    ]
+   ],
    "hltb": {
     "main": 13.79,
     "extra": 14.75,
@@ -5448,7 +7000,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "comedy",
+     "Comedy"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "character-customization",
+     "Character Customization"
+    ],
+    [
+     "crafting",
+     "Crafting"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "robots",
+     "Robots"
+    ],
+    [
+     "3d-platformer",
+     "3D Platformer"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ],
+    [
+     "protagonistka",
+     "Протагонистка"
+    ]
+   ],
    "hltb": {
     "main": 7.07,
     "extra": 11.02,
@@ -5683,7 +7284,56 @@
    "publishers": [
     "Bandai Namco Entertainment"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "survival-horror",
+     "Survival Horror"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "choices-matter",
+     "Choices Matter"
+    ],
+    [
+     "multiple-endings",
+     "Multiple Endings"
+    ],
+    [
+     "blood",
+     "Blood"
+    ]
+   ],
    "hltb": {
     "main": 5.07,
     "extra": 6.43,
@@ -5838,7 +7488,56 @@
    "publishers": [
     "Bandai Namco Entertainment"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "hack-and-slash",
+     "Hack and Slash"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "choices-matter",
+     "Choices Matter"
+    ],
+    [
+     "realistic",
+     "Realistic"
+    ]
+   ],
    "hltb": {
     "main": 7.14,
     "extra": 9.1,
@@ -5895,7 +7594,48 @@
    "publishers": [
     "SadSquare Studio"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "survival-horror",
+     "Survival Horror"
+    ],
+    [
+     "realistic",
+     "Realistic"
+    ],
+    [
+     "walking-simulator",
+     "Walking Simulator"
+    ],
+    [
+     "surreal",
+     "Surreal"
+    ],
+    [
+     "experimental",
+     "Experimental"
+    ]
+   ],
    "hltb": {
     "main": 9.21,
     "extra": 12.46,
@@ -6055,7 +7795,56 @@
     "Ironwood Studios"
    ],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "survival-horror",
+     "Survival Horror"
+    ],
+    [
+     "post-apocalyptic",
+     "Post-apocalyptic"
+    ],
+    [
+     "crafting",
+     "Crafting"
+    ],
+    [
+     "building",
+     "Building"
+    ],
+    [
+     "driving",
+     "Driving"
+    ]
+   ],
    "hltb": {
     "main": 21.37,
     "extra": 32.2,
@@ -6111,7 +7900,56 @@
    "publishers": [
     "Konami Digital Entertainment"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "survival-horror",
+     "Survival Horror"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "multiple-endings",
+     "Multiple Endings"
+    ]
+   ],
    "hltb": {
     "main": 10.74,
     "extra": 16.53,
@@ -6215,7 +8053,56 @@
    "publishers": [
     "Devolver Digital"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "cute",
+     "Cute"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "story",
+     "Story"
+    ],
+    [
+     "battle",
+     "battle"
+    ],
+    [
+     "3d-platformer",
+     "3D Platformer"
+    ],
+    [
+     "puzzles",
+     "puzzles"
+    ],
+    [
+     "cartoony",
+     "Cartoony"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ],
+    [
+     "friends",
+     "friends"
+    ]
+   ],
    "hltb": {
     "main": 8.39,
     "extra": 9.34,
@@ -13059,7 +14946,40 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "realistic",
+     "Realistic"
+    ],
+    [
+     "competitive",
+     "Competitive"
+    ],
+    [
+     "sharedsplit-screen-co-op",
+     "Shared/Split Screen Co-op"
+    ],
+    [
+     "sharedsplit-screen-pvp",
+     "Shared/Split Screen PvP"
+    ],
+    [
+     "esports",
+     "esports"
+    ],
+    [
+     "football-soccer-2",
+     "Football (Soccer)"
+    ]
+   ],
    "hltb": {
     "main": 38.74,
     "extra": 109.03,
@@ -15567,8 +17487,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "2K Drive",
-    "Lego"
+    "Lego",
+    "2K Drive"
    ],
    "developers": [
     "Visual Concepts"
@@ -26341,7 +28261,12 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "demo",
+     "demo"
+    ]
+   ],
    "hltb": {
     "main": 10.17,
     "extra": 27.68,
@@ -34752,7 +36677,56 @@
    "publishers": [
     "Capcom"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "zombies",
+     "Zombies"
+    ],
+    [
+     "survival-horror",
+     "Survival Horror"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ]
+   ],
    "hltb": {
     "main": 9.22,
     "extra": 12.01,
@@ -38690,7 +40664,28 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "quick-time-events",
+     "Quick-Time Events"
+    ]
+   ],
    "hltb": {
     "main": 7.09,
     "extra": 8.56,
@@ -39816,7 +41811,28 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "cute",
+     "Cute"
+    ],
+    [
+     "3rd-person-perspective",
+     "3rd-Person Perspective"
+    ],
+    [
+     "drama",
+     "Drama"
+    ]
+   ],
    "hltb": {
     "main": 11.9,
     "extra": 13.14,
@@ -40162,7 +42178,44 @@
    "publishers": [
     "Sony Interactive Entertainment"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "controller-support",
+     "controller support"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "relaxing",
+     "Relaxing"
+    ],
+    [
+     "3d-platformer",
+     "3D Platformer"
+    ],
+    [
+     "puzzles",
+     "puzzles"
+    ]
+   ],
    "hltb": {
     "main": 5.72,
     "extra": 6.89,
@@ -43482,7 +45535,28 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "character-customization",
+     "Character Customization"
+    ],
+    [
+     "dark-fantasy",
+     "Dark Fantasy"
+    ]
+   ],
    "hltb": {
     "main": 32.19,
     "extra": 43.36,
@@ -44631,7 +46705,52 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "nudity",
+     "Nudity"
+    ],
+    [
+     "mature",
+     "Mature"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "3rd-person-perspective",
+     "3rd-Person Perspective"
+    ],
+    [
+     "steampunk",
+     "Steampunk"
+    ],
+    [
+     "alternate-history",
+     "Alternate History"
+    ],
+    [
+     "exclusives",
+     "exclusives"
+    ]
+   ],
    "hltb": {
     "main": 7.17,
     "extra": 8.32,
@@ -45546,7 +47665,56 @@
     "Feral Interactive",
     "Warner Bros. Games"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-rpg",
+     "Action RPG"
+    ],
+    [
+     "hack-and-slash",
+     "Hack and Slash"
+    ],
+    [
+     "dark-fantasy",
+     "Dark Fantasy"
+    ],
+    [
+     "magic",
+     "Magic"
+    ]
+   ],
    "hltb": {
     "main": 15.71,
     "extra": 23.94,
@@ -45695,7 +47863,36 @@
    "publishers": [
     "EA Sports"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "story",
+     "Story"
+    ],
+    [
+     "online",
+     "online"
+    ],
+    [
+     "football",
+     "Football"
+    ],
+    [
+     "soccer",
+     "Soccer"
+    ],
+    [
+     "match",
+     "match"
+    ],
+    [
+     "reality-based",
+     "reality-based"
+    ],
+    [
+     "ball",
+     "ball"
+    ]
+   ],
    "hltb": {
     "main": 79.22,
     "extra": 154.44,
@@ -45845,7 +48042,56 @@
     "Ubisoft Sofia"
    ],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "historical",
+     "Historical"
+    ],
+    [
+     "parkour",
+     "Parkour"
+    ],
+    [
+     "linear",
+     "Linear"
+    ],
+    [
+     "assassin",
+     "Assassin"
+    ],
+    [
+     "illuminati",
+     "Illuminati"
+    ]
+   ],
    "hltb": {
     "main": 10.82,
     "extra": 22.3,
@@ -46182,7 +48428,12 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "story",
+     "Story"
+    ]
+   ],
    "hltb": {
     "main": 10.36,
     "extra": 12.28,
@@ -46371,7 +48622,56 @@
     "Ubisoft Quebec"
    ],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "action-rpg",
+     "Action RPG"
+    ],
+    [
+     "mature",
+     "Mature"
+    ],
+    [
+     "historical",
+     "Historical"
+    ],
+    [
+     "parkour",
+     "Parkour"
+    ]
+   ],
    "hltb": {
     "main": 23.42,
     "extra": 41.07,
@@ -46627,7 +48927,56 @@
    "publishers": [
     "2K"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "dystopian",
+     "Dystopian"
+    ],
+    [
+     "linear",
+     "Linear"
+    ],
+    [
+     "steampunk",
+     "Steampunk"
+    ],
+    [
+     "alternate-history",
+     "Alternate History"
+    ],
+    [
+     "time-travel",
+     "Time Travel"
+    ]
+   ],
    "hltb": {
     "main": 11.55,
     "extra": 16.18,
@@ -46809,7 +49158,56 @@
    "publishers": [
     "Telltale Games"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "zombies",
+     "Zombies"
+    ],
+    [
+     "point-click",
+     "Point & Click"
+    ],
+    [
+     "post-apocalyptic",
+     "Post-apocalyptic"
+    ],
+    [
+     "choices-matter",
+     "Choices Matter"
+    ],
+    [
+     "mature",
+     "Mature"
+    ],
+    [
+     "visual-novel",
+     "Visual Novel"
+    ],
+    [
+     "drama",
+     "Drama"
+    ]
+   ],
    "hltb": {
     "main": 0.53,
     "url": "https://howlongtobeat.com/game/66845"
@@ -46977,7 +49375,56 @@
    ],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "futuristic",
+     "Futuristic"
+    ],
+    [
+     "parkour",
+     "Parkour"
+    ],
+    [
+     "driving",
+     "Driving"
+    ],
+    [
+     "hacking",
+     "Hacking"
+    ]
+   ],
    "hltb": {
     "main": 19.45,
     "extra": 31.89,
@@ -47145,7 +49592,56 @@
     "Square Enix",
     "Eidos Interactive"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "retro",
+     "Retro"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "quick-time-events",
+     "Quick-Time Events"
+    ],
+    [
+     "dinosaurs",
+     "Dinosaurs"
+    ],
+    [
+     "lara-croft",
+     "Lara Croft"
+    ]
+   ],
    "hltb": {
     "main": 11.32,
     "extra": 15.47,
@@ -47306,7 +49802,44 @@
    "publishers": [
     "Warner Bros. Games"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "comedy",
+     "Comedy"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "comic-book",
+     "Comic Book"
+    ],
+    [
+     "superhero",
+     "Superhero"
+    ],
+    [
+     "lego",
+     "LEGO"
+    ]
+   ],
    "hltb": {
     "main": 12.27,
     "extra": 24.0,
@@ -47451,7 +49984,56 @@
    "publishers": [
     "Sony Interactive Entertainment"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "multiple-endings",
+     "Multiple Endings"
+    ],
+    [
+     "3rd-person-perspective",
+     "3rd-Person Perspective"
+    ],
+    [
+     "music",
+     "Music"
+    ]
+   ],
    "hltb": {
     "main": 2.0,
     "extra": 2.51,
@@ -47605,7 +50187,16 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "cover-shooter",
+     "cover-shooter"
+    ]
+   ],
    "hltb": {
     "main": 9.1,
     "extra": 10.7,
@@ -47796,7 +50387,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "battle",
+     "battle"
+    ],
+    [
+     "city",
+     "city"
+    ],
+    [
+     "hero",
+     "hero"
+    ],
+    [
+     "monsters",
+     "Monsters"
+    ],
+    [
+     "classes",
+     "Classes"
+    ],
+    [
+     "fighter",
+     "fighter"
+    ],
+    [
+     "food",
+     "food"
+    ],
+    [
+     "swords",
+     "Swords"
+    ],
+    [
+     "skeletons",
+     "Skeletons"
+    ]
+   ],
    "hltb": {
     "main": 14.05,
     "extra": 20.79,
@@ -47911,7 +50551,56 @@
    "publishers": [
     "Square Enix"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "difficult",
+     "Difficult"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "tactical",
+     "Tactical"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "replay-value",
+     "Replay Value"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "crime",
+     "Crime"
+    ],
+    [
+     "linear",
+     "Linear"
+    ],
+    [
+     "assassin",
+     "Assassin"
+    ],
+    [
+     "score-attack",
+     "Score Attack"
+    ]
+   ],
    "hltb": {
     "main": 12.3,
     "extra": 19.85,
@@ -48070,7 +50759,52 @@
     "Take-Two Interactive",
     "Softclub"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "comedy",
+     "Comedy"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "moddable",
+     "Moddable"
+    ],
+    [
+     "crime",
+     "Crime"
+    ],
+    [
+     "vr-mod",
+     "vr mod"
+    ]
+   ],
    "hltb": {
     "main": 32.06,
     "extra": 51.24,
@@ -48227,7 +50961,56 @@
    "publishers": [
     "Sony Interactive Entertainment"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "choices-matter",
+     "Choices Matter"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "drama",
+     "Drama"
+    ],
+    [
+     "narration",
+     "Narration"
+    ],
+    [
+     "emotional",
+     "Emotional"
+    ]
+   ],
    "hltb": {
     "main": 10.65,
     "extra": 12.4,
@@ -48339,7 +51122,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "pixel-graphics",
+     "Pixel Graphics"
+    ],
+    [
+     "character-customization",
+     "Character Customization"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "realistic",
+     "Realistic"
+    ]
+   ],
    "hltb": {
     "main": 1.46,
     "extra": 2.54,
@@ -48451,7 +51283,20 @@
    "publishers": [
     "Sony Interactive Entertainment"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "nature",
+     "nature"
+    ],
+    [
+     "flight",
+     "Flight"
+    ]
+   ],
    "hltb": {
     "main": 1.98,
     "extra": 2.56,
@@ -48604,7 +51449,12 @@
    "publishers": [
     "Bandai Namco Entertainment"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "role-playing",
+     "role-playing"
+    ]
+   ],
    "hltb": {
     "main": 44.08,
     "extra": 56.23,
@@ -48992,7 +51842,40 @@
    "publishers": [
     "THQ"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "war",
+     "War"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "battle",
+     "battle"
+    ],
+    [
+     "character",
+     "character"
+    ],
+    [
+     "soundtrack",
+     "Soundtrack"
+    ],
+    [
+     "death",
+     "death"
+    ],
+    [
+     "quest",
+     "quest"
+    ],
+    [
+     "apocalypse",
+     "apocalypse"
+    ]
+   ],
    "hltb": {
     "main": 21.59,
     "extra": 29.18,
@@ -49143,7 +52026,56 @@
    "publishers": [
     "Electronic Arts"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "space",
+     "Space"
+    ],
+    [
+     "zombies",
+     "Zombies"
+    ],
+    [
+     "survival-horror",
+     "Survival Horror"
+    ]
+   ],
    "hltb": {
     "main": 9.11,
     "extra": 11.55,
@@ -49308,7 +52240,56 @@
    "publishers": [
     "Bethesda Softworks"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "replay-value",
+     "Replay Value"
+    ],
+    [
+     "magic",
+     "Magic"
+    ],
+    [
+     "multiple-endings",
+     "Multiple Endings"
+    ]
+   ],
    "hltb": {
     "main": 12.16,
     "extra": 18.54,
@@ -49492,7 +52473,48 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "space",
+     "Space"
+    ],
+    [
+     "assassin",
+     "Assassin"
+    ],
+    [
+     "character",
+     "character"
+    ],
+    [
+     "city",
+     "city"
+    ],
+    [
+     "investigation",
+     "Investigation"
+    ],
+    [
+     "future",
+     "future"
+    ],
+    [
+     "single-player-only",
+     "Single player only"
+    ],
+    [
+     "treasure",
+     "treasure"
+    ],
+    [
+     "office",
+     "office"
+    ]
+   ],
    "hltb": {
     "main": 16.45,
     "extra": 31.28,
@@ -49671,7 +52693,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "retro",
+     "Retro"
+    ],
+    [
+     "hack-and-slash",
+     "Hack and Slash"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "futuristic",
+     "Futuristic"
+    ],
+    [
+     "medieval",
+     "Medieval"
+    ],
+    [
+     "fast-paced",
+     "Fast-Paced"
+    ],
+    [
+     "magic",
+     "Magic"
+    ],
+    [
+     "linear",
+     "Linear"
+    ]
+   ],
    "hltb": {
     "main": 6.08,
     "extra": 8.1,
@@ -49823,7 +52894,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "historical",
+     "Historical"
+    ],
+    [
+     "medieval",
+     "Medieval"
+    ],
+    [
+     "parkour",
+     "Parkour"
+    ],
+    [
+     "assassin",
+     "Assassin"
+    ]
+   ],
    "hltb": {
     "main": 12.45,
     "extra": 20.63,
@@ -49998,7 +53118,24 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "physics",
+     "Physics"
+    ],
+    [
+     "soccer",
+     "Soccer"
+    ],
+    [
+     "ball",
+     "ball"
+    ],
+    [
+     "ai",
+     "ai"
+    ]
+   ],
    "hltb": {
     "main": 61.91,
     "extra": 67.59,
@@ -50151,7 +53288,24 @@
    "publishers": [
     "FromSoftware"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "death",
+     "death"
+    ],
+    [
+     "duel",
+     "duel"
+    ]
+   ],
    "hltb": {
     "main": 41.67,
     "extra": 59.19,
@@ -50298,7 +53452,56 @@
    "publishers": [
     "THQ"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "action-rpg",
+     "Action RPG"
+    ],
+    [
+     "hack-and-slash",
+     "Hack and Slash"
+    ],
+    [
+     "post-apocalyptic",
+     "Post-apocalyptic"
+    ],
+    [
+     "beat-em-up",
+     "Beat 'em up"
+    ],
+    [
+     "metroidvania",
+     "Metroidvania"
+    ],
+    [
+     "3d-platformer",
+     "3D Platformer"
+    ],
+    [
+     "character-action-game",
+     "Character Action Game"
+    ]
+   ],
    "hltb": {
     "main": 17.07,
     "extra": 20.42,
@@ -50420,7 +53623,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "historical",
+     "Historical"
+    ],
+    [
+     "medieval",
+     "Medieval"
+    ],
+    [
+     "parkour",
+     "Parkour"
+    ],
+    [
+     "assassin",
+     "Assassin"
+    ],
+    [
+     "conspiracy",
+     "Conspiracy"
+    ],
+    [
+     "rome",
+     "Rome"
+    ]
+   ],
    "hltb": {
     "main": 15.29,
     "extra": 25.66,
@@ -50579,7 +53831,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "zombies",
+     "Zombies"
+    ],
+    [
+     "nudity",
+     "Nudity"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "sexual-content",
+     "Sexual Content"
+    ],
+    [
+     "blood",
+     "Blood"
+    ],
+    [
+     "narration",
+     "Narration"
+    ]
+   ],
    "hltb": {
     "main": 17.6,
     "extra": 25.88,
@@ -50902,7 +54203,48 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "stealth",
+     "Stealth"
+    ],
+    [
+     "space",
+     "Space"
+    ],
+    [
+     "assassin",
+     "Assassin"
+    ],
+    [
+     "character",
+     "character"
+    ],
+    [
+     "city",
+     "city"
+    ],
+    [
+     "investigation",
+     "Investigation"
+    ],
+    [
+     "future",
+     "future"
+    ],
+    [
+     "single-player-only",
+     "Single player only"
+    ],
+    [
+     "treasure",
+     "treasure"
+    ],
+    [
+     "office",
+     "office"
+    ]
+   ],
    "hltb": {
     "main": 19.29,
     "extra": 26.17,
@@ -51027,7 +54369,36 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "story",
+     "Story"
+    ],
+    [
+     "city",
+     "city"
+    ],
+    [
+     "soundtrack",
+     "Soundtrack"
+    ],
+    [
+     "flight",
+     "Flight"
+    ],
+    [
+     "prison",
+     "prison"
+    ],
+    [
+     "skeletons",
+     "Skeletons"
+    ]
+   ],
    "hltb": {
     "main": 12.65,
     "extra": 22.14,
@@ -51346,7 +54717,56 @@
    "publishers": [
     "Electronic Arts"
    ],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "space",
+     "Space"
+    ],
+    [
+     "zombies",
+     "Zombies"
+    ],
+    [
+     "survival-horror",
+     "Survival Horror"
+    ]
+   ],
    "hltb": {
     "main": 12.15,
     "extra": 16.21,
@@ -51486,7 +54906,56 @@
    "series": [],
    "developers": [],
    "publishers": [],
-   "tags": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "nudity",
+     "Nudity"
+    ],
+    [
+     "crime",
+     "Crime"
+    ],
+    [
+     "driving",
+     "Driving"
+    ],
+    [
+     "3d-vision",
+     "3D Vision"
+    ],
+    [
+     "music",
+     "Music"
+    ],
+    [
+     "america",
+     "America"
+    ]
+   ],
    "hltb": {
     "main": 12.12,
     "extra": 16.5,

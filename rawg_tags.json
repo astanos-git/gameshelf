@@ -803,6 +803,122 @@
    "Dinosaurs"
   ]
  ],
+ "assassins-creed": [
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "space",
+   "Space"
+  ],
+  [
+   "assassin",
+   "Assassin"
+  ],
+  [
+   "character",
+   "character"
+  ],
+  [
+   "city",
+   "city"
+  ],
+  [
+   "investigation",
+   "Investigation"
+  ],
+  [
+   "future",
+   "future"
+  ],
+  [
+   "single-player-only",
+   "Single player only"
+  ],
+  [
+   "treasure",
+   "treasure"
+  ],
+  [
+   "office",
+   "office"
+  ]
+ ],
+ "assassins-creed-brotherhood-2": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "historical",
+   "Historical"
+  ],
+  [
+   "medieval",
+   "Medieval"
+  ],
+  [
+   "parkour",
+   "Parkour"
+  ],
+  [
+   "assassin",
+   "Assassin"
+  ],
+  [
+   "conspiracy",
+   "Conspiracy"
+  ],
+  [
+   "rome",
+   "Rome"
+  ]
+ ],
  "assassins-creed-freedom-cry": [
   [
    "singleplayer",
@@ -885,6 +1001,80 @@
    "6DOF"
   ]
  ],
+ "assassins-creed-iv-black-flag": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "action-rpg",
+   "Action RPG"
+  ],
+  [
+   "mature",
+   "Mature"
+  ],
+  [
+   "historical",
+   "Historical"
+  ],
+  [
+   "parkour",
+   "Parkour"
+  ],
+  [
+   "assassin",
+   "Assassin"
+  ],
+  [
+   "pirates",
+   "Pirates"
+  ],
+  [
+   "naval",
+   "Naval"
+  ]
+ ],
  "assassins-creed-odyssey": [
   [
    "singleplayer",
@@ -948,6 +1138,150 @@
   ]
  ],
  "assassins-creed-origins": [],
+ "assassins-creed-revelations": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "historical",
+   "Historical"
+  ],
+  [
+   "medieval",
+   "Medieval"
+  ],
+  [
+   "parkour",
+   "Parkour"
+  ],
+  [
+   "assassin",
+   "Assassin"
+  ],
+  [
+   "conspiracy",
+   "Conspiracy"
+  ]
+ ],
+ "assassins-creed-rogue-2": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "historical",
+   "Historical"
+  ],
+  [
+   "parkour",
+   "Parkour"
+  ],
+  [
+   "linear",
+   "Linear"
+  ],
+  [
+   "assassin",
+   "Assassin"
+  ],
+  [
+   "illuminati",
+   "Illuminati"
+  ],
+  [
+   "quick-time-events",
+   "Quick-Time Events"
+  ],
+  [
+   "pirates",
+   "Pirates"
+  ]
+ ],
  "assassins-creed-unity-2": [
   [
    "singleplayer",
@@ -1180,6 +1514,36 @@
    "Roguelike Deckbuilder"
   ]
  ],
+ "batman-arkham-city-2": [
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "story",
+   "Story"
+  ],
+  [
+   "city",
+   "city"
+  ],
+  [
+   "soundtrack",
+   "Soundtrack"
+  ],
+  [
+   "flight",
+   "Flight"
+  ],
+  [
+   "prison",
+   "prison"
+  ],
+  [
+   "skeletons",
+   "Skeletons"
+  ]
+ ],
  "batman-arkham-knight": [
   [
    "singleplayer",
@@ -1266,6 +1630,120 @@
   [
    "singleplayer",
    "Singleplayer"
+  ]
+ ],
+ "battlefield-1": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "fps",
+   "FPS"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "pvp",
+   "PvP"
+  ],
+  [
+   "war",
+   "War"
+  ],
+  [
+   "mature",
+   "Mature"
+  ],
+  [
+   "physics",
+   "Physics"
+  ],
+  [
+   "historical",
+   "Historical"
+  ],
+  [
+   "military",
+   "Military"
+  ],
+  [
+   "online-pvp",
+   "Online PvP"
+  ],
+  [
+   "story",
+   "Story"
+  ],
+  [
+   "steam-trading-cards-2",
+   "Steam Trading Cards"
+  ],
+  [
+   "battle",
+   "battle"
+  ],
+  [
+   "destruction",
+   "Destruction"
+  ],
+  [
+   "tanks",
+   "Tanks"
+  ],
+  [
+   "history",
+   "history"
+  ],
+  [
+   "classes",
+   "Classes"
+  ],
+  [
+   "world-war-i",
+   "World War I"
+  ],
+  [
+   "tank",
+   "tank"
+  ],
+  [
+   "ww1",
+   "ww1"
   ]
  ],
  "battlefield-1-revolution": [
@@ -1392,6 +1870,156 @@
    "vehicle"
   ]
  ],
+ "battlefield-6-2": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "fps",
+   "FPS"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "tactical",
+   "Tactical"
+  ],
+  [
+   "pvp",
+   "PvP"
+  ],
+  [
+   "cross-platform-multiplayer",
+   "Cross-Platform Multiplayer"
+  ],
+  [
+   "war",
+   "War"
+  ],
+  [
+   "in-app-purchases",
+   "In-App Purchases"
+  ],
+  [
+   "realistic",
+   "Realistic"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "military",
+   "Military"
+  ],
+  [
+   "online-pvp",
+   "Online PvP"
+  ],
+  [
+   "destruction",
+   "Destruction"
+  ],
+  [
+   "epic",
+   "Epic"
+  ],
+  [
+   "modern",
+   "Modern"
+  ],
+  [
+   "battle-royale-2",
+   "Battle Royale"
+  ],
+  [
+   "hdr-available",
+   "HDR available"
+  ],
+  [
+   "stereo-sound",
+   "Stereo Sound"
+  ],
+  [
+   "custom-volume-controls",
+   "Custom Volume Controls"
+  ],
+  [
+   "surround-sound-2",
+   "Surround Sound"
+  ],
+  [
+   "playable-without-timed-input",
+   "Playable without Timed Input"
+  ],
+  [
+   "camera-comfort",
+   "Camera Comfort"
+  ],
+  [
+   "adjustable-difficulty",
+   "Adjustable Difficulty"
+  ],
+  [
+   "color-alternatives",
+   "Color Alternatives"
+  ],
+  [
+   "subtitle-options",
+   "Subtitle Options"
+  ],
+  [
+   "keyboard-only-option",
+   "Keyboard Only Option"
+  ],
+  [
+   "chat-text-to-speech",
+   "Chat Text-to-speech"
+  ],
+  [
+   "chat-speech-to-text",
+   "Chat Speech-to-text"
+  ]
+ ],
  "battlefield-v": [
   [
    "singleplayer",
@@ -1484,6 +2112,260 @@
   [
    "ww2",
    "ww2"
+  ]
+ ],
+ "beyond-two-souls": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "split-screen",
+   "Split Screen"
+  ],
+  [
+   "choices-matter",
+   "Choices Matter"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "drama",
+   "Drama"
+  ],
+  [
+   "narration",
+   "Narration"
+  ],
+  [
+   "emotional",
+   "Emotional"
+  ],
+  [
+   "quick-time-events",
+   "Quick-Time Events"
+  ],
+  [
+   "beautiful",
+   "Beautiful"
+  ],
+  [
+   "remote-play-together",
+   "Remote Play Together"
+  ],
+  [
+   "thriller",
+   "Thriller"
+  ],
+  [
+   "sharedsplit-screen-co-op",
+   "Shared/Split Screen Co-op"
+  ],
+  [
+   "dynamic-narration",
+   "Dynamic Narration"
+  ],
+  [
+   "remote-play-on-tablet",
+   "Remote Play on Tablet"
+  ],
+  [
+   "remote-play-on-phone",
+   "Remote Play on Phone"
+  ]
+ ],
+ "big-crown-showdown": [
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "funny",
+   "Funny"
+  ],
+  [
+   "online-multiplayer",
+   "Online multiplayer"
+  ],
+  [
+   "local-multiplayer",
+   "Local Multiplayer"
+  ],
+  [
+   "stats",
+   "stats"
+  ],
+  [
+   "family-friendly",
+   "Family Friendly"
+  ],
+  [
+   "colorful",
+   "Colorful"
+  ],
+  [
+   "3d-platformer",
+   "3D Platformer"
+  ],
+  [
+   "party",
+   "party"
+  ]
+ ],
+ "bioshock-infinite": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "steam-trading-cards",
+   "steam-trading-cards"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "fps",
+   "FPS"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "dystopian",
+   "Dystopian"
+  ],
+  [
+   "linear",
+   "Linear"
+  ],
+  [
+   "steampunk",
+   "Steampunk"
+  ],
+  [
+   "alternate-history",
+   "Alternate History"
+  ],
+  [
+   "time-travel",
+   "Time Travel"
+  ],
+  [
+   "political",
+   "Political"
   ]
  ],
  "bioshock-infinite-clash-in-the-clouds": [],
@@ -1766,6 +2648,122 @@
   [
    "child",
    "child"
+  ]
+ ],
+ "bloodborne": [
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "character-customization",
+   "Character Customization"
+  ],
+  [
+   "exclusive",
+   "exclusive"
+  ],
+  [
+   "dark-fantasy",
+   "Dark Fantasy"
+  ],
+  [
+   "true-exclusive",
+   "true exclusive"
+  ]
+ ],
+ "blue-prince": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "mystery",
+   "Mystery"
+  ],
+  [
+   "replay-value",
+   "Replay Value"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "walking-simulator",
+   "Walking Simulator"
+  ],
+  [
+   "roguelite",
+   "Roguelite"
+  ],
+  [
+   "stylized",
+   "Stylized"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "level-editor",
+   "Level Editor"
+  ],
+  [
+   "investigation",
+   "Investigation"
+  ],
+  [
+   "nonlinear",
+   "Nonlinear"
+  ],
+  [
+   "escape-room-2",
+   "Escape Room"
+  ],
+  [
+   "kvest-komnata",
+   "\u041a\u0432\u0435\u0441\u0442-\u043a\u043e\u043c\u043d\u0430\u0442\u0430"
   ]
  ],
  "bo-path-of-the-teal-lotus": [
@@ -2120,6 +3118,104 @@
    "Sailing"
   ]
  ],
+ "bye-sweet-carole": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "survival-horror",
+   "Survival Horror"
+  ],
+  [
+   "dark-fantasy",
+   "Dark Fantasy"
+  ],
+  [
+   "cartoony",
+   "Cartoony"
+  ],
+  [
+   "narration",
+   "Narration"
+  ],
+  [
+   "cartoon",
+   "Cartoon"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "protagonistka",
+   "\u041f\u0440\u043e\u0442\u0430\u0433\u043e\u043d\u0438\u0441\u0442\u043a\u0430"
+  ],
+  [
+   "supernatural",
+   "Supernatural"
+  ],
+  [
+   "2d-platformer-3",
+   "2D Platformer"
+  ],
+  [
+   "2d-platformer-4",
+   "2D-\u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0435\u0440"
+  ],
+  [
+   "puzzle-platformer-2",
+   "Puzzle Platformer"
+  ],
+  [
+   "aventure",
+   "Aventure"
+  ]
+ ],
  "call-of-duty-black-ops-cold-war": [
   [
    "singleplayer",
@@ -2356,6 +3452,44 @@
   [
    "zen",
    "zen"
+  ]
+ ],
+ "chained-echoes": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "pixel-graphics",
+   "Pixel Graphics"
+  ],
+  [
+   "role-playing",
+   "role-playing"
+  ],
+  [
+   "turn-based",
+   "Turn-Based"
   ]
  ],
  "child-of-light": [
@@ -2980,6 +4114,72 @@
    "Building"
   ]
  ],
+ "control": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "metroidvania",
+   "Metroidvania"
+  ],
+  [
+   "detective",
+   "Detective"
+  ],
+  [
+   "3rd-person-perspective",
+   "3rd-Person Perspective"
+  ],
+  [
+   "supernatural",
+   "Supernatural"
+  ],
+  [
+   "abstract",
+   "Abstract"
+  ],
+  [
+   "realism",
+   "realism"
+  ],
+  [
+   "paranormal",
+   "paranormal"
+  ]
+ ],
  "crash-bandicoot-4-its-about-time": [
   [
    "singleplayer",
@@ -3040,6 +4240,100 @@
   [
    "humor",
    "humor"
+  ]
+ ],
+ "crosscode": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "difficult",
+   "Difficult"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "action-rpg",
+   "Action RPG"
+  ],
+  [
+   "pixel-graphics",
+   "Pixel Graphics"
+  ],
+  [
+   "early-access",
+   "Early Access"
+  ],
+  [
+   "retro",
+   "Retro"
+  ],
+  [
+   "anime",
+   "Anime"
+  ],
+  [
+   "role-playing",
+   "role-playing"
+  ],
+  [
+   "controller-support",
+   "controller support"
+  ],
+  [
+   "cyberpunk",
+   "Cyberpunk"
+  ],
+  [
+   "overlay",
+   "overlay"
+  ],
+  [
+   "jrpg",
+   "JRPG"
+  ],
+  [
+   "rpgmaker",
+   "RPGMaker"
+  ],
+  [
+   "in-development",
+   "in development"
   ]
  ],
  "cuphead": [
@@ -3254,6 +4548,28 @@
    "Photorealistic"
   ]
  ],
+ "dark-souls": [
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "death",
+   "death"
+  ],
+  [
+   "duel",
+   "duel"
+  ]
+ ],
  "darkest-dungeon": [
   [
    "singleplayer",
@@ -3358,6 +4674,118 @@
   [
    "cloud-saves",
    "cloud saves"
+  ]
+ ],
+ "darksiders": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "action-rpg",
+   "Action RPG"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "hack-and-slash",
+   "Hack and Slash"
+  ],
+  [
+   "post-apocalyptic",
+   "Post-apocalyptic"
+  ],
+  [
+   "beat-em-up",
+   "Beat 'em up"
+  ],
+  [
+   "metroidvania",
+   "Metroidvania"
+  ],
+  [
+   "3d-platformer",
+   "3D Platformer"
+  ],
+  [
+   "character-action-game",
+   "Character Action Game"
+  ],
+  [
+   "spectacle-fighter",
+   "Spectacle fighter"
+  ]
+ ],
+ "darksiders-ii": [
+  [
+   "war",
+   "War"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "battle",
+   "battle"
+  ],
+  [
+   "character",
+   "character"
+  ],
+  [
+   "soundtrack",
+   "Soundtrack"
+  ],
+  [
+   "death",
+   "death"
+  ],
+  [
+   "quest",
+   "quest"
+  ],
+  [
+   "apocalypse",
+   "apocalypse"
   ]
  ],
  "darksiders-iii": [
@@ -3814,6 +5242,84 @@
    "sacrifice"
   ]
  ],
+ "dead-space": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "survival",
+   "Survival"
+  ],
+  [
+   "third-person-shooter",
+   "Third-Person Shooter"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "space",
+   "Space"
+  ],
+  [
+   "zombies",
+   "Zombies"
+  ],
+  [
+   "survival-horror",
+   "Survival Horror"
+  ],
+  [
+   "controller-support",
+   "controller support"
+  ],
+  [
+   "futuristic",
+   "Futuristic"
+  ],
+  [
+   "aliens",
+   "Aliens"
+  ],
+  [
+   "silent-protagonist",
+   "Silent Protagonist"
+  ]
+ ],
  "dead-space-5": [
   [
    "singleplayer",
@@ -3896,6 +5402,7 @@
    "\u0420\u0435\u043c\u0435\u0439\u043a"
   ]
  ],
+ "death-stranding-2": [],
  "death-stranding-directors-cut": [
   [
    "singleplayer",
@@ -4852,6 +6359,246 @@
    "TrackIR"
   ]
  ],
+ "dishonored": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "fps",
+   "FPS"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "replay-value",
+   "Replay Value"
+  ],
+  [
+   "magic",
+   "Magic"
+  ],
+  [
+   "multiple-endings",
+   "Multiple Endings"
+  ],
+  [
+   "dystopian",
+   "Dystopian"
+  ],
+  [
+   "steampunk",
+   "Steampunk"
+  ],
+  [
+   "assassin",
+   "Assassin"
+  ]
+ ],
+ "disney-epic-mickey-rebrushed": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "funny",
+   "Funny"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "family-friendly",
+   "Family Friendly"
+  ],
+  [
+   "cute",
+   "Cute"
+  ],
+  [
+   "choices-matter",
+   "Choices Matter"
+  ],
+  [
+   "side-scroller",
+   "Side Scroller"
+  ],
+  [
+   "magic",
+   "Magic"
+  ],
+  [
+   "multiple-endings",
+   "Multiple Endings"
+  ],
+  [
+   "story",
+   "Story"
+  ],
+  [
+   "remake",
+   "Remake"
+  ],
+  [
+   "3d-platformer",
+   "3D Platformer"
+  ],
+  [
+   "lore-rich",
+   "Lore-Rich"
+  ],
+  [
+   "cartoon",
+   "Cartoon"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "choose-your-own-adventure",
+   "Choose Your Own Adventure"
+  ],
+  [
+   "epic",
+   "Epic"
+  ],
+  [
+   "secrets",
+   "secrets"
+  ],
+  [
+   "hero",
+   "hero"
+  ],
+  [
+   "puzzle-platformer-2",
+   "Puzzle Platformer"
+  ],
+  [
+   "environment",
+   "environment"
+  ],
+  [
+   "journey",
+   "journey"
+  ],
+  [
+   "unique",
+   "unique"
+  ],
+  [
+   "dash",
+   "dash"
+  ],
+  [
+   "remeik",
+   "\u0420\u0435\u043c\u0435\u0439\u043a"
+  ],
+  [
+   "characters",
+   "characters"
+  ],
+  [
+   "rabbit",
+   "rabbit"
+  ],
+  [
+   "shapes",
+   "shapes"
+  ],
+  [
+   "skills",
+   "skills"
+  ],
+  [
+   "choice",
+   "choice"
+  ],
+  [
+   "paint",
+   "paint"
+  ],
+  [
+   "shape",
+   "shape"
+  ],
+  [
+   "movement",
+   "movement"
+  ]
+ ],
  "dispatch-2": [
   [
    "atmospheric",
@@ -5214,6 +6961,64 @@
    "bird"
   ]
  ],
+ "dragons-crown": [
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "battle",
+   "battle"
+  ],
+  [
+   "city",
+   "city"
+  ],
+  [
+   "hero",
+   "hero"
+  ],
+  [
+   "monsters",
+   "Monsters"
+  ],
+  [
+   "classes",
+   "Classes"
+  ],
+  [
+   "fighter",
+   "fighter"
+  ],
+  [
+   "food",
+   "food"
+  ],
+  [
+   "swords",
+   "Swords"
+  ],
+  [
+   "skeletons",
+   "Skeletons"
+  ],
+  [
+   "wizard",
+   "wizard"
+  ],
+  [
+   "frogs",
+   "Frogs"
+  ]
+ ],
  "dragons-dogma-2": [
   [
    "singleplayer",
@@ -5396,6 +7201,466 @@
   [
    "sailing",
    "Sailing"
+  ]
+ ],
+ "dying-light-2": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "zombies",
+   "Zombies"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "parkour",
+   "Parkour"
+  ],
+  [
+   "online",
+   "online"
+  ],
+  [
+   "city",
+   "city"
+  ],
+  [
+   "friends",
+   "friends"
+  ],
+  [
+   "weapons",
+   "weapons"
+  ],
+  [
+   "secrets",
+   "secrets"
+  ],
+  [
+   "monsters",
+   "Monsters"
+  ],
+  [
+   "night",
+   "night"
+  ],
+  [
+   "balance",
+   "balance"
+  ],
+  [
+   "traps",
+   "Traps"
+  ],
+  [
+   "virus",
+   "virus"
+  ]
+ ],
+ "ea-sports-fc-24": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "split-screen",
+   "Split Screen"
+  ],
+  [
+   "local-co-op",
+   "Local Co-Op"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "local-multiplayer",
+   "Local Multiplayer"
+  ],
+  [
+   "early-access",
+   "Early Access"
+  ],
+  [
+   "pvp",
+   "PvP"
+  ],
+  [
+   "cross-platform-multiplayer",
+   "Cross-Platform Multiplayer"
+  ],
+  [
+   "in-app-purchases",
+   "In-App Purchases"
+  ],
+  [
+   "family-friendly",
+   "Family Friendly"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "realistic",
+   "Realistic"
+  ],
+  [
+   "competitive",
+   "Competitive"
+  ],
+  [
+   "online-pvp",
+   "Online PvP"
+  ],
+  [
+   "pve",
+   "PvE"
+  ],
+  [
+   "remote-play-together",
+   "Remote Play Together"
+  ],
+  [
+   "sharedsplit-screen-co-op",
+   "Shared/Split Screen Co-op"
+  ],
+  [
+   "sharedsplit-screen-pvp",
+   "Shared/Split Screen PvP"
+  ],
+  [
+   "esports",
+   "esports"
+  ],
+  [
+   "football-soccer-2",
+   "Football (Soccer)"
+  ]
+ ],
+ "ea-sports-fc-25": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "split-screen",
+   "Split Screen"
+  ],
+  [
+   "local-co-op",
+   "Local Co-Op"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "local-multiplayer",
+   "Local Multiplayer"
+  ],
+  [
+   "pvp",
+   "PvP"
+  ],
+  [
+   "cross-platform-multiplayer",
+   "Cross-Platform Multiplayer"
+  ],
+  [
+   "in-app-purchases",
+   "In-App Purchases"
+  ],
+  [
+   "family-friendly",
+   "Family Friendly"
+  ],
+  [
+   "realistic",
+   "Realistic"
+  ],
+  [
+   "competitive",
+   "Competitive"
+  ],
+  [
+   "online-pvp",
+   "Online PvP"
+  ],
+  [
+   "soundtrack",
+   "Soundtrack"
+  ],
+  [
+   "remote-play-together",
+   "Remote Play Together"
+  ],
+  [
+   "sharedsplit-screen-co-op",
+   "Shared/Split Screen Co-op"
+  ],
+  [
+   "modern",
+   "Modern"
+  ],
+  [
+   "sharedsplit-screen-pvp",
+   "Shared/Split Screen PvP"
+  ],
+  [
+   "capitalism",
+   "Capitalism"
+  ],
+  [
+   "esports",
+   "esports"
+  ],
+  [
+   "hdr-available",
+   "HDR available"
+  ],
+  [
+   "football-soccer-2",
+   "Football (Soccer)"
+  ]
+ ],
+ "ea-sports-fc-26": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "split-screen",
+   "Split Screen"
+  ],
+  [
+   "local-co-op",
+   "Local Co-Op"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "local-multiplayer",
+   "Local Multiplayer"
+  ],
+  [
+   "pvp",
+   "PvP"
+  ],
+  [
+   "cross-platform-multiplayer",
+   "Cross-Platform Multiplayer"
+  ],
+  [
+   "in-app-purchases",
+   "In-App Purchases"
+  ],
+  [
+   "family-friendly",
+   "Family Friendly"
+  ],
+  [
+   "realistic",
+   "Realistic"
+  ],
+  [
+   "competitive",
+   "Competitive"
+  ],
+  [
+   "online-pvp",
+   "Online PvP"
+  ],
+  [
+   "sharedsplit-screen-co-op",
+   "Shared/Split Screen Co-op"
+  ],
+  [
+   "modern",
+   "Modern"
+  ],
+  [
+   "sharedsplit-screen-pvp",
+   "Shared/Split Screen PvP"
+  ],
+  [
+   "esports",
+   "esports"
+  ],
+  [
+   "hdr-available",
+   "HDR available"
+  ],
+  [
+   "stereo-sound",
+   "Stereo Sound"
+  ],
+  [
+   "adjustable-difficulty",
+   "Adjustable Difficulty"
+  ],
+  [
+   "subtitle-options",
+   "Subtitle Options"
+  ],
+  [
+   "sport-2",
+   "\u0421\u043f\u043e\u0440\u0442"
+  ],
+  [
+   "keyboard-only-option",
+   "Keyboard Only Option"
+  ],
+  [
+   "football-soccer-2",
+   "Football (Soccer)"
+  ],
+  [
+   "chat-speech-to-text",
+   "Chat Speech-to-text"
   ]
  ],
  "ea-sports-fifa-16": [
@@ -6504,6 +8769,62 @@
    "true exclusive"
   ]
  ],
+ "fifa-12": [
+  [
+   "stats",
+   "stats"
+  ],
+  [
+   "physics",
+   "Physics"
+  ],
+  [
+   "soccer",
+   "Soccer"
+  ],
+  [
+   "ball",
+   "ball"
+  ],
+  [
+   "ai",
+   "ai"
+  ]
+ ],
+ "fifa-15": [
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "story",
+   "Story"
+  ],
+  [
+   "online",
+   "online"
+  ],
+  [
+   "football",
+   "Football"
+  ],
+  [
+   "soccer",
+   "Soccer"
+  ],
+  [
+   "match",
+   "match"
+  ],
+  [
+   "reality-based",
+   "reality-based"
+  ],
+  [
+   "ball",
+   "ball"
+  ]
+ ],
  "fifa-22-xbox-one": [
   [
    "singleplayer",
@@ -6854,6 +9175,222 @@
   [
    "interactive-game-2",
    "interactive game"
+  ]
+ ],
+ "flow": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "free-to-play",
+   "Free to Play"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "pixel-graphics",
+   "Pixel Graphics"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "in-app-purchases",
+   "In-App Purchases"
+  ],
+  [
+   "character-customization",
+   "Character Customization"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "colorful",
+   "Colorful"
+  ],
+  [
+   "realistic",
+   "Realistic"
+  ],
+  [
+   "vr",
+   "VR"
+  ],
+  [
+   "walking-simulator",
+   "Walking Simulator"
+  ],
+  [
+   "top-down",
+   "Top-Down"
+  ],
+  [
+   "relaxing",
+   "Relaxing"
+  ],
+  [
+   "linear",
+   "Linear"
+  ],
+  [
+   "surreal",
+   "Surreal"
+  ],
+  [
+   "online",
+   "online"
+  ],
+  [
+   "turn-based-combat",
+   "Turn-Based Combat"
+  ],
+  [
+   "narration",
+   "Narration"
+  ],
+  [
+   "lore-rich",
+   "Lore-Rich"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "psychological",
+   "Psychological"
+  ],
+  [
+   "nature",
+   "nature"
+  ],
+  [
+   "skill",
+   "skill"
+  ],
+  [
+   "environment",
+   "environment"
+  ],
+  [
+   "immersive",
+   "immersive"
+  ],
+  [
+   "automobile-sim",
+   "Automobile Sim"
+  ],
+  [
+   "6dof",
+   "6DOF"
+  ],
+  [
+   "stereo-sound",
+   "Stereo Sound"
+  ],
+  [
+   "text",
+   "text"
+  ],
+  [
+   "custom-volume-controls",
+   "Custom Volume Controls"
+  ],
+  [
+   "playable-without-timed-input",
+   "Playable without Timed Input"
+  ],
+  [
+   "camera-comfort",
+   "Camera Comfort"
+  ],
+  [
+   "360-video-2",
+   "360 Video"
+  ]
+ ],
+ "flower": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "nature",
+   "nature"
+  ],
+  [
+   "flight",
+   "Flight"
   ]
  ],
  "for-honor": [
@@ -7752,6 +10289,16 @@
    "looter-slasher"
   ]
  ],
+ "gran-turismo-7": [
+  [
+   "exclusive",
+   "exclusive"
+  ],
+  [
+   "true-exclusive",
+   "true exclusive"
+  ]
+ ],
  "grand-kingdom": [
   [
    "multiplayer",
@@ -7776,6 +10323,84 @@
   [
    "conspiracy",
    "Conspiracy"
+  ]
+ ],
+ "grand-theft-auto-v": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "funny",
+   "Funny"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "comedy",
+   "Comedy"
+  ],
+  [
+   "third-person-shooter",
+   "Third-Person Shooter"
+  ],
+  [
+   "moddable",
+   "Moddable"
+  ],
+  [
+   "crime",
+   "Crime"
+  ],
+  [
+   "vr-mod",
+   "vr mod"
   ]
  ],
  "gravity-rush-2": [
@@ -7818,6 +10443,44 @@
   [
    "role-playing",
    "role-playing"
+  ]
+ ],
+ "gris": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "cute",
+   "Cute"
+  ],
+  [
+   "relaxing",
+   "Relaxing"
+  ],
+  [
+   "drama",
+   "Drama"
+  ],
+  [
+   "relaxation",
+   "relaxation"
   ]
  ],
  "guitar-hero-aerosmith": [
@@ -8410,6 +11073,82 @@
    "Heist"
   ]
  ],
+ "hitman-2-prologue": [
+  [
+   "demo",
+   "demo"
+  ]
+ ],
+ "hitman-absolution": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "difficult",
+   "Difficult"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "tactical",
+   "Tactical"
+  ],
+  [
+   "third-person-shooter",
+   "Third-Person Shooter"
+  ],
+  [
+   "replay-value",
+   "Replay Value"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "crime",
+   "Crime"
+  ],
+  [
+   "linear",
+   "Linear"
+  ],
+  [
+   "assassin",
+   "Assassin"
+  ],
+  [
+   "score-attack",
+   "Score Attack"
+  ]
+ ],
  "hoa": [
   [
    "singleplayer",
@@ -8714,6 +11453,60 @@
   [
    "multiple-endings",
    "Multiple Endings"
+  ],
+  [
+   "metroidvania",
+   "Metroidvania"
+  ],
+  [
+   "hand-drawn",
+   "Hand-drawn"
+  ],
+  [
+   "gothic",
+   "Gothic"
+  ]
+ ],
+ "hollow-knight-silksong": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "difficult",
+   "Difficult"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "dark-fantasy",
+   "Dark Fantasy"
+  ],
+  [
+   "side-scroller",
+   "Side Scroller"
   ],
   [
    "metroidvania",
@@ -9309,6 +12102,16 @@
    "Conversation"
   ]
  ],
+ "infamous": [
+  [
+   "exclusive",
+   "exclusive"
+  ],
+  [
+   "true-exclusive",
+   "true exclusive"
+  ]
+ ],
  "infamous-second-son": [
   [
    "exclusive",
@@ -9595,6 +12398,120 @@
   [
    "star-wars",
    "Star Wars"
+  ]
+ ],
+ "journey": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "fps",
+   "FPS"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "classic",
+   "Classic"
+  ],
+  [
+   "free-to-play",
+   "Free to Play"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "family-friendly",
+   "Family Friendly"
+  ],
+  [
+   "mystery",
+   "Mystery"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "multiple-endings",
+   "Multiple Endings"
+  ],
+  [
+   "3rd-person-perspective",
+   "3rd-Person Perspective"
+  ],
+  [
+   "music",
+   "Music"
+  ],
+  [
+   "stylized",
+   "Stylized"
+  ],
+  [
+   "masterpiece",
+   "Masterpiece"
+  ],
+  [
+   "beautiful",
+   "Beautiful"
+  ],
+  [
+   "calm",
+   "calm"
+  ],
+  [
+   "peaceful",
+   "peaceful"
   ]
  ],
  "journey-to-foundation": [
@@ -10053,6 +12970,16 @@
   [
    "artistic",
    "artistic"
+  ]
+ ],
+ "killzone-2": [
+  [
+   "exclusive",
+   "exclusive"
+  ],
+  [
+   "true-exclusive",
+   "true exclusive"
   ]
  ],
  "kingdom-hearts-hd-1525-remix": [
@@ -10531,6 +13458,112 @@
    "LEGO"
   ]
  ],
+ "lego-horizon-adventures": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "funny",
+   "Funny"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "comedy",
+   "Comedy"
+  ],
+  [
+   "split-screen",
+   "Split Screen"
+  ],
+  [
+   "local-co-op",
+   "Local Co-Op"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "character-customization",
+   "Character Customization"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "crafting",
+   "Crafting"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "robots",
+   "Robots"
+  ],
+  [
+   "3d-platformer",
+   "3D Platformer"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "protagonistka",
+   "\u041f\u0440\u043e\u0442\u0430\u0433\u043e\u043d\u0438\u0441\u0442\u043a\u0430"
+  ],
+  [
+   "sharedsplit-screen-co-op",
+   "Shared/Split Screen Co-op"
+  ],
+  [
+   "co-op-campaign",
+   "Co-op Campaign"
+  ],
+  [
+   "lego",
+   "LEGO"
+  ],
+  [
+   "precision-platformer-2",
+   "Precision Platformer"
+  ]
+ ],
  "lego-jurassic-world": [
   [
    "singleplayer",
@@ -10611,6 +13644,84 @@
   [
    "movie",
    "Movie"
+  ]
+ ],
+ "lego-marvel": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "funny",
+   "Funny"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "comedy",
+   "Comedy"
+  ],
+  [
+   "split-screen",
+   "Split Screen"
+  ],
+  [
+   "local-co-op",
+   "Local Co-Op"
+  ],
+  [
+   "local-multiplayer",
+   "Local Multiplayer"
+  ],
+  [
+   "family-friendly",
+   "Family Friendly"
+  ],
+  [
+   "comic-book",
+   "Comic Book"
+  ],
+  [
+   "superhero",
+   "Superhero"
+  ],
+  [
+   "lego",
+   "LEGO"
   ]
  ],
  "lego-marvel-super-heroes-2": [
@@ -11057,6 +14168,117 @@
    "4 giocatori divano"
   ]
  ],
+ "lords-of-the-fallen-2": [],
+ "lost-records-bloom-rage": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "mystery",
+   "Mystery"
+  ],
+  [
+   "choices-matter",
+   "Choices Matter"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "multiple-endings",
+   "Multiple Endings"
+  ],
+  [
+   "surreal",
+   "Surreal"
+  ],
+  [
+   "stylized",
+   "Stylized"
+  ],
+  [
+   "1990s",
+   "1990's"
+  ],
+  [
+   "romance",
+   "Romance"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "protagonistka",
+   "\u041f\u0440\u043e\u0442\u0430\u0433\u043e\u043d\u0438\u0441\u0442\u043a\u0430"
+  ],
+  [
+   "interactive-fiction",
+   "Interactive Fiction"
+  ],
+  [
+   "psychological",
+   "Psychological"
+  ],
+  [
+   "nature",
+   "nature"
+  ],
+  [
+   "lgbtq-2",
+   "LGBTQ+"
+  ],
+  [
+   "dynamic-narration",
+   "Dynamic Narration"
+  ],
+  [
+   "conversation",
+   "Conversation"
+  ],
+  [
+   "romantika",
+   "\u0420\u043e\u043c\u0430\u043d\u0442\u0438\u043a\u0430"
+  ],
+  [
+   "aventure",
+   "Aventure"
+  ]
+ ],
  "mad-max": [
   [
    "singleplayer",
@@ -11191,6 +14413,84 @@
   [
    "mafia",
    "mafia"
+  ]
+ ],
+ "mafia-ii": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "classic",
+   "Classic"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "third-person-shooter",
+   "Third-Person Shooter"
+  ],
+  [
+   "nudity",
+   "Nudity"
+  ],
+  [
+   "crime",
+   "Crime"
+  ],
+  [
+   "driving",
+   "Driving"
+  ],
+  [
+   "3d-vision",
+   "3D Vision"
+  ],
+  [
+   "music",
+   "Music"
+  ],
+  [
+   "america",
+   "America"
   ]
  ],
  "mafia-ii-definitive-edition": [
@@ -12149,6 +15449,7 @@
    "\u8de8\u5e73\u53f0\u591a\u4eba\u9023\u7dda"
   ]
  ],
+ "mio-memories-in-orbit": [],
  "monster-hunter-world-2": [
   [
    "singleplayer",
@@ -12749,6 +16050,80 @@
    "Basketball"
   ]
  ],
+ "need-for-speed": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "pvp",
+   "PvP"
+  ],
+  [
+   "online-pvp",
+   "Online PvP"
+  ],
+  [
+   "top-down",
+   "Top-Down"
+  ],
+  [
+   "steam-trading-cards-2",
+   "Steam Trading Cards"
+  ],
+  [
+   "driving",
+   "Driving"
+  ],
+  [
+   "destruction",
+   "Destruction"
+  ],
+  [
+   "movie",
+   "Movie"
+  ],
+  [
+   "street-racing-2",
+   "street racing"
+  ]
+ ],
  "need-for-speed-hot-pursuit-remastered": [
   [
    "singleplayer",
@@ -13121,6 +16496,16 @@
    "fox"
   ]
  ],
+ "ni-no-kuni-wrath-of-the-white-witch": [
+  [
+   "role-playing",
+   "role-playing"
+  ],
+  [
+   "exclusive",
+   "exclusive"
+  ]
+ ],
  "nickelodeon-all-star-brawl": [
   [
    "singleplayer",
@@ -13455,6 +16840,96 @@
   [
    "score-attack",
    "Score Attack"
+  ]
+ ],
+ "nine-sols": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "difficult",
+   "Difficult"
+  ],
+  [
+   "steam-leaderboards",
+   "Steam Leaderboards"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "dark-fantasy",
+   "Dark Fantasy"
+  ],
+  [
+   "metroidvania",
+   "Metroidvania"
+  ],
+  [
+   "hand-drawn",
+   "Hand-drawn"
+  ],
+  [
+   "comic-book",
+   "Comic Book"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "souls-like",
+   "Souls-like"
+  ],
+  [
+   "mythology",
+   "Mythology"
+  ],
+  [
+   "cats",
+   "cats"
+  ],
+  [
+   "martial-arts",
+   "Martial Arts"
+  ],
+  [
+   "kotiki",
+   "\u041a\u043e\u0442\u0438\u043a\u0438"
   ]
  ],
  "nioh": [
@@ -13980,6 +17455,100 @@
   [
    "cartoony",
    "Cartoony"
+  ]
+ ],
+ "pacific-drive": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "survival",
+   "Survival"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "stats",
+   "stats"
+  ],
+  [
+   "survival-horror",
+   "Survival Horror"
+  ],
+  [
+   "post-apocalyptic",
+   "Post-apocalyptic"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "crafting",
+   "Crafting"
+  ],
+  [
+   "building",
+   "Building"
+  ],
+  [
+   "driving",
+   "Driving"
+  ],
+  [
+   "base-building",
+   "Base Building"
+  ],
+  [
+   "investigation",
+   "Investigation"
+  ],
+  [
+   "postapokalipsis",
+   "\u041f\u043e\u0441\u0442\u0430\u043f\u043e\u043a\u0430\u043b\u0438\u043f\u0441\u0438\u0441"
+  ],
+  [
+   "transportation",
+   "transportation"
   ]
  ],
  "persona-5": [
@@ -14508,6 +18077,116 @@
    "4 giocatori divano"
   ]
  ],
+ "red-dead-redemption": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "classic",
+   "Classic"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "third-person-shooter",
+   "Third-Person Shooter"
+  ],
+  [
+   "zombies",
+   "Zombies"
+  ],
+  [
+   "nudity",
+   "Nudity"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "sexual-content",
+   "Sexual Content"
+  ],
+  [
+   "blood",
+   "Blood"
+  ],
+  [
+   "narration",
+   "Narration"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "western",
+   "Western"
+  ],
+  [
+   "shoot",
+   "shoot"
+  ],
+  [
+   "hdr-available",
+   "HDR available"
+  ],
+  [
+   "waves",
+   "waves"
+  ],
+  [
+   "nightmare",
+   "nightmare"
+  ],
+  [
+   "clone",
+   "clone"
+  ]
+ ],
  "red-dead-redemption-2": [
   [
    "singleplayer",
@@ -14682,6 +18361,104 @@
   [
    "souls-like",
    "Souls-like"
+  ]
+ ],
+ "resident-evil-7-biohazard": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "steam-trading-cards",
+   "steam-trading-cards"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "fps",
+   "FPS"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "classic",
+   "Classic"
+  ],
+  [
+   "survival",
+   "Survival"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "zombies",
+   "Zombies"
+  ],
+  [
+   "survival-horror",
+   "Survival Horror"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "memes",
+   "Memes"
+  ],
+  [
+   "vr",
+   "VR"
+  ],
+  [
+   "detective",
+   "Detective"
+  ],
+  [
+   "america",
+   "America"
   ]
  ],
  "resident-evil-village": [
@@ -14890,6 +18667,68 @@
    "On-Rails Shooter"
   ]
  ],
+ "rime": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "controller-support",
+   "controller support"
+  ],
+  [
+   "colorful",
+   "Colorful"
+  ],
+  [
+   "relaxing",
+   "Relaxing"
+  ],
+  [
+   "3d-platformer",
+   "3D Platformer"
+  ],
+  [
+   "puzzles",
+   "puzzles"
+  ],
+  [
+   "cloud-saves",
+   "cloud saves"
+  ]
+ ],
  "rise-of-the-tomb-raider": [
   [
    "singleplayer",
@@ -15090,6 +18929,76 @@
   [
    "soundtrack",
    "Soundtrack"
+  ]
+ ],
+ "runestone-keeper": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "steam-trading-cards",
+   "steam-trading-cards"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "steam-leaderboards",
+   "Steam Leaderboards"
+  ],
+  [
+   "pixel-graphics",
+   "Pixel Graphics"
+  ],
+  [
+   "role-playing",
+   "role-playing"
+  ],
+  [
+   "point-click",
+   "Point & Click"
+  ],
+  [
+   "turn-based",
+   "Turn-Based"
+  ],
+  [
+   "roguelike",
+   "Roguelike"
+  ],
+  [
+   "roguelite",
+   "Roguelite"
+  ],
+  [
+   "dungeon-crawler",
+   "Dungeon Crawler"
+  ],
+  [
+   "strategy-rpg",
+   "Strategy RPG"
+  ],
+  [
+   "pixel-art",
+   "pixel-art"
   ]
  ],
  "sable": [
@@ -15369,6 +19278,108 @@
   ]
  ],
  "senuas-saga-hellblade-ii": [],
+ "shadow-of-mordor": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "steam-trading-cards",
+   "steam-trading-cards"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-rpg",
+   "Action RPG"
+  ],
+  [
+   "hack-and-slash",
+   "Hack and Slash"
+  ],
+  [
+   "dark-fantasy",
+   "Dark Fantasy"
+  ],
+  [
+   "magic",
+   "Magic"
+  ],
+  [
+   "parkour",
+   "Parkour"
+  ],
+  [
+   "assassin",
+   "Assassin"
+  ],
+  [
+   "lore-rich",
+   "Lore-Rich"
+  ],
+  [
+   "based-on-a-novel",
+   "Based On A Novel"
+  ],
+  [
+   "steam",
+   "steam"
+  ],
+  [
+   "category",
+   "category"
+  ],
+  [
+   "microtranzations",
+   "microtranzations"
+  ]
+ ],
  "shadow-of-the-colossus-2018": [
   [
    "singleplayer",
@@ -15489,6 +19500,88 @@
    "Lara Croft"
   ]
  ],
+ "shinobi-art-of-vengeance": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "retro",
+   "Retro"
+  ],
+  [
+   "hack-and-slash",
+   "Hack and Slash"
+  ],
+  [
+   "side-scroller",
+   "Side Scroller"
+  ],
+  [
+   "steam-trading-cards-2",
+   "Steam Trading Cards"
+  ],
+  [
+   "metroidvania",
+   "Metroidvania"
+  ],
+  [
+   "hand-drawn",
+   "Hand-drawn"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "ninja",
+   "Ninja"
+  ],
+  [
+   "2d-platformer-3",
+   "2D Platformer"
+  ],
+  [
+   "2d-platformer-4",
+   "2D-\u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0435\u0440"
+  ],
+  [
+   "custom-volume-controls",
+   "Custom Volume Controls"
+  ],
+  [
+   "playable-without-timed-input",
+   "Playable without Timed Input"
+  ],
+  [
+   "adjustable-difficulty",
+   "Adjustable Difficulty"
+  ],
+  [
+   "color-alternatives",
+   "Color Alternatives"
+  ],
+  [
+   "keyboard-only-option",
+   "Keyboard Only Option"
+  ]
+ ],
  "sifu": [
   [
    "singleplayer",
@@ -15579,6 +19672,52 @@
    "Compat. contr\u00f4leurs compl\u00e8te"
   ]
  ],
+ "signalis": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "pixel-graphics",
+   "Pixel Graphics"
+  ],
+  [
+   "retro",
+   "Retro"
+  ],
+  [
+   "anime",
+   "Anime"
+  ],
+  [
+   "survival-horror",
+   "Survival Horror"
+  ],
+  [
+   "mystery",
+   "Mystery"
+  ]
+ ],
  "silent-hill-2-remake": [
   [
    "singleplayer",
@@ -15627,6 +19766,120 @@
   [
    "psychological",
    "Psychological"
+  ]
+ ],
+ "silent-hill-f": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "survival-horror",
+   "Survival Horror"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "multiple-endings",
+   "Multiple Endings"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "protagonistka",
+   "\u041f\u0440\u043e\u0442\u0430\u0433\u043e\u043d\u0438\u0441\u0442\u043a\u0430"
+  ],
+  [
+   "psychological",
+   "Psychological"
+  ],
+  [
+   "souls-like",
+   "Souls-like"
+  ],
+  [
+   "stereo-sound",
+   "Stereo Sound"
+  ],
+  [
+   "custom-volume-controls",
+   "Custom Volume Controls"
+  ],
+  [
+   "surround-sound-2",
+   "Surround Sound"
+  ],
+  [
+   "playable-without-timed-input",
+   "Playable without Timed Input"
+  ],
+  [
+   "color-alternatives",
+   "Color Alternatives"
+  ],
+  [
+   "subtitle-options",
+   "Subtitle Options"
   ]
  ],
  "silent-hill-the-short-message": [],
@@ -15718,6 +19971,92 @@
   [
    "sniper",
    "Sniper"
+  ]
+ ],
+ "sniper-elite-resistance": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "third-person-shooter",
+   "Third-Person Shooter"
+  ],
+  [
+   "pvp",
+   "PvP"
+  ],
+  [
+   "cross-platform-multiplayer",
+   "Cross-Platform Multiplayer"
+  ],
+  [
+   "war",
+   "War"
+  ],
+  [
+   "online-pvp",
+   "Online PvP"
+  ],
+  [
+   "world-war-ii",
+   "World War II"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "sniper",
+   "Sniper"
+  ],
+  [
+   "hdr-available",
+   "HDR available"
   ]
  ],
  "soma": [
@@ -15884,6 +20223,136 @@
   [
    "speed",
    "speed"
+  ]
+ ],
+ "split-fiction": [
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "split-screen",
+   "Split Screen"
+  ],
+  [
+   "local-co-op",
+   "Local Co-Op"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "local-multiplayer",
+   "Local Multiplayer"
+  ],
+  [
+   "sexual-content",
+   "Sexual Content"
+  ],
+  [
+   "3d-platformer",
+   "3D Platformer"
+  ],
+  [
+   "protagonistka",
+   "\u041f\u0440\u043e\u0442\u0430\u0433\u043e\u043d\u0438\u0441\u0442\u043a\u0430"
+  ],
+  [
+   "remote-play-together",
+   "Remote Play Together"
+  ],
+  [
+   "lgbtq-2",
+   "LGBTQ+"
+  ],
+  [
+   "political",
+   "Political"
+  ],
+  [
+   "co-op-campaign",
+   "Co-op Campaign"
+  ],
+  [
+   "politics",
+   "Politics"
+  ],
+  [
+   "succes-steam",
+   "Succ\u00e8s Steam"
+  ],
+  [
+   "compat-controleurs-complete",
+   "Compat. contr\u00f4leurs compl\u00e8te"
+  ],
+  [
+   "cartes-a-echanger-steam",
+   "Cartes \u00e0 \u00e9changer Steam"
+  ],
+  [
+   "partage-familial",
+   "Partage familial"
+  ],
+  [
+   "hdr-disponible",
+   "HDR disponible"
+  ],
+  [
+   "multijoueur",
+   "multijoueur"
+  ],
+  [
+   "coop-locale-et-ecran-partage",
+   "Coop locale et \u00e9cran partag\u00e9"
+  ],
+  [
+   "ecran-partage",
+   "\u00c9cran partag\u00e9"
+  ],
+  [
+   "multijoueur-multiplateforme",
+   "Multijoueur multiplateforme"
+  ],
+  [
+   "sous-titres-disponibles",
+   "Sous-titres disponibles"
   ]
  ],
  "spongebob-squarepants-the-cosmic-shake": [
@@ -16411,6 +20880,84 @@
    "snowboarding"
   ]
  ],
+ "still-wakes-the-deep": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "captions-available",
+   "Captions available"
+  ],
+  [
+   "dark-fantasy",
+   "Dark Fantasy"
+  ],
+  [
+   "walking-simulator",
+   "Walking Simulator"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "lovecraftian",
+   "Lovecraftian"
+  ],
+  [
+   "thriller",
+   "Thriller"
+  ],
+  [
+   "narrative",
+   "Narrative"
+  ],
+  [
+   "hdr-available",
+   "HDR available"
+  ]
+ ],
  "stranded-deep": [
   [
    "singleplayer",
@@ -16691,6 +21238,64 @@
    "4 giocatori divano"
   ]
  ],
+ "subnautica-below-zero": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "survival",
+   "Survival"
+  ],
+  [
+   "early-access",
+   "Early Access"
+  ],
+  [
+   "survival-horror",
+   "Survival Horror"
+  ],
+  [
+   "crafting",
+   "Crafting"
+  ],
+  [
+   "aliens",
+   "Aliens"
+  ],
+  [
+   "base-building",
+   "Base Building"
+  ],
+  [
+   "underwater",
+   "Underwater"
+  ]
+ ],
  "suicide-squad-kill-the-justice-league": [
   [
    "singleplayer",
@@ -16877,6 +21482,120 @@
   [
    "time-manipulation-2",
    "time-manipulation"
+  ]
+ ],
+ "sword-of-the-sea": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "colorful",
+   "Colorful"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "surreal",
+   "Surreal"
+  ],
+  [
+   "stylized",
+   "Stylized"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "minimalist",
+   "Minimalist"
+  ],
+  [
+   "nature",
+   "nature"
+  ],
+  [
+   "swordplay",
+   "Swordplay"
+  ],
+  [
+   "stereo-sound",
+   "Stereo Sound"
+  ],
+  [
+   "custom-volume-controls",
+   "Custom Volume Controls"
+  ],
+  [
+   "skateboarding",
+   "skateboarding"
+  ],
+  [
+   "skating",
+   "Skating"
+  ],
+  [
+   "snowboarding",
+   "snowboarding"
+  ],
+  [
+   "camera-comfort",
+   "Camera Comfort"
+  ],
+  [
+   "skeitbording",
+   "\u0421\u043a\u0435\u0439\u0442\u0431\u043e\u0440\u0434\u0438\u043d\u0433"
+  ],
+  [
+   "skiing",
+   "skiing"
+  ],
+  [
+   "snoubording",
+   "\u0421\u043d\u043e\u0443\u0431\u043e\u0440\u0434\u0438\u043d\u0433"
+  ],
+  [
+   "katanie",
+   "\u041a\u0430\u0442\u0430\u043d\u0438\u0435"
   ]
  ],
  "tails-of-iron": [
@@ -17179,6 +21898,234 @@
    "2D-\u0444\u0430\u0439\u0442\u0438\u043d\u0433"
   ]
  ],
+ "the-alters": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "survival",
+   "Survival"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "space",
+   "Space"
+  ],
+  [
+   "war",
+   "War"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "crafting",
+   "Crafting"
+  ],
+  [
+   "futuristic",
+   "Futuristic"
+  ],
+  [
+   "story",
+   "Story"
+  ],
+  [
+   "steam-trading-cards-2",
+   "Steam Trading Cards"
+  ],
+  [
+   "management",
+   "Management"
+  ],
+  [
+   "remake",
+   "Remake"
+  ],
+  [
+   "base-building",
+   "Base Building"
+  ],
+  [
+   "resource-management",
+   "Resource Management"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "psychological",
+   "Psychological"
+  ],
+  [
+   "science",
+   "Science"
+  ],
+  [
+   "death",
+   "death"
+  ],
+  [
+   "planet",
+   "planet"
+  ],
+  [
+   "time-management",
+   "Time Management"
+  ],
+  [
+   "philosophical",
+   "philosophical"
+  ],
+  [
+   "stereo-sound",
+   "Stereo Sound"
+  ],
+  [
+   "custom-volume-controls",
+   "Custom Volume Controls"
+  ],
+  [
+   "surround-sound-2",
+   "Surround Sound"
+  ],
+  [
+   "playable-without-timed-input",
+   "Playable without Timed Input"
+  ],
+  [
+   "camera-comfort",
+   "Camera Comfort"
+  ],
+  [
+   "adjustable-difficulty",
+   "Adjustable Difficulty"
+  ],
+  [
+   "mine",
+   "mine"
+  ],
+  [
+   "subtitle-options",
+   "Subtitle Options"
+  ],
+  [
+   "choices",
+   "choices"
+  ],
+  [
+   "adjustable-text-size",
+   "Adjustable Text Size"
+  ],
+  [
+   "choice",
+   "choice"
+  ],
+  [
+   "spirit",
+   "spirit"
+  ],
+  [
+   "board",
+   "board"
+  ],
+  [
+   "philosophy",
+   "philosophy"
+  ]
+ ],
+ "the-artful-escape": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "steam-trading-cards-2",
+   "Steam Trading Cards"
+  ],
+  [
+   "music",
+   "Music"
+  ],
+  [
+   "stylized",
+   "Stylized"
+  ],
+  [
+   "character",
+   "character"
+  ],
+  [
+   "beautiful",
+   "Beautiful"
+  ],
+  [
+   "psychedelic",
+   "Psychedelic"
+  ],
+  [
+   "relationship",
+   "relationship"
+  ]
+ ],
  "the-calisto-protocol": [
   [
    "singleplayer",
@@ -17381,6 +22328,258 @@
   [
    "partita-cooperativa-online",
    "Partita cooperativa online"
+  ]
+ ],
+ "the-dark-pictures-anthology-little-hope": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "survival",
+   "Survival"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "split-screen",
+   "Split Screen"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "pvp",
+   "PvP"
+  ],
+  [
+   "survival-horror",
+   "Survival Horror"
+  ],
+  [
+   "mystery",
+   "Mystery"
+  ],
+  [
+   "choices-matter",
+   "Choices Matter"
+  ],
+  [
+   "multiple-endings",
+   "Multiple Endings"
+  ],
+  [
+   "online-pvp",
+   "Online PvP"
+  ],
+  [
+   "blood",
+   "Blood"
+  ],
+  [
+   "drama",
+   "Drama"
+  ],
+  [
+   "episodic",
+   "Episodic"
+  ],
+  [
+   "quick-time-events",
+   "Quick-Time Events"
+  ],
+  [
+   "supernatural",
+   "Supernatural"
+  ],
+  [
+   "psychological",
+   "Psychological"
+  ],
+  [
+   "remote-play-together",
+   "Remote Play Together"
+  ],
+  [
+   "mythology",
+   "Mythology"
+  ],
+  [
+   "sharedsplit-screen-pvp",
+   "Shared/Split Screen PvP"
+  ]
+ ],
+ "the-dark-pictures-anthology-the-devil-in-me": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "survival",
+   "Survival"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "split-screen",
+   "Split Screen"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "hack-and-slash",
+   "Hack and Slash"
+  ],
+  [
+   "mystery",
+   "Mystery"
+  ],
+  [
+   "choices-matter",
+   "Choices Matter"
+  ],
+  [
+   "realistic",
+   "Realistic"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "multiple-endings",
+   "Multiple Endings"
+  ],
+  [
+   "crime",
+   "Crime"
+  ],
+  [
+   "steam-trading-cards-2",
+   "Steam Trading Cards"
+  ],
+  [
+   "blood",
+   "Blood"
+  ],
+  [
+   "1990s",
+   "1990's"
+  ],
+  [
+   "drama",
+   "Drama"
+  ],
+  [
+   "narration",
+   "Narration"
+  ],
+  [
+   "quick-time-events",
+   "Quick-Time Events"
+  ],
+  [
+   "psychological",
+   "Psychological"
+  ],
+  [
+   "remote-play-together",
+   "Remote Play Together"
+  ],
+  [
+   "sharedsplit-screen-co-op",
+   "Shared/Split Screen Co-op"
+  ],
+  [
+   "qte",
+   "qte"
   ]
  ],
  "the-day-before-2": [
@@ -17681,6 +22880,36 @@
    "Vampire"
   ]
  ],
+ "the-last-guardian": [
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "exclusive",
+   "exclusive"
+  ],
+  [
+   "cute",
+   "Cute"
+  ],
+  [
+   "true-exclusive",
+   "true exclusive"
+  ],
+  [
+   "3rd-person-perspective",
+   "3rd-Person Perspective"
+  ],
+  [
+   "drama",
+   "Drama"
+  ]
+ ],
  "the-last-of-us-part-2": [
   [
    "singleplayer",
@@ -17729,6 +22958,264 @@
   [
    "role-playing-game",
    "Role Playing Game"
+  ]
+ ],
+ "the-midnight-walk": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "dark-fantasy",
+   "Dark Fantasy"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "vr",
+   "VR"
+  ],
+  [
+   "hand-drawn",
+   "Hand-drawn"
+  ],
+  [
+   "narration",
+   "Narration"
+  ],
+  [
+   "lore-rich",
+   "Lore-Rich"
+  ],
+  [
+   "emotional",
+   "Emotional"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "aventure",
+   "Aventure"
+  ],
+  [
+   "vr-supported-2",
+   "VR Supported"
+  ]
+ ],
+ "the-order-1886": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "nudity",
+   "Nudity"
+  ],
+  [
+   "mature",
+   "Mature"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "true-exclusive",
+   "true exclusive"
+  ],
+  [
+   "3rd-person-perspective",
+   "3rd-Person Perspective"
+  ],
+  [
+   "steampunk",
+   "Steampunk"
+  ],
+  [
+   "alternate-history",
+   "Alternate History"
+  ],
+  [
+   "exclusives",
+   "exclusives"
+  ]
+ ],
+ "the-pathless": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "3d-platformer",
+   "3D Platformer"
+  ],
+  [
+   "puzzles",
+   "puzzles"
+  ],
+  [
+   "console",
+   "console"
+  ],
+  [
+   "protagonistka",
+   "\u041f\u0440\u043e\u0442\u0430\u0433\u043e\u043d\u0438\u0441\u0442\u043a\u0430"
+  ],
+  [
+   "epic",
+   "Epic"
+  ],
+  [
+   "nature",
+   "nature"
+  ],
+  [
+   "offline",
+   "offline"
+  ],
+  [
+   "secrets",
+   "secrets"
+  ],
+  [
+   "island",
+   "island"
+  ],
+  [
+   "history",
+   "history"
+  ],
+  [
+   "skill",
+   "skill"
+  ],
+  [
+   "hunt",
+   "hunt"
+  ],
+  [
+   "balance",
+   "balance"
+  ],
+  [
+   "darkness",
+   "darkness"
+  ],
+  [
+   "archery",
+   "Archery"
   ]
  ],
  "the-persistence": [
@@ -17803,6 +23290,118 @@
   [
    "lan-co-op",
    "LAN Co-op"
+  ]
+ ],
+ "the-playroom": [
+  [
+   "exclusive",
+   "exclusive"
+  ],
+  [
+   "true-exclusive",
+   "true exclusive"
+  ]
+ ],
+ "the-plucky-squire": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "family-friendly",
+   "Family Friendly"
+  ],
+  [
+   "cute",
+   "Cute"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "story",
+   "Story"
+  ],
+  [
+   "battle",
+   "battle"
+  ],
+  [
+   "3d-platformer",
+   "3D Platformer"
+  ],
+  [
+   "puzzles",
+   "puzzles"
+  ],
+  [
+   "cartoony",
+   "Cartoony"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "friends",
+   "friends"
+  ],
+  [
+   "2d-platformer-3",
+   "2D Platformer"
+  ],
+  [
+   "2d-platformer-4",
+   "2D-\u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0435\u0440"
+  ],
+  [
+   "hero",
+   "hero"
+  ],
+  [
+   "puzzle-platformer-2",
+   "Puzzle Platformer"
+  ],
+  [
+   "jetpack",
+   "jetpack"
+  ],
+  [
+   "book",
+   "book"
   ]
  ],
  "the-room-vr-a-dark-matter": [
@@ -18083,6 +23682,84 @@
   [
    "lovecraftian",
    "Lovecraftian"
+  ]
+ ],
+ "the-walking-dead": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "survival",
+   "Survival"
+  ],
+  [
+   "zombies",
+   "Zombies"
+  ],
+  [
+   "point-click",
+   "Point & Click"
+  ],
+  [
+   "post-apocalyptic",
+   "Post-apocalyptic"
+  ],
+  [
+   "choices-matter",
+   "Choices Matter"
+  ],
+  [
+   "mature",
+   "Mature"
+  ],
+  [
+   "visual-novel",
+   "Visual Novel"
+  ],
+  [
+   "drama",
+   "Drama"
+  ],
+  [
+   "episodic",
+   "Episodic"
+  ],
+  [
+   "comic-book",
+   "Comic Book"
+  ],
+  [
+   "choose-your-own-adventure",
+   "Choose Your Own Adventure"
+  ],
+  [
+   "quick-time-events",
+   "Quick-Time Events"
   ]
  ],
  "the-walking-dead-saints-sinners": [
@@ -18807,6 +24484,158 @@
    "MMORPG"
   ]
  ],
+ "tomb-raider": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "classic",
+   "Classic"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "third-person-shooter",
+   "Third-Person Shooter"
+  ],
+  [
+   "retro",
+   "Retro"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "quick-time-events",
+   "Quick-Time Events"
+  ],
+  [
+   "dinosaurs",
+   "Dinosaurs"
+  ],
+  [
+   "lara-croft",
+   "Lara Croft"
+  ]
+ ],
+ "tomb-raider-i-iii-remastered": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "classic",
+   "Classic"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "steam-trading-cards-2",
+   "Steam Trading Cards"
+  ],
+  [
+   "remake",
+   "Remake"
+  ],
+  [
+   "protagonistka",
+   "\u041f\u0440\u043e\u0442\u0430\u0433\u043e\u043d\u0438\u0441\u0442\u043a\u0430"
+  ],
+  [
+   "old-school",
+   "Old School"
+  ],
+  [
+   "remeik",
+   "\u0420\u0435\u043c\u0435\u0439\u043a"
+  ]
+ ],
  "trackmania-turbo": [
   [
    "singleplayer",
@@ -19031,6 +24860,100 @@
    "Isometric"
   ]
  ],
+ "ultros": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "mystery",
+   "Mystery"
+  ],
+  [
+   "colorful",
+   "Colorful"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "metroidvania",
+   "Metroidvania"
+  ],
+  [
+   "roguelite",
+   "Roguelite"
+  ],
+  [
+   "stylized",
+   "Stylized"
+  ],
+  [
+   "hand-drawn",
+   "Hand-drawn"
+  ],
+  [
+   "protagonistka",
+   "\u041f\u0440\u043e\u0442\u0430\u0433\u043e\u043d\u0438\u0441\u0442\u043a\u0430"
+  ],
+  [
+   "soundtrack",
+   "Soundtrack"
+  ],
+  [
+   "2d-platformer-3",
+   "2D Platformer"
+  ],
+  [
+   "2d-platformer-4",
+   "2D-\u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0435\u0440"
+  ],
+  [
+   "psychedelic",
+   "Psychedelic"
+  ],
+  [
+   "roguevania",
+   "Roguevania"
+  ],
+  [
+   "rogalik-metroidvaniia",
+   "\u0420\u043e\u0433\u0430\u043b\u0438\u043a-\u043c\u0435\u0442\u0440\u043e\u0438\u0434\u0432\u0430\u043d\u0438\u044f"
+  ]
+ ],
  "uncanny-valley": [
   [
    "singleplayer",
@@ -19081,6 +25004,27 @@
    "GameMaker"
   ]
  ],
+ "uncharted-2-among-thieves": [
+  [
+   "story",
+   "Story"
+  ]
+ ],
+ "uncharted-3-drakes-deception": [
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "cover-shooter",
+   "cover-shooter"
+  ]
+ ],
+ "uncharted-drakes-fortune": [],
  "uncharted-legacy-of-thieves-collection": [
   [
    "singleplayer",
@@ -19181,6 +25125,40 @@
   [
    "ambient",
    "ambient"
+  ]
+ ],
+ "uncharted-the-lost-legacy": [
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "exclusive",
+   "exclusive"
+  ],
+  [
+   "cinematic",
+   "Cinematic"
+  ],
+  [
+   "true-exclusive",
+   "true exclusive"
+  ],
+  [
+   "quick-time-events",
+   "Quick-Time Events"
   ]
  ],
  "uncharted-the-nathan-drake-collection": [
@@ -19373,10 +25351,138 @@
    "\u0420\u0435\u043c\u0435\u0439\u043a"
   ]
  ],
+ "until-then": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "pixel-graphics",
+   "Pixel Graphics"
+  ],
+  [
+   "mystery",
+   "Mystery"
+  ],
+  [
+   "colorful",
+   "Colorful"
+  ],
+  [
+   "side-scroller",
+   "Side Scroller"
+  ],
+  [
+   "multiple-endings",
+   "Multiple Endings"
+  ],
+  [
+   "visual-novel",
+   "Visual Novel"
+  ],
+  [
+   "linear",
+   "Linear"
+  ],
+  [
+   "drama",
+   "Drama"
+  ],
+  [
+   "romance",
+   "Romance"
+  ],
+  [
+   "emotional",
+   "Emotional"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "interactive-fiction",
+   "Interactive Fiction"
+  ],
+  [
+   "psychological",
+   "Psychological"
+  ],
+  [
+   "lgbtq-2",
+   "LGBTQ+"
+  ],
+  [
+   "conversation",
+   "Conversation"
+  ],
+  [
+   "romantika",
+   "\u0420\u043e\u043c\u0430\u043d\u0442\u0438\u043a\u0430"
+  ],
+  [
+   "foreign",
+   "Foreign"
+  ],
+  [
+   "aventure",
+   "Aventure"
+  ]
+ ],
  "until-you-fall": [
   [
    "singleplayer",
    "Singleplayer"
+  ]
+ ],
+ "untitled-goose-game": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "comedy",
+   "Comedy"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "family-friendly",
+   "Family Friendly"
+  ],
+  [
+   "humor",
+   "humor"
+  ],
+  [
+   "hilarious",
+   "hilarious"
   ]
  ],
  "v-i-e-w-f-i-n-d-e-r": [
@@ -19577,6 +25683,256 @@
    "Vampire"
   ]
  ],
+ "vanquish": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "steam-trading-cards",
+   "steam-trading-cards"
+  ],
+  [
+   "great-soundtrack",
+   "Great Soundtrack"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "2d",
+   "2D"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "sci-fi",
+   "Sci-fi"
+  ],
+  [
+   "fantasy",
+   "Fantasy"
+  ],
+  [
+   "classic",
+   "Classic"
+  ],
+  [
+   "third-person-shooter",
+   "Third-Person Shooter"
+  ],
+  [
+   "retro",
+   "Retro"
+  ],
+  [
+   "hack-and-slash",
+   "Hack and Slash"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "futuristic",
+   "Futuristic"
+  ],
+  [
+   "medieval",
+   "Medieval"
+  ],
+  [
+   "fast-paced",
+   "Fast-Paced"
+  ],
+  [
+   "magic",
+   "Magic"
+  ],
+  [
+   "linear",
+   "Linear"
+  ],
+  [
+   "cartoon",
+   "Cartoon"
+  ],
+  [
+   "mythology",
+   "Mythology"
+  ],
+  [
+   "mechs",
+   "Mechs"
+  ],
+  [
+   "character-action-game",
+   "Character Action Game"
+  ],
+  [
+   "bullet-time",
+   "Bullet Time"
+  ],
+  [
+   "action-roguelike-2",
+   "Action Roguelike"
+  ]
+ ],
+ "visage": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "early-access",
+   "Early Access"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "survival-horror",
+   "Survival Horror"
+  ],
+  [
+   "realistic",
+   "Realistic"
+  ],
+  [
+   "walking-simulator",
+   "Walking Simulator"
+  ],
+  [
+   "surreal",
+   "Surreal"
+  ],
+  [
+   "experimental",
+   "Experimental"
+  ]
+ ],
+ "watch-dogs": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "fps",
+   "FPS"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "stealth",
+   "Stealth"
+  ],
+  [
+   "third-person-shooter",
+   "Third-Person Shooter"
+  ],
+  [
+   "futuristic",
+   "Futuristic"
+  ],
+  [
+   "parkour",
+   "Parkour"
+  ],
+  [
+   "driving",
+   "Driving"
+  ],
+  [
+   "hacking",
+   "Hacking"
+  ],
+  [
+   "first-person-mod",
+   "first person mod"
+  ]
+ ],
  "what-remains-of-edith-finch": [
   [
    "singleplayer",
@@ -19655,6 +26011,64 @@
   [
    "futuristic",
    "Futuristic"
+  ]
+ ],
+ "wobbly-life": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "partial-controller-support",
+   "Partial Controller Support"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "funny",
+   "Funny"
+  ],
+  [
+   "sandbox",
+   "Sandbox"
+  ],
+  [
+   "split-screen",
+   "Split Screen"
+  ],
+  [
+   "early-access",
+   "Early Access"
+  ],
+  [
+   "physics",
+   "Physics"
+  ],
+  [
+   "party",
+   "party"
+  ],
+  [
+   "sharedsplit-screen-co-op",
+   "Shared/Split Screen Co-op"
   ]
  ],
  "wolfenstein-2-the-new-colossus": [
@@ -19913,6 +26327,104 @@
   [
    "worm",
    "worm"
+  ]
+ ],
+ "wuchang-fallen-feathers": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "rpg",
+   "RPG"
+  ],
+  [
+   "story-rich",
+   "Story Rich"
+  ],
+  [
+   "open-world",
+   "Open World"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "difficult",
+   "Difficult"
+  ],
+  [
+   "female-protagonist",
+   "Female Protagonist"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "action-rpg",
+   "Action RPG"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "hack-and-slash",
+   "Hack and Slash"
+  ],
+  [
+   "in-app-purchases",
+   "In-App Purchases"
+  ],
+  [
+   "character-customization",
+   "Character Customization"
+  ],
+  [
+   "dark-fantasy",
+   "Dark Fantasy"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "protagonistka",
+   "\u041f\u0440\u043e\u0442\u0430\u0433\u043e\u043d\u0438\u0441\u0442\u043a\u0430"
+  ],
+  [
+   "souls-like",
+   "Souls-like"
   ]
  ],
  "xcom-2": [
