@@ -1,1 +1,156 @@
-{}
+{
+ "far-cry-3": {
+  "at": "2026-10-02T10:10:37Z",
+  "feedback": "down",
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "name": "Far Cry 3",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "rpg",
+    "RPG"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "open-world",
+    "Open World"
+   ],
+   [
+    "cooperative",
+    "cooperative"
+   ],
+   [
+    "fps",
+    "FPS"
+   ],
+   [
+    "sandbox",
+    "Sandbox"
+   ],
+   [
+    "survival",
+    "Survival"
+   ],
+   [
+    "stealth",
+    "Stealth"
+   ],
+   [
+    "nudity",
+    "Nudity"
+   ]
+  ]
+ },
+ "hades-2018": {
+  "at": "2026-10-02T10:10:37Z",
+  "feedback": "up",
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "name": "Hades",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "rpg",
+    "RPG"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "fantasy",
+    "Fantasy"
+   ],
+   [
+    "action-adventure",
+    "Action-Adventure"
+   ],
+   [
+    "action-rpg",
+    "Action RPG"
+   ],
+   [
+    "hack-and-slash",
+    "Hack and Slash"
+   ],
+   [
+    "replay-value",
+    "Replay Value"
+   ],
+   [
+    "roguelike",
+    "Roguelike"
+   ],
+   [
+    "isometric",
+    "Isometric"
+   ]
+  ]
+ },
+ "shadows-die-twice": {
+  "at": "2026-10-02T10:10:37Z",
+  "feedback": "up",
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "name": "Sekiro: Shadows Die Twice",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "rpg",
+    "RPG"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "open-world",
+    "Open World"
+   ],
+   [
+    "exploration",
+    "Exploration"
+   ],
+   [
+    "difficult",
+    "Difficult"
+   ],
+   [
+    "violent",
+    "Violent"
+   ],
+   [
+    "stealth",
+    "Stealth"
+   ],
+   [
+    "action-adventure",
+    "Action-Adventure"
+   ],
+   [
+    "action-rpg",
+    "Action RPG"
+   ]
+  ]
+ }
+}

@@ -1,1 +1,18 @@
-{}
+{
+ "shadows-die-twice": {
+  "added": "2026-10-02T10:10:37Z",
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "image": "https://media.rawg.io/media/games/67f/67f62d1f062a6164f57575e0604ee9f6.jpg",
+  "length": 43,
+  "metacritic": 90,
+  "name": "Sekiro: Shadows Die Twice",
+  "platforms": [
+   "PS4"
+  ],
+  "released": "2019-03-22",
+  "url": "https://rawg.io/games/shadows-die-twice"
+ }
+}
