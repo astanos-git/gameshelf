@@ -552,7 +552,11 @@ def enrich_tags(games: list[dict], key: str | None) -> None:
         slug = g.get("rawg_slug")
         if slug and slug not in cache and key and failures < 5:
             try:
-                r = requests.get(f"https://api.rawg.io/api/games/{slug}", params={"key": key}, timeout=20)
+                for attempt in range(4):   # RAWG sometimes asks to slow down: wait and retry
+                    r = requests.get(f"https://api.rawg.io/api/games/{slug}", params={"key": key}, timeout=20)
+                    if r.status_code != 429:
+                        break
+                    time.sleep(10 * (attempt + 1))
                 r.raise_for_status()
                 cache[slug] = [[t["slug"], t["name"]] for t in r.json().get("tags", []) if t.get("language") == "eng"]
                 fetched += 1; failures = 0
@@ -562,7 +566,7 @@ def enrich_tags(games: list[dict], key: str | None) -> None:
                 print(f"  tags skipped for {g['name']!r}: {e}")
         g["tags"] = [[s_, n] for s_, n in cache.get(slug or "", []) if s_ not in IGNORED_TAGS][:12]
     TAGS_CACHE.write_text(json.dumps(cache, sort_keys=True, indent=1))
-    print(f"RAWG tags: {fetched} new, {sum(1 for g in games if g['tags'])} games with tags")
+    print(f"::notice::RAWG tags: {fetched} new, {sum(1 for g in games if g['tags'])} games with tags")
 
 
 # ---------------------------------------------------------------- Wikidata (Metacritic gap filler)
