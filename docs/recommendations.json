@@ -1,13 +1,73 @@
 {
- "week": "2026-W40",
- "generated_at": "2026-10-02T09:51:06+00:00",
+ "week": "2026-W41",
+ "generated_at": "2026-10-05T04:28:17+00:00",
  "picks": [
   {
-   "slug": "shadows-die-twice",
-   "name": "Sekiro: Shadows Die Twice",
-   "image": "https://media.rawg.io/media/games/67f/67f62d1f062a6164f57575e0604ee9f6.jpg",
-   "metacritic": 90,
-   "released": "2019-03-22",
+   "slug": "owlboy",
+   "name": "Owlboy",
+   "image": "https://media.rawg.io/media/games/0fc/0fc933e3dfbbf4306840ef429d73fa9a.jpg",
+   "metacritic": 88,
+   "released": "2016-10-31",
+   "genres": [
+    "Indie",
+    "Platformer",
+    "Adventure"
+   ],
+   "platforms": [
+    "PS4"
+   ],
+   "length": 10,
+   "why": "Close to FINAL FANTASY VII REBIRTH, which you enjoyed; matches your taste for atmospheric, story rich, action-adventure; about 10 h.",
+   "url": "https://rawg.io/games/owlboy",
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "pixel-graphics",
+     "Pixel Graphics"
+    ],
+    [
+     "retro",
+     "Retro"
+    ],
+    [
+     "anime",
+     "Anime"
+    ]
+   ]
+  },
+  {
+   "slug": "dishonored-2",
+   "name": "Dishonored 2",
+   "image": "https://media.rawg.io/media/games/f6b/f6bed028b02369d4cab548f4f9337e81.jpg",
+   "metacritic": 86,
+   "released": "2016-11-10",
    "genres": [
     "Action",
     "RPG"
@@ -15,17 +75,13 @@
    "platforms": [
     "PS4"
    ],
-   "length": 43,
-   "why": "Close to Cyberpunk 2077, which you enjoyed; matches your taste for atmospheric, story rich, exploration; about 43 h.",
-   "url": "https://rawg.io/games/shadows-die-twice",
+   "length": 23,
+   "why": "Close to Shadow of the Tomb Raider, which you enjoyed; matches your taste for atmospheric, story rich, exploration; about 23 h, close to your usual 17 h.",
+   "url": "https://rawg.io/games/dishonored-2",
    "tags": [
     [
      "atmospheric",
      "Atmospheric"
-    ],
-    [
-     "rpg",
-     "RPG"
     ],
     [
      "story-rich",
@@ -36,98 +92,41 @@
      "Open World"
     ],
     [
+     "gore",
+     "Gore"
+    ],
+    [
      "exploration",
      "Exploration"
     ],
     [
-     "difficult",
-     "Difficult"
-    ],
-    [
-     "violent",
-     "Violent"
+     "female-protagonist",
+     "Female Protagonist"
     ],
     [
      "stealth",
      "Stealth"
     ],
     [
-     "action-adventure",
-     "Action-Adventure"
+     "magic",
+     "Magic"
     ],
     [
-     "action-rpg",
-     "Action RPG"
+     "parkour",
+     "Parkour"
+    ],
+    [
+     "dystopian",
+     "Dystopian"
     ]
    ]
   },
   {
-   "slug": "hades-2018",
-   "name": "Hades",
-   "image": "https://media.rawg.io/media/games/1f4/1f47a270b8f241e4676b14d39ec620f7.jpg",
+   "slug": "grand-theft-auto-iii",
+   "name": "Grand Theft Auto III",
+   "image": "https://media.rawg.io/media/games/5fa/5fae5fec3c943179e09da67a4427d68f.jpg",
    "metacritic": 93,
-   "released": "2020-09-17",
-   "genres": [
-    "Indie",
-    "Adventure",
-    "Action"
-   ],
-   "platforms": [
-    "PS5",
-    "PS4"
-   ],
-   "length": 49,
-   "why": "Close to Death's Door, which you enjoyed; matches your taste for atmospheric, story rich, rpg; about 49 h.",
-   "url": "https://rawg.io/games/hades-2018",
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "rpg",
-     "RPG"
-    ],
-    [
-     "story-rich",
-     "Story Rich"
-    ],
-    [
-     "fantasy",
-     "Fantasy"
-    ],
-    [
-     "action-adventure",
-     "Action-Adventure"
-    ],
-    [
-     "action-rpg",
-     "Action RPG"
-    ],
-    [
-     "hack-and-slash",
-     "Hack and Slash"
-    ],
-    [
-     "replay-value",
-     "Replay Value"
-    ],
-    [
-     "roguelike",
-     "Roguelike"
-    ],
-    [
-     "isometric",
-     "Isometric"
-    ]
-   ]
-  },
-  {
-   "slug": "far-cry-3",
-   "name": "Far Cry 3",
-   "image": "https://media.rawg.io/media/games/15c/15c95a4915f88a3e89c821526afe05fc.jpg",
-   "metacritic": 88,
-   "released": "2012-11-28",
+   "released": "2001-10-22",
    "genres": [
     "Shooter",
     "Action"
@@ -135,17 +134,13 @@
    "platforms": [
     "PS4"
    ],
-   "length": null,
-   "why": "Close to Assassin's Creed® Unity, which you enjoyed; matches your taste for atmospheric, story rich, rpg.",
-   "url": "https://rawg.io/games/far-cry-3",
+   "length": 20,
+   "why": "Close to Fallout 4, which you enjoyed; matches your taste for atmospheric, story rich, open world; about 20 h, close to your usual 17 h.",
+   "url": "https://rawg.io/games/grand-theft-auto-iii",
    "tags": [
     [
      "atmospheric",
      "Atmospheric"
-    ],
-    [
-     "rpg",
-     "RPG"
     ],
     [
      "story-rich",
@@ -156,28 +151,32 @@
      "Open World"
     ],
     [
-     "cooperative",
-     "cooperative"
-    ],
-    [
-     "fps",
-     "FPS"
-    ],
-    [
      "sandbox",
      "Sandbox"
     ],
     [
-     "survival",
-     "Survival"
+     "violent",
+     "Violent"
     ],
     [
-     "stealth",
-     "Stealth"
+     "third-person-shooter",
+     "Third-Person Shooter"
     ],
     [
-     "nudity",
-     "Nudity"
+     "moddable",
+     "Moddable"
+    ],
+    [
+     "mature",
+     "Mature"
+    ],
+    [
+     "crime",
+     "Crime"
+    ],
+    [
+     "driving",
+     "Driving"
     ]
    ]
   }
@@ -192,16 +191,28 @@
   "top_tags": [
    "Atmospheric",
    "Story Rich",
-   "Exploration",
-   "RPG",
-   "Open World",
    "Action-Adventure",
+   "Exploration",
+   "Open World",
+   "RPG",
    "Action RPG",
-   "Fantasy"
+   "Female Protagonist"
   ],
   "usual_length": 17
  },
  "history": [
+  {
+   "slug": "owlboy",
+   "week": "2026-W41"
+  },
+  {
+   "slug": "dishonored-2",
+   "week": "2026-W41"
+  },
+  {
+   "slug": "grand-theft-auto-iii",
+   "week": "2026-W41"
+  },
   {
    "slug": "shadows-die-twice",
    "week": "2026-W40"

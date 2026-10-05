@@ -3,14 +3,18 @@
   "developers": [
    "Asobo Studio"
   ],
-  "publishers": [],
+  "publishers": [
+   "Focus Entertainment"
+  ],
   "series": []
  },
  "a-plague-tale-requiem": {
   "developers": [
    "Asobo Studio"
   ],
-  "publishers": [],
+  "publishers": [
+   "Focus Entertainment"
+  ],
   "series": []
  },
  "absolver": {
@@ -85,6 +89,7 @@
   ],
   "publishers": [
    "Interplay Entertainment",
+   "Focus Entertainment",
    "U.S. Gold"
   ],
   "series": []
@@ -826,7 +831,9 @@
   "developers": [
    "Flying Wild Hog"
   ],
-  "publishers": [],
+  "publishers": [
+   "Focus Entertainment"
+  ],
   "series": []
  },
  "fallout-4": {
@@ -916,7 +923,9 @@
   "developers": [
    "Cyanide"
   ],
-  "publishers": [],
+  "publishers": [
+   "Focus Entertainment"
+  ],
   "series": [
    "Game of Thrones"
   ]
@@ -1047,7 +1056,9 @@
  },
  "greedfall": {
   "developers": [],
-  "publishers": [],
+  "publishers": [
+   "Focus Entertainment"
+  ],
   "series": []
  },
  "gris": {
@@ -1321,8 +1332,8 @@
    "2K"
   ],
   "series": [
-   "Lego",
-   "2K Drive"
+   "2K Drive",
+   "Lego"
   ]
  },
  "lego-dc-super-villains": {
@@ -2636,7 +2647,9 @@
   "developers": [
    "Don’t Nod"
   ],
-  "publishers": [],
+  "publishers": [
+   "Focus Entertainment"
+  ],
   "series": []
  },
  "vanquish": {

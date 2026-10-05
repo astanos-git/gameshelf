@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-02T09:52:36+00:00",
+ "generated_at": "2026-10-05T04:26:34+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -19,6 +19,188 @@
  },
  "games": [
   {
+   "name": "Battlefield™ 6",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1613/cb422a1792ed8658d169c1dc7c0f652c789e3d73035efd47.png",
+   "platforms": [
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-07-22T15:50:33Z",
+   "hours": 5.5,
+   "first_played": "2026-07-23T07:50:38.180000+00:00",
+   "last_played": "2026-10-04T11:07:47.310000+00:00",
+   "progress": 1,
+   "earned": {
+    "bronze": 1,
+    "silver": 0,
+    "gold": 0,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 38,
+    "silver": 12,
+    "gold": 3,
+    "platinum": 1
+   },
+   "last_trophy": "2026-07-25T09:40:24+00:00",
+   "has_trophies": true,
+   "months": {
+    "2026-07": [
+     1,
+     0,
+     0,
+     0
+    ]
+   },
+   "trophy_lists": [
+    {
+     "id": "NPWR50656_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 1,
+     "groups": {
+      "001": "BATTLEFIELD™ REDSEC",
+      "default": "Battlefield™ 6"
+     }
+    }
+   ],
+   "rare": [
+    {
+     "at": "2026-07-25T09:40:23+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR50656_00/bb1db0b7-b1dc-4247-90c1-1ab60ba7a19d.png",
+     "n": "Private First Class Montes",
+     "r": 36.0,
+     "t": "bronze"
+    }
+   ],
+   "aliases": [],
+   "trophies_earned": 1,
+   "trophies_total": 54,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-10-04T11:07:47.310000+00:00",
+   "hours_by_year": {
+    "2026": 5.5
+   },
+   "metacritic": 83,
+   "genres": [
+    "Shooter",
+    "Action"
+   ],
+   "released": "2025-10-10",
+   "rawg_slug": "battlefield-6-2",
+   "metacritic_source": "wikidata",
+   "series": [
+    "Battlefield"
+   ],
+   "developers": [
+    "DICE",
+    "Criterion Games",
+    "Motive Studio",
+    "Ripple Effect Studios"
+   ],
+   "publishers": [
+    "Electronic Arts"
+   ],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "tactical",
+     "Tactical"
+    ],
+    [
+     "war",
+     "War"
+    ],
+    [
+     "realistic",
+     "Realistic"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "military",
+     "Military"
+    ],
+    [
+     "destruction",
+     "Destruction"
+    ]
+   ],
+   "hltb": {
+    "main": 6.05,
+    "extra": 11.06,
+    "complete": 26.47,
+    "url": "https://howlongtobeat.com/game/171520"
+   },
+   "plat_rate": 0.3,
+   "rare_missing": 29,
+   "first_trophy_at": "2026-07-25T09:40:23+00:00",
+   "platinum_at": null,
+   "dlc": [
+    {
+     "list": "NPWR50656_00",
+     "id": "001",
+     "name": "BATTLEFIELD™ REDSEC",
+     "platforms": [
+      "PS5"
+     ],
+     "earned": 0,
+     "total": 11
+    }
+   ],
+   "missing_n": 53,
+   "easy": [
+    {
+     "n": "Punished",
+     "t": "bronze",
+     "r": 32.8,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Lance Corporal Matkovic",
+     "t": "bronze",
+     "r": 32.3,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Collector",
+     "t": "bronze",
+     "r": 31.5,
+     "h": null,
+     "p": null
+    }
+   ]
+  },
+  {
    "name": "Metaphor: ReFantazio",
    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2406/672cc5f97e84c564649093d4f6a3726f328e0de1814ab2e0.png",
    "platforms": [
@@ -27,9 +209,9 @@
    ],
    "owned": true,
    "acquired": "2025-03-12T19:51:00Z",
-   "hours": 29.9,
+   "hours": 32.7,
    "first_played": "2026-08-23T09:10:05.600000+00:00",
-   "last_played": "2026-10-01T13:54:30.530000+00:00",
+   "last_played": "2026-10-04T09:21:14.300000+00:00",
    "progress": 22,
    "earned": {
     "bronze": 15,
@@ -117,9 +299,9 @@
    "trophies_total": 44,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-01T13:54:30.530000+00:00",
+   "last_activity": "2026-10-04T09:21:14.300000+00:00",
    "hours_by_year": {
-    "2026": 29.9
+    "2026": 32.7
    },
    "metacritic": 92,
    "genres": [
@@ -228,9 +410,9 @@
    ],
    "owned": true,
    "acquired": "2026-02-26T15:43:46Z",
-   "hours": 0.9,
+   "hours": 1.4,
    "first_played": "2026-09-27T12:30:17.680000+00:00",
-   "last_played": "2026-09-27T15:03:43.200000+00:00",
+   "last_played": "2026-10-03T10:24:18.540000+00:00",
    "progress": 2,
    "earned": {
     "bronze": 2,
@@ -285,9 +467,9 @@
    "trophies_total": 32,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-09-27T15:03:43.200000+00:00",
+   "last_activity": "2026-10-03T10:24:18.540000+00:00",
    "hours_by_year": {
-    "2026": 0.9
+    "2026": 1.4
    },
    "metacritic": 79,
    "genres": [
@@ -952,188 +1134,6 @@
    "dlc": [],
    "missing_n": 0,
    "easy": []
-  },
-  {
-   "name": "Battlefield™ 6",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1613/cb422a1792ed8658d169c1dc7c0f652c789e3d73035efd47.png",
-   "platforms": [
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-07-22T15:50:33Z",
-   "hours": 5.1,
-   "first_played": "2026-07-23T07:50:38.180000+00:00",
-   "last_played": "2026-09-06T10:40:51.580000+00:00",
-   "progress": 1,
-   "earned": {
-    "bronze": 1,
-    "silver": 0,
-    "gold": 0,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 38,
-    "silver": 12,
-    "gold": 3,
-    "platinum": 1
-   },
-   "last_trophy": "2026-07-25T09:40:24+00:00",
-   "has_trophies": true,
-   "months": {
-    "2026-07": [
-     1,
-     0,
-     0,
-     0
-    ]
-   },
-   "trophy_lists": [
-    {
-     "id": "NPWR50656_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 1,
-     "groups": {
-      "001": "BATTLEFIELD™ REDSEC",
-      "default": "Battlefield™ 6"
-     }
-    }
-   ],
-   "rare": [
-    {
-     "at": "2026-07-25T09:40:23+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR50656_00/bb1db0b7-b1dc-4247-90c1-1ab60ba7a19d.png",
-     "n": "Private First Class Montes",
-     "r": 36.0,
-     "t": "bronze"
-    }
-   ],
-   "aliases": [],
-   "trophies_earned": 1,
-   "trophies_total": 54,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-09-06T10:40:51.580000+00:00",
-   "hours_by_year": {
-    "2026": 5.1
-   },
-   "metacritic": 83,
-   "genres": [
-    "Shooter",
-    "Action"
-   ],
-   "released": "2025-10-10",
-   "rawg_slug": "battlefield-6-2",
-   "metacritic_source": "wikidata",
-   "series": [
-    "Battlefield"
-   ],
-   "developers": [
-    "DICE",
-    "Criterion Games",
-    "Motive Studio",
-    "Ripple Effect Studios"
-   ],
-   "publishers": [
-    "Electronic Arts"
-   ],
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "story-rich",
-     "Story Rich"
-    ],
-    [
-     "cooperative",
-     "cooperative"
-    ],
-    [
-     "fps",
-     "FPS"
-    ],
-    [
-     "sandbox",
-     "Sandbox"
-    ],
-    [
-     "violent",
-     "Violent"
-    ],
-    [
-     "tactical",
-     "Tactical"
-    ],
-    [
-     "war",
-     "War"
-    ],
-    [
-     "realistic",
-     "Realistic"
-    ],
-    [
-     "combat",
-     "combat"
-    ],
-    [
-     "military",
-     "Military"
-    ],
-    [
-     "destruction",
-     "Destruction"
-    ]
-   ],
-   "hltb": {
-    "main": 6.05,
-    "extra": 11.06,
-    "complete": 26.47,
-    "url": "https://howlongtobeat.com/game/171520"
-   },
-   "plat_rate": 0.3,
-   "rare_missing": 29,
-   "first_trophy_at": "2026-07-25T09:40:23+00:00",
-   "platinum_at": null,
-   "dlc": [
-    {
-     "list": "NPWR50656_00",
-     "id": "001",
-     "name": "BATTLEFIELD™ REDSEC",
-     "platforms": [
-      "PS5"
-     ],
-     "earned": 0,
-     "total": 11
-    }
-   ],
-   "missing_n": 53,
-   "easy": [
-    {
-     "n": "Punished",
-     "t": "bronze",
-     "r": 32.8,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "Lance Corporal Matkovic",
-     "t": "bronze",
-     "r": 32.3,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "Collector",
-     "t": "bronze",
-     "r": 31.5,
-     "h": null,
-     "p": null
-    }
-   ]
   },
   {
    "name": "SIGNALIS",
@@ -13944,7 +13944,9 @@
    "developers": [
     "Asobo Studio"
    ],
-   "publishers": [],
+   "publishers": [
+    "Focus Entertainment"
+   ],
    "tags": [
     [
      "atmospheric",
@@ -17096,7 +17098,9 @@
    "developers": [
     "Flying Wild Hog"
    ],
-   "publishers": [],
+   "publishers": [
+    "Focus Entertainment"
+   ],
    "tags": [
     [
      "rpg",
@@ -17487,8 +17491,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "Lego",
-    "2K Drive"
+    "2K Drive",
+    "Lego"
    ],
    "developers": [
     "Visual Concepts"
@@ -28475,6 +28479,7 @@
    ],
    "publishers": [
     "Interplay Entertainment",
+    "Focus Entertainment",
     "U.S. Gold"
    ],
    "tags": [
@@ -29593,7 +29598,9 @@
    "metacritic_source": "rawg",
    "series": [],
    "developers": [],
-   "publishers": [],
+   "publishers": [
+    "Focus Entertainment"
+   ],
    "tags": [
     [
      "story-rich",
@@ -29887,7 +29894,9 @@
    "developers": [
     "Asobo Studio"
    ],
-   "publishers": [],
+   "publishers": [
+    "Focus Entertainment"
+   ],
    "tags": [
     [
      "horror",
@@ -30858,7 +30867,9 @@
    "developers": [
     "Don’t Nod"
    ],
-   "publishers": [],
+   "publishers": [
+    "Focus Entertainment"
+   ],
    "tags": [
     [
      "atmospheric",
@@ -45151,7 +45162,9 @@
    "developers": [
     "Cyanide"
    ],
-   "publishers": [],
+   "publishers": [
+    "Focus Entertainment"
+   ],
    "tags": [
     [
      "rpg",
