@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T04:26:34+00:00",
+ "generated_at": "2026-10-07T05:17:15+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -18,6 +18,207 @@
   }
  },
  "games": [
+  {
+   "name": "Metaphor: ReFantazio",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2406/672cc5f97e84c564649093d4f6a3726f328e0de1814ab2e0.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2025-03-12T19:51:00Z",
+   "hours": 32.7,
+   "first_played": "2026-08-23T09:10:05.600000+00:00",
+   "last_played": "2026-10-06T19:40:45.160000+00:00",
+   "progress": 22,
+   "earned": {
+    "bronze": 15,
+    "silver": 0,
+    "gold": 0,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 32,
+    "silver": 8,
+    "gold": 3,
+    "platinum": 1
+   },
+   "last_trophy": "2026-10-01T13:46:57+00:00",
+   "has_trophies": true,
+   "months": {
+    "2026-08": [
+     6,
+     0,
+     0,
+     0
+    ],
+    "2026-09": [
+     8,
+     0,
+     0,
+     0
+    ],
+    "2026-10": [
+     1,
+     0,
+     0,
+     0
+    ]
+   },
+   "trophy_lists": [
+    {
+     "id": "NPWR25347_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 22,
+     "groups": {}
+    }
+   ],
+   "rare": [
+    {
+     "at": "2026-10-01T13:46:57+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/fd3d44f6-a941-48bd-a2dd-8dfc14e69e34.PNG",
+     "n": "Chef in Training",
+     "r": 18.3,
+     "t": "bronze"
+    },
+    {
+     "at": "2026-09-21T09:04:33+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/6cfe9197-5c40-4e1c-8886-30989caf9d39.PNG",
+     "n": "What's Yours is Mine",
+     "r": 61.0,
+     "t": "bronze"
+    },
+    {
+     "at": "2026-09-18T21:12:04+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/b04fbab2-691a-4d11-94c0-53980c76de7b.PNG",
+     "n": "Tactical Strike",
+     "r": 62.6,
+     "t": "bronze"
+    },
+    {
+     "at": "2026-09-26T02:04:22+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/87441551-4216-4db5-895d-4983d301f00d.PNG",
+     "n": "Dark Truths",
+     "r": 65.1,
+     "t": "bronze"
+    },
+    {
+     "at": "2026-09-21T09:39:32+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/144cda5e-9818-4b1f-8b75-95e54fde8f61.PNG",
+     "n": "Archetype Adept",
+     "r": 67.7,
+     "t": "bronze"
+    }
+   ],
+   "aliases": [],
+   "trophies_earned": 15,
+   "trophies_total": 44,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-10-06T19:40:45.160000+00:00",
+   "hours_by_year": {
+    "2026": 32.7
+   },
+   "metacritic": 92,
+   "genres": [
+    "Adventure",
+    "Action",
+    "RPG"
+   ],
+   "released": "2024-10-11",
+   "rawg_slug": "metaphor-refantazio",
+   "metacritic_source": "wikipedia",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "action-rpg",
+     "Action RPG"
+    ],
+    [
+     "anime",
+     "Anime"
+    ],
+    [
+     "hack-and-slash",
+     "Hack and Slash"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "dark-fantasy",
+     "Dark Fantasy"
+    ],
+    [
+     "turn-based-strategy",
+     "Turn-Based Strategy"
+    ],
+    [
+     "steam-trading-cards-2",
+     "Steam Trading Cards"
+    ],
+    [
+     "jrpg",
+     "JRPG"
+    ],
+    [
+     "turn-based-combat",
+     "Turn-Based Combat"
+    ]
+   ],
+   "hltb": {
+    "main": 65.4,
+    "extra": 88.34,
+    "complete": 109.25,
+    "url": "https://howlongtobeat.com/game/129956"
+   },
+   "plat_rate": 4.7,
+   "rare_missing": 3,
+   "first_trophy_at": "2026-08-26T20:16:43+00:00",
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 29,
+   "easy": [
+    {
+     "n": "Stray Elements",
+     "t": "bronze",
+     "r": 59.9,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "On Knife's Edge",
+     "t": "bronze",
+     "r": 59.6,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "For Science!",
+     "t": "bronze",
+     "r": 56.7,
+     "h": null,
+     "p": null
+    }
+   ]
+  },
   {
    "name": "Battlefield™ 6",
    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1613/cb422a1792ed8658d169c1dc7c0f652c789e3d73035efd47.png",
@@ -195,207 +396,6 @@
      "n": "Collector",
      "t": "bronze",
      "r": 31.5,
-     "h": null,
-     "p": null
-    }
-   ]
-  },
-  {
-   "name": "Metaphor: ReFantazio",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2406/672cc5f97e84c564649093d4f6a3726f328e0de1814ab2e0.png",
-   "platforms": [
-    "PS4",
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2025-03-12T19:51:00Z",
-   "hours": 32.7,
-   "first_played": "2026-08-23T09:10:05.600000+00:00",
-   "last_played": "2026-10-04T09:21:14.300000+00:00",
-   "progress": 22,
-   "earned": {
-    "bronze": 15,
-    "silver": 0,
-    "gold": 0,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 32,
-    "silver": 8,
-    "gold": 3,
-    "platinum": 1
-   },
-   "last_trophy": "2026-10-01T13:46:57+00:00",
-   "has_trophies": true,
-   "months": {
-    "2026-08": [
-     6,
-     0,
-     0,
-     0
-    ],
-    "2026-09": [
-     8,
-     0,
-     0,
-     0
-    ],
-    "2026-10": [
-     1,
-     0,
-     0,
-     0
-    ]
-   },
-   "trophy_lists": [
-    {
-     "id": "NPWR25347_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 22,
-     "groups": {}
-    }
-   ],
-   "rare": [
-    {
-     "at": "2026-10-01T13:46:57+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/fd3d44f6-a941-48bd-a2dd-8dfc14e69e34.PNG",
-     "n": "Chef in Training",
-     "r": 18.3,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-09-21T09:04:33+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/6cfe9197-5c40-4e1c-8886-30989caf9d39.PNG",
-     "n": "What's Yours is Mine",
-     "r": 61.0,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-09-18T21:12:04+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/b04fbab2-691a-4d11-94c0-53980c76de7b.PNG",
-     "n": "Tactical Strike",
-     "r": 62.6,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-09-26T02:04:22+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/87441551-4216-4db5-895d-4983d301f00d.PNG",
-     "n": "Dark Truths",
-     "r": 65.1,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-09-21T09:39:32+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/144cda5e-9818-4b1f-8b75-95e54fde8f61.PNG",
-     "n": "Archetype Adept",
-     "r": 67.7,
-     "t": "bronze"
-    }
-   ],
-   "aliases": [],
-   "trophies_earned": 15,
-   "trophies_total": 44,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-10-04T09:21:14.300000+00:00",
-   "hours_by_year": {
-    "2026": 32.7
-   },
-   "metacritic": 92,
-   "genres": [
-    "Adventure",
-    "Action",
-    "RPG"
-   ],
-   "released": "2024-10-11",
-   "rawg_slug": "metaphor-refantazio",
-   "metacritic_source": "wikipedia",
-   "series": [],
-   "developers": [],
-   "publishers": [],
-   "tags": [
-    [
-     "rpg",
-     "RPG"
-    ],
-    [
-     "story-rich",
-     "Story Rich"
-    ],
-    [
-     "fantasy",
-     "Fantasy"
-    ],
-    [
-     "action-rpg",
-     "Action RPG"
-    ],
-    [
-     "anime",
-     "Anime"
-    ],
-    [
-     "hack-and-slash",
-     "Hack and Slash"
-    ],
-    [
-     "colorful",
-     "Colorful"
-    ],
-    [
-     "dark-fantasy",
-     "Dark Fantasy"
-    ],
-    [
-     "turn-based-strategy",
-     "Turn-Based Strategy"
-    ],
-    [
-     "steam-trading-cards-2",
-     "Steam Trading Cards"
-    ],
-    [
-     "jrpg",
-     "JRPG"
-    ],
-    [
-     "turn-based-combat",
-     "Turn-Based Combat"
-    ]
-   ],
-   "hltb": {
-    "main": 65.4,
-    "extra": 88.34,
-    "complete": 109.25,
-    "url": "https://howlongtobeat.com/game/129956"
-   },
-   "plat_rate": 4.7,
-   "rare_missing": 3,
-   "first_trophy_at": "2026-08-26T20:16:43+00:00",
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 29,
-   "easy": [
-    {
-     "n": "Stray Elements",
-     "t": "bronze",
-     "r": 59.9,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "On Knife's Edge",
-     "t": "bronze",
-     "r": 59.6,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "For Science!",
-     "t": "bronze",
-     "r": 56.7,
      "h": null,
      "p": null
     }
