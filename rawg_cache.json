@@ -1127,6 +1127,15 @@
   "released": "2010-08-10",
   "slug": "ea-sports-mma"
  },
+ "EARTH DEFENSE FORCE:WORLD BROTHERS 2": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 74,
+  "released": "2021-05-27",
+  "slug": "earth-defense-forceworld-brothers"
+ },
  "ELDEN RING": {
   "genres": [
    "Action",
@@ -1245,6 +1254,15 @@
   "metacritic": 74,
   "released": "2022-11-21",
   "slug": "evil-west"
+ },
+ "F1® 25": {
+  "genres": [
+   "Racing",
+   "Sports"
+  ],
+  "metacritic": 89,
+  "released": "2017-08-24",
+  "slug": "f1-2017"
  },
  "FIFA 12": {
   "genres": [
@@ -1615,6 +1633,15 @@
   "metacritic": 74,
   "released": "2021-09-27",
   "slug": "hot-wheels-unleashed"
+ },
+ "HUNT: SHOWDOWN 1896": {
+  "genres": [
+   "Shooter",
+   "Action"
+  ],
+  "metacritic": 79,
+  "released": "2018-02-22",
+  "slug": "hunt-showdown"
  },
  "Heavenly Bodies": {
   "genres": [

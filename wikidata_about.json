@@ -836,6 +836,19 @@
   ],
   "series": []
  },
+ "f1-2017": {
+  "developers": [
+   "Codemasters",
+   "Feral Interactive"
+  ],
+  "publishers": [
+   "Codemasters",
+   "Feral Interactive"
+  ],
+  "series": [
+   "F1"
+  ]
+ },
  "fallout-4": {
   "developers": [
    "Bethesda Game Studios"
@@ -1194,6 +1207,11 @@
   "series": [
    "Hot Wheels"
   ]
+ },
+ "hunt-showdown": {
+  "developers": [],
+  "publishers": [],
+  "series": []
  },
  "iconoclasts": {
   "developers": [],

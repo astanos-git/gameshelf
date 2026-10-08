@@ -943,6 +943,14 @@
   "query": "EA SPORTS WRC",
   "url": "https://howlongtobeat.com/game/137377"
  },
+ "EARTH DEFENSE FORCE:WORLD BROTHERS 2": {
+  "complete": null,
+  "extra": 20.75,
+  "main": null,
+  "name": "Earth Defense Force: World Brothers 2",
+  "query": "EARTH DEFENSE FORCE:WORLD BROTHERS 2",
+  "url": "https://howlongtobeat.com/game/146387"
+ },
  "ELDEN RING": {
   "complete": 136.21,
   "extra": 101.32,
@@ -1034,6 +1042,14 @@
   "name": "Evil West",
   "query": "Evil West",
   "url": "https://howlongtobeat.com/game/85970"
+ },
+ "F1® 25": {
+  "complete": 156.09,
+  "extra": 32.95,
+  "main": 6.14,
+  "name": "F1 25",
+  "query": "F1 25",
+  "url": "https://howlongtobeat.com/game/166590"
  },
  "FIFA 12": {
   "complete": 273.27,
@@ -1354,6 +1370,14 @@
   "name": "Hot Wheels Unleashed 2: Turbocharged",
   "query": "HOT WHEELS UNLEASHED 2 - Turbocharged",
   "url": "https://howlongtobeat.com/game/129536"
+ },
+ "HUNT: SHOWDOWN 1896": {
+  "complete": 552.71,
+  "extra": 321.51,
+  "main": 55.77,
+  "name": "Hunt: Showdown",
+  "query": "HUNT: SHOWDOWN 1896",
+  "url": "https://howlongtobeat.com/game/52343"
  },
  "Heavenly Bodies": {
   "complete": 11.29,

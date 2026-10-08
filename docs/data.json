@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T05:17:15+00:00",
+ "generated_at": "2026-10-08T22:37:29+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -27,9 +27,9 @@
    ],
    "owned": true,
    "acquired": "2025-03-12T19:51:00Z",
-   "hours": 32.7,
+   "hours": 35.0,
    "first_played": "2026-08-23T09:10:05.600000+00:00",
-   "last_played": "2026-10-06T19:40:45.160000+00:00",
+   "last_played": "2026-10-08T20:11:19.930000+00:00",
    "progress": 22,
    "earned": {
     "bronze": 15,
@@ -117,9 +117,9 @@
    "trophies_total": 44,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-06T19:40:45.160000+00:00",
+   "last_activity": "2026-10-08T20:11:19.930000+00:00",
    "hours_by_year": {
-    "2026": 32.7
+    "2026": 35.0
    },
    "metacritic": 92,
    "genres": [
@@ -218,6 +218,413 @@
      "p": null
     }
    ]
+  },
+  {
+   "name": "Ultros",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202305/2420/d0adbcee60a2115317b7503f22ae2d7c451ad14d103406d5.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-02-26T15:43:46Z",
+   "hours": 1.9,
+   "first_played": "2026-09-27T12:30:17.680000+00:00",
+   "last_played": "2026-10-08T16:12:03.910000+00:00",
+   "progress": 2,
+   "earned": {
+    "bronze": 2,
+    "silver": 0,
+    "gold": 0,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 8,
+    "silver": 19,
+    "gold": 4,
+    "platinum": 1
+   },
+   "last_trophy": "2026-09-27T13:18:21+00:00",
+   "has_trophies": true,
+   "months": {
+    "2026-09": [
+     2,
+     0,
+     0,
+     0
+    ]
+   },
+   "trophy_lists": [
+    {
+     "id": "NPWR36557_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 2,
+     "groups": {}
+    }
+   ],
+   "rare": [
+    {
+     "at": "2026-09-27T12:51:46+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/63a73648-dc66-4aa0-81c9-758dfa75e9e2.png",
+     "n": "Nietzsche taken to heart",
+     "r": 27.3,
+     "t": "bronze"
+    },
+    {
+     "at": "2026-09-27T13:18:21+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/a9903d73-cf7b-44d6-8292-1f43bd77bf8a.png",
+     "n": "Wrath upon the enraged",
+     "r": 28.3,
+     "t": "bronze"
+    }
+   ],
+   "aliases": [],
+   "trophies_earned": 2,
+   "trophies_total": 32,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-10-08T16:12:03.910000+00:00",
+   "hours_by_year": {
+    "2026": 1.9
+   },
+   "metacritic": 79,
+   "genres": [
+    "Indie",
+    "Adventure"
+   ],
+   "released": "2024-02-13",
+   "rawg_slug": "ultros",
+   "metacritic_source": "wikipedia",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "metroidvania",
+     "Metroidvania"
+    ],
+    [
+     "roguelite",
+     "Roguelite"
+    ],
+    [
+     "stylized",
+     "Stylized"
+    ],
+    [
+     "hand-drawn",
+     "Hand-drawn"
+    ],
+    [
+     "protagonistka",
+     "Протагонистка"
+    ]
+   ],
+   "hltb": {
+    "main": 11.12,
+    "extra": 19.0,
+    "complete": 28.38,
+    "url": "https://howlongtobeat.com/game/129248"
+   },
+   "plat_rate": 0.4,
+   "rare_missing": 29,
+   "first_trophy_at": "2026-09-27T12:51:46+00:00",
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 30,
+   "easy": [
+    {
+     "n": "A hungry stomach has no ears",
+     "t": "bronze",
+     "r": 11.1,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "Setting a trap for others",
+     "t": "bronze",
+     "r": 9.2,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "The end is where we start from",
+     "t": "bronze",
+     "r": 4.5,
+     "h": true,
+     "p": null
+    }
+   ]
+  },
+  {
+   "name": "EARTH DEFENSE FORCE:WORLD BROTHERS 2",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202402/0803/e9b205a3007e3dab6c7e35d9a18a580393450c7abf15d048.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-10-08T12:54:07Z",
+   "hours": 0.0,
+   "first_played": null,
+   "last_played": null,
+   "progress": null,
+   "earned": null,
+   "defined": null,
+   "last_trophy": null,
+   "has_trophies": false,
+   "months": {},
+   "trophy_lists": [],
+   "rare": [],
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 0,
+   "platinum": false,
+   "status": "unplayed",
+   "last_activity": null,
+   "hours_by_year": {},
+   "metacritic": 74,
+   "genres": [
+    "Shooter",
+    "Action"
+   ],
+   "released": "2021-05-27",
+   "rawg_slug": "earth-defense-forceworld-brothers",
+   "metacritic_source": "rawg",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "online",
+     "online"
+    ],
+    [
+     "battle",
+     "battle"
+    ],
+    [
+     "character",
+     "character"
+    ],
+    [
+     "fight",
+     "fight"
+    ],
+    [
+     "weapons",
+     "weapons"
+    ],
+    [
+     "history",
+     "history"
+    ],
+    [
+     "planet",
+     "planet"
+    ],
+    [
+     "defense",
+     "defense"
+    ],
+    [
+     "food",
+     "food"
+    ],
+    [
+     "square",
+     "square"
+    ],
+    [
+     "colors",
+     "colors"
+    ]
+   ],
+   "hltb": {
+    "extra": 20.75,
+    "url": "https://howlongtobeat.com/game/146387"
+   },
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 0,
+   "easy": []
+  },
+  {
+   "name": "HUNT: SHOWDOWN 1896",
+   "image": "https://image.api.playstation.com/gs2-sec/acpkgo/prod/CUSA15760_00/1/i_4d7aae099b02c50ff14c99d8ca87c2e023e0af03d32e75f843cf47aaaac1d338/i/icon0.png",
+   "platforms": [
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-10-08T12:52:46Z",
+   "hours": 0.0,
+   "first_played": null,
+   "last_played": null,
+   "progress": null,
+   "earned": null,
+   "defined": null,
+   "last_trophy": null,
+   "has_trophies": false,
+   "months": {},
+   "trophy_lists": [],
+   "rare": [],
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 0,
+   "platinum": false,
+   "status": "unplayed",
+   "last_activity": null,
+   "hours_by_year": {},
+   "metacritic": 79,
+   "genres": [
+    "Shooter",
+    "Action"
+   ],
+   "released": "2018-02-22",
+   "rawg_slug": "hunt-showdown",
+   "metacritic_source": "rawg",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "violent",
+     "Violent"
+    ]
+   ],
+   "hltb": {
+    "main": 55.77,
+    "extra": 321.51,
+    "complete": 552.71,
+    "url": "https://howlongtobeat.com/game/52343"
+   },
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 0,
+   "easy": []
+  },
+  {
+   "name": "F1® 25",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202503/0717/f5a0f22b40da87ecfca3f6286943917c0e7969277da4ee56.png",
+   "platforms": [
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-10-08T12:52:35Z",
+   "hours": 0.0,
+   "first_played": null,
+   "last_played": null,
+   "progress": null,
+   "earned": null,
+   "defined": null,
+   "last_trophy": null,
+   "has_trophies": false,
+   "months": {},
+   "trophy_lists": [],
+   "rare": [],
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 0,
+   "platinum": false,
+   "status": "unplayed",
+   "last_activity": null,
+   "hours_by_year": {},
+   "metacritic": 89,
+   "genres": [
+    "Racing",
+    "Sports"
+   ],
+   "released": "2017-08-24",
+   "rawg_slug": "f1-2017",
+   "metacritic_source": "rawg",
+   "series": [
+    "F1"
+   ],
+   "developers": [
+    "Codemasters",
+    "Feral Interactive"
+   ],
+   "publishers": [
+    "Codemasters",
+    "Feral Interactive"
+   ],
+   "tags": [
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "realistic",
+     "Realistic"
+    ],
+    [
+     "vr",
+     "VR"
+    ],
+    [
+     "driving",
+     "Driving"
+    ]
+   ],
+   "hltb": {
+    "main": 6.14,
+    "extra": 32.95,
+    "complete": 156.09,
+    "url": "https://howlongtobeat.com/game/166590"
+   },
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 0,
+   "easy": []
   },
   {
    "name": "Battlefield™ 6",
@@ -397,173 +804,6 @@
      "t": "bronze",
      "r": 31.5,
      "h": null,
-     "p": null
-    }
-   ]
-  },
-  {
-   "name": "Ultros",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202305/2420/d0adbcee60a2115317b7503f22ae2d7c451ad14d103406d5.png",
-   "platforms": [
-    "PS4",
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-02-26T15:43:46Z",
-   "hours": 1.4,
-   "first_played": "2026-09-27T12:30:17.680000+00:00",
-   "last_played": "2026-10-03T10:24:18.540000+00:00",
-   "progress": 2,
-   "earned": {
-    "bronze": 2,
-    "silver": 0,
-    "gold": 0,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 8,
-    "silver": 19,
-    "gold": 4,
-    "platinum": 1
-   },
-   "last_trophy": "2026-09-27T13:18:21+00:00",
-   "has_trophies": true,
-   "months": {
-    "2026-09": [
-     2,
-     0,
-     0,
-     0
-    ]
-   },
-   "trophy_lists": [
-    {
-     "id": "NPWR36557_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 2,
-     "groups": {}
-    }
-   ],
-   "rare": [
-    {
-     "at": "2026-09-27T12:51:46+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/63a73648-dc66-4aa0-81c9-758dfa75e9e2.png",
-     "n": "Nietzsche taken to heart",
-     "r": 27.3,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-09-27T13:18:21+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/a9903d73-cf7b-44d6-8292-1f43bd77bf8a.png",
-     "n": "Wrath upon the enraged",
-     "r": 28.3,
-     "t": "bronze"
-    }
-   ],
-   "aliases": [],
-   "trophies_earned": 2,
-   "trophies_total": 32,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-10-03T10:24:18.540000+00:00",
-   "hours_by_year": {
-    "2026": 1.4
-   },
-   "metacritic": 79,
-   "genres": [
-    "Indie",
-    "Adventure"
-   ],
-   "released": "2024-02-13",
-   "rawg_slug": "ultros",
-   "metacritic_source": "wikipedia",
-   "series": [],
-   "developers": [],
-   "publishers": [],
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "sci-fi",
-     "Sci-fi"
-    ],
-    [
-     "exploration",
-     "Exploration"
-    ],
-    [
-     "female-protagonist",
-     "Female Protagonist"
-    ],
-    [
-     "mystery",
-     "Mystery"
-    ],
-    [
-     "colorful",
-     "Colorful"
-    ],
-    [
-     "combat",
-     "combat"
-    ],
-    [
-     "metroidvania",
-     "Metroidvania"
-    ],
-    [
-     "roguelite",
-     "Roguelite"
-    ],
-    [
-     "stylized",
-     "Stylized"
-    ],
-    [
-     "hand-drawn",
-     "Hand-drawn"
-    ],
-    [
-     "protagonistka",
-     "Протагонистка"
-    ]
-   ],
-   "hltb": {
-    "main": 11.12,
-    "extra": 19.0,
-    "complete": 28.38,
-    "url": "https://howlongtobeat.com/game/129248"
-   },
-   "plat_rate": 0.4,
-   "rare_missing": 29,
-   "first_trophy_at": "2026-09-27T12:51:46+00:00",
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 30,
-   "easy": [
-    {
-     "n": "A hungry stomach has no ears",
-     "t": "bronze",
-     "r": 11.1,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "Setting a trap for others",
-     "t": "bronze",
-     "r": 9.2,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "The end is where we start from",
-     "t": "bronze",
-     "r": 4.5,
-     "h": true,
      "p": null
     }
    ]
@@ -12858,7 +13098,7 @@
    "hours": 27.9,
    "first_played": "2024-10-01T18:55:51.530000+00:00",
    "last_played": "2024-10-25T23:16:51.240000+00:00",
-   "progress": 27,
+   "progress": 22,
    "earned": {
     "bronze": 19,
     "silver": 0,
@@ -12866,9 +13106,9 @@
     "platinum": 0
    },
    "defined": {
-    "bronze": 46,
-    "silver": 6,
-    "gold": 2,
+    "bronze": 49,
+    "silver": 8,
+    "gold": 3,
     "platinum": 1
    },
    "last_trophy": "2024-10-25T21:57:51+00:00",
@@ -12887,8 +13127,11 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 27,
-     "groups": {}
+     "progress": 22,
+     "groups": {
+      "default": "Dragon's Dogma 2",
+      "001": "Dragon’s Dogma 2: Dark Arisen"
+     }
     }
    ],
    "rare": [
@@ -12930,7 +13173,7 @@
    ],
    "aliases": [],
    "trophies_earned": 19,
-   "trophies_total": 55,
+   "trophies_total": 61,
    "platinum": false,
    "status": "started",
    "last_activity": "2024-10-25T23:16:51.240000+00:00",

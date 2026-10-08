@@ -7733,6 +7733,80 @@
    "japan"
   ]
  ],
+ "earth-defense-forceworld-brothers": [
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "online",
+   "online"
+  ],
+  [
+   "battle",
+   "battle"
+  ],
+  [
+   "character",
+   "character"
+  ],
+  [
+   "fight",
+   "fight"
+  ],
+  [
+   "weapons",
+   "weapons"
+  ],
+  [
+   "history",
+   "history"
+  ],
+  [
+   "planet",
+   "planet"
+  ],
+  [
+   "defense",
+   "defense"
+  ],
+  [
+   "food",
+   "food"
+  ],
+  [
+   "square",
+   "square"
+  ],
+  [
+   "colors",
+   "colors"
+  ],
+  [
+   "invaders",
+   "invaders"
+  ],
+  [
+   "attack",
+   "attack"
+  ],
+  [
+   "block",
+   "block"
+  ],
+  [
+   "blocks",
+   "blocks"
+  ],
+  [
+   "rescue",
+   "rescue"
+  ]
+ ],
  "elden-ring": [
   [
    "singleplayer",
@@ -8549,6 +8623,56 @@
   [
    "vampire",
    "Vampire"
+  ]
+ ],
+ "f1-2017": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "steam-leaderboards",
+   "Steam Leaderboards"
+  ],
+  [
+   "steam-workshop",
+   "Steam Workshop"
+  ],
+  [
+   "realistic",
+   "Realistic"
+  ],
+  [
+   "vr",
+   "VR"
+  ],
+  [
+   "driving",
+   "Driving"
   ]
  ],
  "fallout-4": [
@@ -11836,6 +11960,36 @@
   [
    "drift",
    "drift"
+  ]
+ ],
+ "hunt-showdown": [
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "violent",
+   "Violent"
+  ],
+  [
+   "online-multiplayer",
+   "Online multiplayer"
+  ],
+  [
+   "early-access",
+   "Early Access"
   ]
  ],
  "iconoclasts": [
