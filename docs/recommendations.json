@@ -1,24 +1,23 @@
 {
- "week": "2026-W41",
- "generated_at": "2026-10-05T04:28:17+00:00",
+ "week": "2026-W42",
+ "generated_at": "2026-10-12T04:29:30+00:00",
  "picks": [
   {
-   "slug": "owlboy",
-   "name": "Owlboy",
-   "image": "https://media.rawg.io/media/games/0fc/0fc933e3dfbbf4306840ef429d73fa9a.jpg",
-   "metacritic": 88,
-   "released": "2016-10-31",
+   "slug": "dark-souls-iii",
+   "name": "Dark Souls III",
+   "image": "https://media.rawg.io/media/games/da1/da1b267764d77221f07a4386b6548e5a.jpg",
+   "metacritic": 89,
+   "released": "2016-04-11",
    "genres": [
-    "Indie",
-    "Platformer",
-    "Adventure"
+    "Action",
+    "RPG"
    ],
    "platforms": [
     "PS4"
    ],
-   "length": 10,
-   "why": "Close to FINAL FANTASY VII REBIRTH, which you enjoyed; matches your taste for atmospheric, story rich, action-adventure; about 10 h.",
-   "url": "https://rawg.io/games/owlboy",
+   "length": 48,
+   "why": "Close to ELDEN RING, which you enjoyed; matches your taste for atmospheric, story rich, exploration; about 48 h.",
+   "url": "https://rawg.io/games/dark-souls-iii",
    "tags": [
     [
      "atmospheric",
@@ -37,106 +36,107 @@
      "Open World"
     ],
     [
-     "fantasy",
-     "Fantasy"
+     "cooperative",
+     "cooperative"
     ],
     [
-     "funny",
-     "Funny"
-    ],
-    [
-     "action-adventure",
-     "Action-Adventure"
-    ],
-    [
-     "pixel-graphics",
-     "Pixel Graphics"
-    ],
-    [
-     "retro",
-     "Retro"
-    ],
-    [
-     "anime",
-     "Anime"
-    ]
-   ]
-  },
-  {
-   "slug": "dishonored-2",
-   "name": "Dishonored 2",
-   "image": "https://media.rawg.io/media/games/f6b/f6bed028b02369d4cab548f4f9337e81.jpg",
-   "metacritic": 86,
-   "released": "2016-11-10",
-   "genres": [
-    "Action",
-    "RPG"
-   ],
-   "platforms": [
-    "PS4"
-   ],
-   "length": 23,
-   "why": "Close to Shadow of the Tomb Raider, which you enjoyed; matches your taste for atmospheric, story rich, exploration; about 23 h, close to your usual 17 h.",
-   "url": "https://rawg.io/games/dishonored-2",
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "story-rich",
-     "Story Rich"
-    ],
-    [
-     "open-world",
-     "Open World"
-    ],
-    [
-     "gore",
-     "Gore"
+     "horror",
+     "Horror"
     ],
     [
      "exploration",
      "Exploration"
     ],
     [
-     "female-protagonist",
-     "Female Protagonist"
+     "difficult",
+     "Difficult"
     ],
     [
-     "stealth",
-     "Stealth"
+     "action-rpg",
+     "Action RPG"
     ],
     [
-     "magic",
-     "Magic"
-    ],
-    [
-     "parkour",
-     "Parkour"
-    ],
-    [
-     "dystopian",
-     "Dystopian"
+     "character-customization",
+     "Character Customization"
     ]
    ]
   },
   {
-   "slug": "grand-theft-auto-iii",
-   "name": "Grand Theft Auto III",
-   "image": "https://media.rawg.io/media/games/5fa/5fae5fec3c943179e09da67a4427d68f.jpg",
-   "metacritic": 93,
-   "released": "2001-10-22",
+   "slug": "ratchet-clank-rift-apart",
+   "name": "Ratchet & Clank: Rift Apart",
+   "image": "https://media.rawg.io/media/games/ccf/ccfd3fd488a8ed61145a3da96c080131.jpg",
+   "metacritic": 88,
+   "released": "2021-06-11",
    "genres": [
-    "Shooter",
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "length": 15,
+   "why": "Close to Marvel's Spider-Man 2, which you enjoyed; matches your taste for action-adventure, open world, female protagonist; about 15 h, close to your usual 17 h.",
+   "url": "https://rawg.io/games/ratchet-clank-rift-apart",
+   "tags": [
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "cute",
+     "Cute"
+    ],
+    [
+     "3d-platformer",
+     "3D Platformer"
+    ]
+   ]
+  },
+  {
+   "slug": "brothers-a-tale-of-two-sons-2",
+   "name": "Brothers: A Tale of Two Sons",
+   "image": "https://media.rawg.io/media/games/b6b/b6b20bfc4b34e312dbc8aac53c95a348.jpg",
+   "metacritic": 90,
+   "released": "2013-08-07",
+   "genres": [
+    "Indie",
+    "Adventure",
     "Action"
    ],
    "platforms": [
     "PS4"
    ],
-   "length": 20,
-   "why": "Close to Fallout 4, which you enjoyed; matches your taste for atmospheric, story rich, open world; about 20 h, close to your usual 17 h.",
-   "url": "https://rawg.io/games/grand-theft-auto-iii",
+   "length": 4,
+   "why": "Close to Night in the Woods, which you enjoyed; matches your taste for atmospheric, story rich, fantasy; about 4 h.",
+   "url": "https://rawg.io/games/brothers-a-tale-of-two-sons-2",
    "tags": [
     [
      "atmospheric",
@@ -147,36 +147,36 @@
      "Story Rich"
     ],
     [
-     "open-world",
-     "Open World"
+     "fantasy",
+     "Fantasy"
     ],
     [
-     "sandbox",
-     "Sandbox"
+     "survival",
+     "Survival"
     ],
     [
-     "violent",
-     "Violent"
+     "controller-support",
+     "controller support"
     ],
     [
-     "third-person-shooter",
-     "Third-Person Shooter"
+     "short",
+     "Short"
     ],
     [
-     "moddable",
-     "Moddable"
+     "colorful",
+     "Colorful"
     ],
     [
-     "mature",
-     "Mature"
+     "turn-based-strategy",
+     "Turn-Based Strategy"
     ],
     [
-     "crime",
-     "Crime"
+     "walking-simulator",
+     "Walking Simulator"
     ],
     [
-     "driving",
-     "Driving"
+     "top-down",
+     "Top-Down"
     ]
    ]
   }
@@ -201,6 +201,18 @@
   "usual_length": 17
  },
  "history": [
+  {
+   "slug": "dark-souls-iii",
+   "week": "2026-W42"
+  },
+  {
+   "slug": "ratchet-clank-rift-apart",
+   "week": "2026-W42"
+  },
+  {
+   "slug": "brothers-a-tale-of-two-sons-2",
+   "week": "2026-W42"
+  },
   {
    "slug": "owlboy",
    "week": "2026-W41"
