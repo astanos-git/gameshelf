@@ -1,4 +1,107 @@
 {
+ "brothers-a-tale-of-two-sons-2": {
+  "at": "2026-10-14T10:53:30Z",
+  "feedback": "up",
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "name": "Brothers: A Tale of Two Sons",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "fantasy",
+    "Fantasy"
+   ],
+   [
+    "survival",
+    "Survival"
+   ],
+   [
+    "controller-support",
+    "controller support"
+   ],
+   [
+    "short",
+    "Short"
+   ],
+   [
+    "colorful",
+    "Colorful"
+   ],
+   [
+    "turn-based-strategy",
+    "Turn-Based Strategy"
+   ],
+   [
+    "walking-simulator",
+    "Walking Simulator"
+   ],
+   [
+    "top-down",
+    "Top-Down"
+   ]
+  ]
+ },
+ "dark-souls-iii": {
+  "at": "2026-10-14T10:53:30Z",
+  "feedback": "up",
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "name": "Dark Souls III",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "rpg",
+    "RPG"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "open-world",
+    "Open World"
+   ],
+   [
+    "cooperative",
+    "cooperative"
+   ],
+   [
+    "horror",
+    "Horror"
+   ],
+   [
+    "exploration",
+    "Exploration"
+   ],
+   [
+    "difficult",
+    "Difficult"
+   ],
+   [
+    "action-rpg",
+    "Action RPG"
+   ],
+   [
+    "character-customization",
+    "Character Customization"
+   ]
+  ]
+ },
  "dishonored-2": {
   "at": "2026-10-05T05:02:35Z",
   "feedback": "up",
@@ -253,6 +356,57 @@
    [
     "anime",
     "Anime"
+   ]
+  ]
+ },
+ "ratchet-clank-rift-apart": {
+  "at": "2026-10-14T10:53:30Z",
+  "feedback": "up",
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "name": "Ratchet & Clank: Rift Apart",
+  "tags": [
+   [
+    "open-world",
+    "Open World"
+   ],
+   [
+    "cooperative",
+    "cooperative"
+   ],
+   [
+    "sci-fi",
+    "Sci-fi"
+   ],
+   [
+    "funny",
+    "Funny"
+   ],
+   [
+    "female-protagonist",
+    "Female Protagonist"
+   ],
+   [
+    "action-adventure",
+    "Action-Adventure"
+   ],
+   [
+    "third-person-shooter",
+    "Third-Person Shooter"
+   ],
+   [
+    "family-friendly",
+    "Family Friendly"
+   ],
+   [
+    "cute",
+    "Cute"
+   ],
+   [
+    "3d-platformer",
+    "3D Platformer"
    ]
   ]
  },

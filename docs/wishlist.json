@@ -1,4 +1,21 @@
 {
+ "brothers-a-tale-of-two-sons-2": {
+  "added": "2026-10-14T10:53:30Z",
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "image": "https://media.rawg.io/media/games/b6b/b6b20bfc4b34e312dbc8aac53c95a348.jpg",
+  "length": 4,
+  "metacritic": 90,
+  "name": "Brothers: A Tale of Two Sons",
+  "platforms": [
+   "PS4"
+  ],
+  "released": "2013-08-07",
+  "url": "https://rawg.io/games/brothers-a-tale-of-two-sons-2"
+ },
  "owlboy": {
   "added": "2026-10-05T05:02:35Z",
   "genres": [
@@ -15,6 +32,22 @@
   ],
   "released": "2016-10-31",
   "url": "https://rawg.io/games/owlboy"
+ },
+ "ratchet-clank-rift-apart": {
+  "added": "2026-10-14T10:53:30Z",
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "image": "https://media.rawg.io/media/games/ccf/ccfd3fd488a8ed61145a3da96c080131.jpg",
+  "length": 15,
+  "metacritic": 88,
+  "name": "Ratchet & Clank: Rift Apart",
+  "platforms": [
+   "PS5"
+  ],
+  "released": "2021-06-11",
+  "url": "https://rawg.io/games/ratchet-clank-rift-apart"
  },
  "shadows-die-twice": {
   "added": "2026-10-02T10:10:37Z",
