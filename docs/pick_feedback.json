@@ -1,4 +1,55 @@
 {
+ "bayonetta": {
+  "at": "2026-10-19T14:46:59Z",
+  "feedback": "up",
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "name": "Bayonetta",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "fantasy",
+    "Fantasy"
+   ],
+   [
+    "gore",
+    "Gore"
+   ],
+   [
+    "female-protagonist",
+    "Female Protagonist"
+   ],
+   [
+    "comedy",
+    "Comedy"
+   ],
+   [
+    "anime",
+    "Anime"
+   ],
+   [
+    "nudity",
+    "Nudity"
+   ],
+   [
+    "hack-and-slash",
+    "Hack and Slash"
+   ],
+   [
+    "mature",
+    "Mature"
+   ],
+   [
+    "fast-paced",
+    "Fast-Paced"
+   ]
+  ]
+ },
  "brothers-a-tale-of-two-sons-2": {
   "at": "2026-10-14T10:53:30Z",
   "feedback": "up",
@@ -255,6 +306,56 @@
    ]
   ]
  },
+ "grand-theft-auto-vice-city": {
+  "at": "2026-10-19T14:46:59Z",
+  "feedback": "down",
+  "genres": [
+   "Action"
+  ],
+  "name": "Grand Theft Auto: Vice City",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "open-world",
+    "Open World"
+   ],
+   [
+    "funny",
+    "Funny"
+   ],
+   [
+    "sandbox",
+    "Sandbox"
+   ],
+   [
+    "violent",
+    "Violent"
+   ],
+   [
+    "third-person-shooter",
+    "Third-Person Shooter"
+   ],
+   [
+    "moddable",
+    "Moddable"
+   ],
+   [
+    "mature",
+    "Mature"
+   ],
+   [
+    "crime",
+    "Crime"
+   ],
+   [
+    "driving",
+    "Driving"
+   ]
+  ]
+ },
  "hades-2018": {
   "at": "2026-10-02T10:10:37Z",
   "feedback": "up",
@@ -458,6 +559,58 @@
    [
     "action-rpg",
     "Action RPG"
+   ]
+  ]
+ },
+ "star-wars-jedi-knight-ii-jedi-outcast": {
+  "at": "2026-10-19T14:46:59Z",
+  "feedback": "down",
+  "genres": [
+   "Shooter",
+   "Adventure",
+   "Action"
+  ],
+  "name": "Star Wars Jedi Knight II: Jedi Outcast",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "sci-fi",
+    "Sci-fi"
+   ],
+   [
+    "fps",
+    "FPS"
+   ],
+   [
+    "third-person-shooter",
+    "Third-Person Shooter"
+   ],
+   [
+    "space",
+    "Space"
+   ],
+   [
+    "moddable",
+    "Moddable"
+   ],
+   [
+    "combat",
+    "combat"
+   ],
+   [
+    "cult-classic",
+    "Cult Classic"
+   ],
+   [
+    "epic",
+    "Epic"
    ]
   ]
  }
