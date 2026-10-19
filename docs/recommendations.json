@@ -1,182 +1,181 @@
 {
- "week": "2026-W42",
- "generated_at": "2026-10-12T04:29:30+00:00",
+ "week": "2026-W43",
+ "generated_at": "2026-10-19T04:39:33+00:00",
  "picks": [
   {
-   "slug": "dark-souls-iii",
-   "name": "Dark Souls III",
-   "image": "https://media.rawg.io/media/games/da1/da1b267764d77221f07a4386b6548e5a.jpg",
-   "metacritic": 89,
-   "released": "2016-04-11",
-   "genres": [
-    "Action",
-    "RPG"
-   ],
-   "platforms": [
-    "PS4"
-   ],
-   "length": 48,
-   "why": "Close to ELDEN RING, which you enjoyed; matches your taste for atmospheric, story rich, exploration; about 48 h.",
-   "url": "https://rawg.io/games/dark-souls-iii",
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "rpg",
-     "RPG"
-    ],
-    [
-     "story-rich",
-     "Story Rich"
-    ],
-    [
-     "open-world",
-     "Open World"
-    ],
-    [
-     "cooperative",
-     "cooperative"
-    ],
-    [
-     "horror",
-     "Horror"
-    ],
-    [
-     "exploration",
-     "Exploration"
-    ],
-    [
-     "difficult",
-     "Difficult"
-    ],
-    [
-     "action-rpg",
-     "Action RPG"
-    ],
-    [
-     "character-customization",
-     "Character Customization"
-    ]
-   ]
-  },
-  {
-   "slug": "ratchet-clank-rift-apart",
-   "name": "Ratchet & Clank: Rift Apart",
-   "image": "https://media.rawg.io/media/games/ccf/ccfd3fd488a8ed61145a3da96c080131.jpg",
-   "metacritic": 88,
-   "released": "2021-06-11",
+   "slug": "bayonetta",
+   "name": "Bayonetta",
+   "image": "https://media.rawg.io/media/games/bee/bee483efadcf9d7e657e52184316a34e.jpg",
+   "metacritic": 90,
+   "released": "2009-06-23",
    "genres": [
     "Adventure",
     "Action"
    ],
    "platforms": [
-    "PS5"
+    "PS4"
    ],
    "length": 15,
-   "why": "Close to Marvel's Spider-Man 2, which you enjoyed; matches your taste for action-adventure, open world, female protagonist; about 15 h, close to your usual 17 h.",
-   "url": "https://rawg.io/games/ratchet-clank-rift-apart",
-   "tags": [
-    [
-     "open-world",
-     "Open World"
-    ],
-    [
-     "cooperative",
-     "cooperative"
-    ],
-    [
-     "sci-fi",
-     "Sci-fi"
-    ],
-    [
-     "funny",
-     "Funny"
-    ],
-    [
-     "female-protagonist",
-     "Female Protagonist"
-    ],
-    [
-     "action-adventure",
-     "Action-Adventure"
-    ],
-    [
-     "third-person-shooter",
-     "Third-Person Shooter"
-    ],
-    [
-     "family-friendly",
-     "Family Friendly"
-    ],
-    [
-     "cute",
-     "Cute"
-    ],
-    [
-     "3d-platformer",
-     "3D Platformer"
-    ]
-   ]
-  },
-  {
-   "slug": "brothers-a-tale-of-two-sons-2",
-   "name": "Brothers: A Tale of Two Sons",
-   "image": "https://media.rawg.io/media/games/b6b/b6b20bfc4b34e312dbc8aac53c95a348.jpg",
-   "metacritic": 90,
-   "released": "2013-08-07",
-   "genres": [
-    "Indie",
-    "Adventure",
-    "Action"
-   ],
-   "platforms": [
-    "PS4"
-   ],
-   "length": 4,
-   "why": "Close to Night in the Woods, which you enjoyed; matches your taste for atmospheric, story rich, fantasy; about 4 h.",
-   "url": "https://rawg.io/games/brothers-a-tale-of-two-sons-2",
+   "why": "Close to The Witcher 3: Wild Hunt — Remastered, which you enjoyed; matches your taste for atmospheric, female protagonist, fantasy; about 15 h, close to your usual 17 h.",
+   "url": "https://rawg.io/games/bayonetta",
    "tags": [
     [
      "atmospheric",
      "Atmospheric"
-    ],
-    [
-     "story-rich",
-     "Story Rich"
     ],
     [
      "fantasy",
      "Fantasy"
     ],
     [
-     "survival",
-     "Survival"
+     "gore",
+     "Gore"
     ],
     [
-     "controller-support",
-     "controller support"
+     "female-protagonist",
+     "Female Protagonist"
     ],
     [
-     "short",
-     "Short"
+     "comedy",
+     "Comedy"
     ],
     [
-     "colorful",
-     "Colorful"
+     "anime",
+     "Anime"
     ],
     [
-     "turn-based-strategy",
-     "Turn-Based Strategy"
+     "nudity",
+     "Nudity"
     ],
     [
-     "walking-simulator",
-     "Walking Simulator"
+     "hack-and-slash",
+     "Hack and Slash"
     ],
     [
-     "top-down",
-     "Top-Down"
+     "mature",
+     "Mature"
+    ],
+    [
+     "fast-paced",
+     "Fast-Paced"
+    ]
+   ]
+  },
+  {
+   "slug": "star-wars-jedi-knight-ii-jedi-outcast",
+   "name": "Star Wars Jedi Knight II: Jedi Outcast",
+   "image": "https://media.rawg.io/media/games/0a5/0a56e2bb9ce95359e69ff9689c553a45.jpg",
+   "metacritic": 89,
+   "released": "2002-03-01",
+   "genres": [
+    "Shooter",
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS4"
+   ],
+   "length": 16,
+   "why": "Close to Fallout 4, which you enjoyed; matches your taste for atmospheric, story rich, sci-fi; about 16 h, close to your usual 17 h.",
+   "url": "https://rawg.io/games/star-wars-jedi-knight-ii-jedi-outcast",
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "space",
+     "Space"
+    ],
+    [
+     "moddable",
+     "Moddable"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "cult-classic",
+     "Cult Classic"
+    ],
+    [
+     "epic",
+     "Epic"
+    ]
+   ]
+  },
+  {
+   "slug": "grand-theft-auto-vice-city",
+   "name": "Grand Theft Auto: Vice City",
+   "image": "https://media.rawg.io/media/games/13a/13a528ac9cf48bbb6be5d35fe029336d.jpg",
+   "metacritic": 94,
+   "released": "2002-10-27",
+   "genres": [
+    "Action"
+   ],
+   "platforms": [
+    "PS4"
+   ],
+   "length": 24,
+   "why": "Close to Fallout 4, which you enjoyed; matches your taste for atmospheric, open world, violent; about 24 h, close to your usual 17 h.",
+   "url": "https://rawg.io/games/grand-theft-auto-vice-city",
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "moddable",
+     "Moddable"
+    ],
+    [
+     "mature",
+     "Mature"
+    ],
+    [
+     "crime",
+     "Crime"
+    ],
+    [
+     "driving",
+     "Driving"
     ]
    ]
   }
@@ -201,6 +200,18 @@
   "usual_length": 17
  },
  "history": [
+  {
+   "slug": "bayonetta",
+   "week": "2026-W43"
+  },
+  {
+   "slug": "star-wars-jedi-knight-ii-jedi-outcast",
+   "week": "2026-W43"
+  },
+  {
+   "slug": "grand-theft-auto-vice-city",
+   "week": "2026-W43"
+  },
   {
    "slug": "dark-souls-iii",
    "week": "2026-W42"

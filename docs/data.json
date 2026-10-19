@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T04:27:35+00:00",
+ "generated_at": "2026-10-19T04:37:49+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -18,6 +18,207 @@
   }
  },
  "games": [
+  {
+   "name": "Metaphor: ReFantazio",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2406/672cc5f97e84c564649093d4f6a3726f328e0de1814ab2e0.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2025-03-12T19:51:00Z",
+   "hours": 44.5,
+   "first_played": "2026-08-23T09:10:05.600000+00:00",
+   "last_played": "2026-10-18T23:32:55.870000+00:00",
+   "progress": 25,
+   "earned": {
+    "bronze": 17,
+    "silver": 0,
+    "gold": 0,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 32,
+    "silver": 8,
+    "gold": 3,
+    "platinum": 1
+   },
+   "last_trophy": "2026-10-10T13:24:25+00:00",
+   "has_trophies": true,
+   "months": {
+    "2026-08": [
+     6,
+     0,
+     0,
+     0
+    ],
+    "2026-09": [
+     8,
+     0,
+     0,
+     0
+    ],
+    "2026-10": [
+     3,
+     0,
+     0,
+     0
+    ]
+   },
+   "trophy_lists": [
+    {
+     "id": "NPWR25347_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 25,
+     "groups": {}
+    }
+   ],
+   "rare": [
+    {
+     "at": "2026-10-01T13:46:57+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/fd3d44f6-a941-48bd-a2dd-8dfc14e69e34.PNG",
+     "n": "Chef in Training",
+     "r": 18.3,
+     "t": "bronze"
+    },
+    {
+     "at": "2026-10-10T13:24:25+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/2d35cb59-a31f-4700-b00f-67d90e7225f8.PNG",
+     "n": "For Science!",
+     "r": 56.7,
+     "t": "bronze"
+    },
+    {
+     "at": "2026-10-10T12:48:31+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/6f3ffa5f-0db0-4ee7-98c1-1305f5df214b.PNG",
+     "n": "On Knife's Edge",
+     "r": 59.6,
+     "t": "bronze"
+    },
+    {
+     "at": "2026-09-21T09:04:33+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/6cfe9197-5c40-4e1c-8886-30989caf9d39.PNG",
+     "n": "What's Yours is Mine",
+     "r": 61.0,
+     "t": "bronze"
+    },
+    {
+     "at": "2026-09-18T21:12:04+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/b04fbab2-691a-4d11-94c0-53980c76de7b.PNG",
+     "n": "Tactical Strike",
+     "r": 62.5,
+     "t": "bronze"
+    }
+   ],
+   "aliases": [],
+   "trophies_earned": 17,
+   "trophies_total": 44,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-10-18T23:32:55.870000+00:00",
+   "hours_by_year": {
+    "2026": 44.5
+   },
+   "metacritic": 92,
+   "genres": [
+    "Adventure",
+    "Action",
+    "RPG"
+   ],
+   "released": "2024-10-11",
+   "rawg_slug": "metaphor-refantazio",
+   "metacritic_source": "wikipedia",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "fantasy",
+     "Fantasy"
+    ],
+    [
+     "action-rpg",
+     "Action RPG"
+    ],
+    [
+     "anime",
+     "Anime"
+    ],
+    [
+     "hack-and-slash",
+     "Hack and Slash"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "dark-fantasy",
+     "Dark Fantasy"
+    ],
+    [
+     "turn-based-strategy",
+     "Turn-Based Strategy"
+    ],
+    [
+     "steam-trading-cards-2",
+     "Steam Trading Cards"
+    ],
+    [
+     "jrpg",
+     "JRPG"
+    ],
+    [
+     "turn-based-combat",
+     "Turn-Based Combat"
+    ]
+   ],
+   "hltb": {
+    "main": 65.4,
+    "extra": 88.34,
+    "complete": 109.25,
+    "url": "https://howlongtobeat.com/game/129956"
+   },
+   "plat_rate": 4.7,
+   "rare_missing": 3,
+   "first_trophy_at": "2026-08-26T20:16:43+00:00",
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 27,
+   "easy": [
+    {
+     "n": "Stray Elements",
+     "t": "bronze",
+     "r": 59.8,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "History Untold",
+     "t": "bronze",
+     "r": 56.3,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "Mission Accomplished",
+     "t": "bronze",
+     "r": 54.5,
+     "h": true,
+     "p": null
+    }
+   ]
+  },
   {
    "name": "Fortnite",
    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1819/sbaZEJ4jKCsdLAjQwVPSzMza.png",
@@ -209,25 +410,25 @@
    ],
    "rare": [
     {
-     "n": "A hungry stomach has no ears",
-     "t": "bronze",
-     "r": 11.2,
      "at": "2026-10-10T16:34:12+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/6d2fc8d0-6493-4745-bd80-bcbfc1daf6dd.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/6d2fc8d0-6493-4745-bd80-bcbfc1daf6dd.png",
+     "n": "A hungry stomach has no ears",
+     "r": 11.2,
+     "t": "bronze"
     },
     {
-     "n": "Nietzsche taken to heart",
-     "t": "bronze",
-     "r": 27.3,
      "at": "2026-09-27T12:51:46+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/63a73648-dc66-4aa0-81c9-758dfa75e9e2.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/63a73648-dc66-4aa0-81c9-758dfa75e9e2.png",
+     "n": "Nietzsche taken to heart",
+     "r": 27.3,
+     "t": "bronze"
     },
     {
-     "n": "Wrath upon the enraged",
-     "t": "bronze",
-     "r": 28.3,
      "at": "2026-09-27T13:18:21+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/a9903d73-cf7b-44d6-8292-1f43bd77bf8a.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/a9903d73-cf7b-44d6-8292-1f43bd77bf8a.png",
+     "n": "Wrath upon the enraged",
+     "r": 28.3,
+     "t": "bronze"
     }
    ],
    "aliases": [],
@@ -331,207 +532,6 @@
      "n": "A pulse grows in the temple",
      "t": "silver",
      "r": 4.2,
-     "h": true,
-     "p": null
-    }
-   ]
-  },
-  {
-   "name": "Metaphor: ReFantazio",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2406/672cc5f97e84c564649093d4f6a3726f328e0de1814ab2e0.png",
-   "platforms": [
-    "PS4",
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2025-03-12T19:51:00Z",
-   "hours": 42.4,
-   "first_played": "2026-08-23T09:10:05.600000+00:00",
-   "last_played": "2026-10-10T14:08:10.270000+00:00",
-   "progress": 25,
-   "earned": {
-    "bronze": 17,
-    "silver": 0,
-    "gold": 0,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 32,
-    "silver": 8,
-    "gold": 3,
-    "platinum": 1
-   },
-   "last_trophy": "2026-10-10T13:24:25+00:00",
-   "has_trophies": true,
-   "months": {
-    "2026-08": [
-     6,
-     0,
-     0,
-     0
-    ],
-    "2026-09": [
-     8,
-     0,
-     0,
-     0
-    ],
-    "2026-10": [
-     3,
-     0,
-     0,
-     0
-    ]
-   },
-   "trophy_lists": [
-    {
-     "id": "NPWR25347_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 25,
-     "groups": {}
-    }
-   ],
-   "rare": [
-    {
-     "n": "Chef in Training",
-     "t": "bronze",
-     "r": 18.3,
-     "at": "2026-10-01T13:46:57+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/fd3d44f6-a941-48bd-a2dd-8dfc14e69e34.PNG"
-    },
-    {
-     "n": "For Science!",
-     "t": "bronze",
-     "r": 56.7,
-     "at": "2026-10-10T13:24:25+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/2d35cb59-a31f-4700-b00f-67d90e7225f8.PNG"
-    },
-    {
-     "n": "On Knife's Edge",
-     "t": "bronze",
-     "r": 59.6,
-     "at": "2026-10-10T12:48:31+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/6f3ffa5f-0db0-4ee7-98c1-1305f5df214b.PNG"
-    },
-    {
-     "n": "What's Yours is Mine",
-     "t": "bronze",
-     "r": 61.0,
-     "at": "2026-09-21T09:04:33+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/6cfe9197-5c40-4e1c-8886-30989caf9d39.PNG"
-    },
-    {
-     "n": "Tactical Strike",
-     "t": "bronze",
-     "r": 62.5,
-     "at": "2026-09-18T21:12:04+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR25347_00/b04fbab2-691a-4d11-94c0-53980c76de7b.PNG"
-    }
-   ],
-   "aliases": [],
-   "trophies_earned": 17,
-   "trophies_total": 44,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-10-10T14:08:10.270000+00:00",
-   "hours_by_year": {
-    "2026": 42.4
-   },
-   "metacritic": 92,
-   "genres": [
-    "Adventure",
-    "Action",
-    "RPG"
-   ],
-   "released": "2024-10-11",
-   "rawg_slug": "metaphor-refantazio",
-   "metacritic_source": "wikipedia",
-   "series": [],
-   "developers": [],
-   "publishers": [],
-   "tags": [
-    [
-     "rpg",
-     "RPG"
-    ],
-    [
-     "story-rich",
-     "Story Rich"
-    ],
-    [
-     "fantasy",
-     "Fantasy"
-    ],
-    [
-     "action-rpg",
-     "Action RPG"
-    ],
-    [
-     "anime",
-     "Anime"
-    ],
-    [
-     "hack-and-slash",
-     "Hack and Slash"
-    ],
-    [
-     "colorful",
-     "Colorful"
-    ],
-    [
-     "dark-fantasy",
-     "Dark Fantasy"
-    ],
-    [
-     "turn-based-strategy",
-     "Turn-Based Strategy"
-    ],
-    [
-     "steam-trading-cards-2",
-     "Steam Trading Cards"
-    ],
-    [
-     "jrpg",
-     "JRPG"
-    ],
-    [
-     "turn-based-combat",
-     "Turn-Based Combat"
-    ]
-   ],
-   "hltb": {
-    "main": 65.4,
-    "extra": 88.34,
-    "complete": 109.25,
-    "url": "https://howlongtobeat.com/game/129956"
-   },
-   "plat_rate": 4.7,
-   "rare_missing": 3,
-   "first_trophy_at": "2026-08-26T20:16:43+00:00",
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 27,
-   "easy": [
-    {
-     "n": "Stray Elements",
-     "t": "bronze",
-     "r": 59.8,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "History Untold",
-     "t": "bronze",
-     "r": 56.3,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "Mission Accomplished",
-     "t": "bronze",
-     "r": 54.5,
      "h": true,
      "p": null
     }
@@ -779,7 +779,7 @@
   },
   {
    "name": "Battlefield™ 6",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1613/cb422a1792ed8658d169c1dc7c0f652c789e3d73035efd47.png",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1411/c8c8def7d4bd44535233fcc0eb1235183853c0bb8150b8a6.png",
    "platforms": [
     "PS5"
    ],
@@ -2609,7 +2609,6 @@
    ],
    "publishers": [
     "Deck13 Interactive",
-    "WhisperGames",
     "Dangen Entertainment",
     "Inin Games"
    ],
@@ -18133,9 +18132,7 @@
    "released": "2020-05-19",
    "rawg_slug": "mafia-ii-definitive-edition",
    "metacritic_source": "rawg",
-   "series": [
-    "Mafia"
-   ],
+   "series": [],
    "developers": [],
    "publishers": [
     "2K"
@@ -22202,9 +22199,7 @@
    "released": "2020-09-25",
    "rawg_slug": "mafia",
    "metacritic_source": "rawg",
-   "series": [
-    "Mafia"
-   ],
+   "series": [],
    "developers": [],
    "publishers": [
     "2K"
@@ -25707,7 +25702,7 @@
    ]
   },
   {
-   "name": "Rayman® Legends",
+   "name": "Rayman Legends",
    "image": "https://image.api.playstation.com/cdn/EP0001/CUSA00031_00/r2GRzmBmAA3SFP4eEuYNjM2bsjD2ptWm.png",
    "platforms": [
     "PS4"
@@ -25806,7 +25801,7 @@
     }
    ],
    "aliases": [
-    "Rayman Legends"
+    "Rayman® Legends"
    ],
    "trophies_earned": 11,
    "trophies_total": 51,
@@ -25887,7 +25882,7 @@
    ],
    "hltb": {
     "main": 10.04,
-    "extra": 16.19,
+    "extra": 16.21,
     "complete": 31.56,
     "url": "https://howlongtobeat.com/game/12655"
    },
@@ -37818,9 +37813,7 @@
    "released": "2020-09-25",
    "rawg_slug": "mafia-trilogy",
    "metacritic_source": null,
-   "series": [
-    "Mafia"
-   ],
+   "series": [],
    "developers": [],
    "publishers": [
     "2K"
@@ -39565,9 +39558,7 @@
    "released": "2016-03-22",
    "rawg_slug": "trackmania-turbo",
    "metacritic_source": "rawg",
-   "series": [
-    "TrackMania"
-   ],
+   "series": [],
    "developers": [
     "Nadeo"
    ],

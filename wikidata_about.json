@@ -445,7 +445,6 @@
   ],
   "publishers": [
    "Deck13 Interactive",
-   "WhisperGames",
    "Dangen Entertainment",
    "Inin Games"
   ],
@@ -1483,27 +1482,21 @@
   "publishers": [
    "2K"
   ],
-  "series": [
-   "Mafia"
-  ]
+  "series": []
  },
  "mafia-ii-definitive-edition": {
   "developers": [],
   "publishers": [
    "2K"
   ],
-  "series": [
-   "Mafia"
-  ]
+  "series": []
  },
  "mafia-trilogy": {
   "developers": [],
   "publishers": [
    "2K"
   ],
-  "series": [
-   "Mafia"
-  ]
+  "series": []
  },
  "man-of-medan": {
   "developers": [],
@@ -2551,9 +2544,7 @@
    "Nadeo"
   ],
   "publishers": [],
-  "series": [
-   "TrackMania"
-  ]
+  "series": []
  },
  "trek-to-yomi": {
   "developers": [
