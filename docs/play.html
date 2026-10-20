@@ -285,18 +285,25 @@ function digest() {
   const days = Object.entries(DATA.insights?.days || {}).filter(([d]) => d >= key(start) && d < key(end));
   const trophies = sum(days.map(([, n]) => n));
   const plats = (DATA.insights?.milestones || []).filter(m => m.kind === "platinum" && inWeek(m.at));
-  // hours: difference between the last two Monday snapshots
-  let hoursTxt = `<span class="note">Hours per game show from next Monday.</span>`;
-  if (SNAPS.length >= 2) {
-    const [a, b] = SNAPS.slice(-2), delta = Object.entries(b.hours).map(([n, h]) => [n, h - (a.hours[n] || 0)]).filter(([, d]) => d >= 0.2).sort((x, y) => y[1] - x[1]);
-    hoursTxt = delta.length ? `<b>${fmtH(sum(delta.map(d => d[1])))}</b> played: ${delta.slice(0, 3).map(([n, d]) => `${esc(n)} (${fmtH(d)})`).join(", ")}${delta.length > 3 ? `, +${delta.length - 3} more` : ""}`
+  // hours: difference between the snapshot taken this Monday and the one from the Monday before.
+  // A game is matched under its current name or any older name (store names change), and only
+  // games PSN says you played since the start of the week can count.
+  const snapOn = d => SNAPS.find(sn => sn.date >= key(d) && sn.date <= key(new Date(+d + 2 * 864e5)));
+  const a = snapOn(start), b = snapOn(end);
+  let hours = null, hoursTxt = `<span class="note">Hours per game appear after the Monday update.</span>`;
+  if (a && b) {
+    const before = n => { const g = byName(n), names = [n, ...(g?.aliases || [])]; const k = names.find(m => a.hours[m] != null); return k ? a.hours[k] : 0; };
+    const playedSince = n => { const g = byName(n); return !g?.last_played || new Date(g.last_played) >= start; };
+    const delta = Object.entries(b.hours).map(([n, h]) => [n, h - before(n)]).filter(([n, d]) => d >= 0.2 && playedSince(n)).sort((x, y) => y[1] - x[1]);
+    hours = sum(delta.map(d => d[1]));
+    hoursTxt = delta.length ? `${delta.slice(0, 3).map(([n, d]) => `${esc(n)} (${fmtH(d)})`).join(", ")}${delta.length > 3 ? `, +${delta.length - 3} more` : ""}`
       : "No PS4/PS5 playtime last week.";
   }
   const started = DATA.games.filter(g => inWeek([g.first_played, g.first_trophy_at].filter(Boolean).sort()[0]));
   const y = String(today.getFullYear()), G = GOALS[y];
   let goals = "";
   if (G) {
-    const fin = DATA.games.filter(g => { const f = FLAGS[g.name]; const at = g.platinum_at || (g.status === "completed" ? g.last_trophy : null) || (f?.flag === "beaten" ? (g.last_activity && g.last_activity < f.at ? g.last_activity : f.at) : null); return at && at.startsWith(y); }).length;
+    const fin = DATA.games.filter(g => { const f = FLAGS[g.name] || (g.aliases || []).map(n => FLAGS[n]).find(Boolean); const at = g.platinum_at || (g.status === "completed" ? g.last_trophy : null) || (f?.flag === "beaten" ? (g.last_activity && g.last_activity < f.at ? g.last_activity : f.at) : null); return at && at.startsWith(y); }).length;
     const now = { platinums: sum(DATA.games.flatMap(g => Object.entries(g.months || {}).filter(([m]) => m.startsWith(y)).map(([, t]) => t[3]))),
       trophies: sum(DATA.games.flatMap(g => Object.entries(g.months || {}).filter(([m]) => m.startsWith(y)).map(([, t]) => sum(t)))),
       hours: Math.round(sum(DATA.games.map(g => (g.hours_by_year || {})[y] || 0))), finished: fin };
@@ -305,7 +312,7 @@ function digest() {
   }
   const fmtD = d => d.toLocaleDateString(undefined, { day: "numeric", month: "short" });
   $("digest").innerHTML = `<div class="dg-head"><h2>Last week</h2><span class="note">${fmtD(start)} – ${fmtD(new Date(end - 864e5))}</span></div>
-    <div class="dg-figs"><div><b>${trophies}</b><span>trophies</span></div><div><b>${plats.length}</b><span>platinum${plats.length === 1 ? "" : "s"}</span></div><div><b>${days.length}</b><span>days played</span></div><div><b>${started.length}</b><span>new games</span></div></div>
+    <div class="dg-figs"><div><b>${trophies}</b><span>trophies</span></div><div><b>${plats.length}</b><span>platinum${plats.length === 1 ? "" : "s"}</span></div><div><b>${hours == null ? "—" : fmtH(hours).replace(" h", "")}</b><span>hours played</span></div><div><b>${started.length}</b><span>new games</span></div></div>
     <p>${hoursTxt}</p>${plats.length ? `<p>🏆 ${plats.map(p => `<b>${esc(p.game)}</b>`).join(", ")}</p>` : ""}${goals}`;
 }
 
