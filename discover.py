@@ -141,11 +141,13 @@ def main() -> None:
         if not dev_id:
             log.append(f"studio {dev}: not found on RAWG")
             continue
-        try:
-            res = get("games", key, developers=dev_id, dates=f"{today},{horizon}", parent_platforms=2, ordering="released", page_size=20).get("results", [])
-        except Exception as e:
-            print(f"  studio search skipped for {dev}: {e}")
-            continue
+        res = []
+        for order in ("-released", "-added"):          # dated releases, then recently announced (often no date yet)
+            try:
+                res += get("games", key, developers=dev_id, parent_platforms=2, ordering=order, page_size=40).get("results", [])
+            except Exception as e:
+                print(f"  studio search skipped for {dev}: {e}")
+        res = [x for x in {x["slug"]: x for x in res}.values() if unreleased(x, today) and (x.get("released") or "") <= horizon]
         log.append(f"studio {dev} (#{dev_id}): {len(res)} upcoming, {sum(1 for x in res if on_playstation(x))} on PlayStation")
         for x in res:
             if unreleased(x, today) and on_playstation(x) and not mine(x):
