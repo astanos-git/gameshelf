@@ -29,7 +29,8 @@ MAX_UPCOMING = 12
 
 def short_description(text: str, limit: int = 420) -> str:
     """First paragraph or two, cut at a sentence end."""
-    text = re.sub(r"\s+\n", "\n", (text or "").strip())
+    text = re.sub(r"#+\s*\w[\w ]{0,30}?(?=[A-Z\n]|$)", "\n", text or "")   # RAWG headings like "###Plot"
+    text = re.sub(r"\s+\n", "\n", text.strip())
     paras = [p.strip() for p in re.split(r"\n+", text) if p.strip() and not re.match(r"^(english|español|deutsch|français)\b", p.strip(), re.I)]
     out = ""
     for p in paras:
@@ -96,6 +97,7 @@ def main() -> None:
     owned_names = {norm(n) for g in games for n in [g["name"], *g.get("aliases", [])]}
     mine = lambda x: x["slug"] in owned_slugs or norm(x["name"]) in owned_names
     found: dict[str, dict] = {}
+    log: list[str] = []
 
     # 1. Series: the games you engaged with most, one per series
     ranked = sorted((g for g in games if g.get("rawg_slug")), key=lambda g: -engagement(g, flags, ratings))
@@ -112,6 +114,7 @@ def main() -> None:
         except Exception as e:
             print(f"  series skipped for {g['name']!r}: {e}")
             continue
+        log.append(f"{g['name']}: {len(res)} in series, {sum(1 for x in res if unreleased(x, today))} unreleased")
         n_added = 0
         for x in res:
             if n_added < 2 and unreleased(x, today) and on_playstation(x) and not mine(x) and (x.get("released") or "") <= horizon \
@@ -136,13 +139,14 @@ def main() -> None:
             if dev_id:
                 break
         if not dev_id:
-            print(f"  studio skipped (not found on RAWG): {dev}")
+            log.append(f"studio {dev}: not found on RAWG")
             continue
         try:
             res = get("games", key, developers=dev_id, dates=f"{today},{horizon}", parent_platforms=2, ordering="released", page_size=20).get("results", [])
         except Exception as e:
             print(f"  studio search skipped for {dev}: {e}")
             continue
+        log.append(f"studio {dev} (#{dev_id}): {len(res)} upcoming, {sum(1 for x in res if on_playstation(x))} on PlayStation")
         for x in res:
             if unreleased(x, today) and on_playstation(x) and not mine(x):
                 found.setdefault(x["slug"], {**summary(x), "reason": f"Studio: {dev}"})
@@ -161,6 +165,7 @@ def main() -> None:
     CACHE.write_text(json.dumps(cache, indent=1, sort_keys=True, ensure_ascii=False))
     OUT.write_text(json.dumps({"generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                                "upcoming": upcoming, "details": det_out}, indent=1, ensure_ascii=False))
+    print("::notice::Coming soon details: " + " | ".join(log))
     print(f"::notice::Coming soon: {len(upcoming)} games" + (": " + ", ".join(f"{x['name']} ({x['released'] or 'TBA'})" for x in upcoming[:5]) if upcoming else ""))
 
 
