@@ -1,0 +1,346 @@
+{
+ "bayonetta": {
+  "description": "Bayonetta is a slasher game developed by Platinum Games. The game is set in a fictional European city of Vigrid. The main character is a witch named Bayonetta who fights angels with pistols and magic wishing only one thing: to recall everything happened to her.",
+  "developer_ids": [
+   [
+    10251,
+    "Platinum Games"
+   ]
+  ],
+  "developers": [
+   "Platinum Games"
+  ],
+  "esrb": "Mature",
+  "metacritic": 90,
+  "name": "Bayonetta",
+  "publishers": [
+   "SEGA",
+   "Nintendo"
+  ],
+  "released": "2009-06-23",
+  "tba": false,
+  "website": "http://www.bayonetta.com/"
+ },
+ "brothers-a-tale-of-two-sons-2": {
+  "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
+  "developer_ids": [
+   [
+    4630,
+    "Starbreeze Studios"
+   ],
+   [
+    252478,
+    "Parables Games"
+   ]
+  ],
+  "developers": [
+   "Starbreeze Studios",
+   "Parables Games"
+  ],
+  "esrb": "Teen",
+  "metacritic": 90,
+  "name": "Brothers: A Tale of Two Sons",
+  "publishers": [
+   "505 Games",
+   "Parables Games"
+  ],
+  "released": "2013-08-07",
+  "tba": false,
+  "website": "https://505games.com/games/brothers/"
+ },
+ "cyberpunk-2077": {
+  "description": "Cyberpunk 2077 is a science fiction game loosely based on the role-playing game Cyberpunk 2020. ###Setting",
+  "developer_ids": [
+   [
+    9023,
+    "CD PROJEKT RED"
+   ],
+   [
+    24,
+    "CD PROJEKT"
+   ]
+  ],
+  "developers": [
+   "CD PROJEKT RED",
+   "CD PROJEKT"
+  ],
+  "esrb": "Mature",
+  "metacritic": 73,
+  "name": "Cyberpunk 2077",
+  "publishers": [
+   "CD PROJEKT RED"
+  ],
+  "released": "2020-12-10",
+  "tba": false,
+  "website": "https://www.cyberpunk.net/"
+ },
+ "god-of-war-2": {
+  "description": "It is a new beginning for Kratos. Living as a man outside the shadow of the gods, he ventures into the brutal Norse wilds with his son Atreus, fighting to fulfill a deeply personal quest.",
+  "developer_ids": [
+   [
+    14278,
+    "Santa Monica Studio"
+   ]
+  ],
+  "developers": [
+   "Santa Monica Studio"
+  ],
+  "esrb": "Mature",
+  "metacritic": 94,
+  "name": "God of War (2018)",
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "PlayStation PC"
+  ],
+  "released": "2018-04-20",
+  "tba": false,
+  "website": "https://godofwar.playstation.com/"
+ },
+ "god-of-war-ragnarok": {
+  "description": "Kratos and Atreus must journey to each of the Nine Realms in search of answers as they prepare for the prophesied battle that will end the world. Together, Kratos and Atreus venture deep into the Nine Realms in search of answers as Asgardian forces prepare for war.",
+  "developer_ids": [
+   [
+    18720,
+    "SCE Santa Monica Studio"
+   ]
+  ],
+  "developers": [
+   "SCE Santa Monica Studio"
+  ],
+  "esrb": "Mature",
+  "metacritic": null,
+  "name": "God of War: Ragnarök",
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "PlayStation PC"
+  ],
+  "released": "2022-11-09",
+  "tba": false,
+  "website": "https://blog.playstation.com/2021/09/09/first-look-at-god-of-war-ragnarok/"
+ },
+ "grand-theft-auto-vice-city": {
+  "description": "Grand Theft Auto: Vice City is a third-person shooter with an open world. The game is set in a fictional city during the 1980’s and exhibits a unique design of locations, people, and objects, resembling the real world’s counterparts of Vice City, mainly Miami, FL. GTA: Vice City is a fourth game of the series, following Grand Theft Auto III.",
+  "developer_ids": [
+   [
+    3524,
+    "Rockstar North"
+   ]
+  ],
+  "developers": [
+   "Rockstar North"
+  ],
+  "esrb": "Mature",
+  "metacritic": 94,
+  "name": "Grand Theft Auto: Vice City",
+  "publishers": [
+   "Rockstar Games"
+  ],
+  "released": "2002-10-27",
+  "tba": false,
+  "website": "https://www.rockstargames.com/games/vicecity"
+ },
+ "marvels-spider-man-2": {
+  "description": "Marvel's Spider-Man 2 is a 2023 action-adventure game developed by Insomniac Games and published by Sony Interactive Entertainment. It is based on the Marvel Comics character Spider-Man, and features a narrative inspired by its long-running comic book mythology which is also derived from various adaptations in other media.",
+  "developer_ids": [
+   [
+    5342,
+    "Insomniac Games"
+   ],
+   [
+    30013,
+    "Nixxes software"
+   ]
+  ],
+  "developers": [
+   "Insomniac Games",
+   "Nixxes software"
+  ],
+  "esrb": "Teen",
+  "metacritic": null,
+  "name": "Marvel's Spider-Man 2",
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "PlayStation Publishing"
+  ],
+  "released": "2023-10-20",
+  "tba": false,
+  "website": "https://blog.playstation.com/2021/09/09/marvels-spider-man-2-and-marvels-wolverine-revealed/"
+ },
+ "owlboy": {
+  "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
+  "developer_ids": [
+   [
+    4072,
+    "D-Pad Studio"
+   ],
+   [
+    27927,
+    "D-Pad Studios"
+   ]
+  ],
+  "developers": [
+   "D-Pad Studio",
+   "D-Pad Studios"
+  ],
+  "esrb": null,
+  "metacritic": 88,
+  "name": "Owlboy",
+  "publishers": [
+   "D-Pad Studio"
+  ],
+  "released": "2016-10-31",
+  "tba": false,
+  "website": "http://www.owlboygame.com"
+ },
+ "ratchet-clank-rift-apart": {
+  "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
+  "developer_ids": [
+   [
+    5342,
+    "Insomniac Games"
+   ],
+   [
+    30013,
+    "Nixxes software"
+   ]
+  ],
+  "developers": [
+   "Insomniac Games",
+   "Nixxes software"
+  ],
+  "esrb": "Everyone 10+",
+  "metacritic": 88,
+  "name": "Ratchet & Clank: Rift Apart",
+  "publishers": [
+   "Sony Interactive Entertainment",
+   "PlayStation PC"
+  ],
+  "released": "2021-06-11",
+  "tba": false,
+  "website": null
+ },
+ "shadows-die-twice": {
+  "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
+  "developer_ids": [
+   [
+    6763,
+    "FromSoftware"
+   ]
+  ],
+  "developers": [
+   "FromSoftware"
+  ],
+  "esrb": "Mature",
+  "metacritic": 90,
+  "name": "Sekiro: Shadows Die Twice",
+  "publishers": [
+   "FromSoftware",
+   "Activision Value Publishing",
+   "方块游戏"
+  ],
+  "released": "2019-03-22",
+  "tba": false,
+  "website": "http://www.sekirothegame.com"
+ },
+ "star-wars-jedi-knight-ii-jedi-outcast": {
+  "description": "The Legacy of Star Wars Dark Forces™ and Star Wars® Jedi Knight lives on in the intense first-person action of Jedi Outcast. As Kyle Katarn, agent of the New Republic, use your Lightsaber and the full power of the Force to combat a new evil plaguing the galaxy. Wield over 8 Force abilities including the Jedi Mind Trick, Force Lightning and Force Grip.",
+  "developer_ids": [
+   [
+    17132,
+    "Aspyr Media"
+   ],
+   [
+    5833,
+    "Raven Software"
+   ],
+   [
+    13290,
+    "Lucasfilm"
+   ]
+  ],
+  "developers": [
+   "Aspyr Media",
+   "Raven Software",
+   "Lucasfilm"
+  ],
+  "esrb": "Teen",
+  "metacritic": 89,
+  "name": "Star Wars Jedi Knight II: Jedi Outcast",
+  "publishers": [
+   "Aspyr",
+   "Activision Blizzard",
+   "Disney Interactive"
+  ],
+  "released": "2002-03-01",
+  "tba": false,
+  "website": "http://www.lucasarts.com"
+ },
+ "the-last-of-us-part-2": {
+  "description": "The Last of Us Part II is the sequel to the post-apocalyptic zombie game The Last of Us. Plot",
+  "developer_ids": [
+   [
+    13071,
+    "Naughty Dog"
+   ]
+  ],
+  "developers": [
+   "Naughty Dog"
+  ],
+  "esrb": "Mature",
+  "metacritic": 93,
+  "name": "The Last of Us Part II",
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "released": "2020-06-19",
+  "tba": false,
+  "website": "https://www.thelastofus.playstation.com/"
+ },
+ "the-witcher-4": {
+  "description": "The Witcher IV is a single-player, open-world RPG from CD PROJEKT RED. At the start of a new saga, players take on the role of Ciri, a professional monster slayer, and embark on a journey through a brutal dark-fantasy world. Powered by Unreal Engine 5, it aims to be the most immersive and ambitious open-world Witcher game to date.",
+  "developer_ids": [
+   [
+    9023,
+    "CD PROJEKT RED"
+   ],
+   [
+    24,
+    "CD PROJEKT"
+   ]
+  ],
+  "developers": [
+   "CD PROJEKT RED",
+   "CD PROJEKT"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "The Witcher (A New Saga Begins)",
+  "publishers": [
+   "CD PROJEKT RED"
+  ],
+  "released": null,
+  "tba": true,
+  "website": "https://www.thewitcher.com/witcher4"
+ },
+ "the-witcher-remake": {
+  "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
+  "developer_ids": [
+   [
+    7969,
+    "Fool's Theory"
+   ]
+  ],
+  "developers": [
+   "Fool's Theory"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "The Witcher: Remake",
+  "publishers": [
+   "CD PROJEKT RED"
+  ],
+  "released": null,
+  "tba": true,
+  "website": null
+ }
+}
