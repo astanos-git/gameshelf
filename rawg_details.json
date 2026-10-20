@@ -139,6 +139,25 @@
   "tba": false,
   "website": "https://www.rockstargames.com/games/vicecity"
  },
+ "intergalactic-the-heretic-prophet": {
+  "description": "",
+  "developer_ids": [
+   [
+    13071,
+    "Naughty Dog"
+   ]
+  ],
+  "developers": [
+   "Naughty Dog"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Intergalactic: The Heretic Prophet",
+  "publishers": [],
+  "released": null,
+  "tba": true,
+  "website": null
+ },
  "marvels-spider-man-2": {
   "description": "Marvel's Spider-Man 2 is a 2023 action-adventure game developed by Insomniac Games and published by Sony Interactive Entertainment. It is based on the Marvel Comics character Spider-Man, and features a narrative inspired by its long-running comic book mythology which is also derived from various adaptations in other media.",
   "developer_ids": [
@@ -165,6 +184,48 @@
   "released": "2023-10-20",
   "tba": false,
   "website": "https://blog.playstation.com/2021/09/09/marvels-spider-man-2-and-marvels-wolverine-revealed/"
+ },
+ "marvels-spider-man-3": {
+  "description": "Marvel’s Spider-Man 3 is currently in development by Insomniac Games for PlayStation 5 and PlayStation 6. Created in collaboration with Marvel Games and PlayStation.",
+  "developer_ids": [
+   [
+    5342,
+    "Insomniac Games"
+   ]
+  ],
+  "developers": [
+   "Insomniac Games"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Marvel's Spider-Man 3",
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "released": null,
+  "tba": true,
+  "website": "https://x.com/insomniacgames?s=09"
+ },
+ "marvels-venom": {
+  "description": "Marvel’s Venom is currently in development by Insomniac Games for PlayStation 5. Created in collaboration with Marvel Games and PlayStation.",
+  "developer_ids": [
+   [
+    5342,
+    "Insomniac Games"
+   ]
+  ],
+  "developers": [
+   "Insomniac Games"
+  ],
+  "esrb": "Rating Pending",
+  "metacritic": null,
+  "name": "Marvel's Venom",
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "released": null,
+  "tba": true,
+  "website": null
  },
  "owlboy": {
   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",

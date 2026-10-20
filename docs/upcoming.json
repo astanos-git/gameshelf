@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-20T15:21:01+00:00",
+ "generated_at": "2026-10-20T15:23:50+00:00",
  "upcoming": [
   {
    "slug": "the-witcher-4",
@@ -33,120 +33,101 @@
    ],
    "url": "https://rawg.io/games/the-witcher-remake",
    "reason": "Series: The Witcher"
+  },
+  {
+   "slug": "intergalactic-the-heretic-prophet",
+   "name": "Intergalactic: The Heretic Prophet",
+   "image": "https://media.rawg.io/media/screenshots/d69/d69eb749a78f58e238bb7973c108382c.jpg",
+   "released": null,
+   "tba": true,
+   "metacritic": null,
+   "genres": [
+    "Adventure"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/intergalactic-the-heretic-prophet",
+   "reason": "Studio: Naughty Dog"
+  },
+  {
+   "slug": "marvels-spider-man-3",
+   "name": "Marvel's Spider-Man 3",
+   "image": "https://media.rawg.io/media/screenshots/a39/a39f0c1ae734522de4bc10fe30b3adb6.jpg",
+   "released": null,
+   "tba": true,
+   "metacritic": null,
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/marvels-spider-man-3",
+   "reason": "Studio: Insomniac Games"
+  },
+  {
+   "slug": "marvels-venom",
+   "name": "Marvel's Venom",
+   "image": "https://media.rawg.io/media/screenshots/f8b/f8bc3266332003bf3055dacf65a73cf1.jpg",
+   "released": null,
+   "tba": true,
+   "metacritic": null,
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/marvels-venom",
+   "reason": "Studio: Insomniac Games"
   }
  ],
  "details": {
-  "the-witcher-remake": {
-   "name": "The Witcher: Remake",
+  "intergalactic-the-heretic-prophet": {
+   "name": "Intergalactic: The Heretic Prophet",
    "released": null,
    "tba": true,
-   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
+   "description": "",
    "developers": [
-    "Fool's Theory"
+    "Naughty Dog"
    ],
-   "publishers": [
-    "CD PROJEKT RED"
-   ],
+   "publishers": [],
    "website": null,
    "metacritic": null,
    "esrb": null
   },
-  "brothers-a-tale-of-two-sons-2": {
-   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
-   "developers": [
-    "Starbreeze Studios",
-    "Parables Games"
-   ],
-   "esrb": "Teen",
-   "metacritic": 90,
-   "name": "Brothers: A Tale of Two Sons",
-   "publishers": [
-    "505 Games",
-    "Parables Games"
-   ],
-   "released": "2013-08-07",
-   "tba": false,
-   "website": "https://505games.com/games/brothers/"
-  },
-  "owlboy": {
-   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
-   "developers": [
-    "D-Pad Studio",
-    "D-Pad Studios"
-   ],
-   "esrb": null,
-   "metacritic": 88,
-   "name": "Owlboy",
-   "publishers": [
-    "D-Pad Studio"
-   ],
-   "released": "2016-10-31",
-   "tba": false,
-   "website": "http://www.owlboygame.com"
-  },
-  "ratchet-clank-rift-apart": {
-   "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
-   "developers": [
-    "Insomniac Games",
-    "Nixxes software"
-   ],
-   "esrb": "Everyone 10+",
-   "metacritic": 88,
-   "name": "Ratchet & Clank: Rift Apart",
-   "publishers": [
-    "Sony Interactive Entertainment",
-    "PlayStation PC"
-   ],
-   "released": "2021-06-11",
-   "tba": false,
-   "website": null
-  },
-  "bayonetta": {
-   "description": "Bayonetta is a slasher game developed by Platinum Games. The game is set in a fictional European city of Vigrid. The main character is a witch named Bayonetta who fights angels with pistols and magic wishing only one thing: to recall everything happened to her.",
-   "developers": [
-    "Platinum Games"
-   ],
-   "esrb": "Mature",
-   "metacritic": 90,
-   "name": "Bayonetta",
-   "publishers": [
-    "SEGA",
-    "Nintendo"
-   ],
-   "released": "2009-06-23",
-   "tba": false,
-   "website": "http://www.bayonetta.com/"
-  },
-  "grand-theft-auto-vice-city": {
-   "description": "Grand Theft Auto: Vice City is a third-person shooter with an open world. The game is set in a fictional city during the 1980’s and exhibits a unique design of locations, people, and objects, resembling the real world’s counterparts of Vice City, mainly Miami, FL. GTA: Vice City is a fourth game of the series, following Grand Theft Auto III.",
-   "developers": [
-    "Rockstar North"
-   ],
-   "esrb": "Mature",
-   "metacritic": 94,
-   "name": "Grand Theft Auto: Vice City",
-   "publishers": [
-    "Rockstar Games"
-   ],
-   "released": "2002-10-27",
-   "tba": false,
-   "website": "https://www.rockstargames.com/games/vicecity"
-  },
-  "the-witcher-4": {
-   "name": "The Witcher (A New Saga Begins)",
+  "marvels-spider-man-3": {
+   "name": "Marvel's Spider-Man 3",
    "released": null,
    "tba": true,
-   "description": "The Witcher IV is a single-player, open-world RPG from CD PROJEKT RED. At the start of a new saga, players take on the role of Ciri, a professional monster slayer, and embark on a journey through a brutal dark-fantasy world. Powered by Unreal Engine 5, it aims to be the most immersive and ambitious open-world Witcher game to date.",
+   "description": "Marvel’s Spider-Man 3 is currently in development by Insomniac Games for PlayStation 5 and PlayStation 6. Created in collaboration with Marvel Games and PlayStation.",
    "developers": [
-    "CD PROJEKT RED",
-    "CD PROJEKT"
+    "Insomniac Games"
    ],
    "publishers": [
-    "CD PROJEKT RED"
+    "Sony Interactive Entertainment"
    ],
-   "website": "https://www.thewitcher.com/witcher4",
+   "website": "https://x.com/insomniacgames?s=09",
    "metacritic": null,
    "esrb": null
+  },
+  "marvels-venom": {
+   "name": "Marvel's Venom",
+   "released": null,
+   "tba": true,
+   "description": "Marvel’s Venom is currently in development by Insomniac Games for PlayStation 5. Created in collaboration with Marvel Games and PlayStation.",
+   "developers": [
+    "Insomniac Games"
+   ],
+   "publishers": [
+    "Sony Interactive Entertainment"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": "Rating Pending"
   },
   "shadows-die-twice": {
    "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
@@ -183,6 +164,118 @@
    "released": "2002-03-01",
    "tba": false,
    "website": "http://www.lucasarts.com"
+  },
+  "owlboy": {
+   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
+   "developers": [
+    "D-Pad Studio",
+    "D-Pad Studios"
+   ],
+   "esrb": null,
+   "metacritic": 88,
+   "name": "Owlboy",
+   "publishers": [
+    "D-Pad Studio"
+   ],
+   "released": "2016-10-31",
+   "tba": false,
+   "website": "http://www.owlboygame.com"
+  },
+  "grand-theft-auto-vice-city": {
+   "description": "Grand Theft Auto: Vice City is a third-person shooter with an open world. The game is set in a fictional city during the 1980’s and exhibits a unique design of locations, people, and objects, resembling the real world’s counterparts of Vice City, mainly Miami, FL. GTA: Vice City is a fourth game of the series, following Grand Theft Auto III.",
+   "developers": [
+    "Rockstar North"
+   ],
+   "esrb": "Mature",
+   "metacritic": 94,
+   "name": "Grand Theft Auto: Vice City",
+   "publishers": [
+    "Rockstar Games"
+   ],
+   "released": "2002-10-27",
+   "tba": false,
+   "website": "https://www.rockstargames.com/games/vicecity"
+  },
+  "ratchet-clank-rift-apart": {
+   "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
+   "developers": [
+    "Insomniac Games",
+    "Nixxes software"
+   ],
+   "esrb": "Everyone 10+",
+   "metacritic": 88,
+   "name": "Ratchet & Clank: Rift Apart",
+   "publishers": [
+    "Sony Interactive Entertainment",
+    "PlayStation PC"
+   ],
+   "released": "2021-06-11",
+   "tba": false,
+   "website": null
+  },
+  "bayonetta": {
+   "description": "Bayonetta is a slasher game developed by Platinum Games. The game is set in a fictional European city of Vigrid. The main character is a witch named Bayonetta who fights angels with pistols and magic wishing only one thing: to recall everything happened to her.",
+   "developers": [
+    "Platinum Games"
+   ],
+   "esrb": "Mature",
+   "metacritic": 90,
+   "name": "Bayonetta",
+   "publishers": [
+    "SEGA",
+    "Nintendo"
+   ],
+   "released": "2009-06-23",
+   "tba": false,
+   "website": "http://www.bayonetta.com/"
+  },
+  "brothers-a-tale-of-two-sons-2": {
+   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
+   "developers": [
+    "Starbreeze Studios",
+    "Parables Games"
+   ],
+   "esrb": "Teen",
+   "metacritic": 90,
+   "name": "Brothers: A Tale of Two Sons",
+   "publishers": [
+    "505 Games",
+    "Parables Games"
+   ],
+   "released": "2013-08-07",
+   "tba": false,
+   "website": "https://505games.com/games/brothers/"
+  },
+  "the-witcher-remake": {
+   "name": "The Witcher: Remake",
+   "released": null,
+   "tba": true,
+   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
+   "developers": [
+    "Fool's Theory"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "the-witcher-4": {
+   "name": "The Witcher (A New Saga Begins)",
+   "released": null,
+   "tba": true,
+   "description": "The Witcher IV is a single-player, open-world RPG from CD PROJEKT RED. At the start of a new saga, players take on the role of Ciri, a professional monster slayer, and embark on a journey through a brutal dark-fantasy world. Powered by Unreal Engine 5, it aims to be the most immersive and ambitious open-world Witcher game to date.",
+   "developers": [
+    "CD PROJEKT RED",
+    "CD PROJEKT"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
+   "website": "https://www.thewitcher.com/witcher4",
+   "metacritic": null,
+   "esrb": null
   }
  }
 }
