@@ -71,6 +71,10 @@ a.act.primary { background: var(--accent); color: #fff; border-color: var(--acce
 .mode { display: grid; gap: 10px; }
 .budget input { width: 80px; }
 .dg-figs b { font-size: 24px; }
+.tap { cursor: pointer; }
+.item > .detail { grid-column: 1 / -1; margin: 2px -12px -10px; }
+.pick > .detail { grid-column: 1 / -1; margin: 0 -14px -14px; }
+.tap.open { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
 </style>
 
 <div class="wrap">
@@ -143,6 +147,7 @@ a.act.primary { background: var(--accent); color: #fff; border-color: var(--acce
 </div>
 
 <script src="app.js"></script>
+<script src="gamepanel.js"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -160,10 +165,10 @@ try { Object.assign(state, JSON.parse(localStorage.getItem("shelf-play") || "{}"
 function applyFlags(games, flags) {
   for (const x of games) {
     const f = flags[x.name] || (x.aliases || []).map(n => flags[n]).find(Boolean);
-    x.eff = x.status;
+    x.eff = x.status; x.base_status = x.status; x.flag = null;
     if (!f || x.status === "completed") continue;
     if (f.flag === "dropped" && x.last_activity && new Date(x.last_activity) > new Date(f.at)) continue;
-    x.eff = f.flag;
+    x.eff = f.flag; x.flag = f;
   }
 }
 
@@ -179,7 +184,7 @@ function card(x, eyebrow) {
     beatTime(x) ? `~<b>${fmtH(beatTime(x))}</b> to beat` : null,
     (x.genres || []).slice(0, 3).join(", ") || null,
     x.eff === "started" ? `In progress · ${x.progress ?? 0}% trophies` : (x.acquired ? `Owned since ${new Date(x.acquired).getFullYear()}` : null)].filter(Boolean);
-  return `<div class="pick"><span class="cover">${pic(x.image, x.name)}</span>
+  return `<div class="pick tap" data-g="${esc(x.name)}"><span class="cover">${pic(x.image, x.name)}</span>
     <div class="main"><span class="eyebrow">${eyebrow}</span><h2>${esc(x.name)}</h2><div class="why">${why.map(w => `<span>${w}</span>`).join("")}</div></div></div>`;
 }
 
@@ -190,12 +195,13 @@ function render() {
   $("modeBest").hidden = state.mode !== "best"; $("modeFit").hidden = state.mode !== "fit";
   const p = pool();
   const picks = [...p].sort((a, b) => (b.metacritic ?? 0) - (a.metacritic ?? 0) || (beatTime(a) ?? 999) - (beatTime(b) ?? 999)).slice(0, 5);
-  $("picks").innerHTML = picks.length ? picks.map(x => `<li class="item"><span class="cover">${pic(x.image, x.name)}</span>
+  $("picks").innerHTML = picks.length ? picks.map(x => `<li class="item tap" data-g="${esc(x.name)}"><span class="cover">${pic(x.image, x.name)}</span>
       <span class="main"><span class="name">${esc(x.name)}</span>
       <span class="meta">${beatTime(x) ? `<span>~${fmtH(beatTime(x))}</span>` : ""}<span>${esc((x.genres || []).slice(0, 2).join(", "))}</span>${x.eff === "started" ? "<span>In progress</span>" : ""}</span></span>
       <span class="mc ${mcClass(x.metacritic)}">${x.metacritic ?? "n/a"}</span></li>`).join("")
     : `<p class="empty">Nothing matches. Try another length or genre.</p>`;
   $("surprise").disabled = !p.length;
+  reopen();
 }
 
 function surprise() {
@@ -276,6 +282,24 @@ const byName = n => DATA.games.find(g => g.name === n || (g.aliases || []).inclu
 const sum = a => a.reduce((x, y) => x + y, 0);
 const left = x => { const b = beatTime(x); return b ? Math.max(1, Math.round(b - (x.eff === "started" ? (x.hours || 0) : 0))) : null; };
 
+/* ---------- game panel on tap (Now tab): same panel as the Library, without the trophy list ---------- */
+let openG = null;   // { list, name } of the open panel, so it survives re-renders
+function reopen() {
+  if (!openG) return;
+  const el = [...document.querySelectorAll(`#${openG.list} [data-g]`)].find(e => e.dataset.g === openG.name);
+  const g = el && byName(openG.name);
+  if (!g) { openG = null; return; }
+  el.classList.add("open"); el.insertAdjacentHTML("beforeend", GP.panel(g));
+}
+document.addEventListener("click", e => {
+  const el = e.target.closest(".tap[data-g]");
+  if (!el || e.target.closest("a, button, input, select, label, .detail")) return;
+  const list = el.closest("[id]").id, same = openG && openG.list === list && openG.name === el.dataset.g;
+  document.querySelectorAll(".tap.open").forEach(o => { o.classList.remove("open"); o.querySelector(":scope > .detail")?.remove(); });
+  openG = same ? null : { list, name: el.dataset.g };
+  reopen();
+});
+
 /* ---------- 12. Monday digest ---------- */
 function digest() {
   const today = new Date(), dow = (today.getDay() + 6) % 7;              // Monday = 0
@@ -321,11 +345,12 @@ let qDraft = null;   // local reordering before saving
 function upNext() {
   const list = (qDraft || QUEUE).map(n => ({ n, g: byName(n) })).filter(o => o.g);
   const changed = qDraft && qDraft.join("|") !== QUEUE.join("|");
-  $("upnext").innerHTML = list.length ? `<ol class="list">${list.map(({ n, g }, i) => `<li class="item uq"><span class="rank">${i + 1}</span><span class="cover">${pic(g.image, g.name)}</span>
+  $("upnext").innerHTML = list.length ? `<ol class="list">${list.map(({ n, g }, i) => `<li class="item uq tap" data-g="${esc(g.name)}"><span class="rank">${i + 1}</span><span class="cover">${pic(g.image, g.name)}</span>
       <span class="main"><span class="name">${esc(g.name)}</span>${left(g) ? `<span class="meta"><span>~${left(g)} h ${g.eff === "started" ? "left" : "to beat"}</span></span>` : ""}</span>
       <span class="qbtns"><button data-q="up" data-i="${i}" ${i ? "" : "disabled"} aria-label="Move up">↑</button><button data-q="down" data-i="${i}" ${i < list.length - 1 ? "" : "disabled"} aria-label="Move down">↓</button><button data-q="del" data-i="${i}" aria-label="Remove">✕</button></span></li>`).join("")}</ol>
       ${changed ? `<div class="row">${act(issueUrl("Up next: new order", ["queue: set", ...(qDraft.length ? qDraft.map(n => `game: ${n}`) : [])]), "Save order", "primary")}<button class="chip" data-q="reset">Undo</button></div>` : ""}`
     : `<p class="empty">Nothing queued yet. Open a game in the Library and tap <b>+ Up next</b> (up to 5 games).</p>`;
+  reopen();
 }
 
 /* ---------- 7 + 6. feedback and wishlist on the weekly picks ---------- */
@@ -367,10 +392,11 @@ function planner() {
   }
   const plan = [...fixed, ...take[best.indexOf(Math.max(...best))].sort((a, b) => b.v - a.v)];
   const used = plan.reduce((a, c) => a + c.h, 0);
-  $("plan").innerHTML = plan.length ? `<p><b>${plan.length}</b> game${plan.length === 1 ? "" : "s"}, about <b>${used} h</b> of your ${budget} h${budget > 400 + plan.filter(c => fixed.includes(c)).reduce((a, c) => a + c.h, 0) ? " (the planner looks up to 400 h ahead)" : ""}.</p><ol class="list">${plan.map(c => `<li class="item"><span class="cover">${pic(c.x.image, c.x.name)}</span>
+  $("plan").innerHTML = plan.length ? `<p><b>${plan.length}</b> game${plan.length === 1 ? "" : "s"}, about <b>${used} h</b> of your ${budget} h${budget > 400 + plan.filter(c => fixed.includes(c)).reduce((a, c) => a + c.h, 0) ? " (the planner looks up to 400 h ahead)" : ""}.</p><ol class="list">${plan.map(c => `<li class="item tap" data-g="${esc(c.x.name)}"><span class="cover">${pic(c.x.image, c.x.name)}</span>
       <span class="main"><span class="name">${esc(c.x.name)}</span><span class="meta"><span>~${c.h} h${c.x.eff === "started" ? " left" : ""}</span><span>${esc((c.x.genres || []).slice(0, 2).join(", "))}</span>${QUEUE.includes(c.x.name) ? "<span>Up next</span>" : ""}</span></span>
       <span class="mc ${mcClass(c.x.metacritic)}">${c.x.metacritic ?? "n/a"}</span></li>`).join("")}</ol>`
     : `<p class="empty">No game fits in ${budget} h. Try a bigger budget.</p>`;
+  reopen();
 }
 
 /* ---------- 10. Platinum difficulty ---------- */
@@ -387,8 +413,9 @@ function platDifficulty() {
 }
 
 async function extrasStart() {
-  [QUEUE, WISH, FEEDBACK, SNAPS, GOALS, FLAGS] = await Promise.all([getJSON("queue.json", []), getJSON("wishlist.json", {}), getJSON("pick_feedback.json", {}),
-    getJSON("snapshots.json", []), getJSON("goals.json", {}), getJSON("flags.json", {})]);
+  [QUEUE, WISH, FEEDBACK, SNAPS, GOALS, FLAGS, GP.ratings] = await Promise.all([getJSON("queue.json", []), getJSON("wishlist.json", {}), getJSON("pick_feedback.json", {}),
+    getJSON("snapshots.json", []), getJSON("goals.json", {}), getJSON("flags.json", {}), getJSON("ratings.json", {})]);
+  GP.queue = QUEUE;
   digest(); upNext(); wishlist(); planner(); platDifficulty();
 }
 document.addEventListener("click", e => {

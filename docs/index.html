@@ -36,9 +36,6 @@
 .level .bar { flex: 0 0 90px; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
 .level .bar i { display: block; height: 100%; background: var(--accent); }
 .tiers { display: flex; gap: 10px; font: 500 13px var(--mono); }
-.tier { display: flex; align-items: center; gap: 5px; }
-.hltb { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13.5px; }
-.hltb b { font: 600 13px var(--mono); }
 .updated { grid-column: 1 / -1; display: flex; gap: 4px 10px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
 .updated > span + span::before { content: "·"; margin-right: 8px; }
 .updated { gap: 4px 8px !important; }
@@ -72,26 +69,6 @@
 .prog .bar { flex: 1 1 auto; max-width: 220px; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
 .prog .bar i { display: block; height: 100%; background: var(--accent); }
 .prog.plat .bar i { background: var(--plat); }
-.detail { border-top: 1px solid var(--line); padding: 12px; display: grid; gap: 12px; font-size: 13.5px; }
-.detail > * { min-width: 0; }
-.pending { display: flex; gap: 6px 14px; flex-wrap: wrap; align-items: center; font: 13px var(--mono); }
-.pending .left { color: var(--muted); }
-.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px 16px; margin: 0; }
-.facts div { display: grid; }
-.facts dt { font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-.facts dd { margin: 0; }
-.detail a { color: var(--accent); }
-.rating { display: grid; gap: 6px; }
-.rater { display: grid; grid-template-columns: auto 1fr auto auto auto; gap: 8px; align-items: center; }
-.rater .val { width: 44px; height: 40px; border-radius: 6px; display: grid; place-items: center; font: 600 20px var(--display); color: #fff; background: var(--muted); }
-.rater .val.good { background: var(--mc-good); } .rater .val.mid { background: var(--mc-mid); } .rater .val.bad { background: var(--mc-bad); }
-.rater input[type=range] { width: 100%; min-width: 0; accent-color: var(--accent); height: 28px; }
-.rater .step { width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); font: 600 18px var(--display); cursor: pointer; }
-.rater-actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); }
-.rater-actions a { font-size: 12.5px; }
-.detail a.save { background: var(--accent); color: #fff; border-radius: 8px; padding: 6px 12px; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap; min-width: 64px; text-align: center; }
-.detail a.added { background: var(--accent-soft) !important; color: var(--accent) !important; }
-.detail a.save.same { background: var(--line); color: var(--muted); pointer-events: none; }
 
 .mine { font: 600 12px var(--mono); color: var(--accent); }
 .tlist { display: grid; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; }
@@ -130,20 +107,7 @@
 .tmeta { text-align: right; font: 12px var(--mono); color: var(--muted); display: grid; gap: 2px; justify-items: end; }
 .tmeta .rate { font-weight: 500; color: var(--fg); }
 .tmeta .rate.ultra { color: var(--plat); }
-.you { background: var(--bg); border-radius: 10px; padding: 10px 12px; display: grid; gap: 10px; }
-.you-h { font: 600 12px var(--body); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-.flagbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.flagbar .flagnote { color: var(--muted); font-size: 12.5px; flex-basis: 100%; }
-.detail a.flagbtn, .detail span.flagbtn { color: var(--fg); text-decoration: none; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 12px; font-size: 13.5px; font-weight: 500; }
-.detail span.flagbtn { opacity: .5; }
-.detail a.flagbtn.on { color: #fff !important; background: var(--accent); border-color: var(--accent) !important; }
-.detail a.flagbtn.beaten.on { background: var(--st-beaten); border-color: var(--st-beaten) !important; }
-.detail a.flagbtn.dropped.on { background: var(--st-dropped); border-color: var(--st-dropped) !important; }
-.detail a.flagbtn:hover { border-color: var(--accent); }
-.detail a.flagbtn.queue { border-color: var(--accent); color: var(--accent); }
 .chip.torate[aria-pressed="false"] { border-color: var(--accent); color: var(--accent); }
-.detail a.flagbtn.beaten { border-color: var(--st-beaten); color: var(--st-beaten); }
-.detail a.flagbtn.dropped { border-color: var(--st-dropped); color: var(--st-dropped); }
 .selbtn { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; font-size: 14px; cursor: pointer; flex: none; }
 .selbtn[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
 .cover { position: relative; }
@@ -211,6 +175,7 @@ body.selecting .wrap { padding-bottom: 170px; }
 <div class="selbar" id="selbar" hidden><div class="selbar-in" id="selbarIn"></div>
 </div>
 
+<script src="gamepanel.js"></script>
 <script>
 const SAMPLE = {
   generated_at: "2026-09-27T19:12:00+00:00",
@@ -464,75 +429,10 @@ function renderSelBar() {
     <p class="selnote">${note}</p>`;
 }
 
-function rateUrl(name, value) {
-  const repo = repoUrl(); if (!repo) return null;
-  const title = value === "none" ? `Rate ${name}: remove rating` : `Rate ${name}: ${value}/100`;
-  const body = `Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\nrating: ${value}\ngame: ${name}\n`;
-  return `${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-}
-
 const ratingOf = x => RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean);
 
-function ratingBar(x) {
-  const r = ratingOf(x), repo = repoUrl();
-  const start = r ? r.score : (x.metacritic ?? 70);   // start from your score, or the critics' as a reference point
-  const hint = r ? (x.metacritic != null ? `Metacritic ${x.metacritic}` : "") : x.metacritic != null ? `Starts at the Metacritic score (${x.metacritic})` : "Not rated yet";
-  return `<div class="rating" data-name="${esc(x.name)}" data-saved="${r ? r.score : ""}">
-    <div class="rater"><span class="val ${mcClass(start)}" aria-live="polite">${start}</span>
-      <input type="range" min="0" max="100" step="1" value="${start}" aria-label="Your rating, 0 to 100">
-      <button class="step" data-step="-1" aria-label="One point lower">−</button><button class="step" data-step="1" aria-label="One point higher">+</button>
-      ${repo ? `<a class="save${r ? " same" : ""}" target="_blank" rel="noopener" href="${rateUrl(x.name, start)}">${r ? "Saved" : "Save"}</a>` : ""}</div>
-    <div class="rater-actions"><span>${hint}${repo ? "" : " · saving works on your GitHub Pages dashboard"}</span>
-      ${r && repo ? `<a href="${rateUrl(x.name, "none")}" target="_blank" rel="noopener">Remove rating</a>` : ""}</div></div>`;
-}
-
-function syncRater(box, v) {
-  v = Math.max(0, Math.min(100, v));
-  box.querySelector("input").value = v;
-  const val = box.querySelector(".val"); val.textContent = v; val.className = "val " + mcClass(v);
-  const save = box.querySelector("a.save");
-  if (save) {
-    const same = String(v) === box.dataset.saved;
-    save.classList.toggle("same", same);
-    save.textContent = same ? "Saved" : "Save"; save.classList.remove("added");
-    save.href = rateUrl(box.dataset.name, v);
-  }
-}
-
 let QUEUE = [];
-function actionsBar(x) {
-  const repo = repoUrl();
-  if (x.base_status === "completed") return `<p class="flagnote">Completed: the platinum or 100% trophies say you finished it.</p>`;
-  if (!repo) return `<p class="flagnote">Up next and Beaten / Dropped work on your GitHub Pages dashboard.</p>`;
-  const link = (href, label, cls, title) => `<a class="flagbtn ${cls}" target="_blank" rel="noopener" href="${href}"${title ? ` title="${title}"` : ""}>${label}</a>`;
-  const qurl = (action, title) => `${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(`Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\nqueue: ${action}\ngame: ${x.name}\n`)}`;
-  const inQ = QUEUE.includes(x.name) || (x.aliases || []).some(a => QUEUE.includes(a));
-  const pos = Math.max(QUEUE.indexOf(x.name), ...(x.aliases || []).map(a => QUEUE.indexOf(a))) + 1;
-  const q = inQ ? link(qurl("remove", `Up next: remove ${x.name}`), `✓ Up next #${pos}`, "queue on", "Tap to remove from Up next")
-    : QUEUE.length >= 5 ? `<span class="flagbtn" title="Up next holds 5 games. Remove one on Play next.">Up next is full</span>`
-    : link(qurl("add", `Up next: add ${x.name}`), "+ Up next", "queue");
-  const fl = x.flag?.flag;
-  const b = fl === "beaten" ? link(issueUrl("none", [x.name]), "✓ Beaten", "beaten on", "Tap to remove the flag") : link(issueUrl("beaten", [x.name]), "Beaten", "beaten", "Finished without the platinum");
-  const d = fl === "dropped" ? link(issueUrl("none", [x.name]), "✓ Dropped", "dropped on", "Tap to remove the flag") : link(issueUrl("dropped", [x.name]), "Dropped", "dropped", "Stopped playing");
-  const note = fl === "beaten" ? `Beaten since ${fmtDate(x.flag.at)}. Earning the platinum later switches it to Completed.`
-    : fl === "dropped" ? `Dropped since ${fmtDate(x.flag.at)}. Playing it again clears this at the next refresh.` : "";
-  return `<div class="flagbar">${q}${b}${d}</div>${note ? `<p class="flagnote">${note}</p>` : ""}`;
-}
-
 function detail(x, id) {
-  const pend = x.defined
-    ? `<div class="pending">${TIERS.map(t => `<span class="tier"><span class="dot d-${t}"></span>${x.earned[t]}/${x.defined[t]}</span>`).join("")}<span class="left">${x.trophies_total - x.trophies_earned} left</span></div>`
-    : "";
-  const facts = [
-    ["Genres", (x.genres || []).join(", ") || "—"],
-    ["Released", fmtDate(x.released)],
-    ["Owned", x.owned ? (x.acquired ? "Since " + fmtDate(x.acquired) : "Yes") : "Not in digital library"],
-    ["First played", fmtDate(x.first_played)],
-    ["Last played", fmtDate(x.last_played)],
-    ["Last trophy", fmtDate(x.last_trophy)],
-  ];
-  const H = x.hltb, hl = H ? `<div class="hltb"><span>HowLongToBeat</span>${[["Main story", H.main], ["Main + extras", H.extra], ["Completionist", H.complete]].filter(([, v]) => v).map(([k, v]) => `<span>${k} <b>${fmtH(v)}</b></span>`).join("")}${H.url ? `<a href="${esc(H.url)}" target="_blank" rel="noopener">Open</a>` : ""}</div>` : "";
-  const link = x.rawg_slug ? `<a href="https://rawg.io/games/${esc(x.rawg_slug)}" target="_blank" rel="noopener">Game page on RAWG</a>` : "";
   const total = x.trophies_total || 0, missing = total - (x.trophies_earned || 0);
   const tl = x.trophy_lists?.length ? `<details class="tlist" data-game="${id}"${state.topen ? " open" : ""}>
       <summary>Trophy list <span class="note">${total} trophies${missing ? ` · ${missing} missing` : " · all earned"}</span></summary><div class="tl-inner">
@@ -543,8 +443,7 @@ function detail(x, id) {
           ...[...new Set(Object.keys(x.months || {}).map(m => m.slice(0, 4)))].sort().reverse().map(y => [y, `Earned in ${y}`])]
           .map(([k, l]) => `<option value="${k}"${state.twhen === k ? " selected" : ""}>${l}</option>`).join("")}</select>
       </div>${dlcSummary(x)}<div class="tl-body"><p class="flagnote">Loading trophies…</p></div></div></details>` : "";
-  return `<div class="detail" id="${id}-d">${pend}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}
-    <div class="you"><div class="you-h">You</div>${ratingBar(x)}${actionsBar(x)}</div>${tl}</div>`;
+  return GP.panel(x, { id: `${id}-d`, extra: tl });
 }
 
 /* Trophy lists live in trophies/<list id>.json and load when you open a game. */
@@ -626,9 +525,6 @@ $("selbar").addEventListener("click", e => {
   else if (e.target.closest("a[data-part]")) e.target.closest("a[data-part]").classList.add("visited");
 });
 $("list").addEventListener("toggle", e => { if (e.target.matches(".tlist")) { state.topen = e.target.open; renderTrophies(); } }, true);
-$("list").addEventListener("pending-added", e => { const a = e.target.closest("a.save, a.flagbtn"); if (a) { a.classList.add("added"); a.textContent = "✓ Added"; } });
-$("list").addEventListener("input", e => { if (e.target.matches(".rater input")) syncRater(e.target.closest(".rating"), +e.target.value); });
-$("list").addEventListener("click", e => { const st = e.target.closest(".rater .step"); if (st) { const box = st.closest(".rating"); syncRater(box, +box.querySelector("input").value + +st.dataset.step); } });
 $("list").addEventListener("change", e => {
   if (e.target.matches("[data-ts]")) { state.tsort = e.target.value; renderTrophies(); }
   if (e.target.matches("[data-tw]")) { state.twhen = e.target.value; renderTrophies(); }
@@ -649,6 +545,7 @@ async function start() {
   applyFlags(DATA.games, flags);
   if (!DATA.isSample) try { const r = await fetch("ratings.json", { cache: "no-store" }); if (r.ok) RATINGS = await r.json(); } catch {}
   if (!DATA.isSample) try { const r = await fetch("queue.json", { cache: "no-store" }); if (r.ok) QUEUE = await r.json(); } catch {}
+  GP.ratings = RATINGS; GP.queue = QUEUE;
   $("sort").value = state.sort;
   renderLogin(); renderHeader(); renderChips(); renderList();
 }
