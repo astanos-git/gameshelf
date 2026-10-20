@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-20T15:17:42+00:00",
+ "generated_at": "2026-10-20T15:21:01+00:00",
  "upcoming": [
   {
    "slug": "the-witcher-4",
@@ -36,70 +36,101 @@
   }
  ],
  "details": {
-  "shadows-die-twice": {
-   "name": "Sekiro: Shadows Die Twice",
-   "released": "2019-03-22",
-   "tba": false,
-   "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
+  "the-witcher-remake": {
+   "name": "The Witcher: Remake",
+   "released": null,
+   "tba": true,
+   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
    "developers": [
-    "FromSoftware"
+    "Fool's Theory"
    ],
    "publishers": [
-    "FromSoftware",
-    "Activision Value Publishing",
-    "方块游戏"
+    "CD PROJEKT RED"
    ],
-   "website": "http://www.sekirothegame.com",
-   "metacritic": 90,
-   "esrb": "Mature"
+   "website": null,
+   "metacritic": null,
+   "esrb": null
   },
-  "grand-theft-auto-vice-city": {
-   "name": "Grand Theft Auto: Vice City",
-   "released": "2002-10-27",
-   "tba": false,
-   "description": "Grand Theft Auto: Vice City is a third-person shooter with an open world. The game is set in a fictional city during the 1980’s and exhibits a unique design of locations, people, and objects, resembling the real world’s counterparts of Vice City, mainly Miami, FL. GTA: Vice City is a fourth game of the series, following Grand Theft Auto III.",
+  "brothers-a-tale-of-two-sons-2": {
+   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
    "developers": [
-    "Rockstar North"
+    "Starbreeze Studios",
+    "Parables Games"
    ],
+   "esrb": "Teen",
+   "metacritic": 90,
+   "name": "Brothers: A Tale of Two Sons",
    "publishers": [
-    "Rockstar Games"
+    "505 Games",
+    "Parables Games"
    ],
-   "website": "https://www.rockstargames.com/games/vicecity",
-   "metacritic": 94,
-   "esrb": "Mature"
+   "released": "2013-08-07",
+   "tba": false,
+   "website": "https://505games.com/games/brothers/"
   },
   "owlboy": {
-   "name": "Owlboy",
-   "released": "2016-10-31",
-   "tba": false,
    "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
    "developers": [
     "D-Pad Studio",
     "D-Pad Studios"
    ],
+   "esrb": null,
+   "metacritic": 88,
+   "name": "Owlboy",
    "publishers": [
     "D-Pad Studio"
    ],
-   "website": "http://www.owlboygame.com",
-   "metacritic": 88,
-   "esrb": null
+   "released": "2016-10-31",
+   "tba": false,
+   "website": "http://www.owlboygame.com"
   },
   "ratchet-clank-rift-apart": {
-   "name": "Ratchet & Clank: Rift Apart",
-   "released": "2021-06-11",
-   "tba": false,
    "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
    "developers": [
     "Insomniac Games",
     "Nixxes software"
    ],
+   "esrb": "Everyone 10+",
+   "metacritic": 88,
+   "name": "Ratchet & Clank: Rift Apart",
    "publishers": [
     "Sony Interactive Entertainment",
     "PlayStation PC"
    ],
-   "website": null,
-   "metacritic": 88,
-   "esrb": "Everyone 10+"
+   "released": "2021-06-11",
+   "tba": false,
+   "website": null
+  },
+  "bayonetta": {
+   "description": "Bayonetta is a slasher game developed by Platinum Games. The game is set in a fictional European city of Vigrid. The main character is a witch named Bayonetta who fights angels with pistols and magic wishing only one thing: to recall everything happened to her.",
+   "developers": [
+    "Platinum Games"
+   ],
+   "esrb": "Mature",
+   "metacritic": 90,
+   "name": "Bayonetta",
+   "publishers": [
+    "SEGA",
+    "Nintendo"
+   ],
+   "released": "2009-06-23",
+   "tba": false,
+   "website": "http://www.bayonetta.com/"
+  },
+  "grand-theft-auto-vice-city": {
+   "description": "Grand Theft Auto: Vice City is a third-person shooter with an open world. The game is set in a fictional city during the 1980’s and exhibits a unique design of locations, people, and objects, resembling the real world’s counterparts of Vice City, mainly Miami, FL. GTA: Vice City is a fourth game of the series, following Grand Theft Auto III.",
+   "developers": [
+    "Rockstar North"
+   ],
+   "esrb": "Mature",
+   "metacritic": 94,
+   "name": "Grand Theft Auto: Vice City",
+   "publishers": [
+    "Rockstar Games"
+   ],
+   "released": "2002-10-27",
+   "tba": false,
+   "website": "https://www.rockstargames.com/games/vicecity"
   },
   "the-witcher-4": {
    "name": "The Witcher (A New Saga Begins)",
@@ -117,72 +148,41 @@
    "metacritic": null,
    "esrb": null
   },
-  "brothers-a-tale-of-two-sons-2": {
-   "name": "Brothers: A Tale of Two Sons",
-   "released": "2013-08-07",
-   "tba": false,
-   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
+  "shadows-die-twice": {
+   "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
    "developers": [
-    "Starbreeze Studios",
-    "Parables Games"
+    "FromSoftware"
    ],
-   "publishers": [
-    "505 Games",
-    "Parables Games"
-   ],
-   "website": "https://505games.com/games/brothers/",
+   "esrb": "Mature",
    "metacritic": 90,
-   "esrb": "Teen"
-  },
-  "bayonetta": {
-   "name": "Bayonetta",
-   "released": "2009-06-23",
+   "name": "Sekiro: Shadows Die Twice",
+   "publishers": [
+    "FromSoftware",
+    "Activision Value Publishing",
+    "方块游戏"
+   ],
+   "released": "2019-03-22",
    "tba": false,
-   "description": "Bayonetta is a slasher game developed by Platinum Games. The game is set in a fictional European city of Vigrid. The main character is a witch named Bayonetta who fights angels with pistols and magic wishing only one thing: to recall everything happened to her.",
-   "developers": [
-    "Platinum Games"
-   ],
-   "publishers": [
-    "SEGA",
-    "Nintendo"
-   ],
-   "website": "http://www.bayonetta.com/",
-   "metacritic": 90,
-   "esrb": "Mature"
+   "website": "http://www.sekirothegame.com"
   },
   "star-wars-jedi-knight-ii-jedi-outcast": {
-   "name": "Star Wars Jedi Knight II: Jedi Outcast",
-   "released": "2002-03-01",
-   "tba": false,
    "description": "The Legacy of Star Wars Dark Forces™ and Star Wars® Jedi Knight lives on in the intense first-person action of Jedi Outcast. As Kyle Katarn, agent of the New Republic, use your Lightsaber and the full power of the Force to combat a new evil plaguing the galaxy. Wield over 8 Force abilities including the Jedi Mind Trick, Force Lightning and Force Grip.",
    "developers": [
     "Aspyr Media",
     "Raven Software",
     "Lucasfilm"
    ],
+   "esrb": "Teen",
+   "metacritic": 89,
+   "name": "Star Wars Jedi Knight II: Jedi Outcast",
    "publishers": [
     "Aspyr",
     "Activision Blizzard",
     "Disney Interactive"
    ],
-   "website": "http://www.lucasarts.com",
-   "metacritic": 89,
-   "esrb": "Teen"
-  },
-  "the-witcher-remake": {
-   "name": "The Witcher: Remake",
-   "released": null,
-   "tba": true,
-   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
-   "developers": [
-    "Fool's Theory"
-   ],
-   "publishers": [
-    "CD PROJEKT RED"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
+   "released": "2002-03-01",
+   "tba": false,
+   "website": "http://www.lucasarts.com"
   }
  }
 }
