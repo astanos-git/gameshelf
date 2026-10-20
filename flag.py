@@ -78,9 +78,9 @@ def apply_wish(body: str, created: str) -> str | None:
         gone = wl.pop(slug, None)
         _save(WISHLIST, wl)
         return (f"Removed {gone['name']} from your wishlist." if gone else "That game wasn't on your wishlist.") + " The dashboard updates in about a minute."
-    pick = next((p for p in _load(RECS, {}).get("picks", []) if p["slug"] == slug), None)
+    pick = next((p for p in _load(RECS, {}).get("picks", []) + _load(RECS.parent / "upcoming.json", {}).get("upcoming", []) if p["slug"] == slug), None)
     name = re.search(r"^name:\s*(.+?)\s*$", body, re.M)
-    info = {k: pick.get(k) for k in ("name", "image", "metacritic", "released", "genres", "platforms", "length", "url")} if pick else \
+    info = {k: pick.get(k) for k in ("name", "image", "metacritic", "released", "tba", "genres", "platforms", "length", "url") if pick.get(k) is not None} if pick else \
         {"name": name.group(1) if name else slug, "url": f"https://rawg.io/games/{slug}"}
     wl[slug] = {**info, "added": created}
     _save(WISHLIST, wl)
@@ -101,7 +101,7 @@ def apply_feedback(body: str, created: str) -> str | None:
         gone = store.pop(slug, None)
         _save(FEEDBACK, store)
         return (f"Removed your feedback on {gone['name']}." if gone else "No feedback to remove.") + " The dashboard updates in about a minute."
-    pick = next((p for p in _load(RECS, {}).get("picks", []) if p["slug"] == slug), None) or store.get(slug) or {"name": slug}
+    pick = next((p for p in _load(RECS, {}).get("picks", []) + _load(RECS.parent / "upcoming.json", {}).get("upcoming", []) if p["slug"] == slug), None) or store.get(slug) or {"name": slug}
     store[slug] = {"feedback": fb, "at": created, "name": pick.get("name"), "genres": pick.get("genres", []), "tags": pick.get("tags", [])}
     _save(FEEDBACK, store)
     return (f"Noted: you like the look of {store[slug]['name']}. Future picks will lean towards games like it."

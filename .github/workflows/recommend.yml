@@ -1,10 +1,18 @@
 name: Weekly recommendations
 
 # Every Monday early morning (Swiss time), or by hand from the Actions tab.
+# By hand you can also run just one part: "coming-soon" refreshes Play next → Discover → Coming soon,
+# "push-test" sends the Monday push to your phone again (marked as a test).
 on:
   schedule:
     - cron: "7 4 * * 1"
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "What to run"
+        type: choice
+        options: [full, coming-soon, push-test]
+        default: full
 
 permissions:
   contents: write
@@ -17,6 +25,8 @@ jobs:
   recommend:
     runs-on: ubuntu-latest
     timeout-minutes: 75
+    env:
+      MODE: ${{ inputs.mode || 'full' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,21 +35,30 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: Refresh your data first
+        if: env.MODE == 'full'
         env:
           PSN_NPSSO: ${{ secrets.PSN_NPSSO }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: python fetch.py
       - name: Pick this week's games and take the weekly snapshot
+        if: env.MODE == 'full'
         env:
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: python recommend.py
+      - name: Coming soon and game details
+        if: env.MODE != 'push-test'
+        continue-on-error: true
+        env:
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
+        run: python discover.py
       - name: Publish
+        if: env.MODE != 'push-test'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data.json docs/recommendations.json docs/snapshots.json docs/wishlist.json 2>/dev/null || true
+          git add docs/data.json docs/recommendations.json docs/snapshots.json docs/wishlist.json docs/upcoming.json 2>/dev/null || true
           if [ -d docs/trophies ]; then git add docs/trophies; fi
-          for f in rawg_cache.json trophy_dates.json hltb_cache.json wikipedia_cache.json trophy_groups.json wikidata_about.json title_map.json rawg_tags.json; do
+          for f in rawg_cache.json trophy_dates.json hltb_cache.json wikipedia_cache.json trophy_groups.json wikidata_about.json title_map.json rawg_tags.json rawg_details.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
           git diff --cached --quiet || git commit -q -m "Weekly recommendations"
@@ -47,3 +66,9 @@ jobs:
             git pull -q --rebase origin main && git push -q origin HEAD:main && break
             sleep 5
           done
+      - name: Monday push to your phone
+        if: env.MODE != 'coming-soon'
+        continue-on-error: true
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python notify.py ${{ env.MODE == 'push-test' && '--test' || '' }}

@@ -130,6 +130,7 @@
 .hscore { position: absolute; bottom: 4px; right: 4px; background: var(--accent); color: #fff; font: 700 15px var(--display); border-radius: 5px; padding: 1px 6px; }
 .hname { font-size: 12px; line-height: 1.25; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .chart .line { fill: none; stroke: var(--bar); stroke-width: 2; }
+.chart .proj { fill: none; stroke: var(--bar); stroke-width: 2; stroke-dasharray: 5 4; opacity: .7; }
 .chart .end, .chart .hov { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
 .chart .cross { stroke: var(--muted); stroke-dasharray: 3 3; }
 .chart .hitarea { fill: transparent; }
@@ -583,10 +584,59 @@ function backlog(y) {
       <div><b>${fmt(hours)} h</b><span>To beat them all</span></div>
       <div><b>${fmt(left)} h</b><span>Left in games in progress</span></div>
       <div><b>${fmt((hours + left) / 2 / 52)} years</b><span>At 2 h a week</span></div></div>
+    <h3>Backlog over time</h3><div class="chart" id="blChart"></div><p class="note" id="blTrend"></p>
     <details class="fold"><summary>Year by year</summary><div class="tblwrap"><table class="tbl"><thead><tr><th>Year</th><th>Bought</th><th>Started</th><th>Done</th><th>Net</th></tr></thead><tbody>
     ${rows.map(([yr, v]) => { const net = v.bought - v.finished; return `<tr class="${yr === y ? "sel" : ""}"><td>${yr}</td><td class="num">${v.bought}</td><td class="num">${v.started}</td><td class="num">${v.finished}</td><td class="num ${net > 0 ? "up" : net < 0 ? "down" : ""}">${net > 0 ? "+" : ""}${net}</td></tr>`; }).join("")}
     </tbody></table></div></details>
-    ${how(`Hours use HowLongToBeat Main + Extras${todo.length > withTime.length ? `; ${todo.length - withTime.length} backlog game${todo.length - withTime.length === 1 ? " has" : "s have"} no time and ${todo.length - withTime.length === 1 ? "isn't" : "aren't"} counted` : ""}. Bought: PS4/PS5 digital purchases. Done: platinum, 100%, or marked Beaten. Net: bought minus done (more games in than out).`)}`;
+    ${how(`Hours use HowLongToBeat Main + Extras${todo.length > withTime.length ? `; ${todo.length - withTime.length} backlog game${todo.length - withTime.length === 1 ? " has" : "s have"} no time and ${todo.length - withTime.length === 1 ? "isn't" : "aren't"} counted` : ""}. Bought: PS4/PS5 digital purchases. Done: platinum, 100%, or marked Beaten. Net: bought minus done (more games in than out). The chart counts, at the end of each month, games you owned and hadn't started yet (a Beaten or Dropped flag counts as started); the dashed line continues your trend of the last 12 months.`)}`;
+  backlogTrend(y, eff);
+}
+
+/* Backlog over time: games owned but not started yet, month by month, with the last year's trend projected */
+function backlogTrend(y, eff) {
+  const el = $("blChart"); if (!el) return;
+  const own = DATA.games.filter(x => x.owned && x.acquired).map(x => {
+    const f = flagOf(x), st = [startedAt(x), f && eff(x) !== "started" && eff(x) !== "completed" ? f.at : null].filter(Boolean).sort()[0] || null;
+    return { a: x.acquired.slice(0, 7), s: st ? st.slice(0, 7) : null };
+  });
+  if (own.length < 5) { el.innerHTML = `<p class="empty">Not enough purchase dates yet.</p>`; $("blTrend").textContent = ""; return; }
+  const first = own.map(o => o.a).sort()[0], now = new Date(), series = [];
+  let [yy, mm] = first.split("-").map(Number);
+  const nowKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
+  while (true) { const k = `${yy}-${String(mm).padStart(2, "0")}`;
+    series.push({ k, v: own.filter(o => o.a <= k && !(o.s && o.s <= k)).length });
+    if (k >= nowKey) break; if (++mm > 12) { mm = 1; yy++; } }
+  const last = series[series.length - 1], yearAgo = series[Math.max(0, series.length - 13)], slope = (last.v - yearAgo.v) / Math.min(12, series.length - 1 || 1);
+  const ahead = 12, proj = Array.from({ length: ahead }, (_, i) => Math.max(0, last.v + slope * (i + 1)));
+  const W = Math.max(300, Math.round(el.clientWidth || 640)), H = W < 500 ? 180 : 210, L = 34, R = 10, T = 10, B = 24, iw = W - L - R, ih = H - T - B;
+  const n = series.length + ahead, maxV = Math.max(...series.map(p => p.v), ...proj, 1), step = niceStep(maxV / 4), top = Math.ceil(maxV / step) * step;
+  const sx = i => L + (i / Math.max(1, n - 1)) * iw, sy = v => T + ih - (v / top) * ih;
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Backlog size over time">`;
+  for (let v = 0; v <= top; v += step) svg += `<line class="gridline" x1="${L}" x2="${W - R}" y1="${sy(v)}" y2="${sy(v)}"/><text x="${L - 6}" y="${sy(v) + 4}" text-anchor="end">${v}</text>`;
+  const years = [...new Set(series.map(p => p.k.slice(0, 4)))], every = Math.ceil(years.length / Math.floor(iw / 44));
+  years.forEach((yr, i) => { if (i % every) return; const idx = series.findIndex(p => p.k.startsWith(yr)); svg += `<text x="${sx(idx)}" y="${H - 8}" text-anchor="middle">${yr}</text>`; });
+  if (y !== "all") { const a = series.findIndex(p => p.k.startsWith(y)), b = series.map(p => p.k.slice(0, 4)).lastIndexOf(y);
+    if (a >= 0) svg += `<rect class="yearband" x="${sx(a)}" y="${T}" width="${Math.max(2, sx(b) - sx(a))}" height="${ih}"/>`; }
+  svg += `<path class="line" d="${series.map((p, i) => `${i ? "L" : "M"}${sx(i).toFixed(1)},${sy(p.v).toFixed(1)}`).join("")}"/>`;
+  svg += `<path class="proj" d="M${sx(series.length - 1).toFixed(1)},${sy(last.v).toFixed(1)}${proj.map((v, i) => `L${sx(series.length + i).toFixed(1)},${sy(v).toFixed(1)}`).join("")}"/>`;
+  svg += `<circle class="end" cx="${sx(series.length - 1)}" cy="${sy(last.v)}" r="4"/><line class="cross" x1="0" x2="0" y1="${T}" y2="${T + ih}" hidden/><circle class="hov" r="4" hidden/>`;
+  svg += `<line class="baseline" x1="${L}" x2="${W - R}" y1="${T + ih}" y2="${T + ih}"/><rect class="hitarea" x="${L}" y="${T}" width="${iw}" height="${ih}"/></svg><div class="tip" hidden></div>`;
+  el.innerHTML = svg;
+  const sv = el.querySelector("svg"), tip = el.querySelector(".tip"), cross = sv.querySelector(".cross"), hov = sv.querySelector(".hov");
+  sv.addEventListener("pointermove", e => { const box = sv.getBoundingClientRect(), k = box.width / W, x = (e.clientX - box.left) / k;
+    const i = Math.max(0, Math.min(series.length - 1, Math.round(((x - L) / iw) * (n - 1)))), p = series[i], [py, pm] = p.k.split("-");
+    cross.setAttribute("x1", sx(i)); cross.setAttribute("x2", sx(i)); cross.hidden = false; hov.setAttribute("cx", sx(i)); hov.setAttribute("cy", sy(p.v)); hov.hidden = false;
+    tip.innerHTML = `<b>${MONTHS[+pm - 1]} ${py}</b> · ${p.v} game${p.v === 1 ? "" : "s"} not started`;
+    tip.style.left = Math.min(Math.max(sx(i) * k, 80), box.width - 80) + "px"; tip.style.top = (sy(p.v) * k) + "px"; tip.hidden = false; });
+  sv.addEventListener("pointerleave", () => { tip.hidden = cross.hidden = hov.hidden = true; });
+  const peak = series.reduce((a, b) => b.v > a.v ? b : a), [pyy, pmm] = peak.k.split("-");
+  const per = Math.abs(slope) >= 1 ? Math.round(Math.abs(slope)) : Math.abs(slope).toFixed(1);
+  let trend;
+  if (slope > 0.25) trend = `Growing by about ${per} game${per == 1 ? "" : "s"} a month over the last year.`;
+  else if (slope < -0.25) { const m = Math.ceil(last.v / -slope), d = new Date(now.getFullYear(), now.getMonth() + m, 1);
+    trend = `Shrinking by about ${per} game${per == 1 ? "" : "s"} a month: at this pace it's empty around ${d.toLocaleDateString(undefined, { month: "long", year: "numeric" })}${m > 120 ? " (a long way off)" : ""}.`; }
+  else trend = "Roughly stable over the last year.";
+  $("blTrend").textContent = `${trend} Peak: ${peak.v} games in ${MONTHS[+pmm - 1]} ${pyy}.`;
 }
 
 function extras(y) { whenYouPlay(y); milestones(y); critics(y); pace(y); backlog(y); extras2(y); }

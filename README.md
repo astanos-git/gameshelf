@@ -49,6 +49,12 @@ Go to **Actions → Refresh game data → Run workflow**. The run takes about 3�
 
 ## Everyday use
 
+- **Tap to see more on Play next:** every game on Play next opens a panel. Your own games get the same panel as the Library (without the trophy list); weekly picks, wishlist and coming-soon games show a short description, studios, release date and links (refreshed every Monday).
+- **Coming soon** (Play next → Discover): unreleased PS4/PS5 games in the series you played most and from your favourite studios, with **+ Wishlist**. Wishlist games not out yet show their release date. Updated every Monday by the weekly job (`discover.py`); to update it now, run **Weekly recommendations** from the Actions tab with *What to run* = `coming-soon`.
+- **Backlog over time** (Stats → Collection → Backlog): how many games you owned but hadn't started, month by month, with last year's trend projected.
+- **Share your year** (Review): **Share as image** makes a 1080×1350 card of the year and opens your phone's share sheet (on a computer it downloads).
+- **Monday push to your phone:** install the free **ntfy** app, subscribe to a topic with a long random name (anyone who knows the name can read it), then add it as the repo secret `NTFY_TOPIC`. Every Monday you get last week's recap, the new picks, games out in the next 30 days, and a warning when the PSN login is about to expire. To test it, run **Weekly recommendations** with *What to run* = `push-test`.
+
 - **Layout:** Stats is split into tabs (Overview, Trophies, Habits, Taste, Collection) under the year chips, so you see one part at a time; the address remembers the tab (e.g. `stats.html#taste`). Explanations are folded behind **How this works**, long lists behind **Show all**. A game's trophy list is folded behind **Trophy list** at the bottom of its panel.
 
 - **Pending changes:** ratings, flags, Up next, wishlist, 👍/👎 on picks and goals don't open GitHub one by one. Each one is added to a bar at the bottom of every page ("5 changes pending"). Tap it to review or remove items, then **Send all**: one pre-filled GitHub page opens with everything, tap **Create** once and the dashboard updates in about a minute. Changing the same thing twice (e.g. rating a game 85, then 88) keeps only the latest. The list is kept in this browser on this device until you send it. If you closed GitHub without tapping Create, tap **Restore** to get the list back. Lots of changes at once are split into parts if they don't fit on one GitHub page.

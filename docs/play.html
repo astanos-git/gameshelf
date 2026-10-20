@@ -72,6 +72,12 @@ a.act.primary { background: var(--accent); color: #fff; border-color: var(--acce
 .budget input { width: 80px; }
 .dg-figs b { font-size: 24px; }
 .tap { cursor: pointer; }
+.item.nomc { grid-template-columns: 52px 1fr; }
+.meta .out { color: var(--accent); font-weight: 600; }
+.detail .desc { margin: 0; font-size: 14px; line-height: 1.5; }
+tr.ptr > td { padding: 0 0 8px; border-bottom: 1px solid var(--line); }
+tr.ptr .detail { border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+tr.tap.open td { background: var(--accent-soft); }
 .item > .detail { grid-column: 1 / -1; margin: 2px -12px -10px; }
 .pick > .detail { grid-column: 1 / -1; margin: 0 -14px -14px; }
 .tap.open { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
@@ -122,6 +128,11 @@ a.act.primary { background: var(--accent); color: #fff; border-color: var(--acce
     <section class="block">
       <h2 class="sec">Wishlist</h2>
       <ol class="list" id="wishList"></ol>
+    </section>
+    <section class="block" id="soonSec" hidden>
+      <div class="sec-head"><h2 class="sec">Coming soon</h2><span class="note">From your series and studios</span></div>
+      <ol class="list" id="soonList"></ol>
+      <details class="how"><summary>How this works</summary><p>Unreleased PS4/PS5 games in the series of the games you played most, and from the studios you spent most hours with (at least two of their games). Games you own are left out. From RAWG, updated every Monday; release dates often move.</p></details>
     </section>
   </div>
 
@@ -220,12 +231,13 @@ function closest() {
     const easy = (x.easy || []).map(t => `<span><span class="dot d-${t.t}"></span>${t.h ? "Hidden trophy" : esc(t.n)}${t.p ? ` (${esc(t.p)})` : ""}<span class="r">${t.r ?? "?"}%</span></span>`).join("");
     const goal = x.defined?.platinum ? "platinum" : "100%";
     const tag = x.eff === "beaten" ? `<span class="note"> · Beaten</span>` : "";
-    return `<li class="item"><span class="cover">${pic(x.image, x.name)}</span>
+    return `<li class="item tap" data-g="${esc(x.name)}"><span class="cover">${pic(x.image, x.name)}</span>
       <span class="main"><span class="name">${esc(x.name)}${tag}</span>
         <span class="prog"><span class="bar"><i style="width:${x.progress}%"></i></span><span class="num">${x.progress}% to ${goal}</span></span>
         <span class="easy">${easy}</span></span>
       <span class="left num">${x.missing_n ?? "?"}<small>left</small></span></li>`;
   }).join("") : `<p class="empty">No game at 70% or more right now.</p>`;
+  reopen();
 }
 
 let dlcAll = false, closeAll = false, hardAll = false;
@@ -237,13 +249,14 @@ function dlcToFinish() {
     return open.length && (baseDone || open.some(d => d.earned > 0)) ? { x, open, left: open.reduce((a, d) => a + d.total - d.earned, 0) } : null;
   }).filter(Boolean).sort((a, b) => a.left - b.left);
   const shown = dlcAll ? rows : rows.slice(0, 5);
-  $("dlcList").innerHTML = shown.length ? shown.map(({ x, open, left }) => `<li class="item"><span class="cover">${pic(x.image, x.name)}</span>
+  $("dlcList").innerHTML = shown.length ? shown.map(({ x, open, left }) => `<li class="item tap" data-g="${esc(x.name)}"><span class="cover">${pic(x.image, x.name)}</span>
       <span class="main"><span class="name">${esc(x.name)}</span>
         <span class="easy">${open.map(d => `<span>${esc(d.name)}<span class="r">${d.earned}/${d.total}</span></span>`).join("")}</span></span>
       <span class="left num">${left}<small>left</small></span></li>`).join("")
     : `<p class="empty">${DATA.games.some(x => x.dlc) ? "No DLC left in games you've finished." : "Appears after the next refresh."}</p>`;
   $("dlcMore").hidden = rows.length <= 5;
   $("dlcMore").textContent = dlcAll ? "Show fewer" : `Show all ${rows.length}`;
+  reopen();
 }
 $("dlcMore").addEventListener("click", () => { dlcAll = !dlcAll; dlcToFinish(); });
 
@@ -255,12 +268,14 @@ async function weekly() {
   $("wkWhen").textContent = `Updated ${d.toLocaleDateString(undefined, { weekday: "short", day: "numeric", month: "short" })}`;
   const pr = R.profile || {};
   $("wkProfile").innerHTML = how(`${pr.top_tags?.length ? `Based on your taste for ${esc(pr.top_genres.slice(0, 3).join(", "))} and ${esc(pr.top_tags.slice(0, 4).map(t => t.toLowerCase()).join(", "))} games, usually around ${pr.usual_length} h. ` : ""}Three games you don't own, new every Monday. 👍 / 👎 teach next week's picks; 👎 also means that game won't come back.`, "Why these games?");
-  $("wkList").innerHTML = R.picks.map(p => `<li class="item"><span class="cover">${pic(p.image, p.name)}</span>
-    <span class="main"><span class="name"><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a></span>
+  R.picks.forEach(p => ITEMS[p.slug] = p);
+  $("wkList").innerHTML = R.picks.map(p => `<li class="item tap" data-d="${esc(p.slug)}"><span class="cover">${pic(p.image, p.name)}</span>
+    <span class="main"><span class="name">${esc(p.name)}</span>
       <span class="meta"><span>${esc(p.platforms.join(" · "))}</span>${p.released ? `<span>${new Date(p.released).getFullYear()}</span>` : ""}${p.length ? `<span>~${p.length} h</span>` : ""}<span>${esc(p.genres.join(", "))}</span></span>
       <span class="why">${esc(p.why)}</span>${pickActions(p)}${owned.has(p.slug) ? `<span class="owned">Already in your library now</span>` : ""}</span>
     <span class="mc ${mcClass(p.metacritic)}">${p.metacritic ?? "n/a"}</span></li>`).join("");
   $("weekly").hidden = false;
+  reopen();
 }
 
 
@@ -277,26 +292,31 @@ function issueUrl(title, lines) {
 }
 const act = (url, label, cls = "") => url ? `<a class="act ${cls}" href="${url}" target="_blank" rel="noopener">${label}</a>` : "";
 const getJSON = async (f, d) => { try { const r = await fetch(f, { cache: "no-store" }); return r.ok ? await r.json() : d; } catch { return d; } };
-let QUEUE = [], WISH = {}, FEEDBACK = {}, SNAPS = [], GOALS = {}, FLAGS = {};
+let QUEUE = [], WISH = {}, FEEDBACK = {}, SNAPS = [], GOALS = {}, FLAGS = {}, UPC = {}, ITEMS = {};
 const byName = n => DATA.games.find(g => g.name === n || (g.aliases || []).includes(n));
 const sum = a => a.reduce((x, y) => x + y, 0);
 const left = x => { const b = beatTime(x); return b ? Math.max(1, Math.round(b - (x.eff === "started" ? (x.hours || 0) : 0))) : null; };
 
 /* ---------- game panel on tap (Now tab): same panel as the Library, without the trophy list ---------- */
-let openG = null;   // { list, name } of the open panel, so it survives re-renders
+let openG = null;   // { list, key } of the open panel, so it survives re-renders
+const keyOf = el => el.dataset.g != null ? "g:" + el.dataset.g : "d:" + el.dataset.d;
 function reopen() {
   if (!openG) return;
-  const el = [...document.querySelectorAll(`#${openG.list} [data-g]`)].find(e => e.dataset.g === openG.name);
-  const g = el && byName(openG.name);
-  if (!g) { openG = null; return; }
-  el.classList.add("open"); el.insertAdjacentHTML("beforeend", GP.panel(g));
+  const el = [...document.querySelectorAll(`#${openG.list} .tap`)].find(e => keyOf(e) === openG.key);
+  const g = el && el.dataset.g != null ? byName(el.dataset.g) : null;
+  if (!el || (el.dataset.g != null && !g)) { openG = null; return; }
+  const html = g ? GP.panel(g) : discoverPanel(el.dataset.d);
+  el.classList.add("open");
+  if (el.tagName === "TR") el.insertAdjacentHTML("afterend", `<tr class="ptr"><td colspan="9">${html}</td></tr>`);
+  else el.insertAdjacentHTML("beforeend", html);
 }
 document.addEventListener("click", e => {
-  const el = e.target.closest(".tap[data-g]");
+  const el = e.target.closest(".tap");
   if (!el || e.target.closest("a, button, input, select, label, .detail")) return;
-  const list = el.closest("[id]").id, same = openG && openG.list === list && openG.name === el.dataset.g;
+  const list = el.closest("[id]").id, key = keyOf(el), same = openG && openG.list === list && openG.key === key;
   document.querySelectorAll(".tap.open").forEach(o => { o.classList.remove("open"); o.querySelector(":scope > .detail")?.remove(); });
-  openG = same ? null : { list, name: el.dataset.g };
+  document.querySelectorAll("tr.ptr").forEach(r => r.remove());
+  openG = same ? null : { list, key };
   reopen();
 });
 
@@ -365,12 +385,50 @@ function pickActions(p) {
 function wishlist() {
   const owned = new Set(DATA.games.map(g => g.rawg_slug));
   const items = Object.entries(WISH).filter(([s]) => !owned.has(s)).sort((a, b) => (b[1].added || "").localeCompare(a[1].added || ""));
-  $("wishList").innerHTML = items.length ? items.map(([s, w]) => `<li class="item"><span class="cover">${pic(w.image, w.name)}</span>
-      <span class="main"><span class="name"><a href="${esc(w.url)}" target="_blank" rel="noopener">${esc(w.name)}</a></span>
-      <span class="meta">${w.platforms?.length ? `<span>${esc(w.platforms.join(" · "))}</span>` : ""}${w.length ? `<span>~${w.length} h</span>` : ""}${w.genres?.length ? `<span>${esc(w.genres.join(", "))}</span>` : ""}<span>added ${new Date(w.added).toLocaleDateString(undefined, { day: "numeric", month: "short" })}</span></span>
-      ${act(issueUrl(`Wishlist: remove ${w.name}`, ["wish: remove", `slug: ${s}`]), "Remove")}</span>
+  items.forEach(([s, w]) => ITEMS[s] = { ...w, slug: s });
+  $("wishList").innerHTML = items.length ? items.map(([s, w]) => `<li class="item tap" data-d="${esc(s)}"><span class="cover">${pic(w.image, w.name)}</span>
+      <span class="main"><span class="name">${esc(w.name)}</span>
+      <span class="meta">${outLabel(s, w) ? `<span class="out">${outLabel(s, w)}</span>` : ""}${w.platforms?.length ? `<span>${esc(w.platforms.join(" · "))}</span>` : ""}${w.length ? `<span>~${w.length} h</span>` : ""}${w.genres?.length ? `<span>${esc(w.genres.join(", "))}</span>` : ""}<span>added ${new Date(w.added).toLocaleDateString(undefined, { day: "numeric", month: "short" })}</span></span>
+      <span class="pact">${act(issueUrl(`Wishlist: remove ${w.name}`, ["wish: remove", `slug: ${s}`]), "Remove")}</span></span>
       <span class="mc ${mcClass(w.metacritic)}">${w.metacritic ?? "n/a"}</span></li>`).join("")
-    : `<p class="empty">Empty. Tap <b>+ Wishlist</b> on a weekly pick to keep it here. Games leave the list once they're in your library.</p>`;
+    : `<p class="empty">Empty. Tap <b>+ Wishlist</b> on a weekly pick or a coming-soon game to keep it here. Games leave the list once they're in your library.</p>`;
+  reopen();
+}
+
+/* ---------- Coming soon (upcoming.json, weekly) ---------- */
+const fmtDay = d => new Date(d).toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
+function outLabel(slug, w) {   // "Out 12 Mar 2027" / "Release date TBA" for games not out yet
+  const d = UPC.details?.[slug] || {}, rel = d.released || w?.released, tba = d.tba ?? w?.tba;
+  if (tba && !rel) return "Release date TBA";
+  return rel && rel > new Date().toISOString().slice(0, 10) ? `Out ${fmtDay(rel)}` : "";
+}
+function comingSoon() {
+  const list = UPC.upcoming || [];
+  $("soonSec").hidden = !list.length && !UPC.generated_at;
+  list.forEach(x => ITEMS[x.slug] = x);
+  $("soonList").innerHTML = list.length ? list.map(x => `<li class="item nomc tap" data-d="${esc(x.slug)}"><span class="cover">${pic(x.image, x.name)}</span>
+      <span class="main"><span class="name">${esc(x.name)}</span>
+        <span class="meta"><span class="out">${x.released && !x.tba ? fmtDay(x.released) : "TBA"}</span>${x.platforms?.length ? `<span>${esc(x.platforms.join(" · "))}</span>` : ""}<span>${esc(x.reason)}</span></span>
+        ${repoUrl() ? `<span class="pact">${WISH[x.slug] ? `<span class="note">On your wishlist</span>` : act(issueUrl(`Wishlist: add ${x.name}`, ["wish: add", `slug: ${x.slug}`, `name: ${x.name}`]), "+ Wishlist")}</span>` : ""}</span></li>`).join("")
+    : `<p class="empty">Nothing announced right now in your series or from your studios.</p>`;
+  reopen();
+}
+
+/* Panel for games you don't own: description, studios, release date */
+function discoverPanel(slug) {
+  const x = ITEMS[slug] || {}, d = UPC.details?.[slug] || {};
+  const rel = d.released || x.released, tba = d.tba ?? x.tba;
+  const facts = [
+    ["Release", tba && !rel ? "TBA" : rel ? fmtDay(rel) : "—"],
+    ["Platforms", (x.platforms || []).join(", ") || "—"],
+    ["Developer", (d.developers || []).join(", ") || "—"],
+    ["Publisher", (d.publishers || []).join(", ") || "—"],
+    ["Length", x.length ? `~${x.length} h (HowLongToBeat)` : "—"],
+    ["Metacritic", (d.metacritic ?? x.metacritic) ?? "—"],
+  ];
+  return `<div class="detail">${d.description ? `<p class="desc">${esc(d.description)}</p>` : `<p class="note">${UPC.generated_at ? "No description on RAWG." : "Descriptions appear after the next Monday update."}</p>`}
+    <dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
+    <span class="links"><a href="${esc(x.url || `https://rawg.io/games/${slug}`)}" target="_blank" rel="noopener">Game page on RAWG</a>${d.website ? ` · <a href="${esc(d.website)}" target="_blank" rel="noopener">Official site</a>` : ""}</span></div>`;
 }
 
 /* ---------- 5. Season planner ---------- */
@@ -407,16 +465,18 @@ function platDifficulty() {
     .sort((a, b) => a.ease - b.ease).slice(0, 20);
   const shown = hardAll ? rows : rows.slice(0, 6);
   $("platHard").innerHTML = rows.length ? `<div class="tblwrap"><table class="tbl"><thead><tr><th>Game</th><th>You</th><th>Plat</th><th>Rare left</th><th></th></tr></thead><tbody>
-    ${shown.map(r => `<tr><td>${esc(r.x.name)}</td><td class="num">${r.x.progress}%</td><td class="num">${r.x.plat_rate}%</td><td class="num">${r.x.rare_missing}/${r.x.missing_n}</td><td><span class="lvl ${r.level.toLowerCase()}">${r.level}</span></td></tr>`).join("")}</tbody></table></div>
+    ${shown.map(r => `<tr class="tap" data-g="${esc(r.x.name)}"><td>${esc(r.x.name)}</td><td class="num">${r.x.progress}%</td><td class="num">${r.x.plat_rate}%</td><td class="num">${r.x.rare_missing}/${r.x.missing_n}</td><td><span class="lvl ${r.level.toLowerCase()}">${r.level}</span></td></tr>`).join("")}</tbody></table></div>
     ${rows.length > 6 ? `<button class="more" id="hardMore">${hardAll ? "Show fewer" : `Show all ${rows.length}`}</button>` : ""}`
     : `<p class="empty">Appears after the next refresh.</p>`;
+  reopen();
 }
 
 async function extrasStart() {
   [QUEUE, WISH, FEEDBACK, SNAPS, GOALS, FLAGS, GP.ratings] = await Promise.all([getJSON("queue.json", []), getJSON("wishlist.json", {}), getJSON("pick_feedback.json", {}),
     getJSON("snapshots.json", []), getJSON("goals.json", {}), getJSON("flags.json", {}), getJSON("ratings.json", {})]);
+  UPC = await getJSON("upcoming.json", {});
   GP.queue = QUEUE;
-  digest(); upNext(); wishlist(); planner(); platDifficulty();
+  digest(); upNext(); wishlist(); comingSoon(); planner(); platDifficulty();
 }
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-q]"); if (!b) return;

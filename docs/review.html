@@ -65,6 +65,7 @@ h3 { font-family: var(--display); }
 .gf-actions a { color: var(--accent); font-size: 14px; }
 .gf-actions a.save { background: var(--accent); color: #fff; border-radius: 8px; padding: 6px 14px; text-decoration: none; font-weight: 600; }
 .gf-actions a.save.off { background: var(--line); color: var(--muted); pointer-events: none; }
+.share-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: -4px; }
 </style>
 
 <div class="wrap">
@@ -201,6 +202,7 @@ function render() {
     ["Started · finished", `${s.started} · ${s.finished.length}`, "new games started · games finished"],
     s.rated && ["Your top rating", s.rated.g.name, `${s.rated.r.score}/100`],
   ].filter(Boolean);
+  SHARE = { year, s, goty, line, cards: cards.filter(c => c[1]).slice(0, 4) };
   $("page").innerHTML = `
     <section class="hero">
       <span class="kicker">${year === THIS_YEAR ? "Your year so far on PlayStation" : "Your year on PlayStation"}</span>
@@ -212,6 +214,7 @@ function render() {
         <div><b class="num">${fmt(s.hours)}</b><span>Hours (est.)</span>${delta(s.hours, prev.hours)}</div>
       </div>
     </section>
+    <div class="share-row"><button class="btn primary" id="shareBtn">Share as image</button><span class="note" id="shareNote"></span></div>
     ${goty ? `<section class="goty"><span class="cover">${pic(goty.image, goty.name)}</span>
       <div><span class="eyebrow">Your game of the year</span><h2>${esc(goty.name)}</h2>
       <p class="note">~${fmt(s.hoursOf(goty))} h · ${s.trophiesOf(goty)} trophies${goty.metacritic ? ` · Metacritic ${goty.metacritic}` : ""}</p>
@@ -220,6 +223,62 @@ function render() {
     ${s.platList.length ? `<section class="plats"><h2>Platinums of ${year}</h2><ol>${s.platList.map(m => `<li><span>${esc(m.game)}</span><span class="d">${fmtDate(m.at)}${m.r != null ? ` · ${m.r}%` : ""}</span></li>`).join("")}</ol></section>` : ""}
     ${goalsBlock(s)}`;
 }
+
+/* ---------- Share as image: a 1080×1350 card drawn on a canvas, sent to the share sheet (or downloaded) ---------- */
+let SHARE = null;
+function wrap(ctx, text, maxW, maxLines) {
+  const words = String(text).split(/\s+/), lines = []; let cur = "";
+  for (const w of words) { const t = cur ? cur + " " + w : w; if (ctx.measureText(t).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t; }
+  if (cur) lines.push(cur);
+  if (lines.length > maxLines) { lines.length = maxLines; let l = lines[maxLines - 1]; while (ctx.measureText(l + "…").width > maxW && l.length) l = l.slice(0, -1); lines[maxLines - 1] = l + "…"; }
+  return lines;
+}
+function loadImg(url) {
+  return new Promise(res => { if (!url) return res(null); const im = new Image(); im.crossOrigin = "anonymous";
+    const t = setTimeout(() => res(null), 4000); im.onload = () => { clearTimeout(t); res(im); }; im.onerror = () => { clearTimeout(t); res(null); }; im.src = url; });
+}
+function drawCard(cover) {
+  const { year, s, goty, line, cards } = SHARE, W = 1080, H = 1350, c = document.createElement("canvas"); c.width = W; c.height = H;
+  const x = c.getContext("2d"), D = '"Barlow Condensed", "Arial Narrow", sans-serif', Bd = '"IBM Plex Sans", system-ui, sans-serif', P = 80;
+  x.fillStyle = "#10204a"; x.fillRect(0, 0, W, H);
+  x.strokeStyle = "rgba(93,143,201,.35)"; x.lineWidth = 70; x.beginPath(); x.arc(W - 40, 60, 260, 0, Math.PI * 2); x.stroke();
+  x.fillStyle = "#a9b6d6"; x.font = `600 30px ${Bd}`; x.letterSpacing = "6px";
+  x.fillText((year === THIS_YEAR ? "MY YEAR SO FAR ON PLAYSTATION" : "MY YEAR ON PLAYSTATION"), P, 120); x.letterSpacing = "0px";
+  x.fillStyle = "#f2f5fb"; x.font = `800 300px ${D}`; x.fillText(year, P - 8, 400);
+  x.font = `400 38px ${Bd}`; wrap(x, line, W - 2 * P, 3).forEach((l, i) => x.fillText(l, P, 480 + i * 52));
+  const stats = [[fmt(s.trophies), "TROPHIES"], [String(s.plats), "PLATINUMS"], [fmt(s.hours), "HOURS (EST.)"]];
+  stats.forEach(([v, l], i) => { const sx = P + i * 320; x.fillStyle = "#f2f5fb"; x.font = `700 120px ${D}`; x.fillText(v, sx, 720);
+    x.fillStyle = "#a9b6d6"; x.font = `600 24px ${Bd}`; x.letterSpacing = "4px"; x.fillText(l, sx, 760); x.letterSpacing = "0px"; });
+  if (goty) {
+    const gy = 820, gh = 230; x.fillStyle = "rgba(255,255,255,.08)"; x.beginPath(); x.roundRect(P, gy, W - 2 * P, gh, 24); x.fill();
+    let tx = P + 36;
+    if (cover) { x.save(); x.beginPath(); x.roundRect(P + 30, gy + 30, 170, 170, 16); x.clip(); x.drawImage(cover, P + 30, gy + 30, 170, 170); x.restore(); tx = P + 230; }
+    x.fillStyle = "#8fb8ea"; x.font = `600 24px ${Bd}`; x.letterSpacing = "4px"; x.fillText("GAME OF THE YEAR", tx, gy + 62); x.letterSpacing = "0px";
+    x.fillStyle = "#f2f5fb"; x.font = `700 64px ${D}`; const nl = wrap(x, goty.name, W - P - tx - 30, 2); nl.forEach((l, i) => x.fillText(l, tx, gy + 128 + i * 62));
+    x.fillStyle = "#a9b6d6"; x.font = `400 28px ${Bd}`; x.fillText(`~${fmt(s.hoursOf(goty))} h · ${s.trophiesOf(goty)} trophies`, tx, gy + (nl.length > 1 ? 210 : 172));
+  }
+  cards.forEach(([l, b, sub], i) => { const cx = P + (i % 2) * ((W - 2 * P) / 2 + 10), cy = 1105 + Math.floor(i / 2) * 92;
+    x.fillStyle = "#a9b6d6"; x.font = `600 20px ${Bd}`; x.letterSpacing = "3px"; x.fillText(l.toUpperCase(), cx, cy); x.letterSpacing = "0px";
+    x.fillStyle = "#f2f5fb"; x.font = `600 40px ${D}`; x.fillText(wrap(x, b, (W - 2 * P) / 2 - 30, 1)[0], cx, cy + 46); });
+  x.fillStyle = "#a9b6d6"; x.font = `400 24px ${Bd}`; x.fillText(`${DATA.profile?.online_id || ""} · Game Shelf`, P, H - 36);
+  return c;
+}
+async function shareImage() {
+  if (!SHARE) return;
+  const btn = $("shareBtn"), note = $("shareNote"); btn.disabled = true; note.textContent = "Preparing…";
+  try { await Promise.all(['800 300px "Barlow Condensed"', '700 64px "Barlow Condensed"', '400 38px "IBM Plex Sans"', '600 30px "IBM Plex Sans"'].map(f => document.fonts.load(f))); } catch {}
+  let canvas = drawCard(await loadImg(SHARE.goty?.image)), blob;
+  try { blob = await new Promise(r => canvas.toBlob(r, "image/png")); } catch { blob = null; }
+  if (!blob) { canvas = drawCard(null); blob = await new Promise(r => canvas.toBlob(r, "image/png")); }   // cover blocked by the image server
+  const file = new File([blob], `game-shelf-${SHARE.year}.png`, { type: "image/png" });
+  note.textContent = "";
+  try {
+    if (navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], title: `My ${SHARE.year} on PlayStation` }); }
+    else { const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = file.name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000); note.textContent = "Image downloaded."; }
+  } catch (e) { if (e.name !== "AbortError") note.textContent = "Couldn't share: " + e.message; }
+  btn.disabled = false;
+}
+document.addEventListener("click", e => { if (e.target.id === "shareBtn") shareImage(); });
 
 const _render = render;
 render = function () { _render(); syncGoalLink(); };
