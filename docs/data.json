@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-21T07:15:02+00:00",
+ "generated_at": "2026-10-25T20:42:48+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -9,15 +9,404 @@
   "online_id": "cwil79",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 329,
-  "level_progress": 6,
+  "level_progress": 13,
   "earned": {
-   "bronze": 2744,
-   "silver": 645,
+   "bronze": 2746,
+   "silver": 646,
    "gold": 211,
    "platinum": 22
   }
  },
  "games": [
+  {
+   "name": "Ultros",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202305/2420/d0adbcee60a2115317b7503f22ae2d7c451ad14d103406d5.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-02-26T15:43:46Z",
+   "hours": 2.9,
+   "first_played": "2026-09-27T12:30:17.680000+00:00",
+   "last_played": "2026-10-25T15:03:19.430000+00:00",
+   "progress": 8,
+   "earned": {
+    "bronze": 4,
+    "silver": 1,
+    "gold": 0,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 8,
+    "silver": 19,
+    "gold": 4,
+    "platinum": 1
+   },
+   "last_trophy": "2026-10-25T17:10:25+00:00",
+   "has_trophies": true,
+   "months": {
+    "2026-09": [
+     2,
+     0,
+     0,
+     0
+    ],
+    "2026-10": [
+     2,
+     1,
+     0,
+     0
+    ]
+   },
+   "trophy_lists": [
+    {
+     "id": "NPWR36557_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 8,
+     "groups": {}
+    }
+   ],
+   "rare": [
+    {
+     "n": "Humility opens the floodgates",
+     "t": "silver",
+     "r": 2.9,
+     "at": "2026-10-25T17:10:25+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/0979e96b-f7a8-4f2c-9981-3392548c2461.png"
+    },
+    {
+     "n": "Setting a trap for others",
+     "t": "bronze",
+     "r": 9.2,
+     "at": "2026-10-25T16:02:40+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/11094a8c-9f1f-4caa-91ab-19680f8fbd64.png"
+    },
+    {
+     "n": "A hungry stomach has no ears",
+     "t": "bronze",
+     "r": 11.2,
+     "at": "2026-10-10T16:34:12+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/6d2fc8d0-6493-4745-bd80-bcbfc1daf6dd.png"
+    },
+    {
+     "n": "Nietzsche taken to heart",
+     "t": "bronze",
+     "r": 27.3,
+     "at": "2026-09-27T12:51:46+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/63a73648-dc66-4aa0-81c9-758dfa75e9e2.png"
+    },
+    {
+     "n": "Wrath upon the enraged",
+     "t": "bronze",
+     "r": 28.3,
+     "at": "2026-09-27T13:18:21+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/a9903d73-cf7b-44d6-8292-1f43bd77bf8a.png"
+    }
+   ],
+   "aliases": [],
+   "trophies_earned": 5,
+   "trophies_total": 32,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-10-25T17:10:25+00:00",
+   "hours_by_year": {
+    "2026": 2.9
+   },
+   "metacritic": 79,
+   "genres": [
+    "Indie",
+    "Adventure"
+   ],
+   "released": "2024-02-13",
+   "rawg_slug": "ultros",
+   "metacritic_source": "wikipedia",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "metroidvania",
+     "Metroidvania"
+    ],
+    [
+     "roguelite",
+     "Roguelite"
+    ],
+    [
+     "stylized",
+     "Stylized"
+    ],
+    [
+     "hand-drawn",
+     "Hand-drawn"
+    ],
+    [
+     "protagonistka",
+     "Протагонистка"
+    ]
+   ],
+   "hltb": {
+    "main": 11.12,
+    "extra": 19.0,
+    "complete": 28.38,
+    "url": "https://howlongtobeat.com/game/129248"
+   },
+   "plat_rate": 0.4,
+   "rare_missing": 27,
+   "first_trophy_at": "2026-09-27T12:51:46+00:00",
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 27,
+   "easy": [
+    {
+     "n": "The end is where we start from",
+     "t": "bronze",
+     "r": 4.6,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "A pulse grows in the temple",
+     "t": "silver",
+     "r": 4.2,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "For knowledge is limited",
+     "t": "bronze",
+     "r": 4.0,
+     "h": true,
+     "p": null
+    }
+   ]
+  },
+  {
+   "name": "Battlefield™ 6",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1411/c8c8def7d4bd44535233fcc0eb1235183853c0bb8150b8a6.png",
+   "platforms": [
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-07-22T15:50:33Z",
+   "hours": 6.8,
+   "first_played": "2026-07-23T07:50:38.180000+00:00",
+   "last_played": "2026-10-25T12:56:54.200000+00:00",
+   "progress": 2,
+   "earned": {
+    "bronze": 2,
+    "silver": 0,
+    "gold": 0,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 38,
+    "silver": 12,
+    "gold": 3,
+    "platinum": 1
+   },
+   "last_trophy": "2026-10-25T12:33:04+00:00",
+   "has_trophies": true,
+   "months": {
+    "2026-10": [
+     1,
+     0,
+     0,
+     0
+    ],
+    "2026-07": [
+     1,
+     0,
+     0,
+     0
+    ]
+   },
+   "trophy_lists": [
+    {
+     "id": "NPWR50656_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 2,
+     "groups": {
+      "001": "BATTLEFIELD™ REDSEC",
+      "default": "Battlefield™ 6"
+     }
+    }
+   ],
+   "rare": [
+    {
+     "n": "Stand Alone",
+     "t": "bronze",
+     "r": 26.6,
+     "at": "2026-10-25T12:33:05+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR50656_00/d46648e0-eb1c-4ae9-b59d-9c5777495b7b.png"
+    },
+    {
+     "n": "Private First Class Montes",
+     "t": "bronze",
+     "r": 36.0,
+     "at": "2026-07-25T09:40:23+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR50656_00/bb1db0b7-b1dc-4247-90c1-1ab60ba7a19d.png"
+    }
+   ],
+   "aliases": [],
+   "trophies_earned": 2,
+   "trophies_total": 54,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-10-25T12:56:54.200000+00:00",
+   "hours_by_year": {
+    "2026": 6.8
+   },
+   "metacritic": 83,
+   "genres": [
+    "Shooter",
+    "Action"
+   ],
+   "released": "2025-10-10",
+   "rawg_slug": "battlefield-6-2",
+   "metacritic_source": "wikidata",
+   "series": [
+    "Battlefield"
+   ],
+   "developers": [
+    "DICE",
+    "Criterion Games",
+    "Motive Studio",
+    "Ripple Effect Studios"
+   ],
+   "publishers": [
+    "Electronic Arts"
+   ],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "tactical",
+     "Tactical"
+    ],
+    [
+     "war",
+     "War"
+    ],
+    [
+     "realistic",
+     "Realistic"
+    ],
+    [
+     "combat",
+     "combat"
+    ],
+    [
+     "military",
+     "Military"
+    ],
+    [
+     "destruction",
+     "Destruction"
+    ]
+   ],
+   "hltb": {
+    "main": 6.05,
+    "extra": 11.06,
+    "complete": 26.47,
+    "url": "https://howlongtobeat.com/game/171520"
+   },
+   "plat_rate": 0.3,
+   "rare_missing": 29,
+   "first_trophy_at": "2026-07-25T09:40:23+00:00",
+   "platinum_at": null,
+   "dlc": [
+    {
+     "list": "NPWR50656_00",
+     "id": "001",
+     "name": "BATTLEFIELD™ REDSEC",
+     "platforms": [
+      "PS5"
+     ],
+     "earned": 0,
+     "total": 11
+    }
+   ],
+   "missing_n": 52,
+   "easy": [
+    {
+     "n": "Punished",
+     "t": "bronze",
+     "r": 32.7,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Lance Corporal Matkovic",
+     "t": "bronze",
+     "r": 32.3,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Collector",
+     "t": "bronze",
+     "r": 31.5,
+     "h": null,
+     "p": null
+    }
+   ]
+  },
   {
    "name": "Metaphor: ReFantazio",
    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2406/672cc5f97e84c564649093d4f6a3726f328e0de1814ab2e0.png",
@@ -27,7 +416,7 @@
    ],
    "owned": true,
    "acquired": "2025-03-12T19:51:00Z",
-   "hours": 47.4,
+   "hours": 57.1,
    "first_played": "2026-08-23T09:10:05.600000+00:00",
    "last_played": "2026-10-20T20:03:47.370000+00:00",
    "progress": 27,
@@ -119,7 +508,7 @@
    "status": "started",
    "last_activity": "2026-10-20T20:03:47.370000+00:00",
    "hours_by_year": {
-    "2026": 47.4
+    "2026": 57.1
    },
    "metacritic": 92,
    "genres": [
@@ -353,186 +742,6 @@
      "t": "bronze",
      "r": 11.5,
      "h": null,
-     "p": null
-    }
-   ]
-  },
-  {
-   "name": "Ultros",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202305/2420/d0adbcee60a2115317b7503f22ae2d7c451ad14d103406d5.png",
-   "platforms": [
-    "PS4",
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-02-26T15:43:46Z",
-   "hours": 2.9,
-   "first_played": "2026-09-27T12:30:17.680000+00:00",
-   "last_played": "2026-10-10T16:59:07.590000+00:00",
-   "progress": 4,
-   "earned": {
-    "bronze": 3,
-    "silver": 0,
-    "gold": 0,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 8,
-    "silver": 19,
-    "gold": 4,
-    "platinum": 1
-   },
-   "last_trophy": "2026-10-10T16:34:12+00:00",
-   "has_trophies": true,
-   "months": {
-    "2026-09": [
-     2,
-     0,
-     0,
-     0
-    ],
-    "2026-10": [
-     1,
-     0,
-     0,
-     0
-    ]
-   },
-   "trophy_lists": [
-    {
-     "id": "NPWR36557_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 4,
-     "groups": {}
-    }
-   ],
-   "rare": [
-    {
-     "at": "2026-10-10T16:34:12+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/6d2fc8d0-6493-4745-bd80-bcbfc1daf6dd.png",
-     "n": "A hungry stomach has no ears",
-     "r": 11.2,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-09-27T12:51:46+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/63a73648-dc66-4aa0-81c9-758dfa75e9e2.png",
-     "n": "Nietzsche taken to heart",
-     "r": 27.3,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-09-27T13:18:21+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/a9903d73-cf7b-44d6-8292-1f43bd77bf8a.png",
-     "n": "Wrath upon the enraged",
-     "r": 28.3,
-     "t": "bronze"
-    }
-   ],
-   "aliases": [],
-   "trophies_earned": 3,
-   "trophies_total": 32,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-10-10T16:59:07.590000+00:00",
-   "hours_by_year": {
-    "2026": 2.9
-   },
-   "metacritic": 79,
-   "genres": [
-    "Indie",
-    "Adventure"
-   ],
-   "released": "2024-02-13",
-   "rawg_slug": "ultros",
-   "metacritic_source": "wikipedia",
-   "series": [],
-   "developers": [],
-   "publishers": [],
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "sci-fi",
-     "Sci-fi"
-    ],
-    [
-     "exploration",
-     "Exploration"
-    ],
-    [
-     "female-protagonist",
-     "Female Protagonist"
-    ],
-    [
-     "mystery",
-     "Mystery"
-    ],
-    [
-     "colorful",
-     "Colorful"
-    ],
-    [
-     "combat",
-     "combat"
-    ],
-    [
-     "metroidvania",
-     "Metroidvania"
-    ],
-    [
-     "roguelite",
-     "Roguelite"
-    ],
-    [
-     "stylized",
-     "Stylized"
-    ],
-    [
-     "hand-drawn",
-     "Hand-drawn"
-    ],
-    [
-     "protagonistka",
-     "Протагонистка"
-    ]
-   ],
-   "hltb": {
-    "main": 11.12,
-    "extra": 19.0,
-    "complete": 28.38,
-    "url": "https://howlongtobeat.com/game/129248"
-   },
-   "plat_rate": 0.4,
-   "rare_missing": 29,
-   "first_trophy_at": "2026-09-27T12:51:46+00:00",
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 29,
-   "easy": [
-    {
-     "n": "Setting a trap for others",
-     "t": "bronze",
-     "r": 9.2,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "The end is where we start from",
-     "t": "bronze",
-     "r": 4.5,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "A pulse grows in the temple",
-     "t": "silver",
-     "r": 4.2,
-     "h": true,
      "p": null
     }
    ]
@@ -776,188 +985,6 @@
    "dlc": [],
    "missing_n": 0,
    "easy": []
-  },
-  {
-   "name": "Battlefield™ 6",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1411/c8c8def7d4bd44535233fcc0eb1235183853c0bb8150b8a6.png",
-   "platforms": [
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-07-22T15:50:33Z",
-   "hours": 5.5,
-   "first_played": "2026-07-23T07:50:38.180000+00:00",
-   "last_played": "2026-10-04T11:07:47.310000+00:00",
-   "progress": 1,
-   "earned": {
-    "bronze": 1,
-    "silver": 0,
-    "gold": 0,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 38,
-    "silver": 12,
-    "gold": 3,
-    "platinum": 1
-   },
-   "last_trophy": "2026-07-25T09:40:24+00:00",
-   "has_trophies": true,
-   "months": {
-    "2026-07": [
-     1,
-     0,
-     0,
-     0
-    ]
-   },
-   "trophy_lists": [
-    {
-     "id": "NPWR50656_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 1,
-     "groups": {
-      "001": "BATTLEFIELD™ REDSEC",
-      "default": "Battlefield™ 6"
-     }
-    }
-   ],
-   "rare": [
-    {
-     "at": "2026-07-25T09:40:23+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR50656_00/bb1db0b7-b1dc-4247-90c1-1ab60ba7a19d.png",
-     "n": "Private First Class Montes",
-     "r": 36.0,
-     "t": "bronze"
-    }
-   ],
-   "aliases": [],
-   "trophies_earned": 1,
-   "trophies_total": 54,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-10-04T11:07:47.310000+00:00",
-   "hours_by_year": {
-    "2026": 5.5
-   },
-   "metacritic": 83,
-   "genres": [
-    "Shooter",
-    "Action"
-   ],
-   "released": "2025-10-10",
-   "rawg_slug": "battlefield-6-2",
-   "metacritic_source": "wikidata",
-   "series": [
-    "Battlefield"
-   ],
-   "developers": [
-    "DICE",
-    "Criterion Games",
-    "Motive Studio",
-    "Ripple Effect Studios"
-   ],
-   "publishers": [
-    "Electronic Arts"
-   ],
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "story-rich",
-     "Story Rich"
-    ],
-    [
-     "cooperative",
-     "cooperative"
-    ],
-    [
-     "fps",
-     "FPS"
-    ],
-    [
-     "sandbox",
-     "Sandbox"
-    ],
-    [
-     "violent",
-     "Violent"
-    ],
-    [
-     "tactical",
-     "Tactical"
-    ],
-    [
-     "war",
-     "War"
-    ],
-    [
-     "realistic",
-     "Realistic"
-    ],
-    [
-     "combat",
-     "combat"
-    ],
-    [
-     "military",
-     "Military"
-    ],
-    [
-     "destruction",
-     "Destruction"
-    ]
-   ],
-   "hltb": {
-    "main": 6.05,
-    "extra": 11.06,
-    "complete": 26.47,
-    "url": "https://howlongtobeat.com/game/171520"
-   },
-   "plat_rate": 0.3,
-   "rare_missing": 29,
-   "first_trophy_at": "2026-07-25T09:40:23+00:00",
-   "platinum_at": null,
-   "dlc": [
-    {
-     "list": "NPWR50656_00",
-     "id": "001",
-     "name": "BATTLEFIELD™ REDSEC",
-     "platforms": [
-      "PS5"
-     ],
-     "earned": 0,
-     "total": 11
-    }
-   ],
-   "missing_n": 53,
-   "easy": [
-    {
-     "n": "Punished",
-     "t": "bronze",
-     "r": 32.8,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "Lance Corporal Matkovic",
-     "t": "bronze",
-     "r": 32.3,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "Collector",
-     "t": "bronze",
-     "r": 31.5,
-     "h": null,
-     "p": null
-    }
-   ]
   },
   {
    "name": "Bō: Path of the Teal Lotus",
@@ -13370,7 +13397,9 @@
    "rawg_slug": "mass-effect-legendary-edition",
    "metacritic_source": "rawg",
    "series": [],
-   "developers": [],
+   "developers": [
+    "Bioware"
+   ],
    "publishers": [
     "Electronic Arts"
    ],
@@ -13565,7 +13594,9 @@
    "rawg_slug": "mass-effect-legendary-edition",
    "metacritic_source": "rawg",
    "series": [],
-   "developers": [],
+   "developers": [
+    "Bioware"
+   ],
    "publishers": [
     "Electronic Arts"
    ],
@@ -18848,9 +18879,7 @@
    "released": "1995-02-11",
    "rawg_slug": "nights-into-dreams",
    "metacritic_source": "wikipedia",
-   "series": [
-    "NiGHTS"
-   ],
+   "series": [],
    "developers": [
     "Sonic Team"
    ],
@@ -56744,7 +56773,8 @@
    "2026-09-27": 2,
    "2026-10-01": 1,
    "2026-10-10": 3,
-   "2026-10-19": 1
+   "2026-10-19": 1,
+   "2026-10-25": 3
   },
   "weekday_hour": {
    "2011": [
@@ -57075,12 +57105,12 @@
     16,
     17,
     17,
-    11,
+    12,
     17,
     19,
     40,
-    33,
-    17,
+    34,
+    18,
     13,
     18,
     16,
@@ -59625,12 +59655,12 @@
     6,
     1,
     5,
-    0,
     1,
     1,
+    1,
     0,
+    7,
     6,
-    5,
     1,
     5,
     2,
@@ -59950,9 +59980,9 @@
    },
    "all": {
     "buckets": [
-     58,
-     482,
-     2095,
+     59,
+     483,
+     2096,
      987
     ],
     "score": 25
@@ -60085,9 +60115,9 @@
    },
    "2026": {
     "buckets": [
-     1,
-     46,
-     146,
+     2,
+     47,
+     147,
      55
     ],
     "score": 27

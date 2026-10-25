@@ -1542,7 +1542,9 @@
   ]
  },
  "mass-effect-legendary-edition": {
-  "developers": [],
+  "developers": [
+   "Bioware"
+  ],
   "publishers": [
    "Electronic Arts"
   ],
@@ -1747,9 +1749,7 @@
    "Sonic Team"
   ],
   "publishers": [],
-  "series": [
-   "NiGHTS"
-  ]
+  "series": []
  },
  "nine-sols": {
   "developers": [
