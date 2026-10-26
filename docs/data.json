@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-25T20:42:48+00:00",
+ "generated_at": "2026-10-26T04:38:21+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -71,39 +71,39 @@
    ],
    "rare": [
     {
-     "n": "Humility opens the floodgates",
-     "t": "silver",
-     "r": 2.9,
      "at": "2026-10-25T17:10:25+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/0979e96b-f7a8-4f2c-9981-3392548c2461.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/0979e96b-f7a8-4f2c-9981-3392548c2461.png",
+     "n": "Humility opens the floodgates",
+     "r": 2.9,
+     "t": "silver"
     },
     {
-     "n": "Setting a trap for others",
-     "t": "bronze",
-     "r": 9.2,
      "at": "2026-10-25T16:02:40+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/11094a8c-9f1f-4caa-91ab-19680f8fbd64.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/11094a8c-9f1f-4caa-91ab-19680f8fbd64.png",
+     "n": "Setting a trap for others",
+     "r": 9.2,
+     "t": "bronze"
     },
     {
-     "n": "A hungry stomach has no ears",
-     "t": "bronze",
-     "r": 11.2,
      "at": "2026-10-10T16:34:12+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/6d2fc8d0-6493-4745-bd80-bcbfc1daf6dd.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/6d2fc8d0-6493-4745-bd80-bcbfc1daf6dd.png",
+     "n": "A hungry stomach has no ears",
+     "r": 11.2,
+     "t": "bronze"
     },
     {
-     "n": "Nietzsche taken to heart",
-     "t": "bronze",
-     "r": 27.3,
      "at": "2026-09-27T12:51:46+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/63a73648-dc66-4aa0-81c9-758dfa75e9e2.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/63a73648-dc66-4aa0-81c9-758dfa75e9e2.png",
+     "n": "Nietzsche taken to heart",
+     "r": 27.3,
+     "t": "bronze"
     },
     {
-     "n": "Wrath upon the enraged",
-     "t": "bronze",
-     "r": 28.3,
      "at": "2026-09-27T13:18:21+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/a9903d73-cf7b-44d6-8292-1f43bd77bf8a.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/a9903d73-cf7b-44d6-8292-1f43bd77bf8a.png",
+     "n": "Wrath upon the enraged",
+     "r": 28.3,
+     "t": "bronze"
     }
    ],
    "aliases": [],
@@ -239,13 +239,13 @@
    "last_trophy": "2026-10-25T12:33:04+00:00",
    "has_trophies": true,
    "months": {
-    "2026-10": [
+    "2026-07": [
      1,
      0,
      0,
      0
     ],
-    "2026-07": [
+    "2026-10": [
      1,
      0,
      0,
@@ -267,18 +267,18 @@
    ],
    "rare": [
     {
-     "n": "Stand Alone",
-     "t": "bronze",
-     "r": 26.6,
      "at": "2026-10-25T12:33:05+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR50656_00/d46648e0-eb1c-4ae9-b59d-9c5777495b7b.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR50656_00/d46648e0-eb1c-4ae9-b59d-9c5777495b7b.png",
+     "n": "Stand Alone",
+     "r": 26.6,
+     "t": "bronze"
     },
     {
-     "n": "Private First Class Montes",
-     "t": "bronze",
-     "r": 36.0,
      "at": "2026-07-25T09:40:23+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR50656_00/bb1db0b7-b1dc-4247-90c1-1ab60ba7a19d.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR50656_00/bb1db0b7-b1dc-4247-90c1-1ab60ba7a19d.png",
+     "n": "Private First Class Montes",
+     "r": 36.0,
+     "t": "bronze"
     }
    ],
    "aliases": [],
@@ -17777,8 +17777,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "2K Drive",
-    "Lego"
+    "Lego",
+    "2K Drive"
    ],
    "developers": [
     "Visual Concepts"

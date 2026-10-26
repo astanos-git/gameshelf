@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-20T15:23:50+00:00",
+ "generated_at": "2026-10-26T04:40:51+00:00",
  "upcoming": [
   {
    "slug": "the-witcher-4",
@@ -33,22 +33,6 @@
    ],
    "url": "https://rawg.io/games/the-witcher-remake",
    "reason": "Series: The Witcher"
-  },
-  {
-   "slug": "intergalactic-the-heretic-prophet",
-   "name": "Intergalactic: The Heretic Prophet",
-   "image": "https://media.rawg.io/media/screenshots/d69/d69eb749a78f58e238bb7973c108382c.jpg",
-   "released": null,
-   "tba": true,
-   "metacritic": null,
-   "genres": [
-    "Adventure"
-   ],
-   "platforms": [
-    "PS5"
-   ],
-   "url": "https://rawg.io/games/intergalactic-the-heretic-prophet",
-   "reason": "Studio: Naughty Dog"
   },
   {
    "slug": "marvels-spider-man-3",
@@ -86,6 +70,36 @@
   }
  ],
  "details": {
+  "the-witcher-remake": {
+   "name": "The Witcher: Remake",
+   "released": null,
+   "tba": true,
+   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
+   "developers": [
+    "Fool's Theory"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "dreams": {
+   "name": "Dreams",
+   "released": "2020-02-14",
+   "tba": false,
+   "description": "Dream anything, play everything Create, play and share your own games and experiences, in the incredible new title from the LittleBigPlanet and Tearaway team. Dreams is an extraordinary open-ended experience where you can make anything, from interactive adventures and platformers, to shoot ‘em ups, puzzlers and more. The possibilities are endless.",
+   "developers": [
+    "Media Molecule"
+   ],
+   "publishers": [
+    "Sony Interactive Entertainment"
+   ],
+   "website": "http://dreams.mediamolecule.com/",
+   "metacritic": 89,
+   "esrb": "Teen"
+  },
   "intergalactic-the-heretic-prophet": {
    "name": "Intergalactic: The Heretic Prophet",
    "released": null,
@@ -98,6 +112,74 @@
    "website": null,
    "metacritic": null,
    "esrb": null
+  },
+  "ratchet-clank-rift-apart": {
+   "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
+   "developers": [
+    "Insomniac Games",
+    "Nixxes software"
+   ],
+   "esrb": "Everyone 10+",
+   "metacritic": 88,
+   "name": "Ratchet & Clank: Rift Apart",
+   "publishers": [
+    "Sony Interactive Entertainment",
+    "PlayStation PC"
+   ],
+   "released": "2021-06-11",
+   "tba": false,
+   "website": null
+  },
+  "the-witcher-4": {
+   "name": "The Witcher (A New Saga Begins)",
+   "released": null,
+   "tba": true,
+   "description": "The Witcher IV is a single-player, open-world RPG from CD PROJEKT RED. At the start of a new saga, players take on the role of Ciri, a professional monster slayer, and embark on a journey through a brutal dark-fantasy world. Powered by Unreal Engine 5, it aims to be the most immersive and ambitious open-world Witcher game to date.",
+   "developers": [
+    "CD PROJEKT RED",
+    "CD PROJEKT"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
+   "website": "https://www.thewitcher.com/witcher4",
+   "metacritic": null,
+   "esrb": null
+  },
+  "dark-souls-ii": {
+   "name": "Dark Souls II",
+   "released": "2014-03-11",
+   "tba": false,
+   "description": "Dark Souls II is the third installment in the well-known Souls series. It’s a different game from all the others because of its directors. With Dark Souls II the main director and founder of Souls-like genre Hidetaka Miyazaki took place only as a supervisor of the project, leaving a place of the director of the game for two young video game designers Tomohiro Shibuya and Yui Tanimura.",
+   "developers": [
+    "BANDAI NAMCO Entertainment America",
+    "FromSoftware"
+   ],
+   "publishers": [
+    "Bandai Namco Entertainment",
+    "BANDAI NAMCO Entertainment US",
+    "FromSoftware"
+   ],
+   "website": "http://www.darksoulsii.com",
+   "metacritic": 91,
+   "esrb": "Mature"
+  },
+  "shadows-die-twice": {
+   "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
+   "developers": [
+    "FromSoftware"
+   ],
+   "esrb": "Mature",
+   "metacritic": 90,
+   "name": "Sekiro: Shadows Die Twice",
+   "publishers": [
+    "FromSoftware",
+    "Activision Value Publishing",
+    "方块游戏"
+   ],
+   "released": "2019-03-22",
+   "tba": false,
+   "website": "http://www.sekirothegame.com"
   },
   "marvels-spider-man-3": {
    "name": "Marvel's Spider-Man 3",
@@ -129,106 +211,6 @@
    "metacritic": null,
    "esrb": "Rating Pending"
   },
-  "shadows-die-twice": {
-   "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
-   "developers": [
-    "FromSoftware"
-   ],
-   "esrb": "Mature",
-   "metacritic": 90,
-   "name": "Sekiro: Shadows Die Twice",
-   "publishers": [
-    "FromSoftware",
-    "Activision Value Publishing",
-    "方块游戏"
-   ],
-   "released": "2019-03-22",
-   "tba": false,
-   "website": "http://www.sekirothegame.com"
-  },
-  "star-wars-jedi-knight-ii-jedi-outcast": {
-   "description": "The Legacy of Star Wars Dark Forces™ and Star Wars® Jedi Knight lives on in the intense first-person action of Jedi Outcast. As Kyle Katarn, agent of the New Republic, use your Lightsaber and the full power of the Force to combat a new evil plaguing the galaxy. Wield over 8 Force abilities including the Jedi Mind Trick, Force Lightning and Force Grip.",
-   "developers": [
-    "Aspyr Media",
-    "Raven Software",
-    "Lucasfilm"
-   ],
-   "esrb": "Teen",
-   "metacritic": 89,
-   "name": "Star Wars Jedi Knight II: Jedi Outcast",
-   "publishers": [
-    "Aspyr",
-    "Activision Blizzard",
-    "Disney Interactive"
-   ],
-   "released": "2002-03-01",
-   "tba": false,
-   "website": "http://www.lucasarts.com"
-  },
-  "owlboy": {
-   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
-   "developers": [
-    "D-Pad Studio",
-    "D-Pad Studios"
-   ],
-   "esrb": null,
-   "metacritic": 88,
-   "name": "Owlboy",
-   "publishers": [
-    "D-Pad Studio"
-   ],
-   "released": "2016-10-31",
-   "tba": false,
-   "website": "http://www.owlboygame.com"
-  },
-  "grand-theft-auto-vice-city": {
-   "description": "Grand Theft Auto: Vice City is a third-person shooter with an open world. The game is set in a fictional city during the 1980’s and exhibits a unique design of locations, people, and objects, resembling the real world’s counterparts of Vice City, mainly Miami, FL. GTA: Vice City is a fourth game of the series, following Grand Theft Auto III.",
-   "developers": [
-    "Rockstar North"
-   ],
-   "esrb": "Mature",
-   "metacritic": 94,
-   "name": "Grand Theft Auto: Vice City",
-   "publishers": [
-    "Rockstar Games"
-   ],
-   "released": "2002-10-27",
-   "tba": false,
-   "website": "https://www.rockstargames.com/games/vicecity"
-  },
-  "ratchet-clank-rift-apart": {
-   "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
-   "developers": [
-    "Insomniac Games",
-    "Nixxes software"
-   ],
-   "esrb": "Everyone 10+",
-   "metacritic": 88,
-   "name": "Ratchet & Clank: Rift Apart",
-   "publishers": [
-    "Sony Interactive Entertainment",
-    "PlayStation PC"
-   ],
-   "released": "2021-06-11",
-   "tba": false,
-   "website": null
-  },
-  "bayonetta": {
-   "description": "Bayonetta is a slasher game developed by Platinum Games. The game is set in a fictional European city of Vigrid. The main character is a witch named Bayonetta who fights angels with pistols and magic wishing only one thing: to recall everything happened to her.",
-   "developers": [
-    "Platinum Games"
-   ],
-   "esrb": "Mature",
-   "metacritic": 90,
-   "name": "Bayonetta",
-   "publishers": [
-    "SEGA",
-    "Nintendo"
-   ],
-   "released": "2009-06-23",
-   "tba": false,
-   "website": "http://www.bayonetta.com/"
-  },
   "brothers-a-tale-of-two-sons-2": {
    "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
    "developers": [
@@ -246,36 +228,21 @@
    "tba": false,
    "website": "https://505games.com/games/brothers/"
   },
-  "the-witcher-remake": {
-   "name": "The Witcher: Remake",
-   "released": null,
-   "tba": true,
-   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
+  "owlboy": {
+   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
    "developers": [
-    "Fool's Theory"
+    "D-Pad Studio",
+    "D-Pad Studios"
    ],
+   "esrb": null,
+   "metacritic": 88,
+   "name": "Owlboy",
    "publishers": [
-    "CD PROJEKT RED"
+    "D-Pad Studio"
    ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "the-witcher-4": {
-   "name": "The Witcher (A New Saga Begins)",
-   "released": null,
-   "tba": true,
-   "description": "The Witcher IV is a single-player, open-world RPG from CD PROJEKT RED. At the start of a new saga, players take on the role of Ciri, a professional monster slayer, and embark on a journey through a brutal dark-fantasy world. Powered by Unreal Engine 5, it aims to be the most immersive and ambitious open-world Witcher game to date.",
-   "developers": [
-    "CD PROJEKT RED",
-    "CD PROJEKT"
-   ],
-   "publishers": [
-    "CD PROJEKT RED"
-   ],
-   "website": "https://www.thewitcher.com/witcher4",
-   "metacritic": null,
-   "esrb": null
+   "released": "2016-10-31",
+   "tba": false,
+   "website": "http://www.owlboygame.com"
   }
  }
 }

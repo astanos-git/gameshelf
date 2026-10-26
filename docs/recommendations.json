@@ -1,83 +1,144 @@
 {
- "week": "2026-W43",
- "generated_at": "2026-10-19T04:39:33+00:00",
+ "week": "2026-W44",
+ "generated_at": "2026-10-26T04:40:08+00:00",
  "picks": [
   {
-   "slug": "bayonetta",
-   "name": "Bayonetta",
-   "image": "https://media.rawg.io/media/games/bee/bee483efadcf9d7e657e52184316a34e.jpg",
-   "metacritic": 90,
-   "released": "2009-06-23",
+   "slug": "dark-souls-ii",
+   "name": "Dark Souls II",
+   "image": "https://media.rawg.io/media/games/651/6512783a214618584d144d5d852ba595.jpg",
+   "metacritic": 91,
+   "released": "2014-03-11",
    "genres": [
-    "Adventure",
-    "Action"
+    "Action",
+    "RPG"
    ],
    "platforms": [
     "PS4"
    ],
-   "length": 15,
-   "why": "Close to The Witcher 3: Wild Hunt — Remastered, which you enjoyed; matches your taste for atmospheric, female protagonist, fantasy; about 15 h, close to your usual 17 h.",
-   "url": "https://rawg.io/games/bayonetta",
+   "length": 62,
+   "why": "Close to ELDEN RING, which you enjoyed; matches your taste for atmospheric, exploration, open world; about 62 h.",
+   "url": "https://rawg.io/games/dark-souls-ii",
    "tags": [
     [
      "atmospheric",
      "Atmospheric"
     ],
     [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
      "fantasy",
      "Fantasy"
     ],
     [
-     "gore",
-     "Gore"
+     "exploration",
+     "Exploration"
     ],
     [
-     "female-protagonist",
-     "Female Protagonist"
+     "difficult",
+     "Difficult"
     ],
     [
-     "comedy",
-     "Comedy"
+     "action-rpg",
+     "Action RPG"
     ],
     [
-     "anime",
-     "Anime"
-    ],
-    [
-     "nudity",
-     "Nudity"
-    ],
-    [
-     "hack-and-slash",
-     "Hack and Slash"
-    ],
-    [
-     "mature",
-     "Mature"
-    ],
-    [
-     "fast-paced",
-     "Fast-Paced"
+     "dark",
+     "Dark"
     ]
    ]
   },
   {
-   "slug": "star-wars-jedi-knight-ii-jedi-outcast",
-   "name": "Star Wars Jedi Knight II: Jedi Outcast",
-   "image": "https://media.rawg.io/media/games/0a5/0a56e2bb9ce95359e69ff9689c553a45.jpg",
+   "slug": "dreams",
+   "name": "Dreams",
+   "image": "https://media.rawg.io/media/games/9ba/9ba104d61c6a70a73352fcbee3b4a9b5.jpg",
    "metacritic": 89,
-   "released": "2002-03-01",
+   "released": "2020-02-14",
    "genres": [
-    "Shooter",
     "Adventure",
-    "Action"
+    "Action",
+    "Puzzle"
    ],
    "platforms": [
     "PS4"
    ],
-   "length": 16,
-   "why": "Close to Fallout 4, which you enjoyed; matches your taste for atmospheric, story rich, sci-fi; about 16 h, close to your usual 17 h.",
-   "url": "https://rawg.io/games/star-wars-jedi-knight-ii-jedi-outcast",
+   "length": 11,
+   "why": "Close to Marvel's Spider-Man, which you enjoyed; matches your taste for atmospheric, action-adventure, exploration; about 11 h, close to your usual 17 h.",
+   "url": "https://rawg.io/games/dreams",
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "family-friendly",
+     "Family Friendly"
+    ],
+    [
+     "cute",
+     "Cute"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "music",
+     "Music"
+    ],
+    [
+     "keyboard",
+     "keyboard"
+    ],
+    [
+     "kidsfamily",
+     "Kids/Family"
+    ]
+   ]
+  },
+  {
+   "slug": "9-years-of-shadows",
+   "name": "9 Years of Shadows",
+   "image": "https://media.rawg.io/media/screenshots/dae/daee60e083357d4777f4ae649cbe4c52.jpg",
+   "metacritic": 74,
+   "released": "2023-03-26",
+   "genres": [
+    "Indie",
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS5",
+    "PS4"
+   ],
+   "length": 9,
+   "why": "Close to FINAL FANTASY VII REMAKE, which you enjoyed; matches your taste for atmospheric, story rich, action-adventure; about 9 h.",
+   "url": "https://rawg.io/games/9-years-of-shadows",
    "tags": [
     [
      "atmospheric",
@@ -88,94 +149,36 @@
      "Story Rich"
     ],
     [
-     "sci-fi",
-     "Sci-fi"
+     "fantasy",
+     "Fantasy"
     ],
     [
-     "fps",
-     "FPS"
+     "exploration",
+     "Exploration"
     ],
     [
-     "third-person-shooter",
-     "Third-Person Shooter"
+     "female-protagonist",
+     "Female Protagonist"
     ],
     [
-     "space",
-     "Space"
+     "action-adventure",
+     "Action-Adventure"
     ],
     [
-     "moddable",
-     "Moddable"
+     "pixel-graphics",
+     "Pixel Graphics"
     ],
     [
-     "combat",
-     "combat"
+     "side-scroller",
+     "Side Scroller"
     ],
     [
-     "cult-classic",
-     "Cult Classic"
+     "magic",
+     "Magic"
     ],
     [
-     "epic",
-     "Epic"
-    ]
-   ]
-  },
-  {
-   "slug": "grand-theft-auto-vice-city",
-   "name": "Grand Theft Auto: Vice City",
-   "image": "https://media.rawg.io/media/games/13a/13a528ac9cf48bbb6be5d35fe029336d.jpg",
-   "metacritic": 94,
-   "released": "2002-10-27",
-   "genres": [
-    "Action"
-   ],
-   "platforms": [
-    "PS4"
-   ],
-   "length": 24,
-   "why": "Close to Fallout 4, which you enjoyed; matches your taste for atmospheric, open world, violent; about 24 h, close to your usual 17 h.",
-   "url": "https://rawg.io/games/grand-theft-auto-vice-city",
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "open-world",
-     "Open World"
-    ],
-    [
-     "funny",
-     "Funny"
-    ],
-    [
-     "sandbox",
-     "Sandbox"
-    ],
-    [
-     "violent",
-     "Violent"
-    ],
-    [
-     "third-person-shooter",
-     "Third-Person Shooter"
-    ],
-    [
-     "moddable",
-     "Moddable"
-    ],
-    [
-     "mature",
-     "Mature"
-    ],
-    [
-     "crime",
-     "Crime"
-    ],
-    [
-     "driving",
-     "Driving"
+     "metroidvania",
+     "Metroidvania"
     ]
    ]
   }
@@ -200,6 +203,18 @@
   "usual_length": 17
  },
  "history": [
+  {
+   "slug": "dark-souls-ii",
+   "week": "2026-W44"
+  },
+  {
+   "slug": "dreams",
+   "week": "2026-W44"
+  },
+  {
+   "slug": "9-years-of-shadows",
+   "week": "2026-W44"
+  },
   {
    "slug": "bayonetta",
    "week": "2026-W43"

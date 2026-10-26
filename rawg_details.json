@@ -74,6 +74,55 @@
   "tba": false,
   "website": "https://www.cyberpunk.net/"
  },
+ "dark-souls-ii": {
+  "description": "Dark Souls II is the third installment in the well-known Souls series. It’s a different game from all the others because of its directors. With Dark Souls II the main director and founder of Souls-like genre Hidetaka Miyazaki took place only as a supervisor of the project, leaving a place of the director of the game for two young video game designers Tomohiro Shibuya and Yui Tanimura.",
+  "developer_ids": [
+   [
+    386,
+    "BANDAI NAMCO Entertainment America"
+   ],
+   [
+    6763,
+    "FromSoftware"
+   ]
+  ],
+  "developers": [
+   "BANDAI NAMCO Entertainment America",
+   "FromSoftware"
+  ],
+  "esrb": "Mature",
+  "metacritic": 91,
+  "name": "Dark Souls II",
+  "publishers": [
+   "Bandai Namco Entertainment",
+   "BANDAI NAMCO Entertainment US",
+   "FromSoftware"
+  ],
+  "released": "2014-03-11",
+  "tba": false,
+  "website": "http://www.darksoulsii.com"
+ },
+ "dreams": {
+  "description": "Dream anything, play everything Create, play and share your own games and experiences, in the incredible new title from the LittleBigPlanet and Tearaway team. Dreams is an extraordinary open-ended experience where you can make anything, from interactive adventures and platformers, to shoot ‘em ups, puzzlers and more. The possibilities are endless.",
+  "developer_ids": [
+   [
+    16320,
+    "Media Molecule"
+   ]
+  ],
+  "developers": [
+   "Media Molecule"
+  ],
+  "esrb": "Teen",
+  "metacritic": 89,
+  "name": "Dreams",
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "released": "2020-02-14",
+  "tba": false,
+  "website": "http://dreams.mediamolecule.com/"
+ },
  "god-of-war-2": {
   "description": "It is a new beginning for Kratos. Living as a man outside the shadow of the gods, he ventures into the brutal Norse wilds with his son Atreus, fighting to fulfill a deeply personal quest.",
   "developer_ids": [
