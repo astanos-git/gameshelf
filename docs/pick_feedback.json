@@ -1,4 +1,56 @@
 {
+ "9-years-of-shadows": {
+  "at": "2026-10-26T06:11:13Z",
+  "feedback": "up",
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "name": "9 Years of Shadows",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "fantasy",
+    "Fantasy"
+   ],
+   [
+    "exploration",
+    "Exploration"
+   ],
+   [
+    "female-protagonist",
+    "Female Protagonist"
+   ],
+   [
+    "action-adventure",
+    "Action-Adventure"
+   ],
+   [
+    "pixel-graphics",
+    "Pixel Graphics"
+   ],
+   [
+    "side-scroller",
+    "Side Scroller"
+   ],
+   [
+    "magic",
+    "Magic"
+   ],
+   [
+    "metroidvania",
+    "Metroidvania"
+   ]
+  ]
+ },
  "bayonetta": {
   "at": "2026-10-19T14:46:59Z",
   "feedback": "up",
@@ -102,6 +154,57 @@
    ]
   ]
  },
+ "dark-souls-ii": {
+  "at": "2026-10-26T06:11:13Z",
+  "feedback": "up",
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "name": "Dark Souls II",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "rpg",
+    "RPG"
+   ],
+   [
+    "open-world",
+    "Open World"
+   ],
+   [
+    "cooperative",
+    "cooperative"
+   ],
+   [
+    "horror",
+    "Horror"
+   ],
+   [
+    "fantasy",
+    "Fantasy"
+   ],
+   [
+    "exploration",
+    "Exploration"
+   ],
+   [
+    "difficult",
+    "Difficult"
+   ],
+   [
+    "action-rpg",
+    "Action RPG"
+   ],
+   [
+    "dark",
+    "Dark"
+   ]
+  ]
+ },
  "dark-souls-iii": {
   "at": "2026-10-14T10:53:30Z",
   "feedback": "up",
@@ -201,6 +304,58 @@
    [
     "dystopian",
     "Dystopian"
+   ]
+  ]
+ },
+ "dreams": {
+  "at": "2026-10-26T06:11:13Z",
+  "feedback": "up",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Puzzle"
+  ],
+  "name": "Dreams",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "exploration",
+    "Exploration"
+   ],
+   [
+    "sandbox",
+    "Sandbox"
+   ],
+   [
+    "action-adventure",
+    "Action-Adventure"
+   ],
+   [
+    "family-friendly",
+    "Family Friendly"
+   ],
+   [
+    "cute",
+    "Cute"
+   ],
+   [
+    "cinematic",
+    "Cinematic"
+   ],
+   [
+    "music",
+    "Music"
+   ],
+   [
+    "keyboard",
+    "keyboard"
+   ],
+   [
+    "kidsfamily",
+    "Kids/Family"
    ]
   ]
  },
