@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T04:38:21+00:00",
+ "generated_at": "2026-10-26T12:03:44+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -9,10 +9,10 @@
   "online_id": "cwil79",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 329,
-  "level_progress": 13,
+  "level_progress": 26,
   "earned": {
-   "bronze": 2746,
-   "silver": 646,
+   "bronze": 2748,
+   "silver": 649,
    "gold": 211,
    "platinum": 22
   }
@@ -27,13 +27,13 @@
    ],
    "owned": true,
    "acquired": "2026-02-26T15:43:46Z",
-   "hours": 2.9,
+   "hours": 5.4,
    "first_played": "2026-09-27T12:30:17.680000+00:00",
-   "last_played": "2026-10-25T15:03:19.430000+00:00",
-   "progress": 8,
+   "last_played": "2026-10-26T07:17:22.500000+00:00",
+   "progress": 20,
    "earned": {
-    "bronze": 4,
-    "silver": 1,
+    "bronze": 6,
+    "silver": 4,
     "gold": 0,
     "platinum": 0
    },
@@ -43,7 +43,7 @@
     "gold": 4,
     "platinum": 1
    },
-   "last_trophy": "2026-10-25T17:10:25+00:00",
+   "last_trophy": "2026-10-26T11:40:34+00:00",
    "has_trophies": true,
    "months": {
     "2026-09": [
@@ -53,8 +53,8 @@
      0
     ],
     "2026-10": [
-     2,
-     1,
+     4,
+     4,
      0,
      0
     ]
@@ -65,55 +65,55 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 8,
+     "progress": 20,
      "groups": {}
     }
    ],
    "rare": [
     {
-     "at": "2026-10-25T17:10:25+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/0979e96b-f7a8-4f2c-9981-3392548c2461.png",
      "n": "Humility opens the floodgates",
+     "t": "silver",
      "r": 2.9,
-     "t": "silver"
+     "at": "2026-10-25T17:10:25+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/0979e96b-f7a8-4f2c-9981-3392548c2461.png"
     },
     {
-     "at": "2026-10-25T16:02:40+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/11094a8c-9f1f-4caa-91ab-19680f8fbd64.png",
-     "n": "Setting a trap for others",
-     "r": 9.2,
-     "t": "bronze"
+     "n": "Strange currents of friendly promise drift by",
+     "t": "silver",
+     "r": 3.1,
+     "at": "2026-10-26T09:42:37+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/6c206be1-3283-47ce-b821-8f9a136032e5.png"
     },
     {
-     "at": "2026-10-10T16:34:12+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/6d2fc8d0-6493-4745-bd80-bcbfc1daf6dd.png",
-     "n": "A hungry stomach has no ears",
-     "r": 11.2,
-     "t": "bronze"
+     "n": "Ground to a halt",
+     "t": "bronze",
+     "r": 3.6,
+     "at": "2026-10-26T11:40:35+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/45f18971-c82c-4c60-884a-621098ddd793.png"
     },
     {
-     "at": "2026-09-27T12:51:46+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/63a73648-dc66-4aa0-81c9-758dfa75e9e2.png",
-     "n": "Nietzsche taken to heart",
-     "r": 27.3,
-     "t": "bronze"
+     "n": "Beyond the intricate configuration of the mind",
+     "t": "silver",
+     "r": 3.8,
+     "at": "2026-10-26T09:48:45+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/4db82f3e-c400-42b0-a32b-3e24da9f22f4.png"
     },
     {
-     "at": "2026-09-27T13:18:21+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/a9903d73-cf7b-44d6-8292-1f43bd77bf8a.png",
-     "n": "Wrath upon the enraged",
-     "r": 28.3,
-     "t": "bronze"
+     "n": "A pulse grows in the temple",
+     "t": "silver",
+     "r": 4.2,
+     "at": "2026-10-26T08:51:08+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/74d31bab-8ad5-40ec-bd96-488062b28a7a.png"
     }
    ],
    "aliases": [],
-   "trophies_earned": 5,
+   "trophies_earned": 10,
    "trophies_total": 32,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-25T17:10:25+00:00",
+   "last_activity": "2026-10-26T11:40:34+00:00",
    "hours_by_year": {
-    "2026": 2.9
+    "2026": 5.4
    },
    "metacritic": 79,
    "genres": [
@@ -183,30 +183,30 @@
     "url": "https://howlongtobeat.com/game/129248"
    },
    "plat_rate": 0.4,
-   "rare_missing": 27,
+   "rare_missing": 22,
    "first_trophy_at": "2026-09-27T12:51:46+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 27,
+   "missing_n": 22,
    "easy": [
-    {
-     "n": "The end is where we start from",
-     "t": "bronze",
-     "r": 4.6,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "A pulse grows in the temple",
-     "t": "silver",
-     "r": 4.2,
-     "h": true,
-     "p": null
-    },
     {
      "n": "For knowledge is limited",
      "t": "bronze",
      "r": 4.0,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "Out of darkness is born the light",
+     "t": "gold",
+     "r": 3.1,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "No trap can hold their whisper",
+     "t": "silver",
+     "r": 2.2,
      "h": true,
      "p": null
     }
@@ -17777,8 +17777,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "Lego",
-    "2K Drive"
+    "2K Drive",
+    "Lego"
    ],
    "developers": [
     "Visual Concepts"
@@ -56774,7 +56774,8 @@
    "2026-10-01": 1,
    "2026-10-10": 3,
    "2026-10-19": 1,
-   "2026-10-25": 3
+   "2026-10-25": 3,
+   "2026-10-26": 5
   },
   "weekday_hour": {
    "2011": [
@@ -56957,10 +56958,10 @@
     0,
     0,
     1,
-    6,
+    7,
+    35,
     32,
-    32,
-    50,
+    51,
     18,
     37,
     35,
@@ -59507,10 +59508,10 @@
     0,
     0,
     0,
-    0,
-    0,
-    3,
     1,
+    3,
+    3,
+    2,
     0,
     1,
     2,
@@ -59980,7 +59981,7 @@
    },
    "all": {
     "buckets": [
-     59,
+     64,
      483,
      2096,
      987
@@ -60115,12 +60116,12 @@
    },
    "2026": {
     "buckets": [
-     2,
+     7,
      47,
      147,
      55
     ],
-    "score": 27
+    "score": 28
    }
   }
  }
