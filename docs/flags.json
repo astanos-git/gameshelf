@@ -447,7 +447,7 @@
   "at": "2026-09-29T20:41:38Z",
   "flag": "dropped"
  },
- "Rayman® Legends": {
+ "Rayman Legends": {
   "at": "2026-10-02T05:28:51Z",
   "flag": "dropped"
  },
@@ -629,6 +629,10 @@
  },
  "UNCHARTED: Legacy of Thieves Collection": {
   "at": "2026-09-29T20:55:19Z",
+  "flag": "beaten"
+ },
+ "Ultros": {
+  "at": "2026-10-27T15:19:52Z",
   "flag": "beaten"
  },
  "Uncanny Valley": {
