@@ -74,8 +74,8 @@ DASH = r"\s*(?:[-–—‑−~]|to)\s*"
 def roadmap(t: str) -> str:
     """Just the roadmap summary: from its first label to ~1,500 characters later. Menus, related-guide blocks and
     comments elsewhere on the page also mention difficulties and hours, and must not be read."""
-    m = re.search(r"(?i)estimated (?:trophy |platinum )?difficulty|trophy roadmap|difficulty\s*:\s*\d", t)
-    return t[m.start(): m.start() + 1500] if m else t
+    m = re.search(r"(?i)estimated (?:trophy |platinum )?difficulty", t) or re.search(r"(?i)(?:trophy|platinum) difficulty\s*:|difficulty\s*:\s*\d", t)
+    return t[max(0, m.start() - 300): m.start() + 3000] if m else t
 
 
 def parse_summary(t: str) -> dict:
