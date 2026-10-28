@@ -155,7 +155,7 @@ def calendar(games: list[dict], today: date) -> str:
     snaps, queue, flags = load("snapshots.json", []), load("queue.json", []), load("flags.json", {})
     wishlist, upc, goals = load("wishlist.json", {}), load("upcoming.json", {}), load("goals.json", {})
     by_name = {n: g for g in games for n in [g["name"], *g.get("aliases", [])]}
-    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    stamp = "20260101T000000Z"      # fixed on purpose: the file only changes when its events do (no clashes between jobs)
     events = []
 
     def add(uid: str, day: date, summary: str, desc: str = "", url: str = "") -> None:

@@ -45,6 +45,6 @@ jobs:
           git diff --cached --quiet || git commit -m "Refresh game data"
           # A flag you saved while this ran may have landed first: replay on top of it.
           for attempt in 1 2 3; do
-            git pull -q --rebase origin main && git push -q origin HEAD:main && break
+            git pull -q --rebase -X theirs origin main && git push -q origin HEAD:main && break
             sleep 5
           done

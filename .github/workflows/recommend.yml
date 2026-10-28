@@ -82,7 +82,7 @@ jobs:
           done
           git diff --cached --quiet || git commit -q -m "Weekly recommendations"
           for attempt in 1 2 3; do
-            git pull -q --rebase origin main && git push -q origin HEAD:main && break
+            git pull -q --rebase -X theirs origin main && git push -q origin HEAD:main && break
             sleep 5
           done
       - name: Monday push to your phone
