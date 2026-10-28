@@ -1,8 +1,14 @@
 """Coming soon + game details for the Discover tab. Runs every Monday after recommend.py.
 
 Needs RAWG_API_KEY. Writes docs/upcoming.json:
-- "upcoming": unreleased PS4/PS5 games in the series of games you played most, and from your favourite studios
-  (the ones you spent most hours with, at least two games), newest release first, games you own left out.
+- "upcoming": unreleased PS4/PS5 games in categories (a game can be in several):
+    series  – next games in the series you played most
+    studio  – from the studios you spent most hours with (at least two of their games)
+    taste   – matching your taste profile (genres and RAWG tags, same profile as the weekly picks)
+    indie   – most-awaited indie games
+    big     – most-awaited big releases (PS5, not indie)
+    soon    – anything above out in the next 60 days (computed on the page, not stored)
+  "Most-awaited" = how many RAWG users added the game. Games you own, dismissed (👎) or adult-only are left out.
 - "details": a short description, studios and release date for this week's picks, your wishlist and the
   upcoming games, shown when you tap them on Play next → Discover.
 Details of released games are cached in rawg_details.json; unreleased ones are refreshed every week
@@ -17,14 +23,17 @@ from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from fetch import norm
-from recommend import engagement, get, load
+import math
+
+from recommend import IGNORED_TAGS, build_profile, engagement, fit, get, load
 
 ROOT = Path(__file__).parent
 DOCS = ROOT / "docs"
 OUT = DOCS / "upcoming.json"
 CACHE = ROOT / "rawg_details.json"
 PS = {"PlayStation 5": "PS5", "PlayStation 4": "PS4"}
-MAX_UPCOMING = 12
+PER_CATEGORY = 8
+ADULT = {"nsfw", "sexual-content", "hentai", "nudity", "erotic", "adult"}
 
 
 def short_description(text: str, limit: int = 420) -> str:
@@ -98,6 +107,17 @@ def main() -> None:
     mine = lambda x: x["slug"] in owned_slugs or norm(x["name"]) in owned_names
     found: dict[str, dict] = {}
     log: list[str] = []
+    feedback = load(DOCS / "pick_feedback.json", {})
+    skip = lambda x: mine(x) or feedback.get(x["slug"], {}).get("feedback") == "down" \
+        or ADULT & {t.get("slug") for t in x.get("tags") or []} or x.get("esrb_rating", {}) and (x.get("esrb_rating") or {}).get("slug") == "adults-only"
+
+    def add(x: dict, cat: str, reason: str) -> bool:
+        if skip(x) or not unreleased(x, today) or not on_playstation(x) or (x.get("released") or "") > horizon:
+            return False
+        e = found.setdefault(x["slug"], {**summary(x), "cats": [], "reasons": {}, "added": x.get("added") or 0})
+        if cat not in e["cats"]:
+            e["cats"].append(cat); e["reasons"][cat] = reason
+        return True
 
     # 1. Series: the games you engaged with most, one per series
     ranked = sorted((g for g in games if g.get("rawg_slug")), key=lambda g: -engagement(g, flags, ratings))
@@ -117,9 +137,7 @@ def main() -> None:
         log.append(f"{g['name']}: {len(res)} in series, {sum(1 for x in res if unreleased(x, today))} unreleased")
         n_added = 0
         for x in res:
-            if n_added < 2 and unreleased(x, today) and on_playstation(x) and not mine(x) and (x.get("released") or "") <= horizon \
-                    and x["slug"] not in found:
-                found[x["slug"]] = {**summary(x), "reason": f"Series: {label}" if label else f"Follows {g['name']}"}
+            if n_added < 2 and add(x, "series", f"Series: {label}" if label else f"Follows {g['name']}"):
                 n_added += 1
 
     # 2. Studios: where you spent the most hours, at least two of their games played
@@ -150,12 +168,55 @@ def main() -> None:
         res = [x for x in {x["slug"]: x for x in res}.values() if unreleased(x, today) and (x.get("released") or "") <= horizon]
         log.append(f"studio {dev} (#{dev_id}): {len(res)} upcoming, {sum(1 for x in res if on_playstation(x))} on PlayStation")
         for x in res:
-            if unreleased(x, today) and on_playstation(x) and not mine(x):
-                found.setdefault(x["slug"], {**summary(x), "reason": f"Studio: {dev}"})
+            add(x, "studio", f"Studio: {dev}")
 
-    dated = sorted((x for x in found.values() if x["released"] and not x["tba"]), key=lambda x: x["released"])
-    tba = [x for x in found.values() if not x["released"] or x["tba"]]
-    upcoming = dated[:MAX_UPCOMING - min(3, len(tba))] + tba[:MAX_UPCOMING - min(len(dated), MAX_UPCOMING - min(3, len(tba)))]
+    # 3-5. Taste, indie, big releases: announced games with a date in the next 18 months
+    window = f"{today},{(date.today() + timedelta(days=548)).isoformat()}"
+    def search(**q) -> list[dict]:
+        try:
+            return get("games", key, dates=window, parent_platforms=2, ordering="-added", page_size=40, **q).get("results", [])
+        except Exception as e:
+            print(f"  search skipped {q}: {e}")
+            return []
+
+    profile = build_profile(games, flags, ratings, key, feedback)
+    pool: dict[str, dict] = {}
+    genre_slugs = {g["name"]: g["slug"] for g in get("genres", key, page_size=40).get("results", [])}
+    for gn, _ in sorted(profile["genres"].items(), key=lambda x: -x[1])[:3]:
+        if gn in genre_slugs:
+            pool.update({x["slug"]: x for x in search(genres=genre_slugs[gn])})
+    for tg, _ in sorted(profile["tags"].items(), key=lambda x: -x[1])[:4]:
+        pool.update({x["slug"]: x for x in search(tags=tg)})
+    scored = []
+    for x in pool.values():
+        taste, genres_x, shared = fit(x, profile)
+        if taste >= 0.45 and (x.get("added") or 0) >= 10:
+            scored.append((taste * (1 + math.log10(1 + (x.get("added") or 0)) / 4), x, shared))
+    n = 0
+    for _, x, shared in sorted(scored, key=lambda c: -c[0]):
+        why = ", ".join(profile["tag_names"].get(t, t).lower() for t in shared[:2]) or ", ".join(g["name"] for g in (x.get("genres") or [])[:2]).lower()
+        if n < PER_CATEGORY and add(x, "taste", f"Your taste: {why}"):
+            n += 1
+    log.append(f"taste: {len(pool)} candidates, {len(scored)} good fits")
+
+    n = 0
+    for x in search(genres="indie"):
+        if n < PER_CATEGORY and (x.get("added") or 0) >= 15 and add(x, "indie", "Indie, much awaited"):
+            n += 1
+    n = 0
+    for x in search(platforms=187):
+        if n < PER_CATEGORY and "Indie" not in {g["name"] for g in x.get("genres") or []} and (x.get("added") or 0) >= 30 \
+                and add(x, "big", "Big release, much awaited"):
+            n += 1
+    log.append("per category: " + ", ".join(f"{c} {sum(1 for x in found.values() if c in x['cats'])}" for c in ("series", "studio", "taste", "indie", "big")))
+
+    # one reason to show: the most personal category first
+    order = ["series", "studio", "taste", "big", "indie"]
+    for x in found.values():
+        x["cats"].sort(key=order.index)
+        x["reason"] = x["reasons"][x["cats"][0]]
+        del x["reasons"]
+    upcoming = sorted(found.values(), key=lambda x: (bool(x["tba"] or not x["released"]), x["released"] or "9999", -x["added"]))
 
     # 3. Details for everything shown on Discover
     det_out = {}

@@ -73,6 +73,22 @@ a.act.primary { background: var(--accent); color: #fff; border-color: var(--acce
 .dg-figs b { font-size: 24px; }
 .tap { cursor: pointer; }
 .item.nomc { grid-template-columns: 52px 1fr; }
+/* compact rows (wishlist, coming soon): small cover, one meta line, icon actions */
+.list.compact { gap: 6px; }
+.list.compact .item { grid-template-columns: 44px minmax(0, 1fr) auto auto; gap: 10px; padding: 8px 10px; }
+.list.compact .item.nomc { grid-template-columns: 44px minmax(0, 1fr) auto; }
+.list.compact .cover { width: 44px; height: 44px; font-size: 14px; }
+.list.compact .meta { flex-wrap: nowrap; overflow: hidden; white-space: nowrap; }
+.list.compact .meta > span { flex: none; } .list.compact .meta > span:last-child { flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.list.compact .mc { width: 34px; height: 34px; font-size: 16px; }
+.list.compact .item > .detail { margin: 2px -10px -8px; }
+a.x { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); text-decoration: none; font-size: 13px; }
+a.x:hover { border-color: var(--accent); color: var(--accent); }
+a.x.add { color: var(--accent); border-color: var(--accent); font-size: 18px; font-weight: 600; }
+a.x.added { background: var(--accent-soft); }
+.wished { width: 30px; text-align: center; color: var(--gold); font-size: 18px; }
+.sec-head .count { font: 500 15px var(--body); color: var(--muted); }
+select.mini { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; font-size: 13px; }
 .meta .out { color: var(--accent); font-weight: 600; }
 .detail .desc { margin: 0; font-size: 14px; line-height: 1.5; }
 tr.ptr > td { padding: 0 0 8px; border-bottom: 1px solid var(--line); }
@@ -126,13 +142,18 @@ tr.tap.open td { background: var(--accent-soft); }
       <div id="wkProfile"></div>
     </section>
     <section class="block">
-      <h2 class="sec">Wishlist</h2>
-      <ol class="list" id="wishList"></ol>
+      <div class="sec-head"><h2 class="sec">Wishlist <span class="count" id="wishCount"></span></h2>
+        <select id="wishSort" aria-label="Sort wishlist" class="mini"><option value="added">Recently added</option><option value="release">Release date</option><option value="mc">Metacritic</option><option value="short">Shortest first</option><option value="name">Name</option></select></div>
+      <div class="chips" id="wishChips" role="group" aria-label="Show"></div>
+      <ol class="list compact" id="wishList"></ol>
+      <button class="more" id="wishMore" hidden></button>
     </section>
     <section class="block" id="soonSec" hidden>
-      <div class="sec-head"><h2 class="sec">Coming soon</h2><span class="note">From your series and studios</span></div>
-      <ol class="list" id="soonList"></ol>
-      <details class="how"><summary>How this works</summary><p>Unreleased PS4/PS5 games in the series of the games you played most, and from the studios you spent most hours with (at least two of their games). Games you own are left out. From RAWG, updated every Monday; release dates often move.</p></details>
+      <h2 class="sec">Coming soon</h2>
+      <div class="chips" id="soonChips" role="group" aria-label="Category"></div>
+      <ol class="list compact" id="soonList"></ol>
+      <button class="more" id="soonMore" hidden></button>
+      <details class="how"><summary>How this works</summary><p>Unreleased PS4/PS5 games from RAWG, updated every Monday. <b>Your series</b>: next games in the series you played most. <b>Your studios</b>: from the studios you spent most hours with. <b>Your taste</b>: matching the same taste profile as the weekly picks (genres and tags of the games you play long, finish and rate highly). <b>Big releases</b> and <b>Indie</b>: the most awaited (how many RAWG users added them), with a date in the next 18 months. <b>Out soon</b>: anything here released in the next 60 days. Games you own or gave a 👎 are left out. Release dates often move.</p></details>
     </section>
   </div>
 
@@ -169,7 +190,7 @@ const fmtH = h => h >= 10 ? Math.round(h) + " h" : (Math.round(h * 2) / 2) + " h
 const beatTime = x => x.hltb?.extra || x.hltb?.main || null;   // HowLongToBeat Main + Extras (Main Story if missing)
 const LENGTHS = { any: ["Any length", () => true], short: ["Under 10 h", h => h && h < 10], medium: ["10–30 h", h => h >= 10 && h <= 30], long: ["30 h +", h => h > 30] };
 const POOLS = { backlog: "Backlog", both: "Backlog + in progress" };
-let DATA, state = { length: "any", pool: "backlog", genre: "", mode: "best" };
+let DATA, state = { length: "any", pool: "backlog", genre: "", mode: "best", wishSort: "added", wishF: "all", soonCat: "all" };
 try { Object.assign(state, JSON.parse(localStorage.getItem("shelf-play") || "{}")); } catch {}
 
 // Same rules as the Library: platinum wins; a dropped game played again returns to normal.
@@ -382,16 +403,33 @@ function pickActions(p) {
   return repoUrl() ? `<span class="pact">${up}${down}${wl}${fb ? `<span class="note">${fb === "up" ? "You liked this pick" : "Not for you"}</span>` : ""}</span>` : "";
 }
 
+let wishAll = false, soonAll = false;
+const relOf = (slug, w) => (UPC.details?.[slug]?.released) || w?.released || null;
+const notOut = (slug, w) => { const r = relOf(slug, w); return !r || r > new Date().toISOString().slice(0, 10) || !!(UPC.details?.[slug]?.tba ?? w?.tba); };
+const dropBtn = (s, name) => repoUrl() ? `<a class="x" href="${issueUrl(`Wishlist: remove ${name}`, ["wish: remove", `slug: ${s}`])}" target="_blank" rel="noopener" aria-label="Remove ${esc(name)} from your wishlist" title="Remove from wishlist">✕</a>` : "";
 function wishlist() {
   const owned = new Set(DATA.games.map(g => g.rawg_slug));
-  const items = Object.entries(WISH).filter(([s]) => !owned.has(s)).sort((a, b) => (b[1].added || "").localeCompare(a[1].added || ""));
-  items.forEach(([s, w]) => ITEMS[s] = { ...w, slug: s });
-  $("wishList").innerHTML = items.length ? items.map(([s, w]) => `<li class="item tap" data-d="${esc(s)}"><span class="cover">${pic(w.image, w.name)}</span>
-      <span class="main"><span class="name">${esc(w.name)}</span>
-      <span class="meta">${outLabel(s, w) ? `<span class="out">${outLabel(s, w)}</span>` : ""}${w.platforms?.length ? `<span>${esc(w.platforms.join(" · "))}</span>` : ""}${w.length ? `<span>~${w.length} h</span>` : ""}${w.genres?.length ? `<span>${esc(w.genres.join(", "))}</span>` : ""}<span>added ${new Date(w.added).toLocaleDateString(undefined, { day: "numeric", month: "short" })}</span></span>
-      <span class="pact">${act(issueUrl(`Wishlist: remove ${w.name}`, ["wish: remove", `slug: ${s}`]), "Remove")}</span></span>
-      <span class="mc ${mcClass(w.metacritic)}">${w.metacritic ?? "n/a"}</span></li>`).join("")
-    : `<p class="empty">Empty. Tap <b>+ Wishlist</b> on a weekly pick or a coming-soon game to keep it here. Games leave the list once they're in your library.</p>`;
+  const all = Object.entries(WISH).filter(([s]) => !owned.has(s));
+  all.forEach(([s, w]) => ITEMS[s] = { ...w, slug: s });
+  const nOut = all.filter(([s, w]) => notOut(s, w)).length, split = nOut > 0 && nOut < all.length;
+  const F = { all: ["All", all.length], out: ["Out now", all.length - nOut], soon: ["Not out yet", nOut] };
+  if (!F[state.wishF] || !split) state.wishF = "all";
+  $("wishChips").hidden = !split;
+  $("wishChips").innerHTML = Object.entries(F).map(([k, [l, n]]) => `<button class="chip" data-wf="${k}" aria-pressed="${state.wishF === k}">${l}<small>${n}</small></button>`).join("");
+  const items = all.filter(([s, w]) => state.wishF === "all" || (state.wishF === "soon") === notOut(s, w));
+  const S = { added: (a, b) => (b[1].added || "").localeCompare(a[1].added || ""), release: (a, b) => (relOf(...a) || "9999").localeCompare(relOf(...b) || "9999"),
+    mc: (a, b) => (b[1].metacritic ?? -1) - (a[1].metacritic ?? -1), short: (a, b) => (a[1].length ?? 999) - (b[1].length ?? 999), name: (a, b) => a[1].name.localeCompare(b[1].name) };
+  items.sort(S[state.wishSort] || S.added);
+  $("wishSort").value = state.wishSort || "added"; $("wishSort").hidden = all.length < 2;
+  $("wishCount").textContent = all.length || "";
+  const shown = wishAll ? items : items.slice(0, 6);
+  $("wishList").innerHTML = shown.length ? shown.map(([s, w]) => {
+    const meta = [outLabel(s, w) ? `<span class="out">${outLabel(s, w)}</span>` : (relOf(s, w) ? `<span>${relOf(s, w).slice(0, 4)}</span>` : ""), w.length ? `<span>~${w.length} h</span>` : "", w.genres?.length ? `<span>${esc(w.genres.slice(0, 2).join(", "))}</span>` : ""].join("");
+    return `<li class="item tap" data-d="${esc(s)}"><span class="cover">${pic(w.image, w.name)}</span>
+      <span class="main"><span class="name">${esc(w.name)}</span><span class="meta">${meta}</span></span>
+      ${w.metacritic == null && notOut(s, w) ? "<span></span>" : `<span class="mc ${mcClass(w.metacritic)}">${w.metacritic ?? "–"}</span>`}${dropBtn(s, w.name)}</li>`; }).join("")
+    : `<p class="empty">${all.length ? "Nothing in this filter." : "Empty. Tap <b>+ Wishlist</b> on a weekly pick, or <b>+</b> on a coming-soon game, to keep it here. Games leave the list once they're in your library."}</p>`;
+  $("wishMore").hidden = items.length <= 6; $("wishMore").textContent = wishAll ? "Show fewer" : `Show all ${items.length}`;
   reopen();
 }
 
@@ -402,15 +440,22 @@ function outLabel(slug, w) {   // "Out 12 Mar 2027" / "Release date TBA" for gam
   if (tba && !rel) return "Release date TBA";
   return rel && rel > new Date().toISOString().slice(0, 10) ? `Out ${fmtDay(rel)}` : "";
 }
+const SOON_CATS = { all: "All", soon: "Out soon", series: "Your series", studio: "Your studios", taste: "Your taste", big: "Big releases", indie: "Indie" };
 function comingSoon() {
-  const list = UPC.upcoming || [];
+  const list = UPC.upcoming || [], today = new Date().toISOString().slice(0, 10), in60 = new Date(Date.now() + 60 * 864e5).toISOString().slice(0, 10);
   $("soonSec").hidden = !list.length && !UPC.generated_at;
-  list.forEach(x => ITEMS[x.slug] = x);
-  $("soonList").innerHTML = list.length ? list.map(x => `<li class="item nomc tap" data-d="${esc(x.slug)}"><span class="cover">${pic(x.image, x.name)}</span>
+  list.forEach(x => { ITEMS[x.slug] = x; x.cats ||= [x.reason?.startsWith("Studio") ? "studio" : "series"]; });
+  const inCat = (x, c) => c === "all" || (c === "soon" ? !x.tba && x.released && x.released >= today && x.released <= in60 : x.cats.includes(c));
+  const counts = Object.fromEntries(Object.keys(SOON_CATS).map(c => [c, list.filter(x => inCat(x, c)).length]));
+  if (!counts[state.soonCat]) state.soonCat = "all";
+  $("soonChips").innerHTML = Object.entries(SOON_CATS).filter(([c]) => counts[c]).map(([c, l]) => `<button class="chip" data-sc="${c}" aria-pressed="${state.soonCat === c}">${l}<small>${counts[c]}</small></button>`).join("");
+  const rows = list.filter(x => inCat(x, state.soonCat)), shown = soonAll ? rows : rows.slice(0, 8);
+  $("soonList").innerHTML = shown.length ? shown.map(x => `<li class="item nomc tap" data-d="${esc(x.slug)}"><span class="cover">${pic(x.image, x.name)}</span>
       <span class="main"><span class="name">${esc(x.name)}</span>
-        <span class="meta"><span class="out">${x.released && !x.tba ? fmtDay(x.released) : "TBA"}</span>${x.platforms?.length ? `<span>${esc(x.platforms.join(" · "))}</span>` : ""}<span>${esc(x.reason)}</span></span>
-        ${repoUrl() ? `<span class="pact">${WISH[x.slug] ? `<span class="note">On your wishlist</span>` : act(issueUrl(`Wishlist: add ${x.name}`, ["wish: add", `slug: ${x.slug}`, `name: ${x.name}`]), "+ Wishlist")}</span>` : ""}</span></li>`).join("")
-    : `<p class="empty">Nothing announced right now in your series or from your studios.</p>`;
+        <span class="meta"><span class="out">${x.released && !x.tba ? fmtDay(x.released) : "TBA"}</span><span>${esc(x.reason)}</span></span></span>
+      ${WISH[x.slug] ? `<span class="wished" title="On your wishlist">★</span>` : repoUrl() ? `<a class="x add" href="${issueUrl(`Wishlist: add ${x.name}`, ["wish: add", `slug: ${x.slug}`, `name: ${x.name}`])}" target="_blank" rel="noopener" aria-label="Add ${esc(x.name)} to your wishlist" title="Add to wishlist">+</a>` : ""}</li>`).join("")
+    : `<p class="empty">Nothing announced in this category right now.</p>`;
+  $("soonMore").hidden = rows.length <= 8; $("soonMore").textContent = soonAll ? "Show fewer" : `Show all ${rows.length}`;
   reopen();
 }
 
@@ -493,6 +538,15 @@ document.addEventListener("click", e => {
   qDraft = q; upNext();
 });
 document.addEventListener("input", e => { if (e.target.id === "budget") planner(); });
+document.addEventListener("click", e => {
+  const wf = e.target.closest("[data-wf]"), sc = e.target.closest("[data-sc]");
+  if (wf) { state.wishF = wf.dataset.wf; wishAll = false; save(); wishlist(); }
+  if (sc) { state.soonCat = sc.dataset.sc; soonAll = false; save(); comingSoon(); }
+  if (e.target.id === "wishMore") { wishAll = !wishAll; wishlist(); }
+  if (e.target.id === "soonMore") { soonAll = !soonAll; comingSoon(); }
+});
+document.addEventListener("change", e => { if (e.target.id === "wishSort") { state.wishSort = e.target.value; save(); wishlist(); } });
+document.addEventListener("pending-added", e => { const a = e.target.closest("a.x"); if (a) { a.classList.add("added"); a.textContent = "✓"; } });
 document.addEventListener("click", e => {
   if (e.target.id === "hardMore") { hardAll = !hardAll; platDifficulty(); }
   const m = e.target.closest("[data-mode]"); if (m) { state.mode = m.dataset.mode; save(); render(); }
