@@ -10,6 +10,7 @@ import json
 import os
 import re
 from pathlib import Path
+from datetime import date
 
 ROOT = Path(__file__).parent
 FLAGS = ROOT / "docs" / "flags.json"
@@ -32,17 +33,23 @@ FIX_LABELS = {"guide": "trophy guide", "hltb": "HowLongToBeat match", "rawg": "g
 TOURNAMENT = ROOT / "docs" / "tournament.json"
 
 
-def apply_duels(body: str) -> str | None:
-    """Backlog tournament: "duel: <id> | <winner> >> <loser>" lines, appended to docs/tournament.json."""
-    rows = re.findall(r"^duel:\s*(\S+)\s*\|\s*(.+?)\s*>>\s*(.+?)\s*$", body or "", re.M)
-    if not rows:
+def apply_champion(body: str) -> str | None:
+    """Backlog tournament winner: "champion: <id> | <game>", "date: YYYY-MM-DD", "beat: a ;; b ;; ..."
+    added to docs/tournament.json, where it joins My ranking."""
+    m = re.search(r"^champion:\s*(\S+)\s*\|\s*(.+?)\s*$", body or "", re.M)
+    if not m:
         return None
-    t = _load(TOURNAMENT, {"duels": []})
-    known = {d[0] for d in t["duels"]}
-    new = [[i, w, l] for i, w, l in rows if i not in known]
-    t["duels"].extend(new)
-    _save(TOURNAMENT, t)
-    return f"Saved {len(new)} duel{'s' if len(new) != 1 else ''} ({len(t['duels'])} in total). The dashboard updates in about a minute."
+    t = _load(TOURNAMENT, {"champions": []})
+    t.setdefault("champions", [])
+    t.pop("duels", None)
+    if m[1] not in {c["id"] for c in t["champions"]}:
+        d = re.search(r"^date:\s*(\d{4}-\d{2}-\d{2})", body, re.M)
+        b = re.search(r"^beat:\s*(.*)$", body, re.M)
+        t["champions"].append({"id": m[1], "game": m[2], "at": d[1] if d else date.today().isoformat(),
+                               "beat": [x.strip() for x in (b[1] if b else "").split(";;") if x.strip()]})
+        _save(TOURNAMENT, t)
+    n = len(t["champions"])
+    return f"{m[2]} won the tournament: #{n} in My ranking. The dashboard updates in about a minute."
 
 
 def apply_fix(body: str) -> str | None:
@@ -247,7 +254,7 @@ def apply_goals(body: str, created: str) -> str | None:
 
 
 def apply(body: str, created: str) -> str:
-    for handler in (lambda: apply_duels(body), lambda: apply_fix(body), lambda: apply_goals(body, created), lambda: apply_queue(body),
+    for handler in (lambda: apply_champion(body), lambda: apply_fix(body), lambda: apply_goals(body, created), lambda: apply_queue(body),
                     lambda: apply_wish(body, created), lambda: apply_feedback(body, created)):
         msg = handler()
         if msg:

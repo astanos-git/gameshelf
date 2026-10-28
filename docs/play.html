@@ -78,7 +78,16 @@ a.act.primary { background: var(--accent); color: #fff; border-color: var(--acce
 .tn-card .cover { width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 8px; font-size: 22px; }
 .tn-name { font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
 .tn-vs { align-self: center; font: 700 16px var(--display); color: var(--muted); }
-.tn-top { margin: 0; padding-left: 22px; display: grid; gap: 3px; font-size: 14px; }
+.tn-card.champ { border-color: var(--gold); }
+.tn-tag { font-size: 12px; font-weight: 600; color: var(--gold); }
+.tn-line { display: flex; gap: 4px; flex-wrap: wrap; }
+.tn-dot { width: 28px; height: 28px; border-radius: 6px; overflow: hidden; border: 2px solid transparent; display: grid; place-items: center; font-size: 9px; background: var(--line); }
+.tn-dot img, .tn-dot .cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tn-dot.out { opacity: .25; filter: grayscale(1); }
+.tn-dot.on { border-color: var(--gold); }
+.tn-win { display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: center; background: var(--surface); border: 2px solid var(--gold); border-radius: var(--radius); padding: 10px; margin-bottom: 10px; }
+.tn-win .cover { width: 64px; height: 64px; border-radius: 8px; }
+.tn-win > span:last-child { display: grid; gap: 2px; }
 .memories { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; display: grid; gap: 4px; }
 .memories ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 14px; }
 .memories .yr { display: inline-block; min-width: 92px; font: 12px var(--mono); color: var(--muted); }
@@ -146,7 +155,7 @@ tr.tap.open td { background: var(--accent-soft); }
       </div>
       <div class="mode" id="modeRank" hidden>
         <ol class="list" id="rankList"></ol>
-        <details class="how"><summary>How this works</summary><p>Your backlog ranked by your own choices in the backlog tournament below (an Elo score: beating a game ranked above you counts more). Only games that have been in at least one duel are ranked.</p></details>
+        <details class="how"><summary>How this works</summary><p>Each backlog tournament below crowns one game, and it joins this list in the order it won. Games you finish, beat or drop leave the list; games you've started stay, marked "Playing".</p></details>
       </div>
     </section>
 
@@ -364,83 +373,80 @@ document.addEventListener("click", e => {
   reopen();
 });
 
-/* ---------- Backlog tournament: two games, tap the one you'd rather play; an Elo ranking from all your duels ---------- */
-let TOURN = { duels: [] }, tn = null;     // tn = the round in progress: { n, pair, done: [[id, winner, loser]] }
-const TN_ROUND = 10, LOCAL_DUELS = "shelf-duels";
-const localDuels = () => { try { return JSON.parse(localStorage.getItem(LOCAL_DUELS) || "[]"); } catch { return []; } };
-const saveLocal = d => { try { localStorage.setItem(LOCAL_DUELS, JSON.stringify(d)); } catch {} };
-const tnPool = () => DATA.games.filter(x => x.eff === "unplayed" && x.owned);
-function allDuels() {       // saved in the repo + played on this device but not saved yet
-  const saved = new Set(TOURN.duels.map(d => d[0]));
-  const mine = localDuels().filter(d => !saved.has(d[0])); saveLocal(mine);
-  return [...TOURN.duels, ...mine];
+/* ---------- Backlog tournament: 10 backlog games, winner stays on, the last one standing joins My ranking ---------- */
+let TOURN = { champions: [] }, tn = null;  // tn = { names: [10 entrants], champ: index, next: index, beat: [names] }
+const TN_SIZE = 10, LOCAL_CHAMPS = "shelf-champs", LIVE = "shelf-tn-live";
+const lsGet = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
+const lsSet = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+function champions() {      // saved in the repo + won on this device but not saved yet
+  const saved = TOURN.champions || [], ids = new Set(saved.map(c => c.id));
+  const mine = lsGet(LOCAL_CHAMPS, []).filter(c => !ids.has(c.id)); lsSet(LOCAL_CHAMPS, mine);
+  return [...saved, ...mine];
 }
-function elo() {
-  const R = {}, N = {};
-  for (const [, w, l] of allDuels()) {
-    const rw = R[w] ?? 1000, rl = R[l] ?? 1000, e = 1 / (1 + 10 ** ((rl - rw) / 400));
-    R[w] = rw + 32 * (1 - e); R[l] = rl - 32 * (1 - e); N[w] = (N[w] || 0) + 1; N[l] = (N[l] || 0) + 1;
-  }
-  return { R, N };
-}
+// My ranking: champions in the order they won, while still unfinished (started ones stay, marked as playing)
 function rankedBacklog() {
-  const { R } = elo(), pool = new Set(tnPool().map(x => x.name));
-  return Object.entries(R).filter(([n]) => pool.has(n)).sort((a, b) => b[1] - a[1]).map(([n, r]) => ({ g: byName(n), r })).filter(o => o.g);
+  return champions().map(c => ({ c, g: byName(c.game) }))
+    .filter(o => o.g && o.g.base_status !== "completed" && !["beaten", "dropped"].includes(o.g.eff));
 }
-function nextPair(seen) {
-  const { R, N } = elo(), pool = tnPool(); if (pool.length < 2) return null;
-  // the least-played game first, against one with a similar score (new games meet anyone)
-  const fewest = Math.min(...pool.map(x => N[x.name] || 0));
-  const a = pool.filter(x => (N[x.name] || 0) === fewest)[Math.floor(Math.random() * pool.filter(x => (N[x.name] || 0) === fewest).length)];
-  const ra = R[a.name] ?? 1000;
-  const others = pool.filter(x => x !== a && !seen.has([a.name, x.name].sort().join("|")))
-    .sort((x, y) => Math.abs((R[x.name] ?? 1000) - ra) - Math.abs((R[y.name] ?? 1000) - ra) + (Math.random() - .5) * 40);
-  const b = others[Math.floor(Math.random() * Math.min(5, others.length))];
-  return b ? Math.random() < .5 ? [a, b] : [b, a] : null;
+const tnPool = () => DATA.games.filter(x => x.eff === "unplayed" && x.owned);
+function tnDraw() {
+  const crowned = new Set(champions().map(c => c.game)), met = new Set(champions().flatMap(c => c.beat || []));
+  const shuffle = a => a.map(x => [Math.random(), x]).sort((p, q) => p[0] - q[0]).map(p => p[1]);
+  const pool = tnPool().filter(x => !crowned.has(x.name));
+  // games that haven't been in a tournament yet come first
+  const pick = [...shuffle(pool.filter(x => !met.has(x.name))), ...shuffle(pool.filter(x => met.has(x.name)))].slice(0, TN_SIZE);
+  return pick.length >= 2 ? { names: shuffle(pick).map(x => x.name), champ: 0, next: 1, beat: [] } : null;
 }
-const tnCard = (x, side) => `<button class="tn-card" data-tn="${side}"><span class="cover">${pic(x.image, x.name)}</span>
-  <span class="tn-name">${esc(x.name)}</span><span class="meta">${x.metacritic != null ? `<span>MC ${x.metacritic}</span>` : ""}${beatTime(x) ? `<span>~${fmtH(beatTime(x))}</span>` : ""}</span>
+const tnCard = (x, side, crown) => `<button class="tn-card${crown ? " champ" : ""}" data-tn="${side}"><span class="cover">${pic(x.image, x.name)}</span>
+  ${crown ? `<span class="tn-tag">👑 ${crown} win${crown > 1 ? "s" : ""} in a row</span>` : ""}<span class="tn-name">${esc(x.name)}</span><span class="meta">${x.metacritic != null ? `<span>MC ${x.metacritic}</span>` : ""}${beatTime(x) ? `<span>~${fmtH(beatTime(x))}</span>` : ""}</span>
   <span class="meta"><span>${esc((x.genres || []).slice(0, 2).join(", "))}</span></span>${GP.diffOf(x)?.combined?.difficulty != null ? `<span class="meta"><span>🏆 ${GP.diffOf(x).combined.difficulty}/10</span></span>` : ""}</button>`;
+let tnStreak = 0;
 function tourney() {
-  const ranked = rankedBacklog(), n = allDuels().length;
-  $("tnStats").textContent = n ? `${n} duel${n === 1 ? "" : "s"} · ${ranked.length} games ranked` : "";
+  const ranked = rankedBacklog();
+  $("tnStats").textContent = ranked.length ? `${ranked.length} in My ranking` : "";
   if (!tn) {
-    const top = ranked.slice(0, 5);
-    $("tnBody").innerHTML = `<p class="note">Which would you rather play next? ${TN_ROUND} quick duels between backlog games; your choices build a personal ranking (<b>What to play → My ranking</b>).</p>
-      <div class="row"><button class="go" id="tnStart">${n ? "Play another round" : "Start"}</button></div>
-      ${top.length ? `<h3>Your top ${top.length}</h3><ol class="tn-top">${top.map(o => `<li class="tap" data-g="${esc(o.g.name)}">${esc(o.g.name)}</li>`).join("")}</ol>` : ""}`;
+    const enough = tnPool().length >= 2;
+    $("tnBody").innerHTML = `<p class="note">${TN_SIZE} backlog games, two at a time: tap the one you'd rather play next. The winner stays on and faces the next game, until one is left. It joins <b>What to play → My ranking</b>.</p>
+      <div class="row">${enough ? `<button class="go" id="tnStart">${ranked.length ? "New tournament" : "Start"}</button>` : `<span class="note">Not enough unplayed games in your backlog.</span>`}</div>`;
     return;
   }
-  if (tn.n >= TN_ROUND || !tn.pair) return tnFinish();
-  $("tnBody").innerHTML = `<p class="note">Duel ${tn.n + 1} of ${TN_ROUND}: tap the one you'd rather play next.</p>
-    <div class="tn-duel">${tnCard(tn.pair[0], 0)}<span class="tn-vs">vs</span>${tnCard(tn.pair[1], 1)}</div>
-    <div class="row"><button class="chip" id="tnSkip">Can't decide</button><button class="chip" id="tnStop">Stop here</button></div>`;
+  const G = tn.names.map(byName);
+  if (G.some(g => !g)) { tn = null; lsSet(LIVE, null); return tourney(); }   // a game left the library meanwhile
+  if (tn.next >= G.length) return tnFinish();
+  const total = G.length - 1, n = tn.next;
+  // the line-up: beaten games faded, the champion highlighted, the rest still waiting
+  const lineup = G.map((g, i) => `<span class="tn-dot${i === tn.champ ? " on" : i < n ? " out" : ""}" title="${esc(g.name)}">${pic(g.image, g.name)}</span>`).join("");
+  $("tnBody").innerHTML = `<p class="note">Duel ${n} of ${total}: tap the one you'd rather play next.</p>
+    <div class="tn-line">${lineup}</div>
+    <div class="tn-duel">${tnCard(G[tn.champ], 0, tnStreak)}<span class="tn-vs">vs</span>${tnCard(G[n], 1, 0)}</div>
+    <div class="row"><button class="chip" id="tnStop">Stop (nothing saved)</button></div>`;
 }
 function tnPick(side) {
-  const w = tn.pair[side], l = tn.pair[1 - side], d = [`${Date.now().toString(36)}${Math.random().toString(36).slice(2, 5)}`, w.name, l.name];
-  tn.done.push(d); saveLocal([...localDuels(), d]);
-  tn.seen.add([w.name, l.name].sort().join("|")); tn.n++; tn.pair = nextPair(tn.seen); tourney();
+  const champ = tn.names[tn.champ], challenger = tn.names[tn.next];
+  if (side === 0) { tn.beat.push(challenger); tnStreak++; }
+  else { tn.beat.push(champ); tn.champ = tn.next; tnStreak = 1; }
+  tn.next++; tn.streak = tnStreak; lsSet(LIVE, tn); tourney();
 }
 function tnFinish() {
-  const done = tn.done; tn = null;
-  if (done.length && repoUrl()) {        // one pending change with every duel of the round
-    const a = document.createElement("a");
-    a.href = issueUrl(`Tournament: ${done.length} duel${done.length === 1 ? "" : "s"}`, done.map(([i, w, l]) => `duel: ${i} | ${w} >> ${l}`));
-    a.target = "_blank"; document.body.appendChild(a); a.click(); a.remove();
-  }
+  const c = { id: `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 5)}`, game: tn.names[tn.champ], at: new Date().toISOString().slice(0, 10), beat: tn.beat };
+  tn = null; tnStreak = 0; lsSet(LIVE, null);
+  lsSet(LOCAL_CHAMPS, [...lsGet(LOCAL_CHAMPS, []), c]);
+  const url = issueUrl(`Tournament: ${c.game} wins`, [`champion: ${c.id} | ${c.game}`, `date: ${c.at}`, `beat: ${c.beat.join(" ;; ")}`]);
+  if (url) { const a = document.createElement("a"); a.href = url; a.target = "_blank"; document.body.appendChild(a); a.click(); a.remove(); }
   tourney(); render();
+  const g = byName(c.game), pos = rankedBacklog().findIndex(o => o.c.id === c.id) + 1;
+  $("tnBody").insertAdjacentHTML("afterbegin", `<div class="tn-win"><span class="cover">${pic(g.image, g.name)}</span><span><span class="eyebrow">Winner</span><b>${esc(g.name)}</b><span class="note">Beat ${c.beat.length} games · #${pos} in My ranking</span></span></div>`);
 }
 document.addEventListener("click", e => {
-  if (e.target.id === "tnStart") { tn = { n: 0, done: [], seen: new Set() }; tn.pair = nextPair(tn.seen); tourney(); $("tourney").scrollIntoView({ block: "start" }); }
+  if (e.target.id === "tnStart") { tn = tnDraw(); tnStreak = 0; lsSet(LIVE, tn); tourney(); $("tourney").scrollIntoView({ block: "start" }); }
   const c = e.target.closest("[data-tn]"); if (c && tn) tnPick(+c.dataset.tn);
-  if (e.target.id === "tnSkip" && tn) { tn.seen.add(tn.pair.map(x => x.name).sort().join("|")); tn.pair = nextPair(tn.seen); tourney(); }
-  if (e.target.id === "tnStop" && tn) tnFinish();
+  if (e.target.id === "tnStop" && tn) { tn = null; tnStreak = 0; lsSet(LIVE, null); tourney(); }
 });
 function rankList() {
-  const fit = LENGTHS[state.length][1], rows = rankedBacklog().filter(o => fit(beatTime(o.g))).slice(0, 10);
-  $("rankList").innerHTML = rows.length ? rows.map((o, i) => `<li class="item uq tap" data-g="${esc(o.g.name)}"><span class="rank">${i + 1}</span><span class="cover">${pic(o.g.image, o.g.name)}</span>
-      <span class="main"><span class="name">${esc(o.g.name)}</span><span class="meta">${beatTime(o.g) ? `<span>~${fmtH(beatTime(o.g))}</span>` : ""}<span>${esc((o.g.genres || []).slice(0, 2).join(", "))}</span></span></span>
-      <span class="mc ${mcClass(o.g.metacritic)}">${o.g.metacritic ?? "–"}</span></li>`).join("") : `<p class="empty">No ranked game fits this length.</p>`;
+  const rows = rankedBacklog();
+  $("rankList").innerHTML = rows.map(({ c, g }, i) => `<li class="item uq tap" data-g="${esc(g.name)}"><span class="rank">${i + 1}</span><span class="cover">${pic(g.image, g.name)}</span>
+      <span class="main"><span class="name">${esc(g.name)}</span><span class="meta">${g.eff === "started" ? `<span class="out">Playing</span>` : ""}<span>Won ${new Date(c.at).toLocaleDateString(undefined, { day: "numeric", month: "short" })}</span>${beatTime(g) ? `<span>~${fmtH(beatTime(g))}</span>` : ""}</span></span>
+      <span class="mc ${mcClass(g.metacritic)}">${g.metacritic ?? "–"}</span></li>`).join("");
   reopen();
 }
 
@@ -645,7 +651,9 @@ async function extrasStart() {
     getJSON("snapshots.json", []), getJSON("goals.json", {}), getJSON("flags.json", {}), getJSON("ratings.json", {})]);
   UPC = await getJSON("upcoming.json", {});
   MEM = await getJSON("memories.json", {}); onThisDay();
-  TOURN = await getJSON("tournament.json", { duels: [] });
+  TOURN = await getJSON("tournament.json", { champions: [] });
+  lsSet("shelf-duels", null);                              // the old duel format
+  tn = lsGet(LIVE, null); tnStreak = tn?.streak || 0;     // a tournament left half-way resumes
   $("calLink").href = `webcal://${location.host}${location.pathname.replace(/[^/]*$/, "")}gameshelf.ics`;
   $("calLink").hidden = !location.hostname.endsWith("github.io");
   GP.difficulty = (await getJSON("difficulty.json", {})).games || {};

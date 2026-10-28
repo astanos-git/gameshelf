@@ -85,7 +85,7 @@ Tap **Refresh data** at the top of the Library. It opens the workflow on GitHub:
   - **Up next:** up to 5 games in your order, with time left, the finish forecast and a ⚠️ missable warning linking to the guide.
   - **On this day:** a platinum, a rare trophy or a game you started on this date in past years (or later this week).
   - **What to play:** **Best games** (by Metacritic, filters by length and genre, **Surprise me**), **Fit my hours** (the best mix for the hours you have) or **My ranking** (from the tournament).
-  - **Backlog tournament:** 10 quick duels between backlog games; tap the one you'd rather play. Your choices build an Elo ranking. Each round is one pending change.
+  - **Backlog tournament:** 10 random backlog games, two at a time; the one you'd rather play stays on and faces the next, until one is left. The winner joins **My ranking** (one pending change per tournament).
   - **📅 Add to calendar** (next to Up next): subscribe once to `gameshelf.ics`. Your phone's calendar then shows finish forecasts for games in progress, release dates of wishlist and coming-soon games, and a reminder one month before your goals deadline. It updates by itself (after refreshes, Monday runs and saves).
 - **Discover:**
   - **This week's picks:** 3 games you don't own, matched to your taste and usual length, with 👍 / 👎 and + Wishlist.

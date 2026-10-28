@@ -14,7 +14,7 @@
   const keyOf = cmd => {
     const lines = cmd.split("\n"), kind = lines[0].split(":")[0].trim().toLowerCase();
     const target = lines.filter(l => /^(game|slug|goal):/i.test(l)).join("|");
-    return kind === "flag" || kind === "fix" || kind === "duel" || kind === "queue" && !/^queue:\s*set/i.test(lines[0]) ? `${kind}|${lines[0]}|${target}` : `${kind}|${target}`;
+    return kind === "flag" || kind === "fix" || kind === "champion" || kind === "queue" && !/^queue:\s*set/i.test(lines[0]) ? `${kind}|${lines[0]}|${target}` : `${kind}|${target}`;
   };
 
   function add(title, body) {
