@@ -74,8 +74,8 @@
 .scores { display: flex; gap: 6px; align-items: flex-start; }
 .sc { display: grid; justify-items: center; gap: 1px; }
 .sc small { font: 600 9px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-.you { width: 40px; height: 40px; border-radius: 7px; display: grid; place-items: center; font: 600 19px var(--display); background: var(--surface); border: 2px solid; }
-.you.good { color: var(--mc-good); } .you.mid { color: var(--mc-mid); } .you.bad { color: var(--mc-bad); }
+.myscore { width: 40px; height: 40px; border-radius: 7px; display: grid; place-items: center; padding: 0; font: 600 19px var(--display); line-height: 1; background: var(--surface); border: 2px solid; }
+.myscore.good { color: var(--mc-good); } .myscore.mid { color: var(--mc-mid); } .myscore.bad { color: var(--mc-bad); }
 .meta .plat { font-weight: 600; white-space: nowrap; }
 .meta .plat.easy { color: var(--mc-good); } .meta .plat.medium { color: var(--mc-mid); } .meta .plat.hard { color: var(--mc-bad); }
 .tlist { display: grid; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; }
@@ -140,7 +140,7 @@ body.selecting .wrap { padding-bottom: 170px; }
 .selnote { font-size: 12.5px; color: var(--muted); margin: 0; }
 .list > .empty { text-align: center; padding: 32px 0; }
 @media (max-width: 420px) { .game > button { grid-template-columns: 48px 1fr auto; gap: 10px; padding: 10px; } .cover { width: 48px; height: 48px; }
-  .scores { gap: 4px; } .scores .mc, .you { width: 36px; height: 36px; font-size: 17px; } }
+  .scores { gap: 4px; } .scores .mc, .myscore { width: 36px; height: 36px; font-size: 17px; } }
 </style>
 
 <div class="wrap">
@@ -387,7 +387,7 @@ function renderList() {
 
 let RATINGS = {};
 // your rating: an outlined badge next to the (filled) Metacritic one
-const myScore = x => { const r = RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean); return r ? `<span class="sc"><span class="you ${mcClass(r.score)}" title="Your rating">${r.score}</span><small>You</small></span>` : ""; };
+const myScore = x => { const r = RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean); return r ? `<span class="sc"><span class="myscore ${mcClass(r.score)}" title="Your rating">${r.score}</span><small>You</small></span>` : ""; };
 // platinum estimate from trophy guides (difficulty.json): "🏆 3/10 · 120 h", not shown once you have the platinum
 function platLine(x) {
   if (x.platinum || x.status === "completed") return "";
