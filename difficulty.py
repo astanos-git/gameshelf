@@ -84,16 +84,18 @@ def parse_summary(t: str) -> dict:
     out = {}
     nxt = r"(?=approximate|estimated time|offline trophies|online trophies|number of missable|missable trophies|glitched|does difficulty|hardest trophy|minimum playthrough|$)"
     mid = lambda a, b: (float(a.replace(",", ".")) + float((b or a).replace(",", "."))) / 2
-    # difficulty: the block after its label; when it lists options ("3/10 with an exploit, 5/10 legit…"), the middle one
+    # difficulty: the block after its label. Ranges are averaged ("5-6/10", "4.5/10 – 6/10"); when the guide lists
+    # several routes ("1/10 on Story Mode, 3/10 on Adventure Mode"), the first one: the route the guide recommends.
     m = re.search(r"(?is)(?:estimated (?:trophy |platinum )?difficulty|(?:trophy|platinum) difficulty)(.{0,600}?)" + nxt, t)
-    vals = [mid(a, b) for a, b in re.findall(NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10", m.group(1))] if m else []
+    first = re.search(NUM + r"(?:\s*/\s*10)?(?:" + DASH + NUM + r")?\s*/\s*10", m.group(1)) if m else None
+    vals = [mid(first.group(1), first.group(2))] if first else []
     if not vals:
         m2 = re.search(r"(?i)difficulty[^\n\d]{0,20}?" + NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10", t) \
             or re.search(r"(?i)" + NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10\s*\n?\s*difficulty", t)
         vals = [mid(m2.group(1), m2.group(2))] if m2 else []
     if vals:
-        out["difficulty"] = round(sorted(vals)[len(vals) // 2], 1)
-    # time: same idea ("10-15 hours in one playthrough, 15-20 hours in two" -> middle)
+        out["difficulty"] = round(vals[0], 1)
+    # time: same idea, the first route listed ("40-50 hours on Story / 50-60 hours on Balance" -> 40-50)
     m = re.search(r"(?is)(?:time to (?:platinum|100%)|hours? to platinum|approximate (?:amount of )?time|estimated time)(.{0,400}?)" + nxt.replace("approximate|estimated time|", "offline trophies|"), t)
     hrs = re.findall(r"(\d+)(?:" + DASH + r"(\d+))?\+?\s*(?:hours|hrs)\b", m.group(1), re.I) if m else []   # not "8-12h" sub-parts
     if m and not hrs:
@@ -102,7 +104,7 @@ def parse_summary(t: str) -> dict:
         m2 = re.search(r"(?i)\b(\d+)(?:" + DASH + r"(\d+))?\+?\s*\n?\s*hours\b", t)
         hrs = [(m2.group(1), m2.group(2))] if m2 else []
     if hrs:
-        lo, hi = sorted(hrs, key=lambda h: mid(*h))[len(hrs) // 2]
+        lo, hi = hrs[0]
         lo, hi = int(lo), int(hi) if hi else None
         out["hours"] = round((lo + hi) / 2) if hi and hi >= lo else lo
         out["hours_text"] = f"{lo}–{hi}" if hi and hi > lo else str(lo)
