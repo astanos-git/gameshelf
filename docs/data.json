@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-28T17:15:37+00:00",
+ "generated_at": "2026-10-28T17:43:41+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -13100,12 +13100,12 @@
    "rawg_slug": "need-for-speed-hot-pursuit-remastered",
    "metacritic_source": "rawg",
    "series": [
-    "Need for Speed",
-    "Need for Speed Hot Pursuit"
+    "Need for Speed Hot Pursuit",
+    "Need for Speed"
    ],
    "developers": [
-    "Criterion Games",
-    "Stellar Entertainment"
+    "Stellar Entertainment",
+    "Criterion Games"
    ],
    "publishers": [
     "Electronic Arts"
