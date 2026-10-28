@@ -63,6 +63,17 @@
 }
 }
 },
+"ABSOLVER": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "AC Brotherhood": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -94,6 +105,46 @@
 "sources": {
 "powerpyx": null,
 "truetrophies": null
+}
+},
+"ARK: Survival Ascended": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 2,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 2,
+"hours_text": "2–3",
+"missable": 0,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/ARK-Survival-Ascended/trophies"
+}
+}
+},
+"ARK: Survival Evolved": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 2,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 2,
+"hours_text": "1–2",
+"missable": 0,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/ARK-Survival-Evolved/trophies"
+}
 }
 },
 "ASTRO BOT": {
@@ -211,6 +262,66 @@
 }
 }
 },
+"Alone in the Dark": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 1,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Alone-in-the-Dark/trophies"
+}
+}
+},
+"Amnesia Collection": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/Amnesia-Collection/trophies"
+}
+}
+},
+"Among Us": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 0,
+"online": 14
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 0,
+"online": 14,
+"url": "https://www.truetrophies.com/game/Among-Us/trophies"
+}
+}
+},
 "Another World - 20th Anniversary Edition": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -268,11 +379,24 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"hours": 22,
-"missable": 4
+"difficulty": 3.0,
+"glitched": 1,
+"hours": 60,
+"missable": 4,
+"online": 0,
+"playthroughs": 1
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 1,
+"hours": 60,
+"hours_text": "50–70",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/assassins-creed-origins-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 22,
 "hours_text": "20–25",
@@ -281,14 +405,49 @@
 }
 }
 },
+"Assassin's Creed® Freedom Cry": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 7,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 7,
+"hours_text": "6–8",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Assassins-Creed-Freedom-Cry/trophies"
+}
+}
+},
 "Assassin's Creed® III": {
 "checked": {
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
 },
-"combined": {},
+"combined": {
+"difficulty": 3.0,
+"glitched": 1,
+"hours": 60,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 1,
+"hours": 60,
+"hours_text": "50–70",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/assassins-creed-origins-trophy-guide-roadmap/"
+},
 "truetrophies": null
 }
 },
@@ -298,18 +457,62 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 3.5,
+"glitched": 0,
 "hours": 45,
 "missable": 0,
-"online": 50
+"online": 50,
+"playthroughs": 1
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 3.5,
+"glitched": 0,
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/assassins-creed-4-black-flag-resynced-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 45,
 "hours_text": "40–50",
 "missable": 0,
 "online": 50,
 "url": "https://www.truetrophies.com/game/Assassins-Creed-4-Black-Flag/trophies"
+}
+}
+},
+"Assassin's Creed® Odyssey": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.5,
+"glitched": 7,
+"hours": 90,
+"missable": 10,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.5,
+"glitched": 7,
+"hours": 65,
+"hours_text": "60–70",
+"missable": 1,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/assassins-creed-odyssey-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 10,
+"url": "https://www.truetrophies.com/game/Assassins-Creed-Odyssey/trophies"
 }
 }
 },
@@ -385,6 +588,25 @@
 }
 }
 },
+"Axiom Verge 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 14,
+"missable": 3
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 14,
+"hours_text": "12–15",
+"missable": 3,
+"url": "https://www.truetrophies.com/game/Axiom-Verge-2/trophies"
+}
+}
+},
 "BATMAN™: ARKHAM KNIGHT": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -413,6 +635,17 @@
 "missable": 0,
 "url": "https://www.truetrophies.com/game/Balatro/trophies"
 }
+}
+},
+"Batman": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "Batman: Arkham City™": {
@@ -468,6 +701,37 @@
 }
 }
 },
+"Battlefield™ 2042": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 5.0,
+"hours": 135,
+"missable": 0,
+"online": 35,
+"playthroughs": 25
+},
+"sources": {
+"powerpyx": {
+"difficulty": 5.0,
+"hours": 62,
+"hours_text": "50–75",
+"missable": 0,
+"online": 35,
+"playthroughs": 25,
+"url": "https://www.powerpyx.com/battlefield-2042-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 135,
+"hours_text": "120–150",
+"missable": 0,
+"online": 31,
+"url": "https://www.truetrophies.com/game/Battlefield-2042/trophies"
+}
+}
+},
 "Battlefield™ 6": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -498,6 +762,37 @@
 "missable": 0,
 "online": 25,
 "url": "https://www.truetrophies.com/game/Battlefield-6/trophies"
+}
+}
+},
+"Battlefield™ V": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.0,
+"hours": 45,
+"missable": 0,
+"online": 16,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.0,
+"hours": 22,
+"hours_text": "20–25",
+"missable": 0,
+"online": 16,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/battlefield-v-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"online": 6,
+"url": "https://www.truetrophies.com/game/Battlefield-V/trophies"
 }
 }
 },
@@ -539,6 +834,25 @@
 }
 }
 },
+"Big Walk": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Big-Walk/trophies"
+}
+}
+},
 "BioShock Infinite": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -556,6 +870,39 @@
 "missable": 33,
 "url": "https://www.truetrophies.com/game/BioShock-Infinite/trophies"
 }
+}
+},
+"BioShock Infinite: The Complete Edition": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"BioShock: The Collection": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Black Desert": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "Black Myth: Wukong": {
@@ -608,6 +955,25 @@
 }
 }
 },
+"Blasphemous 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 28,
+"missable": 5
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 28,
+"hours_text": "25–30",
+"missable": 5,
+"url": "https://www.truetrophies.com/game/Blasphemous-2/trophies"
+}
+}
+},
 "Bloodborne™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -647,6 +1013,50 @@
 }
 }
 },
+"Borderlands 3": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.0,
+"glitched": 3,
+"hours": 60,
+"missable": 0,
+"online": 79,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.0,
+"glitched": 3,
+"hours": 60,
+"hours_text": "50–70",
+"missable": 0,
+"online": 3,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/borderlands-3-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"online": 79,
+"url": "https://www.truetrophies.com/game/Borderlands-3/trophies"
+}
+}
+},
+"Bound": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "Burly Men At Sea": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -664,6 +1074,17 @@
 "missable": 1,
 "url": "https://www.truetrophies.com/game/Burly-Men-at-Sea/trophies"
 }
+}
+},
+"Bye Sweet Carole": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "Bō: Path of the Teal Lotus": {
@@ -696,6 +1117,98 @@
 }
 }
 },
+"COCOON": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 4,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 4,
+"hours_text": "4–5",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/COCOON/trophies"
+}
+}
+},
+"Call of Duty®: Black Ops Cold War": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 7.0,
+"glitched": 0,
+"hours": 40,
+"missable": 0,
+"online": 6,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 7.0,
+"glitched": 0,
+"hours": 40,
+"hours_text": "35–45",
+"missable": 0,
+"online": 6,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/call-of-duty-black-ops-cold-war-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
+"Call of Duty®: Black Ops III": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 6.0,
+"glitched": 0,
+"hours": 60,
+"missable": 0,
+"online": 51,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 6.0,
+"glitched": 0,
+"hours": 60,
+"hours_text": "50–70",
+"missable": 0,
+"online": 51,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/call-of-duty-black-ops-7-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
+"Chained Echoes": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 55,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 55,
+"hours_text": "50–60",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Chained-Echoes/trophies"
+}
+}
+},
 "Child of Light": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -713,6 +1226,17 @@
 "missable": 0,
 "url": "https://www.truetrophies.com/game/Child-of-Light/trophies"
 }
+}
+},
+"Chivalry 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "Clair Obscur: Expedition 33": {
@@ -743,6 +1267,138 @@
 "missable": 8,
 "url": "https://www.truetrophies.com/game/Clair-Obscur-Expedition-33/trophies"
 }
+}
+},
+"Claire": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 4,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 4,
+"hours_text": "3–4",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/Claire/trophies"
+}
+}
+},
+"Conan Exiles": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 2,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 2,
+"hours_text": "1–2",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Conan-Exiles/trophies"
+}
+}
+},
+"Control": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.0,
+"glitched": 0,
+"hours": 25,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.0,
+"glitched": 0,
+"hours": 25,
+"hours_text": "25",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/control-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Control/trophies"
+}
+}
+},
+"Core Keeper": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 70,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 70,
+"hours_text": "60–80",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Core-Keeper/trophies"
+}
+}
+},
+"Crash Bandicoot™ 4: It’s About Time": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 9.0,
+"glitched": 0,
+"hours": 90,
+"missable": 0,
+"online": 0,
+"playthroughs": 4
+},
+"sources": {
+"powerpyx": {
+"difficulty": 9.0,
+"glitched": 0,
+"hours": 50,
+"hours_text": "50",
+"missable": 0,
+"online": 0,
+"playthroughs": 4,
+"url": "https://www.powerpyx.com/crash-bandicoot-4-its-about-time-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Crash-Bandicoot-4-Its-About-Time/trophies"
+}
+}
+},
+"CrossCode": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "Cuphead": {
@@ -848,6 +1504,33 @@
 }
 }
 },
+"DEATH STRANDING 2: ON THE BEACH": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 85,
+"missable": 0,
+"online": 3,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 85,
+"hours_text": "70–100",
+"missable": 0,
+"online": 3,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/death-stranding-2-on-the-beach-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
 "DEATH STRANDING™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -915,6 +1598,27 @@
 }
 }
 },
+"DIRT 5": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 0,
+"online": 19
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 0,
+"online": 19,
+"url": "https://www.truetrophies.com/game/DiRT-5/trophies"
+}
+}
+},
 "DOOM": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -937,6 +1641,27 @@
 "truetrophies": null
 }
 },
+"DRAGON BALL: THE BREAKERS": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 70,
+"missable": 0,
+"online": 4
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 70,
+"hours_text": "60–80",
+"missable": 0,
+"online": 4,
+"url": "https://www.truetrophies.com/game/Dragon-Ball-The-Breakers/trophies"
+}
+}
+},
 "DREDGE": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -953,6 +1678,26 @@
 "hours_text": "15–20",
 "missable": 0,
 "url": "https://www.truetrophies.com/game/DREDGE/trophies"
+}
+}
+},
+"Darkest Dungeon": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 90,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 0,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Darkest-Dungeon/trophies"
 }
 }
 },
@@ -990,6 +1735,79 @@
 }
 },
 "Darksiders II": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 6.0,
+"glitched": 3,
+"hours": 30,
+"missable": 3,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 6.0,
+"glitched": 3,
+"hours": 30,
+"hours_text": "25–35",
+"missable": 3,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/darksiders-3-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
+"Darksiders III": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 6.0,
+"glitched": 3,
+"hours": 30,
+"missable": 3,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 6.0,
+"glitched": 3,
+"hours": 30,
+"hours_text": "25–35",
+"missable": 3,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/darksiders-3-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
+"Day of the Tentacle Remastered": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 4,
+"missable": 3
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 4,
+"hours_text": "3–4",
+"missable": 3,
+"url": "https://www.truetrophies.com/game/Day-of-the-Tentacle-Remastered/trophies"
+}
+}
+},
+"DayZ": {
 "checked": {
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
@@ -1060,6 +1878,17 @@
 }
 }
 },
+"Dead by Daylight": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "Death's Door": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -1077,6 +1906,44 @@
 "missable": 2,
 "url": "https://www.truetrophies.com/game/Deaths-Door/trophies"
 }
+}
+},
+"Deep Rock Galactic": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Destiny 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 5.0,
+"glitched": 0,
+"hours": 50,
+"missable": 0,
+"online": 14,
+"playthroughs": 3
+},
+"sources": {
+"powerpyx": {
+"difficulty": 5.0,
+"glitched": 0,
+"hours": 50,
+"hours_text": "50",
+"missable": 0,
+"online": 14,
+"playthroughs": 3,
+"url": "https://www.powerpyx.com/destiny-2-trophy-guide-roadmap/"
+},
+"truetrophies": null
 }
 },
 "Detroit: Become Human™": {
@@ -1107,6 +1974,40 @@
 "hours_text": "20–25",
 "missable": 1,
 "url": "https://www.truetrophies.com/game/Detroit-Become-Human/trophies"
+}
+}
+},
+"Deus Ex: Mankind Divided™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.5,
+"glitched": 0,
+"hours": 45,
+"missable": 37,
+"online": 81,
+"playthroughs": 2
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.5,
+"glitched": 0,
+"hours": 30,
+"hours_text": "30",
+"missable": 37,
+"online": 5,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/deus-ex-mankind-divided-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 4,
+"online": 81,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Deus-Ex-Mankind-Divided/trophies"
 }
 }
 },
@@ -1141,6 +2042,58 @@
 }
 }
 },
+"DiRT Rally 2.0": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 45,
+"missable": 0,
+"online": 43
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"online": 43,
+"url": "https://www.truetrophies.com/game/DiRT-RALLY-20/trophies"
+}
+}
+},
+"Diablo® IV": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.0,
+"glitched": 0,
+"hours": 250,
+"missable": 23,
+"online": 44
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.0,
+"glitched": 0,
+"hours": 125,
+"hours_text": "100–150",
+"missable": 1,
+"online": 26,
+"url": "https://www.powerpyx.com/diablo-4-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 250,
+"hours_text": "200–300",
+"missable": 23,
+"online": 44,
+"url": "https://www.truetrophies.com/game/Diablo-IV/trophies"
+}
+}
+},
 "Dishonored": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -1157,6 +2110,25 @@
 "hours_text": "20–25",
 "missable": 6,
 "url": "https://www.truetrophies.com/game/Dishonored/trophies"
+}
+}
+},
+"Disney Epic Mickey: Rebrushed": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 6
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 6,
+"url": "https://www.truetrophies.com/game/Disney-Epic-Mickey-Rebrushed/trophies"
 }
 }
 },
@@ -1177,6 +2149,31 @@
 "missable": 1,
 "url": "https://www.truetrophies.com/game/Dispatch/trophies"
 }
+}
+},
+"Dragon Age™: The Veilguard": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"hours": 55,
+"missable": 2,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"hours": 55,
+"hours_text": "50–60",
+"missable": 2,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/dragon-age-the-veilguard-trophy-guide-roadmap/"
+},
+"truetrophies": null
 }
 },
 "Dragon's Crown": {
@@ -1230,18 +2227,80 @@
 }
 }
 },
+"Dreams™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 70,
+"missable": 0,
+"online": 35
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 70,
+"hours_text": "60–80",
+"missable": 0,
+"online": 35,
+"url": "https://www.truetrophies.com/game/Dreams/trophies"
+}
+}
+},
+"Dying Light 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.0,
+"hours": 175,
+"missable": 5,
+"online": 64,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.0,
+"hours": 65,
+"hours_text": "50–80",
+"missable": 5,
+"online": 3,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/dying-light-2-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 175,
+"hours_text": "150–200",
+"missable": 1,
+"online": 64,
+"url": "https://www.truetrophies.com/game/Dying-Light-2/trophies"
+}
+}
+},
 "EA SPORTS FC™ 24": {
 "checked": {
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 5.0,
+"glitched": 0,
 "hours": 90,
 "missable": 0,
-"online": 9
+"online": 22
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 5.0,
+"glitched": 0,
+"hours": 80,
+"hours_text": "80",
+"missable": 0,
+"online": 22,
+"url": "https://www.powerpyx.com/ea-sports-fc25-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 90,
 "hours_text": "80–100",
@@ -1287,9 +2346,25 @@
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
 },
-"combined": {},
+"combined": {
+"difficulty": 2.0,
+"glitched": 0,
+"hours": 50,
+"missable": 2,
+"online": 5,
+"playthroughs": 1
+},
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 2.0,
+"glitched": 0,
+"hours": 50,
+"hours_text": "50",
+"missable": 2,
+"online": 5,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/ea-sports-ufc-6-trophy-guide-roadmap/"
+},
 "truetrophies": null
 }
 },
@@ -1321,6 +2396,38 @@
 "missable": 0,
 "url": "https://www.truetrophies.com/game/FIFA-23/trophies"
 }
+}
+},
+"EA SPORTS™ WRC": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 28,
+"missable": 0,
+"online": 5
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 28,
+"hours_text": "25–30",
+"missable": 0,
+"online": 5,
+"url": "https://www.truetrophies.com/game/EA-SPORTS-WRC/trophies"
+}
+}
+},
+"EARTH DEFENSE FORCE:WORLD BROTHERS 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "ELDEN RING": {
@@ -1411,6 +2518,26 @@
 }
 }
 },
+"Erica": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 9,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 9,
+"hours_text": "8–10",
+"missable": 1,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Erica/trophies"
+}
+}
+},
 "Everybody's Gone To The Rapture™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -1430,7 +2557,72 @@
 }
 }
 },
-"FIFA 12": {
+"Evil Dead: The Game": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.0,
+"glitched": 2,
+"hours": 80,
+"missable": 0,
+"online": 45,
+"playthroughs": 30
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.0,
+"glitched": 2,
+"hours": 80,
+"hours_text": "60–100",
+"missable": 0,
+"online": 45,
+"playthroughs": 30,
+"url": "https://www.powerpyx.com/evil-dead-the-game-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 70,
+"hours_text": "60–80",
+"missable": 0,
+"online": 44,
+"url": "https://www.truetrophies.com/game/Evil-Dead-The-Game/trophies"
+}
+}
+},
+"Evil West": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 6.5,
+"glitched": 0,
+"hours": 22,
+"missable": 8,
+"online": 0,
+"playthroughs": 2
+},
+"sources": {
+"powerpyx": {
+"difficulty": 6.5,
+"glitched": 0,
+"hours": 22,
+"hours_text": "20–25",
+"missable": 0,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/evil-west-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 8,
+"url": "https://www.truetrophies.com/game/Evil-West/trophies"
+}
+}
+},
+"F1® 25": {
 "checked": {
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
@@ -1438,6 +2630,31 @@
 "combined": {},
 "sources": {
 "powerpyx": null,
+"truetrophies": null
+}
+},
+"FIFA 12": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 65,
+"missable": 0,
+"online": 31
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 65,
+"hours_text": "60–70",
+"missable": 0,
+"online": 31,
+"url": "https://www.powerpyx.com/fifa-23-trophy-guide-roadmap/"
+},
 "truetrophies": null
 }
 },
@@ -1485,11 +2702,22 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 3.0,
+"glitched": 0,
 "hours": 90,
-"missable": 0
+"missable": 0,
+"online": 31
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 65,
+"hours_text": "60–70",
+"missable": 0,
+"online": 31,
+"url": "https://www.powerpyx.com/fifa-23-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 90,
 "hours_text": "80–100",
@@ -1504,11 +2732,24 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 7.5,
+"glitched": 0,
 "hours": 175,
-"missable": 0
+"missable": 0,
+"online": 0,
+"playthroughs": 2
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 7.5,
+"glitched": 0,
+"hours": 175,
+"hours_text": "150–200",
+"missable": 0,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/final-fantasy-7-vii-rebirth-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 175,
 "hours_text": "150–200",
@@ -1568,6 +2809,28 @@
 }
 }
 },
+"Fallout 76": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Farpoint": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "Firewatch": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -1607,6 +2870,17 @@
 }
 },
 "Fortnite": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Friday the 13th: The Game": {
 "checked": {
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
@@ -1671,6 +2945,27 @@
 "hours_text": "20–25",
 "missable": 4,
 "url": "https://www.truetrophies.com/game/Game-of-Thrones/trophies"
+}
+}
+},
+"Generation Zero": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 90,
+"missable": 0,
+"online": 72
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 0,
+"online": 72,
+"url": "https://www.truetrophies.com/game/Generation-Zero/trophies"
 }
 }
 },
@@ -1740,6 +3035,38 @@
 }
 }
 },
+"Ghostrunner 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 6.0,
+"glitched": 0,
+"hours": 22,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 6.0,
+"glitched": 0,
+"hours": 15,
+"hours_text": "15",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/ghostrunner-2-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Ghostrunner-2/trophies"
+}
+}
+},
 "Ghostwire: Tokyo": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -1772,6 +3099,44 @@
 }
 }
 },
+"Goat Simulator": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 4,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 4,
+"hours_text": "3–4",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Goat-Simulator/trophies"
+}
+}
+},
+"Goat Simulator 3": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 2
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 2,
+"url": "https://www.truetrophies.com/game/Goat-Simulator-3/trophies"
+}
+}
+},
 "God of War": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -1797,16 +3162,77 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 4.0,
 "hours": 45,
-"missable": 0
+"missable": 0,
+"online": 0,
+"playthroughs": 1
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 4.0,
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/god-of-war-ragnarok-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 45,
 "hours_text": "40–50",
 "missable": 0,
 "url": "https://www.truetrophies.com/game/God-of-War-Ragnarok/trophies"
+}
+}
+},
+"God of War® III Remastered": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 6
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 6,
+"url": "https://www.truetrophies.com/game/God-of-War-III-Remastered/trophies"
+}
+}
+},
+"Godfall": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 5.0,
+"hours": 90,
+"missable": 0,
+"online": 63,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 5.0,
+"hours": 40,
+"hours_text": "30–50",
+"missable": 0,
+"online": 46,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/godfall-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 0,
+"online": 63,
+"url": "https://www.truetrophies.com/game/Godfall/trophies"
 }
 }
 },
@@ -1816,12 +3242,20 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"hours": 110,
+"difficulty": 9.0,
+"hours": 300,
 "missable": 0,
 "online": 49
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 9.0,
+"hours": 300,
+"hours_text": "300",
+"missable": 0,
+"online": 41,
+"url": "https://www.powerpyx.com/gran-turismo-sport-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 110,
 "hours_text": "100–120",
@@ -1829,6 +3263,17 @@
 "online": 49,
 "url": "https://www.truetrophies.com/game/Gran-Turismo-7/trophies"
 }
+}
+},
+"Grand Kingdom": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "Grand Theft Auto V": {
@@ -1869,6 +3314,17 @@
 }
 }
 },
+"GreedFall": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "HEAVY RAIN™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -1885,6 +3341,64 @@
 "hours_text": "20–25",
 "missable": 1,
 "url": "https://www.truetrophies.com/game/Heavy-Rain/trophies"
+}
+}
+},
+"HITMAN™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.0,
+"hours": 45,
+"missable": 0,
+"online": 69
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.0,
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"online": 12,
+"url": "https://www.powerpyx.com/hitman-3-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 4,
+"hours_text": "3–4",
+"missable": 0,
+"online": 69,
+"url": "https://www.truetrophies.com/game/HITMAN/trophies"
+}
+}
+},
+"HITMAN™ 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.0,
+"hours": 45,
+"missable": 0,
+"online": 123
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.0,
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"online": 12,
+"url": "https://www.powerpyx.com/hitman-3-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 2,
+"hours_text": "2–3",
+"missable": 0,
+"online": 123,
+"url": "https://www.truetrophies.com/game/HITMAN-2/trophies"
 }
 }
 },
@@ -1907,6 +3421,17 @@
 "online": 39,
 "url": "https://www.truetrophies.com/game/Hot-Wheels-Unleashed-2-Turbocharged/trophies"
 }
+}
+},
+"HUNT: SHOWDOWN 1896": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "Heavenly Bodies": {
@@ -1999,6 +3524,63 @@
 }
 }
 },
+"Hello Neighbor 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 2,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 2,
+"hours_text": "1–2",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/Hello-Neighbor-2/trophies"
+}
+}
+},
+"Here They Lie™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 7,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 7,
+"hours_text": "6–8",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Here-They-Lie/trophies"
+}
+}
+},
+"High On Life": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 3
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 3,
+"url": "https://www.truetrophies.com/game/High-on-Life/trophies"
+}
+}
+},
 "Hitman: Absolution™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -2080,17 +3662,39 @@
 "truetrophies": null
 }
 },
+"Hollow Knight: Silksong": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "Horizon Call of the Mountain™": {
 "checked": {
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 5.0,
 "hours": 14,
-"missable": 0
+"missable": 0,
+"online": 0,
+"playthroughs": 1
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 5.0,
+"hours": 10,
+"hours_text": "8–12",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/horizon-vr-call-of-the-mountain-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 14,
 "hours_text": "12–15",
@@ -2184,6 +3788,17 @@
 }
 }
 },
+"I Have No Mouth, and I Must Scream": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "INDIKA": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -2232,6 +3847,36 @@
 "hours_text": "3–4",
 "missable": 0,
 "url": "https://www.truetrophies.com/game/INSIDE/trophies"
+}
+}
+},
+"Iconoclasts": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Immortals of Aveum™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 45,
+"missable": 3
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 3,
+"url": "https://www.truetrophies.com/game/Immortals-of-Aveum/trophies"
 }
 }
 },
@@ -2320,6 +3965,36 @@
 }
 }
 },
+"Journey to Foundation": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Jurassic World Evolution 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 70,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 70,
+"hours_text": "60–80",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Jurassic-World-Evolution-2/trophies"
+}
+}
+},
 "Jusant": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -2352,6 +4027,27 @@
 }
 }
 },
+"Just Cause 3": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 70,
+"missable": 0,
+"online": 66
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 70,
+"hours_text": "60–80",
+"missable": 0,
+"online": 66,
+"url": "https://www.truetrophies.com/game/Just-Cause-3/trophies"
+}
+}
+},
 "KINGDOM HEARTS - HD 1.5+2.5 ReMIX -": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -2369,6 +4065,33 @@
 "missable": 4,
 "url": "https://www.truetrophies.com/game/KINGDOM-HEARTS-FINAL-MIX/trophies"
 }
+}
+},
+"KINGDOM HEARTS Ⅲ": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 45,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/kingdom-hearts-3-trophy-guide-roadmap/"
+},
+"truetrophies": null
 }
 },
 "Kena: Bridge of Spirits": {
@@ -2422,6 +4145,46 @@
 }
 }
 },
+"King's Quest": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 4,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 4,
+"hours_text": "3–4",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Kings-Quest/trophies"
+}
+}
+},
+"Knowledge is Power™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 14,
+"missable": 0,
+"online": 13
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 14,
+"hours_text": "12–15",
+"missable": 0,
+"online": 13,
+"url": "https://www.truetrophies.com/game/Knowledge-is-Power/trophies"
+}
+}
+},
 "L.A. Noire": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -2460,6 +4223,97 @@
 }
 }
 },
+"LEGO® 2K Drive": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 55,
+"missable": 0,
+"online": 37
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 55,
+"hours_text": "50–60",
+"missable": 0,
+"online": 37,
+"url": "https://www.truetrophies.com/game/LEGO-2K-Drive/trophies"
+}
+}
+},
+"LEGO® Builder's Journey": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 2,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 2,
+"hours_text": "2–3",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/LEGO-Builders-Journey/trophies"
+}
+}
+},
+"LEGO® DC Super-Villains": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 32,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 32,
+"hours_text": "30–35",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/LEGO-DC-SuperVillains/trophies"
+}
+}
+},
+"LEGO® Horizon Adventures™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 2.0,
+"glitched": 0,
+"hours": 18,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 2.0,
+"glitched": 0,
+"hours": 15,
+"hours_text": "15",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/lego-horizon-adventures-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/LEGO-Horizon-Adventures/trophies"
+}
+}
+},
 "LEGO® Jurassic World™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -2495,6 +4349,44 @@
 "hours_text": "30–35",
 "missable": 3,
 "url": "https://www.truetrophies.com/game/LEGO-Marvel-Super-Heroes/trophies"
+}
+}
+},
+"LEGO® MARVEL Super Heroes 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 45,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/LEGO-Marvel-Super-Heroes-2/trophies"
+}
+}
+},
+"LEGO® MARVEL's Avengers": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 28,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 28,
+"hours_text": "25–30",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/LEGO-Marvels-Avengers/trophies"
 }
 }
 },
@@ -2541,6 +4433,39 @@
 "hours_text": "25–30",
 "missable": 16,
 "url": "https://www.truetrophies.com/game/Legendary-Edition-Mass-Effect/trophies"
+}
+}
+},
+"Lies of P": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 6.0,
+"glitched": 0,
+"hours": 50,
+"missable": 16,
+"online": 0,
+"playthroughs": 2
+},
+"sources": {
+"powerpyx": {
+"difficulty": 6.0,
+"glitched": 0,
+"hours": 50,
+"hours_text": "50",
+"missable": 16,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/lies-of-p-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 3,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Lies-of-P/trophies"
 }
 }
 },
@@ -2614,6 +4539,78 @@
 "truetrophies": null
 }
 },
+"LittleBigPlanet™3": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/LittleBigPlanet-3/trophies"
+}
+}
+},
+"Lords of the Fallen": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 7.0,
+"glitched": 0,
+"hours": 90,
+"missable": 27,
+"online": 69,
+"playthroughs": 3
+},
+"sources": {
+"powerpyx": {
+"difficulty": 7.0,
+"glitched": 0,
+"hours": 90,
+"hours_text": "80–100",
+"missable": 27,
+"online": 8,
+"playthroughs": 3,
+"url": "https://www.powerpyx.com/lords-of-the-fallen-2023-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 1,
+"online": 69,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Lords-of-the-Fallen/trophies"
+}
+}
+},
+"Lost Records: Bloom & Rage": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 4
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 4,
+"url": "https://www.truetrophies.com/game/Lost-Records-Bloom-and-Rage/trophies"
+}
+}
+},
 "METAL GEAR SOLID V: THE PHANTOM PAIN": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -2635,7 +4632,132 @@
 }
 }
 },
+"MIO: Memories in Orbit": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"MY HERO ONE'S JUSTICE 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 55,
+"missable": 0,
+"online": 35
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 55,
+"hours_text": "50–60",
+"missable": 0,
+"online": 35,
+"url": "https://www.truetrophies.com/game/My-Hero-Ones-Justice-2/trophies"
+}
+}
+},
+"Mad Max": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 70,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 70,
+"hours_text": "60–80",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Mad-Max/trophies"
+}
+}
+},
 "Mafia II": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"hours": 50,
+"missable": 15,
+"online": 0,
+"playthroughs": 2
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"hours": 50,
+"hours_text": "40–60",
+"missable": 15,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/mafia-3-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
+"Mafia II: Definitive Edition": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"hours": 50,
+"missable": 15,
+"online": 0,
+"playthroughs": 2
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"hours": 50,
+"hours_text": "40–60",
+"missable": 15,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/mafia-3-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Mafia-II-Definitive-Edition/trophies"
+}
+}
+},
+"Mafia: Definitive Edition": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 14,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 14,
+"hours_text": "12–15",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/Mafia-Definitive-Edition/trophies"
+}
+}
+},
+"Mafia: Trilogy": {
 "checked": {
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
@@ -2707,9 +4829,25 @@
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
 },
-"combined": {},
+"combined": {
+"difficulty": 2.0,
+"glitched": 0,
+"hours": 15,
+"missable": 0,
+"online": 0,
+"playthroughs": 2
+},
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 2.0,
+"glitched": 0,
+"hours": 15,
+"hours_text": "10–20",
+"missable": 0,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/spider-man-miles-morales-trophy-guide-roadmap/"
+},
 "truetrophies": null
 }
 },
@@ -2772,11 +4910,24 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"hours": 28,
-"missable": 8
+"difficulty": 3.5,
+"glitched": 0,
+"hours": 45,
+"missable": 8,
+"online": 4,
+"playthroughs": 1
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 3.5,
+"glitched": 0,
+"hours": 45,
+"hours_text": "40–50",
+"missable": 3,
+"online": 4,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/middle-earth-shadow-of-war-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 28,
 "hours_text": "25–30",
@@ -2785,7 +4936,45 @@
 }
 }
 },
+"Middle-earth™: Shadow of War™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.5,
+"glitched": 0,
+"hours": 45,
+"missable": 3,
+"online": 4,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.5,
+"glitched": 0,
+"hours": 45,
+"hours_text": "40–50",
+"missable": 3,
+"online": 4,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/middle-earth-shadow-of-war-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
 "Mighty No. 9": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Minecraft Legends": {
 "checked": {
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
@@ -2829,6 +5018,187 @@
 }
 }
 },
+"Mortal Kombat X": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 70,
+"missable": 2,
+"online": 26,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 30,
+"hours_text": "30",
+"missable": 2,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/mortal-kombat-1-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 70,
+"hours_text": "60–80",
+"missable": 0,
+"online": 26,
+"url": "https://www.truetrophies.com/game/Mortal-Kombat-X/trophies"
+}
+}
+},
+"Mortal Shell": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 6.0,
+"hours": 30,
+"missable": 5,
+"online": 0,
+"playthroughs": 2
+},
+"sources": {
+"powerpyx": {
+"difficulty": 6.0,
+"hours": 30,
+"hours_text": "20–40",
+"missable": 5,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/mortal-shell-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 14,
+"hours_text": "12–15",
+"missable": 4,
+"url": "https://www.truetrophies.com/game/Mortal-Shell/trophies"
+}
+}
+},
+"Moss II VR": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Moss VR": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 7,
+"missable": 4
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 7,
+"hours_text": "6–8",
+"missable": 4,
+"url": "https://www.truetrophies.com/game/Moss/trophies"
+}
+}
+},
+"NARUTO TO BORUTO: SHINOBI STRIKER": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 5.5,
+"glitched": 0,
+"hours": 175,
+"missable": 0,
+"online": 12,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 5.5,
+"glitched": 0,
+"hours": 175,
+"hours_text": "150–200",
+"missable": 0,
+"online": 12,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/naruto-to-boruto-shinobi-striker-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
+"NBA 2K20": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"NBA 2K23": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"NOT A HERO": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 11,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 11,
+"hours_text": "10–12",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Not-A-Hero/trophies"
+}
+}
+},
+"Need for Speed™ Hot Pursuit Remastered": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 28,
+"missable": 0,
+"online": 43
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 28,
+"hours_text": "25–30",
+"missable": 0,
+"online": 43,
+"url": "https://www.truetrophies.com/game/Need-for-Speed-Hot-Pursuit-Remastered/trophies"
+}
+}
+},
 "Need for Speed™ Payback": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -2862,6 +5232,71 @@
 }
 }
 },
+"Need for Speed™ Unbound": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.0,
+"glitched": 0,
+"hours": 55,
+"missable": 0,
+"online": 31,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.0,
+"glitched": 0,
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"online": 10,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/need-for-speed-unbound-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 55,
+"hours_text": "50–60",
+"missable": 0,
+"online": 31,
+"url": "https://www.truetrophies.com/game/Need-for-Speed-Unbound/trophies"
+}
+}
+},
+"Neva": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 1.0,
+"glitched": 0,
+"hours": 4,
+"missable": 1,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 1.0,
+"glitched": 0,
+"hours": 4,
+"hours_text": "4",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/neva-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 4,
+"hours_text": "4–5",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/Neva/trophies"
+}
+}
+},
 "Never Alone": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -2890,6 +5325,17 @@
 "missable": 0,
 "url": "https://www.truetrophies.com/game/Ni-no-Kuni-Wrath-of-the-White-Witch/trophies"
 }
+}
+},
+"Nickelodeon All-Star Brawl": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "NieR:Automata": {
@@ -2929,6 +5375,91 @@
 "missable": 3,
 "several_playthroughs": true,
 "url": "https://www.truetrophies.com/game/Night-In-The-Woods/trophies"
+}
+}
+},
+"Nine Sols": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 32,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 32,
+"hours_text": "30–35",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/Nine-Sols/trophies"
+}
+}
+},
+"Nioh": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 7.0,
+"glitched": 0,
+"hours": 112,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 7.0,
+"glitched": 0,
+"hours": 112,
+"hours_text": "75–150",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/nioh-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 0,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Nioh/trophies"
+}
+}
+},
+"Nioh 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 5.5,
+"glitched": 0,
+"hours": 150,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 5.5,
+"glitched": 0,
+"hours": 150,
+"hours_text": "100–200",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/nioh-2-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 0,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Nioh-2/trophies"
 }
 }
 },
@@ -3041,6 +5572,44 @@
 }
 }
 },
+"P.T.": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"PAC-MAN WORLD Re-PAC": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 7.0,
+"glitched": 0,
+"hours": 12,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 7.0,
+"glitched": 0,
+"hours": 12,
+"hours_text": "12",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/pac-man-world-re-pac-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
 "PGA TOUR 2K21": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -3057,6 +5626,44 @@
 "hours_text": "20–25",
 "missable": 0,
 "url": "https://www.truetrophies.com/game/PGA-TOUR-2K21/trophies"
+}
+}
+},
+"Pacific Drive": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 45,
+"missable": 3
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 3,
+"url": "https://www.truetrophies.com/game/Pacific-Drive/trophies"
+}
+}
+},
+"Pepper Grinder": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 9,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 9,
+"hours_text": "8–10",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Pepper-Grinder/trophies"
 }
 }
 },
@@ -3077,6 +5684,78 @@
 "missable": 7,
 "several_playthroughs": true,
 "url": "https://www.truetrophies.com/game/Persona-5/trophies"
+}
+}
+},
+"Persona®5 Strikers": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 4.0,
+"glitched": 0,
+"hours": 70,
+"missable": 8,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 4.0,
+"glitched": 0,
+"hours": 45,
+"hours_text": "40–50",
+"missable": 1,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/persona-5-scramble-the-phantom-strikers-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 70,
+"hours_text": "60–80",
+"missable": 8,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Persona-5-Strikers/trophies"
+}
+}
+},
+"Powers": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Predator: Hunting Grounds": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Psychonauts 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 7
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 7,
+"url": "https://www.truetrophies.com/game/Psychonauts-2/trophies"
 }
 }
 },
@@ -3195,6 +5874,44 @@
 }
 }
 },
+"Remnant: From the Ashes": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 45,
+"missable": 4
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 4,
+"url": "https://www.truetrophies.com/game/Remnant-From-the-Ashes/trophies"
+}
+}
+},
+"Resident Evil Re:Verse": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 4,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 4,
+"hours_text": "4–5",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Resident-Evil-ReVerse/trophies"
+}
+}
+},
 "Resident Evil Village": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -3225,6 +5942,17 @@
 "several_playthroughs": true,
 "url": "https://www.truetrophies.com/game/Resident-Evil-Village/trophies"
 }
+}
+},
+"Rez Infinite": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "RiME": {
@@ -3297,6 +6025,38 @@
 }
 }
 },
+"RoboCop: Rogue City": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 18,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 12,
+"hours_text": "10–15",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/robocop-rogue-city-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/RoboCop-Rogue-City/trophies"
+}
+}
+},
 "SHADOW OF THE COLOSSUS™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -3359,6 +6119,48 @@
 }
 }
 },
+"SILENT HILL f": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 9.0,
+"hours": 45,
+"missable": 36,
+"online": 0,
+"playthroughs": 3
+},
+"sources": {
+"powerpyx": {
+"difficulty": 9.0,
+"hours": 35,
+"hours_text": "30–40",
+"missable": 36,
+"online": 0,
+"playthroughs": 3,
+"url": "https://www.powerpyx.com/silent-hill-f-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 1,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Silent-Hill-f/trophies"
+}
+}
+},
+"SILENT HILL: The Short Message": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "SOMA": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -3375,6 +6177,27 @@
 "hours_text": "8–10",
 "missable": 0,
 "url": "https://www.truetrophies.com/game/SOMA/trophies"
+}
+}
+},
+"SONIC FORCES": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 0,
+"online": 48
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 0,
+"online": 48,
+"url": "https://www.truetrophies.com/game/Sonic-Forces/trophies"
 }
 }
 },
@@ -3442,6 +6265,39 @@
 }
 }
 },
+"STAR WARS™ Battlefront™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"glitched": 1,
+"hours": 150,
+"missable": 0,
+"online": 22,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 1,
+"hours": 150,
+"hours_text": "150",
+"missable": 0,
+"online": 22,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/star-wars-battlefront-2-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 55,
+"hours_text": "50–60",
+"missable": 0,
+"online": 1,
+"url": "https://www.truetrophies.com/game/Star-Wars-Battlefront/trophies"
+}
+}
+},
 "STAR WARS™ Battlefront™ II": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -3460,6 +6316,77 @@
 "missable": 0,
 "online": 22,
 "url": "https://www.truetrophies.com/game/Star-Wars-Battlefront-II/trophies"
+}
+}
+},
+"STAR WARS™: Squadrons": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"STEEP": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 28,
+"missable": 0,
+"online": 47
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 28,
+"hours_text": "25–30",
+"missable": 0,
+"online": 47,
+"url": "https://www.truetrophies.com/game/Steep/trophies"
+}
+}
+},
+"SUPERHOT": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 0,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/SUPERHOT/trophies"
+}
+}
+},
+"Sable": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Sable/trophies"
 }
 }
 },
@@ -3492,6 +6419,37 @@
 "hours_text": "20–25",
 "missable": 0,
 "url": "https://www.truetrophies.com/game/Sackboy-A-Big-Adventure/trophies"
+}
+}
+},
+"Saints Row": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.5,
+"hours": 55,
+"missable": 1,
+"online": 63,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.5,
+"hours": 50,
+"hours_text": "40–60",
+"missable": 0,
+"online": 2,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/saints-row-2022-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 55,
+"hours_text": "50–60",
+"missable": 1,
+"online": 63,
+"url": "https://www.truetrophies.com/game/Saints-Row/trophies"
 }
 }
 },
@@ -3578,6 +6536,212 @@
 }
 }
 },
+"Skul: The Hero Slayer": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Sniper Elite 4": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 5.0,
+"glitched": 0,
+"hours": 38,
+"missable": 10,
+"online": 81,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 5.0,
+"glitched": 0,
+"hours": 20,
+"hours_text": "20",
+"missable": 0,
+"online": 8,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/sniper-elite-4-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 38,
+"hours_text": "35–40",
+"missable": 10,
+"online": 81,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Sniper-Elite-4/trophies"
+}
+}
+},
+"Sniper Elite: Resistance": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 5.0,
+"glitched": 1,
+"hours": 28,
+"missable": 0,
+"online": 5,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 5.0,
+"glitched": 1,
+"hours": 28,
+"hours_text": "25–30",
+"missable": 0,
+"online": 5,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/sniper-elite-resistance-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
+"Sonic Colours: Ultimate": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Split Fiction": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 14,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 10,
+"hours_text": "10",
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/split-fiction-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 14,
+"hours_text": "12–15",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Split-Fiction/trophies"
+}
+}
+},
+"SpongeBob SquarePants: The Cosmic Shake": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 18,
+"missable": 0,
+"online": 0,
+"playthroughs": 2
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 18,
+"hours_text": "15–20",
+"missable": 0,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/spongebob-squarepants-the-cosmic-shake-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 11,
+"hours_text": "10–12",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/SpongeBob-SquarePants-The-Cosmic-Shake/trophies"
+}
+}
+},
+"StarBlood Arena™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Stardew Valley": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 175,
+"missable": 10
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 175,
+"hours_text": "150–200",
+"missable": 10,
+"url": "https://www.truetrophies.com/game/Stardew-Valley/trophies"
+}
+}
+},
+"Still Wakes the Deep": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 9,
+"missable": 2
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 9,
+"hours_text": "8–10",
+"missable": 2,
+"url": "https://www.truetrophies.com/game/Still-Wakes-The-Deep/trophies"
+}
+}
+},
+"Stranded Deep": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "Stray": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -3616,12 +6780,24 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 3.0,
+"glitched": 0,
 "hours": 90,
 "missable": 0,
-"online": 12
+"online": 28,
+"playthroughs": 1
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 40,
+"hours_text": "40",
+"missable": 0,
+"online": 28,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/street-fighter-6-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 90,
 "hours_text": "80–100",
@@ -3629,6 +6805,63 @@
 "online": 12,
 "several_playthroughs": true,
 "url": "https://www.truetrophies.com/game/Street-Fighter-V/trophies"
+}
+}
+},
+"Streets of Rage 4": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 28,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 28,
+"hours_text": "25–30",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Streets-of-Rage-4/trophies"
+}
+}
+},
+"Subnautica: Below Zero": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Subnautica-Below-Zero/trophies"
+}
+}
+},
+"Suicide Squad: Kill the Justice League": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 55,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 55,
+"hours_text": "50–60",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Suicide-Squad-Kill-the-Justice-League/trophies"
 }
 }
 },
@@ -3684,6 +6917,127 @@
 }
 }
 },
+"TUNIC": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 2
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 2,
+"url": "https://www.truetrophies.com/game/TUNIC/trophies"
+}
+}
+},
+"Tails of Iron": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 9,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 9,
+"hours_text": "8–10",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Tails-Of-Iron/trophies"
+}
+}
+},
+"Tales from the Borderlands": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 2.0,
+"glitched": 0,
+"hours": 22,
+"missable": 1,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 2.0,
+"glitched": 0,
+"hours": 12,
+"hours_text": "10–15",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/new-tales-from-the-borderlands-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/New-Tales-from-the-Borderlands/trophies"
+}
+}
+},
+"Team Sonic Racing": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 32,
+"missable": 0,
+"online": 22
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 32,
+"hours_text": "30–35",
+"missable": 0,
+"online": 22,
+"url": "https://www.truetrophies.com/game/Team-Sonic-Racing/trophies"
+}
+}
+},
+"Teenage Mutant Ninja Turtles: The Cowabunga Collection": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 2,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 2,
+"hours_text": "1–2",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Teenage-Mutant-Ninja-Turtles-The-Cowabunga-Collection/trophies"
+}
+}
+},
+"The Alters": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "The Artful Escape": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -3735,6 +7089,44 @@
 }
 }
 },
+"The Dark Pictures Anthology: House of Ashes": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/The-Dark-Pictures-Anthology-House-of-Ashes/trophies"
+}
+}
+},
+"The Dark Pictures Anthology: Little Hope": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/The-Dark-Pictures-Anthology-Little-Hope/trophies"
+}
+}
+},
 "The Dark Pictures Anthology: Man of Medan": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -3767,6 +7159,25 @@
 }
 }
 },
+"The Dark Pictures Anthology: The Devil in Me": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/The-Dark-Pictures-Anthology-The-Devil-in-Me/trophies"
+}
+}
+},
 "The Evil Within": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -3784,6 +7195,26 @@
 "missable": 10,
 "several_playthroughs": true,
 "url": "https://www.truetrophies.com/game/The-Evil-Within/trophies"
+}
+}
+},
+"The Last Faith": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 4
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 4,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/The-Last-Faith/trophies"
 }
 }
 },
@@ -3871,6 +7302,25 @@
 }
 }
 },
+"The Midnight Walk": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 7,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 7,
+"hours_text": "6–8",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/The-Midnight-Walk/trophies"
+}
+}
+},
 "The Order: 1886": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -3888,6 +7338,119 @@
 "missable": 0,
 "url": "https://www.truetrophies.com/game/The-Order-1886/trophies"
 }
+}
+},
+"The Pathless": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 2.0,
+"glitched": 0,
+"hours": 15,
+"missable": 1,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 2.0,
+"glitched": 0,
+"hours": 15,
+"hours_text": "10–20",
+"missable": 1,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/the-pathless-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 14,
+"hours_text": "12–15",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/The-Pathless/trophies"
+}
+}
+},
+"The Persistence": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 5.0,
+"glitched": 0,
+"hours": 18,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 5.0,
+"glitched": 0,
+"hours": 18,
+"hours_text": "15–20",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/the-persistence-psvr-trophy-guide-roadmap/"
+},
+"truetrophies": null
+}
+},
+"The Plucky Squire": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 9,
+"missable": 3,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 0,
+"hours": 9,
+"hours_text": "8–10",
+"missable": 3,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/the-plucky-squire-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 9,
+"hours_text": "8–10",
+"missable": 1,
+"url": "https://www.truetrophies.com/game/The-Plucky-Squire/trophies"
+}
+}
+},
+"The Room VR: A Dark Matter": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"The Texas Chain Saw Massacre": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "The Unfinished Swan": {
@@ -3945,6 +7508,17 @@
 "missable": 1,
 "url": "https://www.truetrophies.com/game/The-Walking-Dead/trophies"
 }
+}
+},
+"The Walking Dead: Saints & Sinners": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "The Witcher 3: Wild Hunt — Remastered": {
@@ -4034,6 +7608,59 @@
 "truetrophies": null
 }
 },
+"Titan Souls": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 18,
+"missable": 1
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 1,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Titan-Souls/trophies"
+}
+}
+},
+"Titanfall™ 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 5.0,
+"glitched": 0,
+"hours": 18,
+"missable": 0,
+"online": 49,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 5.0,
+"glitched": 0,
+"hours": 12,
+"hours_text": "10–15",
+"missable": 0,
+"online": 4,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/titanfall-2-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 18,
+"hours_text": "15–20",
+"missable": 0,
+"online": 49,
+"url": "https://www.truetrophies.com/game/Titanfall-2/trophies"
+}
+}
+},
 "Tom Clancy's The Division™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -4076,6 +7703,38 @@
 "truetrophies": null
 }
 },
+"Tomb Raider I-III Remastered Starring Lara Croft": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Trackmania Turbo": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 90,
+"missable": 0,
+"online": 7
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 0,
+"online": 7,
+"url": "https://www.truetrophies.com/game/Trackmania-Turbo/trophies"
+}
+}
+},
 "Trek to Yomi": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -4093,6 +7752,17 @@
 "missable": 3,
 "url": "https://www.truetrophies.com/game/Trek-to-Yomi/trophies"
 }
+}
+},
+"Trials Fusion™": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "UNCHARTED: Legacy of Thieves Collection": {
@@ -4249,6 +7919,17 @@
 }
 }
 },
+"Uncharted™: The Nathan Drake Collection": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "Until Dawn™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -4266,6 +7947,28 @@
 "missable": 0,
 "url": "https://www.truetrophies.com/game/Until-Dawn/trophies"
 }
+}
+},
+"Until Then": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Until You Fall": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
 }
 },
 "Untitled Goose Game": {
@@ -4330,6 +8033,66 @@
 }
 }
 },
+"Vampyr": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 5.0,
+"glitched": 2,
+"hours": 25,
+"missable": 15,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 5.0,
+"glitched": 2,
+"hours": 25,
+"hours_text": "25",
+"missable": 15,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/vampyr-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 2,
+"url": "https://www.truetrophies.com/game/Vampyr/trophies"
+}
+}
+},
+"Viewfinder": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 6,
+"missable": 0
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 6,
+"hours_text": "5–6",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Viewfinder/trophies"
+}
+}
+},
+"Visage": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "WATCH_DOGS™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -4362,6 +8125,56 @@
 }
 }
 },
+"WUCHANG: Fallen Feathers": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 6.0,
+"glitched": 0,
+"hours": 70,
+"missable": 4,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 6.0,
+"glitched": 0,
+"hours": 50,
+"hours_text": "40–60",
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/wuchang-fallen-feathers-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 70,
+"hours_text": "60–80",
+"missable": 4,
+"url": "https://www.truetrophies.com/game/Wuchang-Fallen-Feathers/trophies"
+}
+}
+},
+"Weird West: Definitive Edition": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 45,
+"missable": 2
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 2,
+"url": "https://www.truetrophies.com/game/Weird-West/trophies"
+}
+}
+},
 "What Remains of Edith Finch": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -4381,6 +8194,17 @@
 }
 }
 },
+"Wobbly Life": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "Wolfenstein® II: The New Colossus™": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -4398,6 +8222,121 @@
 "missable": 3,
 "several_playthroughs": true,
 "url": "https://www.truetrophies.com/game/Wolfenstein-II-The-New-Colossus/trophies"
+}
+}
+},
+"Worms Battlegrounds": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 28,
+"missable": 0,
+"online": 15
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 28,
+"hours_text": "25–30",
+"missable": 0,
+"online": 15,
+"url": "https://www.truetrophies.com/game/Worms-Battlegrounds/trophies"
+}
+}
+},
+"Worms Rumble": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"XCOM 2": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 90,
+"missable": 2,
+"online": 79
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 2,
+"online": 79,
+"url": "https://www.truetrophies.com/game/XCOM-2/trophies"
+}
+}
+},
+"Yakuza Kiwami": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
+"Yakuza: Like A Dragon": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"difficulty": 6.0,
+"hours": 90,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 6.0,
+"hours": 85,
+"hours_text": "70–100",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/yakuza-like-a-dragon-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 90,
+"hours_text": "80–100",
+"missable": 0,
+"url": "https://www.truetrophies.com/game/Yakuza-Like-A-Dragon/trophies"
+}
+}
+},
+"Zombie Army 4: Dead War": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 45,
+"missable": 0,
+"online": 69
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 45,
+"hours_text": "40–50",
+"missable": 0,
+"online": 69,
+"url": "https://www.truetrophies.com/game/Zombie-Army-4-Dead-War/trophies"
 }
 }
 },
@@ -4423,6 +8362,25 @@
 "truetrophies": null
 }
 },
+"inFAMOUS™ Second Son": {
+"checked": {
+"powerpyx": "2026-10-28",
+"truetrophies": "2026-10-28"
+},
+"combined": {
+"hours": 22,
+"missable": 10
+},
+"sources": {
+"powerpyx": null,
+"truetrophies": {
+"hours": 22,
+"hours_text": "20–25",
+"missable": 10,
+"url": "https://www.truetrophies.com/game/Infamous-Second-Son/trophies"
+}
+}
+},
 "inFamous": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -4443,5 +8401,5 @@
 }
 }
 },
-"updated_at": "2026-10-28T11:14:48+00:00"
+"updated_at": "2026-10-28T11:40:19+00:00"
 }
