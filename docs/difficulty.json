@@ -1,8 +1,5 @@
 {
-"blocked": {
-"psnprofiles": "403 at https://psnprofiles.com/search/guides?q=Assassin%27s+Creed+Unity",
-"pst": "403 at https://www.playstationtrophies.org/game/assassins-creed-unity/guide/"
-},
+"blocked": {},
 "games": {
 "A Plague Tale: Innocence": {
 "checked": {
@@ -1742,5 +1739,5 @@
 }
 }
 },
-"updated_at": "2026-10-28T10:03:32+00:00"
+"updated_at": "2026-10-28T10:06:31+00:00"
 }
