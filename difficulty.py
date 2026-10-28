@@ -82,16 +82,26 @@ def parse_summary(t: str) -> dict:
     """The roadmap summary most guide writers use, in its common wordings. Labelled lines first."""
     t = roadmap(t)
     out = {}
-    m = re.search(r"(?i)estimated (?:trophy |platinum )?difficulty[^\n\d]{0,20}?" + NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10", t) \
-        or re.search(r"(?i)difficulty[^\n\d]{0,20}?" + NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10", t) \
-        or re.search(r"(?i)" + NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10\s*\n?\s*difficulty", t)
-    if m:   # "5-6/10" -> 5.5
-        lo = float(m.group(1).replace(",", ".")); hi = float(m.group(2).replace(",", ".")) if m.group(2) else lo
-        out["difficulty"] = round((lo + hi) / 2, 1) if hi >= lo else lo
-    m = re.search(r"(?i)(?:time to (?:platinum|100%)|hours? to platinum|approximate (?:amount of )?time[^:\n]*|estimated time[^:\n]*)\s*:?[^\n\d]{0,25}?(\d+)(?:" + DASH + r"(\d+))?\+?\s*(?:hours|hrs|h)\b", t) \
-        or re.search(r"(?i)\b(\d+)(?:" + DASH + r"(\d+))?\+?\s*\n?\s*hours\b", t)
-    if m:
-        lo, hi = int(m.group(1)), int(m.group(2)) if m.group(2) else None
+    nxt = r"(?=approximate|estimated time|offline trophies|online trophies|number of missable|missable trophies|glitched|does difficulty|hardest trophy|minimum playthrough|$)"
+    mid = lambda a, b: (float(a.replace(",", ".")) + float((b or a).replace(",", "."))) / 2
+    # difficulty: the block after its label; when it lists options ("3/10 with an exploit, 5/10 legit…"), the middle one
+    m = re.search(r"(?is)(?:estimated (?:trophy |platinum )?difficulty|(?:trophy|platinum) difficulty)(.{0,600}?)" + nxt, t)
+    vals = [mid(a, b) for a, b in re.findall(NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10", m.group(1))] if m else []
+    if not vals:
+        m2 = re.search(r"(?i)difficulty[^\n\d]{0,20}?" + NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10", t) \
+            or re.search(r"(?i)" + NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10\s*\n?\s*difficulty", t)
+        vals = [mid(m2.group(1), m2.group(2))] if m2 else []
+    if vals:
+        out["difficulty"] = round(sorted(vals)[len(vals) // 2], 1)
+    # time: same idea ("10-15 hours in one playthrough, 15-20 hours in two" -> middle)
+    m = re.search(r"(?is)(?:time to (?:platinum|100%)|hours? to platinum|approximate (?:amount of )?time|estimated time)(.{0,400}?)" + nxt.replace("approximate|estimated time|", "offline trophies|"), t)
+    hrs = re.findall(r"(\d+)(?:" + DASH + r"(\d+))?\+?\s*(?:hours|hrs)\b", m.group(1), re.I) if m else []   # not "8-12h" sub-parts
+    if not hrs:
+        m2 = re.search(r"(?i)\b(\d+)(?:" + DASH + r"(\d+))?\+?\s*\n?\s*hours\b", t)
+        hrs = [(m2.group(1), m2.group(2))] if m2 else []
+    if hrs:
+        lo, hi = sorted(hrs, key=lambda h: mid(*h))[len(hrs) // 2]
+        lo, hi = int(lo), int(hi) if hi else None
         out["hours"] = round((lo + hi) / 2) if hi and hi >= lo else lo
         out["hours_text"] = f"{lo}–{hi}" if hi and hi > lo else str(lo)
     for key, pat in (("missable", r"missable trophies"), ("online", r"online trophies"), ("glitched", r"glitched trophies")):
