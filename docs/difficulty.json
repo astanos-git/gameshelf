@@ -155,7 +155,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 18,
+"hours": 16,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -219,7 +219,7 @@
 "combined": {
 "difficulty": 2.0,
 "glitched": 0,
-"hours": 28,
+"hours": 24,
 "missable": 1,
 "online": 0,
 "playthroughs": 1
@@ -362,7 +362,7 @@
 "combined": {
 "difficulty": 4.5,
 "glitched": 0,
-"hours": 11,
+"hours": 10,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -394,7 +394,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 1,
-"hours": 60,
+"hours": 41,
 "missable": 4,
 "online": 0,
 "playthroughs": 1
@@ -505,7 +505,7 @@
 "combined": {
 "difficulty": 3.5,
 "glitched": 7,
-"hours": 90,
+"hours": 78,
 "missable": 10,
 "online": 0,
 "playthroughs": 1
@@ -537,7 +537,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 1,
-"hours": 70,
+"hours": 65,
 "missable": 9,
 "online": 0,
 "playthroughs": 1
@@ -689,7 +689,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 28,
+"hours": 26,
 "missable": 0,
 "online": 21,
 "playthroughs": 1
@@ -751,7 +751,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 0,
-"hours": 70,
+"hours": 66,
 "missable": 0,
 "online": 43,
 "playthroughs": 1
@@ -783,7 +783,7 @@
 },
 "combined": {
 "difficulty": 4.0,
-"hours": 45,
+"hours": 34,
 "missable": 0,
 "online": 16,
 "playthroughs": 1
@@ -923,7 +923,7 @@
 },
 "combined": {
 "difficulty": 5.0,
-"hours": 70,
+"hours": 60,
 "missable": 7,
 "online": 0,
 "playthroughs": 2
@@ -1032,7 +1032,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 3,
-"hours": 60,
+"hours": 52,
 "missable": 0,
 "online": 79,
 "playthroughs": 1
@@ -1257,7 +1257,7 @@
 },
 "combined": {
 "difficulty": 3.0,
-"hours": 70,
+"hours": 65,
 "missable": 8,
 "online": 0,
 "playthroughs": 1
@@ -1326,7 +1326,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 0,
-"hours": 25,
+"hours": 24,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -1377,7 +1377,7 @@
 "combined": {
 "difficulty": 9.0,
 "glitched": 0,
-"hours": 90,
+"hours": 70,
 "missable": 0,
 "online": 0,
 "playthroughs": 4
@@ -1550,7 +1550,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 100,
+"hours": 95,
 "missable": 0,
 "online": 58,
 "playthroughs": 1
@@ -1583,7 +1583,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 3,
-"hours": 22,
+"hours": 20,
 "missable": 0,
 "online": 3,
 "playthroughs": 1
@@ -1720,7 +1720,7 @@
 "combined": {
 "difficulty": 6.0,
 "glitched": 3,
-"hours": 38,
+"hours": 34,
 "missable": 12,
 "online": 0,
 "playthroughs": 1
@@ -1965,7 +1965,7 @@
 "combined": {
 "difficulty": 2.0,
 "glitched": 0,
-"hours": 22,
+"hours": 21,
 "missable": 1,
 "online": 0,
 "playthroughs": 2
@@ -1996,7 +1996,7 @@
 "combined": {
 "difficulty": 4.5,
 "glitched": 0,
-"hours": 45,
+"hours": 38,
 "missable": 37,
 "online": 81,
 "playthroughs": 2
@@ -2029,7 +2029,7 @@
 },
 "combined": {
 "difficulty": 10.0,
-"hours": 70,
+"hours": 65,
 "missable": 0,
 "online": 0,
 "playthroughs": 6
@@ -2082,7 +2082,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 0,
-"hours": 250,
+"hours": 188,
 "missable": 23,
 "online": 44
 },
@@ -2113,7 +2113,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 0,
-"hours": 22,
+"hours": 21,
 "missable": 43,
 "playthroughs": 2
 },
@@ -2226,7 +2226,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 0,
-"hours": 85,
+"hours": 78,
 "missable": 2,
 "online": 0,
 "playthroughs": 1
@@ -2277,7 +2277,7 @@
 },
 "combined": {
 "difficulty": 4.0,
-"hours": 175,
+"hours": 120,
 "missable": 5,
 "online": 64,
 "playthroughs": 1
@@ -2309,7 +2309,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 0,
-"hours": 90,
+"hours": 85,
 "missable": 0,
 "online": 22
 },
@@ -2340,7 +2340,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 0,
-"hours": 90,
+"hours": 85,
 "missable": 0,
 "online": 22
 },
@@ -2398,7 +2398,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 70,
+"hours": 68,
 "missable": 0,
 "online": 31
 },
@@ -2460,7 +2460,7 @@
 "combined": {
 "difficulty": 6.5,
 "glitched": 0,
-"hours": 110,
+"hours": 95,
 "missable": 5,
 "online": 0,
 "playthroughs": 1
@@ -2530,7 +2530,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 5,
+"hours": 4,
 "missable": 1,
 "online": 0,
 "playthroughs": 1
@@ -2600,7 +2600,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 2,
-"hours": 80,
+"hours": 75,
 "missable": 0,
 "online": 45,
 "playthroughs": 30
@@ -2739,7 +2739,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 90,
+"hours": 78,
 "missable": 0,
 "online": 31
 },
@@ -2801,7 +2801,7 @@
 },
 "combined": {
 "difficulty": 6.5,
-"hours": 70,
+"hours": 68,
 "missable": 0,
 "online": 0,
 "playthroughs": 2
@@ -3012,7 +3012,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 50,
+"hours": 48,
 "missable": 0,
 "online": 66,
 "playthroughs": 1
@@ -3046,7 +3046,7 @@
 "combined": {
 "difficulty": 6.0,
 "glitched": 0,
-"hours": 15,
+"hours": 14,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -3078,7 +3078,7 @@
 "combined": {
 "difficulty": 6.0,
 "glitched": 0,
-"hours": 22,
+"hours": 18,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -3180,7 +3180,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 0,
-"hours": 45,
+"hours": 40,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -3260,7 +3260,7 @@
 },
 "combined": {
 "difficulty": 5.0,
-"hours": 90,
+"hours": 65,
 "missable": 0,
 "online": 63,
 "playthroughs": 1
@@ -3291,7 +3291,7 @@
 },
 "combined": {
 "difficulty": 9.0,
-"hours": 300,
+"hours": 205,
 "missable": 0,
 "online": 49
 },
@@ -3399,7 +3399,7 @@
 },
 "combined": {
 "difficulty": 4.0,
-"hours": 45,
+"hours": 24,
 "missable": 0,
 "online": 69
 },
@@ -3428,7 +3428,7 @@
 },
 "combined": {
 "difficulty": 4.0,
-"hours": 45,
+"hours": 24,
 "missable": 0,
 "online": 123
 },
@@ -3509,7 +3509,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 38,
+"hours": 30,
 "missable": 7,
 "online": 0,
 "playthroughs": 1
@@ -3744,7 +3744,7 @@
 },
 "combined": {
 "difficulty": 5.0,
-"hours": 14,
+"hours": 12,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -3794,7 +3794,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 70,
+"hours": 50,
 "missable": 6,
 "online": 0,
 "playthroughs": 1
@@ -3871,7 +3871,7 @@
 "combined": {
 "difficulty": 2.0,
 "glitched": 0,
-"hours": 5,
+"hours": 4,
 "missable": 3,
 "online": 0,
 "playthroughs": 1
@@ -3984,7 +3984,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 18,
+"hours": 16,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -4166,7 +4166,7 @@
 "combined": {
 "difficulty": 7.0,
 "glitched": 2,
-"hours": 22,
+"hours": 20,
 "missable": 0,
 "online": 0,
 "playthroughs": 2
@@ -4354,7 +4354,7 @@
 "combined": {
 "difficulty": 2.0,
 "glitched": 0,
-"hours": 18,
+"hours": 16,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -4508,7 +4508,7 @@
 "combined": {
 "difficulty": 6.0,
 "glitched": 0,
-"hours": 50,
+"hours": 48,
 "missable": 16,
 "online": 0,
 "playthroughs": 2
@@ -4552,7 +4552,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 14,
+"hours": 10,
 "missable": 1,
 "online": 2,
 "playthroughs": 2
@@ -4779,7 +4779,7 @@
 },
 "combined": {
 "difficulty": 3.0,
-"hours": 50,
+"hours": 36,
 "missable": 15,
 "online": 0,
 "playthroughs": 2
@@ -4809,7 +4809,7 @@
 },
 "combined": {
 "difficulty": 3.0,
-"hours": 50,
+"hours": 32,
 "missable": 15,
 "online": 0,
 "playthroughs": 2
@@ -4875,7 +4875,7 @@
 },
 "combined": {
 "difficulty": 2.0,
-"hours": 30,
+"hours": 29,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -4954,7 +4954,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 120,
+"hours": 115,
 "missable": 11,
 "online": 0,
 "playthroughs": 2
@@ -4987,7 +4987,7 @@
 "combined": {
 "difficulty": 3.5,
 "glitched": 0,
-"hours": 45,
+"hours": 36,
 "missable": 8,
 "online": 4,
 "playthroughs": 1
@@ -5068,7 +5068,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 0,
-"hours": 300,
+"hours": 275,
 "missable": 0,
 "online": 43,
 "playthroughs": 1
@@ -5101,7 +5101,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 70,
+"hours": 50,
 "missable": 2,
 "online": 26,
 "playthroughs": 1
@@ -5132,7 +5132,7 @@
 },
 "combined": {
 "difficulty": 6.0,
-"hours": 30,
+"hours": 22,
 "missable": 5,
 "online": 0,
 "playthroughs": 2
@@ -5282,7 +5282,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 0,
-"hours": 50,
+"hours": 48,
 "missable": 0,
 "online": 24,
 "playthroughs": 1
@@ -5315,7 +5315,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 0,
-"hours": 55,
+"hours": 50,
 "missable": 0,
 "online": 31,
 "playthroughs": 1
@@ -5480,7 +5480,7 @@
 "combined": {
 "difficulty": 7.0,
 "glitched": 0,
-"hours": 112,
+"hours": 101,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -5513,7 +5513,7 @@
 "combined": {
 "difficulty": 5.5,
 "glitched": 0,
-"hours": 150,
+"hours": 120,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -5546,7 +5546,7 @@
 "combined": {
 "difficulty": 2.0,
 "glitched": 0,
-"hours": 110,
+"hours": 68,
 "missable": 0,
 "online": 27
 },
@@ -5624,7 +5624,7 @@
 },
 "combined": {
 "difficulty": 7.0,
-"hours": 22,
+"hours": 16,
 "missable": 4,
 "online": 0,
 "playthroughs": 2
@@ -5770,7 +5770,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 0,
-"hours": 70,
+"hours": 58,
 "missable": 8,
 "playthroughs": 1
 },
@@ -5894,7 +5894,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 0,
-"hours": 70,
+"hours": 62,
 "missable": 10,
 "online": 0,
 "playthroughs": 1
@@ -5925,7 +5925,7 @@
 },
 "combined": {
 "difficulty": 6.0,
-"hours": 270,
+"hours": 260,
 "missable": 7,
 "online": 31,
 "playthroughs": 1
@@ -5995,7 +5995,7 @@
 "combined": {
 "difficulty": 7.0,
 "glitched": 0,
-"hours": 45,
+"hours": 34,
 "missable": 2,
 "online": 0,
 "playthroughs": 3
@@ -6057,7 +6057,7 @@
 "combined": {
 "difficulty": 4.0,
 "glitched": 3,
-"hours": 45,
+"hours": 42,
 "missable": 25,
 "online": 5,
 "playthroughs": 2
@@ -6110,7 +6110,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 18,
+"hours": 15,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -6142,7 +6142,7 @@
 "combined": {
 "difficulty": 5.5,
 "glitched": 0,
-"hours": 45,
+"hours": 35,
 "missable": 4,
 "online": 0,
 "playthroughs": 5
@@ -6216,7 +6216,7 @@
 },
 "combined": {
 "difficulty": 5.5,
-"hours": 45,
+"hours": 40,
 "missable": 36,
 "online": 0,
 "playthroughs": 3
@@ -6299,7 +6299,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 3,
-"hours": 35,
+"hours": 28,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -6331,7 +6331,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 2,
-"hours": 45,
+"hours": 42,
 "missable": 8,
 "online": 0,
 "playthroughs": 1
@@ -6363,7 +6363,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 1,
-"hours": 150,
+"hours": 102,
 "missable": 0,
 "online": 22,
 "playthroughs": 1
@@ -6396,7 +6396,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 1,
-"hours": 150,
+"hours": 120,
 "missable": 0,
 "online": 22,
 "playthroughs": 1
@@ -6500,7 +6500,7 @@
 "combined": {
 "difficulty": 5.2,
 "glitched": 0,
-"hours": 22,
+"hours": 21,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -6531,7 +6531,7 @@
 },
 "combined": {
 "difficulty": 3.5,
-"hours": 55,
+"hours": 52,
 "missable": 1,
 "online": 63,
 "playthroughs": 1
@@ -6582,7 +6582,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 0,
-"hours": 45,
+"hours": 35,
 "missable": 15,
 "online": 0,
 "playthroughs": 1
@@ -6614,7 +6614,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 18,
+"hours": 16,
 "missable": 2,
 "online": 0,
 "playthroughs": 1
@@ -6657,7 +6657,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 0,
-"hours": 38,
+"hours": 29,
 "missable": 10,
 "online": 81,
 "playthroughs": 1
@@ -6729,7 +6729,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 14,
+"hours": 12,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -6760,7 +6760,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 18,
+"hours": 14,
 "missable": 0,
 "online": 0,
 "playthroughs": 2
@@ -6852,7 +6852,7 @@
 "combined": {
 "difficulty": 3.5,
 "glitched": 0,
-"hours": 9,
+"hours": 8,
 "missable": 1,
 "online": 0,
 "playthroughs": 1
@@ -6884,7 +6884,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 90,
+"hours": 65,
 "missable": 0,
 "online": 28,
 "playthroughs": 1
@@ -7065,7 +7065,7 @@
 "combined": {
 "difficulty": 2.0,
 "glitched": 0,
-"hours": 22,
+"hours": 17,
 "missable": 1,
 "online": 0,
 "playthroughs": 1
@@ -7167,7 +7167,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 1,
-"hours": 18,
+"hours": 15,
 "missable": 6,
 "online": 0,
 "playthroughs": 1
@@ -7237,7 +7237,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 3,
-"hours": 30,
+"hours": 26,
 "missable": 31,
 "online": 8,
 "playthroughs": 5
@@ -7288,7 +7288,7 @@
 "combined": {
 "difficulty": 7.5,
 "glitched": 0,
-"hours": 55,
+"hours": 42,
 "missable": 10,
 "playthroughs": 3
 },
@@ -7338,7 +7338,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 0,
-"hours": 32,
+"hours": 28,
 "missable": 23,
 "playthroughs": 2
 },
@@ -7476,7 +7476,7 @@
 "combined": {
 "difficulty": 2.0,
 "glitched": 0,
-"hours": 15,
+"hours": 14,
 "missable": 1,
 "online": 0,
 "playthroughs": 1
@@ -7764,7 +7764,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 0,
-"hours": 18,
+"hours": 15,
 "missable": 0,
 "online": 49,
 "playthroughs": 1
@@ -7796,7 +7796,7 @@
 },
 "combined": {
 "difficulty": 2.0,
-"hours": 70,
+"hours": 60,
 "missable": 0,
 "online": 58,
 "playthroughs": 2
@@ -7901,7 +7901,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 2,
-"hours": 35,
+"hours": 28,
 "missable": 2,
 "online": 0,
 "playthroughs": 2
@@ -8023,7 +8023,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 18,
+"hours": 16,
 "missable": 1,
 "online": 0,
 "playthroughs": 1
@@ -8107,7 +8107,7 @@
 "combined": {
 "difficulty": 3.5,
 "glitched": 0,
-"hours": 7,
+"hours": 6,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -8169,7 +8169,7 @@
 "combined": {
 "difficulty": 5.0,
 "glitched": 2,
-"hours": 25,
+"hours": 24,
 "missable": 15,
 "playthroughs": 1
 },
@@ -8261,7 +8261,7 @@
 "combined": {
 "difficulty": 6.0,
 "glitched": 0,
-"hours": 70,
+"hours": 60,
 "missable": 4,
 "online": 0,
 "playthroughs": 1
@@ -8340,7 +8340,7 @@
 },
 "combined": {
 "difficulty": 9.5,
-"hours": 70,
+"hours": 50,
 "missable": 5,
 "online": 0,
 "playthroughs": 2
@@ -8435,7 +8435,7 @@
 },
 "combined": {
 "difficulty": 6.0,
-"hours": 90,
+"hours": 88,
 "missable": 0,
 "online": 0,
 "playthroughs": 1

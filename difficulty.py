@@ -251,7 +251,7 @@ def combine(src: dict) -> dict:
     if d:
         out["difficulty"] = round(sum(d) / len(d), 1)
     if h:
-        out["hours"] = sorted(h)[len(h) // 2]
+        out["hours"] = round(sum(h) / len(h))          # average of the guides' estimates
     for k in ("missable", "online", "glitched", "playthroughs"):        # the most cautious answer
         if pick(k):
             out[k] = max(pick(k))
