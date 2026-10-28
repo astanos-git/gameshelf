@@ -188,21 +188,19 @@ def main() -> None:
     args = ap.parse_args()
 
     if args.raw:
-        for url in ["https://www.powerpyx.com/wp-json/wp/v2/posts?search=metaphor%20refantazio&per_page=3&_fields=link,title",
-                    "https://www.powerpyx.com/wp-json/wp/v2/search?search=metaphor%20refantazio%20trophy&per_page=3",
-                    "https://www.powerpyx.com/metaphor-refantazio-trophy-guide-roadmap/",
-                    "https://www.powerpyx.com/?s=metaphor+refantazio",
+        for url in ["https://www.truetrophies.com/game/Metaphor-ReFantazio/",
                     "https://www.truetrophies.com/game/Metaphor-ReFantazio/trophies",
-                    "https://www.truetrophies.com/game/Metaphor-ReFantazio/",
-                    "https://www.playstationtrophies.org/forum/topic/338391-estimated-platinum-difficulty-and-time-to-platinum/",
-                    "https://www.knoef.info/",
-                    "https://www.exophase.com/game/metaphor-refantazio-psn/trophies/"]:
+                    "https://www.truetrophies.com/game/Metaphor-ReFantazio/walkthrough",
+                    "https://www.truetrophies.com/searchresults.aspx?search=metaphor+refantazio",
+                    "https://www.knoef.info/en/?s=metaphor",
+                    "https://www.knoef.info/?s=metaphor"]:
             try:
                 r = S.get(url, timeout=25)
-                t = text_of(r.text)
-                i = t.lower().find("difficulty")
-                snip = " ".join((t[max(0, i - 80):i + 160] if i >= 0 else t[:160]).split())
-                print(f"::notice::RAW {r.status_code} {r.headers.get('content-type', '')[:30]} {len(r.text)}b {url} :: {snip}")
+                t = " ".join(text_of(r.text).split())
+                hits = [m.start() for m in re.finditer(r"(?i)estimated|/10|difficulty|time to|hours", t)][:6]
+                snip = " || ".join(t[max(0, h - 60):h + 90] for h in hits)
+                links = sorted(set(re.findall(r'href="([^"]*(?:metaphor|guide)[^"]*)"', r.text, re.I)))[:8]
+                print(f"::notice::RAW {r.status_code} {len(r.text)}b {url} :: {snip[:900]} :: LINKS {links}")
             except Exception as e:
                 print(f"::notice::RAW ERR {url} {e}")
             time.sleep(1)
