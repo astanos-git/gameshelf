@@ -96,6 +96,8 @@ def parse_summary(t: str) -> dict:
     # time: same idea ("10-15 hours in one playthrough, 15-20 hours in two" -> middle)
     m = re.search(r"(?is)(?:time to (?:platinum|100%)|hours? to platinum|approximate (?:amount of )?time|estimated time)(.{0,400}?)" + nxt.replace("approximate|estimated time|", "offline trophies|"), t)
     hrs = re.findall(r"(\d+)(?:" + DASH + r"(\d+))?\+?\s*(?:hours|hrs)\b", m.group(1), re.I) if m else []   # not "8-12h" sub-parts
+    if m and not hrs:
+        hrs = re.findall(r"(\d+)(?:" + DASH + r"(\d+))?\+?\s*h\b", m.group(1), re.I)[:1]
     if not hrs:
         m2 = re.search(r"(?i)\b(\d+)(?:" + DASH + r"(\d+))?\+?\s*\n?\s*hours\b", t)
         hrs = [(m2.group(1), m2.group(2))] if m2 else []
