@@ -1,6 +1,262 @@
 {
- "generated_at": "2026-10-28T09:59:28+00:00",
+ "generated_at": "2026-10-28T12:05:48+00:00",
  "upcoming": [
+  {
+   "slug": "phantom-blade-zero",
+   "name": "Phantom Blade Zero",
+   "image": "https://media.rawg.io/media/games/25f/25f536a977488f12ef8a6d013e50fda1.jpg",
+   "released": "2026-10-29",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/phantom-blade-zero",
+   "cats": [
+    "taste",
+    "big"
+   ],
+   "added": 248,
+   "reason": "Your taste: adventure, action"
+  },
+  {
+   "slug": "ananta",
+   "name": "ananta",
+   "image": "https://media.rawg.io/media/screenshots/21f/21ffdb58671720697c5e7382b021755b.jpg",
+   "released": "2027-01-15",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Action"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/ananta",
+   "cats": [
+    "taste"
+   ],
+   "added": 32,
+   "reason": "Your taste: open world, spider-man"
+  },
+  {
+   "slug": "titan-quest-2",
+   "name": "Titan Quest 2",
+   "image": "https://media.rawg.io/media/games/233/233b58ed99520a1e0b19109f7263f011.jpg",
+   "released": "2027-01-19",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Action",
+    "RPG"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/titan-quest-2",
+   "cats": [
+    "big"
+   ],
+   "added": 109,
+   "reason": "Big release, much awaited"
+  },
+  {
+   "slug": "tomb-raider-legacy-of-atlantis",
+   "name": "Tomb Raider: Legacy of Atlantis",
+   "image": "https://media.rawg.io/media/games/c2b/c2b8a3ef89b3edd35c1804dc0d68d7bb.jpg",
+   "released": "2027-02-12",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Action"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/tomb-raider-legacy-of-atlantis",
+   "cats": [
+    "big"
+   ],
+   "added": 116,
+   "reason": "Big release, much awaited"
+  },
+  {
+   "slug": "god-of-war-laufey",
+   "name": "God of War Laufey",
+   "image": "https://media.rawg.io/media/games/d9e/d9e30f2182a8535a0ef02949dfb1ffed.jpg",
+   "released": "2027-02-16",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/god-of-war-laufey",
+   "cats": [
+    "taste"
+   ],
+   "added": 43,
+   "reason": "Your taste: adventure, action"
+  },
+  {
+   "slug": "fable2020",
+   "name": "Fable",
+   "image": "https://media.rawg.io/media/games/e06/e06a04ece5555c8c15a7c68e22649f0c.jpg",
+   "released": "2027-02-23",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Action",
+    "RPG"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/fable2020",
+   "cats": [
+    "big"
+   ],
+   "added": 375,
+   "reason": "Big release, much awaited"
+  },
+  {
+   "slug": "no-rest-for-the-wicked-2024",
+   "name": "No Rest for the Wicked",
+   "image": "https://media.rawg.io/media/games/209/209e902168fcde856bd22a1bda90013e.jpg",
+   "released": "2027-03-31",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Adventure",
+    "Action",
+    "RPG"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/no-rest-for-the-wicked-2024",
+   "cats": [
+    "taste",
+    "big"
+   ],
+   "added": 368,
+   "reason": "Your taste: atmospheric, exploration"
+  },
+  {
+   "slug": "tomb-raider-catalyst",
+   "name": "Tomb Raider: Catalyst",
+   "image": "https://media.rawg.io/media/screenshots/4c2/4c23a1f571e1569c518da6c1da1be6d2.jpg",
+   "released": "2027-12-31",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/tomb-raider-catalyst",
+   "cats": [
+    "taste",
+    "big"
+   ],
+   "added": 83,
+   "reason": "Your taste: adventure, action"
+  },
+  {
+   "slug": "the-expanse-osiris-reborn",
+   "name": "The Expanse: Osiris Reborn",
+   "image": "https://media.rawg.io/media/screenshots/676/676565b4628547e14d7b4467b4bf5921.jpg",
+   "released": "2027-12-31",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Action",
+    "RPG"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/the-expanse-osiris-reborn",
+   "cats": [
+    "big"
+   ],
+   "added": 64,
+   "reason": "Big release, much awaited"
+  },
+  {
+   "slug": "kena-scars-of-kosmora",
+   "name": "Kena: Scars of Kosmora",
+   "image": "https://media.rawg.io/media/screenshots/3a3/3a3855e1b5218c02ab038dcb873eacde.jpg",
+   "released": "2027-12-31",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Adventure",
+    "Action",
+    "RPG"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/kena-scars-of-kosmora",
+   "cats": [
+    "taste"
+   ],
+   "added": 63,
+   "reason": "Your taste: adventure, action"
+  },
+  {
+   "slug": "resident-evil-veronica",
+   "name": "Resident Evil Veronica",
+   "image": "https://media.rawg.io/media/screenshots/a4d/a4dbcf8ae366d3284ff632227d6e86e2.jpg",
+   "released": "2027-12-31",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/resident-evil-veronica",
+   "cats": [
+    "taste"
+   ],
+   "added": 13,
+   "reason": "Your taste: adventure, action"
+  },
+  {
+   "slug": "prince-of-persia-the-sands-of-time-remake",
+   "name": "Prince of Persia: The Sands of Time Remake",
+   "image": "https://media.rawg.io/media/games/b92/b92b55aeab9ed1777104f71f4b22a613.jpg",
+   "released": "2026-12-31",
+   "tba": true,
+   "metacritic": null,
+   "genres": [
+    "Action"
+   ],
+   "platforms": [
+    "PS5",
+    "PS4"
+   ],
+   "url": "https://rawg.io/games/prince-of-persia-the-sands-of-time-remake",
+   "cats": [
+    "taste",
+    "big"
+   ],
+   "added": 1040,
+   "reason": "Your taste: action"
+  },
   {
    "slug": "the-witcher-4",
    "name": "The Witcher (A New Saga Begins)",
@@ -16,22 +272,11 @@
     "PS5"
    ],
    "url": "https://rawg.io/games/the-witcher-4",
-   "reason": "Series: The Witcher"
-  },
-  {
-   "slug": "the-witcher-remake",
-   "name": "The Witcher: Remake",
-   "image": "https://media.rawg.io/media/screenshots/22c/22c8a63ff464b87fac32c10b3f30ca0a.jpg",
-   "released": null,
-   "tba": true,
-   "metacritic": null,
-   "genres": [
-    "RPG"
+   "cats": [
+    "series",
+    "studio"
    ],
-   "platforms": [
-    "PS5"
-   ],
-   "url": "https://rawg.io/games/the-witcher-remake",
+   "added": 73,
    "reason": "Series: The Witcher"
   },
   {
@@ -48,7 +293,31 @@
     "PS5"
    ],
    "url": "https://rawg.io/games/intergalactic-the-heretic-prophet",
+   "cats": [
+    "studio"
+   ],
+   "added": 33,
    "reason": "Studio: Naughty Dog"
+  },
+  {
+   "slug": "the-witcher-remake",
+   "name": "The Witcher: Remake",
+   "image": "https://media.rawg.io/media/screenshots/22c/22c8a63ff464b87fac32c10b3f30ca0a.jpg",
+   "released": null,
+   "tba": true,
+   "metacritic": null,
+   "genres": [
+    "RPG"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/the-witcher-remake",
+   "cats": [
+    "series"
+   ],
+   "added": 25,
+   "reason": "Series: The Witcher"
   },
   {
    "slug": "marvels-spider-man-3",
@@ -65,6 +334,10 @@
     "PS5"
    ],
    "url": "https://rawg.io/games/marvels-spider-man-3",
+   "cats": [
+    "studio"
+   ],
+   "added": 4,
    "reason": "Studio: Insomniac Games"
   },
   {
@@ -82,73 +355,71 @@
     "PS5"
    ],
    "url": "https://rawg.io/games/marvels-venom",
+   "cats": [
+    "studio"
+   ],
+   "added": 4,
    "reason": "Studio: Insomniac Games"
   }
  ],
  "details": {
-  "owlboy": {
-   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
-   "developers": [
-    "D-Pad Studio",
-    "D-Pad Studios"
-   ],
-   "esrb": null,
-   "metacritic": 88,
-   "name": "Owlboy",
-   "publishers": [
-    "D-Pad Studio"
-   ],
-   "released": "2016-10-31",
+  "resident-evil-veronica": {
+   "name": "Resident Evil Veronica",
+   "released": "2027-12-31",
    "tba": false,
-   "website": "http://www.owlboygame.com"
-  },
-  "marvels-spider-man-3": {
-   "name": "Marvel's Spider-Man 3",
-   "released": null,
-   "tba": true,
-   "description": "Marvel’s Spider-Man 3 is currently in development by Insomniac Games for PlayStation 5 and PlayStation 6. Created in collaboration with Marvel Games and PlayStation.",
+   "description": "Resident Evil Veronica is a remake of 2000's Resident Evil Code: Veronica. In 2027, madness and intrigue, love and hate all combine to create a chilling new entry in survival horror.",
    "developers": [
-    "Insomniac Games"
+    "Capcom"
    ],
    "publishers": [
-    "Sony Interactive Entertainment"
+    "Capcom"
    ],
-   "website": "https://x.com/insomniacgames?s=09",
+   "website": null,
    "metacritic": null,
    "esrb": null
   },
-  "9-years-of-shadows": {
-   "name": "9 Years of Shadows",
-   "released": "2023-03-26",
+  "titan-quest-2": {
+   "name": "Titan Quest 2",
+   "released": "2027-01-19",
    "tba": false,
-   "description": "9 Years of Shadows is an emotionally-driven metroidvania enhanced by healing music that tells the story of Europa, a young woman of noble birth tasked with ending the curse that plagues her people and restoring color to all lands. Immersive gameplay",
+   "description": "Nemesis, Goddess of Retribution, is out of control. She is corrupting the Threads of Fate and punishing all those who oppose her. Take up your weapon, fight alongside gods, and change fate itself in Titan Quest 2, an action RPG inspired by Greek mythology.",
    "developers": [
-    "Halberd Studios",
-    "HelBeard"
+    "Grimlore Games"
    ],
    "publishers": [
-    "Freedom Games"
+    "THQ Nordic"
    ],
-   "website": "http://halberdstudios.com/",
-   "metacritic": 74,
+   "website": null,
+   "metacritic": null,
    "esrb": null
   },
-  "shadows-die-twice": {
-   "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
+  "dreams": {
+   "description": "Dream anything, play everything Create, play and share your own games and experiences, in the incredible new title from the LittleBigPlanet and Tearaway team. Dreams is an extraordinary open-ended experience where you can make anything, from interactive adventures and platformers, to shoot ‘em ups, puzzlers and more. The possibilities are endless.",
    "developers": [
-    "FromSoftware"
+    "Media Molecule"
    ],
-   "esrb": "Mature",
-   "metacritic": 90,
-   "name": "Sekiro: Shadows Die Twice",
+   "esrb": "Teen",
+   "metacritic": 89,
+   "name": "Dreams",
    "publishers": [
-    "FromSoftware",
-    "Activision Value Publishing",
-    "方块游戏"
+    "Sony Interactive Entertainment"
    ],
-   "released": "2019-03-22",
+   "released": "2020-02-14",
    "tba": false,
-   "website": "http://www.sekirothegame.com"
+   "website": "http://dreams.mediamolecule.com/"
+  },
+  "tomb-raider-legacy-of-atlantis": {
+   "name": "Tomb Raider: Legacy of Atlantis",
+   "released": "2027-02-12",
+   "tba": false,
+   "description": "",
+   "developers": [
+    "Crystal Dynamics"
+   ],
+   "publishers": [],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
   },
   "the-witcher-remake": {
    "name": "The Witcher: Remake",
@@ -165,66 +436,120 @@
    "metacritic": null,
    "esrb": null
   },
-  "brothers-a-tale-of-two-sons-2": {
-   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
-   "developers": [
-    "Starbreeze Studios",
-    "Parables Games"
-   ],
-   "esrb": "Teen",
-   "metacritic": 90,
-   "name": "Brothers: A Tale of Two Sons",
-   "publishers": [
-    "505 Games",
-    "Parables Games"
-   ],
-   "released": "2013-08-07",
+  "kena-scars-of-kosmora": {
+   "name": "Kena: Scars of Kosmora",
+   "released": "2027-12-31",
    "tba": false,
-   "website": "https://505games.com/games/brothers/"
+   "description": "In Kena: Scars of Kosmora, Kena is older and renowned as a Spirit Guide. In hopes of finding answers to the affliction she has endured all her life, Kena travels to the mysterious island of Kosmora. Home to distinct cultures and regions, Kosmora is full of buried secrets from a tragic past.",
+   "developers": [
+    "Ember Lab"
+   ],
+   "publishers": [],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
   },
-  "marvels-venom": {
-   "name": "Marvel's Venom",
+  "marvels-spider-man-3": {
+   "name": "Marvel's Spider-Man 3",
    "released": null,
    "tba": true,
-   "description": "Marvel’s Venom is currently in development by Insomniac Games for PlayStation 5. Created in collaboration with Marvel Games and PlayStation.",
+   "description": "Marvel’s Spider-Man 3 is currently in development by Insomniac Games for PlayStation 5 and PlayStation 6. Created in collaboration with Marvel Games and PlayStation.",
    "developers": [
     "Insomniac Games"
    ],
    "publishers": [
     "Sony Interactive Entertainment"
    ],
+   "website": "https://x.com/insomniacgames?s=09",
+   "metacritic": null,
+   "esrb": null
+  },
+  "ananta": {
+   "name": "ananta",
+   "released": "2027-01-15",
+   "tba": false,
+   "description": "Previously known as Project Mugen, ANANTA is a free-to-play urban open-world RPG set in Nova City. Players become the new captain of a special task force, switch between different characters and roles, fight hidden threats, and freely explore a living city filled with activities, vehicles, and unexpected events. Launches globally on January 15, 2027 for PC, PlayStation 5, iOS, and Android.",
+   "developers": [],
+   "publishers": [
+    "Netease"
+   ],
+   "website": "https://www.anantagame.com/",
+   "metacritic": null,
+   "esrb": null
+  },
+  "fable2020": {
+   "name": "Fable",
+   "released": "2027-02-23",
+   "tba": false,
+   "description": "Explore a land of fantastical creatures and wondrous places. What does it mean to be a Hero? Well, in the fairytale land of Albion, that is entirely up to you. With a dark threat looming, your choices will change Albion forever.",
+   "developers": [
+    "Playground Games"
+   ],
+   "publishers": [
+    "Xbox Game Studios"
+   ],
    "website": null,
    "metacritic": null,
-   "esrb": "Rating Pending"
+   "esrb": null
   },
-  "dark-souls-ii": {
-   "description": "Dark Souls II is the third installment in the well-known Souls series. It’s a different game from all the others because of its directors. With Dark Souls II the main director and founder of Souls-like genre Hidetaka Miyazaki took place only as a supervisor of the project, leaving a place of the director of the game for two young video game designers Tomohiro Shibuya and Yui Tanimura.",
-   "developers": [
-    "BANDAI NAMCO Entertainment America",
-    "FromSoftware"
-   ],
-   "esrb": "Mature",
-   "metacritic": 91,
-   "name": "Dark Souls II",
-   "publishers": [
-    "Bandai Namco Entertainment",
-    "BANDAI NAMCO Entertainment US",
-    "FromSoftware"
-   ],
-   "released": "2014-03-11",
+  "the-expanse-osiris-reborn": {
+   "name": "The Expanse: Osiris Reborn",
+   "released": "2027-12-31",
    "tba": false,
-   "website": "http://www.darksoulsii.com"
+   "description": "The Expanse: Osiris Reborn is a third-person Action RPG set in the world of The Expanse. You are not a hero, but a simple mercenary who found himself in the wrong place at the wrong time. Assemble a team, break through the web of lies and leave your mark on the history of the solar system.",
+   "developers": [
+    "Owlcat Games"
+   ],
+   "publishers": [
+    "Owlcat Games"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
   },
-  "intergalactic-the-heretic-prophet": {
-   "name": "Intergalactic: The Heretic Prophet",
-   "released": null,
-   "tba": true,
+  "no-rest-for-the-wicked-2024": {
+   "name": "No Rest for the Wicked",
+   "released": "2027-03-31",
+   "tba": false,
+   "description": "From Moon Studios, the award-winning developers of Ori and the Blind Forest and Ori and the Will of the Wisps comes No Rest for the Wicked, a visceral, precision Action RPG set to reinvent the genre. The year is 841 – King Harol is dead. As word of his death echoes throughout the kingdom, the crown passes to his arrogant, yet untested son Magnus.",
+   "developers": [
+    "Moon Studios"
+   ],
+   "publishers": [
+    "Private Division"
+   ],
+   "website": "https://store.privatedivision.com/en/game/no-rest-for-the-wicked",
+   "metacritic": null,
+   "esrb": null
+  },
+  "god-of-war-laufey": {
+   "name": "God of War Laufey",
+   "released": "2027-02-16",
+   "tba": false,
    "description": "",
    "developers": [
-    "Naughty Dog"
+    "Santa Monica Studio"
    ],
-   "publishers": [],
+   "publishers": [
+    "Sony Interactive Entertainment"
+   ],
    "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "the-witcher-4": {
+   "name": "The Witcher (A New Saga Begins)",
+   "released": null,
+   "tba": true,
+   "description": "The Witcher IV is a single-player, open-world RPG from CD PROJEKT RED. At the start of a new saga, players take on the role of Ciri, a professional monster slayer, and embark on a journey through a brutal dark-fantasy world. Powered by Unreal Engine 5, it aims to be the most immersive and ambitious open-world Witcher game to date.",
+   "developers": [
+    "CD PROJEKT RED",
+    "CD PROJEKT"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
+   "website": "https://www.thewitcher.com/witcher4",
    "metacritic": null,
    "esrb": null
   },
@@ -245,36 +570,160 @@
    "tba": false,
    "website": null
   },
-  "the-witcher-4": {
-   "name": "The Witcher (A New Saga Begins)",
-   "released": null,
-   "tba": true,
-   "description": "The Witcher IV is a single-player, open-world RPG from CD PROJEKT RED. At the start of a new saga, players take on the role of Ciri, a professional monster slayer, and embark on a journey through a brutal dark-fantasy world. Powered by Unreal Engine 5, it aims to be the most immersive and ambitious open-world Witcher game to date.",
+  "owlboy": {
+   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
    "developers": [
-    "CD PROJEKT RED",
-    "CD PROJEKT"
+    "D-Pad Studio",
+    "D-Pad Studios"
+   ],
+   "esrb": null,
+   "metacritic": 88,
+   "name": "Owlboy",
+   "publishers": [
+    "D-Pad Studio"
+   ],
+   "released": "2016-10-31",
+   "tba": false,
+   "website": "http://www.owlboygame.com"
+  },
+  "dark-souls-ii": {
+   "description": "Dark Souls II is the third installment in the well-known Souls series. It’s a different game from all the others because of its directors. With Dark Souls II the main director and founder of Souls-like genre Hidetaka Miyazaki took place only as a supervisor of the project, leaving a place of the director of the game for two young video game designers Tomohiro Shibuya and Yui Tanimura.",
+   "developers": [
+    "BANDAI NAMCO Entertainment America",
+    "FromSoftware"
+   ],
+   "esrb": "Mature",
+   "metacritic": 91,
+   "name": "Dark Souls II",
+   "publishers": [
+    "Bandai Namco Entertainment",
+    "BANDAI NAMCO Entertainment US",
+    "FromSoftware"
+   ],
+   "released": "2014-03-11",
+   "tba": false,
+   "website": "http://www.darksoulsii.com"
+  },
+  "phantom-blade-zero": {
+   "name": "Phantom Blade Zero",
+   "released": "2026-10-29",
+   "tba": false,
+   "description": "Be the Dark Raider exiled by \"The Order\", embark on the path of vengeance, and uncover the darkest secrets of Wulin!",
+   "developers": [
+    "S-Game"
    ],
    "publishers": [
-    "CD PROJEKT RED"
+    "S-Game"
    ],
-   "website": "https://www.thewitcher.com/witcher4",
+   "website": null,
    "metacritic": null,
    "esrb": null
   },
-  "dreams": {
-   "description": "Dream anything, play everything Create, play and share your own games and experiences, in the incredible new title from the LittleBigPlanet and Tearaway team. Dreams is an extraordinary open-ended experience where you can make anything, from interactive adventures and platformers, to shoot ‘em ups, puzzlers and more. The possibilities are endless.",
+  "shadows-die-twice": {
+   "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
    "developers": [
-    "Media Molecule"
+    "FromSoftware"
    ],
-   "esrb": "Teen",
-   "metacritic": 89,
-   "name": "Dreams",
+   "esrb": "Mature",
+   "metacritic": 90,
+   "name": "Sekiro: Shadows Die Twice",
+   "publishers": [
+    "FromSoftware",
+    "Activision Value Publishing",
+    "方块游戏"
+   ],
+   "released": "2019-03-22",
+   "tba": false,
+   "website": "http://www.sekirothegame.com"
+  },
+  "marvels-venom": {
+   "name": "Marvel's Venom",
+   "released": null,
+   "tba": true,
+   "description": "Marvel’s Venom is currently in development by Insomniac Games for PlayStation 5. Created in collaboration with Marvel Games and PlayStation.",
+   "developers": [
+    "Insomniac Games"
+   ],
    "publishers": [
     "Sony Interactive Entertainment"
    ],
-   "released": "2020-02-14",
+   "website": null,
+   "metacritic": null,
+   "esrb": "Rating Pending"
+  },
+  "9-years-of-shadows": {
+   "description": "9 Years of Shadows is an emotionally-driven metroidvania enhanced by healing music that tells the story of Europa, a young woman of noble birth tasked with ending the curse that plagues her people and restoring color to all lands. Immersive gameplay",
+   "developers": [
+    "Halberd Studios",
+    "HelBeard"
+   ],
+   "esrb": null,
+   "metacritic": 74,
+   "name": "9 Years of Shadows",
+   "publishers": [
+    "Freedom Games"
+   ],
+   "released": "2023-03-26",
    "tba": false,
-   "website": "http://dreams.mediamolecule.com/"
+   "website": "http://halberdstudios.com/"
+  },
+  "prince-of-persia-the-sands-of-time-remake": {
+   "name": "Prince of Persia: The Sands of Time Remake",
+   "released": null,
+   "tba": true,
+   "description": "The Prince has returned! Experience the classic tale that redefined action-adventure gaming in this full-scale remake for a new generation. - You are the Prince of Persia. Embark on a journey to save your kingdom from the treacherous Vizier. - Master the Sands of Time and use your dagger to reverse, accelerate, freeze, and slow time itself. - Fight cursed enemies and solve puzzles along the way.",
+   "developers": [
+    "Ubisoft"
+   ],
+   "publishers": [
+    "Ubisoft Entertainment"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": "Teen"
+  },
+  "intergalactic-the-heretic-prophet": {
+   "name": "Intergalactic: The Heretic Prophet",
+   "released": null,
+   "tba": true,
+   "description": "",
+   "developers": [
+    "Naughty Dog"
+   ],
+   "publishers": [],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "tomb-raider-catalyst": {
+   "name": "Tomb Raider: Catalyst",
+   "released": "2027-12-31",
+   "tba": false,
+   "description": "Tomb Raider: Catalyst marks a bold direction for the series as Lara Croft embarks on a new adventure across Northern India. Tomb Raider: Catalyst is set in the wake of a mythical cataclysm that has unleashed ancient secrets and awakened the mysterious forces that guard them.",
+   "developers": [
+    "Crystal Dynamics"
+   ],
+   "publishers": [],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "brothers-a-tale-of-two-sons-2": {
+   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
+   "developers": [
+    "Starbreeze Studios",
+    "Parables Games"
+   ],
+   "esrb": "Teen",
+   "metacritic": 90,
+   "name": "Brothers: A Tale of Two Sons",
+   "publishers": [
+    "505 Games",
+    "Parables Games"
+   ],
+   "released": "2013-08-07",
+   "tba": false,
+   "website": "https://505games.com/games/brothers/"
   }
  }
 }

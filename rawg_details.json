@@ -25,6 +25,20 @@
   "tba": false,
   "website": "http://halberdstudios.com/"
  },
+ "ananta": {
+  "description": "Previously known as Project Mugen, ANANTA is a free-to-play urban open-world RPG set in Nova City. Players become the new captain of a special task force, switch between different characters and roles, fight hidden threats, and freely explore a living city filled with activities, vehicles, and unexpected events. Launches globally on January 15, 2027 for PC, PlayStation 5, iOS, and Android.",
+  "developer_ids": [],
+  "developers": [],
+  "esrb": null,
+  "metacritic": null,
+  "name": "ananta",
+  "publishers": [
+   "Netease"
+  ],
+  "released": "2027-01-15",
+  "tba": false,
+  "website": "https://www.anantagame.com/"
+ },
  "bayonetta": {
   "description": "Bayonetta is a slasher game developed by Platinum Games. The game is set in a fictional European city of Vigrid. The main character is a witch named Bayonetta who fights angels with pistols and magic wishing only one thing: to recall everything happened to her.",
   "developer_ids": [
@@ -149,6 +163,27 @@
   "tba": false,
   "website": "http://dreams.mediamolecule.com/"
  },
+ "fable2020": {
+  "description": "Explore a land of fantastical creatures and wondrous places. What does it mean to be a Hero? Well, in the fairytale land of Albion, that is entirely up to you. With a dark threat looming, your choices will change Albion forever.",
+  "developer_ids": [
+   [
+    13141,
+    "Playground Games"
+   ]
+  ],
+  "developers": [
+   "Playground Games"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Fable",
+  "publishers": [
+   "Xbox Game Studios"
+  ],
+  "released": "2027-02-23",
+  "tba": false,
+  "website": null
+ },
  "god-of-war-2": {
   "description": "It is a new beginning for Kratos. Living as a man outside the shadow of the gods, he ventures into the brutal Norse wilds with his son Atreus, fighting to fulfill a deeply personal quest.",
   "developer_ids": [
@@ -170,6 +205,27 @@
   "released": "2018-04-20",
   "tba": false,
   "website": "https://godofwar.playstation.com/"
+ },
+ "god-of-war-laufey": {
+  "description": "",
+  "developer_ids": [
+   [
+    14278,
+    "Santa Monica Studio"
+   ]
+  ],
+  "developers": [
+   "Santa Monica Studio"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "God of War Laufey",
+  "publishers": [
+   "Sony Interactive Entertainment"
+  ],
+  "released": "2027-02-16",
+  "tba": false,
+  "website": null
  },
  "god-of-war-ragnarok": {
   "description": "Kratos and Atreus must journey to each of the Nine Realms in search of answers as they prepare for the prophesied battle that will end the world. Together, Kratos and Atreus venture deep into the Nine Realms in search of answers as Asgardian forces prepare for war.",
@@ -231,6 +287,25 @@
   "publishers": [],
   "released": null,
   "tba": true,
+  "website": null
+ },
+ "kena-scars-of-kosmora": {
+  "description": "In Kena: Scars of Kosmora, Kena is older and renowned as a Spirit Guide. In hopes of finding answers to the affliction she has endured all her life, Kena travels to the mysterious island of Kosmora. Home to distinct cultures and regions, Kosmora is full of buried secrets from a tragic past.",
+  "developer_ids": [
+   [
+    248445,
+    "Ember Lab"
+   ]
+  ],
+  "developers": [
+   "Ember Lab"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Kena: Scars of Kosmora",
+  "publishers": [],
+  "released": "2027-12-31",
+  "tba": false,
   "website": null
  },
  "marvels-spider-man-2": {
@@ -302,6 +377,27 @@
   "tba": true,
   "website": null
  },
+ "no-rest-for-the-wicked-2024": {
+  "description": "From Moon Studios, the award-winning developers of Ori and the Blind Forest and Ori and the Will of the Wisps comes No Rest for the Wicked, a visceral, precision Action RPG set to reinvent the genre. The year is 841 – King Harol is dead. As word of his death echoes throughout the kingdom, the crown passes to his arrogant, yet untested son Magnus.",
+  "developer_ids": [
+   [
+    19103,
+    "Moon Studios"
+   ]
+  ],
+  "developers": [
+   "Moon Studios"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "No Rest for the Wicked",
+  "publishers": [
+   "Private Division"
+  ],
+  "released": "2027-03-31",
+  "tba": false,
+  "website": "https://store.privatedivision.com/en/game/no-rest-for-the-wicked"
+ },
  "owlboy": {
   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
   "developer_ids": [
@@ -328,6 +424,48 @@
   "tba": false,
   "website": "http://www.owlboygame.com"
  },
+ "phantom-blade-zero": {
+  "description": "Be the Dark Raider exiled by \"The Order\", embark on the path of vengeance, and uncover the darkest secrets of Wulin!",
+  "developer_ids": [
+   [
+    25097,
+    "S-Game"
+   ]
+  ],
+  "developers": [
+   "S-Game"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Phantom Blade Zero",
+  "publishers": [
+   "S-Game"
+  ],
+  "released": "2026-10-29",
+  "tba": false,
+  "website": null
+ },
+ "prince-of-persia-the-sands-of-time-remake": {
+  "description": "The Prince has returned! Experience the classic tale that redefined action-adventure gaming in this full-scale remake for a new generation. - You are the Prince of Persia. Embark on a journey to save your kingdom from the treacherous Vizier. - Master the Sands of Time and use your dagger to reverse, accelerate, freeze, and slow time itself. - Fight cursed enemies and solve puzzles along the way.",
+  "developer_ids": [
+   [
+    405,
+    "Ubisoft"
+   ]
+  ],
+  "developers": [
+   "Ubisoft"
+  ],
+  "esrb": "Teen",
+  "metacritic": null,
+  "name": "Prince of Persia: The Sands of Time Remake",
+  "publishers": [
+   "Ubisoft Entertainment"
+  ],
+  "released": null,
+  "tba": true,
+  "website": null
+ },
  "ratchet-clank-rift-apart": {
   "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
   "developer_ids": [
@@ -352,6 +490,27 @@
    "PlayStation PC"
   ],
   "released": "2021-06-11",
+  "tba": false,
+  "website": null
+ },
+ "resident-evil-veronica": {
+  "description": "Resident Evil Veronica is a remake of 2000's Resident Evil Code: Veronica. In 2027, madness and intrigue, love and hate all combine to create a chilling new entry in survival horror.",
+  "developer_ids": [
+   [
+    3678,
+    "Capcom"
+   ]
+  ],
+  "developers": [
+   "Capcom"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Resident Evil Veronica",
+  "publishers": [
+   "Capcom"
+  ],
+  "released": "2027-12-31",
   "tba": false,
   "website": null
  },
@@ -410,6 +569,27 @@
   "released": "2002-03-01",
   "tba": false,
   "website": "http://www.lucasarts.com"
+ },
+ "the-expanse-osiris-reborn": {
+  "description": "The Expanse: Osiris Reborn is a third-person Action RPG set in the world of The Expanse. You are not a hero, but a simple mercenary who found himself in the wrong place at the wrong time. Assemble a team, break through the web of lies and leave your mark on the history of the solar system.",
+  "developer_ids": [
+   [
+    28876,
+    "Owlcat Games"
+   ]
+  ],
+  "developers": [
+   "Owlcat Games"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "The Expanse: Osiris Reborn",
+  "publishers": [
+   "Owlcat Games"
+  ],
+  "released": "2027-12-31",
+  "tba": false,
+  "website": null
  },
  "the-last-of-us-part-2": {
   "description": "The Last of Us Part II is the sequel to the post-apocalyptic zombie game The Last of Us. Plot",
@@ -477,6 +657,65 @@
   ],
   "released": null,
   "tba": true,
+  "website": null
+ },
+ "titan-quest-2": {
+  "description": "Nemesis, Goddess of Retribution, is out of control. She is corrupting the Threads of Fate and punishing all those who oppose her. Take up your weapon, fight alongside gods, and change fate itself in Titan Quest 2, an action RPG inspired by Greek mythology.",
+  "developer_ids": [
+   [
+    4627,
+    "Grimlore Games"
+   ]
+  ],
+  "developers": [
+   "Grimlore Games"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Titan Quest 2",
+  "publishers": [
+   "THQ Nordic"
+  ],
+  "released": "2027-01-19",
+  "tba": false,
+  "website": null
+ },
+ "tomb-raider-catalyst": {
+  "description": "Tomb Raider: Catalyst marks a bold direction for the series as Lara Croft embarks on a new adventure across Northern India. Tomb Raider: Catalyst is set in the wake of a mythical cataclysm that has unleashed ancient secrets and awakened the mysterious forces that guard them.",
+  "developer_ids": [
+   [
+    4037,
+    "Crystal Dynamics"
+   ]
+  ],
+  "developers": [
+   "Crystal Dynamics"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Tomb Raider: Catalyst",
+  "publishers": [],
+  "released": "2027-12-31",
+  "tba": false,
+  "website": null
+ },
+ "tomb-raider-legacy-of-atlantis": {
+  "description": "",
+  "developer_ids": [
+   [
+    4037,
+    "Crystal Dynamics"
+   ]
+  ],
+  "developers": [
+   "Crystal Dynamics"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Tomb Raider: Legacy of Atlantis",
+  "publishers": [],
+  "released": "2027-02-12",
+  "tba": false,
   "website": null
  }
 }
