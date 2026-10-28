@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-28T06:05:50+00:00",
+ "generated_at": "2026-10-28T17:15:37+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -7,6 +7,7 @@
  },
  "profile": {
   "online_id": "cwil79",
+  "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 329,
   "level_progress": 38,
@@ -26,9 +27,9 @@
    ],
    "owned": true,
    "acquired": "2025-12-14T16:02:26Z",
-   "hours": 1.2,
+   "hours": 2.9,
    "first_played": "2026-10-26T20:12:49.930000+00:00",
-   "last_played": "2026-10-27T20:07:27.100000+00:00",
+   "last_played": "2026-10-27T21:52:42.470000+00:00",
    "progress": 0,
    "earned": {
     "bronze": 0,
@@ -61,9 +62,9 @@
    "trophies_total": 17,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-27T20:07:27.100000+00:00",
+   "last_activity": "2026-10-27T21:52:42.470000+00:00",
    "hours_by_year": {
-    "2026": 1.2
+    "2026": 2.9
    },
    "metacritic": 92,
    "genres": [
