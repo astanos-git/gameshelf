@@ -268,11 +268,24 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 3.0,
+"glitched": 1,
 "hours": 18,
-"missable": 1
+"missable": 18,
+"online": 0,
+"playthroughs": 2
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 1,
+"hours": 18,
+"hours_text": "15–20",
+"missable": 18,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/alone-in-the-dark-2024-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 18,
 "hours_text": "15–20",
@@ -2100,11 +2113,22 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 4.0,
+"glitched": 0,
 "hours": 22,
-"missable": 6
+"missable": 43,
+"playthroughs": 2
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 4.0,
+"glitched": 0,
+"hours": 20,
+"hours_text": "20",
+"missable": 43,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/dishonored-2-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 22,
 "hours_text": "20–25",
@@ -2436,11 +2460,24 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 6.5,
+"glitched": 0,
 "hours": 110,
-"missable": 1
+"missable": 5,
+"online": 0,
+"playthroughs": 1
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 6.5,
+"glitched": 0,
+"hours": 80,
+"hours_text": "60–100",
+"missable": 5,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/elden-ring-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 110,
 "hours_text": "100–120",
@@ -3143,11 +3180,24 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 4.0,
+"glitched": 0,
 "hours": 45,
-"missable": 0
+"missable": 0,
+"online": 0,
+"playthroughs": 1
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 4.0,
+"glitched": 0,
+"hours": 35,
+"hours_text": "30–40",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/god-of-war-2018-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 45,
 "hours_text": "40–50",
@@ -4744,11 +4794,22 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"hours": 14,
-"missable": 1
+"difficulty": 3.0,
+"hours": 50,
+"missable": 15,
+"online": 0,
+"playthroughs": 2
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 3.0,
+"hours": 50,
+"hours_text": "40–60",
+"missable": 15,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/mafia-3-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 14,
 "hours_text": "12–15",
@@ -6063,11 +6124,24 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 5.5,
+"glitched": 0,
 "hours": 45,
-"missable": 4
+"missable": 4,
+"online": 0,
+"playthroughs": 5
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 5.5,
+"glitched": 0,
+"hours": 25,
+"hours_text": "20–30",
+"missable": 2,
+"online": 0,
+"playthroughs": 5,
+"url": "https://www.powerpyx.com/shadow-of-the-colossus-ps4-remake-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 45,
 "hours_text": "40–50",
@@ -7184,11 +7258,21 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 7.5,
+"glitched": 0,
 "hours": 55,
-"missable": 10
+"missable": 10,
+"playthroughs": 3
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 7.5,
+"glitched": 0,
+"hours": 30,
+"hours_text": "30",
+"playthroughs": 3,
+"url": "https://www.powerpyx.com/the-evil-within-2-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 55,
 "hours_text": "50–60",
@@ -7254,9 +7338,25 @@
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
 },
-"combined": {},
+"combined": {
+"difficulty": 2.0,
+"glitched": 1,
+"hours": 28,
+"missable": 0,
+"online": 0,
+"playthroughs": 1
+},
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 2.0,
+"glitched": 1,
+"hours": 28,
+"hours_text": "25–30",
+"missable": 0,
+"online": 0,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/the-last-of-us-2-trophy-guide-roadmap/"
+},
 "truetrophies": null
 }
 },
@@ -8401,5 +8501,5 @@
 }
 }
 },
-"updated_at": "2026-10-28T12:06:10+00:00"
+"updated_at": "2026-10-28T12:22:32+00:00"
 }
