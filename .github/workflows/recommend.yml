@@ -17,6 +17,10 @@ on:
         description: "Difficulty only: how many minutes to spend (max 60)"
         type: string
         default: "55"
+      retry:
+        description: "Difficulty only: site(s) to check again for games not found before (e.g. powerpyx)"
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -62,7 +66,7 @@ jobs:
       - name: Platinum difficulty from guide sites
         if: env.MODE == 'full' || env.MODE == 'difficulty'
         continue-on-error: true
-        run: python difficulty.py --minutes ${{ env.MODE == 'difficulty' && inputs.minutes || '15' }}
+        run: python difficulty.py --minutes ${{ env.MODE == 'difficulty' && inputs.minutes || '15' }} ${{ env.MODE == 'difficulty' && inputs.retry != '' && format('--retry {0}', inputs.retry) || '' }}
       - name: Publish
         if: env.MODE != 'push-test'
         run: |

@@ -90,9 +90,24 @@ def parse_summary(t: str) -> dict:
     return out
 
 
+def match_score(title: str, names: list[str]) -> float:
+    """1 = same title; 0.9+ = near-identical; 0.8 = the guide's title is the start of ours
+    ("The Witcher 3: Wild Hunt" for "... — Remastered"); 0 = different game."""
+    t = norm(re.sub(r"(?i)\s*(trophy guide.*|achievement guide.*|guide\s*&\s*roadmap.*|trophy roadmap.*|-\s*psnprofiles.*)$", "", html.unescape(title).replace("\xa0", " ")))
+    best = 0.0
+    for n in names:
+        for v in {norm(n), norm(search_name(n))}:
+            if not v or not t:
+                continue
+            r = 1.0 if t == v else SequenceMatcher(None, t, v).ratio()
+            if r < 0.9 and len(t) >= 8 and v.startswith(t + " ") and re.search(r"(?i)remaster|edition|director|complete|definitive|goty|ps[45]", v[len(t):]):
+                r = 0.8
+            best = max(best, r if r >= 0.8 else 0.0)
+    return best
+
+
 def same_game(title: str, names: list[str]) -> bool:
-    t = norm(re.sub(r"(?i)\s*(trophy guide.*|achievement guide.*|guide\s*&\s*roadmap.*|-\s*psnprofiles.*)$", "", html.unescape(title)))
-    return any(t == norm(n) or SequenceMatcher(None, t, norm(n)).ratio() >= 0.9 for n in names if n)
+    return match_score(title, names) >= 0.9
 
 
 # ---------------------------------------------------------------- sources
@@ -111,18 +126,25 @@ def powerpyx(names: list[str]) -> dict | None:
             found = parse_summary(text_of(page.text))
             if found.get("difficulty") is not None:
                 return {**found, "url": url}
+    # search "<game> trophy guide" (big games have dozens of collectible guides that would crowd it out otherwise)
+    cands = []
     for q in dict.fromkeys(search_name(n) for n in names):
-        r = fetch(f"https://www.powerpyx.com/wp-json/wp/v2/posts?search={quote_plus(q)}&per_page=10")
+        r = fetch(f"https://www.powerpyx.com/wp-json/wp/v2/posts?search={quote_plus(q + ' trophy guide')}&per_page=20")
         try:
             posts = r.json() if r else []
         except ValueError:
             posts = []
         for p in posts if isinstance(posts, list) else []:
             title = html.unescape(p.get("title", {}).get("rendered", "")).replace("\xa0", " ")
-            if re.search(r"(?i)trophy guide", title) and same_game(title, names):
-                found = parse_summary(text_of(p.get("content", {}).get("rendered", "")))
-                if found.get("difficulty") is not None:
-                    return {**found, "url": p.get("link")}
+            score = match_score(title, names) if re.search(r"(?i)trophy (guide|roadmap)", title) else 0
+            if score:
+                cands.append((score, p))
+        if any(sc == 1.0 for sc, _ in cands):
+            break
+    for _, p in sorted(cands, key=lambda c: -c[0]):          # the closest title first
+        found = parse_summary(text_of(p.get("content", {}).get("rendered", "")))
+        if found.get("difficulty") is not None:
+            return {**found, "url": p.get("link")}
     return None
 
 
@@ -186,6 +208,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--minutes", type=float, default=20)
     ap.add_argument("--probe")
+    ap.add_argument("--retry", default="", help="source(s) whose 'not found' results to check again now, e.g. powerpyx")
     args = ap.parse_args()
 
     if args.probe:
@@ -204,6 +227,10 @@ def main() -> None:
     order = {"started": 0, "unplayed": 1, "completed": 3}
     games = sorted(data["games"], key=lambda g: (order.get(g.get("status"), 2), -(g.get("hours") or 0)))
     deadline = time.time() + args.minutes * 60
+    for src in filter(None, args.retry.split(",")):          # after a matching fix: forget earlier misses
+        for e in store["games"].values():
+            if not e.get("sources", {}).get(src):
+                e.get("checked", {}).pop(src, None)
     blocked: dict[str, str] = {}
     stats = {k: {"found": 0, "missing": 0} for k in SOURCES}
     done = 0
@@ -211,8 +238,8 @@ def main() -> None:
     for g in games:
         if time.time() > deadline:
             break
-        if not g.get("has_trophies", True) and not g.get("trophies_total"):
-            continue
+        if not g.get("trophies_total") and (g.get("hours") or 0) > 0 and g.get("status") != "unplayed":
+            continue        # played but no trophies at all: an app (Netflix, Spotify…), not a game
         entry = store["games"].setdefault(g["name"], {"sources": {}, "checked": {}})
         names = [names_override.get(g["name"], g["name"]), *g.get("aliases", [])]
         info = {"names": names, "platforms": g.get("platforms", [])}
