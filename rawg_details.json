@@ -1,4 +1,30 @@
 {
+ "9-years-of-shadows": {
+  "description": "9 Years of Shadows is an emotionally-driven metroidvania enhanced by healing music that tells the story of Europa, a young woman of noble birth tasked with ending the curse that plagues her people and restoring color to all lands. Immersive gameplay",
+  "developer_ids": [
+   [
+    428004,
+    "Halberd Studios"
+   ],
+   [
+    94316,
+    "HelBeard"
+   ]
+  ],
+  "developers": [
+   "Halberd Studios",
+   "HelBeard"
+  ],
+  "esrb": null,
+  "metacritic": 74,
+  "name": "9 Years of Shadows",
+  "publishers": [
+   "Freedom Games"
+  ],
+  "released": "2023-03-26",
+  "tba": false,
+  "website": "http://halberdstudios.com/"
+ },
  "bayonetta": {
   "description": "Bayonetta is a slasher game developed by Platinum Games. The game is set in a fictional European city of Vigrid. The main character is a witch named Bayonetta who fights angels with pistols and magic wishing only one thing: to recall everything happened to her.",
   "developer_ids": [

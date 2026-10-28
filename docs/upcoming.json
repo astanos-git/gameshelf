@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T04:40:51+00:00",
+ "generated_at": "2026-10-28T09:59:28+00:00",
  "upcoming": [
   {
    "slug": "the-witcher-4",
@@ -33,6 +33,22 @@
    ],
    "url": "https://rawg.io/games/the-witcher-remake",
    "reason": "Series: The Witcher"
+  },
+  {
+   "slug": "intergalactic-the-heretic-prophet",
+   "name": "Intergalactic: The Heretic Prophet",
+   "image": "https://media.rawg.io/media/screenshots/d69/d69eb749a78f58e238bb7973c108382c.jpg",
+   "released": null,
+   "tba": true,
+   "metacritic": null,
+   "genres": [
+    "Adventure"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/intergalactic-the-heretic-prophet",
+   "reason": "Studio: Naughty Dog"
   },
   {
    "slug": "marvels-spider-man-3",
@@ -70,6 +86,70 @@
   }
  ],
  "details": {
+  "owlboy": {
+   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
+   "developers": [
+    "D-Pad Studio",
+    "D-Pad Studios"
+   ],
+   "esrb": null,
+   "metacritic": 88,
+   "name": "Owlboy",
+   "publishers": [
+    "D-Pad Studio"
+   ],
+   "released": "2016-10-31",
+   "tba": false,
+   "website": "http://www.owlboygame.com"
+  },
+  "marvels-spider-man-3": {
+   "name": "Marvel's Spider-Man 3",
+   "released": null,
+   "tba": true,
+   "description": "Marvel’s Spider-Man 3 is currently in development by Insomniac Games for PlayStation 5 and PlayStation 6. Created in collaboration with Marvel Games and PlayStation.",
+   "developers": [
+    "Insomniac Games"
+   ],
+   "publishers": [
+    "Sony Interactive Entertainment"
+   ],
+   "website": "https://x.com/insomniacgames?s=09",
+   "metacritic": null,
+   "esrb": null
+  },
+  "9-years-of-shadows": {
+   "name": "9 Years of Shadows",
+   "released": "2023-03-26",
+   "tba": false,
+   "description": "9 Years of Shadows is an emotionally-driven metroidvania enhanced by healing music that tells the story of Europa, a young woman of noble birth tasked with ending the curse that plagues her people and restoring color to all lands. Immersive gameplay",
+   "developers": [
+    "Halberd Studios",
+    "HelBeard"
+   ],
+   "publishers": [
+    "Freedom Games"
+   ],
+   "website": "http://halberdstudios.com/",
+   "metacritic": 74,
+   "esrb": null
+  },
+  "shadows-die-twice": {
+   "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
+   "developers": [
+    "FromSoftware"
+   ],
+   "esrb": "Mature",
+   "metacritic": 90,
+   "name": "Sekiro: Shadows Die Twice",
+   "publishers": [
+    "FromSoftware",
+    "Activision Value Publishing",
+    "方块游戏"
+   ],
+   "released": "2019-03-22",
+   "tba": false,
+   "website": "http://www.sekirothegame.com"
+  },
   "the-witcher-remake": {
    "name": "The Witcher: Remake",
    "released": null,
@@ -85,20 +165,55 @@
    "metacritic": null,
    "esrb": null
   },
-  "dreams": {
-   "name": "Dreams",
-   "released": "2020-02-14",
-   "tba": false,
-   "description": "Dream anything, play everything Create, play and share your own games and experiences, in the incredible new title from the LittleBigPlanet and Tearaway team. Dreams is an extraordinary open-ended experience where you can make anything, from interactive adventures and platformers, to shoot ‘em ups, puzzlers and more. The possibilities are endless.",
+  "brothers-a-tale-of-two-sons-2": {
+   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
    "developers": [
-    "Media Molecule"
+    "Starbreeze Studios",
+    "Parables Games"
+   ],
+   "esrb": "Teen",
+   "metacritic": 90,
+   "name": "Brothers: A Tale of Two Sons",
+   "publishers": [
+    "505 Games",
+    "Parables Games"
+   ],
+   "released": "2013-08-07",
+   "tba": false,
+   "website": "https://505games.com/games/brothers/"
+  },
+  "marvels-venom": {
+   "name": "Marvel's Venom",
+   "released": null,
+   "tba": true,
+   "description": "Marvel’s Venom is currently in development by Insomniac Games for PlayStation 5. Created in collaboration with Marvel Games and PlayStation.",
+   "developers": [
+    "Insomniac Games"
    ],
    "publishers": [
     "Sony Interactive Entertainment"
    ],
-   "website": "http://dreams.mediamolecule.com/",
-   "metacritic": 89,
-   "esrb": "Teen"
+   "website": null,
+   "metacritic": null,
+   "esrb": "Rating Pending"
+  },
+  "dark-souls-ii": {
+   "description": "Dark Souls II is the third installment in the well-known Souls series. It’s a different game from all the others because of its directors. With Dark Souls II the main director and founder of Souls-like genre Hidetaka Miyazaki took place only as a supervisor of the project, leaving a place of the director of the game for two young video game designers Tomohiro Shibuya and Yui Tanimura.",
+   "developers": [
+    "BANDAI NAMCO Entertainment America",
+    "FromSoftware"
+   ],
+   "esrb": "Mature",
+   "metacritic": 91,
+   "name": "Dark Souls II",
+   "publishers": [
+    "Bandai Namco Entertainment",
+    "BANDAI NAMCO Entertainment US",
+    "FromSoftware"
+   ],
+   "released": "2014-03-11",
+   "tba": false,
+   "website": "http://www.darksoulsii.com"
   },
   "intergalactic-the-heretic-prophet": {
    "name": "Intergalactic: The Heretic Prophet",
@@ -146,103 +261,20 @@
    "metacritic": null,
    "esrb": null
   },
-  "dark-souls-ii": {
-   "name": "Dark Souls II",
-   "released": "2014-03-11",
-   "tba": false,
-   "description": "Dark Souls II is the third installment in the well-known Souls series. It’s a different game from all the others because of its directors. With Dark Souls II the main director and founder of Souls-like genre Hidetaka Miyazaki took place only as a supervisor of the project, leaving a place of the director of the game for two young video game designers Tomohiro Shibuya and Yui Tanimura.",
+  "dreams": {
+   "description": "Dream anything, play everything Create, play and share your own games and experiences, in the incredible new title from the LittleBigPlanet and Tearaway team. Dreams is an extraordinary open-ended experience where you can make anything, from interactive adventures and platformers, to shoot ‘em ups, puzzlers and more. The possibilities are endless.",
    "developers": [
-    "BANDAI NAMCO Entertainment America",
-    "FromSoftware"
-   ],
-   "publishers": [
-    "Bandai Namco Entertainment",
-    "BANDAI NAMCO Entertainment US",
-    "FromSoftware"
-   ],
-   "website": "http://www.darksoulsii.com",
-   "metacritic": 91,
-   "esrb": "Mature"
-  },
-  "shadows-die-twice": {
-   "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
-   "developers": [
-    "FromSoftware"
-   ],
-   "esrb": "Mature",
-   "metacritic": 90,
-   "name": "Sekiro: Shadows Die Twice",
-   "publishers": [
-    "FromSoftware",
-    "Activision Value Publishing",
-    "方块游戏"
-   ],
-   "released": "2019-03-22",
-   "tba": false,
-   "website": "http://www.sekirothegame.com"
-  },
-  "marvels-spider-man-3": {
-   "name": "Marvel's Spider-Man 3",
-   "released": null,
-   "tba": true,
-   "description": "Marvel’s Spider-Man 3 is currently in development by Insomniac Games for PlayStation 5 and PlayStation 6. Created in collaboration with Marvel Games and PlayStation.",
-   "developers": [
-    "Insomniac Games"
-   ],
-   "publishers": [
-    "Sony Interactive Entertainment"
-   ],
-   "website": "https://x.com/insomniacgames?s=09",
-   "metacritic": null,
-   "esrb": null
-  },
-  "marvels-venom": {
-   "name": "Marvel's Venom",
-   "released": null,
-   "tba": true,
-   "description": "Marvel’s Venom is currently in development by Insomniac Games for PlayStation 5. Created in collaboration with Marvel Games and PlayStation.",
-   "developers": [
-    "Insomniac Games"
-   ],
-   "publishers": [
-    "Sony Interactive Entertainment"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": "Rating Pending"
-  },
-  "brothers-a-tale-of-two-sons-2": {
-   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
-   "developers": [
-    "Starbreeze Studios",
-    "Parables Games"
+    "Media Molecule"
    ],
    "esrb": "Teen",
-   "metacritic": 90,
-   "name": "Brothers: A Tale of Two Sons",
+   "metacritic": 89,
+   "name": "Dreams",
    "publishers": [
-    "505 Games",
-    "Parables Games"
+    "Sony Interactive Entertainment"
    ],
-   "released": "2013-08-07",
+   "released": "2020-02-14",
    "tba": false,
-   "website": "https://505games.com/games/brothers/"
-  },
-  "owlboy": {
-   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
-   "developers": [
-    "D-Pad Studio",
-    "D-Pad Studios"
-   ],
-   "esrb": null,
-   "metacritic": 88,
-   "name": "Owlboy",
-   "publishers": [
-    "D-Pad Studio"
-   ],
-   "released": "2016-10-31",
-   "tba": false,
-   "website": "http://www.owlboygame.com"
+   "website": "http://dreams.mediamolecule.com/"
   }
  }
 }
