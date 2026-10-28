@@ -1447,6 +1447,8 @@
 "sources": {
 "powerpyx": {
 "difficulty": 3.0,
+"hours": 70,
+"hours_text": "70",
 "missable": 14,
 "online": 0,
 "playthroughs": 1,
@@ -2003,6 +2005,8 @@
 "powerpyx": {
 "difficulty": 4.5,
 "glitched": 0,
+"hours": 30,
+"hours_text": "30",
 "missable": 37,
 "online": 5,
 "playthroughs": 2,
@@ -3395,13 +3399,15 @@
 },
 "combined": {
 "difficulty": 4.0,
-"hours": 4,
+"hours": 45,
 "missable": 0,
 "online": 69
 },
 "sources": {
 "powerpyx": {
 "difficulty": 4.0,
+"hours": 45,
+"hours_text": "40–50",
 "missable": 0,
 "online": 12,
 "url": "https://www.powerpyx.com/hitman-3-trophy-guide-roadmap/"
@@ -3422,13 +3428,15 @@
 },
 "combined": {
 "difficulty": 4.0,
-"hours": 2,
+"hours": 45,
 "missable": 0,
 "online": 123
 },
 "sources": {
 "powerpyx": {
 "difficulty": 4.0,
+"hours": 45,
+"hours_text": "40–50",
 "missable": 0,
 "online": 12,
 "url": "https://www.powerpyx.com/hitman-3-trophy-guide-roadmap/"
@@ -5624,6 +5632,8 @@
 "sources": {
 "powerpyx": {
 "difficulty": 7.0,
+"hours": 10,
+"hours_text": "10",
 "missable": 0,
 "online": 0,
 "playthroughs": 2,
@@ -6056,6 +6066,8 @@
 "powerpyx": {
 "difficulty": 4.0,
 "glitched": 3,
+"hours": 40,
+"hours_text": "40",
 "missable": 0,
 "playthroughs": 2,
 "url": "https://www.powerpyx.com/rise-of-the-tomb-raider-trophy-guide-roadmap/"
@@ -8104,6 +8116,8 @@
 "powerpyx": {
 "difficulty": 3.5,
 "glitched": 0,
+"hours": 5,
+"hours_text": "5",
 "missable": 0,
 "online": 0,
 "playthroughs": 1,
@@ -8526,5 +8540,5 @@
 }
 }
 },
-"updated_at": "2026-10-28T13:34:36+00:00"
+"updated_at": "2026-10-28T13:36:53+00:00"
 }
