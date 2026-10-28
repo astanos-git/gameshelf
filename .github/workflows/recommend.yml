@@ -17,10 +17,6 @@ on:
         description: "Difficulty only: how many minutes to spend (max 60)"
         type: string
         default: "55"
-      probe:
-        description: "Difficulty only: extra game names to diagnose, comma-separated"
-        type: string
-        default: ""
       reparse:
         description: "Difficulty only: site(s) whose saved guide pages to read again (e.g. powerpyx)"
         type: string
@@ -67,10 +63,6 @@ jobs:
         env:
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: python discover.py
-      - name: Probe the guide sites
-        if: env.MODE == 'difficulty'
-        continue-on-error: true
-        run: python difficulty.py --probe "Metaphor ReFantazio${{ inputs.probe != '' && format(',{0}', inputs.probe) || '' }}"
       - name: Platinum difficulty from guide sites
         if: env.MODE == 'full' || env.MODE == 'difficulty'
         continue-on-error: true

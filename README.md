@@ -2,9 +2,15 @@
 
 A personal PlayStation dashboard you can open from your phone. It shows your games, playtime, trophies (earned and remaining), and Metacritic scores. The data refreshes only when you ask for it.
 
-- **Dashboard:** `docs/index.html` (your library) and `docs/stats.html` (yearly stats and genres), hosted free on GitHub Pages
-- **Data:** `fetch.py` pulls from PSN (via the unofficial PSNAWP library) , RAWG (Metacritic scores and genres) and HowLongToBeat (time to beat), then writes `docs/data.json`
-- **Refresh:** a GitHub Action you start with one tap. Nothing runs on your PC.
+- **Dashboard** (`docs/`, hosted free on GitHub Pages): Library, Play next, Stats and Review pages.
+- **Data:**
+  - `fetch.py` pulls from PSN (unofficial PSNAWP library), RAWG, Wikidata/Wikipedia and HowLongToBeat into `docs/data.json`.
+  - `recommend.py` makes the weekly picks.
+  - `discover.py` builds Coming soon.
+  - `difficulty.py` reads trophy guides.
+  - `notify.py` sends the Monday push.
+  - `flag.py` saves what you change on the dashboard.
+- **Runs on GitHub Actions:** refresh on demand, the weekly job every Monday. Nothing runs on your PC.
 
 ---
 
@@ -48,46 +54,84 @@ Go to **Actions → Refresh game data → Run workflow**. The run takes about 3�
 ---
 
 ## Everyday use
-- **Finish forecast**: games in progress show "done ~28 Nov" in Up next and "At your recent pace (~7 h/week) you'd finish around…" in their panel: time left (HowLongToBeat Main + Extras minus your hours) at your pace over the last ~4 weeks (from the Monday snapshots).
-- **Missable warning** in Up next: games with missable trophies or several playthroughs show "⚠️ 11 missable · 2 playthroughs · Guide ↗" so you read the roadmap before starting.
-- **Platinum difficulty**: the Library can sort by **Easiest platinum** or **Shortest platinum**, and the **🏆 Easy platinum** chip lists games the guides rate 3.5/10 or less that you haven't finished (dropped games left out).
-- **Wrong info?** (bottom of a game's panel): correct the trophy guide, the HowLongToBeat match, the RAWG match (genres, Metacritic, release), the Metacritic score or the name shown. Type `none` when there's no match, or tap **Back to automatic** to undo. It goes through your pending changes and is saved in `overrides.json`. A new trophy guide is read straight away; the other fixes apply at the next data refresh.
 
-- **Tap to see more on Play next:** every game on Play next opens a panel. Your own games get the same panel as the Library (without the trophy list); weekly picks, wishlist and coming-soon games show a short description, studios, release date and links (refreshed every Monday).
-- **Coming soon** (Play next → Discover): unreleased PS4/PS5 games in categories: **Your series**, **Your studios**, **Your taste** (same taste profile as the weekly picks), **Big releases** and **Indie** (the most awaited on RAWG), plus **Out soon** (next 60 days). Tap **+** to add one to your wishlist. Updated every Monday (`discover.py`); to update it now, run **Weekly recommendations** with *What to run* = `coming-soon`.
-- **Wishlist**: compact list with sorting (recently added, release date, Metacritic, shortest, name), an Out now / Not out yet filter, and ✕ to remove a game.
-- **Backlog over time** (Stats → Collection → Backlog): how many games you owned but hadn't started, month by month, with last year's trend projected.
-- **Share your year** (Review): **Share as image** makes a 1080×1350 card of the year and opens your phone's share sheet (on a computer it downloads).
-- **Monday push to your phone:** install the free **ntfy** app, subscribe to a topic with a long random name (anyone who knows the name can read it), then add it as the repo secret `NTFY_TOPIC`. Every Monday you get last week's recap, the new picks, games out in the next 30 days, and a warning when the PSN login is about to expire. To test it, run **Weekly recommendations** with *What to run* = `push-test`.
+### Saving changes
+Ratings, Beaten / Dropped flags, Up next, wishlist, 👍 / 👎 on picks, goals and "Wrong info?" fixes all work the same way. Each one goes into a bar at the bottom of the page ("3 changes pending"). Tap **Send all**: one pre-filled GitHub page opens with everything, tap **Create** once, and the dashboard updates in about a minute.
+- Changing the same thing twice (rating a game 85, then 88) keeps only the latest.
+- The list stays in this browser until you send it. If you closed GitHub without tapping Create, tap **Restore**.
+- Only issues you open yourself are processed, so nobody else can change your data.
 
-- **Layout:** Stats is split into tabs (Overview, Trophies, Habits, Taste, Collection) under the year chips, so you see one part at a time; the address remembers the tab (e.g. `stats.html#taste`). Explanations are folded behind **How this works**, long lists behind **Show all**. A game's trophy list is folded behind **Trophy list** at the bottom of its panel.
+### Refreshing data
+Tap **Refresh data** at the top of the Library. It opens the workflow on GitHub: tap **Run workflow** and wait a few minutes. The weekly job (below) also refreshes everything every Monday.
 
-- **Pending changes:** ratings, flags, Up next, wishlist, 👍/👎 on picks and goals don't open GitHub one by one. Each one is added to a bar at the bottom of every page ("5 changes pending"). Tap it to review or remove items, then **Send all**: one pre-filled GitHub page opens with everything, tap **Create** once and the dashboard updates in about a minute. Changing the same thing twice (e.g. rating a game 85, then 88) keeps only the latest. The list is kept in this browser on this device until you send it. If you closed GitHub without tapping Create, tap **Restore** to get the list back. Lots of changes at once are split into parts if they don't fit on one GitHub page.
-- **Refresh:** tap **Refresh data** at the top of the dashboard. It opens the workflow on GitHub; tap **Run workflow** and wait a few minutes. You need to be signed in to GitHub, and the GitHub mobile app works too.
-- **Backlog:** the Backlog filter shows owned games you have never started. It sorts by Metacritic score so you can pick the next one to play.
-- **Details:** tap a game to see remaining trophies by grade, HowLongToBeat times, genres, and your first and last played dates.
-- **Time to beat:** each game shows "Beat in ~N h" (HowLongToBeat Main + Extras). Sort by **Time to beat** to find short games in your backlog.
-- **Beaten / Dropped:** tap a game, then **Beaten** (finished without the platinum) or **Dropped** in the **You** box. Tap it again (✓ Beaten) to remove the flag. The change goes into your pending changes (see below) and is saved when you send them. Flags are saved in `docs/flags.json`, and refreshes never overwrite them. Two automatic rules apply:
-  - Earning the platinum or 100% of the trophies later turns a Beaten game into **Completed**.
-  - A Dropped game with new playtime or a new trophy after the date you dropped it goes back to its normal status at your next refresh.
-  Only issues you open yourself are processed, so nobody else can change your flags.
-- **Flag several games at once:** tap **Select** (next to the sort menu), tap the games you want, or use **Select all shown** for the current filter or search, then choose an action in the bar at the bottom. It's added to your pending changes as one change. Very large selections (roughly 150+ games) are split into Part 1, Part 2 and so on; tap each part. Completed games can't be selected.
-- **Trophies:** tap a game to see its full trophy list: name, description, grade, the % of players who have it, and when you earned it. Filter to **Missing** and sort by **Most common first** to find the easiest ones left, or sort by when you earned them and show only trophies earned in the last 30 days, 3 months or a given year. Hidden trophies stay hidden until you tap them. Rarity % is updated whenever a game's list changes, meaning when you earn a trophy in it.
-- **Your rating:** open a game, set a score from 0 to 100 with the slider (or − / + for single points), then tap **Save** (saved the same way as flags). The slider starts at the Metacritic score as a reference. Your score shows in the list, and the Stats page compares your taste with Metacritic.
-- **Monday digest:** the top of Play next shows last week: trophies, platinums, days played, new games, hours per game (from weekly snapshots, from the second Monday on) and progress on this year's goals.
-- **Up next:** tap **+ Up next** in a game's panel (up to 5). Reorder or remove them on Play next, then tap **Save order**. Up next games go first in **Fit my hours**.
-- **Wishlist (dashboard only, not your PSN wishlist):** tap **+ Wishlist** on a weekly pick. Games leave the list once they're in your library, and wishlisted games aren't suggested again.
-- **👍 / 👎 on weekly picks:** teaches the recommender. 👍 pulls future picks towards games like it; 👎 means it won't come back and similar games rank lower.
-- **Fit my hours** (Play next → Now → What to play): enter the hours you have; it suggests the best mix of backlog and in-progress games that fits.
-- **Next platinum, how hard?:** games in progress with a platinum, rated Easy/Medium/Hard from how rare the platinum is and how many of your missing trophies are rare (under 10% of players).
-- **To rate:** a filter chip in the Library listing finished games you haven't rated yet.
-- **This week's picks:** every Monday morning a workflow refreshes your data, takes a weekly snapshot and picks 3 games you don't own or haven't played, matched to your taste (genres and RAWG tags from what you play, finish and rate highly; dropped games count against) and your usual game length. Each comes with a short reason. Picks don't repeat for 12 weeks. You can also run **Actions → Weekly recommendations → Run workflow** for a fresh set.
-- **Play next** has three tabs: **Now** (last week, Up next, what to play), **Discover** (weekly picks, wishlist) and **Trophy hunting** (closest to platinum, how hard, DLC). **What to play → Best games:** tell it how much time you have and optionally a genre. It ranks your backlog by Metacritic, and **Surprise me** picks one at random, favouring better-rated games. Below that, **Closest to platinum** lists games at 70% or more with the missing trophies most players have, likely the easiest left.
-- **Review:** a one-page summary per year: headline numbers (compared with the previous year once the year is over), your game of the year, rarest trophy, busiest month and day, longest streak, what kind of player you were, and that year's platinums.
-- **DLC:** a game's trophy block shows each DLC pack's progress, and the trophy list is split into base game and DLC. **Play next → DLC to finish** lists DLC packs with trophies left in games you've finished or whose DLC you've started.
-- **Trophy guides:** "Trophy guide" (PSNProfiles guide search) next to a game's trophies, and "Guide" (web search) on every missing trophy.
-- **Yearly goals:** on the Review page, set targets for platinums, games finished, trophies and hours (saved like flags). Progress bars show where you stand, and a mark shows where an even pace would put you today.
-- **Stats:** the Stats tab shows each year, or all time: trophies, platinums, hours played, your top 3 games by trophies and by hours, your 5 rarest trophies, trophies by month, when you play (weekday and hour heatmap, streaks, Swiss time), milestones (first trophy, round numbers, every platinum), critics vs you (Metacritic against your hours, with hidden gems), your pace against HowLongToBeat, the backlog in hours with bought/started/finished per year, your trophy level over time (rebuilt from trophy dates with PSN's level formula) with a projection, your rarity profile and hunter score, whether you play new releases or catch up, your finish rate per genre, where your hours went (by game and genre), your series and favourite studios (from Wikidata), a trophy calendar (one square per day, platinum days marked), and a Taste part: your taste map by RAWG tag with your average rating, Critics vs you, rating patterns (what your below- and above-critics games have in common) and your hall of fame (top 10 by your rating), and a genre breakdown by hours or number of games.
+### Library
+- **Each row:** status, hours played, "Beat ~N h" (HowLongToBeat Main + Extras), the platinum estimate from trophy guides (🏆 3/10 · 120 h, green/amber/red), trophy progress, your rating (outlined badge) and the Metacritic score (filled badge).
+- **Filters:** Backlog, In progress, Beaten, Completed, Dropped, **🏆 Easy platinum** (rated 3.5/10 or less, not finished) and **To rate** (finished games without your rating). Sort by recent activity, Metacritic, hours, progress, trophies left, time to beat, **easiest** or **shortest platinum**, or name.
+- **Game panel** (tap a game):
+  - trophies by grade;
+  - the platinum line ("Platinum 3/10 · ~110 h · 2 playthroughs · 11 missable", with links to the guides);
+  - HowLongToBeat times and a **finish forecast** for games in progress ("at your recent pace, ~7 h/week, you'd finish around 28 Nov");
+  - facts and links;
+  - the **You** box: your rating (0–100 slider), **+ Up next**, **Beaten**, **Dropped** (tap again to undo);
+  - **Wrong info?**;
+  - the full **Trophy list** (folded): filter missing/earned, sort by rarity or date, DLC split out, guide links.
+- **Beaten / Dropped rules:** earning the platinum or 100% later turns a Beaten game into Completed; a Dropped game you play again goes back to its normal status.
+- **Select** (next to the sort menu) flags several games at once.
+
+### Play next
+- **Now:**
+  - **Last week:** trophies, platinums, hours played, new games, goal progress.
+  - **Up next:** up to 5 games in your order, with time left, the finish forecast and a ⚠️ missable warning linking to the guide.
+  - **What to play:** **Best games** (by Metacritic, filters by length and genre, **Surprise me**) or **Fit my hours** (the best mix for the hours you have).
+- **Discover:**
+  - **This week's picks:** 3 games you don't own, matched to your taste and usual length, with 👍 / 👎 and + Wishlist.
+  - **Wishlist** (dashboard only, not your PSN wishlist): sort it, filter Out now / Not out yet, ✕ to remove.
+  - **Coming soon:** unreleased PS4/PS5 games by category: Your series, Your studios, Your taste, Big releases, Indie (often empty: RAWG rarely lists consoles for unreleased indies), plus Out soon (next 60 days). Tap **+** to wishlist one.
+- **Trophy hunting:**
+  - **Closest to platinum:** with the easiest trophies left.
+  - **Next platinum: how hard?** Guide rating where there is one, otherwise an estimate from PSN rarity.
+  - **DLC to finish.**
+- Tap any game for its panel. Games you don't own show a description, studios and release date instead.
+
+### Stats
+Pick a year or all time, then a tab:
+- **Overview:** totals, top games, trophies by year.
+- **Trophies:** rarest trophies, a daily calendar, milestones, level history, rarity profile.
+- **Habits:** when you play, your pace against HowLongToBeat, finish rate, new releases versus catching up.
+- **Taste:** hall of fame, you against the critics, rating patterns, taste map, hours against Metacritic.
+- **Collection:** where your hours went, genres, backlog (with its trend over time), series, studios.
+
+Explanations are folded behind **How this works**.
+
+### Review
+A yearly summary: the headline numbers, your game of the year, highlights and that year's platinums. **Share as image** makes a 1080×1350 card for your phone's share sheet. **Goals** (platinums, games finished, trophies, hours) show progress against an even pace.
+
+### Every Monday (Weekly recommendations workflow)
+Around 06:00 Swiss time it:
+1. refreshes your data;
+2. takes the weekly playtime snapshot (for "Last week" and the forecasts);
+3. picks 3 new games;
+4. updates Coming soon;
+5. looks up platinum difficulty for new games (PowerPyx and TrueTrophies; games without a guide are retried after 30 days);
+6. sends the **Monday push**.
+
+To run one part by hand: **Actions → Weekly recommendations → Run workflow** and choose *What to run*:
+- `full`: everything (it also replaces this week's picks);
+- `coming-soon`;
+- `difficulty` (with *minutes*; *retry* / *reparse* `powerpyx` re-check games not found / re-read saved guides);
+- `push-test`.
+
+**Monday push to your phone:** install the free **ntfy** app, subscribe to a topic with a long random name, and add that name as the repo secret `NTFY_TOPIC`. Anyone who knows the name can read the messages. It sends last week's recap, the new picks, games out in the next 30 days, and a warning two weeks before the PSN login expires.
+
+### Fixing wrong info
+Open the game's panel and tap **Wrong info?**. You can correct:
+- the **trophy guide** (paste the PowerPyx address): read straight away;
+- the **HowLongToBeat match**;
+- the **game match** (a rawg.io address: genres, Metacritic, release date);
+- the **Metacritic score**;
+- the **name shown**.
+
+Type `none` when there is no match, or tap **Back to automatic** to undo. Fixes are saved in `overrides.json` and apply at the next data refresh.
 
 ## Renewing the PSN login (about every two months)
 The NPSSO token can't be renewed automatically: getting a new one requires signing in to Sony, which is protected by captchas and two-step verification. To keep this painless, the dashboard:
@@ -101,8 +145,7 @@ The token itself is never written to the dashboard or the repo. Only a short one
 ## When something goes wrong
 - **"PSN login expired" banner:** follow the renewal steps above.
 - **"Last refresh failed" banner:** Sony's servers returned an error. Try again later. If it keeps happening, see the next point.
-- **Wrong or missing HowLongToBeat time.** In `overrides.json`, under `"hltb"`, map the game name as shown on the dashboard to its title as written on howlongtobeat.com. The fix applies on the next refresh.
-- **Wrong or missing Metacritic score.** Find the game on rawg.io and copy the last part of its URL, for example `ghost-of-tsushima`. Add a line to `overrides.json`: `"Game Name As Shown": "ghost-of-tsushima"`. Use `null` instead of a slug to show no score. The fix applies on the next refresh.
+- **Wrong HowLongToBeat time, Metacritic score, genres, trophy guide or name:** use **Wrong info?** in the game's panel (see above).
 - **The workflow fails with 403 or connection errors from Sony.** Sony sometimes blocks cloud servers. Fallback: run it once from any computer with Python installed.
   ```bash
   pip install -r requirements.txt

@@ -189,7 +189,6 @@ const mcClass = m => m == null ? "none" : m >= 75 ? "good" : m >= 50 ? "mid" : "
 const fmtH = h => h >= 10 ? Math.round(h) + " h" : (Math.round(h * 2) / 2) + " h";
 const beatTime = x => x.hltb?.extra || x.hltb?.main || null;   // HowLongToBeat Main + Extras (Main Story if missing)
 const LENGTHS = { any: ["Any length", () => true], short: ["Under 10 h", h => h && h < 10], medium: ["10–30 h", h => h >= 10 && h <= 30], long: ["30 h +", h => h > 30] };
-const POOLS = { backlog: "Backlog", both: "Backlog + in progress" };
 let DATA, state = { length: "any", pool: "backlog", genre: "", mode: "best", wishSort: "added", wishF: "all", soonCat: "all" };
 try { Object.assign(state, JSON.parse(localStorage.getItem("shelf-play") || "{}")); } catch {}
 
