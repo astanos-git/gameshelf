@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-27T12:55:22+00:00",
+ "generated_at": "2026-10-28T06:05:50+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -26,9 +26,9 @@
    ],
    "owned": true,
    "acquired": "2025-12-14T16:02:26Z",
-   "hours": 0.0,
+   "hours": 1.2,
    "first_played": "2026-10-26T20:12:49.930000+00:00",
-   "last_played": "2026-10-26T20:12:49.930000+00:00",
+   "last_played": "2026-10-27T20:07:27.100000+00:00",
    "progress": 0,
    "earned": {
     "bronze": 0,
@@ -61,8 +61,10 @@
    "trophies_total": 17,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-26T20:12:53+00:00",
-   "hours_by_year": {},
+   "last_activity": "2026-10-27T20:07:27.100000+00:00",
+   "hours_by_year": {
+    "2026": 1.2
+   },
    "metacritic": 92,
    "genres": [
     "Indie",
@@ -215,39 +217,39 @@
    ],
    "rare": [
     {
-     "n": "Humility opens the floodgates",
-     "t": "silver",
-     "r": 2.9,
      "at": "2026-10-25T17:10:25+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/0979e96b-f7a8-4f2c-9981-3392548c2461.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/0979e96b-f7a8-4f2c-9981-3392548c2461.png",
+     "n": "Humility opens the floodgates",
+     "r": 2.9,
+     "t": "silver"
     },
     {
-     "n": "Out of darkness is born the light",
-     "t": "gold",
-     "r": 3.1,
      "at": "2026-10-26T16:50:02+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/58285f61-371b-40ca-be17-7e24b54da710.png"
-    },
-    {
-     "n": "Strange currents of friendly promise drift by",
-     "t": "silver",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/58285f61-371b-40ca-be17-7e24b54da710.png",
+     "n": "Out of darkness is born the light",
      "r": 3.1,
+     "t": "gold"
+    },
+    {
      "at": "2026-10-26T09:42:37+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/6c206be1-3283-47ce-b821-8f9a136032e5.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/6c206be1-3283-47ce-b821-8f9a136032e5.png",
+     "n": "Strange currents of friendly promise drift by",
+     "r": 3.1,
+     "t": "silver"
     },
     {
-     "n": "Ground to a halt",
-     "t": "bronze",
-     "r": 3.6,
      "at": "2026-10-26T11:40:35+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/45f18971-c82c-4c60-884a-621098ddd793.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/45f18971-c82c-4c60-884a-621098ddd793.png",
+     "n": "Ground to a halt",
+     "r": 3.6,
+     "t": "bronze"
     },
     {
-     "n": "Beyond the intricate configuration of the mind",
-     "t": "silver",
-     "r": 3.8,
      "at": "2026-10-26T09:48:45+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/4db82f3e-c400-42b0-a32b-3e24da9f22f4.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR36557_00/4db82f3e-c400-42b0-a32b-3e24da9f22f4.png",
+     "n": "Beyond the intricate configuration of the mind",
+     "r": 3.8,
+     "t": "silver"
     }
    ],
    "aliases": [],
@@ -13097,12 +13099,12 @@
    "rawg_slug": "need-for-speed-hot-pursuit-remastered",
    "metacritic_source": "rawg",
    "series": [
-    "Need for Speed Hot Pursuit",
-    "Need for Speed"
+    "Need for Speed",
+    "Need for Speed Hot Pursuit"
    ],
    "developers": [
-    "Stellar Entertainment",
-    "Criterion Games"
+    "Criterion Games",
+    "Stellar Entertainment"
    ],
    "publishers": [
     "Electronic Arts"
