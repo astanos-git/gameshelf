@@ -60,6 +60,21 @@
   "released": "2016-10-31",
   "url": "https://rawg.io/games/owlboy"
  },
+ "phantom-blade-zero": {
+  "added": "2026-10-28T12:21:36Z",
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "image": "https://media.rawg.io/media/games/25f/25f536a977488f12ef8a6d013e50fda1.jpg",
+  "name": "Phantom Blade Zero",
+  "platforms": [
+   "PS5"
+  ],
+  "released": "2026-10-29",
+  "tba": false,
+  "url": "https://rawg.io/games/phantom-blade-zero"
+ },
  "ratchet-clank-rift-apart": {
   "added": "2026-10-14T10:53:30Z",
   "genres": [
