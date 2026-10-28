@@ -11,8 +11,12 @@ on:
       mode:
         description: "What to run"
         type: choice
-        options: [full, coming-soon, push-test]
+        options: [full, coming-soon, push-test, difficulty]
         default: full
+      minutes:
+        description: "Difficulty only: how many minutes to spend (max 60)"
+        type: string
+        default: "55"
 
 permissions:
   contents: write
@@ -51,12 +55,20 @@ jobs:
         env:
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: python discover.py
+      - name: Probe the guide sites
+        if: env.MODE == 'difficulty'
+        continue-on-error: true
+        run: python difficulty.py --probe "Metaphor ReFantazio"
+      - name: Platinum difficulty from guide sites
+        if: env.MODE == 'full' || env.MODE == 'difficulty'
+        continue-on-error: true
+        run: python difficulty.py --minutes ${{ env.MODE == 'difficulty' && inputs.minutes || '15' }}
       - name: Publish
         if: env.MODE != 'push-test'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data.json docs/recommendations.json docs/snapshots.json docs/wishlist.json docs/upcoming.json 2>/dev/null || true
+          git add docs/data.json docs/recommendations.json docs/snapshots.json docs/wishlist.json docs/upcoming.json docs/difficulty.json 2>/dev/null || true
           if [ -d docs/trophies ]; then git add docs/trophies; fi
           for f in rawg_cache.json trophy_dates.json hltb_cache.json wikipedia_cache.json trophy_groups.json wikidata_about.json title_map.json rawg_tags.json rawg_details.json; do
             if [ -f "$f" ]; then git add "$f"; fi
