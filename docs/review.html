@@ -65,6 +65,14 @@ h3 { font-family: var(--display); }
 .gf-actions a { color: var(--accent); font-size: 14px; }
 .gf-actions a.save { background: var(--accent); color: #fff; border-radius: 8px; padding: 6px 14px; text-decoration: none; font-weight: 600; }
 .gf-actions a.save.off { background: var(--line); color: var(--muted); pointer-events: none; }
+.dna-head { margin: 0; font: 600 26px/1.15 var(--display); }
+.dna-bars { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 6px; }
+.dna-bars li { display: grid; grid-template-columns: minmax(96px, 120px) 1fr 58px; gap: 10px; align-items: center; font-size: 14px; }
+.dna-t { height: 10px; background: var(--line); border-radius: 5px; overflow: hidden; } .dna-t i { display: block; height: 100%; background: var(--accent); border-radius: 5px; }
+.dna-bars li:nth-child(-n+2) .dna-t i { background: var(--plat); }
+.dna-bars .num { text-align: right; font-weight: 600; } .dna-bars small.up { color: var(--up); } .dna-bars small.dn { color: var(--down); }
+.dna-years { margin: 0; padding-left: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px 12px; font-size: 13.5px; }
+.dna-years .num { color: var(--muted); margin-right: 6px; }
 .share-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: -4px; }
 </style>
 
@@ -221,6 +229,7 @@ function render() {
       ${runner.length ? `<p class="note">Runners-up: ${runner.map(g => `${esc(g.name)} (~${fmt(s.hoursOf(g))} h)`).join(", ")}</p>` : ""}</div></section>` : ""}
     <section class="cards">${cards.map(([l, b, sub]) => `<div class="card"><span class="lbl">${l}</span>${b ? `<b>${esc(b)}</b>` : ""}<span class="sub">${esc(sub)}</span></div>`).join("")}</section>
     ${s.platList.length ? `<section class="plats"><h2>Platinums of ${year}</h2><ol>${s.platList.map(m => `<li><span>${esc(m.game)}</span><span class="d">${fmtDate(m.at)}${m.r != null ? ` · ${m.r}%` : ""}</span></li>`).join("")}</ol></section>` : ""}
+    ${dnaBlock()}
     ${goalsBlock(s)}`;
 }
 
@@ -280,13 +289,91 @@ async function shareImage() {
 }
 document.addEventListener("click", e => { if (e.target.id === "shareBtn") shareImage(); });
 
+/* ---------- Gamer DNA: nine traits scored 0-100 from your data, for a year or all time ---------- */
+let SESS = {};
+const TRAITS = [["story", "Story seeker", "play for the story"], ["explorer", "Explorer", "love open worlds"], ["completionist", "Completionist", "finish what you start"],
+  ["hunter", "Trophy hunter", "go for the rare trophies"], ["owl", "Night owl", "play late at night"], ["marathon", "Marathoner", "play long sessions"],
+  ["dayone", "Day-one player", "play new releases early"], ["sampler", "Sampler", "try lots of games"], ["indie", "Indie spirit", "love indie games"]];
+function dna(y) {
+  const G = DATA.games, ins = DATA.insights || {}, all = y === "all", inY = d => d && (all || d.startsWith(y));
+  const hrs = g => all ? (g.hours || 0) : (g.hours_by_year || {})[y] || 0;
+  const tro = g => sum(Object.entries(g.months || {}).filter(([m]) => all || m.startsWith(y)).flatMap(([, t]) => t));
+  const played = G.filter(g => hrs(g) > 0 || tro(g) > 0);
+  if (played.length < 3) return null;
+  const H = sum(played.map(hrs)) || 1, clamp = v => v == null || isNaN(v) ? null : Math.round(Math.max(0, Math.min(100, v)));
+  const tagShare = slugs => sum(played.filter(g => (g.tags || []).some(t => slugs.includes(t[0]))).map(hrs)) / H;
+  const finished = played.filter(g => { const f = pick(FLAGS, g); const at = g.platinum_at || (g.status === "completed" ? g.last_trophy : null) || (f?.flag === "beaten" ? f.at : null); return at && (all || inY(at)); });
+  const started = G.filter(g => inY([g.first_played, g.first_trophy_at].filter(Boolean).sort()[0]));
+  const dayOne = started.filter(g => g.released && ([g.first_played, g.first_trophy_at].filter(Boolean).sort()[0] || "") <= new Date(Date.parse(g.released) + 31 * 864e5).toISOString());
+  const wh = (ins.weekday_hour || {})[all ? "all" : y], night = wh ? sum(wh.filter((v, i) => i % 24 >= 22 || i % 24 < 4)) / Math.max(1, sum(wh)) : null;
+  const rar = ((ins.rarity || {})[all ? "all" : y] || {}).score;
+  return {
+    story: clamp(tagShare(["story-rich", "narrative", "choices-matter", "great-soundtrack"]) * 120),
+    explorer: clamp(tagShare(["open-world", "exploration"]) * 130),
+    completionist: clamp(100 * finished.length / played.length * 1.4),
+    hunter: rar == null ? null : clamp(rar * 2),
+    owl: night == null ? null : clamp(night * 200),
+    marathon: SESS[all ? "all" : y] ? clamp(SESS[all ? "all" : y].long_share * 2.5) : null,
+    dayone: started.length >= 3 ? clamp(100 * dayOne.length / started.length * 2.5) : null,
+    sampler: clamp(100 * played.filter(g => (g.hours || 0) > 0 && g.hours < 3 && g.status !== "completed").length / played.length * 1.5),
+    indie: clamp(sum(played.filter(g => (g.genres || []).includes("Indie")).map(hrs)) / H * 200),
+  };
+}
+const topTraits = d => TRAITS.filter(([k]) => d[k] != null).sort((a, b) => d[b[0]] - d[a[0]]);
+function dnaBlock() {
+  const d = dna(year), A = dna("all"); if (!d) return "";
+  const top = topTraits(d), years = [...new Set(DATA.games.flatMap(g => Object.keys(g.hours_by_year || {})))].sort();
+  const timeline = years.map(y => { const t = dna(y); return t ? [y, topTraits(t)[0]?.[1]] : null; }).filter(Boolean);
+  DNA_SHARE = { year, d, top };
+  return `<section class="panel dna"><div class="panel-head"><h2>Your gamer DNA</h2><span class="note">${year}</span></div>
+    <p class="dna-head">The <b>${top[0][1]}</b> &amp; <b>${top[1][1]}</b></p>
+    <p class="note">You ${top[0][2]}, and ${top[1][2]}.</p>
+    <ul class="dna-bars">${top.map(([k, l]) => { const dv = A && A[k] != null && year !== "all" ? d[k] - A[k] : 0;
+      return `<li><span>${l}</span><span class="dna-t"><i style="width:${d[k]}%"></i></span><span class="num">${d[k]}${Math.abs(dv) >= 5 ? ` <small class="${dv > 0 ? "up" : "dn"}">${dv > 0 ? "+" : ""}${dv}</small>` : ""}</span></li>`; }).join("")}</ul>
+    ${timeline.length > 1 ? `<details class="fold"><summary>Your top trait, year by year</summary><ol class="dna-years">${timeline.map(([y, l]) => `<li><span class="num">${y}</span> ${l}</li>`).join("")}</ol></details>` : ""}
+    <div class="share-row"><button class="btn" id="dnaShare">Share my DNA</button><span class="note" id="dnaNote"></span></div>
+    <details class="how"><summary>How this works</summary><p>Each trait is a score from 0 to 100 for ${year}: Story seeker and Explorer are the share of your hours in games RAWG tags story-rich or open-world/exploration; Completionist the share of games played that you finished (platinum, 100% or Beaten); Trophy hunter your rarity score; Night owl the share of trophies earned 22:00–04:00; Marathoner sessions over 2 h; Day-one player games started within a month of release; Sampler games tried for under 3 h; Indie spirit hours in indie games. Scores are scaled so a strong habit reaches the top; small coloured numbers compare with your all-time profile.</p></details></section>`;
+}
+let DNA_SHARE = null;
+function drawDNA() {
+  const { year: y, d, top } = DNA_SHARE, W = 1080, H = 1350, c = document.createElement("canvas"); c.width = W; c.height = H;
+  const x = c.getContext("2d"), D = '"Barlow Condensed", "Arial Narrow", sans-serif', Bd = '"IBM Plex Sans", system-ui, sans-serif', P = 80;
+  x.fillStyle = "#10204a"; x.fillRect(0, 0, W, H);
+  x.strokeStyle = "rgba(93,143,201,.35)"; x.lineWidth = 70; x.beginPath(); x.arc(W - 40, 60, 260, 0, Math.PI * 2); x.stroke();
+  x.fillStyle = "#a9b6d6"; x.font = `600 30px ${Bd}`; x.letterSpacing = "6px"; x.fillText(`MY GAMER DNA · ${y === "all" ? "ALL TIME" : y}`, P, 130); x.letterSpacing = "0px";
+  x.fillStyle = "#f2f5fb"; x.font = `800 110px ${D}`;
+  const hl = wrap(x, `The ${top[0][1]}`, W - 2 * P, 2); hl.forEach((l, i) => x.fillText(l, P, 260 + i * 110));
+  x.fillStyle = "#8fb8ea"; x.font = `700 64px ${D}`; x.fillText(`& ${top[1][1]}`, P, 260 + (hl.length - 1) * 110 + 85);
+  top.slice(0, 7).forEach(([k, l], i) => { const yy = 520 + i * 105;
+    x.fillStyle = "#f2f5fb"; x.font = `500 34px ${Bd}`; x.fillText(l, P, yy);
+    x.fillStyle = "rgba(255,255,255,.12)"; x.beginPath(); x.roundRect(P, yy + 18, W - 2 * P - 120, 22, 11); x.fill();
+    x.fillStyle = i < 2 ? "#8fb8ea" : "#5d8fc9"; x.beginPath(); x.roundRect(P, yy + 18, Math.max(22, (W - 2 * P - 120) * d[k] / 100), 22, 11); x.fill();
+    x.fillStyle = "#f2f5fb"; x.font = `700 44px ${D}`; x.textAlign = "right"; x.fillText(String(d[k]), W - P, yy + 40); x.textAlign = "left"; });
+  x.fillStyle = "#a9b6d6"; x.font = `400 24px ${Bd}`; x.fillText(`${DATA.profile?.online_id || ""} · Game Shelf`, P, H - 40);
+  return c;
+}
+async function shareCanvas(canvas, name, title, note) {
+  const blob = await new Promise(r => canvas.toBlob(r, "image/png")), file = new File([blob], name, { type: "image/png" });
+  try {
+    if (navigator.canShare?.({ files: [file] })) await navigator.share({ files: [file], title });
+    else { const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000); note.textContent = "Image downloaded."; }
+  } catch (e) { if (e.name !== "AbortError") note.textContent = "Couldn't share: " + e.message; }
+}
+document.addEventListener("click", async e => {
+  if (e.target.id !== "dnaShare" || !DNA_SHARE) return;
+  e.target.disabled = true;
+  try { await Promise.all(['800 110px "Barlow Condensed"', '700 64px "Barlow Condensed"', '500 34px "IBM Plex Sans"'].map(f => document.fonts.load(f))); } catch {}
+  await shareCanvas(drawDNA(), `gamer-dna-${DNA_SHARE.year}.png`, `My gamer DNA ${DNA_SHARE.year}`, $("dnaNote"));
+  e.target.disabled = false;
+});
+
 const _render = render;
 render = function () { _render(); syncGoalLink(); };
 document.addEventListener("click", e => { const b = e.target.closest("#years .chip"); if (b) { year = b.dataset.y; try { localStorage.setItem("shelf-review", year); } catch {} render(); } });
 
 async function start() {
   try { DATA = await (await fetch("data.json", { cache: "no-store" })).json(); } catch { $("page").innerHTML = `<p class="empty">No game data yet.</p>`; return; }
-  for (const [file, set] of [["flags.json", v => FLAGS = v], ["ratings.json", v => RATINGS = v], ["goals.json", v => GOALS = v]])
+  for (const [file, set] of [["flags.json", v => FLAGS = v], ["ratings.json", v => RATINGS = v], ["goals.json", v => GOALS = v], ["sessions.json", v => SESS = v]])
     try { const r = await fetch(file, { cache: "no-store" }); if (r.ok) set(await r.json()); } catch {}
   const ys = [...new Set(DATA.games.flatMap(g => [...Object.keys(g.months || {}).map(m => m.slice(0, 4)), ...Object.keys(g.hours_by_year || {})]))].sort().reverse();
   if (!ys.includes(THIS_YEAR)) ys.unshift(THIS_YEAR);

@@ -83,7 +83,10 @@ Tap **Refresh data** at the top of the Library. It opens the workflow on GitHub:
 - **Now:**
   - **Last week:** trophies, platinums, hours played, new games, goal progress.
   - **Up next:** up to 5 games in your order, with time left, the finish forecast and a ⚠️ missable warning linking to the guide.
-  - **What to play:** **Best games** (by Metacritic, filters by length and genre, **Surprise me**) or **Fit my hours** (the best mix for the hours you have).
+  - **On this day:** a platinum, a rare trophy or a game you started on this date in past years (or later this week).
+  - **What to play:** **Best games** (by Metacritic, filters by length and genre, **Surprise me**), **Fit my hours** (the best mix for the hours you have) or **My ranking** (from the tournament).
+  - **Backlog tournament:** 10 quick duels between backlog games; tap the one you'd rather play. Your choices build an Elo ranking. Each round is one pending change.
+  - **📅 Add to calendar** (next to Up next): subscribe once to `gameshelf.ics`. Your phone's calendar then shows finish forecasts for games in progress, release dates of wishlist and coming-soon games, and a reminder one month before your goals deadline. It updates by itself (after refreshes, Monday runs and saves).
 - **Discover:**
   - **This week's picks:** 3 games you don't own, matched to your taste and usual length, with 👍 / 👎 and + Wishlist.
   - **Wishlist** (dashboard only, not your PSN wishlist): sort it, filter Out now / Not out yet, ✕ to remove.
@@ -98,14 +101,14 @@ Tap **Refresh data** at the top of the Library. It opens the workflow on GitHub:
 Pick a year or all time, then a tab:
 - **Overview:** totals, top games, trophies by year.
 - **Trophies:** rarest trophies, a daily calendar, milestones, level history, rarity profile.
-- **Habits:** when you play, your pace against HowLongToBeat, finish rate, new releases versus catching up.
+- **Habits:** when you play, **your play sessions** (rebuilt from trophy times: typical length, when they start, longest session, biggest weekend, marathon and short-burst games), your pace against HowLongToBeat, finish rate, new releases versus catching up.
 - **Taste:** hall of fame, you against the critics, rating patterns, taste map, hours against Metacritic.
 - **Collection:** where your hours went, genres, backlog (with its trend over time), series, studios.
 
 Explanations are folded behind **How this works**.
 
 ### Review
-A yearly summary: the headline numbers, your game of the year, highlights and that year's platinums. **Share as image** makes a 1080×1350 card for your phone's share sheet. **Goals** (platinums, games finished, trophies, hours) show progress against an even pace.
+A yearly summary: the headline numbers, your game of the year, highlights and that year's platinums. **Share as image** makes a 1080×1350 card for your phone's share sheet. **Your gamer DNA** scores nine traits (Story seeker, Explorer, Completionist, Trophy hunter, Night owl, Marathoner, Day-one player, Sampler, Indie spirit) for the year, compared with all time, with your top trait year by year and **Share my DNA**. **Goals** (platinums, games finished, trophies, hours) show progress against an even pace.
 
 ### Every Monday (Weekly recommendations workflow)
 Around 06:00 Swiss time it:
@@ -114,7 +117,8 @@ Around 06:00 Swiss time it:
 3. picks 3 new games;
 4. updates Coming soon;
 5. looks up platinum difficulty for new games (PowerPyx and TrueTrophies; games without a guide are retried after 30 days);
-6. sends the **Monday push**.
+6. rebuilds sessions, "On this day" and the calendar feed (`extras.py`, also after every refresh and save);
+7. sends the **Monday push** (now with a memory from this week in past years).
 
 To run one part by hand: **Actions → Weekly recommendations → Run workflow** and choose *What to run*:
 - `full`: everything (it also replaces this week's picks);
