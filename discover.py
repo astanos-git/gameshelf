@@ -200,7 +200,10 @@ def main() -> None:
     log.append(f"taste: {len(pool)} candidates, {len(scored)} good fits")
 
     n = 0
-    for x in search(genres="indie"):
+    indie = search(genres="indie")
+    log.append(f"indie: {len(indie)} results, added {[x.get('added') for x in indie[:8]]}, on PS {sum(1 for x in indie if on_playstation(x))}, "
+               f"unreleased {sum(1 for x in indie if unreleased(x, today))}, sample {[x['name'] for x in indie[:4]]}")
+    for x in indie:
         if n < PER_CATEGORY and (x.get("added") or 0) >= 3 and add(x, "indie", "Indie, much awaited"):
             n += 1
     n = 0
