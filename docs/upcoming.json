@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-28T13:43:39+00:00",
+ "generated_at": "2026-10-28T13:46:24+00:00",
  "upcoming": [
   {
    "slug": "phantom-blade-zero",
@@ -363,15 +363,80 @@
   }
  ],
  "details": {
-  "kena-scars-of-kosmora": {
-   "name": "Kena: Scars of Kosmora",
+  "ratchet-clank-rift-apart": {
+   "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
+   "developers": [
+    "Insomniac Games",
+    "Nixxes software"
+   ],
+   "esrb": "Everyone 10+",
+   "metacritic": 88,
+   "name": "Ratchet & Clank: Rift Apart",
+   "publishers": [
+    "Sony Interactive Entertainment",
+    "PlayStation PC"
+   ],
+   "released": "2021-06-11",
+   "tba": false,
+   "website": null
+  },
+  "9-years-of-shadows": {
+   "description": "9 Years of Shadows is an emotionally-driven metroidvania enhanced by healing music that tells the story of Europa, a young woman of noble birth tasked with ending the curse that plagues her people and restoring color to all lands. Immersive gameplay",
+   "developers": [
+    "Halberd Studios",
+    "HelBeard"
+   ],
+   "esrb": null,
+   "metacritic": 74,
+   "name": "9 Years of Shadows",
+   "publishers": [
+    "Freedom Games"
+   ],
+   "released": "2023-03-26",
+   "tba": false,
+   "website": "http://halberdstudios.com/"
+  },
+  "resident-evil-veronica": {
+   "name": "Resident Evil Veronica",
    "released": "2027-12-31",
    "tba": false,
-   "description": "In Kena: Scars of Kosmora, Kena is older and renowned as a Spirit Guide. In hopes of finding answers to the affliction she has endured all her life, Kena travels to the mysterious island of Kosmora. Home to distinct cultures and regions, Kosmora is full of buried secrets from a tragic past.",
+   "description": "Resident Evil Veronica is a remake of 2000's Resident Evil Code: Veronica. In 2027, madness and intrigue, love and hate all combine to create a chilling new entry in survival horror.",
    "developers": [
-    "Ember Lab"
+    "Capcom"
    ],
-   "publishers": [],
+   "publishers": [
+    "Capcom"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "marvels-spider-man-3": {
+   "name": "Marvel's Spider-Man 3",
+   "released": null,
+   "tba": true,
+   "description": "Marvel’s Spider-Man 3 is currently in development by Insomniac Games for PlayStation 5 and PlayStation 6. Created in collaboration with Marvel Games and PlayStation.",
+   "developers": [
+    "Insomniac Games"
+   ],
+   "publishers": [
+    "Sony Interactive Entertainment"
+   ],
+   "website": "https://x.com/insomniacgames?s=09",
+   "metacritic": null,
+   "esrb": null
+  },
+  "fable2020": {
+   "name": "Fable",
+   "released": "2027-02-23",
+   "tba": false,
+   "description": "Explore a land of fantastical creatures and wondrous places. What does it mean to be a Hero? Well, in the fairytale land of Albion, that is entirely up to you. With a dark threat looming, your choices will change Albion forever.",
+   "developers": [
+    "Playground Games"
+   ],
+   "publishers": [
+    "Xbox Game Studios"
+   ],
    "website": null,
    "metacritic": null,
    "esrb": null
@@ -393,45 +458,30 @@
    "tba": false,
    "website": "https://505games.com/games/brothers/"
   },
-  "tomb-raider-legacy-of-atlantis": {
-   "name": "Tomb Raider: Legacy of Atlantis",
-   "released": "2027-02-12",
+  "god-of-war-laufey": {
+   "name": "God of War Laufey",
+   "released": "2027-02-16",
    "tba": false,
    "description": "",
    "developers": [
-    "Crystal Dynamics"
-   ],
-   "publishers": [],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "fable2020": {
-   "name": "Fable",
-   "released": "2027-02-23",
-   "tba": false,
-   "description": "Explore a land of fantastical creatures and wondrous places. What does it mean to be a Hero? Well, in the fairytale land of Albion, that is entirely up to you. With a dark threat looming, your choices will change Albion forever.",
-   "developers": [
-    "Playground Games"
+    "Santa Monica Studio"
    ],
    "publishers": [
-    "Xbox Game Studios"
+    "Sony Interactive Entertainment"
    ],
    "website": null,
    "metacritic": null,
    "esrb": null
   },
-  "the-expanse-osiris-reborn": {
-   "name": "The Expanse: Osiris Reborn",
+  "kena-scars-of-kosmora": {
+   "name": "Kena: Scars of Kosmora",
    "released": "2027-12-31",
    "tba": false,
-   "description": "The Expanse: Osiris Reborn is a third-person Action RPG set in the world of The Expanse. You are not a hero, but a simple mercenary who found himself in the wrong place at the wrong time. Assemble a team, break through the web of lies and leave your mark on the history of the solar system.",
+   "description": "In Kena: Scars of Kosmora, Kena is older and renowned as a Spirit Guide. In hopes of finding answers to the affliction she has endured all her life, Kena travels to the mysterious island of Kosmora. Home to distinct cultures and regions, Kosmora is full of buried secrets from a tragic past.",
    "developers": [
-    "Owlcat Games"
+    "Ember Lab"
    ],
-   "publishers": [
-    "Owlcat Games"
-   ],
+   "publishers": [],
    "website": null,
    "metacritic": null,
    "esrb": null
@@ -451,126 +501,6 @@
    "metacritic": null,
    "esrb": "Teen"
   },
-  "tomb-raider-catalyst": {
-   "name": "Tomb Raider: Catalyst",
-   "released": "2027-12-31",
-   "tba": false,
-   "description": "Tomb Raider: Catalyst marks a bold direction for the series as Lara Croft embarks on a new adventure across Northern India. Tomb Raider: Catalyst is set in the wake of a mythical cataclysm that has unleashed ancient secrets and awakened the mysterious forces that guard them.",
-   "developers": [
-    "Crystal Dynamics"
-   ],
-   "publishers": [],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "ratchet-clank-rift-apart": {
-   "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
-   "developers": [
-    "Insomniac Games",
-    "Nixxes software"
-   ],
-   "esrb": "Everyone 10+",
-   "metacritic": 88,
-   "name": "Ratchet & Clank: Rift Apart",
-   "publishers": [
-    "Sony Interactive Entertainment",
-    "PlayStation PC"
-   ],
-   "released": "2021-06-11",
-   "tba": false,
-   "website": null
-  },
-  "ananta": {
-   "name": "ananta",
-   "released": "2027-01-15",
-   "tba": false,
-   "description": "Previously known as Project Mugen, ANANTA is a free-to-play urban open-world RPG set in Nova City. Players become the new captain of a special task force, switch between different characters and roles, fight hidden threats, and freely explore a living city filled with activities, vehicles, and unexpected events. Launches globally on January 15, 2027 for PC, PlayStation 5, iOS, and Android.",
-   "developers": [],
-   "publishers": [
-    "Netease"
-   ],
-   "website": "https://www.anantagame.com/",
-   "metacritic": null,
-   "esrb": null
-  },
-  "the-witcher-4": {
-   "name": "The Witcher (A New Saga Begins)",
-   "released": null,
-   "tba": true,
-   "description": "The Witcher IV is a single-player, open-world RPG from CD PROJEKT RED. At the start of a new saga, players take on the role of Ciri, a professional monster slayer, and embark on a journey through a brutal dark-fantasy world. Powered by Unreal Engine 5, it aims to be the most immersive and ambitious open-world Witcher game to date.",
-   "developers": [
-    "CD PROJEKT RED",
-    "CD PROJEKT"
-   ],
-   "publishers": [
-    "CD PROJEKT RED"
-   ],
-   "website": "https://www.thewitcher.com/witcher4",
-   "metacritic": null,
-   "esrb": null
-  },
-  "god-of-war-laufey": {
-   "name": "God of War Laufey",
-   "released": "2027-02-16",
-   "tba": false,
-   "description": "",
-   "developers": [
-    "Santa Monica Studio"
-   ],
-   "publishers": [
-    "Sony Interactive Entertainment"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "marvels-venom": {
-   "name": "Marvel's Venom",
-   "released": null,
-   "tba": true,
-   "description": "Marvel’s Venom is currently in development by Insomniac Games for PlayStation 5. Created in collaboration with Marvel Games and PlayStation.",
-   "developers": [
-    "Insomniac Games"
-   ],
-   "publishers": [
-    "Sony Interactive Entertainment"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": "Rating Pending"
-  },
-  "owlboy": {
-   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
-   "developers": [
-    "D-Pad Studio",
-    "D-Pad Studios"
-   ],
-   "esrb": null,
-   "metacritic": 88,
-   "name": "Owlboy",
-   "publishers": [
-    "D-Pad Studio"
-   ],
-   "released": "2016-10-31",
-   "tba": false,
-   "website": "http://www.owlboygame.com"
-  },
-  "resident-evil-veronica": {
-   "name": "Resident Evil Veronica",
-   "released": "2027-12-31",
-   "tba": false,
-   "description": "Resident Evil Veronica is a remake of 2000's Resident Evil Code: Veronica. In 2027, madness and intrigue, love and hate all combine to create a chilling new entry in survival horror.",
-   "developers": [
-    "Capcom"
-   ],
-   "publishers": [
-    "Capcom"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
   "phantom-blade-zero": {
    "name": "Phantom Blade Zero",
    "released": "2026-10-29",
@@ -586,6 +516,19 @@
    "metacritic": null,
    "esrb": null
   },
+  "ananta": {
+   "name": "ananta",
+   "released": "2027-01-15",
+   "tba": false,
+   "description": "Previously known as Project Mugen, ANANTA is a free-to-play urban open-world RPG set in Nova City. Players become the new captain of a special task force, switch between different characters and roles, fight hidden threats, and freely explore a living city filled with activities, vehicles, and unexpected events. Launches globally on January 15, 2027 for PC, PlayStation 5, iOS, and Android.",
+   "developers": [],
+   "publishers": [
+    "Netease"
+   ],
+   "website": "https://www.anantagame.com/",
+   "metacritic": null,
+   "esrb": null
+  },
   "intergalactic-the-heretic-prophet": {
    "name": "Intergalactic: The Heretic Prophet",
    "released": null,
@@ -595,69 +538,6 @@
     "Naughty Dog"
    ],
    "publishers": [],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "marvels-spider-man-3": {
-   "name": "Marvel's Spider-Man 3",
-   "released": null,
-   "tba": true,
-   "description": "Marvel’s Spider-Man 3 is currently in development by Insomniac Games for PlayStation 5 and PlayStation 6. Created in collaboration with Marvel Games and PlayStation.",
-   "developers": [
-    "Insomniac Games"
-   ],
-   "publishers": [
-    "Sony Interactive Entertainment"
-   ],
-   "website": "https://x.com/insomniacgames?s=09",
-   "metacritic": null,
-   "esrb": null
-  },
-  "titan-quest-2": {
-   "name": "Titan Quest 2",
-   "released": "2027-01-19",
-   "tba": false,
-   "description": "Nemesis, Goddess of Retribution, is out of control. She is corrupting the Threads of Fate and punishing all those who oppose her. Take up your weapon, fight alongside gods, and change fate itself in Titan Quest 2, an action RPG inspired by Greek mythology.",
-   "developers": [
-    "Grimlore Games"
-   ],
-   "publishers": [
-    "THQ Nordic"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "dark-souls-ii": {
-   "description": "Dark Souls II is the third installment in the well-known Souls series. It’s a different game from all the others because of its directors. With Dark Souls II the main director and founder of Souls-like genre Hidetaka Miyazaki took place only as a supervisor of the project, leaving a place of the director of the game for two young video game designers Tomohiro Shibuya and Yui Tanimura.",
-   "developers": [
-    "BANDAI NAMCO Entertainment America",
-    "FromSoftware"
-   ],
-   "esrb": "Mature",
-   "metacritic": 91,
-   "name": "Dark Souls II",
-   "publishers": [
-    "Bandai Namco Entertainment",
-    "BANDAI NAMCO Entertainment US",
-    "FromSoftware"
-   ],
-   "released": "2014-03-11",
-   "tba": false,
-   "website": "http://www.darksoulsii.com"
-  },
-  "the-witcher-remake": {
-   "name": "The Witcher: Remake",
-   "released": null,
-   "tba": true,
-   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
-   "developers": [
-    "Fool's Theory"
-   ],
-   "publishers": [
-    "CD PROJEKT RED"
-   ],
    "website": null,
    "metacritic": null,
    "esrb": null
@@ -694,21 +574,65 @@
    "tba": false,
    "website": "http://dreams.mediamolecule.com/"
   },
-  "9-years-of-shadows": {
-   "description": "9 Years of Shadows is an emotionally-driven metroidvania enhanced by healing music that tells the story of Europa, a young woman of noble birth tasked with ending the curse that plagues her people and restoring color to all lands. Immersive gameplay",
+  "the-witcher-4": {
+   "name": "The Witcher (A New Saga Begins)",
+   "released": null,
+   "tba": true,
+   "description": "The Witcher IV is a single-player, open-world RPG from CD PROJEKT RED. At the start of a new saga, players take on the role of Ciri, a professional monster slayer, and embark on a journey through a brutal dark-fantasy world. Powered by Unreal Engine 5, it aims to be the most immersive and ambitious open-world Witcher game to date.",
    "developers": [
-    "Halberd Studios",
-    "HelBeard"
+    "CD PROJEKT RED",
+    "CD PROJEKT"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
+   "website": "https://www.thewitcher.com/witcher4",
+   "metacritic": null,
+   "esrb": null
+  },
+  "the-witcher-remake": {
+   "name": "The Witcher: Remake",
+   "released": null,
+   "tba": true,
+   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
+   "developers": [
+    "Fool's Theory"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "owlboy": {
+   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
+   "developers": [
+    "D-Pad Studio",
+    "D-Pad Studios"
    ],
    "esrb": null,
-   "metacritic": 74,
-   "name": "9 Years of Shadows",
+   "metacritic": 88,
+   "name": "Owlboy",
    "publishers": [
-    "Freedom Games"
+    "D-Pad Studio"
    ],
-   "released": "2023-03-26",
+   "released": "2016-10-31",
    "tba": false,
-   "website": "http://halberdstudios.com/"
+   "website": "http://www.owlboygame.com"
+  },
+  "tomb-raider-legacy-of-atlantis": {
+   "name": "Tomb Raider: Legacy of Atlantis",
+   "released": "2027-02-12",
+   "tba": false,
+   "description": "",
+   "developers": [
+    "Crystal Dynamics"
+   ],
+   "publishers": [],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
   },
   "no-rest-for-the-wicked-2024": {
    "name": "No Rest for the Wicked",
@@ -724,6 +648,82 @@
    "website": "https://store.privatedivision.com/en/game/no-rest-for-the-wicked",
    "metacritic": null,
    "esrb": null
+  },
+  "tomb-raider-catalyst": {
+   "name": "Tomb Raider: Catalyst",
+   "released": "2027-12-31",
+   "tba": false,
+   "description": "Tomb Raider: Catalyst marks a bold direction for the series as Lara Croft embarks on a new adventure across Northern India. Tomb Raider: Catalyst is set in the wake of a mythical cataclysm that has unleashed ancient secrets and awakened the mysterious forces that guard them.",
+   "developers": [
+    "Crystal Dynamics"
+   ],
+   "publishers": [],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "dark-souls-ii": {
+   "description": "Dark Souls II is the third installment in the well-known Souls series. It’s a different game from all the others because of its directors. With Dark Souls II the main director and founder of Souls-like genre Hidetaka Miyazaki took place only as a supervisor of the project, leaving a place of the director of the game for two young video game designers Tomohiro Shibuya and Yui Tanimura.",
+   "developers": [
+    "BANDAI NAMCO Entertainment America",
+    "FromSoftware"
+   ],
+   "esrb": "Mature",
+   "metacritic": 91,
+   "name": "Dark Souls II",
+   "publishers": [
+    "Bandai Namco Entertainment",
+    "BANDAI NAMCO Entertainment US",
+    "FromSoftware"
+   ],
+   "released": "2014-03-11",
+   "tba": false,
+   "website": "http://www.darksoulsii.com"
+  },
+  "titan-quest-2": {
+   "name": "Titan Quest 2",
+   "released": "2027-01-19",
+   "tba": false,
+   "description": "Nemesis, Goddess of Retribution, is out of control. She is corrupting the Threads of Fate and punishing all those who oppose her. Take up your weapon, fight alongside gods, and change fate itself in Titan Quest 2, an action RPG inspired by Greek mythology.",
+   "developers": [
+    "Grimlore Games"
+   ],
+   "publishers": [
+    "THQ Nordic"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "the-expanse-osiris-reborn": {
+   "name": "The Expanse: Osiris Reborn",
+   "released": "2027-12-31",
+   "tba": false,
+   "description": "The Expanse: Osiris Reborn is a third-person Action RPG set in the world of The Expanse. You are not a hero, but a simple mercenary who found himself in the wrong place at the wrong time. Assemble a team, break through the web of lies and leave your mark on the history of the solar system.",
+   "developers": [
+    "Owlcat Games"
+   ],
+   "publishers": [
+    "Owlcat Games"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "marvels-venom": {
+   "name": "Marvel's Venom",
+   "released": null,
+   "tba": true,
+   "description": "Marvel’s Venom is currently in development by Insomniac Games for PlayStation 5. Created in collaboration with Marvel Games and PlayStation.",
+   "developers": [
+    "Insomniac Games"
+   ],
+   "publishers": [
+    "Sony Interactive Entertainment"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": "Rating Pending"
   }
  }
 }
