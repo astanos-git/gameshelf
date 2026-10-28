@@ -68,16 +68,28 @@ def text_of(page: str) -> str:
 NUM = r"(\d+(?:[.,]\d+)?)"
 
 
+DASH = r"\s*(?:[-–—‑−~]|to)\s*"
+
+
+def roadmap(t: str) -> str:
+    """Just the roadmap summary: from its first label to ~1,500 characters later. Menus, related-guide blocks and
+    comments elsewhere on the page also mention difficulties and hours, and must not be read."""
+    m = re.search(r"(?i)estimated (?:trophy |platinum )?difficulty|trophy roadmap|difficulty\s*:\s*\d", t)
+    return t[m.start(): m.start() + 1500] if m else t
+
+
 def parse_summary(t: str) -> dict:
-    """The roadmap summary most guide writers use, in its common wordings."""
+    """The roadmap summary most guide writers use, in its common wordings. Labelled lines first."""
+    t = roadmap(t)
     out = {}
-    m = re.search(r"(?i)difficulty[^\n\d]{0,40}?" + NUM + r"(?:\s*[-–]\s*" + NUM + r")?\s*/\s*10", t) \
-        or re.search(r"(?i)" + NUM + r"(?:\s*[-–]\s*" + NUM + r")?\s*/\s*10\s*\n?\s*difficulty", t)
-    if m:   # "6-7/10" -> 6.5
+    m = re.search(r"(?i)estimated (?:trophy |platinum )?difficulty[^\n\d]{0,20}?" + NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10", t) \
+        or re.search(r"(?i)difficulty[^\n\d]{0,20}?" + NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10", t) \
+        or re.search(r"(?i)" + NUM + r"(?:" + DASH + NUM + r")?\s*/\s*10\s*\n?\s*difficulty", t)
+    if m:   # "5-6/10" -> 5.5
         lo = float(m.group(1).replace(",", ".")); hi = float(m.group(2).replace(",", ".")) if m.group(2) else lo
         out["difficulty"] = round((lo + hi) / 2, 1) if hi >= lo else lo
-    m = re.search(r"(?i)(?:time to (?:platinum|100%)|hours? to platinum|approximate time[^:\n]*|estimated time[^:\n]*)\s*:?[^\n\d]{0,25}?(\d+)\s*(?:[-–~to]+\s*(\d+))?\+?\s*(?:hours|hrs|h)\b", t) \
-        or re.search(r"(?i)\b(\d+)\s*(?:[-–]\s*(\d+))?\+?\s*\n?\s*hours\b", t)
+    m = re.search(r"(?i)(?:time to (?:platinum|100%)|hours? to platinum|approximate (?:amount of )?time[^:\n]*|estimated time[^:\n]*)\s*:?[^\n\d]{0,25}?(\d+)(?:" + DASH + r"(\d+))?\+?\s*(?:hours|hrs|h)\b", t) \
+        or re.search(r"(?i)\b(\d+)(?:" + DASH + r"(\d+))?\+?\s*\n?\s*hours\b", t)
     if m:
         lo, hi = int(m.group(1)), int(m.group(2)) if m.group(2) else None
         out["hours"] = round((lo + hi) / 2) if hi and hi >= lo else lo
@@ -86,7 +98,7 @@ def parse_summary(t: str) -> dict:
         m = re.search(r"(?i)" + pat + r"\s*:?\s*(\d+|none|no)\b", t)
         if m:
             out[key] = 0 if m.group(1).lower() in ("none", "no") else int(m.group(1))
-    m = re.search(r"(?i)(?:minimum (?:number of )?)?playthroughs?\s*(?:required)?\s*:\s*(\d+)", t) or re.search(r"(?i)\b(\d+)\s*\n?\s*playthroughs?\b", t)
+    m = re.search(r"(?i)(?:minimum (?:number of )?)?playthroughs?\s*(?:required)?\s*:\s*(\d+)", t) or re.search(r"(?i)\b(\d+)\s*\n?\s*(?:full )?playthroughs?\b", t)
     if m:
         out["playthroughs"] = int(m.group(1))
     return out
@@ -264,6 +276,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--minutes", type=float, default=20)
     ap.add_argument("--probe")
+    ap.add_argument("--reparse", default="", help="source(s) whose saved guide pages to read again, e.g. powerpyx")
     ap.add_argument("--retry", default="", help="source(s) whose 'not found' results to check again now, e.g. powerpyx")
     args = ap.parse_args()
 
@@ -293,6 +306,21 @@ def main() -> None:
     order = {"started": 0, "unplayed": 1, "completed": 3}
     games = sorted(data["games"], key=lambda g: (order.get(g.get("status"), 2), -(g.get("hours") or 0)))
     deadline = time.time() + args.minutes * 60
+    if args.reparse:                                          # after a parsing fix: read every saved guide page again
+        n = 0
+        for e in store["games"].values():
+            for src, v in (e.get("sources") or {}).items():
+                if v and v.get("url") and src in args.reparse.split(","):
+                    try:
+                        page = fetch(v["url"], delay=0.5)
+                    except Blocked:
+                        break
+                    found = parse_summary(text_of(page.text)) if page else {}
+                    if found.get("difficulty") is not None or found.get("hours"):
+                        e["sources"][src] = {**found, "url": v["url"]}; n += 1
+            if e.get("sources"):
+                e["combined"] = combine(e["sources"])
+        print(f"::notice::Re-read {n} saved guide pages")
     for src in filter(None, args.retry.split(",")):          # after a matching fix: forget earlier misses
         for e in store["games"].values():
             if not e.get("sources", {}).get(src):
