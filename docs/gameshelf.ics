@@ -1,0 +1,147 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Game Shelf//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Game Shelf
+X-WR-TIMEZONE:Europe/Zurich
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VEVENT
+UID:finish-81ddf838af78@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20270721
+DTEND;VALUE=DATE:20270722
+SUMMARY:🎮 Finish Blue Prince? (forecast)
+DESCRIPTION:About 34 h left at ~0.9 h/week. Moves as you play.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:finish-eca8d2801293@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261127
+SUMMARY:🎮 Finish Metaphor: ReFantazio? (forecast)
+DESCRIPTION:About 31 h left at ~7.4 h/week. Moves as you play.
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-phantom-blade-zero@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20261029
+DTEND;VALUE=DATE:20261030
+SUMMARY:⭐ Phantom Blade Zero is out
+DESCRIPTION:On your wishlist.
+URL:https://rawg.io/games/phantom-blade-zero
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-ananta@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+SUMMARY:🗓 ananta is out
+DESCRIPTION:Your taste: open world\, spider-man
+URL:https://rawg.io/games/ananta
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-titan-quest-2@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20270119
+DTEND;VALUE=DATE:20270120
+SUMMARY:🗓 Titan Quest 2 is out
+DESCRIPTION:Big release\, much awaited
+URL:https://rawg.io/games/titan-quest-2
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-tomb-raider-legacy-of-atlantis@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20270212
+DTEND;VALUE=DATE:20270213
+SUMMARY:🗓 Tomb Raider: Legacy of Atlantis is out
+DESCRIPTION:Big release\, much awaited
+URL:https://rawg.io/games/tomb-raider-legacy-of-atlantis
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-god-of-war-laufey@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20270216
+DTEND;VALUE=DATE:20270217
+SUMMARY:🗓 God of War Laufey is out
+DESCRIPTION:Your taste: adventure\, action
+URL:https://rawg.io/games/god-of-war-laufey
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-fable2020@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20270223
+DTEND;VALUE=DATE:20270224
+SUMMARY:🗓 Fable is out
+DESCRIPTION:Big release\, much awaited
+URL:https://rawg.io/games/fable2020
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-no-rest-for-the-wicked-2024@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20270331
+DTEND;VALUE=DATE:20270401
+SUMMARY:🗓 No Rest for the Wicked is out
+DESCRIPTION:Your taste: atmospheric\, exploration
+URL:https://rawg.io/games/no-rest-for-the-wicked-2024
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-tomb-raider-catalyst@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20271231
+DTEND;VALUE=DATE:20280101
+SUMMARY:🗓 Tomb Raider: Catalyst is out
+DESCRIPTION:Your taste: adventure\, action
+URL:https://rawg.io/games/tomb-raider-catalyst
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-the-expanse-osiris-reborn@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20271231
+DTEND;VALUE=DATE:20280101
+SUMMARY:🗓 The Expanse: Osiris Reborn is out
+DESCRIPTION:Big release\, much awaited
+URL:https://rawg.io/games/the-expanse-osiris-reborn
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-kena-scars-of-kosmora@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20271231
+DTEND;VALUE=DATE:20280101
+SUMMARY:🗓 Kena: Scars of Kosmora is out
+DESCRIPTION:Your taste: adventure\, action
+URL:https://rawg.io/games/kena-scars-of-kosmora
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-resident-evil-veronica@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20271231
+DTEND;VALUE=DATE:20280101
+SUMMARY:🗓 Resident Evil Veronica is out
+DESCRIPTION:Your taste: adventure\, action
+URL:https://rawg.io/games/resident-evil-veronica
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:goals-2026@gameshelf
+DTSTAMP:20261028T173657Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:🎯 One month left for your 2026 goals
+DESCRIPTION:Goals: 2026-10-02T05:16:23Z at\, 16 finished\, 300 hours\, 6 platinums\, 300 trophies. Check Review for progress.
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

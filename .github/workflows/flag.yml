@@ -36,7 +36,8 @@ jobs:
           for attempt in 1 2 3 4 5; do
             git fetch -q origin main && git reset -q --hard origin/main
             python flag.py
-            git add docs/flags.json docs/ratings.json docs/goals.json docs/queue.json docs/wishlist.json docs/pick_feedback.json overrides.json docs/difficulty.json 2>/dev/null || true
+            python extras.py || true      # calendar feed follows Up next
+            git add -A docs overrides.json
             git diff --cached --quiet && break
             git commit -q -m "Saved from dashboard: $(head -c 70 flag_result.txt | head -1)"
             git push -q origin HEAD:main && break

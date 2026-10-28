@@ -67,6 +67,10 @@ jobs:
         if: env.MODE == 'full' || env.MODE == 'difficulty'
         continue-on-error: true
         run: python difficulty.py --minutes ${{ env.MODE == 'difficulty' && inputs.minutes || '15' }} ${{ env.MODE == 'difficulty' && inputs.retry != '' && format('--retry {0}', inputs.retry) || '' }} ${{ env.MODE == 'difficulty' && inputs.reparse != '' && format('--reparse {0}', inputs.reparse) || '' }}
+      - name: Sessions, On this day, calendar feed
+        if: env.MODE != 'push-test'
+        continue-on-error: true
+        run: python extras.py
       - name: Publish
         if: env.MODE != 'push-test'
         run: |

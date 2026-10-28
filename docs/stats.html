@@ -155,6 +155,10 @@ details.fold > summary::after { content: " ▸"; } details.fold[open] > summary:
 details.fold[open] > summary { margin-bottom: 8px; }
 .subnav .seg { overflow-x: auto; scrollbar-width: none; }
 .subnav .seg button { font-size: 13px; flex: 1 0 auto; padding-inline: 8px; }
+.sh { display: grid; gap: 2px; }
+.sh-bars { display: grid; grid-template-columns: repeat(24, 1fr); gap: 2px; align-items: end; height: 70px; }
+.sh-b { background: var(--bar); border-radius: 2px 2px 0 0; display: block; min-height: 2px; }
+.sh-x { display: flex; justify-content: space-between; font: 10px var(--mono); color: var(--muted); }
 </style>
 
 <div class="wrap">
@@ -190,6 +194,7 @@ details.fold[open] > summary { margin-bottom: 8px; }
 
   <div class="part-body" data-part="habits" hidden>
     <section class="panel"><div class="panel-head"><h2>When you play</h2></div><div id="when"></div></section>
+    <section class="panel"><div class="panel-head"><h2>Your play sessions</h2><span class="note">Rebuilt from trophy times</span></div><div id="sessions"></div></section>
     <section class="panel"><div class="panel-head"><h2>Your pace</h2><span class="note">vs HowLongToBeat</span></div><div id="pace"></div></section>
     <section class="panel"><div class="panel-head"><h2>Finish rate</h2></div><div id="finishRate"></div></section>
     <section class="panel"><div class="panel-head"><h2>New releases or catching up?</h2></div><div id="releaseLag"></div></section>
@@ -639,7 +644,28 @@ function backlogTrend(y, eff) {
   $("blTrend").textContent = `${trend} Peak: ${peak.v} games in ${MONTHS[+pmm - 1]} ${pyy}.`;
 }
 
-function extras(y) { whenYouPlay(y); milestones(y); critics(y); pace(y); backlog(y); extras2(y); }
+/* ---------- Play sessions (sessions.json, built by extras.py) ---------- */
+let SESS = {};
+const dur = m => m >= 60 ? `${Math.floor(m / 60)} h${m % 60 ? ` ${String(m % 60).padStart(2, "0")}` : ""}` : `${m} min`;
+function playSessions(y) {
+  const s = SESS[y === "all" ? "all" : y], el = $("sessions");
+  if (!s) { el.innerHTML = `<p class="empty">${Object.keys(SESS).length ? "Not enough trophies in this period to rebuild sessions." : "Appears after the next refresh."}</p>`; return; }
+  const max = Math.max(...s.start_hours, 1);
+  const bars = s.start_hours.map((v, h) => `<span class="sh-b" style="height:${Math.max(2, 100 * v / max)}%" title="${String(h).padStart(2, "0")}:00 · ${v} session${v === 1 ? "" : "s"}"></span>`).join("");
+  const list = (rows, empty) => rows.length ? `<ul>${rows.map(r => `<li><b>${esc(r.game)}</b> <span class="note">typically ${dur(r.median_min)} · ${r.sessions} sessions</span></li>`).join("")}</ul>` : `<p class="note">${empty}</p>`;
+  el.innerHTML = `<div class="facts4">
+      <div><b>${dur(s.typical_min)}</b><span>Typical session</span></div>
+      <div><b>${s.per_active_week}</b><span>Sessions per active week</span></div>
+      <div><b>${s.evening_share}%</b><span>Start 20:00–02:00</span></div>
+      <div><b>${s.long_share}%</b><span>Longer than 2 h</span></div></div>
+    <div class="sh"><div class="sh-bars">${bars}</div><div class="sh-x"><span>00</span><span>06</span><span>12</span><span>18</span><span>23</span></div></div>
+    <p class="note">When your sessions start (Swiss time). Longest: <b>${dur(s.longest.min)}</b> on ${fmtDate(s.longest.date)} (${esc(s.longest.games.join(", "))})${s.binge ? `. Biggest weekend: <b>${dur(s.binge.min)}</b> from ${fmtDate(s.binge.date)} (${esc(s.binge.games.slice(0, 2).join(", "))})` : ""}.</p>
+    <div class="two"><div><h3>Marathon games</h3>${list(s.marathons, "None: no game you usually play 2 h+ in one go.")}</div>
+      <div><h3>Short bursts</h3>${list(s.bursts, "None.")}</div></div>
+    ${how("PSN only records when each trophy was earned, so sessions are rebuilt from that: trophies less than 75 minutes apart count as one session, which starts about 20 minutes before its first trophy. Sessions where you earned no trophy are invisible, so real playtime is higher. Marathon and short-burst games use sessions with at least two trophies.")}`;
+}
+
+function extras(y) { whenYouPlay(y); playSessions(y); milestones(y); critics(y); pace(y); backlog(y); extras2(y); }
 
 /* ---------- 3. Trophy level history (PSN's level formula since 2020) ---------- */
 const POINTS = [15, 30, 90, 300];   // bronze, silver, gold, platinum
@@ -969,7 +995,7 @@ async function start() {
     $("notice").hidden = false;
     $("notice").textContent = "Yearly stats appear after the next refresh. It takes longer than usual the first time, up to about 40 minutes, while your full trophy history loads.";
   }
-  for (const [file, set] of [["flags.json", v => FLAGS = v], ["ratings.json", v => RATINGS = v]])
+  for (const [file, set] of [["flags.json", v => FLAGS = v], ["ratings.json", v => RATINGS = v], ["sessions.json", v => SESS = v]])
     try { const r = await fetch(file, { cache: "no-store" }); if (r.ok) set(await r.json()); } catch {}
   const ys = availableYears();
   if (state.year !== "all" && !ys.includes(state.year)) state.year = "all";

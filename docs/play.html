@@ -72,6 +72,10 @@ a.act.primary { background: var(--accent); color: #fff; border-color: var(--acce
 .budget input { width: 80px; }
 .dg-figs b { font-size: 24px; }
 .tap { cursor: pointer; }
+.memories { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; display: grid; gap: 4px; }
+.memories ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 14px; }
+.memories .yr { display: inline-block; min-width: 92px; font: 12px var(--mono); color: var(--muted); }
+a.cal { text-decoration: none; color: var(--accent); font-weight: 600; }
 .item.nomc { grid-template-columns: 52px 1fr; }
 /* compact rows (wishlist, coming soon): small cover, one meta line, icon actions */
 .list.compact { gap: 6px; }
@@ -107,9 +111,10 @@ tr.tap.open td { background: var(--accent-soft); }
 
   <div class="part-body" data-part="now">
     <section class="digest" id="digest"></section>
+    <section class="memories" id="memories" hidden></section>
 
     <section class="block">
-      <h2 class="sec">Up next</h2>
+      <div class="sec-head"><h2 class="sec">Up next</h2><a class="note cal" id="calLink" href="#" title="Subscribe once: finish forecasts, release dates and your goals deadline appear in your phone's calendar and update by themselves">📅 Add to calendar</a></div>
       <div id="upnext"></div>
     </section>
 
@@ -340,6 +345,23 @@ document.addEventListener("click", e => {
   reopen();
 });
 
+/* ---------- On this day (memories.json, built by extras.py) ---------- */
+let MEM = {};
+function onThisDay() {
+  const key = d => `${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`, now = new Date();
+  let items = MEM[key(now)] || [], label = "On this day";
+  if (!items.length) {          // nothing today: the rest of this week
+    for (let i = 1; i <= 6 && !items.length; i++) { const d = new Date(now.getTime() + i * 864e5); items = (MEM[key(d)] || []).map(x => ({ ...x, d })); }
+    label = "This week, years ago";
+  }
+  items = items.filter(x => x.y < now.getFullYear()).slice(0, 3);
+  $("memories").hidden = !items.length;
+  const what = x => x.kind === "platinum" ? `🏆 Platinum in <b>${esc(x.game)}</b>${x.r != null ? ` <span class="note">${x.r}%</span>` : ""}`
+    : x.kind === "complete" ? `💯 100% in <b>${esc(x.game)}</b>`
+    : x.kind === "rare" ? `💎 <b>${esc(x.trophy)}</b> in ${esc(x.game)} <span class="note">${x.r}%</span>` : `▶ Started <b>${esc(x.game)}</b>`;
+  $("memories").innerHTML = `<span class="eyebrow">${label}</span><ul>${items.map(x => `<li><span class="yr">${now.getFullYear() - x.y} yr${now.getFullYear() - x.y > 1 ? "s" : ""} ago${x.d ? ` · ${x.d.toLocaleDateString(undefined, { weekday: "short" })}` : ""}</span>${what(x)}</li>`).join("")}</ul>`;
+}
+
 /* ---------- 12. Monday digest ---------- */
 function digest() {
   const today = new Date(), dow = (today.getDay() + 6) % 7;              // Monday = 0
@@ -523,6 +545,9 @@ async function extrasStart() {
   [QUEUE, WISH, FEEDBACK, SNAPS, GOALS, FLAGS, GP.ratings] = await Promise.all([getJSON("queue.json", []), getJSON("wishlist.json", {}), getJSON("pick_feedback.json", {}),
     getJSON("snapshots.json", []), getJSON("goals.json", {}), getJSON("flags.json", {}), getJSON("ratings.json", {})]);
   UPC = await getJSON("upcoming.json", {});
+  MEM = await getJSON("memories.json", {}); onThisDay();
+  $("calLink").href = `webcal://${location.host}${location.pathname.replace(/[^/]*$/, "")}gameshelf.ics`;
+  $("calLink").hidden = !location.hostname.endsWith("github.io");
   GP.difficulty = (await getJSON("difficulty.json", {})).games || {};
   GP.queue = QUEUE; GP.snaps = SNAPS;
   digest(); upNext(); wishlist(); comingSoon(); planner(); platDifficulty();

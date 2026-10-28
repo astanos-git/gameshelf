@@ -85,6 +85,20 @@ def build(today: date | None = None) -> tuple[str, str, list[str]]:
     if soon:
         lines.append("Out soon: " + ", ".join(f"{n} ({datetime.fromisoformat(r).strftime('%-d %b')})" for r, n in sorted(soon)[:4]))
 
+    # a memory from this week in past years (memories.json, built by extras.py)
+    mem, best = load("memories.json", {}), None
+    order = {"platinum": 0, "complete": 1, "rare": 2, "started": 3}
+    for i in range(7):
+        d = today + timedelta(days=i)
+        for x in mem.get(d.strftime("%m-%d"), []):
+            if x["y"] < today.year and (best is None or order[x["kind"]] < order[best[1]["kind"]]):
+                best = (d, x)
+    if best:
+        d, x = best
+        what = {"platinum": f"platinum in {x['game']}", "complete": f"100% in {x['game']}", "rare": f"{x.get('trophy')} in {x['game']} ({x.get('r')}%)",
+                "started": f"you started {x['game']}"}[x["kind"]]
+        lines.append(f"📅 {today.year - x['y']} years ago this {d.strftime('%A')}: {what}")
+
     login = data.get("login") or {}
     if login.get("error") == "login_expired":
         lines.append("⚠️ PSN login expired: renew it to keep the dashboard updated."); tags.append("warning")

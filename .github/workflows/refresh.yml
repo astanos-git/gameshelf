@@ -30,6 +30,9 @@ jobs:
           PSN_NPSSO: ${{ secrets.PSN_NPSSO }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: python fetch.py
+      - name: Sessions, On this day, calendar feed
+        continue-on-error: true
+        run: python extras.py
 
       - name: Publish updated data
         run: |
