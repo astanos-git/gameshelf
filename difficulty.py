@@ -1,19 +1,18 @@
 """Platinum difficulty from trophy-guide sites, for every game in your library.
 
-Sources (each read from its public guide page; none has an official API):
-- PowerPyx        www.powerpyx.com            (found through the site's WordPress search)
-- PSNProfiles     psnprofiles.com/guide/...   (found through the site's guide search)
-- PlayStationTrophies  www.playstationtrophies.org/game/<slug>/guide/
-From each guide's summary: difficulty (/10), hours to platinum, missable, online and glitched trophies,
-minimum playthroughs.
+Sources (public pages; neither has an official API):
+- PowerPyx      www.powerpyx.com: the roadmap at the top of each trophy guide (difficulty /10, time to platinum,
+                missable / online / glitched trophies, minimum playthroughs).
+- TrueTrophies  www.truetrophies.com: community completion time and the number of missable trophies.
+PSNProfiles and PlayStationTrophies.org were tried too, but they block GitHub's servers (HTTP 403).
 
 Results are kept in docs/difficulty.json. A game found on a site is not checked there again; a game not found
-is retried after 30 days. A site that blocks us (HTTP 403/429/503) is skipped for the rest of the run and
-the game is retried next time. Runs stop after --minutes so the weekly job stays short; the next run carries on.
+is retried after 30 days. A site that blocks us is skipped for the rest of the run and retried next time.
+Runs stop after --minutes so the weekly job stays short; the next run carries on.
 
   python difficulty.py                 # weekly: new games and due retries
-  python difficulty.py --minutes 50    # longer backfill
-  python difficulty.py --probe "Metaphor: ReFantazio"   # show what each site returns for one game
+  python difficulty.py --minutes 55    # longer backfill
+  python difficulty.py --probe "Metaphor: ReFantazio"   # what each site returns for one game
 """
 from __future__ import annotations
 
@@ -63,7 +62,7 @@ def fetch(url: str, delay: float = 1.0) -> requests.Response | None:
 def text_of(page: str) -> str:
     page = re.sub(r"(?is)<(script|style|noscript)\b.*?</\1>", " ", page)
     page = re.sub(r"(?i)<br\s*/?>|</(p|li|div|tr|h\d|td|th|span)>", "\n", page)
-    return re.sub(r"[ \t\xa0]+", " ", html.unescape(re.sub(r"<[^>]+>", " ", page)))
+    return re.sub(r"[ \t\xa0]+", " ", html.unescape(re.sub(r"<[^>]+>", " ", page)).replace("\xa0", " "))
 
 
 NUM = r"(\d+(?:[.,]\d+)?)"
@@ -98,69 +97,72 @@ def same_game(title: str, names: list[str]) -> bool:
 
 # ---------------------------------------------------------------- sources
 
+def slugify(name: str) -> str:
+    s = search_name(name).lower().replace("&", " ")
+    return re.sub(r"[^a-z0-9]+", "-", re.sub(r"['’:.!,]", "", s)).strip("-")
+
+
 def powerpyx(names: list[str]) -> dict | None:
-    for q in dict.fromkeys(search_name(n) for n in names):
-        r = fetch(f"https://www.powerpyx.com/wp-json/wp/v2/posts?search={quote_plus(q + ' trophy guide')}&per_page=10&_fields=link,title")
-        if not r:
-            continue
-        try:
-            posts = r.json()
-        except ValueError:
-            continue
-        for p in posts:
-            title = html.unescape(p.get("title", {}).get("rendered", ""))
-            if "trophy guide" in title.lower() and same_game(title, names):
-                page = fetch(p["link"])
-                if page:
-                    found = parse_summary(text_of(page.text))
-                    if found.get("difficulty") is not None:
-                        return {**found, "url": p["link"]}
-    return None
-
-
-def psnprofiles(names: list[str]) -> dict | None:
-    for q in dict.fromkeys(search_name(n) for n in names):
-        r = fetch(f"https://psnprofiles.com/search/guides?q={quote_plus(q)}")
-        if not r:
-            continue
-        for path, title in re.findall(r'href="(/guide/\d+-[^"]+)"[^>]*>\s*([^<]{3,120})<', r.text):
-            if "trophy guide" in title.lower() and same_game(title, names):
-                page = fetch("https://psnprofiles.com" + path)
-                if page:
-                    found = parse_summary(text_of(page.text))
-                    if found.get("difficulty") is not None:
-                        return {**found, "url": "https://psnprofiles.com" + path}
-    return None
-
-
-def pst_slugs(names: list[str], rawg: str | None) -> list[str]:
-    out = []
-    for n in names:
-        s = search_name(n).lower().replace("&", "and")
-        s = re.sub(r"[^a-z0-9]+", "-", re.sub(r"['’:.]", "", s)).strip("-")
-        out.append(s)
-    if rawg:
-        out.append(re.sub(r"-\d+$", "", rawg))
-    return list(dict.fromkeys(x for x in out if x))
-
-
-def pst(names: list[str], rawg: str | None = None) -> dict | None:
-    for slug in pst_slugs(names, rawg)[:3]:
-        url = f"https://www.playstationtrophies.org/game/{slug}/guide/"
+    # 1. the usual address of a guide; 2. the site's search (posts come back with their text)
+    for n in dict.fromkeys(names):
+        url = f"https://www.powerpyx.com/{slugify(n)}-trophy-guide-roadmap/"
         page = fetch(url)
-        if not page:
-            continue
-        m = re.search(r"(?is)<title>(.*?)</title>", page.text)
-        if m and not same_game(re.sub(r"(?i)\s*(trophy guide|guide).*$", "", m.group(1)), names):
-            continue
-        found = parse_summary(text_of(page.text))
-        if found.get("difficulty") is not None:
-            return {**found, "url": url}
+        if page:
+            found = parse_summary(text_of(page.text))
+            if found.get("difficulty") is not None:
+                return {**found, "url": url}
+    for q in dict.fromkeys(search_name(n) for n in names):
+        r = fetch(f"https://www.powerpyx.com/wp-json/wp/v2/posts?search={quote_plus(q)}&per_page=10")
+        try:
+            posts = r.json() if r else []
+        except ValueError:
+            posts = []
+        for p in posts if isinstance(posts, list) else []:
+            title = html.unescape(p.get("title", {}).get("rendered", "")).replace("\xa0", " ")
+            if re.search(r"(?i)trophy guide", title) and same_game(title, names):
+                found = parse_summary(text_of(p.get("content", {}).get("rendered", "")))
+                if found.get("difficulty") is not None:
+                    return {**found, "url": p.get("link")}
     return None
 
 
-SOURCES = {"powerpyx": lambda g: powerpyx(g["names"]), "psnprofiles": lambda g: psnprofiles(g["names"]), "pst": lambda g: pst(g["names"], g.get("rawg"))}
-LABELS = {"powerpyx": "PowerPyx", "psnprofiles": "PSNProfiles", "pst": "PlayStationTrophies"}
+def truetrophies(names: list[str], platforms: list[str]) -> dict | None:
+    for q in dict.fromkeys(search_name(n) for n in names):
+        r = fetch(f"https://www.truetrophies.com/searchresults.aspx?search={quote_plus(q)}")
+        if not r:
+            continue
+        games = list(dict.fromkeys(re.findall(r'href="/game/([^/"]+)/trophies"', r.text)))
+        cands = []
+        for g in games:
+            base, plat = re.match(r"(.*?)(?:-(PS[345]|PS-Vita))?$", g).groups()
+            if same_game(base.replace("-", " "), names):
+                cands.append((0 if (plat or "PS5") in platforms or not plat else 1, g))
+        for _, g in sorted(cands)[:1]:
+            url = f"https://www.truetrophies.com/game/{g}/trophies"
+            page = fetch(url)
+            if not page:
+                continue
+            t = " ".join(text_of(page.text).split())
+            out = {}
+            m = re.search(r"(?i)Completion est\s*(\d+)\s*(?:-\s*(\d+))?\+?\s*hours", t)
+            if m:
+                lo, hi = int(m.group(1)), int(m.group(2)) if m.group(2) else None
+                out["hours"] = round((lo + hi) / 2) if hi else lo
+                out["hours_text"] = f"{lo}–{hi}" if hi and hi > lo else str(lo)
+            m = re.search(r"\bMissable (\d+)\b", t)
+            out["missable"] = int(m.group(1)) if m else 0
+            m = re.search(r"\bOnline (?:Game )?Mode (\d+)\b", t)
+            if m:
+                out["online"] = int(m.group(1))
+            if "Multiple Playthroughs Req" in t:
+                out["several_playthroughs"] = True
+            if out.get("hours"):
+                return {**out, "url": url}
+    return None
+
+
+SOURCES = {"powerpyx": lambda g: powerpyx(g["names"]), "truetrophies": lambda g: truetrophies(g["names"], g.get("platforms", []))}
+LABELS = {"powerpyx": "PowerPyx", "truetrophies": "TrueTrophies"}
 
 
 # ---------------------------------------------------------------- main
@@ -174,9 +176,9 @@ def combine(src: dict) -> dict:
         out["difficulty"] = round(sum(d) / len(d), 1)
     if h:
         out["hours"] = sorted(h)[len(h) // 2]
-    for k in ("missable", "online", "glitched", "playthroughs"):
+    for k in ("missable", "online", "glitched", "playthroughs"):        # the most cautious answer
         if pick(k):
-            out[k] = max(pick(k))      # the most cautious answer
+            out[k] = max(pick(k))
     return out
 
 
@@ -184,30 +186,10 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--minutes", type=float, default=20)
     ap.add_argument("--probe")
-    ap.add_argument("--raw", action="store_true")
     args = ap.parse_args()
 
-    if args.raw:
-        for url in ["https://www.truetrophies.com/game/Metaphor-ReFantazio/",
-                    "https://www.truetrophies.com/game/Metaphor-ReFantazio/trophies",
-                    "https://www.truetrophies.com/game/Metaphor-ReFantazio/walkthrough",
-                    "https://www.truetrophies.com/searchresults.aspx?search=metaphor+refantazio",
-                    "https://www.knoef.info/en/?s=metaphor",
-                    "https://www.knoef.info/?s=metaphor"]:
-            try:
-                r = S.get(url, timeout=25)
-                t = " ".join(text_of(r.text).split())
-                hits = [m.start() for m in re.finditer(r"(?i)estimated|/10|difficulty|time to|hours", t)][:6]
-                snip = " || ".join(t[max(0, h - 60):h + 90] for h in hits)
-                links = sorted(set(re.findall(r'href="([^"]*(?:metaphor|guide)[^"]*)"', r.text, re.I)))[:8]
-                print(f"::notice::RAW {r.status_code} {len(r.text)}b {url} :: {snip[:900]} :: LINKS {links}")
-            except Exception as e:
-                print(f"::notice::RAW ERR {url} {e}")
-            time.sleep(1)
-        return
-
     if args.probe:
-        g = {"names": [args.probe], "rawg": None}
+        g = {"names": [args.probe], "platforms": ["PS5", "PS4"]}
         for key, fn in SOURCES.items():
             try:
                 print(f"::notice::Probe {key}: {fn(g)}")
@@ -233,7 +215,7 @@ def main() -> None:
             continue
         entry = store["games"].setdefault(g["name"], {"sources": {}, "checked": {}})
         names = [names_override.get(g["name"], g["name"]), *g.get("aliases", [])]
-        info = {"names": names, "rawg": g.get("rawg_slug")}
+        info = {"names": names, "platforms": g.get("platforms", [])}
         touched = False
         for key, fn in SOURCES.items():
             if key in blocked or entry["sources"].get(key):

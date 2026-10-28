@@ -58,7 +58,7 @@ jobs:
       - name: Probe the guide sites
         if: env.MODE == 'difficulty'
         continue-on-error: true
-        run: python difficulty.py --raw
+        run: python difficulty.py --probe "Metaphor ReFantazio"
       - name: Platinum difficulty from guide sites
         if: env.MODE == 'full' || env.MODE == 'difficulty'
         continue-on-error: true
