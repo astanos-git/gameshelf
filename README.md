@@ -48,6 +48,8 @@ Go to **Actions → Refresh game data → Run workflow**. The run takes about 3�
 ---
 
 ## Everyday use
+- **Finish forecast**: games in progress show "done ~28 Nov" in Up next and "At your recent pace (~7 h/week) you'd finish around…" in their panel: time left (HowLongToBeat Main + Extras minus your hours) at your pace over the last ~4 weeks (from the Monday snapshots).
+- **Missable warning** in Up next: games with missable trophies or several playthroughs show "⚠️ 11 missable · 2 playthroughs · Guide ↗" so you read the roadmap before starting.
 - **Platinum difficulty**: the Library can sort by **Easiest platinum** or **Shortest platinum**, and the **🏆 Easy platinum** chip lists games the guides rate 3.5/10 or less that you haven't finished (dropped games left out).
 - **Wrong info?** (bottom of a game's panel): correct the trophy guide, the HowLongToBeat match, the RAWG match (genres, Metacritic, release), the Metacritic score or the name shown. Type `none` when there's no match, or tap **Back to automatic** to undo. It goes through your pending changes and is saved in `overrides.json`. A new trophy guide is read straight away; the other fixes apply at the next data refresh.
 

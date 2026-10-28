@@ -11,6 +11,36 @@ const GP = (() => {
   const api = { ratings: {}, queue: [], difficulty: {} };
   const SRC = { powerpyx: "PowerPyx", truetrophies: "TrueTrophies" };
   // Platinum difficulty from trophy guides (difficulty.json, weekly): "Platinum 3/10 · ~120 h · 10 missable · 2 playthroughs"
+  /* Your pace on a game: hours per week over the last ~4 weeks, from the Monday snapshots (plus hours since the
+     last one). Finish forecast = time left (HowLongToBeat Main + Extras minus your hours) at that pace. */
+  api.snaps = [];
+  api.pace = x => {
+    const S = api.snaps; if (!S.length) return null;
+    const names = [x.name, ...(x.aliases || [])], hoursIn = s => { const k = names.find(n => s.hours[n] != null); return k ? s.hours[k] : 0; };
+    const now = Date.now(), old = [...S].reverse().find(s => now - Date.parse(s.date) >= 21 * 864e5) || S[0];
+    const days = (now - Date.parse(old.date)) / 864e5;
+    if (days < 6) return null;                                   // not enough history yet
+    return Math.max(0, ((x.hours || 0) - hoursIn(old)) / (days / 7));
+  };
+  api.forecast = x => {
+    if (x.base_status === "completed" || ["beaten", "dropped"].includes(x.flag?.flag) || !(x.hours > 0)) return null;
+    const beat = x.hltb?.extra || x.hltb?.main; if (!beat) return null;
+    const left = beat - x.hours, rate = api.pace(x);
+    if (rate == null) return null;
+    if (left <= 0) return { text: "Past the usual length (HowLongToBeat Main + Extras)", short: "past usual length" };
+    if (rate < 0.5) return { text: "Not played in the last few weeks, so no finish date", short: "" };
+    const d = new Date(Date.now() + (left / rate) * 7 * 864e5);
+    const when = d.toLocaleDateString(undefined, { day: "numeric", month: "short", ...(d.getFullYear() !== new Date().getFullYear() ? { year: "numeric" } : {}) });
+    return { text: `At your recent pace (~${fmtH(rate)}/week) you'd finish around ${when}`, short: `done ~${when}`, date: d };
+  };
+  // Missables to know before starting: "⚠️ 10 missable · 2 playthroughs", with the guide
+  api.missableNote = x => {
+    const e = api.diffOf(x), c = e?.combined; if (!c || x.base_status === "completed") return "";
+    const bits = [c.missable ? `${c.missable} missable` : "", c.playthroughs > 1 ? `${c.playthroughs} playthroughs` : ""].filter(Boolean);
+    if (!bits.length) return "";
+    const url = e.sources?.powerpyx?.url || Object.values(e.sources || {}).find(v => v?.url)?.url;
+    return `<span class="warn-miss">⚠️ ${bits.join(" · ")}${url ? ` · <a href="${esc(url)}" target="_blank" rel="noopener" title="Read the roadmap before you start">Guide ↗</a>` : ""}</span>`;
+  };
   api.diffOf = x => [x.name, ...(x.aliases || [])].map(n => api.difficulty[n]).find(e => e?.combined && Object.keys(e.combined).length) || null;
   function diffLine(x) {
     const e = api.diffOf(x); if (!e) return "";
@@ -92,9 +122,10 @@ const GP = (() => {
       ["Last played", fmtDate(x.last_played)],
       ["Last trophy", fmtDate(x.last_trophy)],
     ];
+    const fc = api.forecast(x), fcLine = fc ? `<div class="forecast">⏱ ${esc(fc.text)}</div>` : "";
     const H = x.hltb, hl = H ? `<div class="hltb"><span>HowLongToBeat</span>${[["Main story", H.main], ["Main + extras", H.extra], ["Completionist", H.complete]].filter(([, v]) => v).map(([k, v]) => `<span>${k} <b>${fmtH(v)}</b></span>`).join("")}${H.url ? `<a href="${esc(H.url)}" target="_blank" rel="noopener">Open</a>` : ""}</div>` : "";
     const link = x.rawg_slug ? `<a href="https://rawg.io/games/${esc(x.rawg_slug)}" target="_blank" rel="noopener">Game page on RAWG</a>` : "";
-    return `<div class="detail"${id ? ` id="${id}"` : ""}>${pend}${diffLine(x)}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}
+    return `<div class="detail"${id ? ` id="${id}"` : ""}>${pend}${diffLine(x)}${hl}${fcLine}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}
       <div class="you"><div class="you-h">You</div>${ratingBar(x)}${actionsBar(x)}</div>${fixForm(x)}${extra}</div>`;
   };
 

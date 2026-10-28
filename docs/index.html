@@ -571,6 +571,7 @@ async function start() {
   if (!DATA.isSample) try { const r = await fetch("ratings.json", { cache: "no-store" }); if (r.ok) RATINGS = await r.json(); } catch {}
   if (!DATA.isSample) try { const r = await fetch("queue.json", { cache: "no-store" }); if (r.ok) QUEUE = await r.json(); } catch {}
   GP.ratings = RATINGS; GP.queue = QUEUE;
+  if (!DATA.isSample) try { const r = await fetch("snapshots.json", { cache: "no-store" }); if (r.ok) GP.snaps = await r.json(); } catch {}
   if (!DATA.isSample) try { const r = await fetch("difficulty.json", { cache: "no-store" }); if (r.ok) GP.difficulty = (await r.json()).games || {}; } catch {}
   $("sort").value = state.sort;
   renderLogin(); renderHeader(); renderChips(); renderList();
