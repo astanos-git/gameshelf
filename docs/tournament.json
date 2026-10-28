@@ -1,3 +1,36 @@
 {
- "champions": []
+ "champions": [
+  {
+   "at": "2026-10-28",
+   "beat": [
+    "Conan Exiles",
+    "Call of Duty®: Black Ops Cold War",
+    "Here They Lie™",
+    "LEGO®  Harry Potter™ Collection",
+    "Minecraft Legends",
+    "Team Sonic Racing",
+    "Godfall",
+    "MY HERO ONE'S JUSTICE 2",
+    "Jurassic World Evolution 2"
+   ],
+   "game": "The Plucky Squire",
+   "id": "mvshp9guy90"
+  },
+  {
+   "at": "2026-10-28",
+   "beat": [
+    "SpongeBob SquarePants: The Cosmic Shake",
+    "HITMAN™",
+    "Big Walk",
+    "Titanfall™ 2",
+    "HUNT: SHOWDOWN 1896",
+    "Still Wakes the Deep",
+    "XCOM 2",
+    "StarBlood Arena™",
+    "God of War® III Remastered"
+   ],
+   "game": "The Alters",
+   "id": "mvshqb1jsnj"
+  }
+ ]
 }
