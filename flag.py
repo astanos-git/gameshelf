@@ -29,6 +29,22 @@ DIFFICULTY = ROOT / "docs" / "difficulty.json"
 FIX_LABELS = {"guide": "trophy guide", "hltb": "HowLongToBeat match", "rawg": "game match on RAWG", "metacritic": "Metacritic score", "name": "name"}
 
 
+TOURNAMENT = ROOT / "docs" / "tournament.json"
+
+
+def apply_duels(body: str) -> str | None:
+    """Backlog tournament: "duel: <id> | <winner> >> <loser>" lines, appended to docs/tournament.json."""
+    rows = re.findall(r"^duel:\s*(\S+)\s*\|\s*(.+?)\s*>>\s*(.+?)\s*$", body or "", re.M)
+    if not rows:
+        return None
+    t = _load(TOURNAMENT, {"duels": []})
+    known = {d[0] for d in t["duels"]}
+    new = [[i, w, l] for i, w, l in rows if i not in known]
+    t["duels"].extend(new)
+    _save(TOURNAMENT, t)
+    return f"Saved {len(new)} duel{'s' if len(new) != 1 else ''} ({len(t['duels'])} in total). The dashboard updates in about a minute."
+
+
 def apply_fix(body: str) -> str | None:
     """"Wrong info?" from a game panel: "fix: guide|hltb|rawg|metacritic|name", "game:", "value:" ("auto" = back to automatic).
     Written to overrides.json. The trophy guide is re-read right away; the rest applies at the next data refresh."""
@@ -231,7 +247,7 @@ def apply_goals(body: str, created: str) -> str | None:
 
 
 def apply(body: str, created: str) -> str:
-    for handler in (lambda: apply_fix(body), lambda: apply_goals(body, created), lambda: apply_queue(body),
+    for handler in (lambda: apply_duels(body), lambda: apply_fix(body), lambda: apply_goals(body, created), lambda: apply_queue(body),
                     lambda: apply_wish(body, created), lambda: apply_feedback(body, created)):
         msg = handler()
         if msg:

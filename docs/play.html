@@ -72,6 +72,13 @@ a.act.primary { background: var(--accent); color: #fff; border-color: var(--acce
 .budget input { width: 80px; }
 .dg-figs b { font-size: 24px; }
 .tap { cursor: pointer; }
+.tn-duel { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: stretch; }
+.tn-card { all: unset; box-sizing: border-box; cursor: pointer; background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius); padding: 10px; display: grid; gap: 4px; align-content: start; justify-items: start; min-width: 0; }
+.tn-card:hover, .tn-card:focus-visible { border-color: var(--accent); }
+.tn-card .cover { width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 8px; font-size: 22px; }
+.tn-name { font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
+.tn-vs { align-self: center; font: 700 16px var(--display); color: var(--muted); }
+.tn-top { margin: 0; padding-left: 22px; display: grid; gap: 3px; font-size: 14px; }
 .memories { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 14px; display: grid; gap: 4px; }
 .memories ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 14px; }
 .memories .yr { display: inline-block; min-width: 92px; font: 12px var(--mono); color: var(--muted); }
@@ -120,7 +127,7 @@ tr.tap.open td { background: var(--accent-soft); }
 
     <section class="block">
       <div class="sec-head"><h2 class="sec">What to play</h2>
-        <div class="seg" role="group" aria-label="How to choose"><button data-mode="best">Best games</button><button data-mode="fit">Fit my hours</button></div></div>
+        <div class="seg" role="group" aria-label="How to choose"><button data-mode="best">Best games</button><button data-mode="fit">Fit my hours</button><button data-mode="rank" id="rankModeBtn" hidden>My ranking</button></div></div>
       <div class="mode" id="modeBest">
         <div class="chips" id="lengths" role="group" aria-label="How much time do you have"></div>
         <div class="row">
@@ -137,6 +144,15 @@ tr.tap.open td { background: var(--accent-soft); }
         <div id="plan"></div>
         <details class="how"><summary>How this works</summary><p>Picks the best mix of backlog and in-progress games that fits your hours: Metacritic counts most, games in Up next go first, varied genres get a small bonus. Uses HowLongToBeat Main + Extras (time left for games in progress).</p></details>
       </div>
+      <div class="mode" id="modeRank" hidden>
+        <ol class="list" id="rankList"></ol>
+        <details class="how"><summary>How this works</summary><p>Your backlog ranked by your own choices in the backlog tournament below (an Elo score: beating a game ranked above you counts more). Only games that have been in at least one duel are ranked.</p></details>
+      </div>
+    </section>
+
+    <section class="block" id="tourney">
+      <div class="sec-head"><h2 class="sec">Backlog tournament</h2><span class="note" id="tnStats"></span></div>
+      <div id="tnBody"></div>
     </section>
   </div>
 
@@ -228,7 +244,10 @@ function render() {
   $("lengths").innerHTML = Object.entries(LENGTHS).map(([k, [l]]) => `<button class="chip" data-len="${k}" aria-pressed="${state.length === k}">${l}</button>`).join("");
   $("poolSel").value = state.pool;
   document.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === state.mode));
-  $("modeBest").hidden = state.mode !== "best"; $("modeFit").hidden = state.mode !== "fit";
+  if (state.mode === "rank" && !rankedBacklog().length) state.mode = "best";
+  $("rankModeBtn").hidden = !rankedBacklog().length;
+  $("modeBest").hidden = state.mode !== "best"; $("modeFit").hidden = state.mode !== "fit"; $("modeRank").hidden = state.mode !== "rank";
+  if (state.mode === "rank") rankList();
   const p = pool();
   const picks = [...p].sort((a, b) => (b.metacritic ?? 0) - (a.metacritic ?? 0) || (beatTime(a) ?? 999) - (beatTime(b) ?? 999)).slice(0, 5);
   $("picks").innerHTML = picks.length ? picks.map(x => `<li class="item tap" data-g="${esc(x.name)}"><span class="cover">${pic(x.image, x.name)}</span>
@@ -344,6 +363,86 @@ document.addEventListener("click", e => {
   openG = same ? null : { list, key };
   reopen();
 });
+
+/* ---------- Backlog tournament: two games, tap the one you'd rather play; an Elo ranking from all your duels ---------- */
+let TOURN = { duels: [] }, tn = null;     // tn = the round in progress: { n, pair, done: [[id, winner, loser]] }
+const TN_ROUND = 10, LOCAL_DUELS = "shelf-duels";
+const localDuels = () => { try { return JSON.parse(localStorage.getItem(LOCAL_DUELS) || "[]"); } catch { return []; } };
+const saveLocal = d => { try { localStorage.setItem(LOCAL_DUELS, JSON.stringify(d)); } catch {} };
+const tnPool = () => DATA.games.filter(x => x.eff === "unplayed" && x.owned);
+function allDuels() {       // saved in the repo + played on this device but not saved yet
+  const saved = new Set(TOURN.duels.map(d => d[0]));
+  const mine = localDuels().filter(d => !saved.has(d[0])); saveLocal(mine);
+  return [...TOURN.duels, ...mine];
+}
+function elo() {
+  const R = {}, N = {};
+  for (const [, w, l] of allDuels()) {
+    const rw = R[w] ?? 1000, rl = R[l] ?? 1000, e = 1 / (1 + 10 ** ((rl - rw) / 400));
+    R[w] = rw + 32 * (1 - e); R[l] = rl - 32 * (1 - e); N[w] = (N[w] || 0) + 1; N[l] = (N[l] || 0) + 1;
+  }
+  return { R, N };
+}
+function rankedBacklog() {
+  const { R } = elo(), pool = new Set(tnPool().map(x => x.name));
+  return Object.entries(R).filter(([n]) => pool.has(n)).sort((a, b) => b[1] - a[1]).map(([n, r]) => ({ g: byName(n), r })).filter(o => o.g);
+}
+function nextPair(seen) {
+  const { R, N } = elo(), pool = tnPool(); if (pool.length < 2) return null;
+  // the least-played game first, against one with a similar score (new games meet anyone)
+  const fewest = Math.min(...pool.map(x => N[x.name] || 0));
+  const a = pool.filter(x => (N[x.name] || 0) === fewest)[Math.floor(Math.random() * pool.filter(x => (N[x.name] || 0) === fewest).length)];
+  const ra = R[a.name] ?? 1000;
+  const others = pool.filter(x => x !== a && !seen.has([a.name, x.name].sort().join("|")))
+    .sort((x, y) => Math.abs((R[x.name] ?? 1000) - ra) - Math.abs((R[y.name] ?? 1000) - ra) + (Math.random() - .5) * 40);
+  const b = others[Math.floor(Math.random() * Math.min(5, others.length))];
+  return b ? Math.random() < .5 ? [a, b] : [b, a] : null;
+}
+const tnCard = (x, side) => `<button class="tn-card" data-tn="${side}"><span class="cover">${pic(x.image, x.name)}</span>
+  <span class="tn-name">${esc(x.name)}</span><span class="meta">${x.metacritic != null ? `<span>MC ${x.metacritic}</span>` : ""}${beatTime(x) ? `<span>~${fmtH(beatTime(x))}</span>` : ""}</span>
+  <span class="meta"><span>${esc((x.genres || []).slice(0, 2).join(", "))}</span></span>${GP.diffOf(x)?.combined?.difficulty != null ? `<span class="meta"><span>🏆 ${GP.diffOf(x).combined.difficulty}/10</span></span>` : ""}</button>`;
+function tourney() {
+  const ranked = rankedBacklog(), n = allDuels().length;
+  $("tnStats").textContent = n ? `${n} duel${n === 1 ? "" : "s"} · ${ranked.length} games ranked` : "";
+  if (!tn) {
+    const top = ranked.slice(0, 5);
+    $("tnBody").innerHTML = `<p class="note">Which would you rather play next? ${TN_ROUND} quick duels between backlog games; your choices build a personal ranking (<b>What to play → My ranking</b>).</p>
+      <div class="row"><button class="go" id="tnStart">${n ? "Play another round" : "Start"}</button></div>
+      ${top.length ? `<h3>Your top ${top.length}</h3><ol class="tn-top">${top.map(o => `<li class="tap" data-g="${esc(o.g.name)}">${esc(o.g.name)}</li>`).join("")}</ol>` : ""}`;
+    return;
+  }
+  if (tn.n >= TN_ROUND || !tn.pair) return tnFinish();
+  $("tnBody").innerHTML = `<p class="note">Duel ${tn.n + 1} of ${TN_ROUND}: tap the one you'd rather play next.</p>
+    <div class="tn-duel">${tnCard(tn.pair[0], 0)}<span class="tn-vs">vs</span>${tnCard(tn.pair[1], 1)}</div>
+    <div class="row"><button class="chip" id="tnSkip">Can't decide</button><button class="chip" id="tnStop">Stop here</button></div>`;
+}
+function tnPick(side) {
+  const w = tn.pair[side], l = tn.pair[1 - side], d = [`${Date.now().toString(36)}${Math.random().toString(36).slice(2, 5)}`, w.name, l.name];
+  tn.done.push(d); saveLocal([...localDuels(), d]);
+  tn.seen.add([w.name, l.name].sort().join("|")); tn.n++; tn.pair = nextPair(tn.seen); tourney();
+}
+function tnFinish() {
+  const done = tn.done; tn = null;
+  if (done.length && repoUrl()) {        // one pending change with every duel of the round
+    const a = document.createElement("a");
+    a.href = issueUrl(`Tournament: ${done.length} duel${done.length === 1 ? "" : "s"}`, done.map(([i, w, l]) => `duel: ${i} | ${w} >> ${l}`));
+    a.target = "_blank"; document.body.appendChild(a); a.click(); a.remove();
+  }
+  tourney(); render();
+}
+document.addEventListener("click", e => {
+  if (e.target.id === "tnStart") { tn = { n: 0, done: [], seen: new Set() }; tn.pair = nextPair(tn.seen); tourney(); $("tourney").scrollIntoView({ block: "start" }); }
+  const c = e.target.closest("[data-tn]"); if (c && tn) tnPick(+c.dataset.tn);
+  if (e.target.id === "tnSkip" && tn) { tn.seen.add(tn.pair.map(x => x.name).sort().join("|")); tn.pair = nextPair(tn.seen); tourney(); }
+  if (e.target.id === "tnStop" && tn) tnFinish();
+});
+function rankList() {
+  const fit = LENGTHS[state.length][1], rows = rankedBacklog().filter(o => fit(beatTime(o.g))).slice(0, 10);
+  $("rankList").innerHTML = rows.length ? rows.map((o, i) => `<li class="item uq tap" data-g="${esc(o.g.name)}"><span class="rank">${i + 1}</span><span class="cover">${pic(o.g.image, o.g.name)}</span>
+      <span class="main"><span class="name">${esc(o.g.name)}</span><span class="meta">${beatTime(o.g) ? `<span>~${fmtH(beatTime(o.g))}</span>` : ""}<span>${esc((o.g.genres || []).slice(0, 2).join(", "))}</span></span></span>
+      <span class="mc ${mcClass(o.g.metacritic)}">${o.g.metacritic ?? "–"}</span></li>`).join("") : `<p class="empty">No ranked game fits this length.</p>`;
+  reopen();
+}
 
 /* ---------- On this day (memories.json, built by extras.py) ---------- */
 let MEM = {};
@@ -546,6 +645,7 @@ async function extrasStart() {
     getJSON("snapshots.json", []), getJSON("goals.json", {}), getJSON("flags.json", {}), getJSON("ratings.json", {})]);
   UPC = await getJSON("upcoming.json", {});
   MEM = await getJSON("memories.json", {}); onThisDay();
+  TOURN = await getJSON("tournament.json", { duels: [] });
   $("calLink").href = `webcal://${location.host}${location.pathname.replace(/[^/]*$/, "")}gameshelf.ics`;
   $("calLink").hidden = !location.hostname.endsWith("github.io");
   GP.difficulty = (await getJSON("difficulty.json", {})).games || {};
@@ -593,7 +693,7 @@ async function start() {
   if (state.genre && !genres.includes(state.genre)) state.genre = "";
   $("genre").innerHTML = `<option value="">All genres</option>` + genres.map(g => `<option${g === state.genre ? " selected" : ""}>${esc(g)}</option>`).join("");
   await extrasStart();
-  render(); closest(); dlcToFinish(); weekly();
+  render(); closest(); dlcToFinish(); weekly(); tourney();
   setupParts();
 }
 start();
