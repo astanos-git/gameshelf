@@ -172,20 +172,6 @@ def main() -> None:
 
     # 3-5. Taste, indie, big releases: announced games with a date in the next 18 months
     window = f"{today},{(date.today() + timedelta(days=548)).isoformat()}"
-    def get_safe(q: dict) -> list[dict]:
-        try:
-            return get("games", key, dates=window, parent_platforms=2, page_size=40, **q).get("results", [])
-        except Exception as e:
-            log.append(f"search failed {q}: {e}")
-            return []
-
-    def get_safe_any(q: dict) -> list[dict]:
-        try:
-            return get("games", key, dates=window, ordering="-added", page_size=40, **q).get("results", [])
-        except Exception as e:
-            log.append(f"search failed {q}: {str(e)[:120]}")
-            return []
-
     def search(**q) -> list[dict]:
         try:
             return get("games", key, dates=window, parent_platforms=2, ordering="-added", page_size=40, **q).get("results", [])
@@ -214,23 +200,7 @@ def main() -> None:
     log.append(f"taste: {len(pool)} candidates, {len(scored)} good fits")
 
     n = 0
-    indie, how = [], ""
-    for how, q in (("genre", {"genres": genre_slugs.get("Indie", "indie")}), ("genre id", {"genres": 51}), ("tag", {"tags": "indie"}),
-                   ("genre on PS5, any platform filter", {"genres": genre_slugs.get("Indie", "indie"), "platforms": 187}),
-                   ("genre, newest first", {"genres": genre_slugs.get("Indie", "indie"), "ordering": "-released", "raw": 1})):
-        if q.pop("raw", None):           # no date window: newest releases, unreleased ones kept below
-            try:
-                indie = [x for x in get("games", key, page_size=40, **q).get("results", []) if unreleased(x, today)]
-            except Exception as e:
-                log.append(f"search failed {q}: {str(e)[:120]}"); indie = []
-        elif "platforms" in q:
-            indie = get_safe_any(q)
-        else:
-            indie = search(**q)
-        if indie:
-            break
-    log.append(f"indie via {how}: {len(indie)} results, added {[x.get('added') for x in indie[:8]]}, on PS {sum(1 for x in indie if on_playstation(x))}, "
-               f"unreleased {sum(1 for x in indie if unreleased(x, today))}, sample {[x['name'] for x in indie[:4]]}")
+    indie = search(genres=genre_slugs.get("Indie", "indie"))   # RAWG rarely lists consoles for unreleased indies: often empty
     for x in indie:
         if n < PER_CATEGORY and (x.get("added") or 0) >= 3 and add(x, "indie", "Indie, much awaited"):
             n += 1
