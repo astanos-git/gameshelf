@@ -50,6 +50,34 @@ def trophy_set(ts) -> dict:
     return {"bronze": ts.bronze, "silver": ts.silver, "gold": ts.gold, "platinum": ts.platinum}
 
 
+# ---------------------------------------------------------------- a copy of the project used by someone else
+
+# Your own data: cleared when the project signs in to a different PSN account (someone set up their own copy).
+# Game information shared by everyone (RAWG, HowLongToBeat, Wikipedia, title → trophy list, guides) is kept.
+PERSONAL_RESET = {"flags.json": {}, "ratings.json": {}, "goals.json": {}, "queue.json": [], "wishlist.json": {},
+                  "pick_feedback.json": {}, "snapshots.json": []}
+PERSONAL_DELETE = ["recommendations.json", "upcoming.json"]
+
+
+def start_fresh_if_new_account(account_id: str, online_id: str) -> bool:
+    prev = (json.loads(OUT.read_text()) if OUT.exists() else {}).get("profile") or {}
+    if not prev:
+        return False
+    same = prev["account_id"] == account_id if prev.get("account_id") and account_id else prev.get("online_id", "").lower() == online_id.lower()
+    if same:
+        return False
+    print(f"::notice::New PSN account ({online_id}, previously {prev.get('online_id')}): starting fresh, the previous owner's data is cleared.")
+    for name, empty in PERSONAL_RESET.items():
+        (ROOT / "docs" / name).write_text(json.dumps(empty) + "\n")
+    for name in PERSONAL_DELETE:
+        (ROOT / "docs" / name).unlink(missing_ok=True)
+    TROPHY_CACHE.unlink(missing_ok=True)                    # when *you* earned each trophy
+    for f in (ROOT / "docs" / "trophies").glob("*.json"):   # earned / not earned per trophy
+        f.unlink()
+    OUT.write_text(json.dumps({"games": [], "login": {}}) + "\n")
+    return True
+
+
 # ---------------------------------------------------------------- PSN
 
 def fetch_psn(npsso: str) -> dict:
@@ -58,6 +86,8 @@ def fetch_psn(npsso: str) -> dict:
 
     me = PSNAWP(npsso).me()
     print(f"Signed in as {me.online_id}")
+    account_id = str(getattr(me, "account_id", "") or "")
+    start_fresh_if_new_account(account_id, me.online_id)
 
     summary = me.trophy_summary()
     avatar = None
@@ -69,6 +99,7 @@ def fetch_psn(npsso: str) -> dict:
 
     profile = {
         "online_id": me.online_id,
+        "account_id": account_id,
         "avatar": avatar,
         "trophy_level": summary.trophy_level,
         "level_progress": summary.progress,

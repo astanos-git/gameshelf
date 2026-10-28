@@ -16,12 +16,12 @@ A personal PlayStation dashboard you can open from your phone. It shows your gam
 
 ## One-time setup (about 15 minutes, easiest on a computer)
 
-### 1. Create the repository
+### 1. Create your copy
 1. Sign in at github.com. Create a free account if you don't have one.
-2. Click **New repository** and name it, for example `game-shelf`. Set it to **Public**, because free GitHub Pages needs a public repo. Then click **Create**.
-3. Click **uploading an existing file** and drag in everything from this folder.
-   - On a Mac, the `.github` folder is hidden in Finder. If it doesn't upload, go to **Add file → Create new file**, name it `.github/workflows/refresh.yml`, and paste in the contents of that file.
-4. Click **Commit changes**.
+2. Open the Game Shelf repository you were given and click **Use this template → Create a new repository**.
+3. Give it a name, for example `game-shelf`, and set it to **Public**, because free GitHub Pages needs a public repo. Then click **Create repository**.
+
+Your copy starts with the previous owner's data. **Your first refresh replaces it with yours automatically**: when the project signs in to a different PSN account, it clears their library, trophies, ratings, flags, goals, wishlist, Up next and weekly picks. It keeps the shared game information (RAWG, HowLongToBeat, Wikipedia, trophy guides), so your first refresh is faster.
 
 ### 2. Get your two keys
 - **NPSSO token (PSN login):**
@@ -38,6 +38,7 @@ In the repo, go to **Settings → Secrets and variables → Actions → New repo
 |---|---|
 | `PSN_NPSSO` | your NPSSO token |
 | `RAWG_API_KEY` | your RAWG key |
+| `NTFY_TOPIC` | optional: your ntfy topic for the Monday push (see "Every Monday" below) |
 
 Secrets are encrypted. Nobody who views the repo or the dashboard can see them.
 
@@ -47,7 +48,7 @@ Go to **Settings → Pages**. Under *Build and deployment*, choose **Deploy from
 After a minute your dashboard is live at `https://<your-username>.github.io/game-shelf/`.
 
 ### 5. Load your data for the first time
-Go to **Actions → Refresh game data → Run workflow**. The run takes about 3–8 minutes: PSN requests are deliberately slowed to avoid getting blocked, and the first run looks up every game on RAWG. When it finishes, reload the dashboard.
+If the **Actions** tab asks you to enable workflows, enable them. Then go to **Actions → Refresh game data → Run workflow**. The run takes about 3–8 minutes: PSN requests are deliberately slowed to avoid getting blocked, and the first run looks up every game on RAWG. When it finishes, reload the dashboard.
 
 **On your phone:** open the dashboard in Safari or Chrome, then choose **Share → Add to Home Screen**. It then opens like an app.
 
