@@ -24,6 +24,84 @@ WISHLIST = ROOT / "docs" / "wishlist.json"
 FEEDBACK = ROOT / "docs" / "pick_feedback.json"
 RECS = ROOT / "docs" / "recommendations.json"
 QUEUE_MAX = 5
+OVERRIDES = ROOT / "overrides.json"
+DIFFICULTY = ROOT / "docs" / "difficulty.json"
+FIX_LABELS = {"guide": "trophy guide", "hltb": "HowLongToBeat match", "rawg": "game match on RAWG", "metacritic": "Metacritic score", "name": "name"}
+
+
+def apply_fix(body: str) -> str | None:
+    """"Wrong info?" from a game panel: "fix: guide|hltb|rawg|metacritic|name", "game:", "value:" ("auto" = back to automatic).
+    Written to overrides.json. The trophy guide is re-read right away; the rest applies at the next data refresh."""
+    m = re.search(r"^fix:\s*(guide|hltb|rawg|metacritic|name)\s*$", body or "", re.M | re.I)
+    if not m:
+        return None
+    what = m.group(1).lower()
+    game = re.search(r"^game:\s*(.+?)\s*$", body, re.M)
+    value = re.search(r"^value:\s*(.+?)\s*$", body, re.M)
+    if not game or not value:
+        return "Couldn't read this fix. Use \"Wrong info?\" in a game's panel."
+    game, value = game.group(1), value.group(1)
+    auto, none = value.lower() == "auto", value.lower() == "none"
+    ov = _load(OVERRIDES, {})
+    data = _load(DATA, {}).get("games", [])
+    g = next((x for x in data if x["name"] == game or game in x.get("aliases", [])), None)
+    if data and not g:
+        return f"Couldn't find {game} on the dashboard."
+    name = g["name"] if g else game
+
+    def put(section: str | None, key: str, val) -> None:
+        d = ov.setdefault(section, {}) if section else ov
+        if auto:
+            d.pop(key, None)
+        else:
+            d[key] = val
+
+    if what == "metacritic" and not auto:
+        if not re.fullmatch(r"100|[1-9]?\d", value):
+            return "The Metacritic score must be a number from 0 to 100."
+        value = int(value)
+    if what == "rawg" and not auto and not none:
+        slug = re.search(r"rawg\.io/games/([a-z0-9-]+)", value) or re.fullmatch(r"([a-z0-9-]+)", value)
+        if not slug:
+            return "That doesn't look like a rawg.io game address (https://rawg.io/games/…)."
+        value = slug.group(1)
+    if what == "guide" and not auto and not none and not re.match(r"https?://", value):
+        return "Paste the guide's web address (https://…), or type none."
+
+    if what == "guide":
+        put("guides", name, None if none else value)
+    elif what == "hltb":
+        put("hltb", name, "" if none else value)
+    elif what == "rawg":
+        put(None, name, None if none else value)
+    elif what == "metacritic":
+        put("metacritic", name, value)
+    elif what == "name":
+        names = ov.setdefault("names", {})
+        # the dashboard matches names by any title PlayStation uses for the game, so cover them all
+        keys = [k for k, v in names.items() if v == name] + [name, *(g.get("aliases", []) if g else [])]
+        for k in dict.fromkeys(keys):
+            if auto:
+                names.pop(k, None)
+            elif k != value:
+                names[k] = value
+    _save(OVERRIDES, ov)
+
+    when = "at the next data refresh (tap Refresh data to apply it now)"
+    if what == "guide":
+        store = _load(DIFFICULTY, {"games": {}})
+        store.get("games", {}).pop(name, None)            # forget the old result so it's read again
+        _save(DIFFICULTY, store)
+        try:
+            import difficulty
+            found = difficulty.check_one(name)
+            when = f"now: {found}" if found else "now, but no rating was found on that page" if not none else "now"
+        except Exception as e:
+            when = f"at the next Monday update ({e})"
+    label = FIX_LABELS[what]
+    if auto:
+        return f"{name}: {label} is back to automatic. Applies {when}."
+    return f"{name}: {label} set to {'none' if none else value}. Applies {when}."
 
 
 def _load(p: Path, default):
@@ -153,7 +231,7 @@ def apply_goals(body: str, created: str) -> str | None:
 
 
 def apply(body: str, created: str) -> str:
-    for handler in (lambda: apply_goals(body, created), lambda: apply_queue(body),
+    for handler in (lambda: apply_fix(body), lambda: apply_goals(body, created), lambda: apply_queue(body),
                     lambda: apply_wish(body, created), lambda: apply_feedback(body, created)):
         msg = handler()
         if msg:

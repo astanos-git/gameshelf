@@ -95,8 +95,37 @@ const GP = (() => {
     const H = x.hltb, hl = H ? `<div class="hltb"><span>HowLongToBeat</span>${[["Main story", H.main], ["Main + extras", H.extra], ["Completionist", H.complete]].filter(([, v]) => v).map(([k, v]) => `<span>${k} <b>${fmtH(v)}</b></span>`).join("")}${H.url ? `<a href="${esc(H.url)}" target="_blank" rel="noopener">Open</a>` : ""}</div>` : "";
     const link = x.rawg_slug ? `<a href="https://rawg.io/games/${esc(x.rawg_slug)}" target="_blank" rel="noopener">Game page on RAWG</a>` : "";
     return `<div class="detail"${id ? ` id="${id}"` : ""}>${pend}${diffLine(x)}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}
-      <div class="you"><div class="you-h">You</div>${ratingBar(x)}${actionsBar(x)}</div>${extra}</div>`;
+      <div class="you"><div class="you-h">You</div>${ratingBar(x)}${actionsBar(x)}</div>${fixForm(x)}${extra}</div>`;
   };
+
+  /* "Wrong info?": correct a match or a name. Saved like everything else (pending changes → one GitHub issue),
+     written to overrides.json; the trophy guide is re-read straight away, the rest at the next data refresh. */
+  const FIX = {
+    guide: ["Trophy guide (difficulty)", "Paste the PowerPyx guide address, or type none if there is no guide.", "https://www.powerpyx.com/…-trophy-guide-roadmap/", "url"],
+    hltb: ["HowLongToBeat match", "The game's title as written on howlongtobeat.com, or none.", "Title on HowLongToBeat", "text"],
+    rawg: ["Game match (genres, Metacritic, release)", "Paste the game's rawg.io address, or type none.", "https://rawg.io/games/…", "url"],
+    metacritic: ["Metacritic score", "The score from metacritic.com (0–100).", "e.g. 87", "number"],
+    name: ["Name shown", "The name to show on the dashboard.", "Name", "text"],
+  };
+  function fixForm(x) {
+    if (!repoUrl()) return "";
+    return `<details class="fixit" data-name="${esc(x.name)}"><summary>Wrong info?</summary>
+      <div class="fx"><select class="fx-what" aria-label="What's wrong">${Object.entries(FIX).map(([k, [l]]) => `<option value="${k}">${l}</option>`).join("")}</select>
+        <p class="fx-hint note">${FIX.guide[1]}</p>
+        <input class="fx-val" type="url" placeholder="${FIX.guide[2]}" aria-label="Correct value">
+        <span class="fx-act"><a class="fx-save off" target="_blank" rel="noopener" href="#">Save fix</a><a class="fx-reset" target="_blank" rel="noopener" href="${fixUrl(x.name, "guide", "auto")}">Back to automatic</a></span></div></details>`;
+  }
+  const fixUrl = (name, what, value) => issue(`Fix ${name}: ${FIX[what][0].toLowerCase()}`, [`fix: ${what}`, `game: ${name}`, `value: ${value}`]);
+  function syncFix(box) {
+    const what = box.querySelector(".fx-what").value, inp = box.querySelector(".fx-val"), [, hint, ph, type] = FIX[what];
+    if (inp.dataset.what !== what) { inp.dataset.what = what; inp.type = type; inp.placeholder = ph; box.querySelector(".fx-hint").textContent = hint; }
+    const v = inp.value.trim(), ok = what === "metacritic" ? /^(100|[1-9]?\d)$/.test(v) : !!v;
+    const save = box.querySelector(".fx-save"); save.classList.toggle("off", !ok); save.href = ok ? fixUrl(box.dataset.name, what, v) : "#";
+    box.querySelector(".fx-reset").href = fixUrl(box.dataset.name, what, "auto");
+  }
+  document.addEventListener("input", e => { const b = e.target.closest(".fixit"); if (b) syncFix(b); });
+  document.addEventListener("change", e => { const b = e.target.closest(".fixit"); if (b) syncFix(b); });
+  document.addEventListener("click", e => { if (e.target.matches(".fx-save.off")) e.preventDefault(); }, true);
 
   // Rating slider and ± buttons, and "✓ Added" once a change goes into the pending list
   document.addEventListener("input", e => { if (e.target.matches(".detail .rater input")) syncRater(e.target.closest(".rating"), +e.target.value); });

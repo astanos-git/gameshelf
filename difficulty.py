@@ -186,7 +186,16 @@ def truetrophies(names: list[str], platforms: list[str]) -> dict | None:
     return None
 
 
-SOURCES = {"powerpyx": lambda g: powerpyx(g["names"]), "truetrophies": lambda g: truetrophies(g["names"], g.get("platforms", []))}
+def from_url(url: str) -> dict | None:
+    """A guide you picked yourself ("Wrong info?" on the dashboard): read its summary, whatever the site."""
+    page = fetch(url)
+    if not page:
+        return None
+    found = parse_summary(text_of(page.text))
+    return {**found, "url": url} if found.get("difficulty") is not None or found.get("hours") else None
+
+
+SOURCES = {"powerpyx": lambda g: from_url(g["guide"]) if g.get("guide") else None if g.get("no_guide") else powerpyx(g["names"]), "truetrophies": lambda g: truetrophies(g["names"], g.get("platforms", []))}
 LABELS = {"powerpyx": "PowerPyx", "truetrophies": "TrueTrophies"}
 
 
@@ -205,6 +214,34 @@ def combine(src: dict) -> dict:
         if pick(k):
             out[k] = max(pick(k))
     return out
+
+
+def guide_info(g: dict, guides: dict) -> dict:
+    """What to look up for a game: its names, or the guide you chose ("guides" in overrides.json: URL, or null = no guide)."""
+    o = guides.get(g["name"], "")
+    return {"names": [g["name"], *g.get("aliases", [])], "platforms": g.get("platforms", []),
+            "guide": o if isinstance(o, str) and o.startswith("http") else None, "no_guide": g["name"] in guides and o is None}
+
+
+def check_one(name: str) -> str:
+    """Look one game up now (after a fix from the dashboard) and save it. Returns a short summary."""
+    data = json.loads((ROOT / "docs" / "data.json").read_text())
+    g = next(x for x in data["games"] if x["name"] == name or name in x.get("aliases", []))
+    store = json.loads(OUT.read_text()) if OUT.exists() else {"games": {}}
+    guides = (json.loads(OVERRIDES.read_text()) if OVERRIDES.exists() else {}).get("guides", {})
+    info, today = guide_info(g, guides), date.today().isoformat()
+    entry = store["games"][g["name"]] = {"sources": {}, "checked": {}}
+    for key, fn in SOURCES.items():
+        try:
+            entry["sources"][key] = fn(info)
+        except Blocked:
+            continue
+        entry["checked"][key] = today
+    entry["combined"] = combine(entry["sources"])
+    OUT.write_text(json.dumps(store, ensure_ascii=False, indent=0, sort_keys=True))
+    c = entry["combined"]
+    return " · ".join(x for x in [f"{c['difficulty']}/10" if c.get("difficulty") is not None else "", f"~{c['hours']} h" if c.get("hours") else "",
+                                  f"{c['missable']} missable" if c.get("missable") else ""] if x)
 
 
 def main() -> None:
@@ -254,8 +291,7 @@ def main() -> None:
         if not g.get("trophies_total") and (g.get("hours") or 0) > 0 and g.get("status") != "unplayed":
             continue        # played but no trophies at all: an app (Netflix, Spotify…), not a game
         entry = store["games"].setdefault(g["name"], {"sources": {}, "checked": {}})
-        names = [names_override.get(g["name"], g["name"]), *g.get("aliases", [])]
-        info = {"names": names, "platforms": g.get("platforms", [])}
+        info = guide_info(g, names_override)
         touched = False
         for key, fn in SOURCES.items():
             if key in blocked or entry["sources"].get(key):

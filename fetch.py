@@ -495,6 +495,9 @@ def enrich_hltb(games: list[dict]) -> None:
     looked_up, failures = 0, 0
     for g in games:
         name = g["name"]
+        if loose(name) in overrides and not overrides[loose(name)]:
+            cache.pop(name, None)       # you said "none" on the dashboard: no HowLongToBeat match for this game
+            continue
         query = overrides.get(loose(name)) or search_name(name)
         info = cache.get(name)
         if info is not None:

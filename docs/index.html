@@ -172,6 +172,8 @@ body.selecting .wrap { padding-bottom: 170px; }
         <option value="progress">Progress</option>
         <option value="left">Trophies left</option>
         <option value="beat">Time to beat</option>
+        <option value="platEasy">Easiest platinum</option>
+        <option value="platShort">Shortest platinum</option>
         <option value="name">Name</option>
       </select>
       <button class="selbtn" id="selectBtn" aria-pressed="false">Select</button>
@@ -331,9 +333,9 @@ function renderHeader() {
 // Finished (platinum, 100% or Beaten) but not rated yet
 const toRate = x => (x.status === "completed" || x.status === "beaten") && !ratingOf(x);
 function renderChips() {
-  const count = s => s === "all" ? DATA.games.length : s === "torate" ? DATA.games.filter(toRate).length : DATA.games.filter(x => x.status === s).length;
-  const chips = { ...STATUS, ...(count("torate") ? { torate: "To rate" } : {}) };
-  if (state.status === "torate" && !count("torate")) state.status = "all";
+  const count = s => s === "all" ? DATA.games.length : s === "torate" ? DATA.games.filter(toRate).length : s === "easyplat" ? DATA.games.filter(easyPlat).length : DATA.games.filter(x => x.status === s).length;
+  const chips = { ...STATUS, ...(count("easyplat") ? { easyplat: "🏆 Easy platinum" } : {}), ...(count("torate") ? { torate: "To rate" } : {}) };
+  if ((state.status === "torate" || state.status === "easyplat") && !count(state.status)) state.status = "all";
   $("chips").innerHTML = Object.entries(chips).map(([k, v]) =>
     `<button class="chip${k === "torate" ? " torate" : ""}" data-s="${k}" aria-pressed="${state.status === k}">${v}<small>${count(k)}</small></button>`).join("");
 }
@@ -347,12 +349,18 @@ const SORTS = {
   beat: (a, b) => (beatTime(a) ?? 1e9) - (beatTime(b) ?? 1e9),
   left: (a, b) => (b.trophies_total - b.trophies_earned) - (a.trophies_total - a.trophies_earned),
   name: (a, b) => a.name.localeCompare(b.name),
+  // platinum from trophy guides; games without a guide rating, or already platinum, go last
+  platEasy: (a, b) => (platOf(a)?.difficulty ?? 99) - (platOf(b)?.difficulty ?? 99) || (platOf(a)?.hours ?? 999) - (platOf(b)?.hours ?? 999),
+  platShort: (a, b) => (platOf(a)?.hours ?? 9999) - (platOf(b)?.hours ?? 9999) || (platOf(a)?.difficulty ?? 99) - (platOf(b)?.difficulty ?? 99),
 };
+const platOf = x => x.platinum || x.base_status === "completed" ? null : GP.diffOf(x)?.combined || null;
+// "Easy platinum": rated 3.5/10 or less by the guides, not finished and not dropped
+const easyPlat = x => x.status !== "dropped" && platOf(x)?.difficulty != null && platOf(x).difficulty <= 3.5;
 
 function visibleRows() {
   const q = state.q.trim().toLowerCase();
   return DATA.games
-    .filter(x => state.status === "all" || (state.status === "torate" ? toRate(x) : x.status === state.status))
+    .filter(x => state.status === "all" || (state.status === "torate" ? toRate(x) : state.status === "easyplat" ? easyPlat(x) : x.status === state.status))
     .filter(x => !q || x.name.toLowerCase().includes(q) || (x.genres || []).some(gn => gn.toLowerCase().includes(q)))
     .sort(SORTS[state.sort]);
 }
@@ -522,6 +530,7 @@ function save() { try { localStorage.setItem("shelf", JSON.stringify({ status: s
 
 $("chips").addEventListener("click", e => { const b = e.target.closest(".chip"); if (!b) return;
   state.status = b.dataset.s; if (state.status === "unplayed" && state.sort === "recent") { state.sort = "metacritic"; $("sort").value = "metacritic"; }
+  if (state.status === "easyplat" && !state.sort.startsWith("plat")) { state.sort = "platEasy"; $("sort").value = "platEasy"; }
   save(); renderChips(); renderList(); });
 $("list").addEventListener("click", e => {
   const tf = e.target.closest("button[data-tf]");

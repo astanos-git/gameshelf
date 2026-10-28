@@ -168,3 +168,12 @@ details.how p { margin: 0 0 4px; }
 .pdiff { display: grid; gap: 2px; font-size: 13.5px; }
 .pdiff-src { font-size: 12px; color: var(--muted); }
 .pdiff-src a { color: var(--muted); }
+.fixit { font-size: 13px; }
+.fixit summary { cursor: pointer; color: var(--muted); list-style: none; } .fixit summary::-webkit-details-marker { display: none; }
+.fixit summary::before { content: "✎ "; }
+.fixit .fx { display: grid; gap: 6px; margin-top: 8px; }
+.fixit select, .fixit input { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; font-size: 14px; width: 100%; min-width: 0; }
+.fx-act { display: flex; gap: 12px; align-items: center; }
+.fx-save { background: var(--accent); color: #fff !important; border-radius: 8px; padding: 6px 14px; text-decoration: none; font-weight: 600; }
+.fx-save.off { background: var(--line); color: var(--muted) !important; cursor: default; }
+.fx-reset { font-size: 12.5px; }

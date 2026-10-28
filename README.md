@@ -48,6 +48,8 @@ Go to **Actions → Refresh game data → Run workflow**. The run takes about 3�
 ---
 
 ## Everyday use
+- **Platinum difficulty**: the Library can sort by **Easiest platinum** or **Shortest platinum**, and the **🏆 Easy platinum** chip lists games the guides rate 3.5/10 or less that you haven't finished (dropped games left out).
+- **Wrong info?** (bottom of a game's panel): correct the trophy guide, the HowLongToBeat match, the RAWG match (genres, Metacritic, release), the Metacritic score or the name shown. Type `none` when there's no match, or tap **Back to automatic** to undo. It goes through your pending changes and is saved in `overrides.json`. A new trophy guide is read straight away; the other fixes apply at the next data refresh.
 
 - **Tap to see more on Play next:** every game on Play next opens a panel. Your own games get the same panel as the Library (without the trophy list); weekly picks, wishlist and coming-soon games show a short description, studios, release date and links (refreshed every Monday).
 - **Coming soon** (Play next → Discover): unreleased PS4/PS5 games in categories: **Your series**, **Your studios**, **Your taste** (same taste profile as the weekly picks), **Big releases** and **Indie** (the most awaited on RAWG), plus **Out soon** (next 60 days). Tap **+** to add one to your wishlist. Updated every Monday (`discover.py`); to update it now, run **Weekly recommendations** with *What to run* = `coming-soon`.
