@@ -119,11 +119,27 @@ def slugify(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", re.sub(r"['’.!,]", "", s)).strip("-")
 
 
+ROMAN = {"ii": "2", "iii": "3", "iv": "4", "v": "5", "vi": "6", "vii": "7", "viii": "8"}
+
+
+def guide_urls(names: list[str]) -> list[str]:
+    """Likely PowerPyx addresses: the name as is, with roman/arabic numbers swapped, without "remastered",
+    then the older "-trophy-guide/" form."""
+    slugs = []
+    for n in names:
+        base = slugify(n)
+        slugs.append(base)
+        slugs.append("-".join(ROMAN.get(w, w) for w in base.split("-")))
+        slugs.append("-".join({v: k for k, v in ROMAN.items()}.get(w, w) for w in base.split("-")))
+        slugs.append(re.sub(r"-(remastered|remaster|definitive-edition|complete-edition|game-of-the-year-edition|goty-edition|directors-cut)$", "", base))
+    slugs = list(dict.fromkeys(x for x in slugs if x))[:4]
+    return [f"https://www.powerpyx.com/{x}-trophy-guide-roadmap/" for x in slugs] + [f"https://www.powerpyx.com/{x}-trophy-guide/" for x in slugs[:2]]
+
+
 def powerpyx(names: list[str]) -> dict | None:
     # 1. the usual address of a guide; 2. the site's search (posts come back with their text)
-    for n in dict.fromkeys(names):
-        url = f"https://www.powerpyx.com/{slugify(n)}-trophy-guide-roadmap/"
-        page = fetch(url)
+    for url in guide_urls(names):
+        page = fetch(url, delay=0.6)
         if page:
             found = parse_summary(text_of(page.text))
             if found.get("difficulty") is not None:
