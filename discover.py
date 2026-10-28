@@ -172,11 +172,18 @@ def main() -> None:
 
     # 3-5. Taste, indie, big releases: announced games with a date in the next 18 months
     window = f"{today},{(date.today() + timedelta(days=548)).isoformat()}"
+    def get_safe(q: dict) -> list[dict]:
+        try:
+            return get("games", key, dates=window, parent_platforms=2, page_size=40, **q).get("results", [])
+        except Exception as e:
+            log.append(f"search failed {q}: {e}")
+            return []
+
     def search(**q) -> list[dict]:
         try:
             return get("games", key, dates=window, parent_platforms=2, ordering="-added", page_size=40, **q).get("results", [])
         except Exception as e:
-            print(f"  search skipped {q}: {e}")
+            log.append(f"search failed {q}: {str(e)[:120]}")
             return []
 
     profile = build_profile(games, flags, ratings, key, feedback)
@@ -200,8 +207,13 @@ def main() -> None:
     log.append(f"taste: {len(pool)} candidates, {len(scored)} good fits")
 
     n = 0
-    indie = search(genres="indie")
-    log.append(f"indie: {len(indie)} results, added {[x.get('added') for x in indie[:8]]}, on PS {sum(1 for x in indie if on_playstation(x))}, "
+    indie, how = [], ""
+    for how, q in (("genre", {"genres": genre_slugs.get("Indie", "indie")}), ("genre id", {"genres": 51}), ("tag", {"tags": "indie"}),
+                   ("genre, no date order", {"genres": genre_slugs.get("Indie", "indie"), "ordering": "-rating"})):
+        indie = search(**q) if "ordering" not in q else get_safe(q)
+        if indie:
+            break
+    log.append(f"indie via {how}: {len(indie)} results, added {[x.get('added') for x in indie[:8]]}, on PS {sum(1 for x in indie if on_playstation(x))}, "
                f"unreleased {sum(1 for x in indie if unreleased(x, today))}, sample {[x['name'] for x in indie[:4]]}")
     for x in indie:
         if n < PER_CATEGORY and (x.get("added") or 0) >= 3 and add(x, "indie", "Indie, much awaited"):
