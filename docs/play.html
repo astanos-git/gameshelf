@@ -507,7 +507,7 @@ function upNext() {
   const list = (qDraft || QUEUE).map(n => ({ n, g: byName(n) })).filter(o => o.g);
   const changed = qDraft && qDraft.join("|") !== QUEUE.join("|");
   $("upnext").innerHTML = list.length ? `<ol class="list">${list.map(({ n, g }, i) => `<li class="item uq tap" data-g="${esc(g.name)}"><span class="rank">${i + 1}</span><span class="cover">${pic(g.image, g.name)}</span>
-      <span class="main"><span class="name">${esc(g.name)}</span>${left(g) ? `<span class="meta"><span>~${left(g)} h ${g.eff === "started" ? "left" : "to beat"}</span>${GP.forecast(g)?.short ? `<span class="out">${esc(GP.forecast(g).short)}</span>` : ""}</span>` : ""}${GP.missableNote(g)}</span>
+      <span class="main"><span class="name">${esc(g.name)}</span>${left(g) ? `<span class="meta"><span>~${left(g)} h ${g.eff === "started" ? "left" : "to beat"}</span>${GP.forecast(g)?.short ? `<span class="out">${esc(GP.forecast(g).short)}</span>` : ""}</span>` : ""}</span>
       <span class="qbtns"><button data-q="up" data-i="${i}" ${i ? "" : "disabled"} aria-label="Move up">↑</button><button data-q="down" data-i="${i}" ${i < list.length - 1 ? "" : "disabled"} aria-label="Move down">↓</button><button data-q="del" data-i="${i}" aria-label="Remove">✕</button></span></li>`).join("")}</ol>
       ${changed ? `<div class="row">${act(issueUrl("Up next: new order", ["queue: set", ...(qDraft.length ? qDraft.map(n => `game: ${n}`) : [])]), "Save order", "primary")}<button class="chip" data-q="reset">Undo</button></div>` : ""}`
     : `<p class="empty">Nothing queued yet. Open a game in the Library and tap <b>+ Up next</b> (up to 5 games).</p>`;

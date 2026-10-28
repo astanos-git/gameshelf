@@ -33,14 +33,6 @@ const GP = (() => {
     const when = d.toLocaleDateString(undefined, { day: "numeric", month: "short", ...(d.getFullYear() !== new Date().getFullYear() ? { year: "numeric" } : {}) });
     return { text: `At your recent pace (~${fmtH(rate)}/week) you'd finish around ${when}`, short: `done ~${when}`, date: d };
   };
-  // Missables to know before starting: "⚠️ 10 missable · 2 playthroughs", with the guide
-  api.missableNote = x => {
-    const e = api.diffOf(x), c = e?.combined; if (!c || x.base_status === "completed") return "";
-    const bits = [c.missable ? `${c.missable} missable` : "", c.playthroughs > 1 ? `${c.playthroughs} playthroughs` : ""].filter(Boolean);
-    if (!bits.length) return "";
-    const url = e.sources?.powerpyx?.url || Object.values(e.sources || {}).find(v => v?.url)?.url;
-    return `<span class="warn-miss">⚠️ ${bits.join(" · ")}${url ? ` · <a href="${esc(url)}" target="_blank" rel="noopener" title="Read the roadmap before you start">Guide ↗</a>` : ""}</span>`;
-  };
   api.diffOf = x => [x.name, ...(x.aliases || [])].map(n => api.difficulty[n]).find(e => e?.combined && Object.keys(e.combined).length) || null;
   function diffLine(x) {
     const e = api.diffOf(x); if (!e) return "";
@@ -48,7 +40,8 @@ const GP = (() => {
     if (c.difficulty != null) bits.push(`<b>Platinum ${c.difficulty}/10</b>`);
     if (c.hours) bits.push(c.difficulty != null ? `~${c.hours} h` : `<b>Platinum ~${c.hours} h</b>`);
     if (c.playthroughs) bits.push(`${c.playthroughs} playthrough${c.playthroughs > 1 ? "s" : ""}`);
-    if (c.missable != null) bits.push(c.missable ? `${c.missable} missable` : "no missables");
+    // missables stand out in the details while there is still something to miss
+    if (c.missable != null) bits.push(!c.missable ? "no missables" : x.base_status === "completed" ? `${c.missable} missable` : `<span class="warn-miss">⚠️ ${c.missable} missable: read the guide before you start</span>`);
     if (c.online) bits.push(`${c.online} online`);
     if (c.glitched) bits.push(`${c.glitched} glitched`);
     const srcs = Object.entries(e.sources || {}).filter(([, v]) => v).map(([k, v]) => `<a href="${esc(v.url)}" target="_blank" rel="noopener">${SRC[k] || k}${v.difficulty != null ? ` ${v.difficulty}/10` : ""}${v.hours ? ` · ${v.hours_text || v.hours} h` : ""}</a>`);
