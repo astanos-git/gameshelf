@@ -146,7 +146,7 @@ tr.tap.open td { background: var(--accent-soft); }
     <section class="block">
       <h2 class="sec">Next platinum: how hard?</h2>
       <div id="platHard"></div>
-      <details class="how"><summary>How this works</summary><p>Games in progress that have a platinum, easiest first. "Plat" is the share of players who have the platinum; "Rare left" counts your missing trophies that under 10% of players have.</p></details>
+      <details class="how"><summary>How this works</summary><p>Games in progress that have a platinum, easiest first. "Guide" is the platinum difficulty from trophy guides (PowerPyx, PSNProfiles, PlayStationTrophies; average when several rate it): up to 3.5 is Easy, up to 6 Medium, above that Hard. Without a guide rating, the level is estimated from PSN: "Plat" is the share of players who have the platinum, and missing trophies that under 10% of players have count against it. Tap a game for hours, missables and playthroughs.</p></details>
     </section>
     <section class="block">
       <h2 class="sec">DLC to finish</h2>
@@ -459,13 +459,17 @@ function planner() {
 
 /* ---------- 10. Platinum difficulty ---------- */
 function platDifficulty() {
+  // Guide rating (difficulty.json) when there is one, otherwise an estimate from PSN rarity
   const rows = DATA.games.filter(x => x.plat_rate != null && !x.platinum_at && x.eff !== "dropped" && (x.progress || 0) > 0)
-    .map(x => { const level = x.rare_missing === 0 && x.plat_rate >= 10 ? "Easy" : (x.rare_missing >= 3 || x.plat_rate < 5) ? "Hard" : "Medium";
-      return { x, level, ease: x.rare_missing * 10 + (100 - x.progress) / 5 - x.plat_rate / 3 }; })
+    .map(x => { const gd = GP.diffOf(x)?.combined.difficulty ?? null;   // guide rating /10
+      const level = gd != null ? (gd <= 3.5 ? "Easy" : gd <= 6 ? "Medium" : "Hard")
+        : x.rare_missing === 0 && x.plat_rate >= 10 ? "Easy" : (x.rare_missing >= 3 || x.plat_rate < 5) ? "Hard" : "Medium";
+      const est = x.rare_missing * 10 + (100 - x.progress) / 5 - x.plat_rate / 3;
+      return { x, gd, level, ease: (gd != null ? gd * 8 : 30 + est / 2) + (100 - x.progress) / 4 }; })
     .sort((a, b) => a.ease - b.ease).slice(0, 20);
   const shown = hardAll ? rows : rows.slice(0, 6);
-  $("platHard").innerHTML = rows.length ? `<div class="tblwrap"><table class="tbl"><thead><tr><th>Game</th><th>You</th><th>Plat</th><th>Rare left</th><th></th></tr></thead><tbody>
-    ${shown.map(r => `<tr class="tap" data-g="${esc(r.x.name)}"><td>${esc(r.x.name)}</td><td class="num">${r.x.progress}%</td><td class="num">${r.x.plat_rate}%</td><td class="num">${r.x.rare_missing}/${r.x.missing_n}</td><td><span class="lvl ${r.level.toLowerCase()}">${r.level}</span></td></tr>`).join("")}</tbody></table></div>
+  $("platHard").innerHTML = rows.length ? `<div class="tblwrap"><table class="tbl"><thead><tr><th>Game</th><th>You</th><th>Guide</th><th>Plat</th><th></th></tr></thead><tbody>
+    ${shown.map(r => `<tr class="tap" data-g="${esc(r.x.name)}"><td>${esc(r.x.name)}</td><td class="num">${r.x.progress}%</td><td class="num">${r.gd != null ? r.gd + "/10" : "—"}</td><td class="num">${r.x.plat_rate}%</td><td><span class="lvl ${r.level.toLowerCase()}">${r.level}</span></td></tr>`).join("")}</tbody></table></div>
     ${rows.length > 6 ? `<button class="more" id="hardMore">${hardAll ? "Show fewer" : `Show all ${rows.length}`}</button>` : ""}`
     : `<p class="empty">Appears after the next refresh.</p>`;
   reopen();
@@ -475,6 +479,7 @@ async function extrasStart() {
   [QUEUE, WISH, FEEDBACK, SNAPS, GOALS, FLAGS, GP.ratings] = await Promise.all([getJSON("queue.json", []), getJSON("wishlist.json", {}), getJSON("pick_feedback.json", {}),
     getJSON("snapshots.json", []), getJSON("goals.json", {}), getJSON("flags.json", {}), getJSON("ratings.json", {})]);
   UPC = await getJSON("upcoming.json", {});
+  GP.difficulty = (await getJSON("difficulty.json", {})).games || {};
   GP.queue = QUEUE;
   digest(); upNext(); wishlist(); comingSoon(); planner(); platDifficulty();
 }

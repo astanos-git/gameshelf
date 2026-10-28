@@ -165,3 +165,6 @@ details.how p { margin: 0 0 4px; }
 .detail a.flagbtn.beaten { border-color: var(--st-beaten); color: var(--st-beaten); }
 .detail a.flagbtn.dropped { border-color: var(--st-dropped); color: var(--st-dropped); }
 .detail .flagnote { margin: 0; color: var(--muted); font-size: 12.5px; }
+.pdiff { display: grid; gap: 2px; font-size: 13.5px; }
+.pdiff-src { font-size: 12px; color: var(--muted); }
+.pdiff-src a { color: var(--muted); }

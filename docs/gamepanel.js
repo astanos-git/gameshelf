@@ -8,7 +8,22 @@ const GP = (() => {
   const fmtDate = s => s ? new Date(s).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "—";
   const fmtH = h => h >= 10 ? Math.round(h) + " h" : (Math.round(h * 2) / 2) + " h";
   const mcClass = m => m == null ? "none" : m >= 75 ? "good" : m >= 50 ? "mid" : "bad";
-  const api = { ratings: {}, queue: [] };
+  const api = { ratings: {}, queue: [], difficulty: {} };
+  const SRC = { powerpyx: "PowerPyx", truetrophies: "TrueTrophies" };
+  // Platinum difficulty from trophy guides (difficulty.json, weekly): "Platinum 3/10 · ~120 h · 10 missable · 2 playthroughs"
+  api.diffOf = x => [x.name, ...(x.aliases || [])].map(n => api.difficulty[n]).find(e => e?.combined && Object.keys(e.combined).length) || null;
+  function diffLine(x) {
+    const e = api.diffOf(x); if (!e) return "";
+    const c = e.combined, bits = [];
+    if (c.difficulty != null) bits.push(`<b>Platinum ${c.difficulty}/10</b>`);
+    if (c.hours) bits.push(c.difficulty != null ? `~${c.hours} h` : `<b>Platinum ~${c.hours} h</b>`);
+    if (c.playthroughs) bits.push(`${c.playthroughs} playthrough${c.playthroughs > 1 ? "s" : ""}`);
+    if (c.missable != null) bits.push(c.missable ? `${c.missable} missable` : "no missables");
+    if (c.online) bits.push(`${c.online} online`);
+    if (c.glitched) bits.push(`${c.glitched} glitched`);
+    const srcs = Object.entries(e.sources || {}).filter(([, v]) => v).map(([k, v]) => `<a href="${esc(v.url)}" target="_blank" rel="noopener">${SRC[k] || k}${v.difficulty != null ? ` ${v.difficulty}/10` : ""}${v.hours ? ` · ${v.hours_text || v.hours} h` : ""}</a>`);
+    return `<div class="pdiff"><span>${bits.join(" · ")}</span><span class="pdiff-src">${srcs.join(" · ")}</span></div>`;
+  }
 
   function repoUrl() {
     const h = location.hostname; if (!h.endsWith(".github.io")) return null;
@@ -79,7 +94,7 @@ const GP = (() => {
     ];
     const H = x.hltb, hl = H ? `<div class="hltb"><span>HowLongToBeat</span>${[["Main story", H.main], ["Main + extras", H.extra], ["Completionist", H.complete]].filter(([, v]) => v).map(([k, v]) => `<span>${k} <b>${fmtH(v)}</b></span>`).join("")}${H.url ? `<a href="${esc(H.url)}" target="_blank" rel="noopener">Open</a>` : ""}</div>` : "";
     const link = x.rawg_slug ? `<a href="https://rawg.io/games/${esc(x.rawg_slug)}" target="_blank" rel="noopener">Game page on RAWG</a>` : "";
-    return `<div class="detail"${id ? ` id="${id}"` : ""}>${pend}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}
+    return `<div class="detail"${id ? ` id="${id}"` : ""}>${pend}${diffLine(x)}${hl}<dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>${link}
       <div class="you"><div class="you-h">You</div>${ratingBar(x)}${actionsBar(x)}</div>${extra}</div>`;
   };
 
