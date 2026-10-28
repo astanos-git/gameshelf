@@ -17,6 +17,10 @@ on:
         description: "Difficulty only: how many minutes to spend (max 60)"
         type: string
         default: "55"
+      probe:
+        description: "Difficulty only: extra game names to diagnose, comma-separated"
+        type: string
+        default: ""
       retry:
         description: "Difficulty only: site(s) to check again for games not found before (e.g. powerpyx)"
         type: string
@@ -62,7 +66,7 @@ jobs:
       - name: Probe the guide sites
         if: env.MODE == 'difficulty'
         continue-on-error: true
-        run: python difficulty.py --probe "Metaphor ReFantazio"
+        run: python difficulty.py --probe "Metaphor ReFantazio${{ inputs.probe != '' && format(',{0}', inputs.probe) || '' }}"
       - name: Platinum difficulty from guide sites
         if: env.MODE == 'full' || env.MODE == 'difficulty'
         continue-on-error: true

@@ -212,7 +212,17 @@ def main() -> None:
     args = ap.parse_args()
 
     if args.probe:
-        g = {"names": [args.probe], "platforms": ["PS5", "PS4"]}
+        for name in [n.strip() for n in args.probe.split(",") if n.strip()][1:]:
+            url = f"https://www.powerpyx.com/{slugify(name)}-trophy-guide-roadmap/"
+            r = S.get(url, timeout=25); t = text_of(r.text); i = t.lower().find("difficulty")
+            print(f"::notice::Debug {name}: GET {url} -> {r.status_code}, {len(r.text)}b, parsed {parse_summary(t)}, near 'difficulty': {' '.join(t[max(0, i - 60):i + 120].split()) if i >= 0 else '-'}")
+            r = S.get(f"https://www.powerpyx.com/wp-json/wp/v2/posts?search={quote_plus(search_name(name) + ' trophy guide')}&per_page=20", timeout=25)
+            try:
+                titles = [html.unescape(p["title"]["rendered"]) for p in r.json()]
+            except Exception:
+                titles = [r.text[:200]]
+            print(f"::notice::Debug {name}: search -> {r.status_code}, {len(titles)} posts: {titles[:12]} · scores {[round(match_score(t2, [name]), 2) for t2 in titles[:12]]}")
+        g = {"names": [args.probe.split(",")[0].strip()], "platforms": ["PS5", "PS4"]}
         for key, fn in SOURCES.items():
             try:
                 print(f"::notice::Probe {key}: {fn(g)}")
