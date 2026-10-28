@@ -42,8 +42,7 @@
 "difficulty": 3.0,
 "hours": 22,
 "missable": 3,
-"online": 0,
-"playthroughs": 2
+"online": 0
 },
 "sources": {
 "powerpyx": {
@@ -52,7 +51,6 @@
 "hours_text": "20–25",
 "missable": 3,
 "online": 0,
-"playthroughs": 2,
 "url": "https://www.powerpyx.com/a-plague-tale-requiem-trophy-guide-roadmap/"
 },
 "truetrophies": {
@@ -729,8 +727,6 @@
 "sources": {
 "powerpyx": {
 "difficulty": 5.0,
-"hours": 62,
-"hours_text": "50–75",
 "missable": 0,
 "online": 35,
 "playthroughs": 25,
@@ -927,8 +923,7 @@
 "difficulty": 5.0,
 "hours": 70,
 "missable": 7,
-"online": 0,
-"playthroughs": 2
+"online": 0
 },
 "sources": {
 "powerpyx": {
@@ -937,7 +932,6 @@
 "hours_text": "40–60",
 "missable": 7,
 "online": 0,
-"playthroughs": 2,
 "url": "https://www.powerpyx.com/black-myth-wukong-trophy-guide-roadmap/"
 },
 "truetrophies": {
@@ -1036,8 +1030,7 @@
 "glitched": 3,
 "hours": 60,
 "missable": 0,
-"online": 79,
-"playthroughs": 1
+"online": 79
 },
 "sources": {
 "powerpyx": {
@@ -1047,7 +1040,6 @@
 "hours_text": "50–70",
 "missable": 0,
 "online": 3,
-"playthroughs": 1,
 "url": "https://www.powerpyx.com/borderlands-3-trophy-guide-roadmap/"
 },
 "truetrophies": {
@@ -1938,7 +1930,6 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"difficulty": 5.0,
 "glitched": 0,
 "hours": 50,
 "missable": 0,
@@ -1947,7 +1938,6 @@
 },
 "sources": {
 "powerpyx": {
-"difficulty": 5.0,
 "glitched": 0,
 "hours": 50,
 "hours_text": "50",
@@ -6068,6 +6058,8 @@
 "powerpyx": {
 "difficulty": 4.0,
 "glitched": 3,
+"hours": 40,
+"hours_text": "40",
 "missable": 0,
 "playthroughs": 2,
 "url": "https://www.powerpyx.com/rise-of-the-tomb-raider-trophy-guide-roadmap/"
@@ -6215,7 +6207,7 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"difficulty": 9.0,
+"difficulty": 5.5,
 "hours": 45,
 "missable": 36,
 "online": 0,
@@ -6223,7 +6215,7 @@
 },
 "sources": {
 "powerpyx": {
-"difficulty": 9.0,
+"difficulty": 5.5,
 "hours": 35,
 "hours_text": "30–40",
 "missable": 36,
@@ -7165,7 +7157,6 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"difficulty": 6.0,
 "glitched": 1,
 "hours": 18,
 "missable": 6,
@@ -7174,7 +7165,6 @@
 },
 "sources": {
 "powerpyx": {
-"difficulty": 6.0,
 "glitched": 1,
 "hours": 12,
 "hours_text": "10–15",
@@ -8540,5 +8530,5 @@
 }
 }
 },
-"updated_at": "2026-10-28T12:52:43+00:00"
+"updated_at": "2026-10-28T13:25:57+00:00"
 }
