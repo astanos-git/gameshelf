@@ -1936,7 +1936,7 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"difficulty": 7.5,
+"difficulty": 5.0,
 "glitched": 0,
 "hours": 50,
 "missable": 0,
@@ -1945,7 +1945,7 @@
 },
 "sources": {
 "powerpyx": {
-"difficulty": 7.5,
+"difficulty": 5.0,
 "glitched": 0,
 "hours": 50,
 "hours_text": "50",
@@ -2090,8 +2090,8 @@
 "powerpyx": {
 "difficulty": 4.0,
 "glitched": 0,
-"hours": 85,
-"hours_text": "70–100",
+"hours": 125,
+"hours_text": "100–150",
 "missable": 1,
 "online": 26,
 "url": "https://www.powerpyx.com/diablo-4-trophy-guide-roadmap/"
@@ -2180,7 +2180,7 @@
 },
 "combined": {
 "difficulty": 3.0,
-"hours": 70,
+"hours": 55,
 "missable": 2,
 "online": 0,
 "playthroughs": 1
@@ -2188,8 +2188,8 @@
 "sources": {
 "powerpyx": {
 "difficulty": 3.0,
-"hours": 70,
-"hours_text": "60–80",
+"hours": 55,
+"hours_text": "50–60",
 "missable": 2,
 "online": 0,
 "playthroughs": 1,
@@ -2398,7 +2398,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 100,
+"hours": 70,
 "missable": 0,
 "online": 31
 },
@@ -2406,8 +2406,8 @@
 "powerpyx": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 100,
-"hours_text": "100",
+"hours": 65,
+"hours_text": "60–70",
 "missable": 0,
 "online": 31,
 "url": "https://www.powerpyx.com/fifa-23-trophy-guide-roadmap/"
@@ -2676,7 +2676,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 100,
+"hours": 65,
 "missable": 0,
 "online": 31
 },
@@ -2684,8 +2684,8 @@
 "powerpyx": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 100,
-"hours_text": "100",
+"hours": 65,
+"hours_text": "60–70",
 "missable": 0,
 "online": 31,
 "url": "https://www.powerpyx.com/fifa-23-trophy-guide-roadmap/"
@@ -2739,7 +2739,7 @@
 "combined": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 100,
+"hours": 90,
 "missable": 0,
 "online": 31
 },
@@ -2747,8 +2747,8 @@
 "powerpyx": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 100,
-"hours_text": "100",
+"hours": 65,
+"hours_text": "60–70",
 "missable": 0,
 "online": 31,
 "url": "https://www.powerpyx.com/fifa-23-trophy-guide-roadmap/"
@@ -3022,7 +3022,7 @@
 "difficulty": 3.0,
 "glitched": 0,
 "hours": 50,
-"hours_text": "50",
+"hours_text": "40–60",
 "missable": 0,
 "online": 0,
 "playthroughs": 1,
@@ -3211,7 +3211,7 @@
 },
 "combined": {
 "difficulty": 4.0,
-"hours": 55,
+"hours": 45,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -3219,8 +3219,8 @@
 "sources": {
 "powerpyx": {
 "difficulty": 4.0,
-"hours": 55,
-"hours_text": "50–60",
+"hours": 45,
+"hours_text": "40–50",
 "missable": 0,
 "online": 0,
 "playthroughs": 1,
@@ -3803,8 +3803,8 @@
 "powerpyx": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 40,
-"hours_text": "40",
+"hours": 30,
+"hours_text": "30",
 "missable": 1,
 "online": 0,
 "playthroughs": 1,
@@ -5110,8 +5110,8 @@
 "powerpyx": {
 "difficulty": 3.0,
 "glitched": 0,
-"hours": 15,
-"hours_text": "15",
+"hours": 30,
+"hours_text": "30",
 "missable": 2,
 "playthroughs": 1,
 "url": "https://www.powerpyx.com/mortal-kombat-1-trophy-guide-roadmap/"
@@ -5346,7 +5346,7 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"difficulty": 3.0,
+"difficulty": 1.0,
 "glitched": 0,
 "hours": 4,
 "missable": 1,
@@ -5355,7 +5355,7 @@
 },
 "sources": {
 "powerpyx": {
-"difficulty": 3.0,
+"difficulty": 1.0,
 "glitched": 0,
 "hours": 4,
 "hours_text": "4",
@@ -5666,7 +5666,7 @@
 "combined": {
 "difficulty": 7.0,
 "glitched": 0,
-"hours": 10,
+"hours": 12,
 "missable": 0,
 "online": 0,
 "playthroughs": 1
@@ -5675,8 +5675,8 @@
 "powerpyx": {
 "difficulty": 7.0,
 "glitched": 0,
-"hours": 10,
-"hours_text": "10",
+"hours": 12,
+"hours_text": "12",
 "missable": 0,
 "online": 0,
 "playthroughs": 1,
@@ -5925,7 +5925,7 @@
 },
 "combined": {
 "difficulty": 6.0,
-"hours": 250,
+"hours": 270,
 "missable": 7,
 "online": 31,
 "playthroughs": 1
@@ -5933,8 +5933,8 @@
 "sources": {
 "powerpyx": {
 "difficulty": 6.0,
-"hours": 200,
-"hours_text": "200",
+"hours": 270,
+"hours_text": "240–300",
 "missable": 4,
 "online": 18,
 "playthroughs": 1,
@@ -6340,8 +6340,8 @@
 "powerpyx": {
 "difficulty": 3.0,
 "glitched": 2,
-"hours": 20,
-"hours_text": "20",
+"hours": 40,
+"hours_text": "40",
 "missable": 1,
 "online": 0,
 "playthroughs": 1,
@@ -6498,7 +6498,7 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"difficulty": 6.0,
+"difficulty": 5.2,
 "glitched": 0,
 "hours": 22,
 "missable": 0,
@@ -6507,7 +6507,7 @@
 },
 "sources": {
 "powerpyx": {
-"difficulty": 6.0,
+"difficulty": 5.2,
 "glitched": 0,
 "hours": 20,
 "hours_text": "15–25",
@@ -7165,7 +7165,7 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"difficulty": 5.0,
+"difficulty": 3.0,
 "glitched": 1,
 "hours": 18,
 "missable": 6,
@@ -7174,10 +7174,10 @@
 },
 "sources": {
 "powerpyx": {
-"difficulty": 5.0,
+"difficulty": 3.0,
 "glitched": 1,
-"hours": 18,
-"hours_text": "15–20",
+"hours": 12,
+"hours_text": "10–15",
 "online": 0,
 "playthroughs": 1,
 "url": "https://www.powerpyx.com/the-callisto-protocol-trophy-guide-roadmap/"
@@ -8540,5 +8540,5 @@
 }
 }
 },
-"updated_at": "2026-10-28T13:36:53+00:00"
+"updated_at": "2026-10-28T13:40:48+00:00"
 }
