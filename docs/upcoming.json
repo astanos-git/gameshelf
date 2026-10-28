@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-28T13:46:24+00:00",
+ "generated_at": "2026-10-28T13:49:25+00:00",
  "upcoming": [
   {
    "slug": "phantom-blade-zero",
@@ -363,112 +363,15 @@
   }
  ],
  "details": {
-  "ratchet-clank-rift-apart": {
-   "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
-   "developers": [
-    "Insomniac Games",
-    "Nixxes software"
-   ],
-   "esrb": "Everyone 10+",
-   "metacritic": 88,
-   "name": "Ratchet & Clank: Rift Apart",
-   "publishers": [
-    "Sony Interactive Entertainment",
-    "PlayStation PC"
-   ],
-   "released": "2021-06-11",
-   "tba": false,
-   "website": null
-  },
-  "9-years-of-shadows": {
-   "description": "9 Years of Shadows is an emotionally-driven metroidvania enhanced by healing music that tells the story of Europa, a young woman of noble birth tasked with ending the curse that plagues her people and restoring color to all lands. Immersive gameplay",
-   "developers": [
-    "Halberd Studios",
-    "HelBeard"
-   ],
-   "esrb": null,
-   "metacritic": 74,
-   "name": "9 Years of Shadows",
-   "publishers": [
-    "Freedom Games"
-   ],
-   "released": "2023-03-26",
-   "tba": false,
-   "website": "http://halberdstudios.com/"
-  },
-  "resident-evil-veronica": {
-   "name": "Resident Evil Veronica",
-   "released": "2027-12-31",
-   "tba": false,
-   "description": "Resident Evil Veronica is a remake of 2000's Resident Evil Code: Veronica. In 2027, madness and intrigue, love and hate all combine to create a chilling new entry in survival horror.",
-   "developers": [
-    "Capcom"
-   ],
-   "publishers": [
-    "Capcom"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "marvels-spider-man-3": {
-   "name": "Marvel's Spider-Man 3",
-   "released": null,
-   "tba": true,
-   "description": "Marvel’s Spider-Man 3 is currently in development by Insomniac Games for PlayStation 5 and PlayStation 6. Created in collaboration with Marvel Games and PlayStation.",
-   "developers": [
-    "Insomniac Games"
-   ],
-   "publishers": [
-    "Sony Interactive Entertainment"
-   ],
-   "website": "https://x.com/insomniacgames?s=09",
-   "metacritic": null,
-   "esrb": null
-  },
-  "fable2020": {
-   "name": "Fable",
-   "released": "2027-02-23",
-   "tba": false,
-   "description": "Explore a land of fantastical creatures and wondrous places. What does it mean to be a Hero? Well, in the fairytale land of Albion, that is entirely up to you. With a dark threat looming, your choices will change Albion forever.",
-   "developers": [
-    "Playground Games"
-   ],
-   "publishers": [
-    "Xbox Game Studios"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "brothers-a-tale-of-two-sons-2": {
-   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
-   "developers": [
-    "Starbreeze Studios",
-    "Parables Games"
-   ],
-   "esrb": "Teen",
-   "metacritic": 90,
-   "name": "Brothers: A Tale of Two Sons",
-   "publishers": [
-    "505 Games",
-    "Parables Games"
-   ],
-   "released": "2013-08-07",
-   "tba": false,
-   "website": "https://505games.com/games/brothers/"
-  },
-  "god-of-war-laufey": {
-   "name": "God of War Laufey",
-   "released": "2027-02-16",
+  "tomb-raider-legacy-of-atlantis": {
+   "name": "Tomb Raider: Legacy of Atlantis",
+   "released": "2027-02-12",
    "tba": false,
    "description": "",
    "developers": [
-    "Santa Monica Studio"
+    "Crystal Dynamics"
    ],
-   "publishers": [
-    "Sony Interactive Entertainment"
-   ],
+   "publishers": [],
    "website": null,
    "metacritic": null,
    "esrb": null
@@ -480,62 +383,6 @@
    "description": "In Kena: Scars of Kosmora, Kena is older and renowned as a Spirit Guide. In hopes of finding answers to the affliction she has endured all her life, Kena travels to the mysterious island of Kosmora. Home to distinct cultures and regions, Kosmora is full of buried secrets from a tragic past.",
    "developers": [
     "Ember Lab"
-   ],
-   "publishers": [],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "prince-of-persia-the-sands-of-time-remake": {
-   "name": "Prince of Persia: The Sands of Time Remake",
-   "released": null,
-   "tba": true,
-   "description": "The Prince has returned! Experience the classic tale that redefined action-adventure gaming in this full-scale remake for a new generation. - You are the Prince of Persia. Embark on a journey to save your kingdom from the treacherous Vizier. - Master the Sands of Time and use your dagger to reverse, accelerate, freeze, and slow time itself. - Fight cursed enemies and solve puzzles along the way.",
-   "developers": [
-    "Ubisoft"
-   ],
-   "publishers": [
-    "Ubisoft Entertainment"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": "Teen"
-  },
-  "phantom-blade-zero": {
-   "name": "Phantom Blade Zero",
-   "released": "2026-10-29",
-   "tba": false,
-   "description": "Be the Dark Raider exiled by \"The Order\", embark on the path of vengeance, and uncover the darkest secrets of Wulin!",
-   "developers": [
-    "S-Game"
-   ],
-   "publishers": [
-    "S-Game"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "ananta": {
-   "name": "ananta",
-   "released": "2027-01-15",
-   "tba": false,
-   "description": "Previously known as Project Mugen, ANANTA is a free-to-play urban open-world RPG set in Nova City. Players become the new captain of a special task force, switch between different characters and roles, fight hidden threats, and freely explore a living city filled with activities, vehicles, and unexpected events. Launches globally on January 15, 2027 for PC, PlayStation 5, iOS, and Android.",
-   "developers": [],
-   "publishers": [
-    "Netease"
-   ],
-   "website": "https://www.anantagame.com/",
-   "metacritic": null,
-   "esrb": null
-  },
-  "intergalactic-the-heretic-prophet": {
-   "name": "Intergalactic: The Heretic Prophet",
-   "released": null,
-   "tba": true,
-   "description": "",
-   "developers": [
-    "Naughty Dog"
    ],
    "publishers": [],
    "website": null,
@@ -559,20 +406,65 @@
    "tba": false,
    "website": "http://www.sekirothegame.com"
   },
-  "dreams": {
-   "description": "Dream anything, play everything Create, play and share your own games and experiences, in the incredible new title from the LittleBigPlanet and Tearaway team. Dreams is an extraordinary open-ended experience where you can make anything, from interactive adventures and platformers, to shoot ‘em ups, puzzlers and more. The possibilities are endless.",
+  "phantom-blade-zero": {
+   "name": "Phantom Blade Zero",
+   "released": "2026-10-29",
+   "tba": false,
+   "description": "Be the Dark Raider exiled by \"The Order\", embark on the path of vengeance, and uncover the darkest secrets of Wulin!",
    "developers": [
-    "Media Molecule"
+    "S-Game"
+   ],
+   "publishers": [
+    "S-Game"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "brothers-a-tale-of-two-sons-2": {
+   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
+   "developers": [
+    "Starbreeze Studios",
+    "Parables Games"
    ],
    "esrb": "Teen",
-   "metacritic": 89,
-   "name": "Dreams",
+   "metacritic": 90,
+   "name": "Brothers: A Tale of Two Sons",
    "publishers": [
-    "Sony Interactive Entertainment"
+    "505 Games",
+    "Parables Games"
    ],
-   "released": "2020-02-14",
+   "released": "2013-08-07",
    "tba": false,
-   "website": "http://dreams.mediamolecule.com/"
+   "website": "https://505games.com/games/brothers/"
+  },
+  "resident-evil-veronica": {
+   "name": "Resident Evil Veronica",
+   "released": "2027-12-31",
+   "tba": false,
+   "description": "Resident Evil Veronica is a remake of 2000's Resident Evil Code: Veronica. In 2027, madness and intrigue, love and hate all combine to create a chilling new entry in survival horror.",
+   "developers": [
+    "Capcom"
+   ],
+   "publishers": [
+    "Capcom"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "intergalactic-the-heretic-prophet": {
+   "name": "Intergalactic: The Heretic Prophet",
+   "released": null,
+   "tba": true,
+   "description": "",
+   "developers": [
+    "Naughty Dog"
+   ],
+   "publishers": [],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
   },
   "the-witcher-4": {
    "name": "The Witcher (A New Saga Begins)",
@@ -587,50 +479,6 @@
     "CD PROJEKT RED"
    ],
    "website": "https://www.thewitcher.com/witcher4",
-   "metacritic": null,
-   "esrb": null
-  },
-  "the-witcher-remake": {
-   "name": "The Witcher: Remake",
-   "released": null,
-   "tba": true,
-   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
-   "developers": [
-    "Fool's Theory"
-   ],
-   "publishers": [
-    "CD PROJEKT RED"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "owlboy": {
-   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
-   "developers": [
-    "D-Pad Studio",
-    "D-Pad Studios"
-   ],
-   "esrb": null,
-   "metacritic": 88,
-   "name": "Owlboy",
-   "publishers": [
-    "D-Pad Studio"
-   ],
-   "released": "2016-10-31",
-   "tba": false,
-   "website": "http://www.owlboygame.com"
-  },
-  "tomb-raider-legacy-of-atlantis": {
-   "name": "Tomb Raider: Legacy of Atlantis",
-   "released": "2027-02-12",
-   "tba": false,
-   "description": "",
-   "developers": [
-    "Crystal Dynamics"
-   ],
-   "publishers": [],
-   "website": null,
    "metacritic": null,
    "esrb": null
   },
@@ -649,15 +497,45 @@
    "metacritic": null,
    "esrb": null
   },
-  "tomb-raider-catalyst": {
-   "name": "Tomb Raider: Catalyst",
+  "the-expanse-osiris-reborn": {
+   "name": "The Expanse: Osiris Reborn",
    "released": "2027-12-31",
    "tba": false,
-   "description": "Tomb Raider: Catalyst marks a bold direction for the series as Lara Croft embarks on a new adventure across Northern India. Tomb Raider: Catalyst is set in the wake of a mythical cataclysm that has unleashed ancient secrets and awakened the mysterious forces that guard them.",
+   "description": "The Expanse: Osiris Reborn is a third-person Action RPG set in the world of The Expanse. You are not a hero, but a simple mercenary who found himself in the wrong place at the wrong time. Assemble a team, break through the web of lies and leave your mark on the history of the solar system.",
    "developers": [
-    "Crystal Dynamics"
+    "Owlcat Games"
    ],
-   "publishers": [],
+   "publishers": [
+    "Owlcat Games"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "ananta": {
+   "name": "ananta",
+   "released": "2027-01-15",
+   "tba": false,
+   "description": "Previously known as Project Mugen, ANANTA is a free-to-play urban open-world RPG set in Nova City. Players become the new captain of a special task force, switch between different characters and roles, fight hidden threats, and freely explore a living city filled with activities, vehicles, and unexpected events. Launches globally on January 15, 2027 for PC, PlayStation 5, iOS, and Android.",
+   "developers": [],
+   "publishers": [
+    "Netease"
+   ],
+   "website": "https://www.anantagame.com/",
+   "metacritic": null,
+   "esrb": null
+  },
+  "the-witcher-remake": {
+   "name": "The Witcher: Remake",
+   "released": null,
+   "tba": true,
+   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
+   "developers": [
+    "Fool's Theory"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
    "website": null,
    "metacritic": null,
    "esrb": null
@@ -680,6 +558,37 @@
    "tba": false,
    "website": "http://www.darksoulsii.com"
   },
+  "owlboy": {
+   "description": "Owlboy is a pixel-art platformer game about an owl-humanoid boy called Otus. When his homeland was attacked by pirates, Otus starts an adventure to protect his home and reveal the secrets of his race. He makes new friends on the way. Each of them has special powers, useful during fights.",
+   "developers": [
+    "D-Pad Studio",
+    "D-Pad Studios"
+   ],
+   "esrb": null,
+   "metacritic": 88,
+   "name": "Owlboy",
+   "publishers": [
+    "D-Pad Studio"
+   ],
+   "released": "2016-10-31",
+   "tba": false,
+   "website": "http://www.owlboygame.com"
+  },
+  "dreams": {
+   "description": "Dream anything, play everything Create, play and share your own games and experiences, in the incredible new title from the LittleBigPlanet and Tearaway team. Dreams is an extraordinary open-ended experience where you can make anything, from interactive adventures and platformers, to shoot ‘em ups, puzzlers and more. The possibilities are endless.",
+   "developers": [
+    "Media Molecule"
+   ],
+   "esrb": "Teen",
+   "metacritic": 89,
+   "name": "Dreams",
+   "publishers": [
+    "Sony Interactive Entertainment"
+   ],
+   "released": "2020-02-14",
+   "tba": false,
+   "website": "http://dreams.mediamolecule.com/"
+  },
   "titan-quest-2": {
    "name": "Titan Quest 2",
    "released": "2027-01-19",
@@ -695,20 +604,36 @@
    "metacritic": null,
    "esrb": null
   },
-  "the-expanse-osiris-reborn": {
-   "name": "The Expanse: Osiris Reborn",
-   "released": "2027-12-31",
-   "tba": false,
-   "description": "The Expanse: Osiris Reborn is a third-person Action RPG set in the world of The Expanse. You are not a hero, but a simple mercenary who found himself in the wrong place at the wrong time. Assemble a team, break through the web of lies and leave your mark on the history of the solar system.",
+  "marvels-spider-man-3": {
+   "name": "Marvel's Spider-Man 3",
+   "released": null,
+   "tba": true,
+   "description": "Marvel’s Spider-Man 3 is currently in development by Insomniac Games for PlayStation 5 and PlayStation 6. Created in collaboration with Marvel Games and PlayStation.",
    "developers": [
-    "Owlcat Games"
+    "Insomniac Games"
    ],
    "publishers": [
-    "Owlcat Games"
+    "Sony Interactive Entertainment"
    ],
-   "website": null,
+   "website": "https://x.com/insomniacgames?s=09",
    "metacritic": null,
    "esrb": null
+  },
+  "9-years-of-shadows": {
+   "description": "9 Years of Shadows is an emotionally-driven metroidvania enhanced by healing music that tells the story of Europa, a young woman of noble birth tasked with ending the curse that plagues her people and restoring color to all lands. Immersive gameplay",
+   "developers": [
+    "Halberd Studios",
+    "HelBeard"
+   ],
+   "esrb": null,
+   "metacritic": 74,
+   "name": "9 Years of Shadows",
+   "publishers": [
+    "Freedom Games"
+   ],
+   "released": "2023-03-26",
+   "tba": false,
+   "website": "http://halberdstudios.com/"
   },
   "marvels-venom": {
    "name": "Marvel's Venom",
@@ -724,6 +649,81 @@
    "website": null,
    "metacritic": null,
    "esrb": "Rating Pending"
+  },
+  "god-of-war-laufey": {
+   "name": "God of War Laufey",
+   "released": "2027-02-16",
+   "tba": false,
+   "description": "",
+   "developers": [
+    "Santa Monica Studio"
+   ],
+   "publishers": [
+    "Sony Interactive Entertainment"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "fable2020": {
+   "name": "Fable",
+   "released": "2027-02-23",
+   "tba": false,
+   "description": "Explore a land of fantastical creatures and wondrous places. What does it mean to be a Hero? Well, in the fairytale land of Albion, that is entirely up to you. With a dark threat looming, your choices will change Albion forever.",
+   "developers": [
+    "Playground Games"
+   ],
+   "publishers": [
+    "Xbox Game Studios"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "ratchet-clank-rift-apart": {
+   "description": "BLAST YOUR WAY THROUGH AN INTERDIMENSIONAL ADVENTURE The intergalactic adventurers are back with a bang. Help them stop a robotic emperor intent on conquering cross-dimensional worlds, with their own universe next in the firing line. - Blast your way home with an arsenal of outrageous weaponry. - Experience the shuffle of dimensional rifts and dynamic gameplay.",
+   "developers": [
+    "Insomniac Games",
+    "Nixxes software"
+   ],
+   "esrb": "Everyone 10+",
+   "metacritic": 88,
+   "name": "Ratchet & Clank: Rift Apart",
+   "publishers": [
+    "Sony Interactive Entertainment",
+    "PlayStation PC"
+   ],
+   "released": "2021-06-11",
+   "tba": false,
+   "website": null
+  },
+  "tomb-raider-catalyst": {
+   "name": "Tomb Raider: Catalyst",
+   "released": "2027-12-31",
+   "tba": false,
+   "description": "Tomb Raider: Catalyst marks a bold direction for the series as Lara Croft embarks on a new adventure across Northern India. Tomb Raider: Catalyst is set in the wake of a mythical cataclysm that has unleashed ancient secrets and awakened the mysterious forces that guard them.",
+   "developers": [
+    "Crystal Dynamics"
+   ],
+   "publishers": [],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "prince-of-persia-the-sands-of-time-remake": {
+   "name": "Prince of Persia: The Sands of Time Remake",
+   "released": null,
+   "tba": true,
+   "description": "The Prince has returned! Experience the classic tale that redefined action-adventure gaming in this full-scale remake for a new generation. - You are the Prince of Persia. Embark on a journey to save your kingdom from the treacherous Vizier. - Master the Sands of Time and use your dagger to reverse, accelerate, freeze, and slow time itself. - Fight cursed enemies and solve puzzles along the way.",
+   "developers": [
+    "Ubisoft"
+   ],
+   "publishers": [
+    "Ubisoft Entertainment"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": "Teen"
   }
  }
 }
