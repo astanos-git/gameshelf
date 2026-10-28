@@ -201,7 +201,7 @@ def main() -> None:
 
     n = 0
     for x in search(genres="indie"):
-        if n < PER_CATEGORY and (x.get("added") or 0) >= 15 and add(x, "indie", "Indie, much awaited"):
+        if n < PER_CATEGORY and (x.get("added") or 0) >= 3 and add(x, "indie", "Indie, much awaited"):
             n += 1
     n = 0
     for x in search(platforms=187):

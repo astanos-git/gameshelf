@@ -71,9 +71,11 @@ NUM = r"(\d+(?:[.,]\d+)?)"
 def parse_summary(t: str) -> dict:
     """The roadmap summary most guide writers use, in its common wordings."""
     out = {}
-    m = re.search(r"(?i)difficulty[^\n\d]{0,40}?" + NUM + r"\s*/\s*10", t) or re.search(r"(?i)" + NUM + r"\s*/\s*10\s*\n?\s*difficulty", t)
-    if m:
-        out["difficulty"] = float(m.group(1).replace(",", "."))
+    m = re.search(r"(?i)difficulty[^\n\d]{0,40}?" + NUM + r"(?:\s*[-–]\s*" + NUM + r")?\s*/\s*10", t) \
+        or re.search(r"(?i)" + NUM + r"(?:\s*[-–]\s*" + NUM + r")?\s*/\s*10\s*\n?\s*difficulty", t)
+    if m:   # "6-7/10" -> 6.5
+        lo = float(m.group(1).replace(",", ".")); hi = float(m.group(2).replace(",", ".")) if m.group(2) else lo
+        out["difficulty"] = round((lo + hi) / 2, 1) if hi >= lo else lo
     m = re.search(r"(?i)(?:time to (?:platinum|100%)|hours? to platinum|approximate time[^:\n]*|estimated time[^:\n]*)\s*:?[^\n\d]{0,25}?(\d+)\s*(?:[-–~to]+\s*(\d+))?\+?\s*(?:hours|hrs|h)\b", t) \
         or re.search(r"(?i)\b(\d+)\s*(?:[-–]\s*(\d+))?\+?\s*\n?\s*hours\b", t)
     if m:
@@ -113,8 +115,8 @@ def same_game(title: str, names: list[str]) -> bool:
 # ---------------------------------------------------------------- sources
 
 def slugify(name: str) -> str:
-    s = search_name(name).lower().replace("&", " ")
-    return re.sub(r"[^a-z0-9]+", "-", re.sub(r"['’:.!,]", "", s)).strip("-")
+    s = search_name(name).lower().replace("&", " ").replace(":", " ")
+    return re.sub(r"[^a-z0-9]+", "-", re.sub(r"['’.!,]", "", s)).strip("-")
 
 
 def powerpyx(names: list[str]) -> dict | None:
@@ -129,7 +131,8 @@ def powerpyx(names: list[str]) -> dict | None:
     # search "<game> trophy guide" (big games have dozens of collectible guides that would crowd it out otherwise)
     cands = []
     for q in dict.fromkeys(search_name(n) for n in names):
-        r = fetch(f"https://www.powerpyx.com/wp-json/wp/v2/posts?search={quote_plus(q + ' trophy guide')}&per_page=20")
+        words = re.sub(r"[:\-–—]+", " ", q)
+        r = fetch(f"https://www.powerpyx.com/wp-json/wp/v2/posts?search={quote_plus(words + ' trophy guide')}&orderby=relevance&per_page=20")
         try:
             posts = r.json() if r else []
         except ValueError:
@@ -216,7 +219,7 @@ def main() -> None:
             url = f"https://www.powerpyx.com/{slugify(name)}-trophy-guide-roadmap/"
             r = S.get(url, timeout=25); t = text_of(r.text); i = t.lower().find("difficulty")
             print(f"::notice::Debug {name}: GET {url} -> {r.status_code}, {len(r.text)}b, parsed {parse_summary(t)}, near 'difficulty': {' '.join(t[max(0, i - 60):i + 120].split()) if i >= 0 else '-'}")
-            r = S.get(f"https://www.powerpyx.com/wp-json/wp/v2/posts?search={quote_plus(search_name(name) + ' trophy guide')}&per_page=20", timeout=25)
+            r = S.get(f"https://www.powerpyx.com/wp-json/wp/v2/posts?search={quote_plus(re.sub(r'[:–—-]+', ' ', search_name(name)) + ' trophy guide')}&orderby=relevance&per_page=20", timeout=25)
             try:
                 titles = [html.unescape(p["title"]["rendered"]) for p in r.json()]
             except Exception:
