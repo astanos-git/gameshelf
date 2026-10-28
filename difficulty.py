@@ -184,7 +184,29 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--minutes", type=float, default=20)
     ap.add_argument("--probe")
+    ap.add_argument("--raw", action="store_true")
     args = ap.parse_args()
+
+    if args.raw:
+        for url in ["https://www.powerpyx.com/wp-json/wp/v2/posts?search=metaphor%20refantazio&per_page=3&_fields=link,title",
+                    "https://www.powerpyx.com/wp-json/wp/v2/search?search=metaphor%20refantazio%20trophy&per_page=3",
+                    "https://www.powerpyx.com/metaphor-refantazio-trophy-guide-roadmap/",
+                    "https://www.powerpyx.com/?s=metaphor+refantazio",
+                    "https://www.truetrophies.com/game/Metaphor-ReFantazio/trophies",
+                    "https://www.truetrophies.com/game/Metaphor-ReFantazio/",
+                    "https://www.playstationtrophies.org/forum/topic/338391-estimated-platinum-difficulty-and-time-to-platinum/",
+                    "https://www.knoef.info/",
+                    "https://www.exophase.com/game/metaphor-refantazio-psn/trophies/"]:
+            try:
+                r = S.get(url, timeout=25)
+                t = text_of(r.text)
+                i = t.lower().find("difficulty")
+                snip = " ".join((t[max(0, i - 80):i + 160] if i >= 0 else t[:160]).split())
+                print(f"::notice::RAW {r.status_code} {r.headers.get('content-type', '')[:30]} {len(r.text)}b {url} :: {snip}")
+            except Exception as e:
+                print(f"::notice::RAW ERR {url} {e}")
+            time.sleep(1)
+        return
 
     if args.probe:
         g = {"names": [args.probe], "rawg": None}
