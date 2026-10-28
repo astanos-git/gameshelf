@@ -3540,9 +3540,25 @@
 "powerpyx": "2026-10-28",
 "truetrophies": "2026-10-28"
 },
-"combined": {},
+"combined": {
+"difficulty": 7.0,
+"glitched": 0,
+"hours": 20,
+"missable": 1,
+"online": 0,
+"playthroughs": 2
+},
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 7.0,
+"glitched": 0,
+"hours": 20,
+"hours_text": "20",
+"missable": 1,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/senuas-saga-hellblade-2-trophy-guide-roadmap/"
+},
 "truetrophies": null
 }
 },
@@ -6378,12 +6394,24 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
-"hours": 90,
+"difficulty": 3.0,
+"glitched": 1,
+"hours": 150,
 "missable": 0,
-"online": 22
+"online": 22,
+"playthroughs": 1
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 3.0,
+"glitched": 1,
+"hours": 150,
+"hours_text": "150",
+"missable": 0,
+"online": 22,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/star-wars-battlefront-2-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 90,
 "hours_text": "80–100",
@@ -8311,11 +8339,22 @@
 "truetrophies": "2026-10-28"
 },
 "combined": {
+"difficulty": 9.5,
 "hours": 70,
-"missable": 3
+"missable": 5,
+"online": 0,
+"playthroughs": 2
 },
 "sources": {
-"powerpyx": null,
+"powerpyx": {
+"difficulty": 9.5,
+"hours": 30,
+"hours_text": "30",
+"missable": 5,
+"online": 0,
+"playthroughs": 2,
+"url": "https://www.powerpyx.com/wolfenstein-2-the-new-colossus-trophy-guide-roadmap/"
+},
 "truetrophies": {
 "hours": 70,
 "hours_text": "60–80",
@@ -8501,5 +8540,5 @@
 }
 }
 },
-"updated_at": "2026-10-28T12:22:32+00:00"
+"updated_at": "2026-10-28T12:52:43+00:00"
 }
