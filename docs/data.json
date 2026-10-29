@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-28T17:43:41+00:00",
+ "generated_at": "2026-10-29T07:26:41+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -29,7 +29,7 @@
    "acquired": "2025-12-14T16:02:26Z",
    "hours": 2.9,
    "first_played": "2026-10-26T20:12:49.930000+00:00",
-   "last_played": "2026-10-27T21:52:42.470000+00:00",
+   "last_played": "2026-10-28T19:34:39.320000+00:00",
    "progress": 0,
    "earned": {
     "bronze": 0,
@@ -62,7 +62,7 @@
    "trophies_total": 17,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-27T21:52:42.470000+00:00",
+   "last_activity": "2026-10-28T19:34:39.320000+00:00",
    "hours_by_year": {
     "2026": 2.9
    },
@@ -17823,8 +17823,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "2K Drive",
-    "Lego"
+    "Lego",
+    "2K Drive"
    ],
    "developers": [
     "Visual Concepts"
