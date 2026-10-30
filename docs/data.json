@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-29T07:26:41+00:00",
+ "generated_at": "2026-10-30T07:35:05+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,11 +10,11 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 329,
-  "level_progress": 38,
+  "level_progress": 58,
   "earned": {
    "bronze": 2749,
    "silver": 649,
-   "gold": 212,
+   "gold": 214,
    "platinum": 22
   }
  },
@@ -27,9 +27,9 @@
    ],
    "owned": true,
    "acquired": "2025-12-14T16:02:26Z",
-   "hours": 2.9,
+   "hours": 4.3,
    "first_played": "2026-10-26T20:12:49.930000+00:00",
-   "last_played": "2026-10-28T19:34:39.320000+00:00",
+   "last_played": "2026-10-29T20:15:25.340000+00:00",
    "progress": 0,
    "earned": {
     "bronze": 0,
@@ -62,9 +62,9 @@
    "trophies_total": 17,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-28T19:34:39.320000+00:00",
+   "last_activity": "2026-10-29T20:15:25.340000+00:00",
    "hours_by_year": {
-    "2026": 2.9
+    "2026": 4.3
    },
    "metacritic": 92,
    "genres": [
@@ -160,6 +160,179 @@
      "n": "Full House Trophy",
      "t": "silver",
      "r": 9.0,
+     "h": null,
+     "p": null
+    }
+   ]
+  },
+  {
+   "name": "I Have No Mouth, and I Must Scream",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202501/3016/283e6b2e2aec0e3d250a90a6d905359c2f8e6b6247817426.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-07-15T08:17:10Z",
+   "hours": 1.3,
+   "first_played": "2026-10-29T14:06:06.650000+00:00",
+   "last_played": "2026-10-29T20:15:16.560000+00:00",
+   "progress": 17,
+   "earned": {
+    "bronze": 0,
+    "silver": 0,
+    "gold": 2,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 0,
+    "silver": 1,
+    "gold": 11,
+    "platinum": 1
+   },
+   "last_trophy": "2026-10-29T15:54:03+00:00",
+   "has_trophies": true,
+   "months": {
+    "2026-10": [
+     0,
+     0,
+     2,
+     0
+    ]
+   },
+   "trophy_lists": [
+    {
+     "id": "NPWR47987_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 17,
+     "groups": {}
+    }
+   ],
+   "rare": [
+    {
+     "n": "Filling an empty chest",
+     "t": "gold",
+     "r": 26.8,
+     "at": "2026-10-29T15:54:03+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/5c0738b6-3392-4229-855a-a9eb50a9058f.png"
+    },
+    {
+     "n": "The suicidal loner",
+     "t": "gold",
+     "r": 56.8,
+     "at": "2026-10-29T14:08:04+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/1c13ca9b-53ee-4d25-b849-dab2c693d165.png"
+    }
+   ],
+   "aliases": [],
+   "trophies_earned": 2,
+   "trophies_total": 13,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-10-29T20:15:16.560000+00:00",
+   "hours_by_year": {
+    "2026": 1.3
+   },
+   "metacritic": 88,
+   "genres": [
+    "Shooter",
+    "Action"
+   ],
+   "released": "2016-10-21",
+   "rawg_slug": "battlefield-1",
+   "metacritic_source": "rawg",
+   "series": [
+    "Battlefield"
+   ],
+   "developers": [
+    "DICE"
+   ],
+   "publishers": [
+    "Electronic Arts"
+   ],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "war",
+     "War"
+    ],
+    [
+     "mature",
+     "Mature"
+    ],
+    [
+     "physics",
+     "Physics"
+    ],
+    [
+     "historical",
+     "Historical"
+    ],
+    [
+     "military",
+     "Military"
+    ],
+    [
+     "story",
+     "Story"
+    ],
+    [
+     "steam-trading-cards-2",
+     "Steam Trading Cards"
+    ]
+   ],
+   "hltb": {
+    "main": 6.01,
+    "extra": 7.67,
+    "complete": 7.69,
+    "url": "https://howlongtobeat.com/game/4575"
+   },
+   "plat_rate": 14.4,
+   "rare_missing": 0,
+   "first_trophy_at": "2026-10-29T14:08:04+00:00",
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 11,
+   "easy": [
+    {
+     "n": "The yellow hysterical",
+     "t": "gold",
+     "r": 50.7,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "The favorite torture toy",
+     "t": "gold",
+     "r": 46.2,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Not yet",
+     "t": "gold",
+     "r": 39.3,
      "h": null,
      "p": null
     }
@@ -2526,112 +2699,6 @@
     "extra": 47.28,
     "complete": 65.46,
     "url": "https://howlongtobeat.com/game/65945"
-   },
-   "first_trophy_at": null,
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 0,
-   "easy": []
-  },
-  {
-   "name": "I Have No Mouth, and I Must Scream",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202501/3016/283e6b2e2aec0e3d250a90a6d905359c2f8e6b6247817426.png",
-   "platforms": [
-    "PS4",
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-07-15T08:17:10Z",
-   "hours": 0.0,
-   "first_played": null,
-   "last_played": null,
-   "progress": null,
-   "earned": null,
-   "defined": null,
-   "last_trophy": null,
-   "has_trophies": false,
-   "months": {},
-   "trophy_lists": [],
-   "rare": [],
-   "aliases": [],
-   "trophies_earned": 0,
-   "trophies_total": 0,
-   "platinum": false,
-   "status": "unplayed",
-   "last_activity": null,
-   "hours_by_year": {},
-   "metacritic": 88,
-   "genres": [
-    "Shooter",
-    "Action"
-   ],
-   "released": "2016-10-21",
-   "rawg_slug": "battlefield-1",
-   "metacritic_source": "rawg",
-   "series": [
-    "Battlefield"
-   ],
-   "developers": [
-    "DICE"
-   ],
-   "publishers": [
-    "Electronic Arts"
-   ],
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "open-world",
-     "Open World"
-    ],
-    [
-     "fps",
-     "FPS"
-    ],
-    [
-     "gore",
-     "Gore"
-    ],
-    [
-     "violent",
-     "Violent"
-    ],
-    [
-     "war",
-     "War"
-    ],
-    [
-     "mature",
-     "Mature"
-    ],
-    [
-     "physics",
-     "Physics"
-    ],
-    [
-     "historical",
-     "Historical"
-    ],
-    [
-     "military",
-     "Military"
-    ],
-    [
-     "story",
-     "Story"
-    ],
-    [
-     "steam-trading-cards-2",
-     "Steam Trading Cards"
-    ]
-   ],
-   "hltb": {
-    "main": 6.01,
-    "extra": 7.67,
-    "complete": 7.69,
-    "url": "https://howlongtobeat.com/game/4575"
    },
    "first_trophy_at": null,
    "platinum_at": null,
@@ -17823,8 +17890,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "Lego",
-    "2K Drive"
+    "2K Drive",
+    "Lego"
    ],
    "developers": [
     "Visual Concepts"
@@ -56821,7 +56888,8 @@
    "2026-10-10": 3,
    "2026-10-19": 1,
    "2026-10-25": 3,
-   "2026-10-26": 7
+   "2026-10-26": 7,
+   "2026-10-29": 2
   },
   "weekday_hour": {
    "2011": [
@@ -57082,8 +57150,8 @@
     19,
     27,
     44,
-    50,
-    38,
+    51,
+    39,
     32,
     17,
     17,
@@ -59632,8 +59700,8 @@
     2,
     0,
     0,
-    4,
-    2,
+    5,
+    3,
     1,
     0,
     0,
@@ -60029,8 +60097,8 @@
     "buckets": [
      66,
      483,
-     2096,
-     987
+     2097,
+     988
     ],
     "score": 25
    },
@@ -60164,8 +60232,8 @@
     "buckets": [
      9,
      47,
-     147,
-     55
+     148,
+     56
     ],
     "score": 28
    }
