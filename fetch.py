@@ -984,6 +984,19 @@ def is_login_error(e: Exception) -> bool:
     return any(k in name for k in ("Authentication", "InvalidToken", "Unauthorized")) or "npsso" in msg
 
 
+def prune_queue(before: list[dict], games: list[dict]) -> None:
+    """Up next: a game you've just started (unplayed at the last refresh, not any more) leaves the list.
+    Games already in progress when you added them stay."""
+    q_file = ROOT / "docs" / "queue.json"
+    queue = json.loads(q_file.read_text()) if q_file.exists() else []
+    was_unplayed = {n for g in before if g.get("status") == "unplayed" for n in [g["name"], *g.get("aliases", [])]}
+    started = {n: g["name"] for g in games if g.get("status") != "unplayed" for n in [g["name"], *g.get("aliases", [])]}
+    gone = [q for q in queue if q in started and q in was_unplayed]
+    if gone:
+        q_file.write_text(json.dumps([q for q in queue if q not in gone], indent=1, ensure_ascii=False) + "\n")
+        print(f"::notice::Started, so removed from Up next: {', '.join(gone)}")
+
+
 def main() -> None:
     now = datetime.now(timezone.utc).isoformat(timespec="seconds")
     previous = json.loads(OUT.read_text()) if OUT.exists() else {}
@@ -1033,6 +1046,10 @@ def main() -> None:
         "insights": insights,
     }, indent=1, ensure_ascii=False))
     print(f"Wrote {len(games)} games to {OUT.name}; token in use since {since[:10]}")
+    try:
+        prune_queue(previous.get("games", []), games)
+    except Exception as e:  # never block a refresh
+        print(f"::warning::Up next clean-up skipped: {e}")
 
 
 if __name__ == "__main__":

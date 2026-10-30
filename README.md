@@ -82,7 +82,7 @@ Tap **Refresh data** at the top of the Library. It opens the workflow on GitHub:
 ### Play next
 - **Now:**
   - **Last week:** trophies, platinums, hours played, new games, goal progress.
-  - **Up next:** up to 5 games in your order, with time left, the finish forecast and a ⚠️ missable warning linking to the guide.
+  - **Up next:** up to 5 games in your order, with time left and the finish forecast. A game leaves the list by itself at the first refresh after you start it (games you add while already playing them stay).
   - **On this day:** a platinum, a rare trophy or a game you started on this date in past years (or later this week).
   - **What to play:** **Best games** (by Metacritic, filters by length and genre, **Surprise me**), **Fit my hours** (the best mix for the hours you have) or **My ranking** (from the tournament).
   - **Backlog tournament:** 10 random backlog games, two at a time; the one you'd rather play stays on and faces the next, until one is left. The winner joins **My ranking** (one pending change per tournament).
