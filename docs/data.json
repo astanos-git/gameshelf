@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T16:23:35+00:00",
+ "generated_at": "2026-10-30T22:15:42+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,9 +10,9 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 330,
-  "level_progress": 85,
+  "level_progress": 88,
   "earned": {
-   "bronze": 2749,
+   "bronze": 2751,
    "silver": 650,
    "gold": 223,
    "platinum": 23
@@ -20,112 +20,92 @@
  },
  "games": [
   {
-   "name": "I Have No Mouth, and I Must Scream",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202501/3016/283e6b2e2aec0e3d250a90a6d905359c2f8e6b6247817426.png",
+   "name": "Control",
+   "image": "https://image.api.playstation.com/cdn/EP4040/CUSA11454_00/FSp6HKGXPLC5VrWg3GAjNEiq3ATYE5qu.png",
    "platforms": [
     "PS4",
     "PS5"
    ],
    "owned": true,
-   "acquired": "2026-07-15T08:17:10Z",
-   "hours": 1.7,
-   "first_played": "2026-10-29T14:06:06.650000+00:00",
-   "last_played": "2026-10-30T16:17:00.500000+00:00",
-   "progress": 100,
+   "acquired": "2026-09-09T05:34:20Z",
+   "hours": 0.0,
+   "first_played": "2026-10-30T21:25:39.180000+00:00",
+   "last_played": "2026-10-30T21:25:39.180000+00:00",
+   "progress": 2,
    "earned": {
-    "bronze": 0,
-    "silver": 1,
-    "gold": 11,
-    "platinum": 1
+    "bronze": 2,
+    "silver": 0,
+    "gold": 0,
+    "platinum": 0
    },
    "defined": {
-    "bronze": 0,
-    "silver": 1,
-    "gold": 11,
+    "bronze": 50,
+    "silver": 14,
+    "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-10-30T16:16:40+00:00",
+   "last_trophy": "2026-10-30T22:08:57+00:00",
    "has_trophies": true,
    "months": {
     "2026-10": [
+     2,
      0,
-     1,
-     11,
-     1
+     0,
+     0
     ]
    },
    "trophy_lists": [
     {
-     "id": "NPWR47987_00",
+     "id": "NPWR22157_00",
      "platforms": [
       "PS5"
      ],
-     "progress": 100,
-     "groups": {}
+     "progress": 2,
+     "groups": {
+      "default": "Control Ultimate Edition",
+      "001": "The Foundation",
+      "002": "Altered World Events"
+     }
     }
    ],
    "rare": [
     {
-     "n": "The Truth Beyond the Pain",
-     "t": "platinum",
-     "r": 14.4,
-     "at": "2026-10-30T16:16:41+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/97cde638-0c0d-4077-8837-8aa1167ebdb4.png"
+     "n": "Welcome to the Oldest House",
+     "t": "bronze",
+     "r": 63.1,
+     "at": "2026-10-30T22:08:56+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/db4c197e-3ec4-4bfe-9930-81f8cdde6bcd.png"
     },
     {
-     "n": "Faithfull fool",
-     "t": "silver",
-     "r": 19.8,
-     "at": "2026-10-30T16:16:41+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/0a41bbb5-237c-4a20-b319-6441f0100d03.png"
-    },
-    {
-     "n": "Cleaning the sins of the past",
-     "t": "gold",
-     "r": 22.7,
-     "at": "2026-10-30T10:38:39+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/92b95ad3-8697-4700-a9f9-eb68d08089df.png"
-    },
-    {
-     "n": "Sleeping love",
-     "t": "gold",
-     "r": 26.1,
-     "at": "2026-10-30T16:12:48+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/21f413f3-85d3-4438-8a50-01365816dabb.png"
-    },
-    {
-     "n": "Filling an empty chest",
-     "t": "gold",
-     "r": 26.8,
-     "at": "2026-10-29T15:54:03+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/5c0738b6-3392-4229-855a-a9eb50a9058f.png"
+     "n": "Choose to be Chosen",
+     "t": "bronze",
+     "r": 83.5,
+     "at": "2026-10-30T21:43:11+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/316fc0b3-4773-4aed-b26d-304090f472c2.png"
     }
    ],
-   "aliases": [],
-   "trophies_earned": 13,
-   "trophies_total": 13,
-   "platinum": true,
-   "status": "completed",
-   "last_activity": "2026-10-30T16:17:00.500000+00:00",
-   "hours_by_year": {
-    "2026": 1.7
-   },
-   "metacritic": 88,
+   "aliases": [
+    "Control Ultimate Edition"
+   ],
+   "trophies_earned": 2,
+   "trophies_total": 68,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-10-30T22:08:57+00:00",
+   "hours_by_year": {},
+   "metacritic": 84,
    "genres": [
     "Shooter",
+    "Adventure",
     "Action"
    ],
-   "released": "2016-10-21",
-   "rawg_slug": "battlefield-1",
+   "released": "2019-08-27",
+   "rawg_slug": "control",
    "metacritic_source": "rawg",
-   "series": [
-    "Battlefield"
-   ],
-   "developers": [
-    "DICE"
-   ],
+   "series": [],
+   "developers": [],
    "publishers": [
-    "Electronic Arts"
+    "505 Games"
    ],
    "tags": [
     [
@@ -133,63 +113,106 @@
      "Atmospheric"
     ],
     [
-     "open-world",
-     "Open World"
+     "sci-fi",
+     "Sci-fi"
     ],
     [
-     "fps",
-     "FPS"
+     "exploration",
+     "Exploration"
     ],
     [
-     "gore",
-     "Gore"
+     "female-protagonist",
+     "Female Protagonist"
     ],
     [
-     "violent",
-     "Violent"
+     "action-adventure",
+     "Action-Adventure"
     ],
     [
-     "war",
-     "War"
+     "cinematic",
+     "Cinematic"
     ],
     [
-     "mature",
-     "Mature"
+     "metroidvania",
+     "Metroidvania"
     ],
     [
-     "physics",
-     "Physics"
+     "detective",
+     "Detective"
     ],
     [
-     "historical",
-     "Historical"
+     "3rd-person-perspective",
+     "3rd-Person Perspective"
     ],
     [
-     "military",
-     "Military"
+     "supernatural",
+     "Supernatural"
     ],
     [
-     "story",
-     "Story"
+     "abstract",
+     "Abstract"
     ],
     [
-     "steam-trading-cards-2",
-     "Steam Trading Cards"
+     "realism",
+     "realism"
     ]
    ],
    "hltb": {
-    "main": 6.01,
-    "extra": 7.67,
-    "complete": 7.69,
-    "url": "https://howlongtobeat.com/game/4575"
+    "main": 11.7,
+    "extra": 19.23,
+    "complete": 29.03,
+    "url": "https://howlongtobeat.com/game/57507"
    },
-   "plat_rate": 14.4,
-   "rare_missing": 0,
-   "first_trophy_at": "2026-10-29T14:08:04+00:00",
-   "platinum_at": "2026-10-30T16:16:41+00:00",
-   "dlc": [],
-   "missing_n": 0,
-   "easy": []
+   "plat_rate": 6.5,
+   "rare_missing": 21,
+   "first_trophy_at": "2026-10-30T21:43:11+00:00",
+   "platinum_at": null,
+   "dlc": [
+    {
+     "list": "NPWR22157_00",
+     "id": "001",
+     "name": "The Foundation",
+     "platforms": [
+      "PS5"
+     ],
+     "earned": 0,
+     "total": 10
+    },
+    {
+     "list": "NPWR22157_00",
+     "id": "002",
+     "name": "Altered World Events",
+     "platforms": [
+      "PS5"
+     ],
+     "earned": 0,
+     "total": 11
+    }
+   ],
+   "missing_n": 66,
+   "easy": [
+    {
+     "n": "Paranatural Powerhouse",
+     "t": "bronze",
+     "r": 53.3,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Unknown Caller ",
+     "t": "bronze",
+     "r": 45.0,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "Strange Collection",
+     "t": "bronze",
+     "r": 43.9,
+     "h": null,
+     "p": "19/40"
+    }
+   ]
   },
   {
    "name": "Blue Prince",
@@ -199,9 +222,9 @@
    ],
    "owned": true,
    "acquired": "2025-12-14T16:02:26Z",
-   "hours": 4.3,
+   "hours": 5.1,
    "first_played": "2026-10-26T20:12:49.930000+00:00",
-   "last_played": "2026-10-30T10:36:42.990000+00:00",
+   "last_played": "2026-10-30T21:25:33.960000+00:00",
    "progress": 0,
    "earned": {
     "bronze": 0,
@@ -234,9 +257,9 @@
    "trophies_total": 17,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-30T10:36:42.990000+00:00",
+   "last_activity": "2026-10-30T21:25:33.960000+00:00",
    "hours_by_year": {
-    "2026": 4.3
+    "2026": 5.1
    },
    "metacritic": 92,
    "genres": [
@@ -336,6 +359,178 @@
      "p": null
     }
    ]
+  },
+  {
+   "name": "I Have No Mouth, and I Must Scream",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202501/3016/283e6b2e2aec0e3d250a90a6d905359c2f8e6b6247817426.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-07-15T08:17:10Z",
+   "hours": 1.7,
+   "first_played": "2026-10-29T14:06:06.650000+00:00",
+   "last_played": "2026-10-30T16:17:00.500000+00:00",
+   "progress": 100,
+   "earned": {
+    "bronze": 0,
+    "silver": 1,
+    "gold": 11,
+    "platinum": 1
+   },
+   "defined": {
+    "bronze": 0,
+    "silver": 1,
+    "gold": 11,
+    "platinum": 1
+   },
+   "last_trophy": "2026-10-30T16:16:40+00:00",
+   "has_trophies": true,
+   "months": {
+    "2026-10": [
+     0,
+     1,
+     11,
+     1
+    ]
+   },
+   "trophy_lists": [
+    {
+     "id": "NPWR47987_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 100,
+     "groups": {}
+    }
+   ],
+   "rare": [
+    {
+     "at": "2026-10-30T16:16:41+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/97cde638-0c0d-4077-8837-8aa1167ebdb4.png",
+     "n": "The Truth Beyond the Pain",
+     "r": 14.4,
+     "t": "platinum"
+    },
+    {
+     "at": "2026-10-30T16:16:41+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/0a41bbb5-237c-4a20-b319-6441f0100d03.png",
+     "n": "Faithfull fool",
+     "r": 19.8,
+     "t": "silver"
+    },
+    {
+     "at": "2026-10-30T10:38:39+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/92b95ad3-8697-4700-a9f9-eb68d08089df.png",
+     "n": "Cleaning the sins of the past",
+     "r": 22.7,
+     "t": "gold"
+    },
+    {
+     "at": "2026-10-30T16:12:48+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/21f413f3-85d3-4438-8a50-01365816dabb.png",
+     "n": "Sleeping love",
+     "r": 26.1,
+     "t": "gold"
+    },
+    {
+     "at": "2026-10-29T15:54:03+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR47987_00/5c0738b6-3392-4229-855a-a9eb50a9058f.png",
+     "n": "Filling an empty chest",
+     "r": 26.8,
+     "t": "gold"
+    }
+   ],
+   "aliases": [],
+   "trophies_earned": 13,
+   "trophies_total": 13,
+   "platinum": true,
+   "status": "completed",
+   "last_activity": "2026-10-30T16:17:00.500000+00:00",
+   "hours_by_year": {
+    "2026": 1.7
+   },
+   "metacritic": 88,
+   "genres": [
+    "Shooter",
+    "Action"
+   ],
+   "released": "2016-10-21",
+   "rawg_slug": "battlefield-1",
+   "metacritic_source": "rawg",
+   "series": [
+    "Battlefield"
+   ],
+   "developers": [
+    "DICE"
+   ],
+   "publishers": [
+    "Electronic Arts"
+   ],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "war",
+     "War"
+    ],
+    [
+     "mature",
+     "Mature"
+    ],
+    [
+     "physics",
+     "Physics"
+    ],
+    [
+     "historical",
+     "Historical"
+    ],
+    [
+     "military",
+     "Military"
+    ],
+    [
+     "story",
+     "Story"
+    ],
+    [
+     "steam-trading-cards-2",
+     "Steam Trading Cards"
+    ]
+   ],
+   "hltb": {
+    "main": 6.01,
+    "extra": 7.67,
+    "complete": 7.69,
+    "url": "https://howlongtobeat.com/game/4575"
+   },
+   "plat_rate": 14.4,
+   "rare_missing": 0,
+   "first_trophy_at": "2026-10-29T14:08:04+00:00",
+   "platinum_at": "2026-10-30T16:16:41+00:00",
+   "dlc": [],
+   "missing_n": 0,
+   "easy": []
   },
   {
    "name": "Ultros",
@@ -1762,109 +1957,6 @@
     "extra": 13.84,
     "complete": 30.73,
     "url": "https://howlongtobeat.com/game/155646"
-   },
-   "first_trophy_at": null,
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 0,
-   "easy": []
-  },
-  {
-   "name": "Control",
-   "image": "https://image.api.playstation.com/cdn/EP4040/CUSA11454_00/FSp6HKGXPLC5VrWg3GAjNEiq3ATYE5qu.png",
-   "platforms": [
-    "PS4",
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-09-09T05:34:20Z",
-   "hours": 0.0,
-   "first_played": null,
-   "last_played": null,
-   "progress": null,
-   "earned": null,
-   "defined": null,
-   "last_trophy": null,
-   "has_trophies": false,
-   "months": {},
-   "trophy_lists": [],
-   "rare": [],
-   "aliases": [],
-   "trophies_earned": 0,
-   "trophies_total": 0,
-   "platinum": false,
-   "status": "unplayed",
-   "last_activity": null,
-   "hours_by_year": {},
-   "metacritic": 84,
-   "genres": [
-    "Shooter",
-    "Adventure",
-    "Action"
-   ],
-   "released": "2019-08-27",
-   "rawg_slug": "control",
-   "metacritic_source": "rawg",
-   "series": [],
-   "developers": [],
-   "publishers": [
-    "505 Games"
-   ],
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "sci-fi",
-     "Sci-fi"
-    ],
-    [
-     "exploration",
-     "Exploration"
-    ],
-    [
-     "female-protagonist",
-     "Female Protagonist"
-    ],
-    [
-     "action-adventure",
-     "Action-Adventure"
-    ],
-    [
-     "cinematic",
-     "Cinematic"
-    ],
-    [
-     "metroidvania",
-     "Metroidvania"
-    ],
-    [
-     "detective",
-     "Detective"
-    ],
-    [
-     "3rd-person-perspective",
-     "3rd-Person Perspective"
-    ],
-    [
-     "supernatural",
-     "Supernatural"
-    ],
-    [
-     "abstract",
-     "Abstract"
-    ],
-    [
-     "realism",
-     "realism"
-    ]
-   ],
-   "hltb": {
-    "main": 11.7,
-    "extra": 19.23,
-    "complete": 29.03,
-    "url": "https://howlongtobeat.com/game/57507"
    },
    "first_trophy_at": null,
    "platinum_at": null,
@@ -13166,12 +13258,12 @@
    "rawg_slug": "need-for-speed-hot-pursuit-remastered",
    "metacritic_source": "rawg",
    "series": [
-    "Need for Speed",
-    "Need for Speed Hot Pursuit"
+    "Need for Speed Hot Pursuit",
+    "Need for Speed"
    ],
    "developers": [
-    "Criterion Games",
-    "Stellar Entertainment"
+    "Stellar Entertainment",
+    "Criterion Games"
    ],
    "publishers": [
     "Electronic Arts"
@@ -17889,8 +17981,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "2K Drive",
-    "Lego"
+    "Lego",
+    "2K Drive"
    ],
    "developers": [
     "Visual Concepts"
@@ -56889,7 +56981,7 @@
    "2026-10-25": 3,
    "2026-10-26": 7,
    "2026-10-29": 2,
-   "2026-10-30": 11
+   "2026-10-30": 13
   },
   "weekday_hour": {
    "2011": [
@@ -57181,8 +57273,8 @@
     15,
     4,
     26,
-    80,
-    87,
+    81,
+    88,
     79,
     53,
     52,
@@ -59731,8 +59823,8 @@
     1,
     0,
     0,
-    4,
-    8,
+    5,
+    9,
     3,
     2,
     3,
@@ -60107,7 +60199,7 @@
      66,
      484,
      2106,
-     989
+     991
     ],
     "score": 25
    },
@@ -60242,7 +60334,7 @@
      9,
      48,
      157,
-     57
+     59
     ],
     "score": 28
    }
