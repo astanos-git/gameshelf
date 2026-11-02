@@ -1,23 +1,24 @@
 {
- "week": "2026-W44",
- "generated_at": "2026-10-26T04:40:08+00:00",
+ "week": "2026-W45",
+ "generated_at": "2026-11-02T05:07:29+00:00",
  "picks": [
   {
-   "slug": "dark-souls-ii",
-   "name": "Dark Souls II",
-   "image": "https://media.rawg.io/media/games/651/6512783a214618584d144d5d852ba595.jpg",
-   "metacritic": 91,
-   "released": "2014-03-11",
+   "slug": "the-elder-scrolls-v-skyrim",
+   "name": "The Elder Scrolls V: Skyrim",
+   "image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg",
+   "metacritic": 94,
+   "released": "2011-11-11",
    "genres": [
     "Action",
     "RPG"
    ],
    "platforms": [
+    "PS5",
     "PS4"
    ],
-   "length": 62,
-   "why": "Close to ELDEN RING, which you enjoyed; matches your taste for atmospheric, exploration, open world; about 62 h.",
-   "url": "https://rawg.io/games/dark-souls-ii",
+   "length": 110,
+   "why": "Close to The Witcher 3: Wild Hunt — Remastered, which you enjoyed; matches your taste for atmospheric, story rich, open world; about 110 h.",
+   "url": "https://rawg.io/games/the-elder-scrolls-v-skyrim",
    "tags": [
     [
      "atmospheric",
@@ -28,107 +29,47 @@
      "RPG"
     ],
     [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
      "open-world",
      "Open World"
-    ],
-    [
-     "cooperative",
-     "cooperative"
-    ],
-    [
-     "horror",
-     "Horror"
     ],
     [
      "fantasy",
      "Fantasy"
     ],
     [
-     "exploration",
-     "Exploration"
-    ],
-    [
-     "difficult",
-     "Difficult"
+     "sandbox",
+     "Sandbox"
     ],
     [
      "action-rpg",
      "Action RPG"
     ],
     [
-     "dark",
-     "Dark"
+     "role-playing",
+     "role-playing"
+    ],
+    [
+     "moddable",
+     "Moddable"
+    ],
+    [
+     "character-customization",
+     "Character Customization"
     ]
    ]
   },
   {
-   "slug": "dreams",
-   "name": "Dreams",
-   "image": "https://media.rawg.io/media/games/9ba/9ba104d61c6a70a73352fcbee3b4a9b5.jpg",
-   "metacritic": 89,
-   "released": "2020-02-14",
+   "slug": "anno-mutationem",
+   "name": "Anno: Mutationem",
+   "image": "https://media.rawg.io/media/games/b1d/b1d0b2d6b4cbc94d8c2066353367d13e.jpg",
+   "metacritic": 73,
+   "released": "2022-03-16",
    "genres": [
-    "Adventure",
-    "Action",
-    "Puzzle"
-   ],
-   "platforms": [
-    "PS4"
-   ],
-   "length": 11,
-   "why": "Close to Marvel's Spider-Man, which you enjoyed; matches your taste for atmospheric, action-adventure, exploration; about 11 h, close to your usual 17 h.",
-   "url": "https://rawg.io/games/dreams",
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "exploration",
-     "Exploration"
-    ],
-    [
-     "sandbox",
-     "Sandbox"
-    ],
-    [
-     "action-adventure",
-     "Action-Adventure"
-    ],
-    [
-     "family-friendly",
-     "Family Friendly"
-    ],
-    [
-     "cute",
-     "Cute"
-    ],
-    [
-     "cinematic",
-     "Cinematic"
-    ],
-    [
-     "music",
-     "Music"
-    ],
-    [
-     "keyboard",
-     "keyboard"
-    ],
-    [
-     "kidsfamily",
-     "Kids/Family"
-    ]
-   ]
-  },
-  {
-   "slug": "9-years-of-shadows",
-   "name": "9 Years of Shadows",
-   "image": "https://media.rawg.io/media/screenshots/dae/daee60e083357d4777f4ae649cbe4c52.jpg",
-   "metacritic": 74,
-   "released": "2023-03-26",
-   "genres": [
-    "Indie",
+    "Platformer",
     "Adventure",
     "Action"
    ],
@@ -136,21 +77,21 @@
     "PS5",
     "PS4"
    ],
-   "length": 9,
-   "why": "Close to FINAL FANTASY VII REMAKE, which you enjoyed; matches your taste for atmospheric, story rich, action-adventure; about 9 h.",
-   "url": "https://rawg.io/games/9-years-of-shadows",
+   "length": 15,
+   "why": "Close to Horizon Zero Dawn™, which you enjoyed; matches your taste for story rich, action-adventure, exploration; about 15 h, close to your usual 17 h.",
+   "url": "https://rawg.io/games/anno-mutationem",
    "tags": [
     [
-     "atmospheric",
-     "Atmospheric"
+     "rpg",
+     "RPG"
     ],
     [
      "story-rich",
      "Story Rich"
     ],
     [
-     "fantasy",
-     "Fantasy"
+     "sci-fi",
+     "Sci-fi"
     ],
     [
      "exploration",
@@ -169,16 +110,64 @@
      "Pixel Graphics"
     ],
     [
-     "side-scroller",
-     "Side Scroller"
+     "action-rpg",
+     "Action RPG"
     ],
     [
-     "magic",
-     "Magic"
+     "anime",
+     "Anime"
     ],
     [
-     "metroidvania",
-     "Metroidvania"
+     "futuristic",
+     "Futuristic"
+    ]
+   ]
+  },
+  {
+   "slug": "yakuza-kiwami-2",
+   "name": "Yakuza Kiwami 2",
+   "image": "https://media.rawg.io/media/games/b32/b32735e3f7d95959cc39265f555f2aa8.jpg",
+   "metacritic": 85,
+   "released": "2017-12-07",
+   "genres": [
+    "Adventure",
+    "Action",
+    "RPG"
+   ],
+   "platforms": [
+    "PS4"
+   ],
+   "length": 36,
+   "why": "Close to Ghost of Tsushima, which you enjoyed; matches your taste for atmospheric, action-adventure, rpg; about 36 h.",
+   "url": "https://rawg.io/games/yakuza-kiwami-2",
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "rpg",
+     "RPG"
+    ],
+    [
+     "comedy",
+     "Comedy"
+    ],
+    [
+     "violent",
+     "Violent"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "sexual-content",
+     "Sexual Content"
+    ],
+    [
+     "beat-em-up",
+     "Beat 'em up"
     ]
    ]
   }
@@ -203,6 +192,18 @@
   "usual_length": 17
  },
  "history": [
+  {
+   "slug": "the-elder-scrolls-v-skyrim",
+   "week": "2026-W45"
+  },
+  {
+   "slug": "anno-mutationem",
+   "week": "2026-W45"
+  },
+  {
+   "slug": "yakuza-kiwami-2",
+   "week": "2026-W45"
+  },
   {
    "slug": "dark-souls-ii",
    "week": "2026-W44"

@@ -39,6 +39,32 @@
   "tba": false,
   "website": "https://www.anantagame.com/"
  },
+ "anno-mutationem": {
+  "description": "Welcome to the neon-covered, 2D-meets-3D Cyberpunk world of ANNO: Mutationem. In this Action-Adventure game with RPG elements you become Ann: a highly-skilled combat-trained lone wolf on a personal mission in the giant Metropolis, full of sinister mega-corporations, mysterious fringe groups and creatures more bizarre than words can express.",
+  "developer_ids": [
+   [
+    28059,
+    "Thinking Stars"
+   ],
+   [
+    186340,
+    "Thinkingstars"
+   ]
+  ],
+  "developers": [
+   "Thinking Stars",
+   "Thinkingstars"
+  ],
+  "esrb": "Teen",
+  "metacritic": 73,
+  "name": "Anno: Mutationem",
+  "publishers": [
+   "Lightning Games"
+  ],
+  "released": "2022-03-16",
+  "tba": false,
+  "website": "http://anno-m.com"
+ },
  "bayonetta": {
   "description": "Bayonetta is a slasher game developed by Platinum Games. The game is set in a fictional European city of Vigrid. The main character is a witch named Bayonetta who fights angels with pistols and magic wishing only one thing: to recall everything happened to her.",
   "developer_ids": [
@@ -570,6 +596,27 @@
   "tba": false,
   "website": "http://www.lucasarts.com"
  },
+ "the-elder-scrolls-v-skyrim": {
+  "description": "The fifth game in the series, Skyrim takes us on a journey through the coldest region of Cyrodiil. Once again player can traverse the open world RPG armed with various medieval weapons and magic, to become a hero of Nordic legends –Dovahkiin, the Dragonborn. After mandatory character creation players will have to escape not only imprisonment but a fire-breathing dragon. Something Skyrim hasn’t seen in centuries.",
+  "developer_ids": [
+   [
+    4207,
+    "Bethesda Game Studios"
+   ]
+  ],
+  "developers": [
+   "Bethesda Game Studios"
+  ],
+  "esrb": "Mature",
+  "metacritic": 94,
+  "name": "The Elder Scrolls V: Skyrim",
+  "publishers": [
+   "Bethesda Softworks"
+  ],
+  "released": "2011-11-11",
+  "tba": false,
+  "website": "http://elderscrolls.com/"
+ },
  "the-expanse-osiris-reborn": {
   "description": "The Expanse: Osiris Reborn is a third-person Action RPG set in the world of The Expanse. You are not a hero, but a simple mercenary who found himself in the wrong place at the wrong time. Assemble a team, break through the web of lies and leave your mark on the history of the solar system.",
   "developer_ids": [
@@ -691,7 +738,7 @@
   "developers": [
    "Crystal Dynamics"
   ],
-  "esrb": null,
+  "esrb": "Mature",
   "metacritic": null,
   "name": "Tomb Raider: Catalyst",
   "publishers": [],
@@ -717,5 +764,31 @@
   "released": "2027-02-12",
   "tba": false,
   "website": null
+ },
+ "yakuza-kiwami-2": {
+  "description": "Kazuma Kiryu thought his Tojo Clan days were behind him. He and the young girl in his care, Haruka Sawamura, have built a peaceful life from the ashes of conflict. All it took was a single gunshot to shatter that peace. Yukio Terada, the Fifth Chairman of the Tojo Clan, has been assassinated. With war on the horizon, the legendary Dragon of Dojima is pulled back into the world he wanted to leave behind.",
+  "developer_ids": [
+   [
+    425,
+    "SEGA"
+   ],
+   [
+    19027,
+    "Ryu ga Gotoku Studio"
+   ]
+  ],
+  "developers": [
+   "SEGA",
+   "Ryu ga Gotoku Studio"
+  ],
+  "esrb": "Mature",
+  "metacritic": 85,
+  "name": "Yakuza Kiwami 2",
+  "publishers": [
+   "SEGA"
+  ],
+  "released": "2017-12-07",
+  "tba": false,
+  "website": "http://yakuza.sega.com/kiwami2/home.html"
  }
 }

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30T22:15:42+00:00",
+ "generated_at": "2026-11-02T05:02:13+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,9 +10,9 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 330,
-  "level_progress": 88,
+  "level_progress": 90,
   "earned": {
-   "bronze": 2751,
+   "bronze": 2752,
    "silver": 650,
    "gold": 223,
    "platinum": 23
@@ -30,10 +30,10 @@
    "acquired": "2026-09-09T05:34:20Z",
    "hours": 0.0,
    "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-10-30T21:25:39.180000+00:00",
-   "progress": 2,
+   "last_played": "2026-10-31T10:19:24.320000+00:00",
+   "progress": 3,
    "earned": {
-    "bronze": 2,
+    "bronze": 3,
     "silver": 0,
     "gold": 0,
     "platinum": 0
@@ -44,11 +44,11 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-10-30T22:08:57+00:00",
+   "last_trophy": "2026-10-31T10:53:49+00:00",
    "has_trophies": true,
    "months": {
     "2026-10": [
-     2,
+     3,
      0,
      0,
      0
@@ -60,15 +60,22 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 2,
+     "progress": 3,
      "groups": {
-      "default": "Control Ultimate Edition",
       "001": "The Foundation",
-      "002": "Altered World Events"
+      "002": "Altered World Events",
+      "default": "Control Ultimate Edition"
      }
     }
    ],
    "rare": [
+    {
+     "n": "Paranatural Powerhouse",
+     "t": "bronze",
+     "r": 53.3,
+     "at": "2026-10-31T10:48:33+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/5d178018-12c0-4186-b6a7-53e68b0a9938.png"
+    },
     {
      "n": "Welcome to the Oldest House",
      "t": "bronze",
@@ -87,11 +94,11 @@
    "aliases": [
     "Control Ultimate Edition"
    ],
-   "trophies_earned": 2,
+   "trophies_earned": 3,
    "trophies_total": 68,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-30T22:08:57+00:00",
+   "last_activity": "2026-10-31T10:53:49+00:00",
    "hours_by_year": {},
    "metacritic": 84,
    "genres": [
@@ -189,19 +196,12 @@
      "total": 11
     }
    ],
-   "missing_n": 66,
+   "missing_n": 65,
    "easy": [
-    {
-     "n": "Paranatural Powerhouse",
-     "t": "bronze",
-     "r": 53.3,
-     "h": null,
-     "p": null
-    },
     {
      "n": "Unknown Caller ",
      "t": "bronze",
-     "r": 45.0,
+     "r": 45.1,
      "h": true,
      "p": null
     },
@@ -210,7 +210,14 @@
      "t": "bronze",
      "r": 43.9,
      "h": null,
-     "p": "19/40"
+     "p": "35/40"
+    },
+    {
+     "n": "Parautilitarian",
+     "t": "bronze",
+     "r": 43.1,
+     "h": null,
+     "p": null
     }
    ]
   },
@@ -17981,8 +17988,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "Lego",
-    "2K Drive"
+    "2K Drive",
+    "Lego"
    ],
    "developers": [
     "Visual Concepts"
@@ -56981,7 +56988,8 @@
    "2026-10-25": 3,
    "2026-10-26": 7,
    "2026-10-29": 2,
-   "2026-10-30": 13
+   "2026-10-30": 13,
+   "2026-10-31": 1
   },
   "weekday_hour": {
    "2011": [
@@ -57286,7 +57294,7 @@
     2,
     4,
     17,
-    14,
+    15,
     17,
     14,
     26,
@@ -59836,7 +59844,7 @@
     0,
     0,
     4,
-    3,
+    4,
     2,
     0,
     1,
@@ -60199,7 +60207,7 @@
      66,
      484,
      2106,
-     991
+     992
     ],
     "score": 25
    },
@@ -60334,7 +60342,7 @@
      9,
      48,
      157,
-     59
+     60
     ],
     "score": 28
    }
