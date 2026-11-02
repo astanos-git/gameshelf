@@ -51,6 +51,58 @@
    ]
   ]
  },
+ "anno-mutationem": {
+  "at": "2026-11-02T06:17:13Z",
+  "feedback": "down",
+  "genres": [
+   "Platformer",
+   "Adventure",
+   "Action"
+  ],
+  "name": "Anno: Mutationem",
+  "tags": [
+   [
+    "rpg",
+    "RPG"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "sci-fi",
+    "Sci-fi"
+   ],
+   [
+    "exploration",
+    "Exploration"
+   ],
+   [
+    "female-protagonist",
+    "Female Protagonist"
+   ],
+   [
+    "action-adventure",
+    "Action-Adventure"
+   ],
+   [
+    "pixel-graphics",
+    "Pixel Graphics"
+   ],
+   [
+    "action-rpg",
+    "Action RPG"
+   ],
+   [
+    "anime",
+    "Anime"
+   ],
+   [
+    "futuristic",
+    "Futuristic"
+   ]
+  ]
+ },
  "bayonetta": {
   "at": "2026-10-19T14:46:59Z",
   "feedback": "up",
@@ -766,6 +818,97 @@
    [
     "epic",
     "Epic"
+   ]
+  ]
+ },
+ "the-elder-scrolls-v-skyrim": {
+  "at": "2026-11-02T06:17:13Z",
+  "feedback": "up",
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "name": "The Elder Scrolls V: Skyrim",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "rpg",
+    "RPG"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "open-world",
+    "Open World"
+   ],
+   [
+    "fantasy",
+    "Fantasy"
+   ],
+   [
+    "sandbox",
+    "Sandbox"
+   ],
+   [
+    "action-rpg",
+    "Action RPG"
+   ],
+   [
+    "role-playing",
+    "role-playing"
+   ],
+   [
+    "moddable",
+    "Moddable"
+   ],
+   [
+    "character-customization",
+    "Character Customization"
+   ]
+  ]
+ },
+ "yakuza-kiwami-2": {
+  "at": "2026-11-02T06:17:13Z",
+  "feedback": "up",
+  "genres": [
+   "Adventure",
+   "Action",
+   "RPG"
+  ],
+  "name": "Yakuza Kiwami 2",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "rpg",
+    "RPG"
+   ],
+   [
+    "comedy",
+    "Comedy"
+   ],
+   [
+    "violent",
+    "Violent"
+   ],
+   [
+    "action-adventure",
+    "Action-Adventure"
+   ],
+   [
+    "sexual-content",
+    "Sexual Content"
+   ],
+   [
+    "beat-em-up",
+    "Beat 'em up"
    ]
   ]
  }
