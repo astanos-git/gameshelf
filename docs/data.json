@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T05:02:13+00:00",
+ "generated_at": "2026-11-03T07:19:25+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -9,10 +9,10 @@
   "online_id": "cwil79",
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
-  "trophy_level": 330,
-  "level_progress": 90,
+  "trophy_level": 331,
+  "level_progress": 0,
   "earned": {
-   "bronze": 2752,
+   "bronze": 2758,
    "silver": 650,
    "gold": 223,
    "platinum": 23
@@ -28,12 +28,12 @@
    ],
    "owned": true,
    "acquired": "2026-09-09T05:34:20Z",
-   "hours": 0.0,
+   "hours": 1.4,
    "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-10-31T10:19:24.320000+00:00",
-   "progress": 3,
+   "last_played": "2026-11-02T20:36:00.350000+00:00",
+   "progress": 9,
    "earned": {
-    "bronze": 3,
+    "bronze": 9,
     "silver": 0,
     "gold": 0,
     "platinum": 0
@@ -44,9 +44,15 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-10-31T10:53:49+00:00",
+   "last_trophy": "2026-11-02T21:54:53+00:00",
    "has_trophies": true,
    "months": {
+    "2026-11": [
+     6,
+     0,
+     0,
+     0
+    ],
     "2026-10": [
      3,
      0,
@@ -60,7 +66,7 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 3,
+     "progress": 9,
      "groups": {
       "001": "The Foundation",
       "002": "Altered World Events",
@@ -70,36 +76,52 @@
    ],
    "rare": [
     {
-     "n": "Paranatural Powerhouse",
+     "n": "Shifting Positions",
      "t": "bronze",
-     "r": 53.3,
-     "at": "2026-10-31T10:48:33+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/5d178018-12c0-4186-b6a7-53e68b0a9938.png"
+     "r": 38.1,
+     "at": "2026-11-02T21:42:27+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/3b4358af-0ef4-4da5-b54f-3fd4fd0df0e3.png"
     },
     {
-     "n": "Welcome to the Oldest House",
+     "n": "Ritualistic Thinking",
      "t": "bronze",
-     "r": 63.1,
-     "at": "2026-10-30T22:08:56+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/db4c197e-3ec4-4bfe-9930-81f8cdde6bcd.png"
+     "r": 39.9,
+     "at": "2026-11-02T21:54:53+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/54a14966-e66b-48de-a374-22634fc1d748.png"
     },
     {
-     "n": "Choose to be Chosen",
+     "n": "Astral Construction",
      "t": "bronze",
-     "r": 83.5,
-     "at": "2026-10-30T21:43:11+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/316fc0b3-4773-4aed-b26d-304090f472c2.png"
+     "r": 41.5,
+     "at": "2026-11-02T21:23:20+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/e43fb1b2-2cf5-49c3-a23a-11db93af07eb.png"
+    },
+    {
+     "n": "Parautilitarian",
+     "t": "bronze",
+     "r": 43.1,
+     "at": "2026-11-02T21:21:09+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9889a9f8-3e00-48dc-817f-34875510a9d5.png"
+    },
+    {
+     "n": "Strange Collection",
+     "t": "bronze",
+     "r": 44.0,
+     "at": "2026-11-02T20:53:13+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/80d12d29-0b55-4bc8-96a5-61029ab1c27b.png"
     }
    ],
    "aliases": [
     "Control Ultimate Edition"
    ],
-   "trophies_earned": 3,
+   "trophies_earned": 9,
    "trophies_total": 68,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-31T10:53:49+00:00",
-   "hours_by_year": {},
+   "last_activity": "2026-11-02T21:54:53+00:00",
+   "hours_by_year": {
+    "2026": 1.4
+   },
    "metacritic": 84,
    "genres": [
     "Shooter",
@@ -196,28 +218,28 @@
      "total": 11
     }
    ],
-   "missing_n": 65,
+   "missing_n": 59,
    "easy": [
     {
-     "n": "Unknown Caller ",
+     "n": "Directorial Override",
      "t": "bronze",
-     "r": 45.1,
+     "r": 35.2,
      "h": true,
      "p": null
     },
     {
-     "n": "Strange Collection",
+     "n": "Unstable Matter",
      "t": "bronze",
-     "r": 43.9,
+     "r": 34.2,
      "h": null,
-     "p": "35/40"
+     "p": "18/50"
     },
     {
-     "n": "Parautilitarian",
+     "n": "Ritual Intuition",
      "t": "bronze",
-     "r": 43.1,
+     "r": 31.7,
      "h": null,
-     "p": null
+     "p": "5/10"
     }
    ]
   },
@@ -229,7 +251,7 @@
    ],
    "owned": true,
    "acquired": "2025-12-14T16:02:26Z",
-   "hours": 5.1,
+   "hours": 6.6,
    "first_played": "2026-10-26T20:12:49.930000+00:00",
    "last_played": "2026-10-30T21:25:33.960000+00:00",
    "progress": 0,
@@ -266,7 +288,7 @@
    "status": "started",
    "last_activity": "2026-10-30T21:25:33.960000+00:00",
    "hours_by_year": {
-    "2026": 5.1
+    "2026": 6.6
    },
    "metacritic": 92,
    "genres": [
@@ -376,7 +398,7 @@
    ],
    "owned": true,
    "acquired": "2026-07-15T08:17:10Z",
-   "hours": 1.7,
+   "hours": 2.4,
    "first_played": "2026-10-29T14:06:06.650000+00:00",
    "last_played": "2026-10-30T16:17:00.500000+00:00",
    "progress": 100,
@@ -456,7 +478,7 @@
    "status": "completed",
    "last_activity": "2026-10-30T16:17:00.500000+00:00",
    "hours_by_year": {
-    "2026": 1.7
+    "2026": 2.4
    },
    "metacritic": 88,
    "genres": [
@@ -17988,8 +18010,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "2K Drive",
-    "Lego"
+    "Lego",
+    "2K Drive"
    ],
    "developers": [
     "Visual Concepts"
@@ -56989,7 +57011,8 @@
    "2026-10-26": 7,
    "2026-10-29": 2,
    "2026-10-30": 13,
-   "2026-10-31": 1
+   "2026-10-31": 1,
+   "2026-11-02": 6
   },
   "weekday_hour": {
    "2011": [
@@ -57184,8 +57207,8 @@
     17,
     20,
     41,
-    80,
-    90,
+    81,
+    95,
     23,
     14,
     5,
@@ -59734,8 +59757,8 @@
     1,
     0,
     0,
-    1,
-    10,
+    2,
+    15,
     1,
     0,
     0,
@@ -60206,7 +60229,7 @@
     "buckets": [
      66,
      484,
-     2106,
+     2112,
      992
     ],
     "score": 25
@@ -60341,7 +60364,7 @@
     "buckets": [
      9,
      48,
-     157,
+     163,
      60
     ],
     "score": 28
