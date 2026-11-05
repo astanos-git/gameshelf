@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-03T07:19:25+00:00",
+ "generated_at": "2026-11-05T19:55:05+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,9 +10,9 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 331,
-  "level_progress": 0,
+  "level_progress": 8,
   "earned": {
-   "bronze": 2758,
+   "bronze": 2763,
    "silver": 650,
    "gold": 223,
    "platinum": 23
@@ -30,10 +30,10 @@
    "acquired": "2026-09-09T05:34:20Z",
    "hours": 1.4,
    "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-11-02T20:36:00.350000+00:00",
-   "progress": 9,
+   "last_played": "2026-11-05T17:22:39.480000+00:00",
+   "progress": 14,
    "earned": {
-    "bronze": 9,
+    "bronze": 14,
     "silver": 0,
     "gold": 0,
     "platinum": 0
@@ -44,11 +44,11 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-11-02T21:54:53+00:00",
+   "last_trophy": "2026-11-05T17:59:41+00:00",
    "has_trophies": true,
    "months": {
     "2026-11": [
-     6,
+     11,
      0,
      0,
      0
@@ -66,7 +66,7 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 9,
+     "progress": 14,
      "groups": {
       "001": "The Foundation",
       "002": "Altered World Events",
@@ -76,49 +76,49 @@
    ],
    "rare": [
     {
-     "n": "Shifting Positions",
+     "n": "Insular Telekinesis",
      "t": "bronze",
-     "r": 38.1,
-     "at": "2026-11-02T21:42:27+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/3b4358af-0ef4-4da5-b54f-3fd4fd0df0e3.png"
+     "r": 26.5,
+     "at": "2026-11-05T16:36:07+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/b4546311-b385-4acd-8b73-acd5992bd184.png"
     },
     {
-     "n": "Ritualistic Thinking",
+     "n": "Proper Handling Procedures",
      "t": "bronze",
-     "r": 39.9,
-     "at": "2026-11-02T21:54:53+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/54a14966-e66b-48de-a374-22634fc1d748.png"
+     "r": 28.9,
+     "at": "2026-11-05T17:50:07+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/19fc93a0-98fe-4944-91d6-fe41a67e463c.png"
     },
     {
-     "n": "Astral Construction",
+     "n": "Record Keeper",
      "t": "bronze",
-     "r": 41.5,
-     "at": "2026-11-02T21:23:20+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/e43fb1b2-2cf5-49c3-a23a-11db93af07eb.png"
+     "r": 30.7,
+     "at": "2026-11-05T17:41:22+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/4239dede-fc9d-4aa3-813b-8c5cd632b70e.png"
     },
     {
-     "n": "Parautilitarian",
+     "n": "Unstable Matter",
      "t": "bronze",
-     "r": 43.1,
-     "at": "2026-11-02T21:21:09+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9889a9f8-3e00-48dc-817f-34875510a9d5.png"
+     "r": 34.2,
+     "at": "2026-11-05T17:33:02+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/99a6f0aa-8444-4367-ae70-41ca198b5fbc.png"
     },
     {
-     "n": "Strange Collection",
+     "n": "Directorial Override",
      "t": "bronze",
-     "r": 44.0,
-     "at": "2026-11-02T20:53:13+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/80d12d29-0b55-4bc8-96a5-61029ab1c27b.png"
+     "r": 35.2,
+     "at": "2026-11-05T17:28:54+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9cda512c-4e4b-4a9f-a41e-43271d30a61e.png"
     }
    ],
    "aliases": [
     "Control Ultimate Edition"
    ],
-   "trophies_earned": 9,
+   "trophies_earned": 14,
    "trophies_total": 68,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-11-02T21:54:53+00:00",
+   "last_activity": "2026-11-05T17:59:41+00:00",
    "hours_by_year": {
     "2026": 1.4
    },
@@ -218,28 +218,28 @@
      "total": 11
     }
    ],
-   "missing_n": 59,
+   "missing_n": 54,
    "easy": [
-    {
-     "n": "Directorial Override",
-     "t": "bronze",
-     "r": 35.2,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "Unstable Matter",
-     "t": "bronze",
-     "r": 34.2,
-     "h": null,
-     "p": "18/50"
-    },
     {
      "n": "Ritual Intuition",
      "t": "bronze",
      "r": 31.7,
      "h": null,
-     "p": "5/10"
+     "p": "8/10"
+    },
+    {
+     "n": "Old Boys' Club",
+     "t": "bronze",
+     "r": 30.0,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "Threshold",
+     "t": "bronze",
+     "r": 27.7,
+     "h": true,
+     "p": null
     }
    ]
   },
@@ -18010,8 +18010,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "Lego",
-    "2K Drive"
+    "2K Drive",
+    "Lego"
    ],
    "developers": [
     "Visual Concepts"
@@ -57012,7 +57012,8 @@
    "2026-10-29": 2,
    "2026-10-30": 13,
    "2026-10-31": 1,
-   "2026-11-02": 6
+   "2026-11-02": 6,
+   "2026-11-05": 5
   },
   "weekday_hour": {
    "2011": [
@@ -57275,8 +57276,8 @@
     44,
     51,
     39,
-    32,
-    17,
+    33,
+    21,
     17,
     7,
     40,
@@ -59825,8 +59826,8 @@
     0,
     5,
     3,
-    1,
-    0,
+    2,
+    4,
     0,
     0,
     3,
@@ -60229,7 +60230,7 @@
     "buckets": [
      66,
      484,
-     2112,
+     2117,
      992
     ],
     "score": 25
@@ -60364,7 +60365,7 @@
     "buckets": [
      9,
      48,
-     163,
+     168,
      60
     ],
     "score": 28
