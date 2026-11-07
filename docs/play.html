@@ -562,6 +562,12 @@ async function wishSearch(q) {
     return `<li class="item"><span class="cover">${pic(img, name)}</span><span class="main"><span class="name">${esc(name)}</span>
       <span class="meta"><span>${esc(h.description || "")}</span></span></span><span></span>${act}</li>`;
   }).join("") : `<p class="note hint">No game found for "${esc(q)}".</p>`;
+  // not there (or not the right one)? keep it by name: it's looked up again every Monday until something turns up
+  const typed = q.trim().replace(/\s+/g, " ");
+  if (repoUrl() && !lib.has(wNorm(typed)) && !wished.has(wNorm(typed)) && !hits.some(h => wNorm(h.title) === wNorm(typed)))
+    box.insertAdjacentHTML("beforeend", `<li class="item"><span class="cover">＋</span><span class="main"><span class="name">Add "${esc(typed)}" by name</span>
+      <span class="meta"><span>No details yet: looked up every Monday</span></span></span><span></span>
+      <a class="x add" data-wadd href="${issueUrl(`Wishlist: add ${typed}`, ["wish: add", `name: ${typed}`])}" target="_blank" rel="noopener" aria-label="Add ${esc(typed)} by name" title="Add by name">+</a></li>`);
 }
 document.addEventListener("input", e => { if (e.target.id === "wishQ") { clearTimeout(wishTimer); wishTimer = setTimeout(() => wishSearch(e.target.value), 350); } });
 document.addEventListener("click", e => { const a = e.target.closest("[data-wadd]"); if (a) setTimeout(() => a.outerHTML = `<span class="wished" title="Added to pending changes">✓</span>`, 0); });
@@ -583,7 +589,7 @@ function wishlist() {
   $("wishCount").textContent = all.length || "";
   const shown = wishAll ? items : items.slice(0, 6);
   $("wishList").innerHTML = shown.length ? shown.map(([s, w]) => {
-    const meta = [outLabel(s, w) ? `<span class="out">${outLabel(s, w)}</span>` : (relOf(s, w) ? `<span>${relOf(s, w).slice(0, 4)}</span>` : ""), w.length ? `<span>~${w.length} h</span>` : "", w.genres?.length ? `<span>${esc(w.genres.slice(0, 2).join(", "))}</span>` : ""].join("");
+    const meta = w.pending ? `<span>No info yet · checked every Monday</span>` : [outLabel(s, w) ? `<span class="out">${outLabel(s, w)}</span>` : (relOf(s, w) ? `<span>${relOf(s, w).slice(0, 4)}</span>` : ""), w.length ? `<span>~${w.length} h</span>` : "", w.genres?.length ? `<span>${esc(w.genres.slice(0, 2).join(", "))}</span>` : ""].join("");
     return `<li class="item tap" data-d="${esc(s)}"><span class="cover">${pic(w.image, w.name)}</span>
       <span class="main"><span class="name">${esc(w.name)}</span><span class="meta">${meta}</span></span>
       ${w.metacritic == null && notOut(s, w) ? "<span></span>" : `<span class="mc ${mcClass(w.metacritic)}">${w.metacritic ?? "–"}</span>`}${dropBtn(s, w.name)}</li>`; }).join("")
@@ -630,6 +636,7 @@ function discoverPanel(slug) {
     ["Length", x.length ? `~${x.length} h (HowLongToBeat)` : "—"],
     ["Metacritic", (d.metacritic ?? x.metacritic) ?? "—"],
   ];
+  if (x.pending) return `<div class="detail"><p class="note">Added by name only: no details found yet. It's looked up again every Monday, and fills in here (and in your Monday push) once something turns up.</p></div>`;
   return `<div class="detail">${d.description ? `<p class="desc">${esc(d.description)}</p>` : `<p class="note">${UPC.generated_at ? "No description on RAWG." : "Descriptions appear after the next Monday update."}</p>`}
     <dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
     <span class="links"><a href="${esc(x.url || `https://rawg.io/games/${slug}`)}" target="_blank" rel="noopener">Game page on RAWG</a>${d.website ? ` · <a href="${esc(d.website)}" target="_blank" rel="noopener">Official site</a>` : ""}</span></div>`;

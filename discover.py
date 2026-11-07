@@ -90,6 +90,29 @@ def on_playstation(x: dict) -> bool:
     return bool(plats & set(PS)) or (not plats and "PlayStation" in parents)
 
 
+def wish_lookups(wishlist: dict, log: list[str]) -> dict:
+    """Name-only wishlist games ("pending": no info found when added) are searched again every week.
+    Once RAWG knows one, it gets cover, release date, genres and Metacritic, and "found" (date) for the Monday push."""
+    from flag import rawg_find
+    todo = [s for s, w in wishlist.items() if w.get("pending")]
+    if not todo:
+        return wishlist
+    out, hits = {}, []
+    for s, w in wishlist.items():
+        info = rawg_find(w["name"], w.get("year")) if w.get("pending") else {}
+        if info and info.get("slug") not in wishlist:
+            new = info.pop("slug")
+            out[new] = {**({"image": w["image"]} if w.get("image") else {}), **{k: v for k, v in info.items() if v is not None},
+                        "added": w["added"], "found": date.today().isoformat()}
+            hits.append(info["name"])
+        else:
+            out[s] = w
+    if hits:
+        (DOCS / "wishlist.json").write_text(json.dumps(out, indent=1, sort_keys=True, ensure_ascii=False) + "\n")
+    log.append(f"wishlist lookups: {len(todo)} name-only, found {', '.join(hits) or 'none'}")
+    return out
+
+
 def main() -> None:
     key = os.environ.get("RAWG_API_KEY", "").strip()
     if not key:
@@ -219,9 +242,12 @@ def main() -> None:
         del x["reasons"]
     upcoming = sorted(found.values(), key=lambda x: (bool(x["tba"] or not x["released"]), x["released"] or "9999", -x["added"]))
 
-    # 3. Details for everything shown on Discover
+    # 3. Wishlist games added by name only: look for them again, and fill them in once they're known
+    wishlist = wish_lookups(wishlist, log)
+
+    # 4. Details for everything shown on Discover
     det_out = {}
-    for slug in {*(p["slug"] for p in recs.get("picks", [])), *wishlist, *(x["slug"] for x in upcoming)}:
+    for slug in {*(p["slug"] for p in recs.get("picks", [])), *(s for s, w in wishlist.items() if not w.get("pending")), *(x["slug"] for x in upcoming)}:
         d = details(slug, key, cache, today)
         if d:
             det_out[slug] = {k: v for k, v in d.items() if k != "developer_ids"}

@@ -85,6 +85,11 @@ def build(today: date | None = None) -> tuple[str, str, list[str]]:
     if soon:
         lines.append("Out soon: " + ", ".join(f"{n} ({datetime.fromisoformat(r).strftime('%-d %b')})" for r, n in sorted(soon)[:4]))
 
+    # wishlist games added by name only that now have details (discover.py, this run)
+    found = [w["name"] for w in wishlist.values() if w.get("found") and w["found"] >= (today - timedelta(days=6)).isoformat()]
+    if found:
+        lines.append("🔎 News on your wishlist: " + ", ".join(found))
+
     # a memory from this week in past years (memories.json, built by extras.py)
     mem, best = load("memories.json", {}), None
     order = {"platinum": 0, "complete": 1, "rare": 2, "started": 3}
@@ -97,7 +102,8 @@ def build(today: date | None = None) -> tuple[str, str, list[str]]:
         d, x = best
         what = {"platinum": f"platinum in {x['game']}", "complete": f"100% in {x['game']}", "rare": f"{x.get('trophy')} in {x['game']} ({x.get('r')}%)",
                 "started": f"you started {x['game']}"}[x["kind"]]
-        lines.append(f"📅 {today.year - x['y']} years ago this {d.strftime('%A')}: {what}")
+        n = today.year - x['y']
+        lines.append(f"📅 {n} year{'s' if n > 1 else ''} ago this {d.strftime('%A')}: {what}")
 
     login = data.get("login") or {}
     if login.get("error") == "login_expired":

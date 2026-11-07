@@ -207,18 +207,19 @@ def apply_wish(body: str, created: str) -> str | None:
         year = re.search(r"^year:\s*(\d{4})", body, re.M)
         image = re.search(r"^image:\s*(https://\S+)\s*$", body, re.M)
         info = rawg_find(name.group(1), year.group(1) if year else None)
+        found = bool(info)
+        if not found:
+            # nothing known yet: keep the name and look again every Monday (discover.py)
+            info = {"pending": True, "year": year.group(1) if year else None}
         s = info.pop("slug", None) or re.sub(r"[^a-z0-9]+", "-", name.group(1).lower()).strip("-")
         if s in wl:
             return f"{wl[s]['name']} is already on your wishlist."
         if not info.get("image") and image:
             info["image"] = image.group(1)
         info.setdefault("name", name.group(1))
-        if not info.get("released") and year and int(year.group(1)) > date.today().year:
-            info["tba"] = True     # not out yet, no exact date
         wl[s] = {**{k: v for k, v in info.items() if v is not None}, "added": created}
         _save(WISHLIST, wl)
-        found = "url" in info and "rawg.io" in info["url"]
-        return f"Added {wl[s]['name']} to your wishlist" + ("" if found else " (not found on RAWG, so without release date or Metacritic)") + ". The dashboard updates in about a minute."
+        return f"Added {wl[s]['name']} to your wishlist" + ("" if found else ". No details found yet: it will be looked up again every Monday") + ". The dashboard updates in about a minute."
     if not slug:
         return "Couldn't read this request. Use the wishlist buttons on the dashboard."
     slug = slug.group(1)
