@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T17:42:33+00:00",
+ "generated_at": "2026-11-07T01:25:45+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,10 +10,10 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 331,
-  "level_progress": 25,
+  "level_progress": 31,
   "earned": {
-   "bronze": 2767,
-   "silver": 650,
+   "bronze": 2769,
+   "silver": 651,
    "gold": 224,
    "platinum": 23
   }
@@ -30,11 +30,11 @@
    "acquired": "2026-09-09T05:34:20Z",
    "hours": 1.4,
    "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-11-06T15:29:35.460000+00:00",
-   "progress": 25,
+   "last_played": "2026-11-06T23:53:54.530000+00:00",
+   "progress": 29,
    "earned": {
-    "bronze": 18,
-    "silver": 0,
+    "bronze": 20,
+    "silver": 1,
     "gold": 1,
     "platinum": 0
    },
@@ -44,12 +44,12 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-11-06T16:38:59+00:00",
+   "last_trophy": "2026-11-07T01:17:58+00:00",
    "has_trophies": true,
    "months": {
     "2026-11": [
-     15,
-     0,
+     17,
+     1,
      1,
      0
     ],
@@ -66,7 +66,7 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 25,
+     "progress": 29,
      "groups": {
       "001": "The Foundation",
       "002": "Altered World Events",
@@ -75,6 +75,13 @@
     }
    ],
    "rare": [
+    {
+     "n": "The Importance of Synergy",
+     "t": "bronze",
+     "r": 21.8,
+     "at": "2026-11-07T00:45:41+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/19e9f4a9-ff69-4a03-a704-a92a00e7f77e.png"
+    },
     {
      "n": "Cognitive Intruder",
      "t": "bronze",
@@ -102,23 +109,16 @@
      "r": 26.5,
      "at": "2026-11-05T16:36:07+00:00",
      "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/b4546311-b385-4acd-8b73-acd5992bd184.png"
-    },
-    {
-     "n": "Proper Handling Procedures",
-     "t": "bronze",
-     "r": 28.9,
-     "at": "2026-11-05T17:50:07+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/19fc93a0-98fe-4944-91d6-fe41a67e463c.png"
     }
    ],
    "aliases": [
     "Control Ultimate Edition"
    ],
-   "trophies_earned": 19,
+   "trophies_earned": 22,
    "trophies_total": 68,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-11-06T16:38:59+00:00",
+   "last_activity": "2026-11-07T01:17:58+00:00",
    "hours_by_year": {
     "2026": 1.4
    },
@@ -218,26 +218,26 @@
      "total": 11
     }
    ],
-   "missing_n": 49,
+   "missing_n": 46,
    "easy": [
-    {
-     "n": "Threshold",
-     "t": "bronze",
-     "r": 27.7,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "Paranatural Collection",
-     "t": "silver",
-     "r": 27.6,
-     "h": null,
-     "p": "95035/100000"
-    },
     {
      "n": "Rising Thought",
      "t": "bronze",
      "r": 25.8,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "My Brother's Keeper",
+     "t": "bronze",
+     "r": 25.7,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "Career Development",
+     "t": "silver",
+     "r": 24.3,
      "h": null,
      "p": null
     }
@@ -251,9 +251,9 @@
    ],
    "owned": true,
    "acquired": "2025-12-14T16:02:26Z",
-   "hours": 6.6,
+   "hours": 9.6,
    "first_played": "2026-10-26T20:12:49.930000+00:00",
-   "last_played": "2026-10-30T21:25:33.960000+00:00",
+   "last_played": "2026-11-06T23:53:49.240000+00:00",
    "progress": 0,
    "earned": {
     "bronze": 0,
@@ -286,9 +286,9 @@
    "trophies_total": 17,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-10-30T21:25:33.960000+00:00",
+   "last_activity": "2026-11-06T23:53:49.240000+00:00",
    "hours_by_year": {
-    "2026": 6.6
+    "2026": 9.6
    },
    "metacritic": 92,
    "genres": [
@@ -57014,7 +57014,8 @@
    "2026-10-31": 1,
    "2026-11-02": 6,
    "2026-11-05": 5,
-   "2026-11-06": 5
+   "2026-11-06": 5,
+   "2026-11-07": 3
   },
   "weekday_hour": {
    "2011": [
@@ -57308,8 +57309,8 @@
     26,
     81,
     88,
-    79,
-    53,
+    80,
+    55,
     52,
     33,
     10,
@@ -59858,8 +59859,8 @@
     0,
     5,
     9,
-    3,
-    2,
+    4,
+    4,
     3,
     0,
     1,
@@ -60231,7 +60232,7 @@
     "buckets": [
      66,
      484,
-     2122,
+     2125,
      992
     ],
     "score": 25
@@ -60366,7 +60367,7 @@
     "buckets": [
      9,
      48,
-     173,
+     176,
      60
     ],
     "score": 28
