@@ -29,6 +29,7 @@ jobs:
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_CREATED: ${{ github.event.issue.created_at }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}     # to fill in games added from the wishlist search
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

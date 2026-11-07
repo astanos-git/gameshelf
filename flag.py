@@ -165,22 +165,68 @@ def apply_queue(body: str) -> str | None:
     return msg + " The dashboard updates in about a minute."
 
 
+def rawg_find(name: str, year: str | None) -> dict:
+    """Best RAWG match for a game name (and release year), in the wishlist's format. {} when not found or no key."""
+    import urllib.parse
+    import urllib.request
+    key = os.environ.get("RAWG_API_KEY", "").strip()
+    if not key:
+        return {}
+    get = lambda path, **q: json.loads(urllib.request.urlopen(f"https://api.rawg.io/api/{path}?" + urllib.parse.urlencode({"key": key, **q}), timeout=20).read())
+    norm = lambda t: re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).strip()
+    try:
+        res = get("games", search=name, page_size=10).get("results") or []
+        if not res:
+            return {}
+        def score(x):
+            yr = (x.get("released") or "")[:4]
+            return (norm(x["name"]) == norm(name), bool(year) and yr == year, any(p["platform"]["slug"] in ("playstation5", "playstation4") for p in x.get("platforms") or []), x.get("added", 0))
+        hit = max(res, key=score)
+        if norm(hit["name"]) != norm(name) and not (year and (hit.get("released") or "")[:4] == year):
+            return {}   # not confident it's the same game
+        d = get(f"games/{hit['slug']}")
+    except Exception as e:
+        print(f"RAWG lookup failed for {name!r}: {e}")
+        return {}
+    plats = [p["platform"]["name"].replace("PlayStation ", "PS") for p in d.get("platforms") or [] if p["platform"]["slug"] in ("playstation5", "playstation4")]
+    return {"slug": d["slug"], "name": d["name"], "image": d.get("background_image"), "metacritic": d.get("metacritic"), "released": d.get("released"),
+            "tba": d.get("tba") or None, "genres": [g["name"] for g in d.get("genres") or []][:3], "platforms": plats or None,
+            "length": d.get("playtime") or None, "url": f"https://rawg.io/games/{d['slug']}"}
+
+
 def apply_wish(body: str, created: str) -> str | None:
     """Wishlist (dashboard only): "wish: add|remove", "slug:" and, when adding, "name:"."""
     m = re.search(r"^wish:\s*(add|remove)\s*$", body or "", re.M | re.I)
     if not m:
         return None
     slug = re.search(r"^slug:\s*([a-z0-9-]+)\s*$", body, re.M)
+    name = re.search(r"^name:\s*(.+?)\s*$", body, re.M)
+    wl = _load(WISHLIST, {})
+    if not slug and name and m.group(1).lower() == "add":
+        # added from the dashboard search: find the game on RAWG for cover, release date, genres and Metacritic
+        year = re.search(r"^year:\s*(\d{4})", body, re.M)
+        image = re.search(r"^image:\s*(https://\S+)\s*$", body, re.M)
+        info = rawg_find(name.group(1), year.group(1) if year else None)
+        s = info.pop("slug", None) or re.sub(r"[^a-z0-9]+", "-", name.group(1).lower()).strip("-")
+        if s in wl:
+            return f"{wl[s]['name']} is already on your wishlist."
+        if not info.get("image") and image:
+            info["image"] = image.group(1)
+        info.setdefault("name", name.group(1))
+        if not info.get("released") and year and int(year.group(1)) > date.today().year:
+            info["tba"] = True     # not out yet, no exact date
+        wl[s] = {**{k: v for k, v in info.items() if v is not None}, "added": created}
+        _save(WISHLIST, wl)
+        found = "url" in info and "rawg.io" in info["url"]
+        return f"Added {wl[s]['name']} to your wishlist" + ("" if found else " (not found on RAWG, so without release date or Metacritic)") + ". The dashboard updates in about a minute."
     if not slug:
         return "Couldn't read this request. Use the wishlist buttons on the dashboard."
     slug = slug.group(1)
-    wl = _load(WISHLIST, {})
     if m.group(1).lower() == "remove":
         gone = wl.pop(slug, None)
         _save(WISHLIST, wl)
         return (f"Removed {gone['name']} from your wishlist." if gone else "That game wasn't on your wishlist.") + " The dashboard updates in about a minute."
     pick = next((p for p in _load(RECS, {}).get("picks", []) + _load(RECS.parent / "upcoming.json", {}).get("upcoming", []) if p["slug"] == slug), None)
-    name = re.search(r"^name:\s*(.+?)\s*$", body, re.M)
     info = {k: pick.get(k) for k in ("name", "image", "metacritic", "released", "tba", "genres", "platforms", "length", "url") if pick.get(k) is not None} if pick else \
         {"name": name.group(1) if name else slug, "url": f"https://rawg.io/games/{slug}"}
     wl[slug] = {**info, "added": created}

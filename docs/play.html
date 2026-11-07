@@ -106,6 +106,10 @@ a.x { width: 30px; height: 30px; display: grid; place-items: center; border: 1px
 a.x:hover { border-color: var(--accent); color: var(--accent); }
 a.x.add { color: var(--accent); border-color: var(--accent); font-size: 18px; font-weight: 600; }
 a.x.added { background: var(--accent-soft); }
+.wsearch { margin: 0 0 10px; }
+.wsearch input { width: 100%; box-sizing: border-box; font: inherit; font-size: 16px; padding: 10px 12px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface); color: var(--text); }
+.wsearch .list { margin-top: 6px; }
+.wsearch .hint { padding: 8px 0; }
 .wished { width: 30px; text-align: center; color: var(--gold); font-size: 18px; }
 .sec-head .count { font: 500 15px var(--body); color: var(--muted); }
 select.mini { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; font-size: 13px; }
@@ -174,6 +178,8 @@ tr.tap.open td { background: var(--accent-soft); }
     <section class="block">
       <div class="sec-head"><h2 class="sec">Wishlist <span class="count" id="wishCount"></span></h2>
         <select id="wishSort" aria-label="Sort wishlist" class="mini"><option value="added">Recently added</option><option value="release">Release date</option><option value="mc">Metacritic</option><option value="short">Shortest first</option><option value="name">Name</option></select></div>
+      <div class="wsearch"><input type="search" id="wishQ" placeholder="🔍 Find a game to add…" autocomplete="off" enterkeyhint="search" aria-label="Search games to add to your wishlist">
+        <ol class="list compact" id="wishHits" hidden></ol></div>
       <div class="chips" id="wishChips" role="group" aria-label="Show"></div>
       <ol class="list compact" id="wishList"></ol>
       <button class="more" id="wishMore" hidden></button>
@@ -533,6 +539,33 @@ let wishAll = false, soonAll = false;
 const relOf = (slug, w) => (UPC.details?.[slug]?.released) || w?.released || null;
 const notOut = (slug, w) => { const r = relOf(slug, w); return !r || r > new Date().toISOString().slice(0, 10) || !!(UPC.details?.[slug]?.tba ?? w?.tba); };
 const dropBtn = (s, name) => repoUrl() ? `<a class="x" href="${issueUrl(`Wishlist: remove ${name}`, ["wish: remove", `slug: ${s}`])}" target="_blank" rel="noopener" aria-label="Remove ${esc(name)} from your wishlist" title="Remove from wishlist">✕</a>` : "";
+/* Search games online (Wikipedia: game articles only, free and no key needed) and add one to the wishlist.
+   The save finds the game on RAWG to fill in cover, release date, genres and Metacritic. */
+const wNorm = t => String(t || "").toLowerCase().replace(/\(.*?\)|[™®©:'’.,!?-]/g, " ").replace(/\s+/g, " ").trim();
+let wishTimer, wishSeq = 0;
+async function wishSearch(q) {
+  const box = $("wishHits"), seq = ++wishSeq;
+  if (q.trim().length < 2) { box.hidden = true; box.innerHTML = ""; return; }
+  box.hidden = false; box.innerHTML = `<p class="note hint">Searching…</p>`;
+  const url = "https://en.wikipedia.org/w/api.php?" + new URLSearchParams({ action: "query", format: "json", origin: "*", generator: "search",
+    gsrsearch: `${q} hastemplate:"Infobox video game"`, gsrlimit: "8", prop: "pageimages|description", piprop: "thumbnail", pithumbsize: "160", pilicense: "any" });
+  let hits = [];
+  try { const j = await (await fetch(url)).json(); hits = Object.values(j.query?.pages || {}).sort((a, b) => a.index - b.index); }
+  catch { if (seq === wishSeq) box.innerHTML = `<p class="note hint">Search isn't reachable right now. Try again in a moment.</p>`; return; }
+  if (seq !== wishSeq) return;   // a newer search is under way
+  const lib = new Set(DATA.games.flatMap(g => [g.name, ...(g.aliases || [])]).map(wNorm)), wished = new Set(Object.values(WISH).map(w => wNorm(w.name)));
+  box.innerHTML = hits.length ? hits.map(h => {
+    const name = h.title.replace(/\s*\((\d{4} )?video game\)$/i, ""), year = (h.description || "").match(/\b(19|20)\d{2}\b/)?.[0] || "";
+    const n = wNorm(name), img = h.thumbnail?.source || "";
+    const act = lib.has(n) ? `<span class="note">In library</span>` : wished.has(n) ? `<span class="wished" title="On your wishlist">★</span>`
+      : repoUrl() ? `<a class="x add" data-wadd href="${issueUrl(`Wishlist: add ${name}`, ["wish: add", `name: ${name}`, ...(year ? [`year: ${year}`] : []), ...(img ? [`image: ${img}`] : [])])}" target="_blank" rel="noopener" aria-label="Add ${esc(name)} to your wishlist" title="Add to wishlist">+</a>` : "";
+    return `<li class="item"><span class="cover">${pic(img, name)}</span><span class="main"><span class="name">${esc(name)}</span>
+      <span class="meta"><span>${esc(h.description || "")}</span></span></span><span></span>${act}</li>`;
+  }).join("") : `<p class="note hint">No game found for "${esc(q)}".</p>`;
+}
+document.addEventListener("input", e => { if (e.target.id === "wishQ") { clearTimeout(wishTimer); wishTimer = setTimeout(() => wishSearch(e.target.value), 350); } });
+document.addEventListener("click", e => { const a = e.target.closest("[data-wadd]"); if (a) setTimeout(() => a.outerHTML = `<span class="wished" title="Added to pending changes">✓</span>`, 0); });
+
 function wishlist() {
   const owned = new Set(DATA.games.map(g => g.rawg_slug));
   const all = Object.entries(WISH).filter(([s]) => !owned.has(s));
@@ -554,7 +587,7 @@ function wishlist() {
     return `<li class="item tap" data-d="${esc(s)}"><span class="cover">${pic(w.image, w.name)}</span>
       <span class="main"><span class="name">${esc(w.name)}</span><span class="meta">${meta}</span></span>
       ${w.metacritic == null && notOut(s, w) ? "<span></span>" : `<span class="mc ${mcClass(w.metacritic)}">${w.metacritic ?? "–"}</span>`}${dropBtn(s, w.name)}</li>`; }).join("")
-    : `<p class="empty">${all.length ? "Nothing in this filter." : "Empty. Tap <b>+ Wishlist</b> on a weekly pick, or <b>+</b> on a coming-soon game, to keep it here. Games leave the list once they're in your library."}</p>`;
+    : `<p class="empty">${all.length ? "Nothing in this filter." : "Empty. Search above, tap <b>+ Wishlist</b> on a weekly pick, or <b>+</b> on a coming-soon game, to keep it here. Games leave the list once they're in your library."}</p>`;
   $("wishMore").hidden = items.length <= 6; $("wishMore").textContent = wishAll ? "Show fewer" : `Show all ${items.length}`;
   reopen();
 }

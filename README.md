@@ -89,7 +89,7 @@ Tap **Refresh data** at the top of the Library. It opens the workflow on GitHub:
   - **📅 Add to calendar** (next to Up next): subscribe once to `gameshelf.ics`. Your phone's calendar then shows finish forecasts for games in progress, release dates of wishlist and coming-soon games, and a reminder one month before your goals deadline. It updates by itself (after refreshes, Monday runs and saves).
 - **Discover:**
   - **This week's picks:** 3 games you don't own, matched to your taste and usual length, with 👍 / 👎 and + Wishlist.
-  - **Wishlist** (dashboard only, not your PSN wishlist): sort it, filter Out now / Not out yet, ✕ to remove.
+  - **Wishlist** (dashboard only, not your PSN wishlist): search any game by name and tap **+** to add it (the save fills in cover, release date, genres and Metacritic from RAWG); sort it, filter Out now / Not out yet, ✕ to remove.
   - **Coming soon:** unreleased PS4/PS5 games by category: Your series, Your studios, Your taste, Big releases, Indie (often empty: RAWG rarely lists consoles for unreleased indies), plus Out soon (next 60 days). Tap **+** to wishlist one.
 - **Trophy hunting:**
   - **Closest to platinum:** with the easiest trophies left.
