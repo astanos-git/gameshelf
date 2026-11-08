@@ -189,7 +189,14 @@ details.fold[open] > summary { margin-bottom: 8px; }
    Usability layer (Nov 2026 review): WCAG 2.2 AA targets and contrast, thumb-reach navigation,
    installed-app behaviour, motion preferences. Applies to every page.
    --------------------------------------------------------------------------------------------- */
-:root { --navh: 0px; --tap: 44px; }
+:root { --navh: 0px; --tap: 44px; --safe-top: env(safe-area-inset-top, 0px); }
+/* Installed on iPhone the page runs under the status bar: start content below it, and keep a solid strip
+   there so nothing scrolls into the system's blurred edge */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: var(--safe-top); background: var(--bg); z-index: 50; pointer-events: none; }
+.wrap { padding-top: calc(12px + var(--safe-top)); }
+.subnav { top: var(--safe-top); }
+.theme-seg button { display: inline-flex; align-items: center; gap: 5px; min-height: 34px; padding: 4px 12px; }
+.theme-seg svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
 .vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* Main navigation as icon tabs: bottom bar on phones (thumb zone), top bar on wide screens */
@@ -240,8 +247,8 @@ details.fold > summary { display: flex; }
 .tap, .chip, .btn, .seg button { transition: transform .12s ease, background-color .15s ease, border-color .15s ease; }
 
 /* Status: offline notice */
-.offline-note { position: sticky; top: 0; z-index: 40; background: var(--warn-bg); color: var(--warn); font-size: 13px; font-weight: 600; text-align: center;
-  padding: calc(6px + env(safe-area-inset-top, 0px)) 16px 6px; border-bottom: 1px solid var(--line); }
+.offline-note { position: sticky; top: 0; margin-top: var(--safe-top); z-index: 40; background: var(--warn-bg); color: var(--warn); font-size: 13px; font-weight: 600; text-align: center;
+  padding: 6px 16px; border-bottom: 1px solid var(--line); }
 
 /* Smooth page changes between tabs (supported browsers only), and respect "reduce motion" */
 @view-transition { navigation: auto; }

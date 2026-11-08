@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <meta charset="utf-8">
+<script>try { const t = localStorage.getItem("shelf-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}</script>
 <title>Game Shelf</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -42,6 +43,7 @@
 .level .bar { flex: 0 0 90px; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
 .level .bar i { display: block; height: 100%; background: var(--accent); }
 .tiers { display: flex; gap: 10px; font: 500 13px var(--mono); }
+.theme-slot { grid-column: 1 / -1; }
 .updated { grid-column: 1 / -1; display: flex; gap: 4px 10px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
 .updated > span + span::before { content: "·"; margin-right: 8px; }
 .updated { gap: 4px 8px !important; }
@@ -165,6 +167,7 @@ body.selecting .wrap { padding-bottom: 170px; }
     </div>
     <a class="refresh" id="refresh" target="_blank" rel="noopener" hidden>Refresh data</a>
     <div class="updated"><span id="updated"></span><span class="expiry" id="expiry" hidden></span></div>
+    <div class="theme-slot" id="themeSlot"></div>
   </header>
 
   <section class="figures" id="figures"></section>
