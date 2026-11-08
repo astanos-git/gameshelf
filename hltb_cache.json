@@ -723,6 +723,14 @@
   "query": "DayZ",
   "url": "https://howlongtobeat.com/game/2290"
  },
+ "Dead Island 2": {
+  "complete": 39.97,
+  "extra": 26.69,
+  "main": 16.25,
+  "name": "Dead Island 2",
+  "query": "Dead Island 2",
+  "url": "https://howlongtobeat.com/game/21273"
+ },
  "Dead Space": {
   "complete": 30.19,
   "extra": 16.21,
@@ -2071,6 +2079,14 @@
   "query": "Monster Hunter: World",
   "url": "https://howlongtobeat.com/game/52493"
  },
+ "Monster Train 2": {
+  "complete": 133.87,
+  "extra": 37.48,
+  "main": 5.66,
+  "name": "Monster Train 2",
+  "query": "Monster Train 2",
+  "url": "https://howlongtobeat.com/game/164271"
+ },
  "Mortal Kombat X": {
   "complete": 69.23,
   "extra": 16.87,
@@ -3230,6 +3246,14 @@
   "name": "Tomb Raider I-III Remastered Starring Lara Croft",
   "query": "Tomb Raider I-III Remastered Starring Lara Croft",
   "url": "https://howlongtobeat.com/game/137867"
+ },
+ "Tomb Raider IV-VI Remastered": {
+  "complete": 72.13,
+  "extra": 49.74,
+  "main": 35.33,
+  "name": "Tomb Raider IV-VI Remastered",
+  "query": "Tomb Raider IV-VI Remastered",
+  "url": "https://howlongtobeat.com/game/157979"
  },
  "Trackmania Turbo": {
   "complete": 130.01,

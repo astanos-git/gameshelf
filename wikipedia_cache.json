@@ -161,6 +161,12 @@
   "title": "Dredge (video game)",
   "v": 2
  },
+ "Dead Island 2": {
+  "checked": "2026-11-08",
+  "score": 73,
+  "title": "Dead Island 2",
+  "v": 4
+ },
  "Death's Door": {
   "checked": "2026-09-29",
   "score": 85,
@@ -466,6 +472,11 @@
   "title": "Minecraft Legends",
   "v": 2
  },
+ "Monster Train 2": {
+  "checked": "2026-11-08",
+  "title": "Monster Train",
+  "v": 4
+ },
  "Moss II VR": {
   "checked": "2026-10-30",
   "v": 4
@@ -729,6 +740,12 @@
  },
  "Tomb Raider I-III Remastered Starring Lara Croft": {
   "checked": "2026-10-30",
+  "v": 4
+ },
+ "Tomb Raider IV-VI Remastered": {
+  "checked": "2026-11-08",
+  "score": 65,
+  "title": "Tomb Raider IV–VI Remastered",
   "v": 4
  },
  "Trek to Yomi": {

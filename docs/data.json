@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-07T01:25:45+00:00",
+ "generated_at": "2026-11-08T21:58:08+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -19,6 +19,295 @@
   }
  },
  "games": [
+  {
+   "name": "Monster Train 2",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1815/3ea7456f6925d14bd479d7b9bd251be1575e0e5fc37ad88d.png",
+   "platforms": [
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-11-08T18:25:14Z",
+   "hours": 0.0,
+   "first_played": null,
+   "last_played": null,
+   "progress": null,
+   "earned": null,
+   "defined": null,
+   "last_trophy": null,
+   "has_trophies": false,
+   "months": {},
+   "trophy_lists": [],
+   "rare": [],
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 0,
+   "platinum": false,
+   "status": "unplayed",
+   "last_activity": null,
+   "hours_by_year": {},
+   "metacritic": null,
+   "genres": [],
+   "released": null,
+   "rawg_slug": null,
+   "metacritic_source": null,
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [],
+   "hltb": {
+    "main": 5.66,
+    "extra": 37.48,
+    "complete": 133.87,
+    "url": "https://howlongtobeat.com/game/164271"
+   },
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 0,
+   "easy": []
+  },
+  {
+   "name": "Dead Island 2",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1916/fVsiqUOxnTrnyl4woUQyWda5.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-11-08T18:24:50Z",
+   "hours": 0.0,
+   "first_played": null,
+   "last_played": null,
+   "progress": null,
+   "earned": null,
+   "defined": null,
+   "last_trophy": null,
+   "has_trophies": false,
+   "months": {},
+   "trophy_lists": [],
+   "rare": [],
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 0,
+   "platinum": false,
+   "status": "unplayed",
+   "last_activity": null,
+   "hours_by_year": {},
+   "metacritic": 73,
+   "genres": [],
+   "released": null,
+   "rawg_slug": null,
+   "metacritic_source": "wikipedia",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [],
+   "hltb": {
+    "main": 16.25,
+    "extra": 26.69,
+    "complete": 39.97,
+    "url": "https://howlongtobeat.com/game/21273"
+   },
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 0,
+   "easy": []
+  },
+  {
+   "name": "Tomb Raider IV-VI Remastered",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202409/1221/c785b0366d8f84a18dd17a0d046fdee92ccd6195d79c81a1.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-11-08T18:23:45Z",
+   "hours": 0.0,
+   "first_played": null,
+   "last_played": null,
+   "progress": null,
+   "earned": null,
+   "defined": null,
+   "last_trophy": null,
+   "has_trophies": false,
+   "months": {},
+   "trophy_lists": [],
+   "rare": [],
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 0,
+   "platinum": false,
+   "status": "unplayed",
+   "last_activity": null,
+   "hours_by_year": {},
+   "metacritic": 65,
+   "genres": [],
+   "released": null,
+   "rawg_slug": null,
+   "metacritic_source": "wikipedia",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [],
+   "hltb": {
+    "main": 35.33,
+    "extra": 49.74,
+    "complete": 72.13,
+    "url": "https://howlongtobeat.com/game/157979"
+   },
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 0,
+   "easy": []
+  },
+  {
+   "name": "Blue Prince",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1222/155cec2bad7676df9a1aa7e96cdd9f363e117c1650a43c34.png",
+   "platforms": [
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2025-12-14T16:02:26Z",
+   "hours": 9.6,
+   "first_played": "2026-10-26T20:12:49.930000+00:00",
+   "last_played": "2026-11-08T16:21:35.150000+00:00",
+   "progress": 0,
+   "earned": {
+    "bronze": 0,
+    "silver": 0,
+    "gold": 0,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 0,
+    "silver": 8,
+    "gold": 8,
+    "platinum": 1
+   },
+   "last_trophy": "2026-10-26T20:12:53+00:00",
+   "has_trophies": true,
+   "months": {},
+   "trophy_lists": [
+    {
+     "id": "NPWR46707_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 0,
+     "groups": {}
+    }
+   ],
+   "rare": [],
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 17,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-11-08T16:21:35.150000+00:00",
+   "hours_by_year": {
+    "2026": 9.6
+   },
+   "metacritic": 92,
+   "genres": [
+    "Indie",
+    "Strategy",
+    "Adventure",
+    "Puzzle"
+   ],
+   "released": "2025-04-10",
+   "rawg_slug": "blue-prince",
+   "metacritic_source": "wikipedia",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "replay-value",
+     "Replay Value"
+    ],
+    [
+     "walking-simulator",
+     "Walking Simulator"
+    ],
+    [
+     "roguelite",
+     "Roguelite"
+    ],
+    [
+     "stylized",
+     "Stylized"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ],
+    [
+     "level-editor",
+     "Level Editor"
+    ],
+    [
+     "investigation",
+     "Investigation"
+    ],
+    [
+     "nonlinear",
+     "Nonlinear"
+    ]
+   ],
+   "hltb": {
+    "main": 18.39,
+    "extra": 36.48,
+    "complete": 104.57,
+    "url": "https://howlongtobeat.com/game/136426"
+   },
+   "plat_rate": 0.3,
+   "rare_missing": 16,
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 17,
+   "easy": [
+    {
+     "n": "Inheritance Trophy",
+     "t": "silver",
+     "r": 14.3,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Trophy 8",
+     "t": "silver",
+     "r": 9.2,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "Full House Trophy",
+     "t": "silver",
+     "r": 9.0,
+     "h": null,
+     "p": null
+    }
+   ]
+  },
   {
    "name": "Control",
    "image": "https://image.api.playstation.com/cdn/EP4040/CUSA11454_00/FSp6HKGXPLC5VrWg3GAjNEiq3ATYE5qu.png",
@@ -47,16 +336,16 @@
    "last_trophy": "2026-11-07T01:17:58+00:00",
    "has_trophies": true,
    "months": {
-    "2026-11": [
-     17,
-     1,
-     1,
-     0
-    ],
     "2026-10": [
      3,
      0,
      0,
+     0
+    ],
+    "2026-11": [
+     17,
+     1,
+     1,
      0
     ]
    },
@@ -76,39 +365,39 @@
    ],
    "rare": [
     {
-     "n": "The Importance of Synergy",
-     "t": "bronze",
-     "r": 21.8,
      "at": "2026-11-07T00:45:41+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/19e9f4a9-ff69-4a03-a704-a92a00e7f77e.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/19e9f4a9-ff69-4a03-a704-a92a00e7f77e.png",
+     "n": "The Importance of Synergy",
+     "r": 21.8,
+     "t": "bronze"
     },
     {
-     "n": "Cognitive Intruder",
-     "t": "bronze",
-     "r": 22.8,
      "at": "2026-11-06T14:21:05+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9bf02e0e-a29d-46ab-acbf-6e2164aefbe6.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9bf02e0e-a29d-46ab-acbf-6e2164aefbe6.png",
+     "n": "Cognitive Intruder",
+     "r": 22.8,
+     "t": "bronze"
     },
     {
-     "n": "Psychic Occupation",
-     "t": "bronze",
-     "r": 24.3,
      "at": "2026-11-06T11:53:06+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/a99c1d85-f3d7-4188-b713-c7da5a189208.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/a99c1d85-f3d7-4188-b713-c7da5a189208.png",
+     "n": "Psychic Occupation",
+     "r": 24.3,
+     "t": "bronze"
     },
     {
-     "n": "Bureau Archivist",
-     "t": "gold",
-     "r": 25.5,
      "at": "2026-11-06T15:58:57+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/e7da2384-ff09-4ba0-af18-07771375c702.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/e7da2384-ff09-4ba0-af18-07771375c702.png",
+     "n": "Bureau Archivist",
+     "r": 25.5,
+     "t": "gold"
     },
     {
-     "n": "Insular Telekinesis",
-     "t": "bronze",
-     "r": 26.5,
      "at": "2026-11-05T16:36:07+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/b4546311-b385-4acd-8b73-acd5992bd184.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/b4546311-b385-4acd-8b73-acd5992bd184.png",
+     "n": "Insular Telekinesis",
+     "r": 26.5,
+     "t": "bronze"
     }
    ],
    "aliases": [
@@ -238,152 +527,6 @@
      "n": "Career Development",
      "t": "silver",
      "r": 24.3,
-     "h": null,
-     "p": null
-    }
-   ]
-  },
-  {
-   "name": "Blue Prince",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1222/155cec2bad7676df9a1aa7e96cdd9f363e117c1650a43c34.png",
-   "platforms": [
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2025-12-14T16:02:26Z",
-   "hours": 9.6,
-   "first_played": "2026-10-26T20:12:49.930000+00:00",
-   "last_played": "2026-11-06T23:53:49.240000+00:00",
-   "progress": 0,
-   "earned": {
-    "bronze": 0,
-    "silver": 0,
-    "gold": 0,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 0,
-    "silver": 8,
-    "gold": 8,
-    "platinum": 1
-   },
-   "last_trophy": "2026-10-26T20:12:53+00:00",
-   "has_trophies": true,
-   "months": {},
-   "trophy_lists": [
-    {
-     "id": "NPWR46707_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 0,
-     "groups": {}
-    }
-   ],
-   "rare": [],
-   "aliases": [],
-   "trophies_earned": 0,
-   "trophies_total": 17,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-11-06T23:53:49.240000+00:00",
-   "hours_by_year": {
-    "2026": 9.6
-   },
-   "metacritic": 92,
-   "genres": [
-    "Indie",
-    "Strategy",
-    "Adventure",
-    "Puzzle"
-   ],
-   "released": "2025-04-10",
-   "rawg_slug": "blue-prince",
-   "metacritic_source": "wikipedia",
-   "series": [],
-   "developers": [],
-   "publishers": [],
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "story-rich",
-     "Story Rich"
-    ],
-    [
-     "exploration",
-     "Exploration"
-    ],
-    [
-     "mystery",
-     "Mystery"
-    ],
-    [
-     "replay-value",
-     "Replay Value"
-    ],
-    [
-     "walking-simulator",
-     "Walking Simulator"
-    ],
-    [
-     "roguelite",
-     "Roguelite"
-    ],
-    [
-     "stylized",
-     "Stylized"
-    ],
-    [
-     "family-sharing",
-     "Family Sharing"
-    ],
-    [
-     "level-editor",
-     "Level Editor"
-    ],
-    [
-     "investigation",
-     "Investigation"
-    ],
-    [
-     "nonlinear",
-     "Nonlinear"
-    ]
-   ],
-   "hltb": {
-    "main": 18.39,
-    "extra": 36.48,
-    "complete": 104.57,
-    "url": "https://howlongtobeat.com/game/136426"
-   },
-   "plat_rate": 0.3,
-   "rare_missing": 16,
-   "first_trophy_at": null,
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 17,
-   "easy": [
-    {
-     "n": "Inheritance Trophy",
-     "t": "silver",
-     "r": 14.3,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "Trophy 8",
-     "t": "silver",
-     "r": 9.2,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "Full House Trophy",
-     "t": "silver",
-     "r": 9.0,
      "h": null,
      "p": null
     }
