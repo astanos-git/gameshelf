@@ -50,7 +50,7 @@ After a minute your dashboard is live at `https://<your-username>.github.io/game
 ### 5. Load your data for the first time
 If the **Actions** tab asks you to enable workflows, enable them. Then go to **Actions → Refresh game data → Run workflow**. The run takes about 3–8 minutes: PSN requests are deliberately slowed to avoid getting blocked, and the first run looks up every game on RAWG. When it finishes, reload the dashboard.
 
-**On your phone:** open the dashboard in Safari or Chrome, then choose **Share → Add to Home Screen**. It then opens like an app.
+**On your phone:** open the dashboard in Safari or Chrome, then choose **Share → Add to Home Screen**. It then opens like an app, with its own icon, a tab bar at the bottom, and your last data still available offline (a yellow note says when you're offline). Tap the tab you're on to jump back to the top.
 
 ---
 
@@ -137,6 +137,10 @@ Open the game's panel and tap **Wrong info?**. You can correct:
 - the **name shown**.
 
 Type `none` when there is no match, or tap **Back to automatic** to undo. Fixes are saved in `overrides.json` and apply at the next data refresh.
+
+## Going back to an earlier look
+
+The version before the November 2026 UX review is kept as a working copy at `/v1/` (for example `https://<you>.github.io/gameshelf/v1/`), with an orange "Backup" banner. To restore it for good, ask for the files in `docs/v1/` to be copied back over `docs/`, or revert the commit "UX review" in GitHub's history.
 
 ## Renewing the PSN login (about every two months)
 The NPSSO token can't be renewed automatically: getting a new one requires signing in to Sony, which is protected by captchas and two-step verification. To keep this painless, the dashboard:

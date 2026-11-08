@@ -95,7 +95,7 @@
     .pb-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
     .pb-toggle { background: none; border: 0; color: inherit; font: inherit; cursor: pointer; padding: 0; }
     .pb-send { display: flex; gap: 8px; flex-wrap: wrap; }
-    .pb-go, #pendingBar .pb-send button { background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 7px 14px; font: 600 14px var(--body, system-ui); text-decoration: none; cursor: pointer; }
+    .pb-go, #pendingBar .pb-send button { background: var(--accent); color: var(--on-accent); border: 0; border-radius: 8px; padding: 7px 14px; font: 600 14px var(--body, system-ui); text-decoration: none; cursor: pointer; }
     #pendingBar [data-done] { background: transparent; border: 1px solid currentColor; color: inherit; }
     .pb-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; max-height: 40vh; overflow-y: auto; }
     .pb-list li { display: flex; justify-content: space-between; gap: 10px; align-items: center; border-top: 1px solid color-mix(in srgb, var(--bg) 25%, transparent); padding-top: 4px; }

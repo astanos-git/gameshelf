@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<base href="../">
+<meta name="robots" content="noindex">
+<script>/* backup copy: banner so it's never mistaken for the current version */
+addEventListener("DOMContentLoaded", () => document.body.insertAdjacentHTML("afterbegin", '<div style="background:#b45309;color:#fff;font:600 13px/1.4 system-ui;padding:8px 16px;text-align:center">Backup: the version of 8 Nov 2026, before the UX review · <a href="index.html" style="color:#fff">Current version</a></div>'));</script>
+<title>Game Shelf Year in Review</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Game Shelf">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="v1/app.css">
+<style>
+/* Layout: tabs → year chips → poster hero (giant year + headline numbers) → game of the year → cards grid → platinums */
+.years { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+h3 { font-family: var(--display); }
+
+/* The poster: the one bold moment on the page */
+.hero { background: var(--hero); color: var(--hero-fg); border-radius: 18px; padding: 22px 20px 20px; display: grid; gap: 14px; overflow: hidden; position: relative; }
+.hero::after { content: ""; position: absolute; right: -40px; top: -40px; width: 220px; height: 220px; border-radius: 50%;
+  border: 22px solid color-mix(in srgb, var(--plat) 35%, transparent); pointer-events: none; }
+.hero .kicker { font: 600 13px var(--body); text-transform: uppercase; letter-spacing: .14em; color: var(--hero-muted); }
+.hero h1 { font-size: clamp(88px, 26vw, 168px); line-height: .82; font-weight: 800; letter-spacing: -.01em; }
+.hero .line { font-size: 17px; max-width: 34ch; color: var(--hero-fg); position: relative; z-index: 1; }
+.big4 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 16px; position: relative; z-index: 1; }
+.big4 div { display: grid; min-width: 0; }
+.big4 b { font: 700 38px/1 var(--display); }
+.big4 span { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--hero-muted); }
+.big4 em { font: 500 12px var(--mono); font-style: normal; }
+.big4 em.up { color: #8fe39b; } .big4 em.down { color: #ffb0a4; }
+@media (max-width: 480px) { .big4 { grid-template-columns: 1fr 1fr; } }
+
+.goty { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center; }
+.goty .cover { width: 120px; height: 120px; border-radius: 12px; font-size: 32px; }
+.goty h2 { font-size: 28px; line-height: 1; }
+@media (max-width: 420px) { .goty { grid-template-columns: 84px 1fr; } .goty .cover { width: 84px; height: 84px; } }
+
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+@media (max-width: 640px) { .cards { grid-template-columns: 1fr 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.card b { font: 600 22px/1.1 var(--display); overflow-wrap: anywhere; }
+.card .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.card .sub { font-size: 12.5px; color: var(--muted); }
+
+.plats h2 { font-size: 22px; }
+.plats ol { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.plats li { display: grid; grid-template-columns: 12px 1fr auto; gap: 10px; align-items: baseline; font-size: 14px; }
+.plats li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--plat); align-self: center; }
+.plats .d { font: 12px var(--mono); color: var(--muted); }
+#page { display: grid; gap: 14px; }
+.goals { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; display: grid; gap: 12px; }
+.goals h2 { font-size: 22px; }
+.goal { display: grid; gap: 4px; }
+.goal-head { display: flex; justify-content: space-between; font-size: 14px; }
+.goal-head b { font: 600 18px var(--display); }
+.gbar { position: relative; height: 10px; background: var(--line); border-radius: 5px; overflow: visible; }
+.gbar i { display: block; height: 100%; background: var(--accent); border-radius: 5px; }
+.gbar .pace { position: absolute; top: -3px; width: 2px; height: 16px; background: var(--fg); border-radius: 1px; }
+.note.ok { color: var(--up); font-weight: 600; }
+.goalform summary { cursor: pointer; color: var(--accent); font-weight: 600; font-size: 14px; }
+.gf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 10px 0 8px; }
+@media (max-width: 520px) { .gf { grid-template-columns: 1fr 1fr; } }
+.gf label { display: grid; gap: 3px; font-size: 12px; color: var(--muted); }
+.gf input { font: 600 18px var(--display); padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); width: 100%; min-width: 0; }
+.gf-actions { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; }
+.gf-actions a { color: var(--accent); font-size: 14px; }
+.gf-actions a.save { background: var(--accent); color: #fff; border-radius: 8px; padding: 6px 14px; text-decoration: none; font-weight: 600; }
+.gf-actions a.save.off { background: var(--line); color: var(--muted); pointer-events: none; }
+.dna-head { margin: 0; font: 600 26px/1.15 var(--display); }
+.dna-bars { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 6px; }
+.dna-bars li { display: grid; grid-template-columns: minmax(96px, 120px) 1fr 58px; gap: 10px; align-items: center; font-size: 14px; }
+.dna-t { height: 10px; background: var(--line); border-radius: 5px; overflow: hidden; } .dna-t i { display: block; height: 100%; background: var(--accent); border-radius: 5px; }
+.dna-bars li:nth-child(-n+2) .dna-t i { background: var(--plat); }
+.dna-bars .num { text-align: right; font-weight: 600; } .dna-bars small.up { color: var(--up); } .dna-bars small.dn { color: var(--down); }
+.dna-years { margin: 0; padding-left: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px 12px; font-size: 13.5px; }
+.dna-years .num { color: var(--muted); margin-right: 6px; }
+.share-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: -4px; }
+</style>
+
+<div class="wrap">
+  <nav class="tabs"><a href="v1/index.html">Library</a><a href="v1/play.html">Play next</a><a href="v1/stats.html">Stats</a><a href="v1/review.html" aria-current="page">Review</a></nav>
+  <div class="years chips" id="years" role="group" aria-label="Choose a year"></div>
+  <div id="page"></div>
+  <details class="how"><summary>About these numbers</summary><p>Trophies and dates are exact. Hours are estimates: PSN only gives each game's total playtime (PS4/PS5 only), so it is spread across the years you played.</p></details>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const initials = s => (s || "?").replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+const pic = (url, name) => url ? `<img src="${esc(url)}" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode('${initials(name)}'))">` : initials(name);
+const fmt = n => Math.round(n).toLocaleString();
+const sum = a => a.reduce((x, y) => x + y, 0);
+const fmtDate = s => new Date(s).toLocaleDateString(undefined, { month: "long", day: "numeric" });
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const DAYS = ["Mondays", "Tuesdays", "Wednesdays", "Thursdays", "Fridays", "Saturdays", "Sundays"];
+let DATA, FLAGS = {}, RATINGS = {}, GOALS = {}, year;
+const GOAL_KEYS = [["platinums", "Platinums"], ["finished", "Games finished"], ["trophies", "Trophies"], ["hours", "Hours played"]];
+
+function repoUrl() {
+  const h = location.hostname; if (!h.endsWith(".github.io")) return null;
+  const owner = h.split(".")[0], repo = location.pathname.split("/").filter(Boolean)[0] || `${owner}.github.io`;
+  return `https://github.com/${owner}/${repo}`;
+}
+function goalUrl(y, values, clear) {
+  const repo = repoUrl(); if (!repo) return null;
+  const lines = clear ? "clear: yes\n" : GOAL_KEYS.filter(([k]) => values[k] > 0).map(([k]) => `${k}: ${values[k]}\n`).join("");
+  const body = `Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\ngoal: ${y}\n${lines}`;
+  return `${repo}/issues/new?title=${encodeURIComponent(`Goal ${y}${clear ? ": clear" : ""}`)}&body=${encodeURIComponent(body)}`;
+}
+
+function goalsBlock(s) {
+  const g = GOALS[year] || {}, has = GOAL_KEYS.some(([k]) => g[k]);
+  const now = { platinums: s.plats, finished: s.finished.length, trophies: s.trophies, hours: Math.round(s.hours) };
+  const today = new Date(), start = new Date(+year, 0, 1), end = new Date(+year + 1, 0, 1);
+  const elapsed = year === THIS_YEAR ? (today - start) / (end - start) : 1;
+  const bars = GOAL_KEYS.filter(([k]) => g[k]).map(([k, label]) => {
+    const pct = Math.min(100, Math.round(100 * now[k] / g[k])), expected = Math.round(g[k] * elapsed);
+    const state = now[k] >= g[k] ? "Reached" : year !== THIS_YEAR ? "Missed" : now[k] >= expected ? "On track" : `Behind: about ${expected} by now`;
+    return `<div class="goal"><div class="goal-head"><span>${label}</span><span class="num"><b>${fmt(now[k])}</b> / ${fmt(g[k])}</span></div>
+      <div class="gbar"><i style="width:${pct}%"></i>${year === THIS_YEAR ? `<span class="pace" style="left:${Math.round(elapsed * 100)}%" title="Where you'd be at an even pace"></span>` : ""}</div>
+      <span class="note ${now[k] >= g[k] ? "ok" : ""}">${state}</span></div>`;
+  }).join("");
+  const repo = repoUrl();
+  const form = `<details class="goalform"${has ? "" : " open"}><summary>${has ? "Change goals" : `Set goals for ${year}`}</summary>
+    <div class="gf">${GOAL_KEYS.map(([k, label]) => `<label><span>${label}</span><input type="number" min="0" max="999999" inputmode="numeric" data-goal="${k}" value="${g[k] || ""}" placeholder="—"></label>`).join("")}</div>
+    ${repo ? `<div class="gf-actions"><a class="save" id="goalSave" target="_blank" rel="noopener" href="#">Save goals</a>${has ? `<a href="${goalUrl(year, {}, true)}" target="_blank" rel="noopener">Clear goals</a>` : ""}</div>`
+      : `<p class="note">Saving works on your GitHub Pages dashboard.</p>`}
+    <p class="note">Leave a box empty to skip that goal.</p></details>`;
+  return `<section class="goals"><h2>Goals for ${year}</h2>${bars || `<p class="note">No goals set for ${year} yet.</p>`}${form}</section>`;
+}
+
+function syncGoalLink() {
+  const a = document.getElementById("goalSave"); if (!a) return;
+  const values = {}; document.querySelectorAll("[data-goal]").forEach(i => values[i.dataset.goal] = Math.max(0, parseInt(i.value, 10) || 0));
+  const any = Object.values(values).some(v => v > 0);
+  a.href = any ? goalUrl(year, values) : "#"; a.classList.toggle("off", !any);
+}
+document.addEventListener("input", e => { if (e.target.matches("[data-goal]")) syncGoalLink(); });
+const pick = (map, x) => map[x.name] || (x.aliases || []).map(n => map[n]).find(Boolean);
+
+function statsFor(y) {
+  const G = DATA.games, ins = DATA.insights || {};
+  const trophies = g => sum(Object.entries(g.months || {}).filter(([m]) => m.startsWith(y)).flatMap(([, t]) => t));
+  const plats = g => sum(Object.entries(g.months || {}).filter(([m]) => m.startsWith(y)).map(([, t]) => t[3]));
+  const hours = g => (g.hours_by_year || {})[y] || 0;
+  const played = G.filter(g => trophies(g) > 0 || hours(g) > 0);
+  const started = G.filter(g => [g.first_played, g.first_trophy_at].filter(Boolean).sort()[0]?.startsWith(y));
+  const finished = G.filter(g => { const f = pick(FLAGS, g);
+    const beatenAt = f && f.flag === "beaten" ? (g.last_activity && g.last_activity < f.at ? g.last_activity : f.at) : null;
+    const at = g.platinum_at || (g.status === "completed" ? g.last_trophy : null) || beatenAt;
+    return at && String(new Date(at).getFullYear()) === y; });
+  const months = Array(12).fill(0);
+  for (const g of G) for (const [m, t] of Object.entries(g.months || {})) if (m.startsWith(y)) months[+m.slice(5) - 1] += sum(t);
+  const genres = {};
+  for (const g of played) for (const gn of g.genres || []) genres[gn] = (genres[gn] || 0) + hours(g);
+  const days = Object.entries(ins.days || {}).filter(([d]) => d.startsWith(y)).sort();
+  let streak = 0, run = 0, prev = null;
+  for (const [d] of days) { const t = Date.parse(d + "T12:00:00Z"); run = prev && t - prev === 864e5 ? run + 1 : 1; streak = Math.max(streak, run); prev = t; }
+  const wh = (ins.weekday_hour || {})[y];
+  const byDay = wh ? Array.from({ length: 7 }, (_, d) => sum(wh.slice(d * 24, d * 24 + 24))) : null;
+  const byHour = wh ? Array.from({ length: 24 }, (_, h) => sum(Array.from({ length: 7 }, (_, d) => wh[d * 24 + h]))) : null;
+  const rare = G.flatMap(g => (g.rare || []).filter(r => r.at?.startsWith(y)).map(r => ({ ...r, game: g.name }))).sort((a, b) => a.r - b.r)[0];
+  const rated = G.map(g => ({ g, r: pick(RATINGS, g) })).filter(o => o.r && played.includes(o.g)).sort((a, b) => b.r.score - a.r.score)[0];
+  return {
+    trophies: sum(played.map(trophies)), plats: sum(played.map(plats)), hours: sum(played.map(hours)),
+    played, started: started.length, finished,
+    byHours: [...played].sort((a, b) => hours(b) - hours(a)), byTrophies: [...played].sort((a, b) => trophies(b) - trophies(a)),
+    hoursOf: hours, trophiesOf: trophies, months, genres, days, streak, byDay, byHour, rare, rated,
+    platList: ((ins.milestones || []).filter(m => m.kind === "platinum" && m.at.startsWith(y))),
+  };
+}
+
+const THIS_YEAR = String(new Date().getFullYear());
+function delta(now, before) {
+  if (!before || year === THIS_YEAR) return "";   // a year still in progress can't be compared fairly
+  const p = Math.round(100 * (now - before) / before);
+  return p === 0 ? `<em>same as last year</em>` : `<em class="${p > 0 ? "up" : "down"}">${p > 0 ? "+" : ""}${p}% vs ${+year - 1}</em>`;
+}
+
+function persona(s) {
+  if (!s.byHour) return null;
+  const total = sum(s.byHour), night = sum(s.byHour.slice(22)) + sum(s.byHour.slice(0, 5)), morning = sum(s.byHour.slice(5, 11));
+  const weekend = s.byDay[5] + s.byDay[6];
+  if (night / total > .35) return ["Night owl", `${Math.round(100 * night / total)}% of your trophies came after 22:00`];
+  if (morning / total > .3) return ["Early bird", `${Math.round(100 * morning / total)}% of your trophies came before 11:00`];
+  if (weekend / total > .45) return ["Weekend warrior", `${Math.round(100 * weekend / total)}% of your trophies came on weekends`];
+  return ["Steady player", "Your trophies are spread across the week"];
+}
+
+function render() {
+  document.querySelectorAll("#years .chip").forEach(b => b.setAttribute("aria-pressed", b.dataset.y === year));
+  const s = statsFor(year), prev = statsFor(String(+year - 1));
+  if (!s.played.length) { $("page").innerHTML = goalsBlock(s) + `<p class="empty">No playtime or trophies recorded in ${year} yet.</p>`; syncGoalLink(); return; }
+  const goty = s.byHours.find(g => s.hoursOf(g) > 0) || s.byTrophies[0];
+  const runner = s.byHours.filter(g => g !== goty && s.hoursOf(g) > 0).slice(0, 2);
+  const topMonth = s.months.indexOf(Math.max(...s.months));
+  const topGenre = Object.entries(s.genres).sort((a, b) => b[1] - a[1])[0];
+  const busiest = s.days.reduce((a, b) => (b[1] > (a?.[1] || 0) ? b : a), null);
+  const who = persona(s);
+  const line = `${s.played.length} games, ${fmt(s.trophies)} trophies${s.plats ? ` and ${s.plats} platinum${s.plats > 1 ? "s" : ""}` : ""}. ${goty ? `Most of it spent in ${goty.name}.` : ""}`;
+  const cards = [
+    s.byTrophies[0] && ["Most trophies", s.byTrophies[0].name, `${s.trophiesOf(s.byTrophies[0])} trophies`],
+    s.rare && ["Rarest trophy", s.rare.n, `${s.rare.game} · ${s.rare.r}% of players`],
+    topGenre && topGenre[1] > 0 && ["Top genre", topGenre[0], `~${fmt(topGenre[1])} h`],
+    s.months[topMonth] && ["Busiest month", MONTHS[topMonth], `${s.months[topMonth]} trophies`],
+    busiest && ["Biggest day", fmtDate(busiest[0]), `${busiest[1]} trophies`],
+    s.streak > 1 && ["Longest streak", `${s.streak} days`, "in a row with a trophy"],
+    s.byDay && ["Favourite day", DAYS[s.byDay.indexOf(Math.max(...s.byDay))], `peak hour ${String(s.byHour.indexOf(Math.max(...s.byHour))).padStart(2, "0")}:00`],
+    who && [who[0], "", who[1]],
+    ["Started · finished", `${s.started} · ${s.finished.length}`, "new games started · games finished"],
+    s.rated && ["Your top rating", s.rated.g.name, `${s.rated.r.score}/100`],
+  ].filter(Boolean);
+  SHARE = { year, s, goty, line, cards: cards.filter(c => c[1]).slice(0, 4) };
+  $("page").innerHTML = `
+    <section class="hero">
+      <span class="kicker">${year === THIS_YEAR ? "Your year so far on PlayStation" : "Your year on PlayStation"}</span>
+      <h1>${year}</h1>
+      <p class="line">${esc(line)}</p>
+      <div class="big4">
+        <div><b class="num">${fmt(s.trophies)}</b><span>Trophies</span>${delta(s.trophies, prev.trophies)}</div>
+        <div><b class="num">${s.plats}</b><span>Platinums</span>${delta(s.plats, prev.plats)}</div>
+        <div><b class="num">${fmt(s.hours)}</b><span>Hours (est.)</span>${delta(s.hours, prev.hours)}</div>
+      </div>
+    </section>
+    <div class="share-row"><button class="btn primary" id="shareBtn">Share as image</button><span class="note" id="shareNote"></span></div>
+    ${goty ? `<section class="goty"><span class="cover">${pic(goty.image, goty.name)}</span>
+      <div><span class="eyebrow">Your game of the year</span><h2>${esc(goty.name)}</h2>
+      <p class="note">~${fmt(s.hoursOf(goty))} h · ${s.trophiesOf(goty)} trophies${goty.metacritic ? ` · Metacritic ${goty.metacritic}` : ""}</p>
+      ${runner.length ? `<p class="note">Runners-up: ${runner.map(g => `${esc(g.name)} (~${fmt(s.hoursOf(g))} h)`).join(", ")}</p>` : ""}</div></section>` : ""}
+    <section class="cards">${cards.map(([l, b, sub]) => `<div class="card"><span class="lbl">${l}</span>${b ? `<b>${esc(b)}</b>` : ""}<span class="sub">${esc(sub)}</span></div>`).join("")}</section>
+    ${s.platList.length ? `<section class="plats"><h2>Platinums of ${year}</h2><ol>${s.platList.map(m => `<li><span>${esc(m.game)}</span><span class="d">${fmtDate(m.at)}${m.r != null ? ` · ${m.r}%` : ""}</span></li>`).join("")}</ol></section>` : ""}
+    ${dnaBlock()}
+    ${goalsBlock(s)}`;
+}
+
+/* ---------- Share as image: a 1080×1350 card drawn on a canvas, sent to the share sheet (or downloaded) ---------- */
+let SHARE = null;
+function wrap(ctx, text, maxW, maxLines) {
+  const words = String(text).split(/\s+/), lines = []; let cur = "";
+  for (const w of words) { const t = cur ? cur + " " + w : w; if (ctx.measureText(t).width > maxW && cur) { lines.push(cur); cur = w; } else cur = t; }
+  if (cur) lines.push(cur);
+  if (lines.length > maxLines) { lines.length = maxLines; let l = lines[maxLines - 1]; while (ctx.measureText(l + "…").width > maxW && l.length) l = l.slice(0, -1); lines[maxLines - 1] = l + "…"; }
+  return lines;
+}
+function loadImg(url) {
+  return new Promise(res => { if (!url) return res(null); const im = new Image(); im.crossOrigin = "anonymous";
+    const t = setTimeout(() => res(null), 4000); im.onload = () => { clearTimeout(t); res(im); }; im.onerror = () => { clearTimeout(t); res(null); }; im.src = url; });
+}
+function drawCard(cover) {
+  const { year, s, goty, line, cards } = SHARE, W = 1080, H = 1350, c = document.createElement("canvas"); c.width = W; c.height = H;
+  const x = c.getContext("2d"), D = '"Barlow Condensed", "Arial Narrow", sans-serif', Bd = '"IBM Plex Sans", system-ui, sans-serif', P = 80;
+  x.fillStyle = "#10204a"; x.fillRect(0, 0, W, H);
+  x.strokeStyle = "rgba(93,143,201,.35)"; x.lineWidth = 70; x.beginPath(); x.arc(W - 40, 60, 260, 0, Math.PI * 2); x.stroke();
+  x.fillStyle = "#a9b6d6"; x.font = `600 30px ${Bd}`; x.letterSpacing = "6px";
+  x.fillText((year === THIS_YEAR ? "MY YEAR SO FAR ON PLAYSTATION" : "MY YEAR ON PLAYSTATION"), P, 120); x.letterSpacing = "0px";
+  x.fillStyle = "#f2f5fb"; x.font = `800 300px ${D}`; x.fillText(year, P - 8, 400);
+  x.font = `400 38px ${Bd}`; wrap(x, line, W - 2 * P, 3).forEach((l, i) => x.fillText(l, P, 480 + i * 52));
+  const stats = [[fmt(s.trophies), "TROPHIES"], [String(s.plats), "PLATINUMS"], [fmt(s.hours), "HOURS (EST.)"]];
+  stats.forEach(([v, l], i) => { const sx = P + i * 320; x.fillStyle = "#f2f5fb"; x.font = `700 120px ${D}`; x.fillText(v, sx, 720);
+    x.fillStyle = "#a9b6d6"; x.font = `600 24px ${Bd}`; x.letterSpacing = "4px"; x.fillText(l, sx, 760); x.letterSpacing = "0px"; });
+  if (goty) {
+    const gy = 820, gh = 230; x.fillStyle = "rgba(255,255,255,.08)"; x.beginPath(); x.roundRect(P, gy, W - 2 * P, gh, 24); x.fill();
+    let tx = P + 36;
+    if (cover) { x.save(); x.beginPath(); x.roundRect(P + 30, gy + 30, 170, 170, 16); x.clip(); x.drawImage(cover, P + 30, gy + 30, 170, 170); x.restore(); tx = P + 230; }
+    x.fillStyle = "#8fb8ea"; x.font = `600 24px ${Bd}`; x.letterSpacing = "4px"; x.fillText("GAME OF THE YEAR", tx, gy + 62); x.letterSpacing = "0px";
+    x.fillStyle = "#f2f5fb"; x.font = `700 64px ${D}`; const nl = wrap(x, goty.name, W - P - tx - 30, 2); nl.forEach((l, i) => x.fillText(l, tx, gy + 128 + i * 62));
+    x.fillStyle = "#a9b6d6"; x.font = `400 28px ${Bd}`; x.fillText(`~${fmt(s.hoursOf(goty))} h · ${s.trophiesOf(goty)} trophies`, tx, gy + (nl.length > 1 ? 210 : 172));
+  }
+  cards.forEach(([l, b, sub], i) => { const cx = P + (i % 2) * ((W - 2 * P) / 2 + 10), cy = 1105 + Math.floor(i / 2) * 92;
+    x.fillStyle = "#a9b6d6"; x.font = `600 20px ${Bd}`; x.letterSpacing = "3px"; x.fillText(l.toUpperCase(), cx, cy); x.letterSpacing = "0px";
+    x.fillStyle = "#f2f5fb"; x.font = `600 40px ${D}`; x.fillText(wrap(x, b, (W - 2 * P) / 2 - 30, 1)[0], cx, cy + 46); });
+  x.fillStyle = "#a9b6d6"; x.font = `400 24px ${Bd}`; x.fillText(`${DATA.profile?.online_id || ""} · Game Shelf`, P, H - 36);
+  return c;
+}
+async function shareImage() {
+  if (!SHARE) return;
+  const btn = $("shareBtn"), note = $("shareNote"); btn.disabled = true; note.textContent = "Preparing…";
+  try { await Promise.all(['800 300px "Barlow Condensed"', '700 64px "Barlow Condensed"', '400 38px "IBM Plex Sans"', '600 30px "IBM Plex Sans"'].map(f => document.fonts.load(f))); } catch {}
+  let canvas = drawCard(await loadImg(SHARE.goty?.image)), blob;
+  try { blob = await new Promise(r => canvas.toBlob(r, "image/png")); } catch { blob = null; }
+  if (!blob) { canvas = drawCard(null); blob = await new Promise(r => canvas.toBlob(r, "image/png")); }   // cover blocked by the image server
+  const file = new File([blob], `game-shelf-${SHARE.year}.png`, { type: "image/png" });
+  note.textContent = "";
+  try {
+    if (navigator.canShare?.({ files: [file] })) { await navigator.share({ files: [file], title: `My ${SHARE.year} on PlayStation` }); }
+    else { const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = file.name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000); note.textContent = "Image downloaded."; }
+  } catch (e) { if (e.name !== "AbortError") note.textContent = "Couldn't share: " + e.message; }
+  btn.disabled = false;
+}
+document.addEventListener("click", e => { if (e.target.id === "shareBtn") shareImage(); });
+
+/* ---------- Gamer DNA: nine traits scored 0-100 from your data, for a year or all time ---------- */
+let SESS = {};
+const TRAITS = [["story", "Story seeker", "play for the story"], ["explorer", "Explorer", "love open worlds"], ["completionist", "Completionist", "finish what you start"],
+  ["hunter", "Trophy hunter", "go for the rare trophies"], ["owl", "Night owl", "play late at night"], ["marathon", "Marathoner", "play long sessions"],
+  ["dayone", "Day-one player", "play new releases early"], ["sampler", "Sampler", "try lots of games"], ["indie", "Indie spirit", "love indie games"]];
+function dna(y) {
+  const G = DATA.games, ins = DATA.insights || {}, all = y === "all", inY = d => d && (all || d.startsWith(y));
+  const hrs = g => all ? (g.hours || 0) : (g.hours_by_year || {})[y] || 0;
+  const tro = g => sum(Object.entries(g.months || {}).filter(([m]) => all || m.startsWith(y)).flatMap(([, t]) => t));
+  const played = G.filter(g => hrs(g) > 0 || tro(g) > 0);
+  if (played.length < 3) return null;
+  const H = sum(played.map(hrs)) || 1, clamp = v => v == null || isNaN(v) ? null : Math.round(Math.max(0, Math.min(100, v)));
+  const tagShare = slugs => sum(played.filter(g => (g.tags || []).some(t => slugs.includes(t[0]))).map(hrs)) / H;
+  const finished = played.filter(g => { const f = pick(FLAGS, g); const at = g.platinum_at || (g.status === "completed" ? g.last_trophy : null) || (f?.flag === "beaten" ? f.at : null); return at && (all || inY(at)); });
+  const started = G.filter(g => inY([g.first_played, g.first_trophy_at].filter(Boolean).sort()[0]));
+  const dayOne = started.filter(g => g.released && ([g.first_played, g.first_trophy_at].filter(Boolean).sort()[0] || "") <= new Date(Date.parse(g.released) + 31 * 864e5).toISOString());
+  const wh = (ins.weekday_hour || {})[all ? "all" : y], night = wh ? sum(wh.filter((v, i) => i % 24 >= 22 || i % 24 < 4)) / Math.max(1, sum(wh)) : null;
+  const rar = ((ins.rarity || {})[all ? "all" : y] || {}).score;
+  return {
+    story: clamp(tagShare(["story-rich", "narrative", "choices-matter", "great-soundtrack"]) * 120),
+    explorer: clamp(tagShare(["open-world", "exploration"]) * 130),
+    completionist: clamp(100 * finished.length / played.length * 1.4),
+    hunter: rar == null ? null : clamp(rar * 2),
+    owl: night == null ? null : clamp(night * 200),
+    marathon: SESS[all ? "all" : y] ? clamp(SESS[all ? "all" : y].long_share * 2.5) : null,
+    dayone: started.length >= 3 ? clamp(100 * dayOne.length / started.length * 2.5) : null,
+    sampler: clamp(100 * played.filter(g => (g.hours || 0) > 0 && g.hours < 3 && g.status !== "completed").length / played.length * 1.5),
+    indie: clamp(sum(played.filter(g => (g.genres || []).includes("Indie")).map(hrs)) / H * 200),
+  };
+}
+const topTraits = d => TRAITS.filter(([k]) => d[k] != null).sort((a, b) => d[b[0]] - d[a[0]]);
+function dnaBlock() {
+  const d = dna(year), A = dna("all"); if (!d) return "";
+  const top = topTraits(d), years = [...new Set(DATA.games.flatMap(g => Object.keys(g.hours_by_year || {})))].sort();
+  const timeline = years.map(y => { const t = dna(y); return t ? [y, topTraits(t)[0]?.[1]] : null; }).filter(Boolean);
+  DNA_SHARE = { year, d, top };
+  return `<section class="panel dna"><div class="panel-head"><h2>Your gamer DNA</h2><span class="note">${year}</span></div>
+    <p class="dna-head">The <b>${top[0][1]}</b> &amp; <b>${top[1][1]}</b></p>
+    <p class="note">You ${top[0][2]}, and ${top[1][2]}.</p>
+    <ul class="dna-bars">${top.map(([k, l]) => { const dv = A && A[k] != null && year !== "all" ? d[k] - A[k] : 0;
+      return `<li><span>${l}</span><span class="dna-t"><i style="width:${d[k]}%"></i></span><span class="num">${d[k]}${Math.abs(dv) >= 5 ? ` <small class="${dv > 0 ? "up" : "dn"}">${dv > 0 ? "+" : ""}${dv}</small>` : ""}</span></li>`; }).join("")}</ul>
+    ${timeline.length > 1 ? `<details class="fold"><summary>Your top trait, year by year</summary><ol class="dna-years">${timeline.map(([y, l]) => `<li><span class="num">${y}</span> ${l}</li>`).join("")}</ol></details>` : ""}
+    <div class="share-row"><button class="btn" id="dnaShare">Share my DNA</button><span class="note" id="dnaNote"></span></div>
+    <details class="how"><summary>How this works</summary><p>Each trait is a score from 0 to 100 for ${year}: Story seeker and Explorer are the share of your hours in games RAWG tags story-rich or open-world/exploration; Completionist the share of games played that you finished (platinum, 100% or Beaten); Trophy hunter your rarity score; Night owl the share of trophies earned 22:00–04:00; Marathoner sessions over 2 h; Day-one player games started within a month of release; Sampler games tried for under 3 h; Indie spirit hours in indie games. Scores are scaled so a strong habit reaches the top; small coloured numbers compare with your all-time profile.</p></details></section>`;
+}
+let DNA_SHARE = null;
+function drawDNA() {
+  const { year: y, d, top } = DNA_SHARE, W = 1080, H = 1350, c = document.createElement("canvas"); c.width = W; c.height = H;
+  const x = c.getContext("2d"), D = '"Barlow Condensed", "Arial Narrow", sans-serif', Bd = '"IBM Plex Sans", system-ui, sans-serif', P = 80;
+  x.fillStyle = "#10204a"; x.fillRect(0, 0, W, H);
+  x.strokeStyle = "rgba(93,143,201,.35)"; x.lineWidth = 70; x.beginPath(); x.arc(W - 40, 60, 260, 0, Math.PI * 2); x.stroke();
+  x.fillStyle = "#a9b6d6"; x.font = `600 30px ${Bd}`; x.letterSpacing = "6px"; x.fillText(`MY GAMER DNA · ${y === "all" ? "ALL TIME" : y}`, P, 130); x.letterSpacing = "0px";
+  x.fillStyle = "#f2f5fb"; x.font = `800 110px ${D}`;
+  const hl = wrap(x, `The ${top[0][1]}`, W - 2 * P, 2); hl.forEach((l, i) => x.fillText(l, P, 260 + i * 110));
+  x.fillStyle = "#8fb8ea"; x.font = `700 64px ${D}`; x.fillText(`& ${top[1][1]}`, P, 260 + (hl.length - 1) * 110 + 85);
+  top.slice(0, 7).forEach(([k, l], i) => { const yy = 520 + i * 105;
+    x.fillStyle = "#f2f5fb"; x.font = `500 34px ${Bd}`; x.fillText(l, P, yy);
+    x.fillStyle = "rgba(255,255,255,.12)"; x.beginPath(); x.roundRect(P, yy + 18, W - 2 * P - 120, 22, 11); x.fill();
+    x.fillStyle = i < 2 ? "#8fb8ea" : "#5d8fc9"; x.beginPath(); x.roundRect(P, yy + 18, Math.max(22, (W - 2 * P - 120) * d[k] / 100), 22, 11); x.fill();
+    x.fillStyle = "#f2f5fb"; x.font = `700 44px ${D}`; x.textAlign = "right"; x.fillText(String(d[k]), W - P, yy + 40); x.textAlign = "left"; });
+  x.fillStyle = "#a9b6d6"; x.font = `400 24px ${Bd}`; x.fillText(`${DATA.profile?.online_id || ""} · Game Shelf`, P, H - 40);
+  return c;
+}
+async function shareCanvas(canvas, name, title, note) {
+  const blob = await new Promise(r => canvas.toBlob(r, "image/png")), file = new File([blob], name, { type: "image/png" });
+  try {
+    if (navigator.canShare?.({ files: [file] })) await navigator.share({ files: [file], title });
+    else { const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000); note.textContent = "Image downloaded."; }
+  } catch (e) { if (e.name !== "AbortError") note.textContent = "Couldn't share: " + e.message; }
+}
+document.addEventListener("click", async e => {
+  if (e.target.id !== "dnaShare" || !DNA_SHARE) return;
+  e.target.disabled = true;
+  try { await Promise.all(['800 110px "Barlow Condensed"', '700 64px "Barlow Condensed"', '500 34px "IBM Plex Sans"'].map(f => document.fonts.load(f))); } catch {}
+  await shareCanvas(drawDNA(), `gamer-dna-${DNA_SHARE.year}.png`, `My gamer DNA ${DNA_SHARE.year}`, $("dnaNote"));
+  e.target.disabled = false;
+});
+
+const _render = render;
+render = function () { _render(); syncGoalLink(); };
+document.addEventListener("click", e => { const b = e.target.closest("#years .chip"); if (b) { year = b.dataset.y; try { localStorage.setItem("shelf-review", year); } catch {} render(); } });
+
+async function start() {
+  try { DATA = await (await fetch("data.json", { cache: "no-store" })).json(); } catch { $("page").innerHTML = `<p class="empty">No game data yet.</p>`; return; }
+  for (const [file, set] of [["flags.json", v => FLAGS = v], ["ratings.json", v => RATINGS = v], ["goals.json", v => GOALS = v], ["sessions.json", v => SESS = v]])
+    try { const r = await fetch(file, { cache: "no-store" }); if (r.ok) set(await r.json()); } catch {}
+  const ys = [...new Set(DATA.games.flatMap(g => [...Object.keys(g.months || {}).map(m => m.slice(0, 4)), ...Object.keys(g.hours_by_year || {})]))].sort().reverse();
+  if (!ys.includes(THIS_YEAR)) ys.unshift(THIS_YEAR);
+  let saved = null; try { saved = localStorage.getItem("shelf-review"); } catch {}
+  year = ys.includes(saved) ? saved : ys[0];
+  $("years").innerHTML = ys.map(v => `<button class="chip" data-y="${v}" aria-pressed="false">${v}</button>`).join("");
+  if (year) render(); else $("page").innerHTML = `<p class="empty">Appears after your first refresh.</p>`;
+}
+start();
+</script>
+<script src="v1/pending.js"></script>

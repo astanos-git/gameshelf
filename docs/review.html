@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Game Shelf">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#eef1f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1320" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -63,7 +69,7 @@ h3 { font-family: var(--display); }
 .gf input { font: 600 18px var(--display); padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--fg); width: 100%; min-width: 0; }
 .gf-actions { display: flex; gap: 12px; align-items: center; margin-bottom: 6px; }
 .gf-actions a { color: var(--accent); font-size: 14px; }
-.gf-actions a.save { background: var(--accent); color: #fff; border-radius: 8px; padding: 6px 14px; text-decoration: none; font-weight: 600; }
+.gf-actions a.save { background: var(--accent); color: var(--on-accent); border-radius: 8px; padding: 6px 14px; text-decoration: none; font-weight: 600; }
 .gf-actions a.save.off { background: var(--line); color: var(--muted); pointer-events: none; }
 .dna-head { margin: 0; font: 600 26px/1.15 var(--display); }
 .dna-bars { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 6px; }
@@ -76,12 +82,12 @@ h3 { font-family: var(--display); }
 .share-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: -4px; }
 </style>
 
-<div class="wrap">
-  <nav class="tabs"><a href="index.html">Library</a><a href="play.html">Play next</a><a href="stats.html">Stats</a><a href="review.html" aria-current="page">Review</a></nav>
+<main class="wrap" id="main">
+  <nav class="tabs" aria-label="Main"><a href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16.5 4.6l3.8 1 -4 15.4 -3.8 -1z"/></svg><span>Library</span></a><a href="play.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></svg><span>Play next</span></a><a href="stats.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg><span>Stats</span></a><a href="review.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><span>Review</span></a></nav>
   <div class="years chips" id="years" role="group" aria-label="Choose a year"></div>
   <div id="page"></div>
   <details class="how"><summary>About these numbers</summary><p>Trophies and dates are exact. Hours are estimates: PSN only gives each game's total playtime (PS4/PS5 only), so it is spread across the years you played.</p></details>
-</div>
+</main>
 
 <script>
 const $ = id => document.getElementById(id);
@@ -385,3 +391,4 @@ async function start() {
 start();
 </script>
 <script src="pending.js"></script>
+<script src="shell.js" defer></script>

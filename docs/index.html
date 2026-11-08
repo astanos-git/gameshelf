@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Game Shelf">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#eef1f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1320" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -39,7 +45,7 @@
 .updated { grid-column: 1 / -1; display: flex; gap: 4px 10px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
 .updated > span + span::before { content: "·"; margin-right: 8px; }
 .updated { gap: 4px 8px !important; }
-.refresh { color: var(--accent); font-weight: 600; text-decoration: none; border: 1px solid var(--accent); border-radius: 999px; padding: 3px 12px; align-self: start; white-space: nowrap; font-size: 13px; }
+.refresh { color: var(--accent); font-weight: 600; text-decoration: none; border: 1px solid var(--accent); border-radius: 999px; padding: 6px 14px; align-self: start; white-space: nowrap; font-size: 13px; min-height: 32px; display: inline-flex; align-items: center; }
 .refresh:hover { background: var(--accent-soft); }
 
 
@@ -55,6 +61,8 @@
 /* list */
 .list { display: grid; gap: 8px; }
 .game { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.game:not(.open) { content-visibility: auto; contain-intrinsic-size: auto 96px; }  /* only rows on screen are drawn: a 400-game list stays fast */
+.game > button:active { background: var(--grid); }
 .game.open { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
 .game > button { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; align-items: center; padding: 10px 12px; }
 .game > button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
@@ -73,7 +81,7 @@
 /* scores on the right: your rating (outlined) next to Metacritic (filled), small labels under */
 .scores { display: flex; gap: 6px; align-items: flex-start; }
 .sc { display: grid; justify-items: center; gap: 1px; }
-.sc small { font: 600 9px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.sc small { font: 600 10.5px var(--body); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 .myscore { width: 40px; height: 40px; border-radius: 7px; display: grid; place-items: center; padding: 0; font: 600 19px var(--display); line-height: 1; background: var(--surface); border: 2px solid; }
 .myscore.good { color: var(--mc-good); } .myscore.mid { color: var(--mc-mid); } .myscore.bad { color: var(--mc-bad); }
 .meta .plat { font-weight: 600; white-space: nowrap; }
@@ -143,10 +151,10 @@ body.selecting .wrap { padding-bottom: 170px; }
   .scores { gap: 4px; } .scores .mc, .myscore { width: 36px; height: 36px; font-size: 17px; } }
 </style>
 
-<div class="wrap">
+<main class="wrap" id="main">
   <div class="sample" id="sample" hidden>Showing <b>sample data</b>. Your own games appear here after the first successful refresh on GitHub.</div>
   <section class="alert" id="alert" hidden></section>
-  <nav class="tabs"><a href="index.html" aria-current="page">Library</a><a href="play.html">Play next</a><a href="stats.html">Stats</a><a href="review.html">Review</a></nav>
+  <nav class="tabs" aria-label="Main"><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16.5 4.6l3.8 1 -4 15.4 -3.8 -1z"/></svg><span>Library</span></a><a href="play.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></svg><span>Play next</span></a><a href="stats.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg><span>Stats</span></a><a href="review.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><span>Review</span></a></nav>
 
   <header class="profile">
     <div class="avatar" id="avatar"></div>
@@ -180,8 +188,8 @@ body.selecting .wrap { padding-bottom: 170px; }
     </div>
   </div>
 
-  <main class="list" id="list"></main>
-</div>
+  <div class="list" id="list" aria-label="Games"></div>
+</main>
 <div class="selbar" id="selbar" hidden><div class="selbar-in" id="selbarIn"></div>
 </div>
 
@@ -579,3 +587,4 @@ async function start() {
 start();
 </script>
 <script src="pending.js"></script>
+<script src="shell.js" defer></script>

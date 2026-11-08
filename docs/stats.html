@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Game Shelf">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#eef1f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1320" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -61,7 +67,7 @@
 .callout { margin: 0; background: var(--accent-soft); border-radius: 8px; padding: 8px 12px; font-size: 14px; }
 .hm { display: grid; grid-template-columns: 30px repeat(24, 1fr); gap: 2px; align-items: center; }
 .hm-l { font: 11px var(--mono); color: var(--muted); }
-.hm-x { font: 10px var(--mono); color: var(--muted); }
+.hm-x { font: 11px var(--mono); color: var(--muted); }
 .hm-c { aspect-ratio: 1; border-radius: 2px; background: var(--grid); display: block; min-width: 0; }
 .hm-c.l1 { background: color-mix(in srgb, var(--bar) 25%, var(--surface)); }
 .hm-c.l2 { background: color-mix(in srgb, var(--bar) 50%, var(--surface)); }
@@ -103,7 +109,7 @@
 .genres.wide li { grid-template-columns: minmax(70px, 110px) 1fr 104px; }
 .big b.word { font: 600 18px var(--body); }
 .calwrap { overflow-x: auto; padding-bottom: 4px; }
-.calm { display: grid; gap: 2px; font: 10px var(--mono); color: var(--muted); height: 14px; }
+.calm { display: grid; gap: 2px; font: 11px var(--mono); color: var(--muted); height: 14px; }
 .calm span { white-space: nowrap; }
 .cal { display: flex; gap: 2px; }
 .cw { display: grid; grid-template-rows: repeat(7, 11px); gap: 2px; }
@@ -127,7 +133,7 @@
 .hcover { position: relative; aspect-ratio: 1; max-width: 100%; border-radius: 10px; overflow: hidden; background: var(--accent-soft); display: grid; place-items: center; font: 600 18px var(--display); color: var(--accent); }
 .hcover img { width: 100%; height: 100%; object-fit: cover; }
 .hrank { position: absolute; top: 4px; left: 4px; background: var(--fg); color: var(--bg); font: 700 13px var(--display); border-radius: 4px; padding: 0 6px; }
-.hscore { position: absolute; bottom: 4px; right: 4px; background: var(--accent); color: #fff; font: 700 15px var(--display); border-radius: 5px; padding: 1px 6px; }
+.hscore { position: absolute; bottom: 4px; right: 4px; background: var(--accent); color: var(--on-accent); font: 700 15px var(--display); border-radius: 5px; padding: 1px 6px; }
 .hname { font-size: 12px; line-height: 1.25; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .chart .line { fill: none; stroke: var(--bar); stroke-width: 2; }
 .chart .proj { fill: none; stroke: var(--bar); stroke-width: 2; stroke-dasharray: 5 4; opacity: .7; }
@@ -158,11 +164,12 @@ details.fold[open] > summary { margin-bottom: 8px; }
 .sh { display: grid; gap: 2px; }
 .sh-bars { display: grid; grid-template-columns: repeat(24, 1fr); gap: 2px; align-items: end; height: 70px; }
 .sh-b { background: var(--bar); border-radius: 2px 2px 0 0; display: block; min-height: 2px; }
-.sh-x { display: flex; justify-content: space-between; font: 10px var(--mono); color: var(--muted); }
+.sh-x { display: flex; justify-content: space-between; font: 11px var(--mono); color: var(--muted); }
 </style>
 
-<div class="wrap">
-  <nav class="tabs"><a href="index.html">Library</a><a href="play.html">Play next</a><a href="stats.html" aria-current="page">Stats</a><a href="review.html">Review</a></nav>
+<main class="wrap" id="main">
+  <h1 class="vh">Stats</h1>
+  <nav class="tabs" aria-label="Main"><a href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4v16H4zM10 4h4v16h-4zM16.5 4.6l3.8 1 -4 15.4 -3.8 -1z"/></svg><span>Library</span></a><a href="play.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z"/></svg><span>Play next</span></a><a href="stats.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg><span>Stats</span></a><a href="review.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg><span>Review</span></a></nav>
   <p class="notice" id="notice" hidden></p>
 
   <div class="chips" id="years" role="group" aria-label="Choose a year"></div>
@@ -171,7 +178,7 @@ details.fold[open] > summary { margin-bottom: 8px; }
   </div></nav>
 
   <div class="part-body" data-part="overview">
-    <header class="head"><h1 id="title">All time</h1><p class="note" id="subtitle"></p></header>
+    <header class="head"><h2 id="title" class="h1">All time</h2><p class="note" id="subtitle"></p></header>
     <section class="figures" id="figures"></section>
     <section class="tops">
       <div class="top"><h2>Most trophies</h2><ol id="topTrophies"></ol></div>
@@ -222,7 +229,7 @@ details.fold[open] > summary { margin-bottom: 8px; }
     <section class="panel"><div class="panel-head"><h2>Series</h2><span class="note">From Wikidata</span></div><div id="seriesList"></div></section>
     <section class="panel"><div class="panel-head"><h2>Favourite studios</h2><div class="seg" role="group" aria-label="Show"><button id="sDev" aria-pressed="true">Developers</button><button id="sPub" aria-pressed="false">Publishers</button></div></div><div id="studios"></div></section>
   </div>
-</div>
+</main>
 
 <script src="app.js"></script>
 <script>
@@ -875,7 +882,7 @@ function trophyCalendar(y) {
     }
     cols += `<div class="cw">${col}</div>`;
   }
-  el.innerHTML = `<div class="calwrap"><div class="calm" style="grid-template-columns:repeat(${w},11px)">${months}</div><div class="cal">${cols}</div></div>
+  el.innerHTML = `<div class="calwrap" tabindex="0" aria-label="Trophy calendar, scroll sideways"><div class="calm" style="grid-template-columns:repeat(${w},11px)">${months}</div><div class="cal">${cols}</div></div>
     <div class="calkey"><span>${total.toLocaleString()} trophies on ${active} days${y === "all" ? " in the last 12 months" : ` in ${y}`}</span>
       <span class="keys">Fewer${[0, 1, 2, 3, 4].map(l => `<span class="cd l${l}"></span>`).join("")}More · <span class="cd l2 plat"></span> platinum</span></div>`;
   const wrap = el.querySelector(".calwrap"); wrap.scrollLeft = wrap.scrollWidth;
@@ -939,7 +946,7 @@ function ratingPatterns() {
 /* ---------- 3. Hall of fame ---------- */
 function hallOfFame() {
   const top = DATA.games.map(x => ({ x, r: ratingOf(x) })).filter(o => o.r).sort((a, b) => b.r.score - a.r.score || (b.x.hours || 0) - (a.x.hours || 0)).slice(0, 10);
-  $("hof").innerHTML = top.length >= 3 ? `<ol class="hof">${top.map((o, i) => `<li><span class="hcover">${pic(o.x.image, o.x.name)}<span class="hrank">${i + 1}</span><span class="hscore">${o.r.score}</span></span><span class="hname">${esc(o.x.name)}</span></li>`).join("")}</ol>`
+  $("hof").innerHTML = top.length >= 3 ? `<ol class="hof" tabindex="0" aria-label="Hall of fame, scroll sideways">${top.map((o, i) => `<li><span class="hcover">${pic(o.x.image, o.x.name)}<span class="hrank">${i + 1}</span><span class="hscore">${o.r.score}</span></span><span class="hname">${esc(o.x.name)}</span></li>`).join("")}</ol>`
     : `<p class="empty">Rate at least 3 games to build your hall of fame.</p>`;
 }
 
@@ -1008,3 +1015,4 @@ addEventListener("resize", () => { const w = document.documentElement.clientWidt
 start();
 </script>
 <script src="pending.js"></script>
+<script src="shell.js" defer></script>

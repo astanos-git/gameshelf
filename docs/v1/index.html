@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<base href="../">
+<meta name="robots" content="noindex">
+<script>/* backup copy: banner so it's never mistaken for the current version */
+addEventListener("DOMContentLoaded", () => document.body.insertAdjacentHTML("afterbegin", '<div style="background:#b45309;color:#fff;font:600 13px/1.4 system-ui;padding:8px 16px;text-align:center">Backup: the version of 8 Nov 2026, before the UX review · <a href="index.html" style="color:#fff">Current version</a></div>'));</script>
+<title>Game Shelf</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Game Shelf">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="v1/app.css">
+<style>
+/* Layout: profile strip → summary figures → sticky filter bar → one list of game rows that open into a detail panel */
+.sample { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 8px; padding: 8px 12px; font-size: 13px; }
+.alert { border: 1px solid; border-radius: 10px; padding: 12px 14px; display: grid; gap: 6px; font-size: 14px; }
+.alert.bad { background: var(--bad-bg); border-color: var(--bad); }
+.alert.warn { background: var(--warn-bg); border-color: var(--warn); }
+.alert h2 { font-size: 20px; line-height: 1.1; }
+.alert.bad h2 { color: var(--bad); } .alert.warn h2 { color: var(--warn); }
+.alert ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.alert a { color: inherit; font-weight: 600; }
+.alert code { font: 13px var(--mono); overflow-wrap: anywhere; }
+.alert p { margin: 0; }
+.expiry.soon { color: var(--warn); font-weight: 600; }
+.expiry.past { color: var(--bad); font-weight: 600; }
+
+/* profile */
+.profile { display: grid; grid-template-columns: auto 1fr auto; gap: 6px 12px; align-items: center; }
+.avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--accent-soft); display: grid; place-items: center;
+  font: 600 22px var(--display); color: var(--accent); overflow: hidden; flex: none; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.who { min-width: 0; display: grid; gap: 3px; }
+.who h1 { font-size: 28px; line-height: 1; letter-spacing: .01em; }
+.who-row { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; }
+.level { display: flex; gap: 8px; align-items: center; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.level .bar { flex: 0 0 90px; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.level .bar i { display: block; height: 100%; background: var(--accent); }
+.tiers { display: flex; gap: 10px; font: 500 13px var(--mono); }
+.updated { grid-column: 1 / -1; display: flex; gap: 4px 10px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--muted); }
+.updated > span + span::before { content: "·"; margin-right: 8px; }
+.updated { gap: 4px 8px !important; }
+.refresh { color: var(--accent); font-weight: 600; text-decoration: none; border: 1px solid var(--accent); border-radius: 999px; padding: 3px 12px; align-self: start; white-space: nowrap; font-size: 13px; }
+.refresh:hover { background: var(--accent-soft); }
+
+
+/* controls */
+.controls { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 4; margin-inline: -16px; padding: 8px 16px; display: grid; gap: 8px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.row2 { display: flex; gap: 8px; }
+.controls > * { min-width: 0; }
+.row2 input { flex: 1 1 0; width: 0; min-width: 0; }
+.row2 input, .row2 select { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; font-size: 14px; }
+.row2 select { flex: 0 1 auto; min-width: 0; max-width: 40%; }
+
+/* list */
+.list { display: grid; gap: 8px; }
+.game { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.game.open { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.game > button { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; align-items: center; padding: 10px 12px; }
+.game > button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.cover { width: 56px; height: 56px; border-radius: 8px; font-size: 18px; }
+.main { min-width: 0; display: grid; gap: 4px; }
+.name { font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 12.5px; color: var(--muted); }
+.pill { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; border-radius: 4px; padding: 1px 6px; border: 1px solid currentColor; }
+.st-beaten { color: var(--st-beaten); } .st-dropped { color: var(--st-dropped); }
+.st-completed { color: var(--st-done); } .st-started { color: var(--st-started); } .st-unplayed { color: var(--st-unplayed); }
+.prog { display: flex; align-items: center; gap: 8px; font: 12px var(--mono); color: var(--muted); }
+.prog .bar { flex: 1 1 auto; max-width: 220px; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.prog .bar i { display: block; height: 100%; background: var(--accent); }
+.prog.plat .bar i { background: var(--plat); }
+
+/* scores on the right: your rating (outlined) next to Metacritic (filled), small labels under */
+.scores { display: flex; gap: 6px; align-items: flex-start; }
+.sc { display: grid; justify-items: center; gap: 1px; }
+.sc small { font: 600 9px var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.myscore { width: 40px; height: 40px; border-radius: 7px; display: grid; place-items: center; padding: 0; font: 600 19px var(--display); line-height: 1; background: var(--surface); border: 2px solid; }
+.myscore.good { color: var(--mc-good); } .myscore.mid { color: var(--mc-mid); } .myscore.bad { color: var(--mc-bad); }
+.meta .plat { font-weight: 600; white-space: nowrap; }
+.meta .plat.easy { color: var(--mc-good); } .meta .plat.medium { color: var(--mc-mid); } .meta .plat.hard { color: var(--mc-bad); }
+.tlist { display: grid; gap: 8px; border-top: 1px solid var(--line); padding-top: 10px; }
+.tlist > summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 8px; font-weight: 600; color: var(--accent); }
+.tlist > summary::-webkit-details-marker { display: none; }
+.tlist > summary::after { content: "▸"; } .tlist[open] > summary::after { content: "▾"; }
+.tlist > summary .note { font-weight: 400; margin-right: auto; }
+.tl-inner { display: grid; gap: 8px; margin-top: 8px; }
+.tl-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tl-head b { font: 600 18px var(--display); margin-right: auto; }
+.tl-head select { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; font-size: 13px; }
+.tl-body { display: grid; gap: 10px; }
+.tl-group { display: flex; justify-content: space-between; gap: 8px; font: 600 13px var(--body); color: var(--fg); border-bottom: 1px solid var(--line); padding: 8px 0 4px; }
+.tl-group .num { font: 12px var(--mono); color: var(--muted); }
+.tguide { font-size: 12px; color: var(--accent); text-decoration: none; }
+.tguide:hover { text-decoration: underline; }
+.tl-head .tguide { margin-right: auto; font-size: 13px; }
+.tl-head b { margin-right: 0 !important; }
+.dlc { display: grid; gap: 4px; background: var(--bg); border-radius: 8px; padding: 8px 10px; }
+.dlc-row { display: grid; grid-template-columns: 1fr 70px 44px; gap: 8px; align-items: center; font-size: 13px; }
+.dlc-row > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.dlc-row .bar { height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.dlc-row .bar i { display: block; height: 100%; background: var(--accent); }
+.dlc-row.done .bar i { background: var(--st-done); }
+.dlc-row .num { font: 12px var(--mono); color: var(--muted); text-align: right; }
+.tl-sub { font: 600 12px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
+.trophy { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; }
+.trophy.got .ticon img { box-shadow: 0 0 0 2px var(--st-done); }
+.trophy:not(.got) .ticon img { filter: grayscale(1); opacity: .6; }
+.ticon { width: 40px; height: 40px; border-radius: 6px; overflow: hidden; background: var(--accent-soft); }
+.ticon img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+.tname { min-width: 0; display: grid; gap: 1px; }
+.tname b { font-weight: 600; font-size: 14px; line-height: 1.25; overflow-wrap: anywhere; }
+.tname span, .tname summary { font-size: 12.5px; color: var(--muted); line-height: 1.35; }
+.tname summary { cursor: pointer; }
+.tmeta { text-align: right; font: 12px var(--mono); color: var(--muted); display: grid; gap: 2px; justify-items: end; }
+.tmeta .rate { font-weight: 500; color: var(--fg); }
+.tmeta .rate.ultra { color: var(--plat); }
+.chip.torate[aria-pressed="false"] { border-color: var(--accent); color: var(--accent); }
+.selbtn { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; font-size: 14px; cursor: pointer; flex: none; }
+.selbtn[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.cover { position: relative; }
+.check { position: absolute; inset: 0; display: grid; place-items: center; background: color-mix(in srgb, var(--surface) 55%, transparent); }
+.check::before { content: ""; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--muted); background: var(--surface); box-sizing: border-box; }
+.game.sel { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.game.sel .check::before { border-color: var(--accent); background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat; }
+.game.locked { opacity: .5; }
+.game.locked .check::before { border-style: dashed; }
+body.selecting .wrap { padding-bottom: 170px; }
+.selbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface); border-top: 1px solid var(--line);
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -6px 20px rgba(0,0,0,.08); }
+.selbar-in { max-width: 880px; margin: 0 auto; display: grid; gap: 8px; }
+.selrow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.selrow b { font: 600 18px var(--display); margin-right: auto; }
+.selrow .lnk { background: none; border: 0; color: var(--accent); font-size: 13.5px; font-weight: 600; cursor: pointer; padding: 4px 2px; }
+.selrow a.act, .selrow span.act { text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 600; color: var(--fg); }
+.selrow a.act.beaten { border-color: var(--st-beaten); color: var(--st-beaten); }
+.selrow a.act.dropped { border-color: var(--st-dropped); color: var(--st-dropped); }
+.selrow span.act { opacity: .45; }
+.parts { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13.5px; font-weight: 600; }
+.selrow a.act.visited { opacity: .5; }
+.selnote { font-size: 12.5px; color: var(--muted); margin: 0; }
+.list > .empty { text-align: center; padding: 32px 0; }
+@media (max-width: 420px) { .game > button { grid-template-columns: 48px 1fr auto; gap: 10px; padding: 10px; } .cover { width: 48px; height: 48px; }
+  .scores { gap: 4px; } .scores .mc, .myscore { width: 36px; height: 36px; font-size: 17px; } }
+</style>
+
+<div class="wrap">
+  <div class="sample" id="sample" hidden>Showing <b>sample data</b>. Your own games appear here after the first successful refresh on GitHub.</div>
+  <section class="alert" id="alert" hidden></section>
+  <nav class="tabs"><a href="v1/index.html" aria-current="page">Library</a><a href="v1/play.html">Play next</a><a href="v1/stats.html">Stats</a><a href="v1/review.html">Review</a></nav>
+
+  <header class="profile">
+    <div class="avatar" id="avatar"></div>
+    <div class="who">
+      <h1 id="psnName">—</h1>
+      <div class="who-row"><div class="level"><span>Level <b class="num" id="lvl">–</b></span><span class="bar"><i id="lvlBar"></i></span><span class="num" id="lvlPct"></span></div>
+        <div class="tiers" id="tiers"></div></div>
+    </div>
+    <a class="refresh" id="refresh" target="_blank" rel="noopener" hidden>Refresh data</a>
+    <div class="updated"><span id="updated"></span><span class="expiry" id="expiry" hidden></span></div>
+  </header>
+
+  <section class="figures" id="figures"></section>
+
+  <div class="controls">
+    <div class="chips" id="chips" role="group" aria-label="Filter by status"></div>
+    <div class="row2">
+      <input id="q" type="search" placeholder="Search" aria-label="Search games">
+      <select id="sort" aria-label="Sort by">
+        <option value="recent">Recent</option>
+        <option value="metacritic">Metacritic</option>
+        <option value="hours">Hours</option>
+        <option value="progress">Progress</option>
+        <option value="left">Trophies left</option>
+        <option value="beat">Time to beat</option>
+        <option value="platEasy">Easiest platinum</option>
+        <option value="platShort">Shortest platinum</option>
+        <option value="name">Name</option>
+      </select>
+      <button class="selbtn" id="selectBtn" aria-pressed="false">Select</button>
+    </div>
+  </div>
+
+  <main class="list" id="list"></main>
+</div>
+<div class="selbar" id="selbar" hidden><div class="selbar-in" id="selbarIn"></div>
+</div>
+
+<script src="v1/gamepanel.js"></script>
+<script>
+const SAMPLE = {
+  generated_at: "2026-09-27T19:12:00+00:00",
+  login: { since: new Date(Date.now() - 51 * 864e5).toISOString(), expires_estimate: new Date(Date.now() + 9 * 864e5).toISOString() },
+  profile: { online_id: "SampleGamer", avatar: null, trophy_level: 412, level_progress: 63,
+    earned: { platinum: 14, gold: 131, silver: 402, bronze: 1618 } },
+  games: [
+    g("Astro Bot", ["PS5"], 22.4, 100, [44,5,1,1], [44,5,1,1], 94, ["Platformer"], "2024-09-06", "2026-09-20"),
+    g("Elden Ring", ["PS5"], 118.2, 71, [30,8,2,0], [32,9,9,1], 96, ["Action", "RPG"], "2022-02-25", "2026-09-26"),
+    g("Final Fantasy VII Rebirth", ["PS5"], 64.0, 38, [25,4,1,0], [60,12,8,1], 92, ["RPG"], "2024-02-29", "2026-08-30"),
+    g("Ghost of Tsushima", ["PS4", "PS5"], 58.7, 100, [39,10,2,1], [39,10,2,1], 87, ["Action", "Adventure"], "2020-07-17", "2025-11-02"),
+    g("Returnal", ["PS5"], 14.1, 22, [8,2,0,0], [23,11,1,1], 86, ["Action", "Shooter"], "2021-04-30", "2025-03-14"),
+    g("Stray", ["PS5"], 0, null, null, null, 83, ["Adventure"], "2022-07-19", null, true),
+    g("Horizon Forbidden West", ["PS4", "PS5"], 0, null, null, null, 88, ["Action", "RPG"], "2022-02-18", null, true),
+    g("Death Stranding Director's Cut", ["PS5"], 0, null, null, null, 85, ["Action"], "2021-09-24", null, true),
+    g("Kena: Bridge of Spirits", ["PS5"], 0, null, null, null, 81, ["Adventure"], "2021-09-21", null, true),
+    g("Uncharted 2: Among Thieves", ["PS3"], 0, 54, [28,6,2,0], [36,10,5,1], 96, ["Action"], "2009-10-13", "2012-06-02", false),
+    g("Gran Turismo 7", ["PS5"], 41.5, 49, [20,9,3,0], [36,15,5,1], 87, ["Racing"], "2022-03-04", "2026-07-18"),
+    g("Sackboy: A Big Adventure", ["PS5"], 3.2, 8, [4,0,0,0], [39,10,4,1], 79, ["Platformer"], "2020-11-12", "2024-12-26"),
+  ]
+};
+const SAMPLE_HLTB = { "Elden Ring": [59, 100, 134], "Astro Bot": [11, 15, 21], "Stray": [5, 6.5, 9], "Horizon Forbidden West": [30, 58, 91],
+  "Final Fantasy VII Rebirth": [45, 74, 107], "Death Stranding Director's Cut": [43, 61, 104], "Kena: Bridge of Spirits": [10, 12.5, 23], "Returnal": [22, 33, 53] };
+const SAMPLE_FLAGS = { "Returnal": { flag: "dropped", at: "2025-06-01T10:00:00Z" }, "Gran Turismo 7": { flag: "beaten", at: "2026-07-20T10:00:00Z" } };
+SAMPLE.games.forEach(x => { const h = SAMPLE_HLTB[x.name]; if (h) x.hltb = { main: h[0], extra: h[1], complete: h[2] }; });
+function g(name, platforms, hours, progress, earned, defined, metacritic, genres, released, last, owned = true) {
+  const t = a => a && { bronze: a[0], silver: a[1], gold: a[2], platinum: a[3] };
+  const e = t(earned), d = t(defined), sum = o => o ? Object.values(o).reduce((x, y) => x + y, 0) : 0;
+  const platinum = !!(e && e.platinum);
+  return { name, platforms, hours, progress, earned: e, defined: d, metacritic, genres, released,
+    owned, image: null, last_activity: last, last_played: platforms.includes("PS3") ? null : last, first_played: null, last_trophy: progress ? last : null,
+    acquired: owned ? released : null, trophies_earned: sum(e), trophies_total: sum(d), platinum,
+    status: platinum || progress === 100 ? "completed" : (hours > 0 || progress > 0) ? "started" : "unplayed" };
+}
+
+const TIERS = ["platinum", "gold", "silver", "bronze"];
+const STATUS = { all: "All", unplayed: "Backlog", started: "In progress", beaten: "Beaten", completed: "Completed", dropped: "Dropped" };
+const STATUS_LABEL = { unplayed: "Backlog", started: "In progress", beaten: "Beaten", completed: "Completed", dropped: "Dropped" };
+
+/* Your Beaten / Dropped flags, saved in flags.json. Automatic rules:
+   - platinum earned or 100% trophies -> Completed wins over any flag
+   - Dropped, but new playtime or a trophy after the date you dropped it -> back to its normal status */
+function applyFlags(games, flags) {
+  for (const x of games) {
+    x.base_status = x.base_status || x.status;
+    const f = flags[x.name] || (x.aliases || []).map(n => flags[n]).find(Boolean);  // flags saved under an older name
+    x.flag = null;
+    x.status = x.base_status;
+    if (!f || x.base_status === "completed") continue;
+    if (f.flag === "dropped" && x.last_activity && new Date(x.last_activity) > new Date(f.at)) continue;
+    x.flag = f; x.status = f.flag;
+  }
+}
+const $ = id => document.getElementById(id);
+let DATA, state = { status: "all", q: "", sort: "recent", open: null, selecting: false, sel: new Set(), tfilter: "all", tsort: "order", twhen: "any", topen: false };
+try { Object.assign(state, JSON.parse(localStorage.getItem("shelf") || "{}"), { q: "", open: null }); } catch {}
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const initials = s => (s || "?").replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+const fmtDate = s => s ? new Date(s).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }) : "—";
+function ago(s) {
+  const d = (Date.now() - new Date(s)) / 864e5;
+  if (d < 1 / 24) return "just now";
+  if (d < 1) return Math.round(d * 24) + " h ago";
+  if (d < 45) return Math.round(d) + (Math.round(d) === 1 ? " day ago" : " days ago");
+  return fmtDate(s);
+}
+const pic = (url, name, cls) => url
+  ? `<img src="${esc(url)}" alt="" loading="lazy" onerror="this.replaceWith(document.createTextNode('${initials(name)}'))">`
+  : initials(name);
+const mcClass = m => m == null ? "none" : m >= 75 ? "good" : m >= 50 ? "mid" : "bad";
+
+function refreshUrl() {
+  const h = location.hostname;
+  if (!h.endsWith(".github.io")) return null;
+  const owner = h.split(".")[0], repo = location.pathname.split("/").filter(Boolean)[0] || `${owner}.github.io`;
+  return `https://github.com/${owner}/${repo}/actions/workflows/refresh.yml`;
+}
+
+function repoUrl() { const u = refreshUrl(); return u && u.split("/actions/")[0]; }
+
+function renewSteps() {
+  const repo = repoUrl();
+  const secrets = repo
+    ? `<a href="${repo}/settings/secrets/actions" target="_blank" rel="noopener">your repo's secrets</a>`
+    : "your repo's <b>Settings → Secrets and variables → Actions</b>";
+  return `<ol>
+    <li>Sign in at <a href="https://www.playstation.com" target="_blank" rel="noopener">playstation.com</a>.</li>
+    <li>In the same browser, open <a href="https://ca.account.sony.com/api/v1/ssocookie" target="_blank" rel="noopener">Sony's token page</a> and copy the value after <code>"npsso":</code> (without the quotes).</li>
+    <li>Open ${secrets}, edit <code>PSN_NPSSO</code> and paste it. On a phone, switch the browser to desktop site for this step.</li>
+    <li>Tap <b>Refresh data</b> again.</li>
+  </ol>`;
+}
+
+function renderLogin() {
+  const L = DATA.login || {}, box = $("alert"), exp = $("expiry");
+  box.hidden = true; exp.hidden = true;
+  if (L.error === "login_expired") {
+    box.className = "alert bad"; box.hidden = false;
+    box.innerHTML = `<h2>PSN login expired</h2>
+      <p>The refresh on ${fmtDate(L.failed_at)} couldn't sign in to PlayStation. ${DATA.isSample ? "" : "You're seeing data from the last successful refresh."} Renew the login in about a minute:</p>${renewSteps()}`;
+    return;
+  }
+  if (L.error === "fetch_failed") {
+    box.className = "alert warn"; box.hidden = false;
+    box.innerHTML = `<h2>Last refresh failed</h2>
+      <p>On ${fmtDate(L.failed_at)} PlayStation's servers returned an error, so this is the data from the last successful refresh. Try again later. If it keeps failing, see "When something goes wrong" in the README.</p>
+      <p><code>${esc(L.message || "")}</code></p>`;
+    return;
+  }
+  if (L.expires_estimate) {
+    const days = Math.round((new Date(L.expires_estimate) - Date.now()) / 864e5);
+    exp.hidden = false;
+    if (days < 0) {
+      exp.className = "expiry past"; exp.textContent = "PSN login has probably expired";
+      box.className = "alert warn"; box.hidden = false;
+      box.innerHTML = `<h2>Renew your PSN login before refreshing</h2><p>Logins last about two months, and this one started on ${fmtDate(L.since)}.</p>${renewSteps()}`;
+    } else {
+      exp.className = "expiry" + (days <= 14 ? " soon" : "");
+      exp.textContent = `PSN login: ${days} day${days === 1 ? "" : "s"} left`;
+      exp.title = `Login in use since ${fmtDate(L.since)}. Estimate based on Sony's usual two-month limit.`;
+    }
+  }
+}
+
+function renderHeader() {
+  const p = DATA.profile, games = DATA.games;
+  $("psnName").textContent = p.online_id;
+  $("avatar").innerHTML = pic(p.avatar, p.online_id);
+  $("lvl").textContent = p.trophy_level;
+  $("lvlBar").style.width = (p.level_progress || 0) + "%";
+  $("lvlPct").textContent = (p.level_progress || 0) + "%";
+  $("tiers").innerHTML = TIERS.map(t => `<span class="tier" title="${t}"><span class="dot d-${t}"></span><span class="num">${p.earned[t].toLocaleString()}</span></span>`).join("");
+  $("updated").textContent = "Updated " + ago(DATA.generated_at);
+  const url = refreshUrl();
+  if (url) { $("refresh").href = url; $("refresh").hidden = false; }
+
+  const hours = games.reduce((a, x) => a + (x.hours || 0), 0);
+  const backlog = games.filter(x => x.status === "unplayed" && x.owned).length;
+  const plats = games.filter(x => x.platinum).length;
+  const figs = [[games.length, "Games"], [Math.round(hours).toLocaleString(), "Hours played"], [plats, "Platinums"], [backlog, "In backlog"]];
+  $("figures").innerHTML = figs.map(([v, l]) => `<div class="fig"><b class="num">${v}</b><span>${l}</span></div>`).join("");
+}
+
+// Finished (platinum, 100% or Beaten) but not rated yet
+const toRate = x => (x.status === "completed" || x.status === "beaten") && !ratingOf(x);
+function renderChips() {
+  const count = s => s === "all" ? DATA.games.length : s === "torate" ? DATA.games.filter(toRate).length : s === "easyplat" ? DATA.games.filter(easyPlat).length : DATA.games.filter(x => x.status === s).length;
+  const chips = { ...STATUS, ...(count("easyplat") ? { easyplat: "🏆 Easy platinum" } : {}), ...(count("torate") ? { torate: "To rate" } : {}) };
+  if ((state.status === "torate" || state.status === "easyplat") && !count(state.status)) state.status = "all";
+  $("chips").innerHTML = Object.entries(chips).map(([k, v]) =>
+    `<button class="chip${k === "torate" ? " torate" : ""}" data-s="${k}" aria-pressed="${state.status === k}">${v}<small>${count(k)}</small></button>`).join("");
+}
+
+const beatTime = x => x.hltb?.extra || x.hltb?.main || null;   // HowLongToBeat Main + Extras (Main Story if missing)
+const SORTS = {
+  recent: (a, b) => (b.last_activity || b.acquired || "").localeCompare(a.last_activity || a.acquired || ""),
+  metacritic: (a, b) => (b.metacritic ?? -1) - (a.metacritic ?? -1),
+  hours: (a, b) => (b.hours || 0) - (a.hours || 0),
+  progress: (a, b) => (b.progress ?? -1) - (a.progress ?? -1),
+  beat: (a, b) => (beatTime(a) ?? 1e9) - (beatTime(b) ?? 1e9),
+  left: (a, b) => (b.trophies_total - b.trophies_earned) - (a.trophies_total - a.trophies_earned),
+  name: (a, b) => a.name.localeCompare(b.name),
+  // platinum from trophy guides; games without a guide rating, or already platinum, go last
+  platEasy: (a, b) => (platOf(a)?.difficulty ?? 99) - (platOf(b)?.difficulty ?? 99) || (platOf(a)?.hours ?? 999) - (platOf(b)?.hours ?? 999),
+  platShort: (a, b) => (platOf(a)?.hours ?? 9999) - (platOf(b)?.hours ?? 9999) || (platOf(a)?.difficulty ?? 99) - (platOf(b)?.difficulty ?? 99),
+};
+const platOf = x => x.platinum || x.base_status === "completed" ? null : GP.diffOf(x)?.combined || null;
+// "Easy platinum": rated 3.5/10 or less by the guides, not finished and not dropped
+const easyPlat = x => x.status !== "dropped" && platOf(x)?.difficulty != null && platOf(x).difficulty <= 3.5;
+
+function visibleRows() {
+  const q = state.q.trim().toLowerCase();
+  return DATA.games
+    .filter(x => state.status === "all" || (state.status === "torate" ? toRate(x) : state.status === "easyplat" ? easyPlat(x) : x.status === state.status))
+    .filter(x => !q || x.name.toLowerCase().includes(q) || (x.genres || []).some(gn => gn.toLowerCase().includes(q)))
+    .sort(SORTS[state.sort]);
+}
+
+function renderList() {
+  const rows = visibleRows();
+  renderSelBar();
+  if (!rows.length) { $("list").innerHTML = `<p class="empty">No games match this filter.</p>`; return; }
+  $("list").innerHTML = rows.map((x, i) => {
+    const id = "g" + DATA.games.indexOf(x), open = !state.selecting && state.open === id;
+    const locked = state.selecting && x.base_status === "completed", picked = state.selecting && state.sel.has(id);
+    const prog = x.defined
+      ? `<div class="prog ${x.platinum ? "plat" : ""}"><span class="bar"><i style="width:${x.progress}%"></i></span><span class="num">${x.trophies_earned}/${x.trophies_total} · ${x.progress}%</span></div>`
+      : `<div class="prog">No trophies yet</div>`;
+    const hrs = x.hours ? `${x.hours.toLocaleString()} h` : (x.platforms.some(p => p === "PS3" || p === "PSVITA") ? "Playtime n/a" : "0 h");
+    const btnAttr = state.selecting ? `aria-pressed="${picked}"${locked ? ' aria-disabled="true" title="Completed games can\'t be flagged"' : ""}` : `aria-expanded="${open}" aria-controls="${id}-d"`;
+    return `<article class="game${picked ? " sel" : ""}${locked ? " locked" : ""}${open ? " open" : ""}">
+      <button ${btnAttr} data-id="${id}">
+        <span class="cover">${pic(x.image, x.name)}${state.selecting ? '<span class="check"></span>' : ""}</span>
+        <span class="main">
+          <span class="name">${esc(x.name)}</span>
+          <span class="meta"><span class="pill st-${x.status}">${STATUS_LABEL[x.status]}</span><span class="num">${hrs}</span>${beat(x)}${platLine(x)}</span>
+          ${prog}
+        </span>
+        <span class="scores">${myScore(x)}<span class="sc"><span class="mc ${mcClass(x.metacritic)}" title="${x.metacritic == null ? "No Metacritic score found" : "Metacritic score" + ({ rawg: ", via RAWG", wikidata: ", via Wikidata", wikipedia: ", via Wikipedia", manual: ", entered by you" }[x.metacritic_source] || "")}">${x.metacritic ?? "–"}</span><small>MC</small></span></span>
+      </button>
+      ${open ? detail(x, id) : ""}
+    </article>`;
+  }).join("");
+  renderTrophies();
+}
+
+let RATINGS = {};
+// your rating: an outlined badge next to the (filled) Metacritic one
+const myScore = x => { const r = RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean); return r ? `<span class="sc"><span class="myscore ${mcClass(r.score)}" title="Your rating">${r.score}</span><small>You</small></span>` : ""; };
+// platinum estimate from trophy guides (difficulty.json): "🏆 3/10 · 120 h", not shown once you have the platinum
+function platLine(x) {
+  if (x.platinum || x.status === "completed") return "";
+  const c = GP.diffOf(x)?.combined; if (!c || (c.difficulty == null && !c.hours)) return "";
+  const lvl = c.difficulty == null ? "" : c.difficulty <= 3.5 ? "easy" : c.difficulty <= 6 ? "medium" : "hard";
+  return `<span class="plat ${lvl}" title="Platinum: difficulty and time from trophy guides">🏆 ${[c.difficulty != null ? `${c.difficulty}/10` : "", c.hours ? `${c.hours} h` : ""].filter(Boolean).join(" · ")}</span>`;
+}
+const fmtH = h => h >= 10 ? Math.round(h) + " h" : (Math.round(h * 2) / 2) + " h";
+function beat(x) {
+  const m = beatTime(x);
+  return m ? `<span class="num" title="HowLongToBeat, main story + extras">Beat ~${fmtH(m)}</span>` : "";
+}
+
+function issueUrl(flag, names) {
+  const repo = repoUrl(); if (!repo) return null;
+  const what = names.length === 1 ? names[0] : `${names.length} games`;
+  const title = flag === "none" ? `Flag ${what}: remove flag` : `Flag ${what} as ${flag}`;
+  const body = `Tap "Create" (or "Submit new issue") to save this. The dashboard updates in about a minute.\n\nflag: ${flag}\n` + names.map(n => `game: ${n}\n`).join("");
+  return `${repo}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+}
+const MAX_URL = 6000;  // stay well under what GitHub accepts in a pre-filled link
+function chunks(flag, names) {  // split a big selection into several links
+  const out = []; let cur = [];
+  for (const n of names) {
+    if (cur.length && issueUrl(flag, [...cur, n]).length > MAX_URL) { out.push(cur); cur = []; }
+    cur.push(n);
+  }
+  if (cur.length) out.push(cur);
+  return out;
+}
+
+function renderSelBar() {
+  document.body.classList.toggle("selecting", state.selecting);
+  $("selectBtn").setAttribute("aria-pressed", state.selecting);
+  $("selectBtn").textContent = state.selecting ? "Done" : "Select";
+  $("selbar").hidden = !state.selecting;
+  if (!state.selecting) return;
+  const picked = DATA.games.filter((x, i) => state.sel.has("g" + i));
+  const names = picked.map(x => x.name), n = names.length;
+  const act = (flag, label, cls) => {
+    if (!n || !repoUrl()) return `<span class="act" aria-disabled="true">${label}</span>`;
+    const parts = chunks(flag, names);
+    if (parts.length === 1) return `<a class="act ${cls}" data-act href="${issueUrl(flag, parts[0])}" target="_blank" rel="noopener">${label}</a>`;
+    return `<span class="parts">${label}: ${parts.map((c, i) => `<a class="act ${cls}" data-part href="${issueUrl(flag, c)}" target="_blank" rel="noopener">Part ${i + 1}</a>`).join("")}</span>`;
+  };
+  const anyFlag = picked.some(x => x.flag);
+  let note = n ? "Adds the change for all selected games to your pending changes. Send them all at once from the bar at the bottom." : "Tap games to select them. Completed games can't be flagged.";
+  const nParts = n ? chunks("dropped", names).length : 1;
+  if (n && !repoUrl()) note = "Flag buttons work on your GitHub Pages dashboard.";
+  else if (nParts > 1) note = `That's a lot of games, so it's split into ${nParts} parts: tap each part to add it to your pending changes, then tap Done.`;
+  $("selbarIn").innerHTML = `
+    <div class="selrow"><b class="num">${n} selected</b>
+      <button class="lnk" id="selAll">Select all shown</button>${n ? '<button class="lnk" id="selClear">Clear</button>' : ""}</div>
+    <div class="selrow">${act("beaten", "Mark as beaten", "beaten")}${act("dropped", "Mark as dropped", "dropped")}${anyFlag ? act("none", "Remove flag", "") : ""}</div>
+    <p class="selnote">${note}</p>`;
+}
+
+const ratingOf = x => RATINGS[x.name] || (x.aliases || []).map(n => RATINGS[n]).find(Boolean);
+
+let QUEUE = [];
+function detail(x, id) {
+  const total = x.trophies_total || 0, missing = total - (x.trophies_earned || 0);
+  const tl = x.trophy_lists?.length ? `<details class="tlist" data-game="${id}"${state.topen ? " open" : ""}>
+      <summary>Trophy list <span class="note">${total} trophies${missing ? ` · ${missing} missing` : " · all earned"}</span></summary><div class="tl-inner">
+      <div class="tl-head"><a class="tguide" href="${listGuideUrl(x.name)}" target="_blank" rel="noopener">Trophy guide</a>
+        <span class="seg" role="group" aria-label="Show trophies">${[["all", "All"], ["missing", "Missing"], ["earned", "Earned"]].map(([k, l]) => `<button data-tf="${k}" aria-pressed="${state.tfilter === k}">${l}</button>`).join("")}</span>
+        <select data-ts aria-label="Sort trophies">${[["order", "Game order"], ["newest", "Newest earned first"], ["oldest", "Oldest earned first"], ["rare", "Rarest first"], ["common", "Most common first"]].map(([k, l]) => `<option value="${k}"${state.tsort === k ? " selected" : ""}>${l}</option>`).join("")}</select>
+        <select data-tw aria-label="Earned in">${[["any", "Earned any time"], ["30d", "Last 30 days"], ["90d", "Last 3 months"],
+          ...[...new Set(Object.keys(x.months || {}).map(m => m.slice(0, 4)))].sort().reverse().map(y => [y, `Earned in ${y}`])]
+          .map(([k, l]) => `<option value="${k}"${state.twhen === k ? " selected" : ""}>${l}</option>`).join("")}</select>
+      </div>${dlcSummary(x)}<div class="tl-body"><p class="flagnote">Loading trophies…</p></div></div></details>` : "";
+  return GP.panel(x, { id: `${id}-d`, extra: tl });
+}
+
+/* Trophy lists live in trophies/<list id>.json and load when you open a game. */
+const TROPHIES = {};
+const loadList = id => TROPHIES[id] ||= fetch(`trophies/${encodeURIComponent(id)}.json`, { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
+const rarity = r => r == null ? "" : r < 5 ? "Ultra rare" : r < 15 ? "Very rare" : r < 50 ? "Rare" : "Common";
+
+async function renderTrophies() {
+  const box = document.querySelector(".tlist"); if (!box || !box.open) return;
+  const x = DATA.games[+box.dataset.game.slice(1)];
+  const lists = await Promise.all(x.trophy_lists.map(l => loadList(l.id).then(d => ({ ...l, d }))));
+  const body = box.querySelector(".tl-body"); if (!body.isConnected) return;
+  const avail = lists.filter(l => l.d);
+  if (!avail.length) { body.innerHTML = `<p class="flagnote">Trophy details appear after your next refresh.</p>`; return; }
+  const sorts = { order: (a, b) => a.id - b.id, rare: (a, b) => (a.r ?? 101) - (b.r ?? 101), common: (a, b) => (b.r ?? -1) - (a.r ?? -1),
+    newest: (a, b) => (b.at || "").localeCompare(a.at || "") || a.id - b.id,          // not-earned trophies go last
+    oldest: (a, b) => (!a.at) - (!b.at) || (a.at || "").localeCompare(b.at || "") || a.id - b.id };
+  // "Earned in": only trophies earned in that period
+  const since = { "30d": 30, "90d": 91 }[state.twhen];
+  const inPeriod = t => state.twhen === "any" || (t.e && t.at && (since ? Date.now() - new Date(t.at) <= since * 864e5 : new Date(t.at).getFullYear() === +state.twhen));
+  const row = t => {
+    const desc = t.h && !t.e ? `<details><summary>Hidden trophy · tap to reveal</summary><span>${esc(t.d)}</span></details>` : `<span>${esc(t.d)}</span>`;
+    const when = t.e ? (t.at ? fmtDate(t.at) : "Earned") : (t.p ? `${t.p} done` : "Not earned");
+    const guide = t.e ? "" : `<a class="tguide" href="${guideUrl(x.name, t.n)}" target="_blank" rel="noopener">Guide</a>`;
+    return `<div class="trophy${t.e ? " got" : ""}"><span class="ticon">${t.i ? `<img src="${esc(t.i)}" alt="" loading="lazy" onerror="this.remove()">` : ""}</span>
+      <span class="tname"><b><span class="dot d-${t.t}" title="${t.t}"></span> ${esc(t.n)}</b>${desc}</span>
+      <span class="tmeta">${t.r != null ? `<span class="rate${t.r < 5 ? " ultra" : ""}" title="${rarity(t.r)}">${t.r}%</span>` : ""}<span>${when}</span>${guide}</span></div>`;
+  };
+  body.innerHTML = avail.map(l => {
+    const head = avail.length > 1 ? `<div class="tl-sub">${esc(l.platforms.join(" · ") || "Trophy list")} · ${l.progress}%</div>` : "";
+    // Split by base game and DLC packs when the list has DLC
+    const groups = {};
+    for (const t of l.d.trophies) (groups[t.g || "default"] ||= []).push(t);
+    const ids = Object.keys(groups).sort((a, b) => (a === "default" ? -1 : b === "default" ? 1 : a.localeCompare(b)));  // base game first
+    const parts = ids.map(gid => {
+      const all = groups[gid], got = all.filter(t => t.e).length;
+      const rows = all.filter(t => (state.tfilter === "all" || (state.tfilter === "earned") === t.e) && inPeriod(t)).sort(sorts[state.tsort]);
+      const label = gid === "default" ? "Base game" : (l.groups?.[gid] || `DLC ${gid}`);
+      const sub = ids.length > 1 ? `<div class="tl-group"><span>${esc(label)}</span><span class="num">${got}/${all.length}${got === all.length ? " · done" : ""}</span></div>` : "";
+      return rows.length ? sub + rows.map(row).join("") : (ids.length > 1 && (state.tfilter !== "all" || state.twhen !== "any") ? "" : sub);
+    }).join("");
+    const empty = state.twhen !== "any" ? (state.tfilter === "missing" ? "Missing trophies have no earned date: set “Earned any time” to see them." : "No trophies earned in this period.")
+      : state.tfilter === "missing" ? "Nothing missing here." : "No trophies earned yet.";
+    return head + (parts || `<p class="flagnote">${empty}</p>`);
+  }).join("");
+}
+
+function dlcSummary(x) {
+  if (!x.dlc?.length) return "";
+  const multi = new Set(x.dlc.map(d => d.list)).size > 1;
+  return `<div class="dlc">${x.dlc.map(d => { const done = d.earned === d.total;
+    return `<span class="dlc-row${done ? " done" : ""}"><span>${esc(d.name)}${multi ? ` <span class="note">(${esc(d.platforms.join("/"))})</span>` : ""}</span>
+      <span class="bar"><i style="width:${Math.round(100 * d.earned / d.total)}%"></i></span><span class="num">${d.earned}/${d.total}</span></span>`; }).join("")}</div>`;
+}
+
+const guideUrl = (game, trophy) => `https://www.google.com/search?q=${encodeURIComponent(`"${game}" "${trophy}" trophy guide`)}`;
+const listGuideUrl = game => `https://psnprofiles.com/search/guides?q=${encodeURIComponent(game.replace(/[™®]/g, ""))}`;
+
+function save() { try { localStorage.setItem("shelf", JSON.stringify({ status: state.status, sort: state.sort })); } catch {} }
+
+$("chips").addEventListener("click", e => { const b = e.target.closest(".chip"); if (!b) return;
+  state.status = b.dataset.s; if (state.status === "unplayed" && state.sort === "recent") { state.sort = "metacritic"; $("sort").value = "metacritic"; }
+  if (state.status === "easyplat" && !state.sort.startsWith("plat")) { state.sort = "platEasy"; $("sort").value = "platEasy"; }
+  save(); renderChips(); renderList(); });
+$("list").addEventListener("click", e => {
+  const tf = e.target.closest("button[data-tf]");
+  if (tf) { state.tfilter = tf.dataset.tf; document.querySelectorAll("[data-tf]").forEach(b => b.setAttribute("aria-pressed", b === tf)); renderTrophies(); return; }
+  const b = e.target.closest("button[data-id]"); if (!b) return;
+  const id = b.dataset.id;
+  if (state.selecting) {
+    if (DATA.games[+id.slice(1)].base_status === "completed") return;
+    state.sel.has(id) ? state.sel.delete(id) : state.sel.add(id);
+  } else state.open = state.open === id ? null : id;
+  renderList(); });
+$("selectBtn").addEventListener("click", () => { state.selecting = !state.selecting; state.sel.clear(); renderList(); });
+$("selbar").addEventListener("click", e => {
+  if (e.target.id === "selAll") { visibleRows().forEach(x => { if (x.base_status !== "completed") state.sel.add("g" + DATA.games.indexOf(x)); }); renderList(); }
+  else if (e.target.id === "selClear") { state.sel.clear(); renderList(); }
+  else if (e.target.closest("a[data-act]")) setTimeout(() => { state.selecting = false; state.sel.clear(); renderList(); }, 300);
+  else if (e.target.closest("a[data-part]")) e.target.closest("a[data-part]").classList.add("visited");
+});
+$("list").addEventListener("toggle", e => { if (e.target.matches(".tlist")) { state.topen = e.target.open; renderTrophies(); } }, true);
+$("list").addEventListener("change", e => {
+  if (e.target.matches("[data-ts]")) { state.tsort = e.target.value; renderTrophies(); }
+  if (e.target.matches("[data-tw]")) { state.twhen = e.target.value; renderTrophies(); }
+});
+$("q").addEventListener("input", e => { state.q = e.target.value; renderList(); });
+$("sort").addEventListener("change", e => { state.sort = e.target.value; save(); renderList(); });
+
+async function start() {
+  try {
+    const r = await fetch("data.json", { cache: "no-store" });
+    if (!r.ok) throw 0;
+    DATA = await r.json();
+  } catch { DATA = { ...SAMPLE, isSample: true }; }
+  if (!DATA.profile) DATA = { ...SAMPLE, login: DATA.login, isSample: true };  // first refresh failed
+  $("sample").hidden = !DATA.isSample;
+  let flags = DATA.isSample ? SAMPLE_FLAGS : {};
+  if (!DATA.isSample) try { const f = await fetch("flags.json", { cache: "no-store" }); if (f.ok) flags = await f.json(); } catch {}
+  applyFlags(DATA.games, flags);
+  if (!DATA.isSample) try { const r = await fetch("ratings.json", { cache: "no-store" }); if (r.ok) RATINGS = await r.json(); } catch {}
+  if (!DATA.isSample) try { const r = await fetch("queue.json", { cache: "no-store" }); if (r.ok) QUEUE = await r.json(); } catch {}
+  GP.ratings = RATINGS; GP.queue = QUEUE;
+  if (!DATA.isSample) try { const r = await fetch("snapshots.json", { cache: "no-store" }); if (r.ok) GP.snaps = await r.json(); } catch {}
+  if (!DATA.isSample) try { const r = await fetch("difficulty.json", { cache: "no-store" }); if (r.ok) GP.difficulty = (await r.json()).games || {}; } catch {}
+  $("sort").value = state.sort;
+  renderLogin(); renderHeader(); renderChips(); renderList();
+}
+start();
+</script>
+<script src="v1/pending.js"></script>
