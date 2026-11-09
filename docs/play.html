@@ -84,6 +84,9 @@ a.act.primary { background: var(--accent); color: var(--on-accent); border-color
 .tn-dot img, .tn-dot .cover { width: 100%; height: 100%; object-fit: cover; display: block; }
 .tn-dot.out { opacity: .25; filter: grayscale(1); }
 .tn-dot.on { border-color: var(--gold); }
+.tn-dot.wait { background: none; border: 2px dashed var(--line); }
+.tn-dot.new { animation: tn-in .35s ease-out; }
+@keyframes tn-in { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
 .tn-win { display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: center; background: var(--surface); border: 2px solid var(--gold); border-radius: var(--radius); padding: 10px; margin-bottom: 10px; }
 .tn-win .cover { width: 64px; height: 64px; border-radius: 8px; }
 .tn-win > span:last-child { display: grid; gap: 2px; }
@@ -415,7 +418,9 @@ function tourney() {
   if (tn.next >= G.length) return tnFinish();
   const total = G.length - 1, n = tn.next;
   // the line-up: beaten games faded, the champion highlighted, the rest still waiting
-  const lineup = G.map((g, i) => `<span class="tn-dot${i === tn.champ ? " on" : i < n ? " out" : ""}" title="${esc(g.name)}">${pic(g.image, g.name)}</span>`).join("");
+  // games appear one by one as they enter the ring; the ones still to come are blank slots
+  const lineup = G.map((g, i) => i > n ? `<span class="tn-dot wait" aria-hidden="true"></span>`
+    : `<span class="tn-dot${i === tn.champ ? " on" : i < n ? " out" : ""}${i === n ? " new" : ""}" title="${esc(g.name)}">${pic(g.image, g.name)}</span>`).join("");
   $("tnBody").innerHTML = `<p class="note">Duel ${n} of ${total}: tap the one you'd rather play next.</p>
     <div class="tn-line">${lineup}</div>
     <div class="tn-duel">${tnCard(G[tn.champ], 0, tnStreak)}<span class="tn-vs">vs</span>${tnCard(G[n], 1, 0)}</div>
