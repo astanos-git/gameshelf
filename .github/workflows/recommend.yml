@@ -61,7 +61,7 @@ jobs:
     needs: check
     if: needs.check.outputs.run == 'true'
     runs-on: ubuntu-latest
-    timeout-minutes: 75
+    timeout-minutes: 110   # each step has its own limit, so a slow site can't stop the publish and the push
     env:
       MODE: ${{ inputs.mode || 'full' }}
     steps:
@@ -72,28 +72,33 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: Refresh your data first
+        timeout-minutes: 20
         if: env.MODE == 'full'
         env:
           PSN_NPSSO: ${{ secrets.PSN_NPSSO }}
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: python fetch.py
       - name: Pick this week's games and take the weekly snapshot
+        timeout-minutes: 20
         if: env.MODE == 'full'
         continue-on-error: true     # a RAWG outage shouldn't cost the rest of the Monday run (a back-up run retries the picks)
         env:
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: python recommend.py
       - name: Coming soon and game details
+        timeout-minutes: 15
         if: env.MODE == 'full' || env.MODE == 'coming-soon'
         continue-on-error: true
         env:
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: python discover.py
       - name: Platinum difficulty from guide sites
+        timeout-minutes: ${{ env.MODE == 'difficulty' && 65 || 17 }}
         if: env.MODE == 'full' || env.MODE == 'difficulty'
         continue-on-error: true
         run: python difficulty.py --minutes ${{ env.MODE == 'difficulty' && inputs.minutes || '15' }} ${{ env.MODE == 'difficulty' && inputs.retry != '' && format('--retry {0}', inputs.retry) || '' }} ${{ env.MODE == 'difficulty' && inputs.reparse != '' && format('--reparse {0}', inputs.reparse) || '' }}
       - name: Sessions, On this day, calendar feed
+        timeout-minutes: 5
         if: env.MODE != 'push-test'
         continue-on-error: true
         run: python extras.py
