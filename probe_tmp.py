@@ -1,40 +1,19 @@
-"""Temporary probe (deleted after use): PS Store search via its own persisted query (public data)."""
-import json, re, hashlib, itertools
+"""Temporary probe (deleted after use): RAWG store links -> Swiss PS Store page prices (public data)."""
+import json, os, re
 import requests
-from graphql import parse, print_ast
 UA = {"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1", "Accept-Language": "fr-CH,fr;q=0.9"}
-t = requests.get("https://store.playstation.com/fr-ch/search/cairn", headers=UA, timeout=30).text
-app = [s for s in re.findall(r'<script[^>]+src="([^"]+\.js)"', t) if "_app-" in s][0]
-js = requests.get("https://store.playstation.com" + app, headers=UA, timeout=30).text
-def tmpl(start):
-    i = js.find(start); j = js.find('"]', i)
-    return json.loads('"' + js[i:j] + '"').replace('","', "")
-def piece(marker):
-    i = js.find(marker); i = js.rfind('["', 0, i) + 2; j = js.find('"]', i)
-    return json.loads("[" + '"' + js[i:j] + '"]')
-q = "".join(piece("query getSearchResults("))
-frags = {}
-for name in ["priceFragment", "personalizedMetaFragment"]:
-    k = js.find(f"fragment {name} on")
-    i = js.rfind('["', 0, k) + 2; j = js.find('"]', i)
-    frags[name] = "".join(json.loads('["' + js[i:j] + '"]'))
-    print(name, frags[name][:300].replace("\n", " "))
-H = {**UA, "x-psn-store-locale-override": "fr-CH", "content-type": "application/json"}
-var = {"countryCode": "CH", "languageCode": "fr", "pageOffset": 0, "pageSize": 5, "searchTerm": "cairn", "searchDomains": "MobileUniversalSearchGame", "nextCursor": ""}
-from graphql.language import ast as A, visit, Visitor
-class AddTypename(Visitor):
-    def enter_operation_definition(self, node, *_):
-        self.root = node.selection_set
-    def leave_selection_set(self, node, key, parent, path, ancestors):
-        if parent is not None and isinstance(parent, A.OperationDefinitionNode): return None
-        if any(isinstance(x, A.FieldNode) and x.name.value.startswith("__") for x in node.selections): return None
-        return A.SelectionSetNode(selections=(*node.selections, A.FieldNode(name=A.NameNode(value="__typename"), arguments=(), directives=())))
-def add_typename(doc):
-    return print_ast(visit(parse(doc), AddTypename()))
-for order in itertools.permutations(frags):
-    doc = q + "".join("\n" + frags[n] for n in order)
-    for printed in [add_typename(doc), print_ast(parse(doc))]:
-        h = hashlib.sha256(printed.encode()).hexdigest()
-        r = requests.get("https://web.np.playstation.com/api/graphql/v1/op", params={"operationName": "getSearchResults", "variables": json.dumps(var), "extensions": json.dumps({"persistedQuery": {"version": 1, "sha256Hash": h}})}, headers=H, timeout=30)
-        print(order, "printed" if printed != doc else "raw", h[:12], r.status_code, r.text[:700].replace("\n", " "))
-        if r.status_code == 200: break
+key = os.environ.get("RAWG_API_KEY")
+wl = json.load(open("docs/wishlist.json"))
+for slug in list(wl)[:8] + ["cairn", "marvels-wolverine"]:
+    try:
+        r = requests.get(f"https://api.rawg.io/api/games/{slug}/stores", params={"key": key}, timeout=30)
+        urls = [x["url"] for x in r.json().get("results", []) if "playstation" in x.get("url", "")]
+    except Exception as e:
+        print(slug, "rawg", repr(e)[:100]); continue
+    print(slug, r.status_code, urls[:2])
+    for u in urls[:1]:
+        m = re.search(r'/(concept|product)/([A-Za-z0-9_-]+)', u)
+        if not m: continue
+        page = f"https://store.playstation.com/fr-ch/{m.group(1)}/{m.group(2)}"
+        t = requests.get(page, headers=UA, timeout=30)
+        print("  ", page, t.status_code, re.findall(r'"(?:basePrice|discountedPrice|discountText|serviceBranding)":(?:"[^"]*"|\[[^\]]*\])', t.text)[:8], re.findall(r'"name":"([^"]{3,60})"', t.text)[:2])

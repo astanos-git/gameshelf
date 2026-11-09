@@ -15,4 +15,5 @@ jobs:
       - run: pip install -r requirements.txt graphql-core
       - env:
           PSN_NPSSO: ${{ secrets.PSN_NPSSO }}
+          RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: python probe_tmp.py
