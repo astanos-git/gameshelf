@@ -85,10 +85,13 @@ Tap **Refresh data** at the top of the Library. It opens the workflow on GitHub:
   - **On this day:** a platinum, a rare trophy or a game you started on this date in past years (or later this week).
   - **What to play:** **Best games** (by Metacritic, filters by length and genre, **Surprise me**) or **My ranking** (from the tournament).
   - **Backlog tournament:** 10 random backlog games, two at a time; the one you'd rather play stays on and faces the next, until one is left. The winner joins **My ranking** (one pending change per tournament).
+  - **PS Plus** (shown when there's something to say): games you only have through PS Plus that leave the catalogue within 45 days (play or buy them before), and wishlist games that are included with PS Plus (no need to buy). The Library's game panel also says "Through PS Plus · leaves …".
+  - **Backlog tidy-up** (suggested every 3 months): up to 15 backlog games you'll probably never play (owned for years, not your usual genres, low Metacritic, a series you've moved on from, very long), one at a time with the reasons. **Keep** (not suggested again for a year) or **Drop** (marked Dropped, out of the backlog, picks and tournament; undo it in the Library). The whole tidy-up is one pending change.
   - **📅 Add to calendar** (next to Up next): subscribe once to `gameshelf.ics`. Your phone's calendar then shows finish forecasts for games in progress, release dates of wishlist and coming-soon games, and a reminder one month before your goals deadline. It updates by itself (after refreshes, Monday runs and saves).
 - **Discover:**
   - **This week's picks:** 3 games you don't own, matched to your taste and usual length, with 👍 / 👎 and + Wishlist.
-  - **Wishlist** (dashboard only, not your PSN wishlist): search any game by name and tap **+** to add it (the save fills in cover, release date, genres and Metacritic from RAWG). Not found, or not announced yet? Add it by name: it's looked up again every Monday and filled in once RAWG knows it (the Monday push tells you); sort it, filter Out now / Not out yet, ✕ to remove.
+  - **Wishlist** (dashboard only, not your PSN wishlist): search any game by name and tap **+** to add it (the save fills in cover, release date, genres and Metacritic from RAWG). Not found, or not announced yet? Add it by name: it's looked up again every Monday and filled in once RAWG knows it (the Monday push tells you); sort it (also **Cheapest first**), filter Out now / Not out yet, ✕ to remove.
+    - **Prices:** each Monday the Swiss PS Store price (CHF) of every wishlist game is checked: discount and end date, "PS Plus" when it's included with your subscription, and the lowest price seen. Tap a game and **Set alert** at a price: the Monday push (and your calendar, on the sale's last day) tells you when it's at or below it. Prices come from public store pages; nothing is bought.
   - **Coming soon:** unreleased PS4/PS5 games by category: Your series, Your studios, Your taste, Big releases, Indie (often empty: RAWG rarely lists consoles for unreleased indies), plus Out soon (next 60 days). Tap **+** to wishlist one.
 - **Trophy hunting:**
   - **Closest to platinum:** with the easiest trophies left.
@@ -108,6 +111,8 @@ Pick a year or all time, then a tab:
 Explanations are folded behind **How this works**.
 
 ### Review
+**Your Wrapped** (top of the page): the year as a full-screen story, card by card (time played, game of the year, top 5, trophies and platinums, rarest trophy, your rhythm, genres, how you play, Gamer DNA, games finished, goals), ending with a 1080×1920 image to share. Tap the right side to go on, the left to go back. It's announced in the Monday push and your calendar in mid-December, and works for past years too.
+
 A yearly summary: the headline numbers, your game of the year, highlights and that year's platinums. **Share as image** makes a 1080×1350 card for your phone's share sheet. **Your gamer DNA** scores nine traits (Story seeker, Explorer, Completionist, Trophy hunter, Night owl, Marathoner, Day-one player, Sampler, Indie spirit) for the year, compared with all time, with your top trait year by year and **Share my DNA**. **Goals** (platinums, games finished, trophies, hours) show progress against an even pace.
 
 ### Every Monday (Weekly recommendations workflow)
@@ -117,16 +122,18 @@ Around 06:00 Swiss time it:
 3. picks 3 new games;
 4. updates Coming soon;
 5. looks up platinum difficulty for new games (PowerPyx and TrueTrophies; games without a guide are retried after 30 days);
-6. rebuilds sessions, "On this day" and the calendar feed (`extras.py`, also after every refresh and save);
-7. sends the **Monday push** (now with a memory from this week in past years).
+6. checks the PS Plus catalogue and the Swiss PS Store prices of your wishlist (`store.py`);
+7. rebuilds sessions, "On this day" and the calendar feed (`extras.py`, also after every refresh and save);
+8. sends the **Monday push**.
 
 To run one part by hand: **Actions → Weekly recommendations → Run workflow** and choose *What to run*:
 - `full`: everything (it also replaces this week's picks);
 - `coming-soon`;
 - `difficulty` (with *minutes*; *retry* / *reparse* `powerpyx` re-check games not found / re-read saved guides);
+- `store` (PS Plus and wishlist prices);
 - `push-test`.
 
-**Monday push to your phone:** install the free **ntfy** app, subscribe to a topic with a long random name, and add that name as the repo secret `NTFY_TOPIC`. Anyone who knows the name can read the messages. It sends last week's recap, the new picks, games out in the next 30 days, and a warning two weeks before the PSN login expires.
+**Monday push to your phone:** install the free **ntfy** app, subscribe to a topic with a long random name, and add that name as the repo secret `NTFY_TOPIC`. Anyone who knows the name can read the messages. It sends last week's recap, the new picks, games out in the next 30 days, PS Plus games leaving soon and wishlist games newly in PS Plus, price alerts reached, when the backlog tidy-up is due, your Wrapped in mid-December, a memory from this week in past years, and a warning two weeks before the PSN login expires.
 
 ### Fixing wrong info
 Open the game's panel and tap **Wrong info?**. You can correct:

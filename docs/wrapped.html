@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Game Shelf Wrapped</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Game Shelf">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0b1230">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Wrapped: your year as a full-screen story. Tap the right side (or →) for the next card, the left side (or ←) to go back. */
+:root { --display: "Barlow Condensed", "Arial Narrow", sans-serif; --body: "IBM Plex Sans", system-ui, sans-serif;
+  --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px); --ink: #f4f6fc; --soft: rgba(244,246,252,.72); }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0b1230; color: var(--ink); font-family: var(--body); overflow: hidden; -webkit-font-smoothing: antialiased; }
+.story { position: fixed; inset: 0; display: grid; grid-template-rows: auto 1fr auto; touch-action: pan-y; user-select: none; -webkit-user-select: none; transition: background .5s ease; }
+.bars { display: flex; gap: 4px; padding: calc(10px + var(--safe-top)) 14px 6px; }
+.bars i { flex: 1; height: 3px; border-radius: 3px; background: rgba(255,255,255,.28); overflow: hidden; }
+.bars i b { display: block; height: 100%; width: 0; background: var(--ink); }
+.bars i.done b { width: 100%; }
+.bars i.on b { width: 100%; transition: width .35s ease; }
+.top { display: flex; justify-content: space-between; align-items: center; padding: 2px 14px 0; font-size: 13px; color: var(--soft); }
+.top a, .top button { color: var(--ink); background: rgba(255,255,255,.12); border: 0; border-radius: 999px; min-width: 40px; min-height: 40px; display: grid; place-items: center; font: 600 18px var(--body); text-decoration: none; cursor: pointer; }
+.card { position: relative; overflow: hidden; padding: 18px 26px 0; display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.card > * { animation: rise .5s ease both; }
+.card > *:nth-child(2) { animation-delay: .08s; } .card > *:nth-child(3) { animation-delay: .16s; } .card > *:nth-child(4) { animation-delay: .24s; } .card > *:nth-child(5) { animation-delay: .32s; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.eyebrow { font: 600 13px var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--soft); margin: 0; }
+.huge { font: 800 clamp(96px, 34vw, 190px)/.85 var(--display); letter-spacing: -.01em; margin: 0; }
+.big { font: 700 clamp(48px, 15vw, 84px)/.95 var(--display); margin: 0; }
+.mid { font: 600 clamp(28px, 8vw, 40px)/1.05 var(--display); margin: 0; }
+.lead { font-size: 18px; line-height: 1.45; color: var(--soft); margin: 0; max-width: 34ch; }
+.lead b { color: var(--ink); }
+.cover { width: min(58vw, 260px); aspect-ratio: 1; border-radius: 18px; overflow: hidden; background: rgba(255,255,255,.12); display: grid; place-items: center; font: 700 40px var(--display); box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+.cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.rank { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.rank li { display: grid; grid-template-columns: 26px 52px 1fr auto; gap: 12px; align-items: center; }
+.rank .n { font: 700 26px var(--display); color: var(--soft); }
+.rank .c { width: 52px; height: 52px; border-radius: 10px; overflow: hidden; background: rgba(255,255,255,.12); display: grid; place-items: center; font: 600 15px var(--display); }
+.rank .c img { width: 100%; height: 100%; object-fit: cover; }
+.rank .t { font: 600 17px/1.2 var(--body); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.rank .v { font: 700 22px var(--display); }
+.bars2 { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.bars2 li { display: grid; gap: 6px; }
+.bars2 .l { display: flex; justify-content: space-between; font-weight: 600; }
+.bars2 .t { height: 12px; border-radius: 6px; background: rgba(255,255,255,.14); overflow: hidden; }
+.bars2 .t i { display: block; height: 100%; border-radius: 6px; background: var(--ink); transform-origin: left; animation: grow .8s .2s ease both; }
+@keyframes grow { from { transform: scaleX(0); } }
+.covers { display: flex; flex-wrap: wrap; gap: 8px; }
+.covers span { width: 56px; height: 56px; border-radius: 10px; overflow: hidden; background: rgba(255,255,255,.12); display: grid; place-items: center; font: 600 14px var(--display); }
+.covers img { width: 100%; height: 100%; object-fit: cover; }
+.figs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 12px; }
+.figs b { display: block; font: 700 48px/1 var(--display); }
+.figs span { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); }
+.months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; align-items: end; height: 120px; }
+.months i { display: block; border-radius: 4px 4px 0 0; background: rgba(255,255,255,.35); transform-origin: bottom; animation: grow-y .7s ease both; }
+.months i.max { background: var(--ink); }
+@keyframes grow-y { from { transform: scaleY(0); } }
+.mlabels { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; font-size: 10.5px; color: var(--soft); text-align: center; }
+.foot { padding: 12px 22px calc(14px + var(--safe-bottom)); display: flex; gap: 10px; justify-content: center; min-height: 64px; }
+.foot .btn { background: var(--ink); color: #0b1230; border: 0; border-radius: 999px; padding: 12px 22px; font: 600 16px var(--body); cursor: pointer; min-height: 46px; }
+.foot .btn.ghost { background: rgba(255,255,255,.14); color: var(--ink); }
+.hint { font-size: 13px; color: var(--soft); align-self: center; }
+.zone { position: absolute; top: 0; bottom: 0; width: 34%; background: none; border: 0; padding: 0; cursor: pointer; z-index: 2; color: transparent; -webkit-tap-highlight-color: transparent; }
+.zone.prev { left: 0; } .zone.next { right: 0; width: 66%; }
+.zone:focus-visible { outline: 3px solid var(--ink); outline-offset: -6px; }
+.empty { text-align: center; color: var(--soft); }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (min-width: 700px) { .story { max-width: 480px; margin: 0 auto; border-radius: 24px; box-shadow: 0 30px 80px rgba(0,0,0,.4); inset: 20px 0; } }
+@media (prefers-reduced-motion: reduce) { .card > *, .bars2 .t i, .months i { animation: none !important; } .story, .bars i.on b { transition: none; } }
+</style>
+
+<main class="story" id="story">
+  <div>
+    <div class="bars" id="bars" aria-hidden="true"></div>
+    <div class="top"><span id="who"></span><a href="review.html" aria-label="Close Wrapped">✕</a></div>
+  </div>
+  <h1 class="vh">Wrapped</h1>
+  <section class="card" id="card" aria-live="polite"></section>
+  <div class="foot" id="foot"></div>
+  <button class="zone prev" id="prev" aria-label="Previous card">Previous</button>
+  <button class="zone next" id="next" aria-label="Next card">Next</button>
+</main>
+
+<script src="yearstats.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const initials = s => (s || "?").replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+const img = (url, name) => url ? `<img src="${esc(url)}" alt="" onerror="this.replaceWith(document.createTextNode('${initials(name)}'))">` : initials(name);
+const fmt = n => Math.round(n).toLocaleString();
+const dur = m => m < 60 ? `${m} min` : `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, "0")}`;
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+let DATA, FLAGS = {}, RATINGS = {}, GOALS = {}, SESS = {}, CARDS = [], at = 0, Y;
+
+// the year: ?year=2025, otherwise this year (or last year in January and February, before there's much to show)
+function pickYear() {
+  const q = new URLSearchParams(location.search).get("year"), now = new Date();
+  return /^\d{4}$/.test(q || "") ? q : String(now.getMonth() < 2 ? now.getFullYear() - 1 : now.getFullYear());
+}
+
+function build() {
+  const s = statsFor(Y), prev = statsFor(String(+Y - 1)), inProgress = Y === String(new Date().getFullYear()) && new Date().getMonth() < 11;
+  if (!s.played.length) return [{ bg: "#1b2a5a", html: `<p class="eyebrow">Wrapped ${Y}</p><p class="mid empty">No playtime or trophies recorded in ${Y} yet.</p>` }];
+  const goty = s.byHours.find(g => s.hoursOf(g) > 0) || s.byTrophies[0];
+  const weeks = Y === String(new Date().getFullYear()) ? Math.max(1, (Date.now() - new Date(+Y, 0, 1)) / (7 * 864e5)) : 52;
+  const cmp = (a, b) => !b || inProgress ? "" : `${a >= b ? "+" : ""}${Math.round(100 * (a - b) / b)}% vs ${+Y - 1}`;
+  const out = [];
+  // 1. intro
+  out.push({ bg: "linear-gradient(160deg,#2a1b6e,#0b1230 70%)", html: `<p class="eyebrow">${esc(DATA.profile?.online_id || "Your")} · Game Shelf</p><p class="huge">${Y}</p>
+    <p class="mid">${inProgress ? "Your year so far, wrapped." : "Your year on PlayStation, wrapped."}</p><p class="lead">Tap to begin.</p>` });
+  // 2. hours
+  out.push({ bg: "linear-gradient(160deg,#0f5c7a,#0b1230 75%)", html: `<p class="eyebrow">Time played</p><p class="huge">${fmt(s.hours)}</p><p class="mid">hours</p>
+    <p class="lead">Across <b>${s.played.length} games</b>, about <b>${(s.hours / weeks).toFixed(1)} h a week</b>.${cmp(s.hours, prev.hours) ? ` <b>${cmp(s.hours, prev.hours)}</b>.` : ""}</p>` });
+  // 3. game of the year
+  if (goty) out.push({ bg: "linear-gradient(160deg,#7a2e0f,#0b1230 75%)", cover: goty.image, html: `<p class="eyebrow">Your game of the year</p><div class="cover">${img(goty.image, goty.name)}</div>
+    <p class="big">${esc(goty.name)}</p><p class="lead"><b>${fmt(s.hoursOf(goty))} hours</b> and <b>${s.trophiesOf(goty)} trophies</b>. ${Math.round(100 * s.hoursOf(goty) / Math.max(1, s.hours))}% of your year went into it.</p>` });
+  // 4. top 5
+  const top = s.byHours.filter(g => s.hoursOf(g) > 0).slice(0, 5);
+  if (top.length >= 3) out.push({ bg: "linear-gradient(160deg,#1b5e3b,#0b1230 75%)", html: `<p class="eyebrow">Your top ${top.length}</p>
+    <ol class="rank">${top.map((g, i) => `<li><span class="n">${i + 1}</span><span class="c">${img(g.image, g.name)}</span><span class="t">${esc(g.name)}</span><span class="v">${fmt(s.hoursOf(g))} h</span></li>`).join("")}</ol>` });
+  // 5. trophies and platinums
+  const platGames = s.platList.map(m => DATA.games.find(g => g.name === m.game || (g.aliases || []).includes(m.game))).filter(Boolean);
+  out.push({ bg: "linear-gradient(160deg,#6a5310,#0b1230 75%)", html: `<p class="eyebrow">Trophies</p><p class="huge">${fmt(s.trophies)}</p>
+    <p class="mid">${s.plats ? `and ${s.plats} platinum${s.plats > 1 ? "s" : ""} 🏆` : "trophies earned"}</p>
+    ${platGames.length ? `<div class="covers">${platGames.slice(0, 12).map(g => `<span title="${esc(g.name)}">${img(g.image, g.name)}</span>`).join("")}</div>` : ""}
+    ${cmp(s.trophies, prev.trophies) ? `<p class="lead"><b>${cmp(s.trophies, prev.trophies)}</b>.</p>` : ""}` });
+  // 6. rarest trophy
+  if (s.rare) out.push({ bg: "linear-gradient(160deg,#5b1e66,#0b1230 75%)", html: `<p class="eyebrow">Your rarest trophy</p>${s.rare.i ? `<div class="cover" style="width:120px">${img(s.rare.i, s.rare.n)}</div>` : ""}<p class="big">${esc(s.rare.n || "A rare one")}</p>
+    <p class="lead">In <b>${esc(s.rare.game)}</b>. Only <b>${s.rare.r}%</b> of players have it.</p>` });
+  // 7. rhythm: busiest month, streak, favourite day
+  const mmax = Math.max(...s.months), best = s.months.indexOf(mmax), day = s.byDay ? DAYS[s.byDay.indexOf(Math.max(...s.byDay))] : null;
+  out.push({ bg: "linear-gradient(160deg,#173f86,#0b1230 75%)", html: `<p class="eyebrow">Your rhythm</p><p class="big">${MONTHS[best]}</p>
+    <p class="lead">was your busiest month, with <b>${mmax} trophies</b>.${s.streak > 1 ? ` Longest streak: <b>${s.streak} days in a row</b>.` : ""}${day ? ` Favourite day: <b>${day}</b>.` : ""}</p>
+    <div class="months">${s.months.map(v => `<i class="${v === mmax ? "max" : ""}" style="height:${Math.max(3, 100 * v / Math.max(1, mmax))}%"></i>`).join("")}</div>
+    <div class="mlabels">${MONTHS.map(m => `<span>${m[0]}</span>`).join("")}</div>` });
+  // 8. genres
+  const gtot = Object.values(s.genres).reduce((a, b) => a + b, 0) || 1, gtop = Object.entries(s.genres).sort((a, b) => b[1] - a[1]).slice(0, 4);
+  if (gtop.length >= 2) out.push({ bg: "linear-gradient(160deg,#0f6b62,#0b1230 75%)", html: `<p class="eyebrow">Your genres</p><p class="big">${esc(gtop[0][0])}</p>
+    <ul class="bars2">${gtop.map(([g, h]) => `<li><span class="l"><span>${esc(g)}</span><span>${Math.round(100 * h / gtot)}%</span></span><span class="t"><i style="width:${100 * h / gtop[0][1]}%"></i></span></li>`).join("")}</ul>` });
+  // 9. sessions
+  const ss = SESS[Y];
+  if (ss) {
+    const per = persona(s);
+    out.push({ bg: "linear-gradient(160deg,#3d2a8c,#0b1230 75%)", html: `<p class="eyebrow">How you play</p><p class="big">${per ? esc(per[0]) : "Your sessions"}</p>
+      <div class="figs"><div><b>${dur(ss.typical_min)}</b><span>typical session</span></div><div><b>${ss.per_active_week}</b><span>sessions a week</span></div>
+      <div><b>${ss.evening_share}%</b><span>start after 20:00</span></div>${ss.longest ? `<div><b>${dur(ss.longest.min)}</b><span>longest, ${esc(ss.longest.games?.[0] || "")}</span></div>` : ""}</div>` });
+  }
+  // 10. gamer DNA
+  const d = dna(Y);
+  if (d) { const t = topTraits(d);
+    out.push({ bg: "linear-gradient(160deg,#10204a,#0b1230 75%)", html: `<p class="eyebrow">Your gamer DNA</p><p class="big">The ${esc(t[0][1])}</p><p class="mid">&amp; ${esc(t[1][1])}</p>
+      <p class="lead">You ${t[0][2]}, and ${t[1][2]}.</p>
+      <ul class="bars2">${t.slice(0, 4).map(([k, l]) => `<li><span class="l"><span>${l}</span><span>${d[k]}</span></span><span class="t"><i style="width:${d[k]}%"></i></span></li>`).join("")}</ul>` }); }
+  // 11. finished + best rated
+  if (s.finished.length) out.push({ bg: "linear-gradient(160deg,#7a1f3d,#0b1230 75%)", html: `<p class="eyebrow">Finished</p><p class="huge">${s.finished.length}</p><p class="mid">game${s.finished.length > 1 ? "s" : ""} beaten or completed</p>
+    <div class="covers">${s.finished.slice(0, 12).map(g => `<span title="${esc(g.name)}">${img(g.image, g.name)}</span>`).join("")}</div>
+    ${s.rated ? `<p class="lead">Your favourite: <b>${esc(s.rated.g.name)}</b>, rated <b>${s.rated.r.score}</b>.</p>` : ""}` });
+  // 12. goals
+  const G = GOALS[Y];
+  if (G) {
+    const now = { platinums: s.plats, finished: s.finished.length, trophies: s.trophies, hours: Math.round(s.hours) }, L = { platinums: "platinums", finished: "finished", trophies: "trophies", hours: "hours" };
+    const ks = Object.keys(L).filter(k => G[k]), hit = ks.filter(k => now[k] >= G[k]).length;
+    out.push({ bg: "linear-gradient(160deg,#2f6b1b,#0b1230 75%)", html: `<p class="eyebrow">Your ${Y} goals</p><p class="big">${hit} of ${ks.length} ${inProgress ? "reached so far" : "reached"}</p>
+      <ul class="bars2">${ks.map(k => `<li><span class="l"><span>${L[k]}</span><span>${fmt(now[k])} / ${fmt(G[k])}${now[k] >= G[k] ? " ✓" : ""}</span></span><span class="t"><i style="width:${Math.min(100, 100 * now[k] / G[k])}%"></i></span></li>`).join("")}</ul>` });
+  }
+  // 13. outro + share
+  out.push({ bg: "linear-gradient(160deg,#2a1b6e,#0b1230 70%)", end: true, html: `<p class="eyebrow">That was ${Y}</p><p class="big">${fmt(s.hours)} hours · ${fmt(s.trophies)} trophies${s.plats ? ` · ${s.plats} 🏆` : ""}</p>
+    <p class="lead">${goty ? `Led by <b>${esc(goty.name)}</b>. ` : ""}Share it as an image, or play it again.</p>`, stats: s, goty });
+  return out;
+}
+
+function show(i) {
+  at = Math.max(0, Math.min(CARDS.length - 1, i));
+  const c = CARDS[at];
+  $("story").style.background = c.bg;
+  $("card").innerHTML = c.html;
+  $("bars").innerHTML = CARDS.map((_, k) => `<i class="${k < at ? "done" : k === at ? "on" : ""}"><b></b></i>`).join("");
+  $("foot").innerHTML = c.end ? `<button class="btn" id="share">Share image</button><button class="btn ghost" id="again">Replay</button>`
+    : `<span class="hint">${at === 0 ? "Tap the right side to go on" : `${at + 1} / ${CARDS.length}`}</span>`;
+  $("prev").hidden = at === 0; $("next").hidden = !!c.end;
+  try { history.replaceState(null, "", `${location.pathname}?year=${Y}#${at + 1}`); } catch {}
+}
+$("next").onclick = () => show(at + 1);
+$("prev").onclick = () => show(at - 1);
+addEventListener("keydown", e => { if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); show(at + 1); } if (e.key === "ArrowLeft") show(at - 1); if (e.key === "Escape") location.href = "review.html"; });
+let sx = null;
+$("story").addEventListener("touchstart", e => { sx = e.touches[0].clientX; }, { passive: true });
+$("story").addEventListener("touchend", e => { if (sx == null) return; const dx = e.changedTouches[0].clientX - sx; sx = null; if (Math.abs(dx) > 50) { e.preventDefault(); show(at + (dx < 0 ? 1 : -1)); } });
+
+/* share image: a 1080×1920 story card */
+const loadImg = url => new Promise(res => { if (!url) return res(null); const i = new Image(); i.crossOrigin = "anonymous"; i.onload = () => res(i); i.onerror = () => res(null); i.src = url; });
+async function drawWrapped() {
+  const c = CARDS.find(x => x.end), s = c.stats, goty = c.goty, W = 1080, H = 1920, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+  const x = cv.getContext("2d"), D = '"Barlow Condensed", "Arial Narrow", sans-serif', B = '"IBM Plex Sans", system-ui, sans-serif', P = 90;
+  const gr = x.createLinearGradient(0, 0, W * .6, H); gr.addColorStop(0, "#2a1b6e"); gr.addColorStop(.7, "#0b1230"); x.fillStyle = gr; x.fillRect(0, 0, W, H);
+  x.fillStyle = "rgba(244,246,252,.7)"; x.font = `600 34px ${B}`; x.letterSpacing = "8px"; x.fillText("MY PLAYSTATION WRAPPED", P, 190); x.letterSpacing = "0px";
+  x.fillStyle = "#f4f6fc"; x.font = `800 380px ${D}`; x.fillText(Y, P - 10, 540);
+  const cover = await loadImg(goty?.image);
+  if (goty) {
+    let tx = P;
+    if (cover) { x.save(); x.beginPath(); x.roundRect(P, 640, 300, 300, 28); x.clip(); x.drawImage(cover, P, 640, 300, 300); x.restore(); tx = P + 340; }
+    x.fillStyle = "rgba(244,246,252,.7)"; x.font = `600 28px ${B}`; x.letterSpacing = "5px"; x.fillText("GAME OF THE YEAR", tx, 700); x.letterSpacing = "0px";
+    x.fillStyle = "#f4f6fc"; x.font = `700 76px ${D}`; wrap(x, goty.name, W - tx - P, 3).forEach((l, i) => x.fillText(l, tx, 790 + i * 74));
+  }
+  const d = dna(Y), t = d ? topTraits(d) : null;
+  const rows = [[fmt(s.hours), "hours played"], [fmt(s.trophies), "trophies"], [String(s.plats), "platinums"], [String(s.finished.length), "games finished"]];
+  rows.forEach(([v, l], i) => { const cx = P + (i % 2) * 460, cy = 1130 + Math.floor(i / 2) * 210;
+    x.fillStyle = "#f4f6fc"; x.font = `700 140px ${D}`; x.fillText(v, cx, cy); x.fillStyle = "rgba(244,246,252,.7)"; x.font = `500 34px ${B}`; x.fillText(l, cx, cy + 52); });
+  if (t) { x.fillStyle = "rgba(244,246,252,.7)"; x.font = `600 28px ${B}`; x.letterSpacing = "5px"; x.fillText("GAMER DNA", P, 1600); x.letterSpacing = "0px";
+    x.fillStyle = "#f4f6fc"; x.font = `700 84px ${D}`; x.fillText(`The ${t[0][1]}`, P, 1690); x.font = `600 56px ${D}`; x.fillStyle = "#b9c6ff"; x.fillText(`& ${t[1][1]}`, P, 1760); }
+  x.fillStyle = "rgba(244,246,252,.6)"; x.font = `400 30px ${B}`; x.fillText(`${DATA.profile?.online_id || ""} · Game Shelf`, P, H - 70);
+  return cv;
+}
+document.addEventListener("click", async e => {
+  if (e.target.id === "again") show(0);
+  if (e.target.id === "share") {
+    e.target.disabled = true; e.target.textContent = "Preparing…";
+    try { await Promise.all(['800 380px "Barlow Condensed"', '700 140px "Barlow Condensed"', '500 34px "IBM Plex Sans"'].map(f => document.fonts.load(f))); } catch {}
+    const note = { set textContent(v) { e.target.textContent = v; } };
+    await shareCanvas(await drawWrapped(), `wrapped-${Y}.png`, `My ${Y} on PlayStation`, note);
+    e.target.disabled = false; if (e.target.textContent === "Preparing…") e.target.textContent = "Share image";
+  }
+});
+
+async function start() {
+  Y = pickYear();
+  try { DATA = await (await fetch("data.json", { cache: "no-store" })).json(); } catch { $("card").innerHTML = `<p class="mid empty">No game data yet.</p>`; return; }
+  for (const [file, set] of [["flags.json", v => FLAGS = v], ["ratings.json", v => RATINGS = v], ["goals.json", v => GOALS = v], ["sessions.json", v => SESS = v]])
+    try { const r = await fetch(file, { cache: "no-store" }); if (r.ok) set(await r.json()); } catch {}
+  $("who").textContent = `Wrapped ${Y}`;
+  CARDS = build();
+  const n = parseInt(location.hash.slice(1), 10);
+  show(n > 0 ? n - 1 : 0);
+}
+start();
+</script>
+<script src="shell.js" defer></script>
