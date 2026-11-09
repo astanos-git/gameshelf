@@ -35,15 +35,23 @@ PICKS = 3
 
 
 def get(path: str, key: str, **params) -> dict:
-    for attempt in range(3):
-        r = requests.get(f"{API}/{path}", params={"key": key, **params}, timeout=30)
-        if r.status_code == 429:
-            time.sleep(5 * (attempt + 1))
-            continue
-        r.raise_for_status()
-        time.sleep(0.3)
-        return r.json()
-    raise RuntimeError("RAWG kept asking to slow down")
+    """RAWG call that rides out short outages: waits and retries on rate limits, server errors and timeouts
+    (about 6 minutes in all) before giving up."""
+    waits = [10, 30, 60, 120, 180]
+    for attempt in range(len(waits) + 1):
+        try:
+            r = requests.get(f"{API}/{path}", params={"key": key, **params}, timeout=30)
+            if r.status_code == 429 or r.status_code >= 500:
+                raise requests.HTTPError(f"RAWG answered {r.status_code}")
+            r.raise_for_status()
+            time.sleep(0.3)
+            return r.json()
+        except (requests.HTTPError, requests.ConnectionError, requests.Timeout) as e:
+            if attempt == len(waits) or (isinstance(e, requests.HTTPError) and e.response is not None and 400 <= e.response.status_code < 500 and e.response.status_code != 429):
+                raise
+            print(f"  RAWG not answering ({e}); trying again in {waits[attempt]} s")
+            time.sleep(waits[attempt])
+    raise RuntimeError("unreachable")
 
 
 def load(p: Path, default):
@@ -210,8 +218,8 @@ def main() -> None:
     now = datetime.now(timezone.utc)
     week = f"{now.isocalendar().year}-W{now.isocalendar().week:02d}"
 
+    save_snapshot(games, now)     # first, so "Last week" works even if RAWG is down
     profile = build_profile(games, flags, ratings, key, feedback)
-    save_snapshot(games, now)
     owned_slugs = {g["rawg_slug"] for g in games if g.get("rawg_slug")}
     same = lambda n: norm(re.sub(r"\(\d{4}\)", "", n))   # "God of War (2018)" is the same game as "God of War"
     owned_names = {same(n) for g in games for n in [g["name"], *g.get("aliases", [])]}

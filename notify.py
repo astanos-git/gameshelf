@@ -67,7 +67,11 @@ def build(today: date | None = None) -> tuple[str, str, list[str]]:
     if plats:
         lines.append("🏆 Platinum: " + ", ".join(plats)); tags.append("trophy")
 
-    picks = recs.get("picks") or []
+    # only this week's picks: if the pick step failed, last week's list must not come back as "new"
+    this_week = f"{today.isocalendar().year}-W{today.isocalendar().week:02d}"
+    picks = recs.get("picks") or [] if recs.get("week") == this_week else []
+    if not picks and recs.get("week") != this_week:
+        lines.append("New picks: not ready yet (RAWG was down), they'll come with the next run")
     if picks:
         lines.append("New picks: " + ", ".join(f"{p['name']}" + (f" ({p['metacritic']})" if p.get("metacritic") else "") for p in picks))
 

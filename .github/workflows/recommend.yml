@@ -79,6 +79,7 @@ jobs:
         run: python fetch.py
       - name: Pick this week's games and take the weekly snapshot
         if: env.MODE == 'full'
+        continue-on-error: true     # a RAWG outage shouldn't cost the rest of the Monday run (a back-up run retries the picks)
         env:
           RAWG_API_KEY: ${{ secrets.RAWG_API_KEY }}
         run: python recommend.py
