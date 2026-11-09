@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T20:45:40+00:00",
+ "generated_at": "2026-11-09T21:42:28+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,10 +10,10 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 331,
-  "level_progress": 38,
+  "level_progress": 43,
   "earned": {
-   "bronze": 2771,
-   "silver": 652,
+   "bronze": 2772,
+   "silver": 653,
    "gold": 224,
    "platinum": 23
   }
@@ -31,10 +31,10 @@
    "hours": 1.4,
    "first_played": "2026-10-30T21:25:39.180000+00:00",
    "last_played": "2026-11-09T20:13:33.850000+00:00",
-   "progress": 33,
+   "progress": 36,
    "earned": {
-    "bronze": 22,
-    "silver": 2,
+    "bronze": 23,
+    "silver": 3,
     "gold": 1,
     "platinum": 0
    },
@@ -44,12 +44,12 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-11-09T20:44:20+00:00",
+   "last_trophy": "2026-11-09T21:28:35+00:00",
    "has_trophies": true,
    "months": {
     "2026-11": [
-     19,
-     2,
+     20,
+     3,
      1,
      0
     ],
@@ -66,7 +66,7 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 33,
+     "progress": 36,
      "groups": {
       "001": "The Foundation",
       "002": "Altered World Events",
@@ -75,6 +75,20 @@
     }
    ],
    "rare": [
+    {
+     "n": "Living Archetypes",
+     "t": "bronze",
+     "r": 15.3,
+     "at": "2026-11-09T21:27:28+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/2b8f6d27-6962-4334-8863-b9df0cc78000.png"
+    },
+    {
+     "n": "Astral Phenomena",
+     "t": "silver",
+     "r": 19.5,
+     "at": "2026-11-09T21:02:42+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/11eb6fb6-a30a-4ca2-9a98-fcdf65f5926e.png"
+    },
     {
      "n": "The Importance of Synergy",
      "t": "bronze",
@@ -95,30 +109,16 @@
      "r": 24.3,
      "at": "2026-11-09T20:41:13+00:00",
      "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/1c57afe6-c1a8-4cfe-b4a0-c31d431d74db.png"
-    },
-    {
-     "n": "Psychic Occupation",
-     "t": "bronze",
-     "r": 24.3,
-     "at": "2026-11-06T11:53:06+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/a99c1d85-f3d7-4188-b713-c7da5a189208.png"
-    },
-    {
-     "n": "Bureau Archivist",
-     "t": "gold",
-     "r": 25.6,
-     "at": "2026-11-06T15:58:57+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/e7da2384-ff09-4ba0-af18-07771375c702.png"
     }
    ],
    "aliases": [
     "Control Ultimate Edition"
    ],
-   "trophies_earned": 25,
+   "trophies_earned": 27,
    "trophies_total": 68,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-11-09T20:44:20+00:00",
+   "last_activity": "2026-11-09T21:28:35+00:00",
    "hours_by_year": {
     "2026": 1.4
    },
@@ -218,7 +218,7 @@
      "total": 11
     }
    ],
-   "missing_n": 43,
+   "missing_n": 41,
    "easy": [
     {
      "n": "The Face of the Enemy",
@@ -13478,12 +13478,12 @@
    "rawg_slug": "need-for-speed-hot-pursuit-remastered",
    "metacritic_source": "rawg",
    "series": [
-    "Need for Speed Hot Pursuit",
-    "Need for Speed"
+    "Need for Speed",
+    "Need for Speed Hot Pursuit"
    ],
    "developers": [
-    "Stellar Entertainment",
-    "Criterion Games"
+    "Criterion Games",
+    "Stellar Entertainment"
    ],
    "publishers": [
     "Electronic Arts"
@@ -57344,7 +57344,7 @@
    "2026-11-05": 5,
    "2026-11-06": 5,
    "2026-11-07": 3,
-   "2026-11-09": 3
+   "2026-11-09": 5
   },
   "weekday_hour": {
    "2011": [
@@ -57540,7 +57540,7 @@
     20,
     41,
     84,
-    95,
+    97,
     23,
     14,
     5,
@@ -60090,7 +60090,7 @@
     0,
     0,
     5,
-    15,
+    17,
     1,
     0,
     0,
@@ -60561,7 +60561,7 @@
     "buckets": [
      66,
      484,
-     2128,
+     2130,
      992
     ],
     "score": 25
@@ -60696,7 +60696,7 @@
     "buckets": [
      9,
      48,
-     179,
+     181,
      60
     ],
     "score": 28
