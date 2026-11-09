@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import time
 from datetime import date, datetime, timedelta, timezone
@@ -94,6 +95,58 @@ def build(today: date | None = None) -> tuple[str, str, list[str]]:
     if found:
         lines.append("🔎 News on your wishlist: " + ", ".join(found))
 
+    # PS Plus watch: games you only have through PS Plus that leave the catalogue soon, wishlist games that joined it
+    plus = load("psplus.json", {}).get("games", [])
+    prices = load("prices.json", {})
+    key = lambda t: re.sub(r"[^a-z0-9]+", " ", re.sub(r"[™®©]", "", (t or "").lower().replace("&", "and"))).strip()
+    in_plus = {key(g["name"]): g for g in plus if not g.get("from")}
+    soon_iso, week_ago = (today + timedelta(days=30)).isoformat(), (today - timedelta(days=6)).isoformat()
+    leaving = []
+    for g in games:
+        if not g.get("via_plus") or g.get("status") == "completed" or (g.get("progress") or 0) >= 100:
+            continue
+        hit = next((in_plus[k] for k in map(key, [g["name"], *g.get("aliases", [])]) if k in in_plus), None)
+        if hit and hit.get("until") and today.isoformat() <= hit["until"] <= soon_iso and hit["tier"] != "Essential":
+            leaving.append((hit["until"], g["name"]))
+    if leaving:
+        lines.append("⏳ Leaving PS Plus: " + ", ".join(f"{n} ({datetime.fromisoformat(d).strftime('%-d %b')})" for d, n in sorted(leaving)[:4])); tags.append("hourglass")
+    pp = load("psplus.json", {})
+    def new_in_plus(slug, w):
+        p = prices.get(slug, {})
+        if p.get("plus") and p.get("plus_since", "") >= week_ago and p.get("plus_since") != p.get("first_checked"):
+            return True
+        h = in_plus.get(key(w["name"]))
+        return bool(h) and h.get("first_seen", "") >= week_ago and h.get("first_seen") != pp.get("started")
+    joined = [w["name"] for slug, w in wishlist.items() if new_in_plus(slug, w)]
+    if joined:
+        lines.append("🎮 In PS Plus now, no need to buy: " + ", ".join(joined[:4]))
+
+    # wishlist price alerts (Swiss PS Store, checked each Monday)
+    hits = []
+    for s, w in wishlist.items():
+        p = prices.get(s) or {}
+        if w.get("alert") is not None and p.get("price") is not None and p["price"] <= w["alert"]:
+            extra = " ".join(x for x in [p.get("discount"), f"until {datetime.fromisoformat(p['until']).strftime('%-d %b')}" if p.get("until") else ""] if x)
+            hits.append(f"{w['name']} CHF {p['price']:.2f}" + (f" ({extra})" if extra else ""))
+    if hits:
+        lines.append("💸 Price alert: " + ", ".join(hits)); tags.append("moneybag")
+
+    # backlog tidy-up, every 3 months
+    tidy = load("tidy.json", {})
+    last = (tidy.get("reviews") or [{}])[-1].get("at")
+    if not last or last <= (today - timedelta(days=90)).isoformat():
+        kept, old = tidy.get("kept", {}), (today - timedelta(days=730)).isoformat()
+        flags = load("flags.json", {})
+        n = sum(1 for g in games if g.get("status") == "unplayed" and g.get("owned") and (g.get("acquired") or "9") < old
+                and g["name"] not in kept and g["name"] not in flags)
+        if n >= 5:
+            lines.append(f"🧹 Backlog tidy-up is due: {n} long-untouched games to review (Play next)")
+
+    # Wrapped: the Monday of 14-20 December
+    if today.month == 12 and 14 <= today.day <= 20:
+        lines.append(f"🎁 Your {today.year} Wrapped is ready")
+        tags.append("gift")
+
     # a memory from this week in past years (memories.json, built by extras.py)
     mem, best = load("memories.json", {}), None
     order = {"platinum": 0, "complete": 1, "rare": 2, "started": 3}
@@ -133,6 +186,8 @@ def main() -> None:
     body = {"topic": topic, "title": ("[Test] " if test else "") + title, "message": message, "tags": tags}
     if click:
         body["click"] = click
+        if "Wrapped is ready" in message:
+            body["actions"] = [{"action": "view", "label": "Open Wrapped", "url": click.replace("play.html", "wrapped.html")}]
     for attempt in range(3):
         r = requests.post(SERVER, json=body, timeout=30)
         if r.status_code != 429:

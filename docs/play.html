@@ -84,6 +84,22 @@ a.act.primary { background: var(--accent); color: var(--on-accent); border-color
 .tn-dot img, .tn-dot .cover { width: 100%; height: 100%; object-fit: cover; display: block; }
 .tn-dot.out { opacity: .25; filter: grayscale(1); }
 .tn-dot.on { border-color: var(--gold); }
+.price { font-weight: 600; color: var(--fg); }
+.sale { font-weight: 700; color: var(--up); }
+.plusb { font-size: 11px; font-weight: 700; letter-spacing: .04em; padding: 1px 6px; border-radius: 5px; background: #ffd34d; color: #1b1300; }
+.bell { color: var(--up); font-weight: 700; }
+.pricebox { display: grid; gap: 8px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+.pricebox .big { font: 600 22px var(--display); }
+.alertf { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 14px; }
+.alertf input { width: 96px; font: 600 16px var(--body); padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); }
+.plus-list { display: grid; gap: 4px; }
+.tidy-card { display: grid; grid-template-columns: 88px 1fr; gap: 12px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; }
+.tidy-card .cover { width: 88px; height: 88px; border-radius: 10px; }
+.tidy-card ul { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 3px; font-size: 14px; color: var(--muted); }
+.tidy-acts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tidy-acts .btn { justify-content: center; min-height: 46px; font-size: 16px; }
+.tidy-acts .drop { background: var(--bad-bg); color: var(--bad); border-color: transparent; font-weight: 600; }
+.tidy-meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
 .tn-dot.wait { background: none; border: 2px dashed var(--line); }
 .tn-dot.new { animation: tn-in .35s ease-out; }
 @keyframes tn-in { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
@@ -160,6 +176,17 @@ tr.tap.open td { background: var(--accent-soft); }
       </div>
     </section>
 
+    <section class="block" id="plusSec" hidden>
+      <div class="sec-head"><h2 class="sec">PS Plus</h2><span class="note" id="plusNote"></span></div>
+      <div id="plusBody"></div>
+      <details class="how"><summary>How this works</summary><p>Games you only have through PS Plus (claimed, not bought) stay playable while they're in the catalogue and you're subscribed. Each Monday the catalogue list (from Push Square) is checked: games leaving within 45 days show here, in your push and in your calendar. Wishlist games included with PS Plus show here too, so you don't buy them.</p></details>
+    </section>
+
+    <section class="block" id="tidySec" hidden>
+      <div class="sec-head"><h2 class="sec">Backlog tidy-up</h2><span class="note" id="tidyNote"></span></div>
+      <div id="tidyBody"></div>
+    </section>
+
     <section class="block" id="tourney">
       <div class="sec-head"><h2 class="sec">Backlog tournament</h2><span class="note" id="tnStats"></span></div>
       <div id="tnBody"></div>
@@ -174,7 +201,7 @@ tr.tap.open td { background: var(--accent-soft); }
     </section>
     <section class="block">
       <div class="sec-head"><h2 class="sec">Wishlist <span class="count" id="wishCount"></span></h2>
-        <select id="wishSort" aria-label="Sort wishlist" class="mini"><option value="added">Recently added</option><option value="release">Release date</option><option value="mc">Metacritic</option><option value="short">Shortest first</option><option value="name">Name</option></select></div>
+        <select id="wishSort" aria-label="Sort wishlist" class="mini"><option value="added">Recently added</option><option value="release">Release date</option><option value="mc">Metacritic</option><option value="short">Shortest first</option><option value="price">Cheapest first</option><option value="name">Name</option></select></div>
       <div class="wsearch"><input type="search" id="wishQ" placeholder="🔍 Find a game to add…" autocomplete="off" enterkeyhint="search" aria-label="Search games to add to your wishlist">
         <ol class="list compact" id="wishHits" hidden></ol></div>
       <div class="chips" id="wishChips" role="group" aria-label="Show"></div>
@@ -542,13 +569,14 @@ function wishlist() {
   $("wishChips").innerHTML = Object.entries(F).map(([k, [l, n]]) => `<button class="chip" data-wf="${k}" aria-pressed="${state.wishF === k}">${l}<small>${n}</small></button>`).join("");
   const items = all.filter(([s, w]) => state.wishF === "all" || (state.wishF === "soon") === notOut(s, w));
   const S = { added: (a, b) => (b[1].added || "").localeCompare(a[1].added || ""), release: (a, b) => (relOf(...a) || "9999").localeCompare(relOf(...b) || "9999"),
+    price: (a, b) => (priceOf(...a).inPlus ? -1 : PRICES[a[0]]?.price ?? 9999) - (priceOf(...b).inPlus ? -1 : PRICES[b[0]]?.price ?? 9999),
     mc: (a, b) => (b[1].metacritic ?? -1) - (a[1].metacritic ?? -1), short: (a, b) => (a[1].length ?? 999) - (b[1].length ?? 999), name: (a, b) => a[1].name.localeCompare(b[1].name) };
   items.sort(S[state.wishSort] || S.added);
   $("wishSort").value = state.wishSort || "added"; $("wishSort").hidden = all.length < 2;
   $("wishCount").textContent = all.length || "";
   const shown = wishAll ? items : items.slice(0, 6);
   $("wishList").innerHTML = shown.length ? shown.map(([s, w]) => {
-    const meta = w.pending ? `<span>No info yet · checked every Monday</span>` : [outLabel(s, w) ? `<span class="out">${outLabel(s, w)}</span>` : (relOf(s, w) ? `<span>${relOf(s, w).slice(0, 4)}</span>` : ""), w.length ? `<span>~${w.length} h</span>` : "", w.genres?.length ? `<span>${esc(w.genres.slice(0, 2).join(", "))}</span>` : ""].join("");
+    const meta = priceTag(s, w) + (w.pending ? `<span>No info yet · checked every Monday</span>` : [outLabel(s, w) ? `<span class="out">${outLabel(s, w)}</span>` : (relOf(s, w) ? `<span>${relOf(s, w).slice(0, 4)}</span>` : ""), w.length ? `<span>~${w.length} h</span>` : "", w.genres?.length ? `<span>${esc(w.genres.slice(0, 2).join(", "))}</span>` : ""].join(""));
     return `<li class="item tap" data-d="${esc(s)}"><span class="cover">${pic(w.image, w.name)}</span>
       <span class="main"><span class="name">${esc(w.name)}</span><span class="meta">${meta}</span></span>
       ${w.metacritic == null && notOut(s, w) ? "<span></span>" : `<span class="mc ${mcClass(w.metacritic)}">${w.metacritic ?? "–"}</span>`}${dropBtn(s, w.name)}</li>`; }).join("")
@@ -595,8 +623,9 @@ function discoverPanel(slug) {
     ["Length", x.length ? `~${x.length} h (HowLongToBeat)` : "—"],
     ["Metacritic", (d.metacritic ?? x.metacritic) ?? "—"],
   ];
-  if (x.pending) return `<div class="detail"><p class="note">Added by name only: no details found yet. It's looked up again every Monday, and fills in here (and in your Monday push) once something turns up.</p></div>`;
-  return `<div class="detail">${d.description ? `<p class="desc">${esc(d.description)}</p>` : `<p class="note">${UPC.generated_at ? "No description on RAWG." : "Descriptions appear after the next Monday update."}</p>`}
+  const pb = WISH[slug] ? priceBox(slug, WISH[slug]) : "";
+  if (x.pending) return `<div class="detail">${pb}<p class="note">Added by name only: no details found yet. It's looked up again every Monday, and fills in here (and in your Monday push) once something turns up.</p></div>`;
+  return `<div class="detail">${pb}${d.description ? `<p class="desc">${esc(d.description)}</p>` : `<p class="note">${UPC.generated_at ? "No description on RAWG." : "Descriptions appear after the next Monday update."}</p>`}
     <dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>
     <span class="links"><a href="${esc(x.url || `https://rawg.io/games/${slug}`)}" target="_blank" rel="noopener">Game page on RAWG</a>${d.website ? ` · <a href="${esc(d.website)}" target="_blank" rel="noopener">Official site</a>` : ""}</span></div>`;
 }
@@ -619,10 +648,154 @@ function platDifficulty() {
   reopen();
 }
 
+/* ---------- Prices and PS Plus (store.py, weekly) ---------- */
+let PRICES = {}, PLUS = { games: [] }, TIDY = { kept: {}, reviews: [] };
+const pKey = t => String(t || "").toLowerCase().replace(/&/g, "and").replace(/[™®©]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+let plusIdx = null;
+const plusOf = names => { plusIdx ||= new Map(PLUS.games.filter(g => !g.from).map(g => [pKey(g.name), g])); for (const n of names) { const h = plusIdx.get(pKey(n)); if (h) return h; } return null; };
+const chf = v => `CHF ${(+v).toFixed(2)}`;
+const fmtShort = d => new Date(d).toLocaleDateString(undefined, { day: "numeric", month: "short" });
+function priceOf(slug, w) {
+  const p = PRICES[slug] || {};
+  const inPlus = p.plus || (plusOf([w.name])?.tier && plusOf([w.name]).tier !== "Essential");
+  return { ...p, inPlus, hit: w.alert != null && p.price != null && p.price <= w.alert };
+}
+function priceTag(slug, w) {
+  const p = priceOf(slug, w), bits = [];
+  if (p.inPlus) bits.push(`<span class="plusb" title="Included with PS Plus">PS Plus</span>`);
+  if (p.price != null) bits.push(p.base ? `<span class="sale">${chf(p.price)} ${esc(p.discount || "")}</span>` : `<span class="price">${p.price === 0 ? "Free" : chf(p.price)}</span>`);
+  if (p.hit) bits.push(`<span class="bell" title="At or below your price alert">🔔</span>`);
+  return bits.join("");
+}
+function priceBox(slug, w) {
+  const p = priceOf(slug, w);
+  const head = p.price != null ? `<span class="big">${p.price === 0 ? "Free" : chf(p.price)}</span>${p.base ? ` <s class="note">${chf(p.base)}</s> <span class="sale">${esc(p.discount || "")}</span>` : ""}`
+    : `<span class="note">${PRICES.__none ? "" : "Not found in the Swiss PS Store yet (checked every Monday)."}</span>`;
+  const facts = [p.until ? `Sale ends ${fmtShort(p.until)}` : "", p.low != null && p.low < (p.price ?? Infinity) ? `Lowest seen ${chf(p.low)} (${fmtShort(p.low_at)})` : "",
+    p.inPlus ? "Included with your PS Plus: no need to buy" : ""].filter(Boolean);
+  const form = repoUrl() ? `<form class="alertf" data-alert="${esc(slug)}"><label>Alert me at <b>CHF</b> <input type="number" min="0" step="0.05" inputmode="decimal" name="v" value="${w.alert ?? ""}" placeholder="${p.price != null ? Math.floor(p.price * 0.6) : ""}" aria-label="Price alert in CHF"></label>
+      <button class="btn">${w.alert != null ? "Update" : "Set alert"}</button>${w.alert != null ? `<button class="btn" type="button" data-alert-off="${esc(slug)}">Remove</button>` : ""}</form>` : "";
+  return `<div class="pricebox"><div>${head}</div>${facts.length ? `<div class="note">${facts.join(" · ")}</div>` : ""}${form}
+    <p class="note">PS Store Switzerland, checked each Monday.${w.alert != null ? ` Alert set at ${chf(w.alert)}${p.hit ? ": reached 🔔" : ""}.` : " With an alert, your Monday push tells you when it's at or below your price."}</p></div>`;
+}
+function sendChange(title, lines) {
+  const url = issueUrl(title, lines); if (!url) return;
+  const a = document.createElement("a"); a.href = url; a.target = "_blank"; document.body.appendChild(a); a.click(); a.remove();
+}
+document.addEventListener("submit", e => {
+  const f = e.target.closest("[data-alert]"); if (!f) return;
+  e.preventDefault();
+  const slug = f.dataset.alert, w = WISH[slug], v = parseFloat(String(f.v.value).replace(",", "."));
+  if (!w || !(v >= 0)) { f.v.focus(); return; }
+  sendChange(`Wishlist: price alert ${w.name}`, ["wish: alert", `slug: ${slug}`, `price: ${v.toFixed(2)}`]);
+  f.insertAdjacentHTML("afterend", `<p class="note">✓ Added to your pending changes: alert at ${chf(v)}.</p>`);
+});
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-alert-off]"); if (!b) return;
+  const w = WISH[b.dataset.alertOff];
+  sendChange(`Wishlist: price alert ${w.name}`, ["wish: alert", `slug: ${b.dataset.alertOff}`, "price: none"]);
+  b.replaceWith(Object.assign(document.createElement("span"), { className: "note", textContent: "✓ Removal added to your pending changes" }));
+});
+
+GP.plusLeaves = x => { const h = plusOf([x.name, ...(x.aliases || [])]); return h?.until && h.tier !== "Essential" ? h.until : null; };
+function plusCard() {
+  const today = new Date().toISOString().slice(0, 10), in45 = new Date(Date.now() + 45 * 864e5).toISOString().slice(0, 10);
+  const leaving = DATA.games.filter(g => g.via_plus && g.eff !== "dropped" && g.eff !== "beaten" && g.base_status !== "completed")
+    .map(g => ({ g, h: plusOf([g.name, ...(g.aliases || [])]) })).filter(o => o.h?.until && o.h.tier !== "Essential" && o.h.until >= today && o.h.until <= in45)
+    .sort((a, b) => a.h.until.localeCompare(b.h.until));
+  const owned = new Set(DATA.games.map(g => g.rawg_slug));
+  const wishPlus = Object.entries(WISH).filter(([s, w]) => !owned.has(s) && priceOf(s, w).inPlus);
+  const viaPlus = DATA.games.filter(g => g.via_plus && g.eff === "unplayed").length;
+  $("plusSec").hidden = !leaving.length && !wishPlus.length;
+  $("plusNote").textContent = viaPlus ? `${viaPlus} backlog games from PS Plus` : "";
+  const row = (g, side) => `<li class="item tap" data-g="${esc(g.name)}"><span class="cover">${pic(g.image, g.name)}</span><span class="main"><span class="name">${esc(g.name)}</span><span class="meta">${side}</span></span><span></span></li>`;
+  $("plusBody").innerHTML = (leaving.length ? `<p class="note"><b>Leaving the catalogue:</b> play or buy them before they go.</p><ol class="list compact">${leaving.map(({ g, h }) =>
+      row(g, `<span class="out">Leaves ${fmtShort(h.until)}</span>${g.eff === "started" ? `<span>In progress · ${g.progress ?? 0}%</span>` : beatTime(g) ? `<span>~${fmtH(beatTime(g))} to beat</span>` : ""}`)).join("")}</ol>` : "")
+    + (wishPlus.length ? `<p class="note"><b>On your wishlist and included with PS Plus:</b> no need to buy.</p><ol class="list compact">${wishPlus.map(([s, w]) =>
+      `<li class="item tap" data-d="${esc(s)}"><span class="cover">${pic(w.image, w.name)}</span><span class="main"><span class="name">${esc(w.name)}</span><span class="meta"><span class="plusb">PS Plus</span>${PRICES[s]?.price ? `<span>instead of ${chf(PRICES[s].price)}</span>` : ""}</span></span><span></span></li>`).join("")}</ol>` : "");
+  reopen();
+}
+
+/* ---------- Backlog tidy-up: every 3 months, games you'll probably never play; Keep or Drop ---------- */
+const TIDY_LIVE = "shelf-tidy-live", TIDY_EVERY = 90, TIDY_MAX = 15;
+let tidyRun = null;    // { names: [...], i, drop: [], keep: [] }
+function tidyCandidates() {
+  const yearAgo = new Date(Date.now() - 365 * 864e5).toISOString().slice(0, 10);
+  const played = DATA.games.filter(g => g.hours > 0);
+  // your genres: hours played per genre
+  const gh = {}; played.forEach(g => (g.genres || []).forEach(x => gh[x] = (gh[x] || 0) + g.hours));
+  const top = new Set(Object.entries(gh).sort((a, b) => b[1] - a[1]).slice(0, 6).map(e => e[0]));
+  const champs = new Set(champions().map(c => c.game)), queued = new Set(QUEUE);
+  const now = Date.now();
+  return DATA.games.filter(g => g.eff === "unplayed" && g.owned && !queued.has(g.name) && !champs.has(g.name) && !FLAGS[g.name]
+      && !((TIDY.kept || {})[g.name] >= yearAgo))
+    .map(g => {
+      const why = []; let score = 0;
+      const yrs = g.acquired ? (now - new Date(g.acquired)) / (365.25 * 864e5) : 0;
+      if (yrs >= 2) { why.push(`In your library for ${Math.floor(yrs)} years, never started`); score += Math.min(yrs, 8) * 1.5; }
+      if (g.via_plus) { why.push("From PS Plus: nothing lost if you let it go"); score += 2; }
+      if (g.metacritic != null && g.metacritic < 72) { why.push(`Metacritic ${g.metacritic}`); score += (72 - g.metacritic) / 3; }
+      const gs = (g.genres || []).filter(x => x !== "Action" && x !== "Adventure");
+      if (gs.length && !gs.some(x => top.has(x))) { why.push(`Not your usual genres (${gs.slice(0, 2).join(", ")})`); score += 4; }
+      if (g.series) {
+        const later = DATA.games.find(o => o !== g && o.series === g.series && o.hours > 0 && (o.released || "") > (g.released || "9999"));
+        if (later) { why.push(`You've moved on in this series (played ${later.name})`); score += 3; }
+      }
+      if ((beatTime(g) || 0) >= 60) { why.push(`Long: ~${fmtH(beatTime(g))} to beat`); score += 1.5; }
+      return { g, why, score };
+    }).filter(c => c.score >= 5 && c.why.length >= 2).sort((a, b) => b.score - a.score);
+}
+function tidy() {
+  const last = (TIDY.reviews || []).slice(-1)[0]?.at, due = !last || (Date.now() - new Date(last)) / 864e5 >= TIDY_EVERY;
+  const cands = tidyCandidates();
+  $("tidySec").hidden = !cands.length && !tidyRun;
+  if (!tidyRun) {
+    const next = last ? Math.max(0, Math.ceil(TIDY_EVERY - (Date.now() - new Date(last)) / 864e5)) : 0;
+    $("tidyNote").textContent = due ? "Due now" : `Next in ${next} days`;
+    $("tidyBody").innerHTML = due
+      ? `<p class="note">${cands.length} games in your backlog look like you'll never play them: owned for years, not your genres, low scores, or a series you've moved on from. Go through up to ${Math.min(TIDY_MAX, cands.length)} of them and keep or drop each one. Dropped games leave the backlog, the picks and the tournament (you can undo it in the Library).</p>
+         <div class="row"><button class="go" id="tidyStart">Start the tidy-up</button></div>`
+      : `<p class="note">Last tidy-up ${fmtShort(last)}. The next one is suggested in ${next} days.</p><div class="row"><button class="chip" id="tidyStart">Start one anyway</button></div>`;
+    return;
+  }
+  const r = tidyRun, total = r.names.length;
+  if (r.i >= total) return tidyFinish();
+  const c = cands.find(x => x.g.name === r.names[r.i]) || { g: byName(r.names[r.i]), why: [] };
+  if (!c.g) { r.i++; return tidy(); }
+  $("tidyNote").textContent = `${r.i + 1} of ${total}`;
+  $("tidyBody").innerHTML = `<div class="tidy-card"><span class="cover">${pic(c.g.image, c.g.name)}</span><div><b>${esc(c.g.name)}</b>
+      <div class="meta">${c.g.metacritic != null ? `<span>MC ${c.g.metacritic}</span>` : ""}${beatTime(c.g) ? `<span>~${fmtH(beatTime(c.g))}</span>` : ""}<span>${esc((c.g.genres || []).slice(0, 2).join(", "))}</span></div>
+      <ul>${c.why.map(w => `<li>${esc(w)}</li>`).join("")}</ul></div></div>
+    <div class="tidy-acts"><button class="btn" data-tidy="keep">Keep</button><button class="btn drop" data-tidy="drop">Drop</button></div>
+    <div class="tidy-meta"><span>${r.drop.length} dropped · ${r.keep.length} kept</span><span><button class="more" data-tidy="back" ${r.i ? "" : "hidden"}>Back</button> <button class="more" data-tidy="finish">Finish now</button></span></div>`;
+}
+function tidyFinish() {
+  const r = tidyRun; tidyRun = null; lsSet(TIDY_LIVE, null);
+  if (r.drop.length || r.keep.length)
+    sendChange(`Tidy: ${r.drop.length} dropped, ${r.keep.length} kept`, ["tidy: done", ...r.drop.map(n => `drop: ${n}`), ...r.keep.map(n => `keep: ${n}`)]);
+  tidy();
+  $("tidyBody").insertAdjacentHTML("afterbegin", `<p class="note">✓ Tidy-up added to your pending changes: <b>${r.drop.length}</b> dropped, <b>${r.keep.length}</b> kept. Tap <b>Send all</b> to save it.</p>`);
+}
+document.addEventListener("click", e => {
+  if (e.target.id === "tidyStart") {
+    tidyRun = { names: tidyCandidates().slice(0, TIDY_MAX).map(c => c.g.name), i: 0, drop: [], keep: [] };
+    lsSet(TIDY_LIVE, tidyRun); tidy(); $("tidySec").scrollIntoView({ block: "start" }); return;
+  }
+  const b = e.target.closest("[data-tidy]"); if (!b || !tidyRun) return;
+  const r = tidyRun, act = b.dataset.tidy, name = r.names[r.i];
+  if (act === "keep" || act === "drop") { r.drop = r.drop.filter(n => n !== name); r.keep = r.keep.filter(n => n !== name); r[act].push(name); r.i++; }
+  if (act === "back") r.i = Math.max(0, r.i - 1);
+  if (act === "finish") return tidyFinish();
+  lsSet(TIDY_LIVE, r); tidy();
+});
+
+
 async function extrasStart() {
   [QUEUE, WISH, FEEDBACK, SNAPS, GOALS, FLAGS, GP.ratings] = await Promise.all([getJSON("queue.json", []), getJSON("wishlist.json", {}), getJSON("pick_feedback.json", {}),
     getJSON("snapshots.json", []), getJSON("goals.json", {}), getJSON("flags.json", {}), getJSON("ratings.json", {})]);
   UPC = await getJSON("upcoming.json", {});
+  [PRICES, PLUS, TIDY] = await Promise.all([getJSON("prices.json", {}), getJSON("psplus.json", { games: [] }), getJSON("tidy.json", { kept: {}, reviews: [] })]);
+  tidyRun = lsGet(TIDY_LIVE, null);
   MEM = await getJSON("memories.json", {}); onThisDay();
   TOURN = await getJSON("tournament.json", { champions: [] });
   lsSet("shelf-duels", null);                              // the old duel format
@@ -631,7 +804,7 @@ async function extrasStart() {
   $("calLink").hidden = !location.hostname.endsWith("github.io");
   GP.difficulty = (await getJSON("difficulty.json", {})).games || {};
   GP.queue = QUEUE; GP.snaps = SNAPS;
-  upNext(); wishlist(); comingSoon(); platDifficulty();
+  upNext(); wishlist(); comingSoon(); platDifficulty(); plusCard(); tidy();
 }
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-q]"); if (!b) return;

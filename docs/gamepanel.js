@@ -110,7 +110,7 @@ const GP = (() => {
     const facts = [
       ["Genres", (x.genres || []).join(", ") || "—"],
       ["Released", fmtDate(x.released)],
-      ["Owned", x.owned ? (x.acquired ? "Since " + fmtDate(x.acquired) : "Yes") : "Not in digital library"],
+      ["Owned", x.owned ? (x.via_plus ? "Through PS Plus" + (api.plusLeaves?.(x) ? ` · leaves ${fmtDate(api.plusLeaves(x))}` : "") : x.acquired ? "Since " + fmtDate(x.acquired) : "Yes") : "Not in digital library"],
       ["First played", fmtDate(x.first_played)],
       ["Last played", fmtDate(x.last_played)],
       ["Last trophy", fmtDate(x.last_trophy)],

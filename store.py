@@ -100,7 +100,7 @@ def psplus(today: date) -> dict | None:
             continue                                     # "available now" beats "coming soon"
         g["first_seen"] = (old.get(g["name"]) or {}).get("first_seen") or today.isoformat()
         games[g["name"]] = g
-    out = {"checked": today.isoformat(), "games": sorted(games.values(), key=lambda g: g["name"].lower())}
+    out = {"checked": today.isoformat(), "started": load("psplus.json", {}).get("started") or today.isoformat(), "games": sorted(games.values(), key=lambda g: g["name"].lower())}
     leaving = sum(1 for g in out["games"] if g["until"])
     print(f"::notice::PS Plus: {len(out['games'])} games in the catalogue lists, {leaving} with a leaving date")
     return out
@@ -217,7 +217,10 @@ def prices(today: date) -> dict:
             low, low_at = p["price"], today.isoformat()
         else:
             low_at = prev.get("low_at")
+        plus_since = (prev.get("plus_since") or today.isoformat()) if p.get("plus") else None
+        first = prev.get("first_checked") or today.isoformat()     # so games already in PS Plus on day one aren't "new"
         out[slug] = {**{k: v for k, v in p.items() if v not in (None, False)}, "concept": c["concept"], "checked": today.isoformat(),
+                     **({"plus_since": plus_since} if plus_since else {}), "first_checked": first,
                      **({"low": low, "low_at": low_at} if low is not None else {}),
                      **({"prev": prev.get("price")} if prev.get("price") is not None and prev.get("price") != p.get("price") else {})}
         found += 1

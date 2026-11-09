@@ -581,6 +581,11 @@ async function start() {
   GP.ratings = RATINGS; GP.queue = QUEUE;
   if (!DATA.isSample) try { const r = await fetch("snapshots.json", { cache: "no-store" }); if (r.ok) GP.snaps = await r.json(); } catch {}
   if (!DATA.isSample) try { const r = await fetch("difficulty.json", { cache: "no-store" }); if (r.ok) GP.difficulty = (await r.json()).games || {}; } catch {}
+  // PS Plus games: when they leave the catalogue (psplus.json, weekly)
+  if (!DATA.isSample) try { const r = await fetch("psplus.json", { cache: "no-store" }); if (r.ok) {
+    const k = t => String(t || "").toLowerCase().replace(/&/g, "and").replace(/[™®©]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
+    const idx = new Map(((await r.json()).games || []).filter(g => g.until && g.tier !== "Essential").map(g => [k(g.name), g.until]));
+    GP.plusLeaves = x => [x.name, ...(x.aliases || [])].map(n => idx.get(k(n))).find(Boolean) || null; } } catch {}
   $("sort").value = state.sort;
   renderLogin(); renderHeader(); renderChips(); renderList();
 }

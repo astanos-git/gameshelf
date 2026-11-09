@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import statistics
 from collections import Counter, defaultdict
 from datetime import date, datetime, timedelta, timezone
@@ -151,6 +152,13 @@ def ics_escape(s: str) -> str:
     return s.replace("\\", "\\\\").replace(";", "\\;").replace(",", "\\,").replace("\n", "\\n")
 
 
+def site_url(page: str) -> str:
+    """This dashboard's address on GitHub Pages (from the repository the job runs in)."""
+    import os
+    repo = os.environ.get("GITHUB_REPOSITORY", "")
+    return f"https://{repo.split('/')[0]}.github.io/{repo.split('/')[1]}/{page}" if "/" in repo else ""
+
+
 def calendar(games: list[dict], today: date) -> str:
     snaps, queue, flags = load("snapshots.json", []), load("queue.json", []), load("flags.json", {})
     wishlist, upc, goals = load("wishlist.json", {}), load("upcoming.json", {}), load("goals.json", {})
@@ -183,6 +191,25 @@ def calendar(games: list[dict], today: date) -> str:
     for x in upc.get("upcoming") or []:
         if x["slug"] not in seen and x.get("released") and not x.get("tba") and x["released"] >= today.isoformat():
             add(f"release-{x['slug']}", date.fromisoformat(x["released"]), f"🗓 {x['name']} is out", x.get("reason", ""), x.get("url") or "")
+    # PS Plus: games you only have through PS Plus that leave the catalogue (play them before)
+    key = lambda t: re.sub(r"[^a-z0-9]+", " ", re.sub(r"[™®©]", "", (t or "").lower().replace("&", "and"))).strip()
+    plus = {key(x["name"]): x for x in load("psplus.json", {}).get("games", []) if x.get("until") and x.get("tier") != "Essential"}
+    for gm in games:
+        if not gm.get("via_plus") or gm.get("status") == "completed" or (flags.get(gm["name"]) or {}).get("flag") in ("beaten", "dropped"):
+            continue
+        hit = next((plus[k] for k in map(key, [gm["name"], *gm.get("aliases", [])]) if k in plus), None)
+        if hit and hit["until"] >= today.isoformat():
+            add(f"plus-{hashlib.md5(gm['name'].encode()).hexdigest()[:12]}", date.fromisoformat(hit["until"]), f"⏳ {gm['name']} leaves PS Plus",
+                "You have it through PS Plus: after this date it's gone from your library unless you buy it.")
+    # Wishlist sales ending (games with a price alert you've reached)
+    prices = load("prices.json", {})
+    for slug, w in wishlist.items():
+        p = prices.get(slug) or {}
+        if w.get("alert") is not None and p.get("price") is not None and p["price"] <= w["alert"] and p.get("until") and p["until"] >= today.isoformat():
+            add(f"sale-{slug}", date.fromisoformat(p["until"]), f"💸 Last day: {w['name']} CHF {p['price']:.2f}", f"Below your price alert (CHF {w['alert']:.2f}).")
+    # Wrapped: your year in review, mid-December
+    add(f"wrapped-{today.year}", date(today.year, 12, 15), f"🎁 Your {today.year} Wrapped is ready", "Your year on PlayStation as a story.",
+        site_url("wrapped.html")) if today <= date(today.year, 12, 15) else None
     # Goals for this year: a reminder on 1 December
     g = goals.get(str(today.year))
     if g and today < date(today.year, 12, 1):
