@@ -1829,6 +1829,38 @@
 "truetrophies": null
 }
 },
+"Dead Island 2": {
+"checked": {
+"powerpyx": "2026-11-09",
+"truetrophies": "2026-11-09"
+},
+"combined": {
+"difficulty": 3.0,
+"hours": 28,
+"missable": 0,
+"online": 57,
+"playthroughs": 1
+},
+"sources": {
+"powerpyx": {
+"difficulty": 3.0,
+"hours": 25,
+"hours_text": "25",
+"missable": 0,
+"online": 4,
+"playthroughs": 1,
+"url": "https://www.powerpyx.com/dead-island-2-trophy-guide-roadmap/"
+},
+"truetrophies": {
+"hours": 32,
+"hours_text": "30–35",
+"missable": 0,
+"online": 57,
+"several_playthroughs": true,
+"url": "https://www.truetrophies.com/game/Dead-Island-2/trophies"
+}
+}
+},
 "Dead Space": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -5093,6 +5125,17 @@
 }
 }
 },
+"Monster Train 2": {
+"checked": {
+"powerpyx": "2026-11-09",
+"truetrophies": "2026-11-09"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "Mortal Kombat X": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -7842,6 +7885,17 @@
 "truetrophies": null
 }
 },
+"Tomb Raider IV-VI Remastered": {
+"checked": {
+"powerpyx": "2026-11-09",
+"truetrophies": "2026-11-09"
+},
+"combined": {},
+"sources": {
+"powerpyx": null,
+"truetrophies": null
+}
+},
 "Trackmania Turbo": {
 "checked": {
 "powerpyx": "2026-10-28",
@@ -8540,5 +8594,5 @@
 }
 }
 },
-"updated_at": "2026-11-02T05:08:52+00:00"
+"updated_at": "2026-11-09T09:55:28+00:00"
 }
