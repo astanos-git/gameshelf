@@ -1,0 +1,38 @@
+{
+ "brothers-a-tale-of-two-sons-2": {
+  "checked": "2026-11-09",
+  "concept": "200617",
+  "low": 21.9,
+  "low_at": "2026-11-09",
+  "price": 21.9
+ },
+ "control-resonant": {
+  "checked": "2026-11-09",
+  "concept": "10017682",
+  "low": 59.9,
+  "low_at": "2026-11-09",
+  "price": 59.9
+ },
+ "phantom-blade-zero": {
+  "checked": "2026-11-09",
+  "concept": "10017620",
+  "low": 59.9,
+  "low_at": "2026-11-09",
+  "price": 59.9
+ },
+ "ratchet-clank-rift-apart": {
+  "checked": "2026-11-09",
+  "concept": "10000669",
+  "low": 79.9,
+  "low_at": "2026-11-09",
+  "plus": true,
+  "price": 79.9
+ },
+ "shadows-die-twice": {
+  "checked": "2026-11-09",
+  "concept": "232898",
+  "low": 64.9,
+  "low_at": "2026-11-09",
+  "price": 64.9
+ }
+}
