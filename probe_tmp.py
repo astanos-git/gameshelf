@@ -3,31 +3,28 @@ import json, re
 import requests
 UA = {"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1", "Accept-Language": "fr-CH,fr;q=0.9"}
 def section(t): print(f"\n===== {t}")
-section("bundles")
+section("bundle hashes")
 t = requests.get("https://store.playstation.com/fr-ch/search/cairn", headers=UA, timeout=30).text
 srcs = list(dict.fromkeys(re.findall(r'<script[^>]+src="([^"]+\.js)"', t)))
-print(len(srcs), srcs[:40])
-found = {}
+ops = {}
 for s in srcs:
     u = s if s.startswith("http") else "https://store.playstation.com" + s
     try: js = requests.get(u, headers=UA, timeout=30).text
     except Exception: continue
-    for m in re.finditer(r'(getSearchResults|metGetSearch\w*|searchResults\w*|\w*[Ss]earch\w*Query)', js):
-        ctx = js[max(0, m.start() - 300): m.end() + 300]
-        hs = re.findall(r'[0-9a-f]{64}', ctx)
-        if hs: found.setdefault(m.group(1), set()).update(hs)
-    for m in re.finditer(r'operationName:"(\w*[Ss]earch\w*)"', js): found.setdefault("op:" + m.group(1), set())
-    # lazy chunks
-    for c in re.findall(r'"(static/chunks/[^"]+\.js)"', js)[:0]: pass
-print({k: list(v)[:3] for k, v in found.items()})
-section("next data buildId and chunks")
-m = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', t, re.S)
-nd = json.loads(m.group(1)) if m else {}
-print({k: (v if not isinstance(v, (dict, list)) else type(v).__name__) for k, v in nd.items()})
-print(json.dumps(nd.get("props", {}))[:600])
-section("Push Square all")
-r = requests.get("https://www.pushsquare.com/guides/all-ps-plus-games-available-now?status=all", headers=UA, timeout=30); tx = r.text
-rows = [re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " | ", x)).strip() for x in re.findall(r'<tr[^>]*>(.*?)</tr>', tx, re.S)]
-print("rows", len(rows)); import collections
-avail = collections.Counter((x.split("|")[-2].strip() if x.count("|") > 2 else "?")[:14] for x in rows)
-print(avail.most_common(15)); print([x[:150] for x in rows if "Until" in x or "From" in x][:12])
+    for m in re.finditer(r'[0-9a-f]{64}', js):
+        ctx = js[max(0, m.start() - 200): m.end() + 200]
+        names = re.findall(r'\b((?:met|get|wca)\w{3,40})\b', ctx)
+        ops.setdefault(m.group(0), set()).update(n for n in names if "earch" in n or "rice" in n or "oncept" in n or "roduct" in n)
+    if "searchTerm" in js:
+        i = js.find("searchTerm"); print("searchTerm in", u.split("/")[-1], js[max(0, i - 400): i + 200].replace("\n", " ")[:600])
+print({h: sorted(v)[:4] for h, v in ops.items() if v})
+section("psprices")
+for u in ["https://psprices.com/region-ch/search/?q=cairn&platform=PS5", "https://psprices.com/region-ch/games/?q=cairn"]:
+    try:
+        r = requests.get(u, headers=UA, timeout=30); x = r.text
+        print(u, r.status_code, len(x), "cloudflare" in x.lower(), re.findall(r'.{60}CHF.{30}', x)[:3], re.findall(r'href="(/region-ch/game/[^"]+)"', x)[:4])
+    except Exception as e: print(u, repr(e)[:200])
+section("wikidata PS store ids")
+q = 'SELECT ?item ?itemLabel ?id WHERE { VALUES ?name { "Cairn"@en "Death Stranding 2: On the Beach"@en "Ratchet & Clank: Rift Apart"@en } ?item rdfs:label ?name; wdt:P5944 ?id. SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }'
+r = requests.get("https://query.wikidata.org/sparql", params={"query": q, "format": "json"}, headers={"User-Agent": "gameshelf-probe/1.0"}, timeout=60)
+print(r.status_code, [(b["itemLabel"]["value"], b["id"]["value"]) for b in r.json()["results"]["bindings"]][:12])
