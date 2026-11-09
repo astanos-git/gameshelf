@@ -56,8 +56,6 @@ a.act { display: inline-block; border: 1px solid var(--line); border-radius: 999
 a.act:hover { border-color: var(--accent); } a.act.on { background: var(--accent-soft); border-color: var(--accent); }
 a.act.primary { background: var(--accent); color: var(--on-accent); border-color: var(--accent); font-weight: 600; padding: 6px 14px; border-radius: 8px; }
 .pact { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-top: 4px; }
-.budget { display: flex; gap: 8px; align-items: center; font-size: 14px; }
-.budget input { width: 90px; font: 600 18px var(--display); padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--fg); }
 .tbl td.num, .tbl th:nth-child(n+2):not(:last-child) { text-align: right; font-variant-numeric: tabular-nums; }
 .lvl { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 1px 7px; border-radius: 4px; border: 1px solid currentColor; }
 .lvl.easy { color: var(--mc-good); } .lvl.medium { color: var(--mc-mid); } .lvl.hard { color: var(--mc-bad); }
@@ -71,7 +69,7 @@ a.act.primary { background: var(--accent); color: var(--on-accent); border-color
 @media (max-width: 420px) { .wk .item { grid-template-columns: 72px 1fr auto; } .wk .cover { width: 72px; height: 52px; } }
 @media (max-width: 420px) { .pick { grid-template-columns: 72px 1fr; } .pick .cover { width: 72px; height: 72px; } }
 .mode { display: grid; gap: 10px; }
-.budget input { width: 80px; }
+
 .dg-figs b { font-size: 24px; }
 .tap { cursor: pointer; }
 .tn-duel { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: stretch; }
@@ -142,7 +140,7 @@ tr.tap.open td { background: var(--accent-soft); }
 
     <section class="block">
       <div class="sec-head"><h2 class="sec">What to play</h2>
-        <div class="seg" role="group" aria-label="How to choose"><button data-mode="best">Best games</button><button data-mode="fit">Fit my hours</button><button data-mode="rank" id="rankModeBtn" hidden>My ranking</button></div></div>
+        <div class="seg" role="group" aria-label="How to choose"><button data-mode="best">Best games</button><button data-mode="rank" id="rankModeBtn" hidden>My ranking</button></div></div>
       <div class="mode" id="modeBest">
         <div class="chips" id="lengths" role="group" aria-label="How much time do you have"></div>
         <div class="row">
@@ -153,11 +151,6 @@ tr.tap.open td { background: var(--accent-soft); }
         <div id="pick"></div>
         <ol class="list" id="picks"></ol>
         <details class="how"><summary>How this works</summary><p>Your best-rated games first (Metacritic). Length is HowLongToBeat's Main + Extras time; games without one only appear under "Any length". "Surprise me" picks at random, better-rated games more often.</p></details>
-      </div>
-      <div class="mode" id="modeFit" hidden>
-        <div class="row"><label class="budget">Hours available <input id="budget" type="number" min="1" max="2000" value="40" inputmode="numeric"></label></div>
-        <div id="plan"></div>
-        <details class="how"><summary>How this works</summary><p>Picks the best mix of backlog and in-progress games that fits your hours: Metacritic counts most, games in Up next go first, varied genres get a small bonus. Uses HowLongToBeat Main + Extras (time left for games in progress).</p></details>
       </div>
       <div class="mode" id="modeRank" hidden>
         <ol class="list" id="rankList"></ol>
@@ -260,10 +253,10 @@ function card(x, eyebrow) {
 function render() {
   $("lengths").innerHTML = Object.entries(LENGTHS).map(([k, [l]]) => `<button class="chip" data-len="${k}" aria-pressed="${state.length === k}">${l}</button>`).join("");
   $("poolSel").value = state.pool;
+  if (state.mode === "fit" || (state.mode === "rank" && !rankedBacklog().length)) state.mode = "best";   // "Fit my hours" was removed
   document.querySelectorAll("[data-mode]").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === state.mode));
-  if (state.mode === "rank" && !rankedBacklog().length) state.mode = "best";
   $("rankModeBtn").hidden = !rankedBacklog().length;
-  $("modeBest").hidden = state.mode !== "best"; $("modeFit").hidden = state.mode !== "fit"; $("modeRank").hidden = state.mode !== "rank";
+  $("modeBest").hidden = state.mode !== "best"; $("modeRank").hidden = state.mode !== "rank";
   if (state.mode === "rank") rankList();
   const p = pool();
   const picks = [...p].sort((a, b) => (b.metacritic ?? 0) - (a.metacritic ?? 0) || (beatTime(a) ?? 999) - (beatTime(b) ?? 999)).slice(0, 5);
@@ -604,32 +597,6 @@ function discoverPanel(slug) {
     <span class="links"><a href="${esc(x.url || `https://rawg.io/games/${slug}`)}" target="_blank" rel="noopener">Game page on RAWG</a>${d.website ? ` · <a href="${esc(d.website)}" target="_blank" rel="noopener">Official site</a>` : ""}</span></div>`;
 }
 
-/* ---------- 5. Season planner ---------- */
-function planner() {
-  const budget = Math.max(1, +$("budget").value || 40);
-  const cands = DATA.games.filter(x => ((x.eff === "unplayed" && x.owned) || x.eff === "started") && left(x))
-    .map(x => ({ x, h: left(x), v: Math.max(1, (x.metacritic ?? 70) - 60) * Math.sqrt(left(x)) + (x.eff === "started" ? 10 : 0) }));
-  // Up next games go in first, in your order, as long as they fit
-  const fixed = []; let room = budget;
-  for (const n of QUEUE) { const c = cands.find(o => o.x.name === n || (o.x.aliases || []).includes(n)); if (c && c.h <= room) { fixed.push(c); room -= c.h; } }
-  const rest = cands.filter(c => !fixed.includes(c) && c.h <= room);
-  // Then the best combination for the hours left (knapsack); value grows with quality and, more slowly, with length
-  const cap = Math.min(room, 400), best = Array(cap + 1).fill(0), take = Array.from({ length: cap + 1 }, () => []);
-  for (const c of rest) for (let h = cap; h >= c.h; h--) {
-    // small bonus for a genre not yet in the plan keeps the mix varied
-    const g = (c.x.genres || ["?"])[0], fresh = take[h - c.h].every(o => (o.x.genres || ["?"])[0] !== g) ? 4 : 0;
-    const v = best[h - c.h] + c.v + fresh;
-    if (v > best[h]) { best[h] = v; take[h] = [...take[h - c.h], c]; }
-  }
-  const plan = [...fixed, ...take[best.indexOf(Math.max(...best))].sort((a, b) => b.v - a.v)];
-  const used = plan.reduce((a, c) => a + c.h, 0);
-  $("plan").innerHTML = plan.length ? `<p><b>${plan.length}</b> game${plan.length === 1 ? "" : "s"}, about <b>${used} h</b> of your ${budget} h${budget > 400 + plan.filter(c => fixed.includes(c)).reduce((a, c) => a + c.h, 0) ? " (the planner looks up to 400 h ahead)" : ""}.</p><ol class="list">${plan.map(c => `<li class="item tap" data-g="${esc(c.x.name)}"><span class="cover">${pic(c.x.image, c.x.name)}</span>
-      <span class="main"><span class="name">${esc(c.x.name)}</span><span class="meta"><span>~${c.h} h${c.x.eff === "started" ? " left" : ""}</span><span>${esc((c.x.genres || []).slice(0, 2).join(", "))}</span>${QUEUE.includes(c.x.name) ? "<span>Up next</span>" : ""}</span></span>
-      <span class="mc ${mcClass(c.x.metacritic)}">${c.x.metacritic ?? "n/a"}</span></li>`).join("")}</ol>`
-    : `<p class="empty">No game fits in ${budget} h. Try a bigger budget.</p>`;
-  reopen();
-}
-
 /* ---------- 10. Platinum difficulty ---------- */
 function platDifficulty() {
   // Guide rating (difficulty.json) when there is one, otherwise an estimate from PSN rarity
@@ -660,7 +627,7 @@ async function extrasStart() {
   $("calLink").hidden = !location.hostname.endsWith("github.io");
   GP.difficulty = (await getJSON("difficulty.json", {})).games || {};
   GP.queue = QUEUE; GP.snaps = SNAPS;
-  upNext(); wishlist(); comingSoon(); planner(); platDifficulty();
+  upNext(); wishlist(); comingSoon(); platDifficulty();
 }
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-q]"); if (!b) return;
@@ -671,7 +638,6 @@ document.addEventListener("click", e => {
   if (b.dataset.q === "del") q.splice(i, 1);
   qDraft = q; upNext();
 });
-document.addEventListener("input", e => { if (e.target.id === "budget") planner(); });
 document.addEventListener("click", e => {
   const wf = e.target.closest("[data-wf]"), sc = e.target.closest("[data-sc]");
   if (wf) { state.wishF = wf.dataset.wf; wishAll = false; save(); wishlist(); }
