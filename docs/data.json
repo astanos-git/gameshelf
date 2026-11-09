@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T09:28:27+00:00",
+ "generated_at": "2026-11-09T12:45:50+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -18153,8 +18153,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "2K Drive",
-    "Lego"
+    "Lego",
+    "2K Drive"
    ],
    "developers": [
     "Visual Concepts"
