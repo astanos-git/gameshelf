@@ -31,6 +31,7 @@ FIX_LABELS = {"guide": "trophy guide", "hltb": "HowLongToBeat match", "rawg": "g
 
 
 TOURNAMENT = ROOT / "docs" / "tournament.json"
+TIDY = ROOT / "docs" / "tidy.json"
 
 
 def apply_champion(body: str) -> str | None:
@@ -50,6 +51,29 @@ def apply_champion(body: str) -> str | None:
         _save(TOURNAMENT, t)
     n = len(t["champions"])
     return f"{m[2]} won the tournament: #{n} in My ranking. The dashboard updates in about a minute."
+
+
+def apply_tidy(body: str, created: str) -> str | None:
+    """Backlog tidy-up: a "tidy: done" line, then "drop: <game>" (marked Dropped, out of the backlog)
+    and "keep: <game>" (not suggested again for a year) lines."""
+    if not re.search(r"^tidy:\s*done\s*$", body or "", re.M | re.I):
+        return None
+    data = json.loads(DATA.read_text())["games"] if DATA.exists() else []
+    current = {a: g["name"] for g in data for a in g.get("aliases", [])}
+    names = {g["name"] for g in data}
+    drop = [current.get(x, x) for x in re.findall(r"^drop:\s*(.+?)\s*$", body, re.M)]
+    keep = [current.get(x, x) for x in re.findall(r"^keep:\s*(.+?)\s*$", body, re.M)]
+    flags = _load(FLAGS, {})
+    for g in drop:
+        if not names or g in names:
+            flags[g] = {"flag": "dropped", "at": created, "via": "tidy-up"}
+    _save(FLAGS, flags)
+    tidy = _load(TIDY, {"kept": {}, "reviews": []})
+    for g in keep:
+        tidy["kept"][g] = created[:10]
+    tidy["reviews"] = (tidy.get("reviews", []) + [{"at": created[:10], "dropped": len(drop), "kept": len(keep)}])[-12:]
+    _save(TIDY, tidy)
+    return f"Backlog tidy-up saved: {len(drop)} dropped, {len(keep)} kept." + " The dashboard updates in about a minute."
 
 
 def apply_fix(body: str) -> str | None:
@@ -196,9 +220,23 @@ def rawg_find(name: str, year: str | None) -> dict:
 
 def apply_wish(body: str, created: str) -> str | None:
     """Wishlist (dashboard only): "wish: add|remove", "slug:" and, when adding, "name:"."""
-    m = re.search(r"^wish:\s*(add|remove)\s*$", body or "", re.M | re.I)
+    m = re.search(r"^wish:\s*(add|remove|alert)\s*$", body or "", re.M | re.I)
     if not m:
         return None
+    if m.group(1).lower() == "alert":
+        # price alert: tell me when this wishlist game costs this much or less (Swiss PS Store, checked weekly)
+        slug = re.search(r"^slug:\s*([a-z0-9-]+)\s*$", body, re.M)
+        price = re.search(r"^price:\s*(none|\d{1,4}(?:[.,]\d{1,2})?)\s*$", body, re.M | re.I)
+        wl = _load(WISHLIST, {})
+        if not slug or not price or slug.group(1) not in wl:
+            return "Couldn't read this price alert. Set it from the wishlist on the dashboard."
+        w = wl[slug.group(1)]
+        if price.group(1).lower() == "none":
+            w.pop("alert", None); msg = f"Removed the price alert for {w['name']}."
+        else:
+            w["alert"] = round(float(price.group(1).replace(",", ".")), 2); msg = f"Price alert for {w['name']}: CHF {w['alert']:.2f} or less."
+        _save(WISHLIST, wl)
+        return msg + " The dashboard updates in about a minute."
     slug = re.search(r"^slug:\s*([a-z0-9-]+)\s*$", body, re.M)
     name = re.search(r"^name:\s*(.+?)\s*$", body, re.M)
     wl = _load(WISHLIST, {})
@@ -301,7 +339,7 @@ def apply_goals(body: str, created: str) -> str | None:
 
 
 def apply(body: str, created: str) -> str:
-    for handler in (lambda: apply_champion(body), lambda: apply_fix(body), lambda: apply_goals(body, created), lambda: apply_queue(body),
+    for handler in (lambda: apply_tidy(body, created), lambda: apply_champion(body), lambda: apply_fix(body), lambda: apply_goals(body, created), lambda: apply_queue(body),
                     lambda: apply_wish(body, created), lambda: apply_feedback(body, created)):
         msg = handler()
         if msg:

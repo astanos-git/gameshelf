@@ -2,7 +2,7 @@ name: Weekly recommendations
 
 # Every Monday early morning (Swiss time), or by hand from the Actions tab.
 # By hand you can also run just one part: "coming-soon" refreshes Play next → Discover → Coming soon,
-# "push-test" sends the Monday push to your phone again (marked as a test).
+# "push-test" sends the Monday push to your phone again (marked as a test), "store" checks PS Plus and wishlist prices.
 on:
   schedule:
     - cron: "7 4 * * 1"
@@ -15,7 +15,7 @@ on:
       mode:
         description: "What to run"
         type: choice
-        options: [full, coming-soon, push-test, difficulty]
+        options: [full, coming-soon, push-test, difficulty, store]
         default: full
       minutes:
         description: "Difficulty only: how many minutes to spend (max 60)"
@@ -97,6 +97,12 @@ jobs:
         if: env.MODE == 'full' || env.MODE == 'difficulty'
         continue-on-error: true
         run: python difficulty.py --minutes ${{ env.MODE == 'difficulty' && inputs.minutes || '15' }} ${{ env.MODE == 'difficulty' && inputs.retry != '' && format('--retry {0}', inputs.retry) || '' }} ${{ env.MODE == 'difficulty' && inputs.reparse != '' && format('--reparse {0}', inputs.reparse) || '' }}
+      - name: PS Plus catalogue and wishlist prices
+        timeout-minutes: 10
+        if: env.MODE == 'full' || env.MODE == 'store'
+        continue-on-error: true
+        run: python store.py
+
       - name: Sessions, On this day, calendar feed
         timeout-minutes: 5
         if: env.MODE != 'push-test'

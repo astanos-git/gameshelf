@@ -148,6 +148,8 @@ def fetch_psn(npsso: str) -> dict:
                 "image": tm.get("imageUrl") or cm.get("iconUrl") or gm.get("iconUrl"),
                 "platform": "PS5" if gm.get("packageType") == "PSGD" else "PS4",
                 "acquired": e.get("activeDate"),
+                # claimed through PS Plus (monthly or catalog game) rather than bought: you keep it only while subscribed
+                "plus": (e.get("rewardMeta") or {}).get("rewardMembershipType") == "PS_PLUS",
             })
         print(f"  {len(owned)} owned titles (PS4/PS5 digital)")
     except Exception as e:
@@ -368,6 +370,7 @@ def build_games(raw: dict) -> list[dict]:
             key_of_title[o["title_id"]] = key
         g = row(key, o["name"], "owned")
         g["owned"] = True
+        g.setdefault("_plus", []).append(bool(o.get("plus")))
         g["platforms"].add(o["platform"])
         g["image"] = g["image"] or o["image"]
         if o["acquired"] and (not g["acquired"] or o["acquired"] < g["acquired"]):
@@ -410,6 +413,9 @@ def build_games(raw: dict) -> list[dict]:
     for g in games.values():
         # Display the original name: your English-name list first, then playtime > trophy list > store name.
         seen = g.pop("names")
+        plus = g.pop("_plus", [])
+        if plus and all(plus):
+            g["via_plus"] = True       # only through PS Plus: no bought copy
         best = max(seen, key=lambda n: seen[n]) if seen else g["name"]
         g["name"] = next((english[loose(n)] for n in seen if loose(n) in english), best)
         g["name"] = PLATFORM_SUFFIX.sub("", g["name"]).strip() or g["name"]   # "Kena PS4 & PS5" -> "Kena"
