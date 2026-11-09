@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T21:42:28+00:00",
+ "generated_at": "2026-11-09T22:33:55+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -47,16 +47,16 @@
    "last_trophy": "2026-11-09T21:28:35+00:00",
    "has_trophies": true,
    "months": {
-    "2026-11": [
-     20,
-     3,
-     1,
-     0
-    ],
     "2026-10": [
      3,
      0,
      0,
+     0
+    ],
+    "2026-11": [
+     20,
+     3,
+     1,
      0
     ]
    },
@@ -76,39 +76,39 @@
    ],
    "rare": [
     {
-     "n": "Living Archetypes",
-     "t": "bronze",
-     "r": 15.3,
      "at": "2026-11-09T21:27:28+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/2b8f6d27-6962-4334-8863-b9df0cc78000.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/2b8f6d27-6962-4334-8863-b9df0cc78000.png",
+     "n": "Living Archetypes",
+     "r": 15.3,
+     "t": "bronze"
     },
     {
-     "n": "Astral Phenomena",
-     "t": "silver",
-     "r": 19.5,
      "at": "2026-11-09T21:02:42+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/11eb6fb6-a30a-4ca2-9a98-fcdf65f5926e.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/11eb6fb6-a30a-4ca2-9a98-fcdf65f5926e.png",
+     "n": "Astral Phenomena",
+     "r": 19.5,
+     "t": "silver"
     },
     {
-     "n": "The Importance of Synergy",
-     "t": "bronze",
-     "r": 21.8,
      "at": "2026-11-07T00:45:41+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/19e9f4a9-ff69-4a03-a704-a92a00e7f77e.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/19e9f4a9-ff69-4a03-a704-a92a00e7f77e.png",
+     "n": "The Importance of Synergy",
+     "r": 21.8,
+     "t": "bronze"
     },
     {
-     "n": "Cognitive Intruder",
-     "t": "bronze",
-     "r": 22.9,
      "at": "2026-11-06T14:21:05+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9bf02e0e-a29d-46ab-acbf-6e2164aefbe6.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9bf02e0e-a29d-46ab-acbf-6e2164aefbe6.png",
+     "n": "Cognitive Intruder",
+     "r": 22.9,
+     "t": "bronze"
     },
     {
-     "n": "Career Development",
-     "t": "silver",
-     "r": 24.3,
      "at": "2026-11-09T20:41:13+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/1c57afe6-c1a8-4cfe-b4a0-c31d431d74db.png"
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/1c57afe6-c1a8-4cfe-b4a0-c31d431d74db.png",
+     "n": "Career Development",
+     "r": 24.3,
+     "t": "silver"
     }
    ],
    "aliases": [
@@ -13478,12 +13478,12 @@
    "rawg_slug": "need-for-speed-hot-pursuit-remastered",
    "metacritic_source": "rawg",
    "series": [
-    "Need for Speed",
-    "Need for Speed Hot Pursuit"
+    "Need for Speed Hot Pursuit",
+    "Need for Speed"
    ],
    "developers": [
-    "Criterion Games",
-    "Stellar Entertainment"
+    "Stellar Entertainment",
+    "Criterion Games"
    ],
    "publishers": [
     "Electronic Arts"
