@@ -1,30 +1,33 @@
 """Temporary probe (deleted after use): public store data only."""
 import json, re
 import requests
-UA = {"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1", "Accept-Language": "fr-CH,fr;q=0.9,en;q=0.8"}
+UA = {"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1", "Accept-Language": "fr-CH,fr;q=0.9"}
 def section(t): print(f"\n===== {t}")
-section("fr-ch search page")
-for u in ["https://store.playstation.com/fr-ch/search/cairn", "https://store.playstation.com/de-ch/search/death%20stranding%202"]:
-    r = requests.get(u, headers=UA, timeout=30); t = r.text
-    print(u, r.status_code, len(t), "CHF" in t)
-    print(" concept/product links:", list(dict.fromkeys(re.findall(r'/(?:concept|product)/([A-Za-z0-9_-]+)', t)))[:8])
-    print(" prices:", re.findall(r'"(?:basePrice|discountedPrice)":"[^"]+"', t)[:6], re.findall(r'.{40}CHF.{20}', t)[:3])
-    print(" names:", re.findall(r'"name":"([^"]{3,60})"', t)[:10])
-section("fr-ch concept page")
-r = requests.get("https://store.playstation.com/fr-ch/search/cairn", headers=UA, timeout=30)
-cid = (re.findall(r'/concept/(\d+)', r.text) or [None])[0]
-pid = (re.findall(r'/product/([A-Z]{2}\d{4}-[A-Z0-9_-]+)', r.text) or [None])[0]
-print("first concept", cid, "product", pid)
-for u in [f"https://store.playstation.com/fr-ch/concept/{cid}" if cid else None, f"https://store.playstation.com/fr-ch/product/{pid}" if pid else None]:
-    if not u: continue
-    t = requests.get(u, headers=UA, timeout=30).text
-    print(u, len(t), re.findall(r'"(?:basePrice|discountedPrice|discountText|endTime|serviceBranding|upsellText)":(?:"[^"]*"|\[[^\]]*\]|null)', t)[:14])
-    print(" jsonld:", re.findall(r'<script id="mfe-jsonld-tags" type="application/ld\+json">(.*?)</script>', t, re.S)[:1][0][:500] if 'mfe-jsonld-tags' in t else "")
-section("Push Square leaving")
-for q in ["status=leaving&tier=ps-plus-extra", "status=leaving", "status=leaving-soon"]:
-    r = requests.get("https://www.pushsquare.com/guides/all-ps-plus-games-available-now?" + q, headers=UA, timeout=30); t = r.text
-    print(q, r.status_code, len(t))
-    print(" options:", sorted(set(re.findall(r'status=([a-z-]+)', t)))[:10], sorted(set(re.findall(r'tier=([a-z-]+)', t)))[:6])
-    rows = re.findall(r'<tr[^>]*>(.*?)</tr>', t, re.S)
-    print(" rows", len(rows), [re.sub(r"<[^>]+>", " | ", x).strip()[:160] for x in rows[:6]])
-    print(" items", [re.sub(r"<[^>]+>", "", x).strip()[:80] for x in re.findall(r'<(?:li|div) class="[^"]*(?:game|item|title)[^"]*"[^>]*>(.*?)</(?:li|div)>', t, re.S)[:8]])
+section("bundles")
+t = requests.get("https://store.playstation.com/fr-ch/search/cairn", headers=UA, timeout=30).text
+srcs = list(dict.fromkeys(re.findall(r'<script[^>]+src="([^"]+\.js)"', t)))
+print(len(srcs), srcs[:40])
+found = {}
+for s in srcs:
+    u = s if s.startswith("http") else "https://store.playstation.com" + s
+    try: js = requests.get(u, headers=UA, timeout=30).text
+    except Exception: continue
+    for m in re.finditer(r'(getSearchResults|metGetSearch\w*|searchResults\w*|\w*[Ss]earch\w*Query)', js):
+        ctx = js[max(0, m.start() - 300): m.end() + 300]
+        hs = re.findall(r'[0-9a-f]{64}', ctx)
+        if hs: found.setdefault(m.group(1), set()).update(hs)
+    for m in re.finditer(r'operationName:"(\w*[Ss]earch\w*)"', js): found.setdefault("op:" + m.group(1), set())
+    # lazy chunks
+    for c in re.findall(r'"(static/chunks/[^"]+\.js)"', js)[:0]: pass
+print({k: list(v)[:3] for k, v in found.items()})
+section("next data buildId and chunks")
+m = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', t, re.S)
+nd = json.loads(m.group(1)) if m else {}
+print({k: (v if not isinstance(v, (dict, list)) else type(v).__name__) for k, v in nd.items()})
+print(json.dumps(nd.get("props", {}))[:600])
+section("Push Square all")
+r = requests.get("https://www.pushsquare.com/guides/all-ps-plus-games-available-now?status=all", headers=UA, timeout=30); tx = r.text
+rows = [re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " | ", x)).strip() for x in re.findall(r'<tr[^>]*>(.*?)</tr>', tx, re.S)]
+print("rows", len(rows)); import collections
+avail = collections.Counter((x.split("|")[-2].strip() if x.count("|") > 2 else "?")[:14] for x in rows)
+print(avail.most_common(15)); print([x[:150] for x in rows if "Until" in x or "From" in x][:12])
