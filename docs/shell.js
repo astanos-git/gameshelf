@@ -10,22 +10,28 @@
   addEventListener("online", sync); addEventListener("offline", sync);
   document.body.prepend(note); sync();
 
-  // Appearance: Auto (follows the phone), Light or Dark; remembered on this device
-  const metas = [...document.querySelectorAll('meta[name="theme-color"]')], tint = { light: "#eef1f6", dark: "#0e1320" };
-  const applyTheme = t => {
-    if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme;
-    metas.forEach(m => { m.content = t === "light" || t === "dark" ? tint[t] : (m.media.includes("dark") ? tint.dark : tint.light); });
-    try { t === "auto" ? localStorage.removeItem("shelf-theme") : localStorage.setItem("shelf-theme", t); } catch {}
-    document.querySelectorAll("[data-theme-set]").forEach(b => b.setAttribute("aria-pressed", b.dataset.themeSet === t));
-  };
-  let cur = "auto"; try { cur = localStorage.getItem("shelf-theme") || "auto"; } catch {}
-  const slot = document.getElementById("themeSlot");
-  if (slot) {
-    const ic = { auto: '<path d="M12 3a9 9 0 1 0 0 18z" fill="currentColor"/><circle cx="12" cy="12" r="9"/>', light: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>', dark: '<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>' };
-    slot.innerHTML = `<div class="seg theme-seg" role="group" aria-label="Appearance">${["auto", "light", "dark"].map(t => `<button data-theme-set="${t}" aria-pressed="${t === cur}"><svg viewBox="0 0 24 24" aria-hidden="true">${ic[t]}</svg>${t[0].toUpperCase() + t.slice(1)}</button>`).join("")}</div>`;
-    slot.addEventListener("click", e => { const b = e.target.closest("[data-theme-set]"); if (b) applyTheme(b.dataset.themeSet); });
+  try { localStorage.removeItem("shelf-theme"); } catch {}      // the appearance switch was removed: follow the phone again
+
+  // Installed on iPhone, the page runs under the status bar. iOS 26 sometimes reports the status bar
+  // height as 0 when the app opens (a WebKit bug) and only corrects it after the page re-lays out,
+  // so the top of the page sat in the status bar's blur until you scrolled. Measure it ourselves,
+  // keep re-checking for a moment, and fall back to a safe value if iOS still says 0.
+  const standalone = navigator.standalone || matchMedia("(display-mode: standalone)").matches;
+  if (standalone) {
+    const probe = document.createElement("div");
+    probe.style.cssText = "position:fixed;top:0;left:0;width:0;visibility:hidden;pointer-events:none;height:env(safe-area-inset-top,0px)";
+    document.body.appendChild(probe);
+    const root = document.documentElement.style;
+    const fullScreen = () => window.innerHeight >= screen.height - 1;      // the page reaches under the status bar
+    const fit = () => {
+      const h = probe.getBoundingClientRect().height;
+      root.setProperty("--safe-top", (h > 0 ? h : fullScreen() ? 54 : 0) + "px");
+    };
+    fit(); requestAnimationFrame(fit);
+    [100, 400, 1000, 2500].forEach(t => setTimeout(fit, t));
+    addEventListener("resize", fit); addEventListener("orientationchange", () => setTimeout(fit, 300));
+    addEventListener("pageshow", fit); document.addEventListener("visibilitychange", () => document.visibilityState === "visible" && fit());
   }
-  applyTheme(cur);
 
   // tapping the tab you're already on scrolls back to the top, like a native app
   document.querySelector(".tabs")?.addEventListener("click", e => {

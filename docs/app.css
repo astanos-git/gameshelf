@@ -195,8 +195,7 @@ details.fold[open] > summary { margin-bottom: 8px; }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: var(--safe-top); background: var(--bg); z-index: 50; pointer-events: none; }
 .wrap { padding-top: calc(12px + var(--safe-top)); }
 .subnav { top: var(--safe-top); }
-.theme-seg button { display: inline-flex; align-items: center; gap: 5px; min-height: 34px; padding: 4px 12px; }
-.theme-seg svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+
 .vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* Main navigation as icon tabs: bottom bar on phones (thumb zone), top bar on wide screens */

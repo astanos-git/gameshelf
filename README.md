@@ -50,7 +50,7 @@ After a minute your dashboard is live at `https://<your-username>.github.io/game
 ### 5. Load your data for the first time
 If the **Actions** tab asks you to enable workflows, enable them. Then go to **Actions → Refresh game data → Run workflow**. The run takes about 3–8 minutes: PSN requests are deliberately slowed to avoid getting blocked, and the first run looks up every game on RAWG. When it finishes, reload the dashboard.
 
-**On your phone:** open the dashboard in Safari or Chrome, then choose **Share → Add to Home Screen**. It then opens like an app, with its own icon, a tab bar at the bottom, and your last data still available offline (a yellow note says when you're offline). Tap the tab you're on to jump back to the top. **Appearance** (Auto / Light / Dark) is at the top of the Library, under your profile; Auto follows your phone.
+**On your phone:** open the dashboard in Safari or Chrome, then choose **Share → Add to Home Screen**. It then opens like an app, with its own icon, a tab bar at the bottom, and your last data still available offline (a yellow note says when you're offline). Tap the tab you're on to jump back to the top. Light or dark follows your phone.
 
 ---
 
