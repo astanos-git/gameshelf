@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T12:45:50+00:00",
+ "generated_at": "2026-11-09T20:45:40+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,15 +10,239 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 331,
-  "level_progress": 31,
+  "level_progress": 38,
   "earned": {
-   "bronze": 2769,
-   "silver": 651,
+   "bronze": 2771,
+   "silver": 652,
    "gold": 224,
    "platinum": 23
   }
  },
  "games": [
+  {
+   "name": "Control",
+   "image": "https://image.api.playstation.com/cdn/EP4040/CUSA11454_00/FSp6HKGXPLC5VrWg3GAjNEiq3ATYE5qu.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-09-09T05:34:20Z",
+   "hours": 1.4,
+   "first_played": "2026-10-30T21:25:39.180000+00:00",
+   "last_played": "2026-11-09T20:13:33.850000+00:00",
+   "progress": 33,
+   "earned": {
+    "bronze": 22,
+    "silver": 2,
+    "gold": 1,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 50,
+    "silver": 14,
+    "gold": 3,
+    "platinum": 1
+   },
+   "last_trophy": "2026-11-09T20:44:20+00:00",
+   "has_trophies": true,
+   "months": {
+    "2026-11": [
+     19,
+     2,
+     1,
+     0
+    ],
+    "2026-10": [
+     3,
+     0,
+     0,
+     0
+    ]
+   },
+   "trophy_lists": [
+    {
+     "id": "NPWR22157_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 33,
+     "groups": {
+      "001": "The Foundation",
+      "002": "Altered World Events",
+      "default": "Control Ultimate Edition"
+     }
+    }
+   ],
+   "rare": [
+    {
+     "n": "The Importance of Synergy",
+     "t": "bronze",
+     "r": 21.8,
+     "at": "2026-11-07T00:45:41+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/19e9f4a9-ff69-4a03-a704-a92a00e7f77e.png"
+    },
+    {
+     "n": "Cognitive Intruder",
+     "t": "bronze",
+     "r": 22.9,
+     "at": "2026-11-06T14:21:05+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9bf02e0e-a29d-46ab-acbf-6e2164aefbe6.png"
+    },
+    {
+     "n": "Career Development",
+     "t": "silver",
+     "r": 24.3,
+     "at": "2026-11-09T20:41:13+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/1c57afe6-c1a8-4cfe-b4a0-c31d431d74db.png"
+    },
+    {
+     "n": "Psychic Occupation",
+     "t": "bronze",
+     "r": 24.3,
+     "at": "2026-11-06T11:53:06+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/a99c1d85-f3d7-4188-b713-c7da5a189208.png"
+    },
+    {
+     "n": "Bureau Archivist",
+     "t": "gold",
+     "r": 25.6,
+     "at": "2026-11-06T15:58:57+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/e7da2384-ff09-4ba0-af18-07771375c702.png"
+    }
+   ],
+   "aliases": [
+    "Control Ultimate Edition"
+   ],
+   "trophies_earned": 25,
+   "trophies_total": 68,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-11-09T20:44:20+00:00",
+   "hours_by_year": {
+    "2026": 1.4
+   },
+   "metacritic": 84,
+   "genres": [
+    "Shooter",
+    "Adventure",
+    "Action"
+   ],
+   "released": "2019-08-27",
+   "rawg_slug": "control",
+   "metacritic_source": "rawg",
+   "series": [],
+   "developers": [],
+   "publishers": [
+    "505 Games"
+   ],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "metroidvania",
+     "Metroidvania"
+    ],
+    [
+     "detective",
+     "Detective"
+    ],
+    [
+     "3rd-person-perspective",
+     "3rd-Person Perspective"
+    ],
+    [
+     "supernatural",
+     "Supernatural"
+    ],
+    [
+     "abstract",
+     "Abstract"
+    ],
+    [
+     "realism",
+     "realism"
+    ]
+   ],
+   "hltb": {
+    "main": 11.7,
+    "extra": 19.23,
+    "complete": 29.03,
+    "url": "https://howlongtobeat.com/game/57507"
+   },
+   "plat_rate": 6.5,
+   "rare_missing": 21,
+   "first_trophy_at": "2026-10-30T21:43:11+00:00",
+   "platinum_at": null,
+   "dlc": [
+    {
+     "list": "NPWR22157_00",
+     "id": "001",
+     "name": "The Foundation",
+     "platforms": [
+      "PS5"
+     ],
+     "earned": 0,
+     "total": 10
+    },
+    {
+     "list": "NPWR22157_00",
+     "id": "002",
+     "name": "Altered World Events",
+     "platforms": [
+      "PS5"
+     ],
+     "earned": 0,
+     "total": 11
+    }
+   ],
+   "missing_n": 43,
+   "easy": [
+    {
+     "n": "The Face of the Enemy",
+     "t": "bronze",
+     "r": 23.2,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "Discerning the Pattern",
+     "t": "silver",
+     "r": 22.5,
+     "h": null,
+     "p": "21/25"
+    },
+    {
+     "n": "Finnish Tango",
+     "t": "bronze",
+     "r": 21.7,
+     "h": true,
+     "p": null
+    }
+   ]
+  },
   {
    "name": "Monster Train 2",
    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1815/3ea7456f6925d14bd479d7b9bd251be1575e0e5fc37ad88d.png",
@@ -38,6 +262,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -86,6 +311,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -134,6 +360,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -303,230 +530,6 @@
      "n": "Full House Trophy",
      "t": "silver",
      "r": 9.0,
-     "h": null,
-     "p": null
-    }
-   ]
-  },
-  {
-   "name": "Control",
-   "image": "https://image.api.playstation.com/cdn/EP4040/CUSA11454_00/FSp6HKGXPLC5VrWg3GAjNEiq3ATYE5qu.png",
-   "platforms": [
-    "PS4",
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-09-09T05:34:20Z",
-   "hours": 1.4,
-   "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-11-06T23:53:54.530000+00:00",
-   "progress": 29,
-   "earned": {
-    "bronze": 20,
-    "silver": 1,
-    "gold": 1,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 50,
-    "silver": 14,
-    "gold": 3,
-    "platinum": 1
-   },
-   "last_trophy": "2026-11-07T01:17:58+00:00",
-   "has_trophies": true,
-   "months": {
-    "2026-10": [
-     3,
-     0,
-     0,
-     0
-    ],
-    "2026-11": [
-     17,
-     1,
-     1,
-     0
-    ]
-   },
-   "trophy_lists": [
-    {
-     "id": "NPWR22157_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 29,
-     "groups": {
-      "001": "The Foundation",
-      "002": "Altered World Events",
-      "default": "Control Ultimate Edition"
-     }
-    }
-   ],
-   "rare": [
-    {
-     "at": "2026-11-07T00:45:41+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/19e9f4a9-ff69-4a03-a704-a92a00e7f77e.png",
-     "n": "The Importance of Synergy",
-     "r": 21.8,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-11-06T14:21:05+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9bf02e0e-a29d-46ab-acbf-6e2164aefbe6.png",
-     "n": "Cognitive Intruder",
-     "r": 22.8,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-11-06T11:53:06+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/a99c1d85-f3d7-4188-b713-c7da5a189208.png",
-     "n": "Psychic Occupation",
-     "r": 24.3,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-11-06T15:58:57+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/e7da2384-ff09-4ba0-af18-07771375c702.png",
-     "n": "Bureau Archivist",
-     "r": 25.5,
-     "t": "gold"
-    },
-    {
-     "at": "2026-11-05T16:36:07+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/b4546311-b385-4acd-8b73-acd5992bd184.png",
-     "n": "Insular Telekinesis",
-     "r": 26.5,
-     "t": "bronze"
-    }
-   ],
-   "aliases": [
-    "Control Ultimate Edition"
-   ],
-   "trophies_earned": 22,
-   "trophies_total": 68,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-11-07T01:17:58+00:00",
-   "hours_by_year": {
-    "2026": 1.4
-   },
-   "metacritic": 84,
-   "genres": [
-    "Shooter",
-    "Adventure",
-    "Action"
-   ],
-   "released": "2019-08-27",
-   "rawg_slug": "control",
-   "metacritic_source": "rawg",
-   "series": [],
-   "developers": [],
-   "publishers": [
-    "505 Games"
-   ],
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "sci-fi",
-     "Sci-fi"
-    ],
-    [
-     "exploration",
-     "Exploration"
-    ],
-    [
-     "female-protagonist",
-     "Female Protagonist"
-    ],
-    [
-     "action-adventure",
-     "Action-Adventure"
-    ],
-    [
-     "cinematic",
-     "Cinematic"
-    ],
-    [
-     "metroidvania",
-     "Metroidvania"
-    ],
-    [
-     "detective",
-     "Detective"
-    ],
-    [
-     "3rd-person-perspective",
-     "3rd-Person Perspective"
-    ],
-    [
-     "supernatural",
-     "Supernatural"
-    ],
-    [
-     "abstract",
-     "Abstract"
-    ],
-    [
-     "realism",
-     "realism"
-    ]
-   ],
-   "hltb": {
-    "main": 11.7,
-    "extra": 19.23,
-    "complete": 29.03,
-    "url": "https://howlongtobeat.com/game/57507"
-   },
-   "plat_rate": 6.5,
-   "rare_missing": 21,
-   "first_trophy_at": "2026-10-30T21:43:11+00:00",
-   "platinum_at": null,
-   "dlc": [
-    {
-     "list": "NPWR22157_00",
-     "id": "001",
-     "name": "The Foundation",
-     "platforms": [
-      "PS5"
-     ],
-     "earned": 0,
-     "total": 10
-    },
-    {
-     "list": "NPWR22157_00",
-     "id": "002",
-     "name": "Altered World Events",
-     "platforms": [
-      "PS5"
-     ],
-     "earned": 0,
-     "total": 11
-    }
-   ],
-   "missing_n": 46,
-   "easy": [
-    {
-     "n": "Rising Thought",
-     "t": "bronze",
-     "r": 25.8,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "My Brother's Keeper",
-     "t": "bronze",
-     "r": 25.7,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "Career Development",
-     "t": "silver",
-     "r": 24.3,
      "h": null,
      "p": null
     }
@@ -792,6 +795,7 @@
      "t": "silver"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 12,
    "trophies_total": 32,
@@ -1452,6 +1456,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -1549,6 +1554,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -1616,6 +1622,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -1907,6 +1914,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -1983,6 +1991,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -2067,6 +2076,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -2520,6 +2530,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -2625,6 +2636,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -3091,6 +3103,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -3422,6 +3435,7 @@
      "t": "silver"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 8,
    "trophies_total": 25,
@@ -4285,6 +4299,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -4391,6 +4406,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -4492,6 +4508,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -5134,6 +5151,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -6368,6 +6386,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -6466,6 +6485,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -6550,6 +6570,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -7636,6 +7657,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -9168,6 +9190,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -9672,6 +9695,7 @@
      "t": "gold"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 22,
    "trophies_total": 22,
@@ -9781,6 +9805,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -9864,6 +9889,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -10160,6 +10186,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -10265,6 +10292,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -10323,6 +10351,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -10424,6 +10453,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -10514,6 +10544,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -10609,6 +10640,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -10714,6 +10746,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -11310,6 +11343,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 1,
    "trophies_total": 32,
@@ -11440,6 +11474,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -11584,6 +11619,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [
     "LEGO® Star Wars™ : La Saga Skywalker"
    ],
@@ -11679,6 +11715,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -11787,6 +11824,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -11890,6 +11928,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -12017,6 +12056,7 @@
     }
    ],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 56,
@@ -12249,6 +12289,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 26,
    "trophies_total": 35,
@@ -12690,6 +12731,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -12745,6 +12787,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -12845,6 +12888,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -12926,6 +12970,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -13029,6 +13074,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -13311,6 +13357,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -13413,6 +13460,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -14151,6 +14199,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 5,
    "trophies_total": 47,
@@ -14585,6 +14634,7 @@
      "t": "gold"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 26,
    "trophies_total": 36,
@@ -15053,6 +15103,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 37,
    "trophies_total": 68,
@@ -15343,6 +15394,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -15451,6 +15503,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -15700,6 +15753,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [
     "Bob l'éponge: The Cosmic Shake"
    ],
@@ -15798,6 +15852,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -16069,6 +16124,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -16129,6 +16185,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -16233,6 +16290,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -16287,6 +16345,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -16384,6 +16443,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -17051,6 +17111,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -17740,6 +17801,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -18072,6 +18134,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -18137,6 +18200,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -18153,8 +18217,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "Lego",
-    "2K Drive"
+    "2K Drive",
+    "Lego"
    ],
    "developers": [
     "Visual Concepts"
@@ -18419,6 +18483,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -18524,6 +18589,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -18768,6 +18834,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -18826,6 +18893,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -18909,6 +18977,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -18985,6 +19054,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -19240,6 +19310,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -19384,6 +19455,7 @@
      "t": "silver"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 8,
    "trophies_total": 29,
@@ -19563,6 +19635,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [
     "Endling"
    ],
@@ -20078,6 +20151,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -20555,6 +20629,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -20659,6 +20734,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -21147,6 +21223,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -21311,6 +21388,7 @@
      "t": "silver"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 23,
    "trophies_total": 46,
@@ -21510,6 +21588,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 5,
    "trophies_total": 55,
@@ -21733,6 +21812,7 @@
      "t": "silver"
     }
    ],
+   "via_plus": true,
    "aliases": [
     "STAR WARS Jedi: Fallen Order"
    ],
@@ -21868,6 +21948,7 @@
     }
    ],
    "rare": [],
+   "via_plus": true,
    "aliases": [
     "LEGO® Harry Potter™ Collection: Years 5-7"
    ],
@@ -21990,6 +22071,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -22326,6 +22408,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -22591,6 +22674,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -22689,6 +22773,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -23187,6 +23272,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -23293,6 +23379,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -23432,6 +23519,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 1,
    "trophies_total": 26,
@@ -23728,6 +23816,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -23803,6 +23892,7 @@
     }
    ],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 45,
@@ -24504,6 +24594,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -25036,6 +25127,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 6,
    "trophies_total": 22,
@@ -25431,6 +25523,7 @@
      "t": "gold"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 4,
    "trophies_total": 38,
@@ -25556,6 +25649,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -25661,6 +25755,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -25757,6 +25852,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -25858,6 +25954,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -26019,6 +26116,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 7,
    "trophies_total": 49,
@@ -26532,6 +26630,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -26602,6 +26701,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -26710,6 +26810,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -26790,6 +26891,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -26895,6 +26997,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -27001,6 +27104,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -27097,6 +27201,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -27172,6 +27277,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [
     "LEGO® DC Super-Vilains"
    ],
@@ -27249,6 +27355,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -27488,6 +27595,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 7,
    "trophies_total": 58,
@@ -27691,6 +27799,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 6,
    "trophies_total": 61,
@@ -27851,6 +27960,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -27906,6 +28016,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -28071,6 +28182,7 @@
      "t": "gold"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 9,
    "trophies_total": 9,
@@ -28202,6 +28314,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 1,
    "trophies_total": 30,
@@ -28482,6 +28595,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -28669,6 +28783,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 40,
    "trophies_total": 54,
@@ -28803,6 +28918,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -28905,6 +29021,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -28960,6 +29077,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -29109,6 +29227,7 @@
      "t": "silver"
     }
    ],
+   "via_plus": true,
    "aliases": [
     "Another World"
    ],
@@ -29411,6 +29530,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -29509,6 +29629,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -29616,6 +29737,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -30101,6 +30223,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -30154,6 +30277,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -30238,6 +30362,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -30641,6 +30766,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -30987,6 +31113,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 23,
    "trophies_total": 35,
@@ -31400,6 +31527,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [
     "La Terre du Milieu™: L'Ombre de la Guerre™"
    ],
@@ -31505,6 +31633,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -32045,6 +32174,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [
     "STREET FIGHTER V"
    ],
@@ -32898,6 +33028,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -32964,6 +33095,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -33304,6 +33436,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 2,
    "trophies_total": 35,
@@ -33448,6 +33581,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 5,
    "trophies_total": 25,
@@ -33637,6 +33771,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [
     "Shadow of the Colossus"
    ],
@@ -33843,6 +33978,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -33973,6 +34109,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 8,
    "trophies_total": 43,
@@ -34102,6 +34239,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -34401,6 +34539,7 @@
      "t": "silver"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 11,
    "trophies_total": 25,
@@ -34534,6 +34673,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -34611,6 +34751,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -34831,6 +34972,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -34932,6 +35074,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -35398,6 +35541,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -35503,6 +35647,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -35613,6 +35758,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 2,
    "trophies_total": 12,
@@ -36010,6 +36156,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -36112,6 +36259,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -36618,6 +36766,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -37155,6 +37304,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -37492,6 +37642,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -37650,6 +37801,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -37946,6 +38098,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -38050,6 +38203,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -38100,6 +38254,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -38205,6 +38360,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -38269,6 +38425,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -38343,6 +38500,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -38444,6 +38602,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -38493,6 +38652,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -38648,6 +38808,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 19,
    "trophies_total": 20,
@@ -38759,6 +38920,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -38860,6 +39022,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -38944,6 +39107,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -39084,6 +39248,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 1,
    "trophies_total": 31,
@@ -39851,6 +40016,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -39950,6 +40116,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -40203,6 +40370,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -41131,6 +41299,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -41202,6 +41371,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -41772,6 +41942,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -41821,6 +41992,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -41967,6 +42139,7 @@
      "t": "silver"
     }
    ],
+   "via_plus": true,
    "aliases": [
     "Until Dawn"
    ],
@@ -42096,6 +42269,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -42236,6 +42410,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 61,
    "trophies_total": 61,
@@ -42345,6 +42520,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -42553,6 +42729,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -42654,6 +42831,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -43747,6 +43925,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -44027,6 +44206,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -44117,6 +44297,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -44221,6 +44402,7 @@
      "t": "bronze"
     }
    ],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 3,
    "trophies_total": 29,
@@ -45017,6 +45199,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -45112,6 +45295,7 @@
    "months": {},
    "trophy_lists": [],
    "rare": [],
+   "via_plus": true,
    "aliases": [],
    "trophies_earned": 0,
    "trophies_total": 0,
@@ -45234,6 +45418,7 @@
      "t": "gold"
     }
    ],
+   "via_plus": true,
    "aliases": [
     "Everybody's Gone To The Rapture"
    ],
@@ -57158,7 +57343,8 @@
    "2026-11-02": 6,
    "2026-11-05": 5,
    "2026-11-06": 5,
-   "2026-11-07": 3
+   "2026-11-07": 3,
+   "2026-11-09": 3
   },
   "weekday_hour": {
    "2011": [
@@ -57353,7 +57539,7 @@
     17,
     20,
     41,
-    81,
+    84,
     95,
     23,
     14,
@@ -59903,7 +60089,7 @@
     1,
     0,
     0,
-    2,
+    5,
     15,
     1,
     0,
@@ -60375,7 +60561,7 @@
     "buckets": [
      66,
      484,
-     2125,
+     2128,
      992
     ],
     "score": 25
@@ -60510,7 +60696,7 @@
     "buckets": [
      9,
      48,
-     176,
+     179,
      60
     ],
     "score": 28

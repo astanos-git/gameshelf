@@ -126,6 +126,16 @@ URL:https://rawg.io/games/resident-evil-veronica
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:wrapped-2026@gameshelf
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:🎁 Your 2026 Wrapped is ready
+DESCRIPTION:Your year on PlayStation as a story.
+URL:https://astanos-git.github.io/gameshelf/wrapped.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:goals-2026@gameshelf
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20261201
