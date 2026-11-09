@@ -46,12 +46,7 @@ section { display: grid; gap: 10px; }
 .easy .r { font-family: var(--mono); color: var(--muted); margin-left: auto; }
 .left { font: 600 24px var(--display); text-align: right; line-height: 1; }
 .left small { display: block; font: 11px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
-.digest { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; display: grid; gap: 8px; }
-.digest p { margin: 0; font-size: 14px; }
-.dg-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-.dg-figs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-.dg-figs div { display: grid; } .dg-figs b { font: 600 26px/1 var(--display); } .dg-figs span { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
-.dg-goals { color: var(--muted); }
+
 .uq { grid-template-columns: 22px 52px 1fr auto; gap: 10px; }
 .rank { font: 700 22px var(--display); color: var(--accent); text-align: center; }
 .qbtns { display: flex; gap: 4px; }
@@ -138,7 +133,6 @@ tr.tap.open td { background: var(--accent-soft); }
   </div></nav>
 
   <div class="part-body" data-part="now">
-    <section class="digest" id="digest"></section>
     <section class="memories" id="memories" hidden></section>
 
     <section class="block">
@@ -481,46 +475,6 @@ function onThisDay() {
   $("memories").innerHTML = `<span class="eyebrow">${label}</span><ul>${items.map(x => `<li><span class="yr">${now.getFullYear() - x.y} yr${now.getFullYear() - x.y > 1 ? "s" : ""} ago${x.d ? ` · ${x.d.toLocaleDateString(undefined, { weekday: "short" })}` : ""}</span>${what(x)}</li>`).join("")}</ul>`;
 }
 
-/* ---------- 12. Monday digest ---------- */
-function digest() {
-  const today = new Date(), dow = (today.getDay() + 6) % 7;              // Monday = 0
-  const end = new Date(today.getFullYear(), today.getMonth(), today.getDate() - dow);   // this Monday 00:00
-  const start = new Date(end - 7 * 864e5), key = d => d.toLocaleDateString("sv-SE");    // YYYY-MM-DD
-  const inWeek = s => s && new Date(s) >= start && new Date(s) < end;
-  const days = Object.entries(DATA.insights?.days || {}).filter(([d]) => d >= key(start) && d < key(end));
-  const trophies = sum(days.map(([, n]) => n));
-  const plats = (DATA.insights?.milestones || []).filter(m => m.kind === "platinum" && inWeek(m.at));
-  // hours: difference between the snapshot taken this Monday and the one from the Monday before.
-  // A game is matched under its current name or any older name (store names change), and only
-  // games PSN says you played since the start of the week can count.
-  const snapOn = d => SNAPS.find(sn => sn.date >= key(d) && sn.date <= key(new Date(+d + 2 * 864e5)));
-  const a = snapOn(start), b = snapOn(end);
-  let hours = null, hoursTxt = `<span class="note">Hours per game appear after the Monday update.</span>`;
-  if (a && b) {
-    const before = n => { const g = byName(n), names = [n, ...(g?.aliases || [])]; const k = names.find(m => a.hours[m] != null); return k ? a.hours[k] : 0; };
-    const playedSince = n => { const g = byName(n); return !g?.last_played || new Date(g.last_played) >= start; };
-    const delta = Object.entries(b.hours).map(([n, h]) => [n, h - before(n)]).filter(([n, d]) => d >= 0.2 && playedSince(n)).sort((x, y) => y[1] - x[1]);
-    hours = sum(delta.map(d => d[1]));
-    hoursTxt = delta.length ? `${delta.slice(0, 3).map(([n, d]) => `${esc(n)} (${fmtH(d)})`).join(", ")}${delta.length > 3 ? `, +${delta.length - 3} more` : ""}`
-      : "No PS4/PS5 playtime last week.";
-  }
-  const started = DATA.games.filter(g => inWeek([g.first_played, g.first_trophy_at].filter(Boolean).sort()[0]));
-  const y = String(today.getFullYear()), G = GOALS[y];
-  let goals = "";
-  if (G) {
-    const fin = DATA.games.filter(g => { const f = FLAGS[g.name] || (g.aliases || []).map(n => FLAGS[n]).find(Boolean); const at = g.platinum_at || (g.status === "completed" ? g.last_trophy : null) || (f?.flag === "beaten" ? (g.last_activity && g.last_activity < f.at ? g.last_activity : f.at) : null); return at && at.startsWith(y); }).length;
-    const now = { platinums: sum(DATA.games.flatMap(g => Object.entries(g.months || {}).filter(([m]) => m.startsWith(y)).map(([, t]) => t[3]))),
-      trophies: sum(DATA.games.flatMap(g => Object.entries(g.months || {}).filter(([m]) => m.startsWith(y)).map(([, t]) => sum(t)))),
-      hours: Math.round(sum(DATA.games.map(g => (g.hours_by_year || {})[y] || 0))), finished: fin };
-    const L = { platinums: "platinums", finished: "finished", trophies: "trophies", hours: "hours" };
-    goals = `<p class="dg-goals">Goals ${y}: ${Object.keys(L).filter(k => G[k]).map(k => `<b>${now[k]}</b>/${G[k]} ${L[k]}`).join(" · ")}</p>`;
-  }
-  const fmtD = d => d.toLocaleDateString(undefined, { day: "numeric", month: "short" });
-  $("digest").innerHTML = `<div class="dg-head"><h2>Last week</h2><span class="note">${fmtD(start)} – ${fmtD(new Date(end - 864e5))}</span></div>
-    <div class="dg-figs"><div><b>${trophies}</b><span>trophies</span></div><div><b>${plats.length}</b><span>platinum${plats.length === 1 ? "" : "s"}</span></div><div><b>${hours == null ? "—" : fmtH(hours).replace(" h", "")}</b><span>hours played</span></div><div><b>${started.length}</b><span>new games</span></div></div>
-    <p>${hoursTxt}</p>${plats.length ? `<p>🏆 ${plats.map(p => `<b>${esc(p.game)}</b>`).join(", ")}</p>` : ""}${goals}`;
-}
-
 /* ---------- 4. Up next ---------- */
 let qDraft = null;   // local reordering before saving
 function upNext() {
@@ -706,7 +660,7 @@ async function extrasStart() {
   $("calLink").hidden = !location.hostname.endsWith("github.io");
   GP.difficulty = (await getJSON("difficulty.json", {})).games || {};
   GP.queue = QUEUE; GP.snaps = SNAPS;
-  digest(); upNext(); wishlist(); comingSoon(); planner(); platDifficulty();
+  upNext(); wishlist(); comingSoon(); planner(); platDifficulty();
 }
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-q]"); if (!b) return;
