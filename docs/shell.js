@@ -31,6 +31,11 @@
     [100, 400, 1000, 2500].forEach(t => setTimeout(fit, t));
     addEventListener("resize", fit); addEventListener("orientationchange", () => setTimeout(fit, 300));
     addEventListener("pageshow", fit); document.addEventListener("visibilitychange", () => document.visibilityState === "visible" && fit());
+    // iOS 26 also lays a soft blur over the top of the page when it opens, which goes away once the page
+    // has been scrolled. Give the top a little more room, and do a tiny invisible scroll once the page is drawn.
+    document.documentElement.classList.add("standalone");
+    const nudge = () => { if (scrollY > 2) return; window.scrollTo(0, 2); requestAnimationFrame(() => requestAnimationFrame(() => window.scrollTo(0, 0))); };
+    addEventListener("load", () => setTimeout(nudge, 300)); addEventListener("pageshow", e => e.persisted && setTimeout(nudge, 300));
   }
 
   // tapping the tab you're already on scrolls back to the top, like a native app

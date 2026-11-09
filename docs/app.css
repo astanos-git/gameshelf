@@ -194,6 +194,7 @@ details.fold[open] > summary { margin-bottom: 8px; }
    there so nothing scrolls into the system's blurred edge */
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: var(--safe-top); background: var(--bg); z-index: 50; pointer-events: none; }
 .wrap { padding-top: calc(12px + var(--safe-top)); }
+.standalone .wrap { padding-top: calc(28px + var(--safe-top)); }   /* clear of the iOS 26 top blur */
 .subnav { top: var(--safe-top); }
 
 .vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
