@@ -6,6 +6,10 @@ name: Weekly recommendations
 on:
   schedule:
     - cron: "7 4 * * 1"
+    # GitHub sometimes skips a scheduled run when it's busy: two back-up times later on Monday,
+    # which do nothing if this week's run already happened
+    - cron: "41 7 * * 1"
+    - cron: "23 12 * * 1"
   workflow_dispatch:
     inputs:
       mode:
@@ -34,7 +38,28 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.week.outputs.run }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: docs/recommendations.json
+          sparse-checkout-cone-mode: false
+      - id: week
+        run: |
+          done=$(python3 -c "import json;print(json.load(open('docs/recommendations.json')).get('week',''))" 2>/dev/null || true)
+          now=$(date -u +%G-W%V)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" != "7 4 * * 1" ] && [ "$done" = "$now" ]; then
+            echo "This week's run already happened ($done): nothing to do."; echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
   recommend:
+    needs: check
+    if: needs.check.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 75
     env:
