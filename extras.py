@@ -220,6 +220,20 @@ def calendar(games: list[dict], today: date) -> str:
                         "X-PUBLISHED-TTL:PT12H", *events, "END:VCALENDAR"]) + "\r\n"
 
 
+def galaxy(games: list[dict], trophies: list[dict]) -> dict:
+    """Compact list of every earned trophy for the 3D views: [hours since the first trophy, grade, rarity x10, game index, name or ""].
+    Names are kept for platinums and rare trophies (under 10%) only, to keep the file small."""
+    if not trophies:
+        return {}
+    names = [g["name"] for g in games]
+    idx = {n: i for i, n in enumerate(names)}
+    t0 = trophies[0]["at"]
+    grade = {"bronze": 0, "silver": 1, "gold": 2, "platinum": 3}
+    rows = [[round((t["at"] - t0).total_seconds() / 3600, 1), grade.get(t["t"], 0), round((t["r"] or 0) * 10), idx.get(t["game"], -1),
+             t["n"] if t["t"] == "platinum" or (t["r"] is not None and t["r"] < 10) else ""] for t in trophies]
+    return {"start": t0.isoformat(), "games": names, "t": rows}
+
+
 def main() -> None:
     data = load("data.json", {})
     games = data.get("games", [])
@@ -234,6 +248,7 @@ def main() -> None:
     (DOCS / "sessions.json").write_text(json.dumps({k: v for k, v in out.items() if v}, ensure_ascii=False, separators=(",", ":")))
     mem = memories(games, trophies, (data.get("insights") or {}).get("milestones") or [])
     (DOCS / "memories.json").write_text(json.dumps(mem, ensure_ascii=False, separators=(",", ":")))
+    (DOCS / "galaxy.json").write_text(json.dumps(galaxy(games, trophies), ensure_ascii=False, separators=(",", ":")))
     ics = calendar(games, today)
     (DOCS / "gameshelf.ics").write_text(ics)
     print(f"::notice::Extras: {len(ss)} sessions · {sum(len(v) for v in mem.values())} memories on {len(mem)} dates · "

@@ -171,6 +171,11 @@ details.fold[open] > summary { margin-bottom: 8px; }
 .dg-figs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .dg-figs div { display: grid; } .dg-figs b { font: 600 26px/1 var(--display); } .dg-figs span { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
 .dg-goals { color: var(--muted); }
+.viz-link { display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; padding: 12px 14px; border-radius: var(--radius); text-decoration: none; color: #eef2ff;
+  background: radial-gradient(circle at 15% 50%, #3b2f8f 0, #10162e 55%, #05070f 100%); margin-bottom: 4px; font-size: 22px; }
+.viz-link b { display: block; font: 700 22px var(--display); }
+.viz-link small { color: rgba(238,242,255,.75); font: 13px var(--body); }
+.viz-ic { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.12); color: #ffcf4a; }
 </style>
 
 <main class="wrap" id="main">
@@ -185,6 +190,7 @@ details.fold[open] > summary { margin-bottom: 8px; }
 
   <div class="part-body" data-part="overview">
     <section class="digest" id="digest" hidden></section>
+    <a class="viz-link" href="visuals.html"><span class="viz-ic" aria-hidden="true">✦</span><span><b>Your history in 3D</b><small>Trophy galaxy, game city and the hours race</small></span><span aria-hidden="true">›</span></a>
     <header class="head"><h2 id="title" class="h1">All time</h2><p class="note" id="subtitle"></p></header>
     <section class="figures" id="figures"></section>
     <section class="tops">

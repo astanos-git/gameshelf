@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Game Shelf 3D</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Game Shelf">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#05070f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Three animated views of your history: Trophy galaxy (every trophy a star), Game city (every game a tower), Hours race. */
+:root { --display: "Barlow Condensed", "Arial Narrow", sans-serif; --body: "IBM Plex Sans", system-ui, sans-serif; --ink: #eef2ff; --soft: rgba(238,242,255,.66);
+  --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px); }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #05070f; color: var(--ink); font-family: var(--body); overflow: hidden; -webkit-font-smoothing: antialiased; }
+#gl { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+header { position: fixed; top: 0; left: 0; right: 0; z-index: 5; padding: calc(10px + var(--safe-top)) 14px 10px; display: grid; gap: 10px;
+  background: linear-gradient(#05070fdd, #05070f00); pointer-events: none; }
+header > * { pointer-events: auto; }
+.row { display: flex; align-items: center; gap: 10px; }
+.back { color: var(--ink); text-decoration: none; background: rgba(255,255,255,.1); border-radius: 999px; min-height: 40px; padding: 0 14px; display: inline-flex; align-items: center; font-weight: 600; }
+h1 { font: 700 26px var(--display); margin: 0; flex: 1; letter-spacing: .01em; }
+.seg { display: flex; background: rgba(255,255,255,.08); border-radius: 999px; padding: 3px; gap: 2px; width: max-content; max-width: 100%; }
+.seg button { border: 0; background: none; color: var(--soft); font: 600 15px var(--body); padding: 8px 14px; border-radius: 999px; min-height: 40px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: #05070f; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; color: var(--soft); }
+.legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: 0; }
+.labels { position: fixed; inset: 0; pointer-events: none; z-index: 2; }
+.labels span { position: absolute; transform: translate(-50%, -50%); font: 600 13px var(--display); letter-spacing: .06em; color: rgba(238,242,255,.55); white-space: nowrap; text-shadow: 0 1px 6px #000; }
+.labels span.big { font-size: 15px; color: rgba(238,242,255,.8); }
+footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; padding: 10px 14px calc(12px + var(--safe-bottom)); display: grid; gap: 10px;
+  background: linear-gradient(#05070f00, #05070fee 40%); }
+.info { min-height: 58px; display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 14px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.info .ic { width: 44px; height: 44px; border-radius: 10px; overflow: hidden; background: rgba(255,255,255,.1); display: grid; place-items: center; font-size: 22px; }
+.info .ic img { width: 100%; height: 100%; object-fit: cover; }
+.info b { display: block; font: 600 17px/1.2 var(--body); }
+.info small { color: var(--soft); font-size: 13.5px; }
+.controls { display: flex; align-items: center; gap: 10px; }
+.controls button { background: var(--ink); color: #05070f; border: 0; border-radius: 999px; min-width: 44px; min-height: 44px; font: 700 16px var(--body); cursor: pointer; padding: 0 14px; }
+.controls input[type=range] { flex: 1; accent-color: #9fc4ff; height: 32px; }
+.controls .yr { font: 700 30px var(--display); min-width: 64px; text-align: right; }
+/* Hours race (DOM bars) */
+#race { position: fixed; left: 0; right: 0; top: calc(130px + var(--safe-top)); bottom: calc(150px + var(--safe-bottom)); padding: 0 14px; z-index: 3; display: none; }
+#race.on { display: block; }
+.rbar { position: absolute; left: 14px; right: 14px; height: 40px; display: grid; grid-template-columns: 40px 1fr; gap: 8px; align-items: center; transition: transform .45s ease, opacity .45s; will-change: transform; }
+.rbar .c { width: 40px; height: 40px; border-radius: 8px; overflow: hidden; background: rgba(255,255,255,.1); display: grid; place-items: center; font: 600 13px var(--display); }
+.rbar .c img { width: 100%; height: 100%; object-fit: cover; }
+.rbar .track { position: relative; height: 32px; }
+.rbar .fill { position: absolute; inset: 0 auto 0 0; border-radius: 8px; transition: width .45s linear; min-width: 4px; }
+.rbar .lab { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font: 600 14px var(--body); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: calc(100% - 70px); text-shadow: 0 1px 4px rgba(0,0,0,.6); }
+.rbar .val { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font: 700 18px var(--display); }
+.racebg { position: absolute; right: 14px; bottom: 0; font: 800 120px/1 var(--display); color: rgba(238,242,255,.08); pointer-events: none; }
+.note { color: var(--soft); font-size: 13px; text-align: center; }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (min-width: 900px) { header, footer { max-width: 720px; margin: 0 auto; } }
+</style>
+
+<main>
+  <canvas id="gl" aria-label="3D view of your games and trophies" role="img"></canvas>
+  <div class="labels" id="labels" aria-hidden="true"></div>
+  <header>
+    <div class="row"><a class="back" href="stats.html" aria-label="Back to Stats">‹ Stats</a><h1>Your history in 3D</h1></div>
+    <div class="seg" role="group" aria-label="View"><button data-v="galaxy" aria-pressed="true">Trophy galaxy</button><button data-v="city">Game city</button><button data-v="race">Hours race</button></div>
+    <div class="legend" id="legend"></div>
+  </header>
+  <section id="race" aria-label="Hours race"><div class="racebg" id="raceYear"></div></section>
+  <footer>
+    <div class="info" id="info" aria-live="polite"><span class="ic">✨</span><span><b id="infoT">Loading…</b><small id="infoS"></small></span></div>
+    <div class="controls" id="controls"><button id="play" aria-label="Replay">↺</button><input type="range" id="scrub" min="0" max="1000" value="1000" aria-label="Timeline"><span class="yr" id="yr"></span></div>
+  </footer>
+</main>
+
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }</script>
+<script type="module">
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const initials = s => (s || "?").replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const fmtDate = d => d.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
+const info = (icon, title, sub) => { $("info").querySelector(".ic").innerHTML = icon; $("infoT").textContent = title; $("infoS").textContent = sub || ""; };
+const GRADE = ["Bronze", "Silver", "Gold", "Platinum"], GCOL = ["#d08c5c", "#c9d4e6", "#ffcf4a", "#8fd0ff"];
+let DATA, GAL, FLAGS = {}, view = "galaxy";
+
+/* ---------- renderer, camera, controls (shared by galaxy and city) ---------- */
+const canvas = $("gl");
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" }); }
+catch { renderer = null; }
+const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 0.1, 2000);
+const controls = renderer ? new OrbitControls(camera, canvas) : null;
+if (controls) { controls.enableDamping = true; controls.dampingFactor = 0.08; controls.autoRotate = !calm; controls.autoRotateSpeed = 0.35; controls.enablePan = false; }
+const clock = new THREE.Clock();
+function resize() {
+  if (!renderer) return;
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.setSize(innerWidth, innerHeight, false);
+  camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
+}
+addEventListener("resize", resize);
+
+/* ---------- 1. Trophy galaxy: every trophy a star, spiralling out from your first one ---------- */
+function soft() {                                   // round glowing sprite for the stars
+  const c = document.createElement("canvas"); c.width = c.height = 64; const x = c.getContext("2d");
+  const g = x.createRadialGradient(32, 32, 0, 32, 32, 32); g.addColorStop(0, "rgba(255,255,255,1)"); g.addColorStop(.25, "rgba(255,255,255,.85)"); g.addColorStop(1, "rgba(255,255,255,0)");
+  x.fillStyle = g; x.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c);
+}
+const galaxy = { scene: new THREE.Scene(), progress: 1, playing: false, rows: [], years: [] };
+function buildGalaxy() {
+  const s = galaxy.scene, rows = GAL.t, n = rows.length, total = rows[n - 1][0] || 1, t0 = new Date(GAL.start);
+  s.fog = new THREE.FogExp2(0x05070f, 0.0065);
+  const pos = new Float32Array(n * 3), col = new Float32Array(n * 3), size = new Float32Array(n), born = new Float32Array(n);
+  const turns = 2.4;          // a loose spiral with two arms reads better than one turn per year
+  const rnd = (i, k) => { const v = Math.sin(i * 12.9898 + k * 78.233) * 43758.5453; return v - Math.floor(v); };   // stable jitter
+  const gauss = (i, k) => (rnd(i, k) + rnd(i, k + 1) + rnd(i, k + 2) - 1.5) * 1.15;
+  rows.forEach((r, i) => {
+    const f = r[0] / total, ang = f * turns * Math.PI * 2 + (r[3] % 2) * Math.PI, rad = 4 + 46 * Math.pow(f, 0.85);
+    const spread = 0.7 + rad * 0.045;
+    pos[i * 3] = Math.cos(ang) * rad + gauss(i, 1) * spread;
+    pos[i * 3 + 1] = gauss(i, 5) * (1.6 - f) * 1.3 + (r[1] === 3 ? 0 : 0);
+    pos[i * 3 + 2] = Math.sin(ang) * rad + gauss(i, 9) * spread;
+    const c = new THREE.Color(GCOL[r[1]]); col.set([c.r, c.g, c.b], i * 3);
+    const rare = r[2] / 10;
+    size[i] = [1.1, 1.4, 1.9, 6.5][r[1]] * (rare && rare < 5 ? 1.6 : rare < 15 ? 1.2 : 1);
+    born[i] = f;
+  });
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.BufferAttribute(pos, 3)); geo.setAttribute("color", new THREE.BufferAttribute(col, 3));
+  geo.setAttribute("size", new THREE.BufferAttribute(size, 1)); geo.setAttribute("born", new THREE.BufferAttribute(born, 1));
+  const mat = new THREE.ShaderMaterial({
+    uniforms: { uMap: { value: soft() }, uProgress: { value: 1 }, uTime: { value: 0 }, uPx: { value: renderer.getPixelRatio() } },
+    vertexShader: `attribute float size; attribute float born; attribute vec3 color; varying vec3 vColor; varying float vAlpha;
+      uniform float uProgress, uTime, uPx;
+      void main() {
+        float age = uProgress - born; float on = smoothstep(0.0, 0.015, age);
+        float tw = 0.82 + 0.18 * sin(uTime * 2.0 + position.x * 3.1 + position.z * 1.7);
+        vec4 mv = modelViewMatrix * vec4(position, 1.0);
+        float flash = 1.0 + 2.5 * (1.0 - smoothstep(0.0, 0.02, age)) * step(0.0, age);
+        gl_PointSize = size * on * flash * uPx * (380.0 / -mv.z);
+        vColor = color; vAlpha = on * tw; gl_Position = projectionMatrix * mv; }`,
+    fragmentShader: `uniform sampler2D uMap; varying vec3 vColor; varying float vAlpha;
+      void main() { vec4 t = texture2D(uMap, gl_PointCoord); gl_FragColor = vec4(vColor, t.a * vAlpha); }`,
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  });
+  galaxy.points = new THREE.Points(geo, mat); s.add(galaxy.points);
+  galaxy.mat = mat; galaxy.total = total; galaxy.turns = turns; galaxy.t0 = t0;
+  // a faint dust of background stars and a warm core
+  const bg = new Float32Array(1500 * 3); for (let i = 0; i < 1500; i++) { const r = 300 + rnd(i, 21) * 500, a = rnd(i, 22) * Math.PI * 2, b = Math.acos(2 * rnd(i, 23) - 1);
+    bg.set([r * Math.sin(b) * Math.cos(a), r * Math.cos(b), r * Math.sin(b) * Math.sin(a)], i * 3); }
+  const bgg = new THREE.BufferGeometry(); bgg.setAttribute("position", new THREE.BufferAttribute(bg, 3));
+  s.add(new THREE.Points(bgg, new THREE.PointsMaterial({ size: 1.4, color: 0x8899cc, transparent: true, opacity: .55, sizeAttenuation: false })));
+  const core = new THREE.Sprite(new THREE.SpriteMaterial({ map: soft(), color: 0xffd9a0, transparent: true, opacity: .55, blending: THREE.AdditiveBlending, depthWrite: false }));
+  core.scale.set(16, 16, 1); core.material.opacity = .4; s.add(core);
+  // where each year starts, for the floating labels
+  const y0 = t0.getFullYear();
+  for (let y = y0 + 1; y <= new Date().getFullYear(); y++) {
+    const f = (new Date(y, 0, 1) - t0) / 36e5 / total; if (f <= 0 || f >= 1) continue;
+    const ang = f * turns * Math.PI * 2 + Math.PI / 2, rad = 4 + 46 * Math.pow(f, 0.85);
+    galaxy.years.push({ y, f, p: new THREE.Vector3(Math.cos(ang) * rad, 3, Math.sin(ang) * rad) });
+  }
+  const plats = rows.filter(r => r[1] === 3).length;
+  galaxy.legend = GRADE.map((g, i) => `<span><i style="background:${GCOL[i]}"></i>${g}</span>`).join("") + `<span>${n.toLocaleString()} trophies · ${plats} platinums · bigger = rarer</span>`;
+}
+function galaxyYear(p) { const h = p * galaxy.total; return new Date(galaxy.t0.getTime() + h * 36e5).getFullYear(); }
+function pickGalaxy(ev) {
+  const r = canvas.getBoundingClientRect(), m = new THREE.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
+  const pos = galaxy.points.geometry.attributes.position, v = new THREE.Vector3();
+  let best = -1, bd = 26 * 26;                                  // nearest star on screen within ~26px, platinums and rare ones first
+  for (let i = 0; i < pos.count; i++) {
+    if (GAL.t[i][0] / galaxy.total > galaxy.progress) continue;
+    v.fromBufferAttribute(pos, i).project(camera); if (v.z > 1) continue;
+    const dx = (v.x - m.x) * r.width / 2, dy = (v.y - m.y) * r.height / 2, d = dx * dx + dy * dy - (GAL.t[i][1] === 3 ? 300 : GAL.t[i][4] ? 80 : 0);
+    if (d < bd) { bd = d; best = i; }
+  }
+  if (best < 0) return;
+  const t = GAL.t[best], g = DATA.games.find(x => x.name === GAL.games[t[3]]), when = new Date(galaxy.t0.getTime() + t[0] * 36e5);
+  info(g?.image ? `<img src="${esc(g.image)}" alt="">` : "🏆", t[4] || `${GRADE[t[1]]} trophy`, `${GRADE[t[1]]} · ${GAL.games[t[3]] || ""} · ${fmtDate(when)}${t[2] ? ` · ${t[2] / 10}% of players` : ""}`);
+}
+
+/* ---------- 2. Game city: every game a tower, height = hours, one street per year you started playing ---------- */
+const city = { scene: new THREE.Scene(), grow: 1, items: [], labels: [] };
+const SCOL = { completed: 0xf5c84c, beaten: 0x4fc28b, started: 0x4f8dff, dropped: 0x6b7280, unplayed: 0x26304a };
+function statusOf(g) { const f = FLAGS[g.name]?.flag; return g.status === "completed" ? "completed" : f === "dropped" ? "dropped" : f === "beaten" || g.status === "beaten" ? "beaten" : g.hours > 0 || g.status === "started" ? "started" : "unplayed"; }
+function buildCity() {
+  const s = city.scene; s.background = new THREE.Color(0x070a14); s.fog = new THREE.Fog(0x070a14, 60, 190);
+  s.add(new THREE.HemisphereLight(0xbfd4ff, 0x10131f, 1.1));
+  const sun = new THREE.DirectionalLight(0xffe2b8, 1.6); sun.position.set(40, 80, 30); s.add(sun);
+  const games = DATA.games.filter(g => g.owned || g.hours > 0 || g.trophies_earned);
+  const yearOf = g => (g.first_played || g.first_trophy_at || "")?.slice(0, 4);
+  const played = games.filter(g => statusOf(g) !== "unplayed" && yearOf(g)), backlog = games.filter(g => statusOf(g) === "unplayed");
+  const years = [...new Set(played.map(yearOf))].sort();
+  // one block per year, three blocks across (a square-ish city reads better on a phone than one long street)
+  const COLS = 5, GAP = 1.6, ACROSS = 3, BW = COLS * GAP, STREET = 4;
+  const blocks = years.map(y => ({ y, list: played.filter(g => yearOf(g) === y).sort((a, b) => b.hours - a.hours) }));
+  blocks.push({ y: "Backlog", list: backlog, backlog: true });
+  const place = []; let z = 0;
+  for (let r = 0; r < blocks.length; r += ACROSS) {
+    const row = blocks.slice(r, r + ACROSS);
+    let depth = 0;
+    row.forEach((bk, k) => {
+      const cols = bk.backlog ? 10 : COLS, gap = bk.backlog ? 0.8 : GAP, w = bk.backlog ? cols * gap : BW;
+      const x0 = (k - (ACROSS - 1) / 2) * (BW + STREET) - w / 2 + gap / 2;
+      bk.list.forEach((g, i) => place.push({ g, x: x0 + (i % cols) * gap, z: z - Math.floor(i / cols) * gap, yi: r / ACROSS, backlog: bk.backlog }));
+      depth = Math.max(depth, Math.ceil(bk.list.length / cols) * gap);
+      city.labels.push({ text: bk.backlog ? `Backlog · ${bk.list.length}` : bk.y, p: new THREE.Vector3(x0 + w / 2 - gap / 2, 0.2, z + 1.8), big: bk.backlog });
+    });
+    z -= depth + STREET;
+  }
+  const bz = z;
+  const geo = new THREE.BoxGeometry(1, 1, 1); geo.translate(0, 0.5, 0);
+  const mat = new THREE.MeshStandardMaterial({ roughness: 0.55, metalness: 0.15 });
+  const mesh = new THREE.InstancedMesh(geo, mat, place.length);
+  const m = new THREE.Matrix4(), c = new THREE.Color();
+  place.forEach((p, i) => {
+    const st = statusOf(p.g), h = p.backlog ? 0.12 : Math.max(0.25, Math.sqrt(p.g.hours || 0.2) * 1.7);
+    p.h = h; p.st = st; p.w = p.backlog ? 0.62 : 1.15;
+    m.compose(new THREE.Vector3(p.x, 0, p.z), new THREE.Quaternion(), new THREE.Vector3(p.w, h, p.w)); mesh.setMatrixAt(i, m);
+    c.setHex(SCOL[st]); if (p.g.platinum) c.lerp(new THREE.Color(0xffffff), 0.15); mesh.setColorAt(i, c);
+  });
+  s.add(mesh); city.mesh = mesh; city.place = place; city.depth = -bz; city.rows = Math.ceil(blocks.length / ACROSS);
+  // platinum beacons: a glowing light on top of each platinum tower
+  const tex = soft();
+  place.filter(p => p.g.platinum).forEach(p => { const b = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, color: 0x8fd0ff, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false }));
+    b.scale.set(2.4, 2.4, 1); b.position.set(p.x, p.h + 0.6, p.z); b.userData.p = p; s.add(b); (city.beacons ||= []).push(b); });
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(80, city.depth + 60), new THREE.MeshStandardMaterial({ color: 0x0c1120, roughness: 1 }));
+  ground.rotation.x = -Math.PI / 2; ground.position.z = -city.depth / 2 + 10; s.add(ground);
+  const grid = new THREE.GridHelper(Math.max(80, city.depth + 60), 60, 0x1b2340, 0x141a30); grid.position.set(0, 0.01, -city.depth / 2 + 10); s.add(grid);
+  const counts = {}; place.forEach(p => counts[p.st] = (counts[p.st] || 0) + 1);
+  city.legend = [["completed", "Completed"], ["beaten", "Beaten"], ["started", "In progress"], ["dropped", "Dropped"], ["unplayed", "Backlog"]]
+    .map(([k, l]) => `<span><i style="background:#${SCOL[k].toString(16).padStart(6, "0")}"></i>${l} ${counts[k] || 0}</span>`).join("") + `<span>height = hours · ✦ platinum</span>`;
+}
+function pickCity(ev) {
+  const r = canvas.getBoundingClientRect(), ray = new THREE.Raycaster();
+  ray.setFromCamera(new THREE.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1), camera);
+  const hit = ray.intersectObject(city.mesh)[0]; if (!hit) return;
+  const p = city.place[hit.instanceId], g = p.g, label = { completed: "Completed", beaten: "Beaten", started: "In progress", dropped: "Dropped", unplayed: "In your backlog" }[p.st];
+  info(g.image ? `<img src="${esc(g.image)}" alt="">` : initials(g.name), g.name, `${label}${g.hours ? ` · ${Math.round(g.hours)} h` : ""}${g.platinum ? " · 🏆 platinum" : ""}${g.metacritic ? ` · MC ${g.metacritic}` : ""}`);
+}
+
+/* ---------- 3. Hours race: your top 10 games by hours, year by year ---------- */
+const race = { t: 1, playing: false };
+function buildRace() {
+  const games = DATA.games.filter(g => g.hours_by_year && Object.keys(g.hours_by_year).length && (g.has_trophies || g.rawg_slug));
+  const ys = games.flatMap(g => Object.keys(g.hours_by_year).map(Number)); race.y0 = Math.min(...ys); race.y1 = Math.max(...ys);
+  race.games = games.map(g => { const cum = {}; let s = 0; for (let y = race.y0; y <= race.y1; y++) { s += g.hours_by_year[y] || 0; cum[y] = s; } return { g, cum }; });
+  const hue = s => { let h = 0; for (const ch of s) h = (h * 31 + ch.charCodeAt(0)) % 360; return h; };
+  race.el = new Map();
+  race.games.forEach(o => { const d = document.createElement("div"); d.className = "rbar"; d.style.opacity = 0;
+    d.innerHTML = `<span class="c">${o.g.image ? `<img src="${esc(o.g.image)}" alt="" loading="lazy">` : initials(o.g.name)}</span><span class="track"><span class="fill" style="background:hsl(${hue(o.g.name)} 65% 52%)"></span><span class="lab">${esc(o.g.name)}</span><span class="val"></span></span>`;
+    $("race").appendChild(d); race.el.set(o, d); });
+}
+function drawRace(p) {
+  race.t = p; const yf = race.y0 + p * (race.y1 - race.y0 + 0.999), y = Math.floor(yf), fr = yf - y;
+  const val = o => (o.cum[y - 1] || 0) + ((o.cum[y] || 0) - (o.cum[y - 1] || 0)) * fr;
+  const ranked = race.games.map(o => [o, val(o)]).sort((a, b) => b[1] - a[1]), top = ranked.slice(0, 10), max = Math.max(1, top[0][1]);
+  const H = Math.min(46, ($("race").clientHeight - 20) / 10);
+  ranked.forEach(([o, v], i) => { const d = race.el.get(o), on = i < 10 && v > 0;
+    d.style.opacity = on ? 1 : 0; d.style.transform = `translateY(${(on ? i : 10.5) * H}px)`;
+    if (on) { d.querySelector(".fill").style.width = `${Math.max(4, 100 * v / max)}%`; d.querySelector(".val").textContent = `${Math.round(v)} h`; } });
+  $("raceYear").textContent = y; $("yr").textContent = y;
+}
+
+/* ---------- switching views, timeline, animation loop ---------- */
+function fit(radius, tilt) {        // place the camera so a disc of this radius fills the screen width, seen from above at an angle
+  const v = THREE.MathUtils.degToRad(camera.fov), h = 2 * Math.atan(Math.tan(v / 2) * camera.aspect);
+  const d = radius / Math.tan(Math.min(v, h) / 2) * 1.05;
+  camera.position.set(0, d * Math.sin(tilt), d * Math.cos(tilt));
+}
+function setView(v) {
+  view = v;
+  document.querySelectorAll("[data-v]").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v));
+  $("race").classList.toggle("on", v === "race"); canvas.style.visibility = v === "race" ? "hidden" : "visible"; $("labels").innerHTML = "";
+  if (v === "galaxy") { fit(40, 0.95); controls?.target.set(0, 0, 0); $("legend").innerHTML = galaxy.legend;
+    info("✨", "Every trophy you've earned is a star", "From your first in the centre, spiralling out to today. Drag to turn, pinch to zoom, tap a star."); play(); }
+  if (v === "city") { const d = city.depth; camera.position.set(0, d * 0.75 + 24, 38); controls?.target.set(0, 0, -d * 0.42); $("legend").innerHTML = city.legend;
+    info("🏙️", "Every game is a tower", "Height = hours played. One block per year you started playing, your backlog in the last one. Tap a tower."); play(); }
+  if (v === "race") { $("legend").innerHTML = `<span>Total hours per game, year after year</span>`; info("🏁", "Hours race", "Which games took most of your time, and when."); play(); }
+  controls?.update();
+}
+document.querySelector(".seg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (b && b.dataset.v !== view) setView(b.dataset.v); });
+let anim = null;
+function play() {                          // replay the current view from the start (instantly with "reduce motion")
+  const dur = view === "galaxy" ? 9000 : view === "city" ? 3500 : 14000;
+  if (calm) { setProgress(1); return; }
+  const t0 = performance.now(); anim = { t0, dur };
+}
+function setProgress(p) {
+  p = Math.max(0, Math.min(1, p)); $("scrub").value = Math.round(p * 1000);
+  if (view === "galaxy" && galaxy.mat) { galaxy.progress = p; galaxy.mat.uniforms.uProgress.value = p; $("yr").textContent = galaxyYear(p); }
+  if (view === "city" && city.mesh) { city.grow = p; $("yr").textContent = ""; }
+  if (view === "race" && race.games) drawRace(p);
+}
+$("play").onclick = () => play();
+$("scrub").addEventListener("input", e => { anim = null; setProgress(e.target.value / 1000); });
+let down = null;
+canvas.addEventListener("pointerdown", e => down = [e.clientX, e.clientY]);
+canvas.addEventListener("pointerup", e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 6) (view === "galaxy" ? pickGalaxy : pickCity)(e); down = null; });
+
+const tmpM = new THREE.Matrix4(), tmpV = new THREE.Vector3(), tmpQ = new THREE.Quaternion(), tmpS = new THREE.Vector3();
+function labels(list) {
+  $("labels").innerHTML = list.map(l => { tmpV.copy(l.p).project(camera); if (tmpV.z > 1 || Math.abs(tmpV.x) > 1.1 || Math.abs(tmpV.y) > 1.1) return "";
+    return `<span class="${l.big ? "big" : ""}" style="left:${(tmpV.x + 1) / 2 * innerWidth}px;top:${(1 - tmpV.y) / 2 * innerHeight}px">${l.text}</span>`; }).join("");
+}
+function loop() {
+  requestAnimationFrame(loop);
+  if (anim) { const p = Math.min(1, (performance.now() - anim.t0) / anim.dur); setProgress(view === "galaxy" ? p : p < 1 ? 1 - Math.pow(1 - p, 3) : 1); if (p >= 1) anim = null; }
+  if (!renderer || view === "race") return;
+  const dt = clock.getDelta(); controls.update();
+  if (view === "galaxy") {
+    galaxy.mat.uniforms.uTime.value += dt;
+    renderer.render(galaxy.scene, camera);
+    labels(galaxy.years.filter(y => y.f <= galaxy.progress).map(y => ({ text: y.y, p: y.p })));
+  } else {
+    // towers grow street by street, nearest year first
+    city.place.forEach((p, i) => { const k = Math.min(1, Math.max(0, city.grow * 1.6 - (p.backlog ? 0.6 : (p.yi || 0) / Math.max(1, city.rows) * 0.6)));
+      tmpM.compose(tmpV.set(p.x, 0, p.z), tmpQ, tmpS.set(p.w, Math.max(0.001, p.h * k), p.w)); city.mesh.setMatrixAt(i, tmpM); });
+    city.mesh.instanceMatrix.needsUpdate = true;
+    (city.beacons || []).forEach(b => { b.material.opacity = city.grow > 0.95 ? 0.75 + 0.25 * Math.sin(performance.now() / 400 + b.position.x) : 0; });
+    renderer.render(city.scene, camera);
+    labels(city.labels);
+  }
+}
+
+async function start() {
+  const get = async (f, d) => { try { const r = await fetch(f, { cache: "no-store" }); return r.ok ? await r.json() : d; } catch { return d; } };
+  [DATA, GAL, FLAGS] = await Promise.all([get("data.json", null), get("galaxy.json", null), get("flags.json", {})]);
+  if (!DATA) { info("⚠️", "No game data yet", ""); return; }
+  buildRace();
+  if (!renderer) { document.querySelector('[data-v="galaxy"]').disabled = document.querySelector('[data-v="city"]').disabled = true; setView("race"); info("ℹ️", "3D isn't available on this device", "The hours race still works."); loop(); return; }
+  resize();
+  if (GAL?.t?.length) buildGalaxy(); else document.querySelector('[data-v="galaxy"]').hidden = true;
+  buildCity();
+  const want = location.hash.slice(1);
+  setView(["galaxy", "city", "race"].includes(want) ? want : GAL?.t?.length ? "galaxy" : "city");
+  loop();
+}
+start();
+</script>
+<script src="shell.js" defer></script>
