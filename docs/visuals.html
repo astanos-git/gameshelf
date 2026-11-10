@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-/* Three animated views of your history: Trophy galaxy (every trophy a star), Game city (every game a tower), Hours race. */
+/* Three animated views of your history: Trophy galaxy (every trophy a star), Activity landscape (a mountain range of your weeks), Hours race. */
 :root { --display: "Barlow Condensed", "Arial Narrow", sans-serif; --body: "IBM Plex Sans", system-ui, sans-serif; --ink: #eef2ff; --soft: rgba(238,242,255,.66);
   --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px); }
 * { box-sizing: border-box; }
@@ -49,11 +49,11 @@ footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; padding: 10p
 /* Hours race (DOM bars) */
 #race { position: fixed; left: 0; right: 0; top: calc(130px + var(--safe-top)); bottom: calc(150px + var(--safe-bottom)); padding: 0 14px; z-index: 3; display: none; }
 #race.on { display: block; }
-.rbar { position: absolute; left: 14px; right: 14px; height: 40px; display: grid; grid-template-columns: 40px 1fr; gap: 8px; align-items: center; transition: transform .45s ease, opacity .45s; will-change: transform; }
+.rbar { position: absolute; left: 14px; right: 14px; height: 40px; display: grid; grid-template-columns: 40px 1fr; gap: 8px; align-items: center; transition: transform .8s ease, opacity .8s; will-change: transform; }
 .rbar .c { width: 40px; height: 40px; border-radius: 8px; overflow: hidden; background: rgba(255,255,255,.1); display: grid; place-items: center; font: 600 13px var(--display); }
 .rbar .c img { width: 100%; height: 100%; object-fit: cover; }
 .rbar .track { position: relative; height: 32px; }
-.rbar .fill { position: absolute; inset: 0 auto 0 0; border-radius: 8px; transition: width .45s linear; min-width: 4px; }
+.rbar .fill { position: absolute; inset: 0 auto 0 0; border-radius: 8px; transition: width .6s linear; min-width: 4px; }
 .rbar .lab { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font: 600 14px var(--body); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: calc(100% - 70px); text-shadow: 0 1px 4px rgba(0,0,0,.6); }
 .rbar .val { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font: 700 18px var(--display); }
 .racebg { position: absolute; right: 14px; bottom: 0; font: 800 120px/1 var(--display); color: rgba(238,242,255,.08); pointer-events: none; }
@@ -67,7 +67,7 @@ footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; padding: 10p
   <div class="labels" id="labels" aria-hidden="true"></div>
   <header>
     <div class="row"><a class="back" href="stats.html" aria-label="Back to Stats">‹ Stats</a><h1>Your history in 3D</h1></div>
-    <div class="seg" role="group" aria-label="View"><button data-v="galaxy" aria-pressed="true">Trophy galaxy</button><button data-v="city">Game city</button><button data-v="race">Hours race</button></div>
+    <div class="seg" role="group" aria-label="View"><button data-v="galaxy" aria-pressed="true">Trophy galaxy</button><button data-v="land">Landscape</button><button data-v="race">Hours race</button></div>
     <div class="legend" id="legend"></div>
   </header>
   <section id="race" aria-label="Hours race"><div class="racebg" id="raceYear"></div></section>
@@ -91,7 +91,7 @@ const info = (icon, title, sub) => { $("info").querySelector(".ic").innerHTML = 
 const GRADE = ["Bronze", "Silver", "Gold", "Platinum"], GCOL = ["#d08c5c", "#c9d4e6", "#ffcf4a", "#8fd0ff"];
 let DATA, GAL, FLAGS = {}, view = "galaxy";
 
-/* ---------- renderer, camera, controls (shared by galaxy and city) ---------- */
+/* ---------- renderer, camera, controls (shared by the galaxy and the landscape) ---------- */
 const canvas = $("gl");
 let renderer;
 try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" }); }
@@ -185,64 +185,61 @@ function pickGalaxy(ev) {
   info(g?.image ? `<img src="${esc(g.image)}" alt="">` : "🏆", t[4] || `${GRADE[t[1]]} trophy`, `${GRADE[t[1]]} · ${GAL.games[t[3]] || ""} · ${fmtDate(when)}${t[2] ? ` · ${t[2] / 10}% of players` : ""}`);
 }
 
-/* ---------- 2. Game city: every game a tower, height = hours, one street per year you started playing ---------- */
-const city = { scene: new THREE.Scene(), grow: 1, items: [], labels: [] };
-const SCOL = { completed: 0xf5c84c, beaten: 0x4fc28b, started: 0x4f8dff, dropped: 0x6b7280, unplayed: 0x26304a };
-function statusOf(g) { const f = FLAGS[g.name]?.flag; return g.status === "completed" ? "completed" : f === "dropped" ? "dropped" : f === "beaten" || g.status === "beaten" ? "beaten" : g.hours > 0 || g.status === "started" ? "started" : "unplayed"; }
-function buildCity() {
-  const s = city.scene; s.background = new THREE.Color(0x070a14); s.fog = new THREE.Fog(0x070a14, 60, 190);
-  s.add(new THREE.HemisphereLight(0xbfd4ff, 0x10131f, 1.1));
-  const sun = new THREE.DirectionalLight(0xffe2b8, 1.6); sun.position.set(40, 80, 30); s.add(sun);
-  const games = DATA.games.filter(g => g.owned || g.hours > 0 || g.trophies_earned);
-  const yearOf = g => (g.first_played || g.first_trophy_at || "")?.slice(0, 4);
-  const played = games.filter(g => statusOf(g) !== "unplayed" && yearOf(g)), backlog = games.filter(g => statusOf(g) === "unplayed");
-  const years = [...new Set(played.map(yearOf))].sort();
-  // one block per year, three blocks across (a square-ish city reads better on a phone than one long street)
-  const COLS = 5, GAP = 1.6, ACROSS = 3, BW = COLS * GAP, STREET = 4;
-  const blocks = years.map(y => ({ y, list: played.filter(g => yearOf(g) === y).sort((a, b) => b.hours - a.hours) }));
-  blocks.push({ y: "Backlog", list: backlog, backlog: true });
-  const place = []; let z = 0;
-  for (let r = 0; r < blocks.length; r += ACROSS) {
-    const row = blocks.slice(r, r + ACROSS);
-    let depth = 0;
-    row.forEach((bk, k) => {
-      const cols = bk.backlog ? 10 : COLS, gap = bk.backlog ? 0.8 : GAP, w = bk.backlog ? cols * gap : BW;
-      const x0 = (k - (ACROSS - 1) / 2) * (BW + STREET) - w / 2 + gap / 2;
-      bk.list.forEach((g, i) => place.push({ g, x: x0 + (i % cols) * gap, z: z - Math.floor(i / cols) * gap, yi: r / ACROSS, backlog: bk.backlog }));
-      depth = Math.max(depth, Math.ceil(bk.list.length / cols) * gap);
-      city.labels.push({ text: bk.backlog ? `Backlog · ${bk.list.length}` : bk.y, p: new THREE.Vector3(x0 + w / 2 - gap / 2, 0.2, z + 1.8), big: bk.backlog });
-    });
-    z -= depth + STREET;
+/* ---------- 2. Activity landscape: a mountain range of your play, one ridge per year, one column per week ---------- */
+const land = { scene: new THREE.Scene(), grow: 1, labels: [] };
+const WEEKS = 53, SUB = 6;                       // terrain rows between two years, for smooth valleys
+function buildLand() {
+  const s = land.scene; s.background = new THREE.Color(0x05070f); s.fog = new THREE.Fog(0x05070f, 70, 170);
+  const t0 = new Date(GAL.start), y0 = t0.getFullYear(), y1 = new Date().getFullYear(), NY = y1 - y0 + 1;
+  // trophies per week per year, and which game led each week
+  const grid = Array.from({ length: NY }, () => new Float32Array(WEEKS)), lead = Array.from({ length: NY }, () => Array.from({ length: WEEKS }, () => ({})));
+  GAL.t.forEach(r => { const d = new Date(t0.getTime() + r[0] * 36e5), yi = d.getFullYear() - y0, w = Math.min(WEEKS - 1, Math.floor((d - new Date(d.getFullYear(), 0, 1)) / (7 * 864e5)));
+    grid[yi][w]++; const L = lead[yi][w]; L[r[3]] = (L[r[3]] || 0) + 1; });
+  const max = Math.max(1, ...grid.flatMap(r => [...r]));
+  const W = 64, D = Math.max(40, NY * 5.2), cols = WEEKS * 2, rows = (NY - 1) * SUB || 1;
+  const geo = new THREE.PlaneGeometry(W, D, cols, rows); geo.rotateX(-Math.PI / 2);
+  const pos = geo.attributes.position, base = new Float32Array(pos.count), col = new Float32Array(pos.count * 3), rowOf = new Float32Array(pos.count);
+  const sample = (yf, wf) => {                       // smooth (bilinear, lightly blurred) height at a fractional year/week
+    const yA = Math.floor(yf), yB = Math.min(NY - 1, yA + 1), fy = yf - yA, wA = Math.floor(wf), wB = Math.min(WEEKS - 1, wA + 1), fw = wf - wA;
+    const g = (y, w) => { let v = 0, n = 0; for (let k = -1; k <= 1; k++) { const ww = w + k; if (ww >= 0 && ww < WEEKS) { v += grid[y][ww] * (k ? 0.5 : 1); n += k ? 0.5 : 1; } } return v / n; };
+    return (g(yA, wA) * (1 - fw) + g(yA, wB) * fw) * (1 - fy) + (g(yB, wA) * (1 - fw) + g(yB, wB) * fw) * fy;
+  };
+  const ramp = [[0, "#141c3d"], [0.08, "#2b3a8f"], [0.25, "#7b3fd1"], [0.5, "#e2557a"], [0.75, "#ff9a3c"], [1, "#ffe08a"]].map(([k, c]) => [k, new THREE.Color(c)]);
+  const colorAt = t => { for (let i = 1; i < ramp.length; i++) if (t <= ramp[i][0]) return ramp[i - 1][1].clone().lerp(ramp[i][1], (t - ramp[i - 1][0]) / (ramp[i][0] - ramp[i - 1][0])); return ramp.at(-1)[1].clone(); };
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i), z = pos.getZ(i), wf = (x / W + 0.5) * (WEEKS - 1), yf = (z / D + 0.5) * (NY - 1);   // front = latest year, back = your first
+    const yr = yf, v = sample(Math.max(0, Math.min(NY - 1, yr)), Math.max(0, Math.min(WEEKS - 1, wf)));
+    const h = Math.pow(v / max, 0.6) * 12; base[i] = h; rowOf[i] = yr;
+    const c = colorAt(Math.pow(v / max, 0.6)); col.set([c.r, c.g, c.b], i * 3); pos.setY(i, 0);
   }
-  const bz = z;
-  const geo = new THREE.BoxGeometry(1, 1, 1); geo.translate(0, 0.5, 0);
-  const mat = new THREE.MeshStandardMaterial({ roughness: 0.55, metalness: 0.15 });
-  const mesh = new THREE.InstancedMesh(geo, mat, place.length);
-  const m = new THREE.Matrix4(), c = new THREE.Color();
-  place.forEach((p, i) => {
-    const st = statusOf(p.g), h = p.backlog ? 0.12 : Math.max(0.25, Math.sqrt(p.g.hours || 0.2) * 1.7);
-    p.h = h; p.st = st; p.w = p.backlog ? 0.62 : 1.15;
-    m.compose(new THREE.Vector3(p.x, 0, p.z), new THREE.Quaternion(), new THREE.Vector3(p.w, h, p.w)); mesh.setMatrixAt(i, m);
-    c.setHex(SCOL[st]); if (p.g.platinum) c.lerp(new THREE.Color(0xffffff), 0.15); mesh.setColorAt(i, c);
-  });
-  s.add(mesh); city.mesh = mesh; city.place = place; city.depth = -bz; city.rows = Math.ceil(blocks.length / ACROSS);
-  // platinum beacons: a glowing light on top of each platinum tower
-  const tex = soft();
-  place.filter(p => p.g.platinum).forEach(p => { const b = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, color: 0x8fd0ff, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false }));
-    b.scale.set(2.4, 2.4, 1); b.position.set(p.x, p.h + 0.6, p.z); b.userData.p = p; s.add(b); (city.beacons ||= []).push(b); });
-  const ground = new THREE.Mesh(new THREE.PlaneGeometry(80, city.depth + 60), new THREE.MeshStandardMaterial({ color: 0x0c1120, roughness: 1 }));
-  ground.rotation.x = -Math.PI / 2; ground.position.z = -city.depth / 2 + 10; s.add(ground);
-  const grid = new THREE.GridHelper(Math.max(80, city.depth + 60), 60, 0x1b2340, 0x141a30); grid.position.set(0, 0.01, -city.depth / 2 + 10); s.add(grid);
-  const counts = {}; place.forEach(p => counts[p.st] = (counts[p.st] || 0) + 1);
-  city.legend = [["completed", "Completed"], ["beaten", "Beaten"], ["started", "In progress"], ["dropped", "Dropped"], ["unplayed", "Backlog"]]
-    .map(([k, l]) => `<span><i style="background:#${SCOL[k].toString(16).padStart(6, "0")}"></i>${l} ${counts[k] || 0}</span>`).join("") + `<span>height = hours · ✦ platinum</span>`;
+  geo.setAttribute("color", new THREE.BufferAttribute(col, 3));
+  const mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.75, metalness: 0.05, flatShading: true, side: THREE.DoubleSide }));
+  const wire = new THREE.LineSegments(new THREE.WireframeGeometry(geo), new THREE.LineBasicMaterial({ color: 0x9fb4ff, transparent: true, opacity: 0.07 }));
+  s.add(mesh, wire);
+  s.add(new THREE.HemisphereLight(0xc8d6ff, 0x0a0d1a, 1.0));
+  const key = new THREE.DirectionalLight(0xffe6c8, 1.8); key.position.set(-30, 40, 30); s.add(key);
+  Object.assign(land, { mesh, wire, base, rowOf, NY, y0, W, D, grid, lead, max });
+  for (let y = 0; y < NY; y++) land.labels.push({ text: y0 + y, p: new THREE.Vector3(-W * 0.3, 9, D * (y / Math.max(1, NY - 1) - 0.5)) });
+  
+  const busiest = grid.flatMap((r, y) => [...r].map((v, w) => [v, y, w])).sort((a, b) => b[0] - a[0])[0];
+  land.legend = `<span><i style="background:#2b3a8f"></i>quiet</span><span><i style="background:#e2557a"></i>busy</span><span><i style="background:#ffe08a"></i>your peaks</span><span>height = trophies that week · busiest: ${busiest[0]} in a week of ${y0 + busiest[1]}</span>`;
 }
-function pickCity(ev) {
+function updateLand(p) {                          // the range rises year by year, oldest at the back
+  const pos = land.mesh.geometry.attributes.position, NY = land.NY;
+  for (let i = 0; i < pos.count; i++) { const k = Math.min(1, Math.max(0, p * (NY + 2) - land.rowOf[i])); pos.setY(i, land.base[i] * (k * k * (3 - 2 * k))); }
+  pos.needsUpdate = true; land.mesh.geometry.computeVertexNormals();
+  land.wire.geometry.dispose(); land.wire.geometry = new THREE.WireframeGeometry(land.mesh.geometry);
+}
+function pickLand(ev) {
   const r = canvas.getBoundingClientRect(), ray = new THREE.Raycaster();
   ray.setFromCamera(new THREE.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1), camera);
-  const hit = ray.intersectObject(city.mesh)[0]; if (!hit) return;
-  const p = city.place[hit.instanceId], g = p.g, label = { completed: "Completed", beaten: "Beaten", started: "In progress", dropped: "Dropped", unplayed: "In your backlog" }[p.st];
-  info(g.image ? `<img src="${esc(g.image)}" alt="">` : initials(g.name), g.name, `${label}${g.hours ? ` · ${Math.round(g.hours)} h` : ""}${g.platinum ? " · 🏆 platinum" : ""}${g.metacritic ? ` · MC ${g.metacritic}` : ""}`);
+  const hit = ray.intersectObject(land.mesh)[0]; if (!hit) return;
+  const w = Math.round((hit.point.x / land.W + 0.5) * (WEEKS - 1)), y = Math.round((hit.point.z / land.D + 0.5) * (land.NY - 1));
+  if (y < 0 || y >= land.NY) return;
+  const n = land.grid[y][w], top = Object.entries(land.lead[y][w]).sort((a, b) => b[1] - a[1])[0], g = top && DATA.games.find(x => x.name === GAL.games[top[0]]);
+  const monday = new Date(land.y0 + y, 0, 1 + w * 7);
+  info(g?.image ? `<img src="${esc(g.image)}" alt="">` : "⛰️", `Week of ${monday.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })}`,
+    n ? `${n} troph${n > 1 ? "ies" : "y"}${top ? ` · mostly ${GAL.games[top[0]]}` : ""}` : "No trophies that week");
 }
 
 /* ---------- 3. Hours race: your top 10 games by hours, year by year ---------- */
@@ -280,38 +277,40 @@ function setView(v) {
   $("race").classList.toggle("on", v === "race"); canvas.style.visibility = v === "race" ? "hidden" : "visible"; $("labels").innerHTML = "";
   if (v === "galaxy") { fit(40, 0.95); controls?.target.set(0, 0, 0); $("legend").innerHTML = galaxy.legend;
     info("✨", "Every trophy you've earned is a star", "From your first in the centre, spiralling out to today. Drag to turn, pinch to zoom, tap a star."); play(); }
-  if (v === "city") { const d = city.depth; camera.position.set(0, d * 0.75 + 24, 38); controls?.target.set(0, 0, -d * 0.42); $("legend").innerHTML = city.legend;
-    info("🏙️", "Every game is a tower", "Height = hours played. One block per year you started playing, your backlog in the last one. Tap a tower."); play(); }
+  if (v === "land") { fit(land.W * 0.4, 0.78); camera.position.x = -6; land.scene.fog.near = camera.position.length() * 0.9; land.scene.fog.far = camera.position.length() * 2.4; controls?.target.set(0, 0, land.D * 0.12); $("legend").innerHTML = land.legend;
+    info("⛰️", "Your play as a mountain range", "One ridge per year (your first at the back, this year in front), one column per week: the higher, the more trophies. Drag to turn, tap a peak."); play(); }
   if (v === "race") { $("legend").innerHTML = `<span>Total hours per game, year after year</span>`; info("🏁", "Hours race", "Which games took most of your time, and when."); play(); }
   controls?.update();
 }
 document.querySelector(".seg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (b && b.dataset.v !== view) setView(b.dataset.v); });
 let anim = null;
 function play() {                          // replay the current view from the start (instantly with "reduce motion")
-  const dur = view === "galaxy" ? 9000 : view === "city" ? 3500 : 14000;
+  const dur = view === "galaxy" ? 9000 : view === "land" ? 6000 : Math.max(20000, (race.y1 - race.y0 + 1) * 2600);   // the race: about 2.6 s a year
   if (calm) { setProgress(1); return; }
   const t0 = performance.now(); anim = { t0, dur };
 }
 function setProgress(p) {
   p = Math.max(0, Math.min(1, p)); $("scrub").value = Math.round(p * 1000);
   if (view === "galaxy" && galaxy.mat) { galaxy.progress = p; galaxy.mat.uniforms.uProgress.value = p; $("yr").textContent = galaxyYear(p); }
-  if (view === "city" && city.mesh) { city.grow = p; $("yr").textContent = ""; }
+  if (view === "land" && land.mesh) { land.grow = p; updateLand(p); $("yr").textContent = land.y0 + Math.min(land.NY - 1, Math.floor(p * land.NY)); }
   if (view === "race" && race.games) drawRace(p);
 }
 $("play").onclick = () => play();
 $("scrub").addEventListener("input", e => { anim = null; setProgress(e.target.value / 1000); });
 let down = null;
 canvas.addEventListener("pointerdown", e => down = [e.clientX, e.clientY]);
-canvas.addEventListener("pointerup", e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 6) (view === "galaxy" ? pickGalaxy : pickCity)(e); down = null; });
+canvas.addEventListener("pointerup", e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 6) (view === "galaxy" ? pickGalaxy : pickLand)(e); down = null; });
 
 const tmpM = new THREE.Matrix4(), tmpV = new THREE.Vector3(), tmpQ = new THREE.Quaternion(), tmpS = new THREE.Vector3();
 function labels(list) {
+  const top = document.querySelector("header").getBoundingClientRect().bottom + 8, bottom = document.querySelector("footer").getBoundingClientRect().top - 8;
   $("labels").innerHTML = list.map(l => { tmpV.copy(l.p).project(camera); if (tmpV.z > 1 || Math.abs(tmpV.x) > 1.1 || Math.abs(tmpV.y) > 1.1) return "";
+    const py = (1 - tmpV.y) / 2 * innerHeight; if (py < top || py > bottom) return "";
     return `<span class="${l.big ? "big" : ""}" style="left:${(tmpV.x + 1) / 2 * innerWidth}px;top:${(1 - tmpV.y) / 2 * innerHeight}px">${l.text}</span>`; }).join("");
 }
 function loop() {
   requestAnimationFrame(loop);
-  if (anim) { const p = Math.min(1, (performance.now() - anim.t0) / anim.dur); setProgress(view === "galaxy" ? p : p < 1 ? 1 - Math.pow(1 - p, 3) : 1); if (p >= 1) anim = null; }
+  if (anim) { const p = Math.min(1, (performance.now() - anim.t0) / anim.dur); setProgress(view === "land" ? 1 - Math.pow(1 - p, 2) : p); if (p >= 1) anim = null; }
   if (!renderer || view === "race") return;
   const dt = clock.getDelta(); controls.update();
   if (view === "galaxy") {
@@ -319,13 +318,8 @@ function loop() {
     renderer.render(galaxy.scene, camera);
     labels(galaxy.years.filter(y => y.f <= galaxy.progress).map(y => ({ text: y.y, p: y.p })));
   } else {
-    // towers grow street by street, nearest year first
-    city.place.forEach((p, i) => { const k = Math.min(1, Math.max(0, city.grow * 1.6 - (p.backlog ? 0.6 : (p.yi || 0) / Math.max(1, city.rows) * 0.6)));
-      tmpM.compose(tmpV.set(p.x, 0, p.z), tmpQ, tmpS.set(p.w, Math.max(0.001, p.h * k), p.w)); city.mesh.setMatrixAt(i, tmpM); });
-    city.mesh.instanceMatrix.needsUpdate = true;
-    (city.beacons || []).forEach(b => { b.material.opacity = city.grow > 0.95 ? 0.75 + 0.25 * Math.sin(performance.now() / 400 + b.position.x) : 0; });
-    renderer.render(city.scene, camera);
-    labels(city.labels);
+    renderer.render(land.scene, camera);
+    labels(land.labels);
   }
 }
 
@@ -334,12 +328,12 @@ async function start() {
   [DATA, GAL, FLAGS] = await Promise.all([get("data.json", null), get("galaxy.json", null), get("flags.json", {})]);
   if (!DATA) { info("⚠️", "No game data yet", ""); return; }
   buildRace();
-  if (!renderer) { document.querySelector('[data-v="galaxy"]').disabled = document.querySelector('[data-v="city"]').disabled = true; setView("race"); info("ℹ️", "3D isn't available on this device", "The hours race still works."); loop(); return; }
+  if (!renderer) { document.querySelector('[data-v="galaxy"]').disabled = document.querySelector('[data-v="land"]').disabled = true; setView("race"); info("ℹ️", "3D isn't available on this device", "The hours race still works."); loop(); return; }
   resize();
   if (GAL?.t?.length) buildGalaxy(); else document.querySelector('[data-v="galaxy"]').hidden = true;
-  buildCity();
+  if (GAL?.t?.length) buildLand(); else document.querySelector('[data-v="land"]').hidden = true;
   const want = location.hash.slice(1);
-  setView(["galaxy", "city", "race"].includes(want) ? want : GAL?.t?.length ? "galaxy" : "city");
+  setView(["galaxy", "land", "race"].includes(want) ? want : GAL?.t?.length ? "galaxy" : "race");
   loop();
 }
 start();
