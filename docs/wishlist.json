@@ -87,6 +87,13 @@
   "tba": false,
   "url": "https://rawg.io/games/phantom-blade-zero"
  },
+ "pragmata": {
+  "added": "2026-11-10T18:37:43Z",
+  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Pragmata_cover.jpg/250px-Pragmata_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "name": "Pragmata",
+  "pending": true,
+  "year": "2026"
+ },
  "ratchet-clank-rift-apart": {
   "added": "2026-10-14T10:53:30Z",
   "genres": [
