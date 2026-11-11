@@ -1,15 +1,24 @@
 {
  "kept": {
   "ABSOLVER": "2026-11-11",
+  "Amnesia Collection": "2026-11-11",
+  "Claire": "2026-11-11",
   "Darksiders III": "2026-11-11",
   "Day of the Tentacle Remastered": "2026-11-10",
   "Destiny 2": "2026-11-11",
   "Goat Simulator": "2026-11-10",
   "Here They Lie™": "2026-11-10",
+  "Iconoclasts": "2026-11-11",
+  "LittleBigPlanet™3": "2026-11-11",
   "Mad Max": "2026-11-11",
   "Mafia: Trilogy": "2026-11-11",
+  "NOT A HERO": "2026-11-11",
+  "Nioh": "2026-11-11",
   "STEEP": "2026-11-10",
-  "Yakuza Kiwami": "2026-11-11"
+  "Tales from the Borderlands": "2026-11-11",
+  "Titan Souls": "2026-11-11",
+  "Yakuza Kiwami": "2026-11-11",
+  "inFAMOUS™ Second Son": "2026-11-11"
  },
  "reviews": [
   {
@@ -21,6 +30,11 @@
    "at": "2026-11-11",
    "dropped": 9,
    "kept": 6
+  },
+  {
+   "at": "2026-11-11",
+   "dropped": 6,
+   "kept": 9
   }
  ]
 }
