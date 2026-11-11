@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-/* Animated views of your history: Trophy galaxy (every trophy a star), Gamer fingerprint (a generative print), Hours race; the Time tunnel is its own page. */
+/* Animated views of your history: Your ocean (every game a fish), Gamer fingerprint (a generative print), Hours race; the Time tunnel is its own page. */
 :root { --display: "Barlow Condensed", "Arial Narrow", sans-serif; --body: "IBM Plex Sans", system-ui, sans-serif; --ink: #eef2ff; --soft: rgba(238,242,255,.66);
   --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px); }
 * { box-sizing: border-box; }
@@ -39,6 +39,7 @@ h1 { font: 700 26px var(--display); margin: 0; flex: 1; letter-spacing: .01em; }
 .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: 0; }
 .labels { position: fixed; inset: 0; pointer-events: none; z-index: 2; }
 .labels span { position: absolute; transform: translate(-50%, -50%); font: 600 13px var(--display); letter-spacing: .06em; color: rgba(238,242,255,.55); white-space: nowrap; text-shadow: 0 1px 6px #000; }
+.labels span.edge { transform: translate(0, -50%); font: 500 12px var(--body); letter-spacing: 0; color: rgba(238,242,255,.5); }
 .labels span.big { font-size: 15px; color: rgba(238,242,255,.8); }
 footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; padding: 10px 14px calc(12px + var(--safe-bottom)); display: grid; gap: 10px;
   background: linear-gradient(#05070f00, #05070fee 40%); }
@@ -69,12 +70,12 @@ footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; padding: 10p
 </style>
 
 <main>
-  <canvas id="gl" aria-label="3D view of your games and trophies" role="img"></canvas>
+  <canvas id="gl" aria-label="Your ocean: every game you have played swims as a fish, sized by hours played" role="img"></canvas>
   <canvas id="fp" aria-label="Your gamer fingerprint: a generative print of your trophy history" role="img"></canvas>
   <div class="labels" id="labels" aria-hidden="true"></div>
   <header>
     <div class="row"><a class="back" href="stats.html" aria-label="Back to Stats">‹ Stats</a><h1>Your history</h1><a class="back tunnel" href="tunnel.html">Time tunnel ›</a></div>
-    <div class="seg" role="group" aria-label="View"><button data-v="galaxy" aria-pressed="true">Galaxy</button><button data-v="print">Fingerprint</button><button data-v="race">Hours race</button></div>
+    <div class="seg" role="group" aria-label="View"><button data-v="ocean" aria-pressed="true">Ocean</button><button data-v="print">Fingerprint</button><button data-v="race">Hours race</button></div>
     <div class="legend" id="legend"></div>
     <div class="row fp-tools" id="fpTools" hidden><div class="seg small" role="group" aria-label="Print style"><button data-style="night" aria-pressed="true">Night</button><button data-style="paper" aria-pressed="false">Paper</button></div><button class="back" id="fpSave">Save poster</button></div>
   </header>
@@ -97,100 +98,306 @@ const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const fmtDate = d => d.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
 const info = (icon, title, sub) => { $("info").querySelector(".ic").innerHTML = icon; $("infoT").textContent = title; $("infoS").textContent = sub || ""; };
 const GRADE = ["Bronze", "Silver", "Gold", "Platinum"], GCOL = ["#d08c5c", "#c9d4e6", "#ffcf4a", "#8fd0ff"];
-let DATA, GAL, FLAGS = {}, view = "galaxy";
+let DATA, GAL, FLAGS = {}, view = "ocean";
 
-/* ---------- renderer, camera, controls (for the galaxy) ---------- */
+/* ---------- renderer, camera, controls (for the ocean) ---------- */
 const canvas = $("gl");
 let renderer;
 try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" }); }
 catch { renderer = null; }
 const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 0.1, 2000);
 const controls = renderer ? new OrbitControls(camera, canvas) : null;
-if (controls) { controls.enableDamping = true; controls.dampingFactor = 0.08; controls.autoRotate = !calm; controls.autoRotateSpeed = 0.35; controls.enablePan = false; }
+if (controls) { controls.enableDamping = true; controls.dampingFactor = 0.08; controls.autoRotate = !calm; controls.autoRotateSpeed = 0.35; controls.enablePan = false;
+  controls.minDistance = 5; controls.maxDistance = 120; controls.minPolarAngle = 1.15; controls.maxPolarAngle = 1.74; }   // stay under water
 const clock = new THREE.Clock();
 function resize() {
   if (!renderer) return;
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.setSize(innerWidth, innerHeight, false);
   camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
+  if (ocean.uScale) { ocean.uScale.value = renderer.domElement.height / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2)); oceanHome(); }
 }
 addEventListener("resize", resize);
 
-/* ---------- 1. Trophy galaxy: every trophy a star, spiralling out from your first one ---------- */
-function soft() {                                   // round glowing sprite for the stars
+/* ---------- 1. Your ocean: every game you've played is a fish ----------
+   Size = hours played, colour = genre, depth = how long since you last touched it (fresh games swim in the light, forgotten ones sink).
+   Platinums glow, dropped games turn grey, and the backlog waits on the seabed as eggs. Fish of the same genre school together. */
+function soft() {                                   // round glowing sprite (eggs, halos, bubbles, drifting specks)
   const c = document.createElement("canvas"); c.width = c.height = 64; const x = c.getContext("2d");
   const g = x.createRadialGradient(32, 32, 0, 32, 32, 32); g.addColorStop(0, "rgba(255,255,255,1)"); g.addColorStop(.25, "rgba(255,255,255,.85)"); g.addColorStop(1, "rgba(255,255,255,0)");
   x.fillStyle = g; x.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c);
 }
-const galaxy = { scene: new THREE.Scene(), progress: 1, playing: false, rows: [], years: [] };
-function buildGalaxy() {
-  const s = galaxy.scene, rows = GAL.t, n = rows.length, total = rows[n - 1][0] || 1, t0 = new Date(GAL.start);
-  s.fog = new THREE.FogExp2(0x05070f, 0.0065);
-  const pos = new Float32Array(n * 3), col = new Float32Array(n * 3), size = new Float32Array(n), born = new Float32Array(n);
-  const turns = 2.4;          // a loose spiral with two arms reads better than one turn per year
-  const rnd = (i, k) => { const v = Math.sin(i * 12.9898 + k * 78.233) * 43758.5453; return v - Math.floor(v); };   // stable jitter
-  const gauss = (i, k) => (rnd(i, k) + rnd(i, k + 1) + rnd(i, k + 2) - 1.5) * 1.15;
-  rows.forEach((r, i) => {
-    const f = r[0] / total, ang = f * turns * Math.PI * 2 + (r[3] % 2) * Math.PI, rad = 4 + 46 * Math.pow(f, 0.85);
-    const spread = 0.7 + rad * 0.045;
-    pos[i * 3] = Math.cos(ang) * rad + gauss(i, 1) * spread;
-    pos[i * 3 + 1] = gauss(i, 5) * (1.6 - f) * 1.3 + (r[1] === 3 ? 0 : 0);
-    pos[i * 3 + 2] = Math.sin(ang) * rad + gauss(i, 9) * spread;
-    const c = new THREE.Color(GCOL[r[1]]); col.set([c.r, c.g, c.b], i * 3);
-    const rare = r[2] / 10;
-    size[i] = [1.1, 1.4, 1.9, 6.5][r[1]] * (rare && rare < 5 ? 1.6 : rare < 15 ? 1.2 : 1);
-    born[i] = f;
-  });
-  const geo = new THREE.BufferGeometry();
-  geo.setAttribute("position", new THREE.BufferAttribute(pos, 3)); geo.setAttribute("color", new THREE.BufferAttribute(col, 3));
-  geo.setAttribute("size", new THREE.BufferAttribute(size, 1)); geo.setAttribute("born", new THREE.BufferAttribute(born, 1));
-  const mat = new THREE.ShaderMaterial({
-    uniforms: { uMap: { value: soft() }, uProgress: { value: 1 }, uTime: { value: 0 }, uPx: { value: renderer.getPixelRatio() } },
-    vertexShader: `attribute float size; attribute float born; attribute vec3 color; varying vec3 vColor; varying float vAlpha;
-      uniform float uProgress, uTime, uPx;
-      void main() {
-        float age = uProgress - born; float on = smoothstep(0.0, 0.015, age);
-        float tw = 0.82 + 0.18 * sin(uTime * 2.0 + position.x * 3.1 + position.z * 1.7);
-        vec4 mv = modelViewMatrix * vec4(position, 1.0);
-        float flash = 1.0 + 2.5 * (1.0 - smoothstep(0.0, 0.02, age)) * step(0.0, age);
-        gl_PointSize = size * on * flash * uPx * (380.0 / -mv.z);
-        vColor = color; vAlpha = on * tw; gl_Position = projectionMatrix * mv; }`,
-    fragmentShader: `uniform sampler2D uMap; varying vec3 vColor; varying float vAlpha;
-      void main() { vec4 t = texture2D(uMap, gl_PointCoord); gl_FragColor = vec4(vColor, t.a * vAlpha); }`,
-    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
-  });
-  galaxy.points = new THREE.Points(geo, mat); s.add(galaxy.points);
-  galaxy.mat = mat; galaxy.total = total; galaxy.turns = turns; galaxy.t0 = t0;
-  // a faint dust of background stars and a warm core
-  const bg = new Float32Array(1500 * 3); for (let i = 0; i < 1500; i++) { const r = 300 + rnd(i, 21) * 500, a = rnd(i, 22) * Math.PI * 2, b = Math.acos(2 * rnd(i, 23) - 1);
-    bg.set([r * Math.sin(b) * Math.cos(a), r * Math.cos(b), r * Math.sin(b) * Math.sin(a)], i * 3); }
-  const bgg = new THREE.BufferGeometry(); bgg.setAttribute("position", new THREE.BufferAttribute(bg, 3));
-  s.add(new THREE.Points(bgg, new THREE.PointsMaterial({ size: 1.4, color: 0x8899cc, transparent: true, opacity: .55, sizeAttenuation: false })));
-  const core = new THREE.Sprite(new THREE.SpriteMaterial({ map: soft(), color: 0xffd9a0, transparent: true, opacity: .55, blending: THREE.AdditiveBlending, depthWrite: false }));
-  core.scale.set(16, 16, 1); core.material.opacity = .4; s.add(core);
-  // where each year starts, for the floating labels
-  const y0 = t0.getFullYear();
-  for (let y = y0 + 1; y <= new Date().getFullYear(); y++) {
-    const f = (new Date(y, 0, 1) - t0) / 36e5 / total; if (f <= 0 || f >= 1) continue;
-    const ang = f * turns * Math.PI * 2 + Math.PI / 2, rad = 4 + 46 * Math.pow(f, 0.85);
-    galaxy.years.push({ y, f, p: new THREE.Vector3(Math.cos(ang) * rad, 3, Math.sin(ang) * rad) });
-  }
-  const plats = rows.filter(r => r[1] === 3).length;
-  galaxy.legend = GRADE.map((g, i) => `<span><i style="background:${GCOL[i]}"></i>${g}</span>`).join("") + `<span>${n.toLocaleString()} trophies · ${plats} platinums · bigger = rarer</span>`;
+const H = 44, R = 17, TOP = H - 5, BOTTOM = 3.5, DAY = 864e5, YEAR = 365.25 * DAY;
+const GENERIC = new Set(["Action", "Adventure"]);
+const mainGenre = g => { const gs = g?.genres || []; return gs.find(x => !GENERIC.has(x)) || gs[0] || "Other"; };
+const OCOL = ["#ff6b6b", "#ffb347", "#ffe66d", "#7bed9f", "#4ecdc4", "#5dade2", "#a29bfe", "#fd79a8"], OOTHER = "#c3cbe0";
+const SHAPES = [[1, 1], [1.45, .9], [.75, 1.1], [1.7, .8], [.62, 1], [1.2, 1.25], [.9, .85], [1.35, 1.1], [1, 1]];   // body height, body width per genre: each genre is its own species
+const ocean = { scene: new THREE.Scene(), fish: [], eggs: [], T: Date.now(), t0: 0, now: Date.now(), follow: null, back: 0, R, food: null, quick: 0, home: 60 };
+const U = { uTime: { value: 0 }, uH: { value: H } };
+const WATER = `
+uniform float uTime; uniform float uH;
+vec3 water(float y) { float t = clamp(y / uH, 0., 1.); return mix(vec3(.012, .05, .12), mix(vec3(.015, .15, .29), vec3(.07, .46, .6), smoothstep(.5, 1., t)), smoothstep(0., .6, t)); }
+float caust(vec2 p, float t) { p *= .33; float v = 0.; for (int i = 0; i < 3; i++) { p += vec2(sin(p.y * 1.7 + t * .6), cos(p.x * 1.3 - t * .5)) * .6; v += abs(sin(p.x + p.y)); } return pow(1. - v / 3., 3.); }
+vec3 far(vec3 dir) { return water((dir.y * 1.5 + .5) * uH); }                 // the colour of open water in a direction: everything fades into it
+vec3 fog(vec3 c, vec3 wp) { vec3 d = wp - cameraPosition; return mix(far(normalize(d)), c, exp(-length(d) * .011)); }`;
+const hash = (s, salt = 0) => { let h = 2166136261 ^ salt; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); h ^= h >>> 13; h = Math.imul(h, 0x5bd1e995); return ((h >>> 0) % 100000) / 100000; };
+const ms = s => s ? new Date(s).getTime() : null;
+const fishLen = h => 0.75 + 0.36 * Math.sqrt(h);
+
+function fishGeometry() {                           // a small low-poly fish, nose towards +x, one unit long
+  const body = new THREE.SphereGeometry(1, 16, 10); body.rotateZ(Math.PI / 2);
+  const bp = body.attributes.position, pos = [], nor = [], idx = [];
+  for (let i = 0; i < bp.count; i++) { const x = bp.getX(i), y = bp.getY(i), z = bp.getZ(i);
+    const taper = x < 0 ? 1 - 0.25 * x * x : 1;      // slimmer towards the tail
+    pos.push(0.1 + 0.4 * x, 0.2 * y * taper, 0.085 * z * taper); nor.push(x * 0.4, y, z * 1.6); }
+  for (let i = 0; i < body.index.count; i++) idx.push(body.index.getX(i));
+  const fin = (pts, tris) => { const b = pos.length / 3; pts.forEach(p => { pos.push(p[0], p[1], 0); nor.push(0, 0.25, 1); }); tris.forEach(t => idx.push(b + t[0], b + t[1], b + t[2])); };
+  fin([[-0.24, 0], [-0.5, 0.21], [-0.41, 0], [-0.5, -0.21]], [[0, 1, 2], [0, 2, 3]]);            // forked tail
+  fin([[0.24, 0.17], [-0.12, 0.15], [-0.08, 0.31]], [[0, 1, 2]]);                                 // back fin
+  fin([[0.05, -0.17], [-0.12, -0.15], [-0.1, -0.26]], [[0, 1, 2]]);                               // belly fin
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute("normal", new THREE.Float32BufferAttribute(nor, 3)); g.setIndex(idx);
+  return g;
 }
-function galaxyYear(p) { const h = p * galaxy.total; return new Date(galaxy.t0.getTime() + h * 36e5).getFullYear(); }
-function pickGalaxy(ev) {
-  const r = canvas.getBoundingClientRect(), m = new THREE.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
-  const pos = galaxy.points.geometry.attributes.position, v = new THREE.Vector3();
-  let best = -1, bd = 26 * 26;                                  // nearest star on screen within ~26px, platinums and rare ones first
-  for (let i = 0; i < pos.count; i++) {
-    if (GAL.t[i][0] / galaxy.total > galaxy.progress) continue;
-    v.fromBufferAttribute(pos, i).project(camera); if (v.z > 1) continue;
-    const dx = (v.x - m.x) * r.width / 2, dy = (v.y - m.y) * r.height / 2, d = dx * dx + dy * dy - (GAL.t[i][1] === 3 ? 300 : GAL.t[i][4] ? 80 : 0);
-    if (d < bd) { bd = d; best = i; }
+function pointsMat(extra = {}) {                    // glowing dots sized in world units
+  return new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    uniforms: { ...U, uMap: { value: ocean.tex }, uScale: ocean.uScale, uPulse: { value: extra.pulse || 0 }, uDrift: { value: extra.drift || 0 } },
+    vertexShader: WATER + `attribute float aSize; attribute vec4 aCol; uniform float uScale, uPulse, uDrift; varying vec4 vCol;
+      void main() { vec3 p = position;
+        if (uDrift > 0.) { p.y = mod(p.y - uTime * uDrift, uH); p.x += sin(uTime * .25 + position.z) * .8; }
+        vec4 mv = modelViewMatrix * vec4(p, 1.); gl_Position = projectionMatrix * mv;
+        gl_PointSize = min(uScale * .06, aSize * (1. + uPulse * sin(uTime * 1.6 + position.x * 7.)) * uScale / max(.1, -mv.z));
+        vCol = aCol; vCol.a *= exp(-length(mv.xyz) * .008); }`,
+    fragmentShader: `uniform sampler2D uMap; varying vec4 vCol; void main() { gl_FragColor = vec4(vCol.rgb, vCol.a * texture2D(uMap, gl_PointCoord).a); }` });
+}
+function pointCloud(n, extra) {
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(n * 3), 3)); geo.setAttribute("aSize", new THREE.BufferAttribute(new Float32Array(n), 1)); geo.setAttribute("aCol", new THREE.BufferAttribute(new Float32Array(n * 4), 4));
+  const p = new THREE.Points(geo, pointsMat(extra)); p.frustumCulled = false; ocean.scene.add(p); return p;
+}
+function buildOcean() {
+  const s = ocean.scene, now = ocean.now = Date.now();
+  ocean.tex = soft(); ocean.uScale = { value: 800 };
+  // species: the 8 genres you've spent most hours in get a colour and a body shape
+  const gh = {}; DATA.games.forEach(g => { if (g.hours) gh[mainGenre(g)] = (gh[mainGenre(g)] || 0) + g.hours; });
+  const genres = ocean.genres = Object.entries(gh).sort((a, b) => b[1] - a[1]).slice(0, 8).map(e => e[0]);
+
+  /* the water itself */
+  const sky = new THREE.Mesh(new THREE.SphereGeometry(900, 24, 16), new THREE.ShaderMaterial({ side: THREE.BackSide, depthWrite: false, uniforms: { ...U },
+    vertexShader: `varying vec3 vDir; void main() { vDir = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+    fragmentShader: WATER + `varying vec3 vDir; void main() { gl_FragColor = vec4(far(normalize(vDir)), 1.); }` }));
+  sky.renderOrder = -2; sky.frustumCulled = false; s.add(sky);
+  const flat = (y, frag, side) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(900, 900), new THREE.ShaderMaterial({ side, uniforms: { ...U },
+      vertexShader: `varying vec3 vW; void main() { vec4 w = modelMatrix * vec4(position, 1.); vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
+      fragmentShader: WATER + `varying vec3 vW; void main() { ${frag} }` }));
+    m.rotation.x = -Math.PI / 2; m.position.y = y; s.add(m); return m; };
+  flat(0, `float n = sin(vW.x * .9) * sin(vW.z * .7 + sin(vW.x * .3)) * .5 + .5;
+    vec3 c = vec3(.035, .075, .11) * (.75 + .5 * n) + caust(vW.xz, uTime) * vec3(.07, .2, .22);
+    c *= 1. - .55 * smoothstep(8., 34., length(vW.xz)); gl_FragColor = vec4(fog(c, vW), 1.);`, THREE.FrontSide);
+  flat(H, `vec3 c = vec3(.12, .55, .68) + caust(vW.xz * 1.6, uTime * 1.4) * vec3(.5, .55, .5);
+    gl_FragColor = vec4(fog(c, vW), 1.);`, THREE.DoubleSide);
+  // shafts of light
+  for (let i = 0; i < 9; i++) {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(5 + (i % 3) * 3, H + 8), new THREE.ShaderMaterial({ transparent: true, depthWrite: false, side: THREE.DoubleSide, blending: THREE.AdditiveBlending,
+      uniforms: { ...U, uPh: { value: i * 1.7 } }, vertexShader: `varying vec2 vUv; void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+      fragmentShader: `uniform float uTime, uPh; varying vec2 vUv; void main() { float a = pow(vUv.y, 1.7) * pow(1. - abs(vUv.x - .5) * 2., 2.) * (.075 + .055 * sin(uTime * .45 + uPh)); gl_FragColor = vec4(.55, .95, 1., a); }` }));
+    const a = i * 2.4, r = 4 + (i * 7.3) % 22; m.position.set(Math.cos(a) * r, H / 2 + 3, Math.sin(a) * r); m.rotation.set(0, a * 1.3, 0.22 * (i % 2 ? 1 : -1)); m.renderOrder = 3; s.add(m);
   }
-  if (best < 0) return;
-  const t = GAL.t[best], g = DATA.games.find(x => x.name === GAL.games[t[3]]), when = new Date(galaxy.t0.getTime() + t[0] * 36e5);
-  info(g?.image ? `<img src="${esc(g.image)}" alt="">` : "🏆", t[4] || `${GRADE[t[1]]} trophy`, `${GRADE[t[1]]} · ${GAL.games[t[3]] || ""} · ${fmtDate(when)}${t[2] ? ` · ${t[2] / 10}% of players` : ""}`);
+  // kelp forest around the edge
+  const KN = 70, kelp = new THREE.InstancedMesh(new THREE.PlaneGeometry(1, 1, 1, 12).translate(0, .5, 0), new THREE.ShaderMaterial({ side: THREE.DoubleSide, uniforms: { ...U },
+    vertexShader: WATER + `varying float vH; varying vec3 vW; void main() { vec3 p = position; float h = p.y; p.x *= 1. - .8 * h; vec4 o = instanceMatrix * vec4(0., 0., 0., 1.); float ph = o.x * 1.3 + o.z;
+      vec4 w = modelMatrix * instanceMatrix * vec4(p, 1.); w.x += sin(uTime * .7 + ph + h * 3.) * 1.3 * h * h; w.z += cos(uTime * .5 + ph + h * 2.) * .9 * h * h; vH = h; vW = w.xyz; gl_Position = projectionMatrix * viewMatrix * w; }`,
+    fragmentShader: WATER + `varying float vH; varying vec3 vW; void main() { gl_FragColor = vec4(fog(mix(vec3(.01, .09, .08), vec3(.06, .36, .25), vH), vW), 1.); }` }), KN);
+  const M = new THREE.Matrix4(), Q = new THREE.Quaternion(), Y = new THREE.Vector3(0, 1, 0);
+  for (let i = 0; i < KN; i++) { const a = i * 2.399, r = R + 3 + ((i * 37) % 23), h = 5 + ((i * 53) % 11);
+    M.compose(new THREE.Vector3(Math.cos(a) * r, 0, Math.sin(a) * r), Q.setFromAxisAngle(Y, a * 3), new THREE.Vector3(1.1 + (i % 3) * .4, h, 1)); kelp.setMatrixAt(i, M); }
+  kelp.frustumCulled = false; s.add(kelp);
+  // drifting specks
+  const snow = pointCloud(500, { drift: .35 });
+  for (let i = 0; i < 500; i++) { const a = Math.random() * 6.283, r = Math.sqrt(Math.random()) * 46;
+    snow.geometry.attributes.position.setXYZ(i, Math.cos(a) * r, Math.random() * H, Math.sin(a) * r); snow.geometry.attributes.aSize.setX(i, .12 + Math.random() * .22); snow.geometry.attributes.aCol.setXYZW(i, .7, .95, 1, .3); }
+
+  /* the games */
+  const played = g => (g.hours || 0) > 0 || g.trophies_earned > 0;
+  const all = DATA.games.map((g, i) => {
+    const mk = Object.keys(g.months || {}).sort(), genre = mainGenre(g), gi = genres.indexOf(genre);
+    const a = i * 2.39996 + hash(g.name) * .5, r = 2 + Math.sqrt((i + .5) / DATA.games.length) * (R * Math.min(2.1, Math.max(1, camera.aspect * 1.25)) + 7);
+    const o = { g, name: g.name, genre, gi, col: new THREE.Color(gi < 0 ? OOTHER : OCOL[gi]), ex: Math.cos(a) * r, ez: Math.sin(a) * r, acquired: ms(g.acquired) };
+    if (!played(g)) { o.from = o.acquired ?? 0; o.until = Infinity; return o; }
+    o.birth = ms(g.first_played) ?? ms(g.first_trophy_at) ?? (mk[0] ? ms(mk[0] + "-01") : null) ?? o.acquired ?? now;
+    o.last = Math.max(o.birth, ms(g.last_played) || 0, ms(g.last_trophy) || 0);
+    o.hours = g.hours || Math.min(40, (g.trophies_earned || 0) * .6) || 1; o.guess = !g.hours;
+    const hy = Object.entries(g.hours_by_year || {}).map(([y, h]) => [+y, h]).filter(e => e[1] > 0).sort((p, q) => p[0] - q[0]), sum = hy.reduce((n, e) => n + e[1], 0);
+    o.hy = sum ? hy.map(([y, h]) => [y, h * o.hours / sum]) : null;
+    o.years = [...new Set([new Date(o.birth).getFullYear(), new Date(o.last).getFullYear(), ...hy.map(e => e[0]), ...mk.map(k => +k.slice(0, 4))])].sort((p, q) => p - q);
+    o.platAt = ms(g.platinum_at); const flag = FLAGS[g.name]?.flag;
+    o.beaten = flag === "beaten" || g.status === "completed"; o.dropped = flag === "dropped";
+    o.from = Math.min(o.acquired ?? Infinity, o.birth - 30 * DAY); o.until = o.birth;
+    o.len = fishLen(o.hours); o.big = o.hours >= 45; o.cruise = (1.2 + 2.2 / (.6 + o.len)) * (.85 + hash(g.name, 3) * .3);
+    o.jit = (hash(g.name, 1) - .5) * 5; o.ph = hash(g.name, 2) * 6.283; o.shape = SHAPES[gi < 0 ? 8 : gi];
+    o.p = new THREE.Vector3(o.ex, .6, o.ez); o.v = new THREE.Vector3(Math.cos(o.ph), 0, Math.sin(o.ph)).multiplyScalar(o.cruise); o.yaw = o.ph; o.pitch = 0; o.s = 0; o.born = false;
+    return o;
+  });
+  const fish = ocean.fish = all.filter(o => o.birth != null).sort((a, b) => b.hours - a.hours); ocean.eggs = all;
+  ocean.t0 = Math.min(...fish.map(f => f.birth), now - YEAR) - 20 * DAY; ocean.span = (now - ocean.t0) / YEAR;
+  const N = fish.length, geo = fishGeometry();
+  const aColor = new THREE.InstancedBufferAttribute(new Float32Array(N * 3), 3), aInfo = new THREE.InstancedBufferAttribute(new Float32Array(N * 4), 4), aState = new THREE.InstancedBufferAttribute(new Float32Array(N * 2), 2);
+  fish.forEach((f, i) => { f.i = i; aColor.setXYZ(i, f.col.r, f.col.g, f.col.b); aInfo.setXYZW(i, f.ph, 3 + f.cruise * 2.2, Math.floor(hash(f.name, 4) * 3), 0); });
+  geo.setAttribute("aColor", aColor); geo.setAttribute("aInfo", aInfo); geo.setAttribute("aState", aState);
+  ocean.mesh = new THREE.InstancedMesh(geo, new THREE.ShaderMaterial({ side: THREE.DoubleSide, uniforms: { ...U },
+    vertexShader: WATER + `attribute vec3 aColor; attribute vec4 aInfo; attribute vec2 aState; varying vec3 vCol, vL, vN, vW; varying vec3 vI;
+      void main() { vec3 p = position; float w = smoothstep(.4, -.5, p.x);
+        p.z += sin(p.x * 6. - uTime * aInfo.y + aInfo.x) * .075 * (.2 + w);
+        vec4 wp = modelMatrix * instanceMatrix * vec4(p, 1.); vW = wp.xyz; vL = position; vN = mat3(instanceMatrix) * normal;
+        vCol = aColor; vI = vec3(aInfo.x, aInfo.z, 0.); vI.z = aState.x; vCol = mix(vCol, vec3(dot(vCol, vec3(.33))) * .55, aState.y);
+        gl_Position = projectionMatrix * viewMatrix * wp; }`,
+    fragmentShader: WATER + `varying vec3 vCol, vL, vN, vW; varying vec3 vI;
+      void main() { vec3 n = normalize(vN); if (!gl_FrontFacing) n = -n;
+        float up = n.y * .5 + .5; vec3 c = vCol * (.42 + .8 * up);
+        c = mix(c, vec3(1.), smoothstep(.03, -.17, vL.y) * .38);                                   // pale belly
+        if (vI.y < .5) c *= 1. - .3 * smoothstep(.3, .7, sin(vL.x * 34. + vI.x));                    // bands
+        else if (vI.y < 1.5) c = mix(c, vec3(1.), .35 * smoothstep(.022, .0, abs(vL.y - .03)));     // side line
+        else c *= 1. - .28 * smoothstep(.6, .9, sin(vL.x * 40.) * sin(vL.y * 60. + vI.x));           // spots
+        float e = distance(vL.xy, vec2(.37, .045)); c = mix(c, vec3(.02), smoothstep(.03, .022, e)); c = mix(c, vec3(1.), smoothstep(.012, .006, distance(vL.xy, vec2(.375, .052))));   // eye
+        c += caust(vW.xz, uTime) * .3 * up * vCol;
+        c *= mix(.4, 1.12, clamp(vW.y / uH, 0., 1.));                                              // darker in the deep
+        c += vCol * vI.z * .55;                                                                    // platinum: lit from inside
+        gl_FragColor = vec4(fog(c, vW), 1.); }` }), N);
+  ocean.mesh.frustumCulled = false; ocean.mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage); s.add(ocean.mesh);
+  ocean.aState = aState;
+  ocean.halo = pointCloud(N); ocean.halo.renderOrder = 4;
+  // eggs on the seabed
+  ocean.eggPts = pointCloud(all.length, { pulse: .22 });
+  all.forEach((o, i) => { ocean.eggPts.geometry.attributes.position.setXYZ(i, o.ex, .45, o.ez); ocean.eggPts.geometry.attributes.aSize.setX(i, 1.3); });
+  ocean.bub = pointCloud(140); ocean.bubbles = Array.from({ length: 140 }, () => ({ life: 0, p: new THREE.Vector3(), w: 0 })); ocean.bi = 0;
+  ocean.foodPts = pointCloud(16);
+  const backlog = all.filter(o => o.birth == null).length;
+  ocean.legend = genres.map((g, i) => `<span><i style="background:${OCOL[i]}"></i>${esc(g)}</span>`).join("") + `<span>${N} fish · ${backlog} eggs</span>`;
+  oceanTime(1, true);
+  for (let i = 0; i < 240; i++) swim(.05, true);     // let the schools form before the first frame
+}
+function bubble(x, y, z, size = .3) { const b = ocean.bubbles[ocean.bi = (ocean.bi + 1) % ocean.bubbles.length]; b.p.set(x, y, z); b.life = 1; b.w = Math.random() * 6.283; b.size = size * (.6 + Math.random() * .8); }
+const depthFor = age => TOP - (TOP - BOTTOM) * Math.pow(Math.min(1, Math.max(0, age) / Math.max(4, ocean.span)), .55);
+function oceanTime(p, instant) {                    // set the ocean to a moment between your first game (0) and today (1)
+  const T = ocean.T = ocean.t0 + p * (ocean.now - ocean.t0), Y = new Date(T).getFullYear(), y0 = new Date(Y, 0, 1).getTime(), y1 = new Date(Y + 1, 0, 1).getTime();
+  ocean.p = p;
+  for (const f of ocean.fish) {
+    const born = T >= f.birth;
+    if (born && !f.born) { f.p.set(f.ex, .6, f.ez); if (!instant) for (let k = 0; k < 5; k++) bubble(f.ex + Math.random() - .5, .6 + Math.random(), f.ez + Math.random() - .5); }
+    f.born = born;
+    if (!born) { f.target = 0; f.glow = 0; f.grey = 0; f.active = false; if (instant) f.s = 0; continue; }
+    let h;                                           // hours played up to this moment
+    if (f.hy) { h = 0; for (const [y, v] of f.hy) { if (y < Y) h += v; else if (y === Y) { const a = Math.max(y0, f.birth), b = Math.max(a + DAY, Math.min(y1, f.last, ocean.now)); h += v * Math.min(1, Math.max(0, (T - a) / (b - a))); } } }
+    else h = f.hours * Math.min(1, (T - f.birth) / Math.max(DAY, f.last - f.birth));
+    f.h = h; f.target = fishLen(Math.max(.05, h));
+    let la = f.last;                                 // the last moment you were playing it, as of T
+    if (T < f.last) { if (f.years.includes(Y)) la = T; else { const py = f.years.filter(y => y < Y).pop(); la = py ? Math.min(new Date(py + 1, 0, 1).getTime(), f.last) : f.birth; } }
+    f.age = (T - la) / YEAR; f.active = T - la < 45 * DAY;
+    f.home = Math.min(H - 2.5, Math.max(1.8, depthFor(f.age) + f.jit * (.35 + .65 * Math.min(1, f.age + .3))));
+    f.glow = f.platAt && T >= f.platAt ? 1 : f.beaten && T >= f.last ? .3 : 0; f.grey = f.dropped && T > f.last + 60 * DAY ? 1 : 0;
+    if (instant) { f.s = f.target; f.p.y = f.home; }
+    ocean.aState.setXY(f.i, f.glow >= 1 ? 1 : 0, f.grey);
+  }
+  ocean.aState.needsUpdate = true;
+  const ec = ocean.eggPts.geometry.attributes.aCol;
+  ocean.eggs.forEach((o, i) => { const on = T >= o.from && T < o.until; o.on = on; ec.setXYZW(i, o.col.r, o.col.g, o.col.b, on ? .85 : 0); });
+  ec.needsUpdate = true;
+  $("yr").textContent = Y;
+}
+const _d = new THREE.Vector3(), _a = new THREE.Vector3(), _c = new THREE.Vector3(), _al = new THREE.Vector3(), _m = new THREE.Matrix4(), _q = new THREE.Quaternion(), _q2 = new THREE.Quaternion(), _s = new THREE.Vector3(),
+  AX_Y = new THREE.Vector3(0, 1, 0), AX_Z = new THREE.Vector3(0, 0, 1);
+function swim(dt, silent) {                         // schooling: stay close to your own kind, don't bump, keep to your depth
+  const F = ocean.fish, n = F.length, t = U.uTime.value, rate = ocean.quick > 0 || silent ? 4.5 : .55, food = ocean.food;
+  for (let i = 0; i < n; i++) { const f = F[i];
+    f.s += (f.target - f.s) * Math.min(1, dt * 2.5);
+    if (!f.born) continue;
+    _a.set(0, 0, 0); _c.set(0, 0, 0); _al.set(0, 0, 0); let near = 0, push = 0;
+    for (let j = 0; j < n; j++) { if (j === i) continue; const o = F[j]; if (!o.born) continue;
+      _d.subVectors(o.p, f.p); const d2 = _d.lengthSq(); if (d2 > 100) continue; const d = Math.sqrt(d2) || .001, sep = (f.s + o.s) * .55 + .7;
+      if (d < sep) { const k = (sep - d) / sep * 5 / d; _a.x -= _d.x * k; _a.z -= _d.z * k; push -= _d.y * k; }
+      if (o.gi === f.gi && !f.big && !o.big) { _c.add(o.p); _al.add(o.v); near++; } }
+    if (near) { _c.multiplyScalar(1 / near).sub(f.p); _a.x += _c.x * .32; _a.z += _c.z * .32; _al.multiplyScalar(1 / near).sub(f.v); _a.x += _al.x * .7; _a.z += _al.z * .7; }
+    const r = Math.hypot(f.p.x, f.p.z) || .001, lim = ocean.R * (f.big ? .8 : 1);
+    if (r > lim) { const k = (r - lim) * .9 / r; _a.x -= f.p.x * k; _a.z -= f.p.z * k; }
+    const dir = f.gi % 2 ? 1 : -1; _a.x += -f.p.z / r * .25 * dir; _a.z += f.p.x / r * .25 * dir;      // schools circle the reef
+    const wob = Math.sin(t * .35 + f.ph) * .9; _a.x += -f.v.z * wob * .25; _a.z += f.v.x * wob * .25;   // wander
+    let boost = f.grey ? .45 : f.active ? 1.25 : 1, lift = 0;
+    if (food && food.t > 0) { _d.subVectors(food.p, f.p); const d = _d.length(); if (d < 20 && !f.grey) { _a.x += _d.x / d * 4.5; _a.z += _d.z / d * 4.5; lift = Math.max(-6, Math.min(6, _d.y)) * .8; boost *= 1.7; if (d < 1.2) food.t = Math.min(food.t, .6); } }
+    f.v.x += _a.x * dt; f.v.z += _a.z * dt;
+    const sp = Math.hypot(f.v.x, f.v.z) || .001, want = f.cruise * boost, ns = sp + (Math.min(want * 1.25, Math.max(want * .6, sp)) - sp) * Math.min(1, dt * 3);
+    f.v.x *= ns / sp; f.v.z *= ns / sp;
+    const bob = Math.sin(t * .4 + f.ph) * .7, vy = (f.home + bob - f.p.y) * rate + push * .5 + lift;
+    f.p.x += f.v.x * dt; f.p.z += f.v.z * dt; f.p.y = Math.min(H - 1.2, Math.max(.9, f.p.y + vy * dt)); f.v.y = vy;
+    if (silent) continue;
+    const yaw = Math.atan2(-f.v.z, f.v.x); let dy = yaw - f.yaw; dy = Math.atan2(Math.sin(dy), Math.cos(dy)); f.yaw += dy * Math.min(1, dt * 5);
+    f.pitch += (Math.max(-.6, Math.min(.6, Math.atan2(vy, ns))) - f.pitch) * Math.min(1, dt * 3);
+    _q.setFromAxisAngle(AX_Y, f.yaw).multiply(_q2.setFromAxisAngle(AX_Z, f.pitch));
+    _m.compose(f.p, _q, _s.set(f.s, f.s * f.shape[0], f.s * f.shape[1])); ocean.mesh.setMatrixAt(i, _m);
+    if (f.active && Math.random() < dt * 1.2) bubble(f.p.x, f.p.y + f.s * .2, f.p.z, .22);
+  }
+  if (silent) return;
+  for (let i = 0; i < n; i++) { const f = F[i]; if (!f.born) { _m.compose(f.p, _q.identity(), _s.set(0, 0, 0)); ocean.mesh.setMatrixAt(i, _m); } }
+  ocean.mesh.instanceMatrix.needsUpdate = true;
+  const hp = ocean.halo.geometry.attributes;
+  for (let i = 0; i < n; i++) { const f = F[i], plat = f.glow >= 1, on = f.born && f.glow > 0;
+    hp.position.setXYZ(i, f.p.x, f.p.y, f.p.z); hp.aSize.setX(i, on ? f.s * (plat ? 2.3 : 1.8) + (plat ? .8 : 0) : 0);
+    if (plat) hp.aCol.setXYZW(i, .72, .9, 1, .34 + .1 * Math.sin(t * 2 + f.ph)); else hp.aCol.setXYZW(i, f.col.r, f.col.g, f.col.b, .1); }
+  hp.position.needsUpdate = hp.aSize.needsUpdate = hp.aCol.needsUpdate = true;
+  const bp = ocean.bub.geometry.attributes;
+  ocean.bubbles.forEach((b, i) => { if (b.life > 0) { b.p.y += dt * (2.2 + b.size * 3); b.p.x += Math.sin(t * 3 + b.w) * dt * .5; if (b.p.y > H - .3) b.life = 0; }
+    bp.position.setXYZ(i, b.p.x, b.p.y, b.p.z); bp.aSize.setX(i, b.life > 0 ? b.size : 0); bp.aCol.setXYZW(i, .8, 1, 1, .55); });
+  bp.position.needsUpdate = bp.aSize.needsUpdate = bp.aCol.needsUpdate = true;
+  const fp2 = ocean.foodPts.geometry.attributes;
+  if (food) { food.t -= dt; food.p.y = Math.max(1, food.p.y - dt * .5);
+    for (let i = 0; i < 16; i++) { fp2.position.setXYZ(i, food.p.x + Math.sin(i * 2.4 + t) * .7, food.p.y + Math.cos(i * 1.7 + t * .8) * .7, food.p.z + Math.sin(i * 3.1 - t) * .7); fp2.aSize.setX(i, food.t > 0 ? .35 : 0); fp2.aCol.setXYZW(i, 1, .85, .45, Math.min(1, food.t)); }
+    fp2.position.needsUpdate = fp2.aSize.needsUpdate = fp2.aCol.needsUpdate = true; if (food.t <= 0) ocean.food = null; }
+  if (ocean.quick > 0) ocean.quick -= dt;
+}
+const CENTRE = new THREE.Vector3(0, H / 2 - 1, 0);
+function oceanHome() {                              // camera distance that shows the whole water column between the header and the footer
+  const top = document.querySelector("header").getBoundingClientRect().bottom, bot = document.querySelector("footer").getBoundingClientRect().top;
+  const free = Math.max(.45, (bot - top) / innerHeight), v = THREE.MathUtils.degToRad(camera.fov) / 2, hx = Math.atan(Math.tan(v) * camera.aspect);
+  camera.setViewOffset(innerWidth, innerHeight, 0, Math.round((innerHeight - bot - top) / 2), innerWidth, innerHeight);
+  ocean.R = R * Math.min(2.1, Math.max(1, camera.aspect * 1.25));          // a wide screen gets a wider reef
+  return ocean.home = Math.max(H * 1.02 / (2 * Math.tan(v) * free), R * 1.7 / (2 * Math.tan(hx)));
+}
+function oceanCamera(dt) {                          // follow the fish you tapped; glide back when you let go
+  const f = ocean.follow, k = Math.min(1, dt * 3);
+  if (f || ocean.back > 0) {
+    _d.copy(f ? f.p : CENTRE).sub(controls.target).multiplyScalar(k); controls.target.add(_d); camera.position.add(_d);
+    const dist = camera.position.distanceTo(controls.target), want = f ? 7 + f.s * 4.5 : ocean.home;
+    if (ocean.zoom > 0) { _d.subVectors(camera.position, controls.target).multiplyScalar((dist + (want - dist) * k) / dist); camera.position.copy(controls.target).add(_d); ocean.zoom -= dt; }
+    if (!f) ocean.back -= dt;
+  }
+}
+function oceanLabels() {
+  const list = [];
+  if (!ocean.follow) {
+    for (const [age, text] of [[0, "playing now"], [1, "1 year untouched"], [3, "3 years"], [6, "6 years"], [10, "10 years"], [14, "14 years"]]) { if (age > (ocean.T - ocean.t0) / YEAR) break;
+      list.push({ text: "– " + text, p: _c.clone().set(controls.target.x, depthFor(age), controls.target.z), edge: true }); }
+    let n = 0; for (const f of ocean.fish) { if (f.born && f.s > 1.6 && n++ < 5) list.push({ text: esc(f.name), p: f.p.clone().setY(f.p.y + f.s * .3 * f.shape[0] + .6) }); }
+  } else list.push({ text: esc(ocean.follow.name), p: ocean.follow.p.clone().setY(ocean.follow.p.y + ocean.follow.s * .3 * ocean.follow.shape[0] + .5), big: true });
+  labels(list);
+}
+function oceanInfo() { info("🐟", "Every game you've played is a fish", "Size = hours, colour = genre. Untouched games sink, platinums glow, your backlog waits below as eggs. Tap a fish, or tap the water to feed them."); }
+function pickOcean(ev) {
+  const r = canvas.getBoundingClientRect(), mx = ev.clientX - r.left, my = ev.clientY - r.top, px = v => [(v.x + 1) / 2 * r.width, (1 - v.y) / 2 * r.height];
+  let best = null, bd = 1e9;
+  for (const f of ocean.fish) { if (!f.born || f.s < .2) continue; tmpV.copy(f.p).project(camera); if (tmpV.z > 1) continue;
+    const [x, y] = px(tmpV), reach = Math.max(26, f.s * .5 * r.height / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2) * camera.position.distanceTo(f.p))), d = Math.hypot(x - mx, y - my);
+    if (d < reach && d / reach < bd) { bd = d / reach; best = f; } }
+  if (best) { const g = best.g, f = best;
+    const state = g.platinum ? "Platinum ✦" : f.beaten ? "Finished" : f.dropped ? "Dropped" : f.active ? "Playing now" : "Started";
+    ocean.follow = f; ocean.zoom = 1.6; controls.autoRotate = false;
+    info(g.image ? `<img src="${esc(g.image)}" alt="">` : "🐟", f.name, `${f.guess ? "" : (f.hours >= 10 ? Math.round(f.hours) : f.hours) + " h · "}${f.genre} · ${state} · last played ${fmtDate(new Date(f.last))}`);
+    return; }
+  let egg = null, ed = 22;
+  for (const o of ocean.eggs) { if (!o.on) continue; tmpV.set(o.ex, .45, o.ez).project(camera); if (tmpV.z > 1) continue; const [x, y] = px(tmpV), d = Math.hypot(x - mx, y - my); if (d < ed) { ed = d; egg = o; } }
+  if (egg) { info(egg.g.image ? `<img src="${esc(egg.g.image)}" alt="">` : "🥚", egg.name, `Still an egg · ${egg.genre}${egg.acquired ? ` · waiting in your backlog since ${fmtDate(new Date(egg.acquired))}` : ""}`); return; }
+  if (ocean.follow) { ocean.follow = null; ocean.back = 1.6; ocean.zoom = 1.6; controls.autoRotate = !calm; oceanInfo(); return; }
+  // open water: drop some food where you tapped
+  const ray = new THREE.Raycaster(); ray.setFromCamera(new THREE.Vector2(mx / r.width * 2 - 1, -(my / r.height) * 2 + 1), camera);
+  const p = ray.ray.at(camera.position.distanceTo(controls.target), new THREE.Vector3()); p.y = Math.min(H - 3, Math.max(3, p.y));
+  ocean.food = { p, t: 7 };
 }
 
 /* ---------- 2. Gamer fingerprint: a generative print of your whole history ----------
@@ -340,18 +547,13 @@ function drawRace(p) {
 }
 
 /* ---------- switching views, timeline, animation loop ---------- */
-function fit(radius, tilt) {        // place the camera so a disc of this radius fills the screen width, seen from above at an angle
-  const v = THREE.MathUtils.degToRad(camera.fov), h = 2 * Math.atan(Math.tan(v / 2) * camera.aspect);
-  const d = radius / Math.tan(Math.min(v, h) / 2) * 1.05;
-  camera.position.set(0, d * Math.sin(tilt), d * Math.cos(tilt));
-}
 function setView(v) {
   view = v;
   document.querySelectorAll("[data-v]").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v));
-  $("race").classList.toggle("on", v === "race"); canvas.style.visibility = v === "galaxy" ? "visible" : "hidden"; $("labels").innerHTML = "";
+  $("race").classList.toggle("on", v === "race"); canvas.style.visibility = v === "ocean" ? "visible" : "hidden"; $("labels").innerHTML = "";
   $("fp").classList.toggle("on", v === "print"); $("fpTools").hidden = v !== "print";
-  if (v === "galaxy") { fit(40, 0.95); controls?.target.set(0, 0, 0); $("legend").innerHTML = galaxy.legend;
-    info("✨", "Every trophy you've earned is a star", "From your first in the centre, spiralling out to today. Drag to turn, pinch to zoom, tap a star."); play(); }
+  if (v === "ocean") { ocean.follow = null; const d = oceanHome(); controls.target.copy(CENTRE); camera.position.set(0, CENTRE.y + d * Math.cos(1.5), d * Math.sin(1.5));
+    $("legend").innerHTML = ocean.legend; oceanInfo(); play(); }
   if (v === "print") { $("legend").innerHTML = fp.legendHTML();
     info("✦", "Your gamer fingerprint", "One turn of the spiral is one year, from your first trophy in the centre. Threads are games (colour = genre), dots are trophies, stars are platinums. Tap one."); play(); }
   if (v === "race") { $("legend").innerHTML = `<span>Total hours per game, year after year</span>`; info("🏁", "Hours race", "Which games took most of your time, and when."); play(); }
@@ -360,13 +562,13 @@ function setView(v) {
 document.querySelector(".seg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (b && b.dataset.v !== view) setView(b.dataset.v); });
 let anim = null;
 function play() {                          // replay the current view from the start (instantly with "reduce motion")
-  const dur = view === "galaxy" ? 9000 : view === "print" ? 8000 : Math.max(20000, (race.y1 - race.y0 + 1) * 2600);   // the race: about 2.6 s a year
+  const dur = view === "ocean" ? 24000 : view === "print" ? 8000 : Math.max(20000, (race.y1 - race.y0 + 1) * 2600);   // the race: about 2.6 s a year
   if (calm) { setProgress(1); return; }
   const t0 = performance.now(); anim = { t0, dur };
 }
 function setProgress(p) {
   p = Math.max(0, Math.min(1, p)); $("scrub").value = Math.round(p * 1000);
-  if (view === "galaxy" && galaxy.mat) { galaxy.progress = p; galaxy.mat.uniforms.uProgress.value = p; $("yr").textContent = galaxyYear(p); }
+  if (view === "ocean" && ocean.mesh) { ocean.quick = .6; oceanTime(p); }
   if (view === "print" && fp.games) { fp.progress = p; renderPrint(); $("yr").textContent = new Date(fp.t0.getTime() + p * fp.total * 36e5).getFullYear(); }
   if (view === "race" && race.games) drawRace(p);
 }
@@ -374,7 +576,7 @@ $("play").onclick = () => play();
 $("scrub").addEventListener("input", e => { anim = null; setProgress(e.target.value / 1000); });
 let down = null;
 canvas.addEventListener("pointerdown", e => down = [e.clientX, e.clientY]);
-canvas.addEventListener("pointerup", e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 6) pickGalaxy(e); down = null; });
+canvas.addEventListener("pointerup", e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 6) pickOcean(e); down = null; });
 $("fp").addEventListener("click", pickPrint);
 $("fpTools").addEventListener("click", e => { const b = e.target.closest("[data-style]"); if (b) { fp.style = b.dataset.style;
   document.querySelectorAll("[data-style]").forEach(x => x.setAttribute("aria-pressed", x === b)); $("legend").innerHTML = fp.legendHTML(); renderPrint(); }
@@ -386,18 +588,15 @@ function labels(list) {
   const top = document.querySelector("header").getBoundingClientRect().bottom + 8, bottom = document.querySelector("footer").getBoundingClientRect().top - 8;
   $("labels").innerHTML = list.map(l => { tmpV.copy(l.p).project(camera); if (tmpV.z > 1 || Math.abs(tmpV.x) > 1.1 || Math.abs(tmpV.y) > 1.1) return "";
     const py = (1 - tmpV.y) / 2 * innerHeight; if (py < top || py > bottom) return "";
-    return `<span class="${l.big ? "big" : ""}" style="left:${(tmpV.x + 1) / 2 * innerWidth}px;top:${(1 - tmpV.y) / 2 * innerHeight}px">${l.text}</span>`; }).join("");
+    return `<span class="${l.big ? "big" : l.edge ? "edge" : ""}" style="left:${l.edge ? 14 : (tmpV.x + 1) / 2 * innerWidth}px;top:${(1 - tmpV.y) / 2 * innerHeight}px">${l.text}</span>`; }).join("");
 }
 function loop() {
   requestAnimationFrame(loop);
   if (anim) { const p = Math.min(1, (performance.now() - anim.t0) / anim.dur); setProgress(p); if (p >= 1) anim = null; }
-  if (!renderer || view !== "galaxy") return;
-  const dt = clock.getDelta(); controls.update();
-  if (view === "galaxy") {
-    galaxy.mat.uniforms.uTime.value += dt;
-    renderer.render(galaxy.scene, camera);
-    labels(galaxy.years.filter(y => y.f <= galaxy.progress).map(y => ({ text: y.y, p: y.p })));
-  }
+  if (!renderer || view !== "ocean") return;
+  const dt = Math.min(.05, clock.getDelta()) * (calm ? .3 : 1);
+  U.uTime.value += dt; swim(dt); oceanCamera(dt); controls.update();
+  renderer.render(ocean.scene, camera); oceanLabels();
 }
 
 async function start() {
@@ -405,13 +604,13 @@ async function start() {
   [DATA, GAL, FLAGS] = await Promise.all([get("data.json", null), get("galaxy.json", null), get("flags.json", {})]);
   if (!DATA) { info("⚠️", "No game data yet", ""); return; }
   buildRace();
-  if (!renderer) { document.querySelector('[data-v="galaxy"]').disabled = true; if (GAL?.t?.length) buildPrint(); setView(GAL?.t?.length ? "print" : "race"); info("ℹ️", "3D isn't available on this device", "The hours race still works."); loop(); return; }
+  if (!renderer) { document.querySelector('[data-v="ocean"]').disabled = true; if (GAL?.t?.length) buildPrint(); setView(GAL?.t?.length ? "print" : "race"); info("ℹ️", "3D isn't available on this device", "The hours race still works."); loop(); return; }
   resize();
-  if (GAL?.t?.length) buildGalaxy(); else document.querySelector('[data-v="galaxy"]').hidden = true;
+  buildOcean(); resize();
   if (GAL?.t?.length) buildPrint(); else document.querySelector('[data-v="print"]').hidden = true;
   document.fonts?.ready.then(() => view === "print" && renderPrint());
   const want = location.hash.slice(1);
-  setView(["galaxy", "print", "race"].includes(want) ? want : GAL?.t?.length ? "galaxy" : "race");
+  setView(["print", "race"].includes(want) && (want === "race" || GAL?.t?.length) ? want : "ocean");
   loop();
 }
 start();

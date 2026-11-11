@@ -104,10 +104,10 @@ Pick a year or all time, then a tab:
 - **Overview:** totals, top games, trophies by year.
   - **Your history, visualized** (`visuals.html`, `tunnel.html`):
     - **Time tunnel:** scroll to fly through your years. Each year is a chamber of the covers you played (bigger = more hours, a halo for that year's platinums) with its story: "2015 · The year of Assassin's Creed Unity", hours, games, trophies. Covers go through the weserv.nl image proxy, because PlayStation's image server doesn't allow 3D textures from other sites.
-    - **Trophy galaxy:** every trophy a star, spiralling out from your first one, coloured by grade, bigger when rarer.
+    - **Your ocean:** a living 3D sea where every game you've played is a fish. Size = hours played, colour and body shape = genre, and depth = how long since you last played it (what you're playing swims in the light, forgotten games sink). Platinums glow, dropped games turn grey, same-genre fish school together, and the backlog lies on the seabed as eggs. Replay it to watch 15 years hatch and grow; tap a fish to follow it, tap an egg to see what it is, tap open water to feed them.
     - **Gamer fingerprint:** a generative print of your whole history. Time runs along a spiral like a record's groove (one turn per year, the angle is the day of the year); each game is a thread (colour = genre, width = how intensely you played), each trophy a dot, each platinum a star. **Night** or **Paper** style, and **Save poster** makes a 2480×3508 PNG (A4 at 300 dpi, prints well up to A2).
     - **Hours race:** your top 10 games by total hours, year after year.
-    Uses three.js (jsDelivr) and `galaxy.json` (built by `extras.py`).
+    Uses three.js (jsDelivr); the fingerprint reads `galaxy.json` (built by `extras.py`).
     - **Last week** (top of Overview, whatever year is selected): trophies, platinums, hours played, new games, goal progress.
 - **Trophies:** rarest trophies, a daily calendar, milestones, level history, rarity profile.
 - **Habits:** when you play, **your play sessions** (rebuilt from trophy times: typical length, when they start, longest session, biggest weekend, marathon and short-burst games), your pace against HowLongToBeat, finish rate, new releases versus catching up.
