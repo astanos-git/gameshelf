@@ -55,6 +55,7 @@ html, body { margin: 0; height: 100%; background: #0b1230; color: var(--ink); fo
 .covers { display: flex; flex-wrap: wrap; gap: 8px; }
 .covers span { width: 56px; height: 56px; border-radius: 10px; overflow: hidden; background: rgba(255,255,255,.12); display: grid; place-items: center; font: 600 14px var(--display); }
 .covers img { width: 100%; height: 100%; object-fit: cover; }
+.covers.many { gap: 6px; } .covers.many span { width: 46px; height: 46px; } .covers.lots span { width: 36px; height: 36px; border-radius: 7px; }
 .figs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 12px; }
 .figs b { display: block; font: 700 48px/1 var(--display); }
 .figs span { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--soft); }
@@ -130,7 +131,7 @@ function build() {
   const platGames = s.platList.map(m => DATA.games.find(g => g.name === m.game || (g.aliases || []).includes(m.game))).filter(Boolean);
   out.push({ bg: "linear-gradient(160deg,#6a5310,#0b1230 75%)", html: `<p class="eyebrow">Trophies</p><p class="huge">${fmt(s.trophies)}</p>
     <p class="mid">${s.plats ? `and ${s.plats} platinum${s.plats > 1 ? "s" : ""} 🏆` : "trophies earned"}</p>
-    ${platGames.length ? `<div class="covers">${platGames.slice(0, 12).map(g => `<span title="${esc(g.name)}">${img(g.image, g.name)}</span>`).join("")}</div>` : ""}
+    ${platGames.length ? `<div class="covers${platGames.length > 12 ? " many" : ""}">${platGames.map(g => `<span title="${esc(g.name)}">${img(g.image, g.name)}</span>`).join("")}</div>` : ""}
     ${cmp(s.trophies, prev.trophies) ? `<p class="lead"><b>${cmp(s.trophies, prev.trophies)}</b>.</p>` : ""}` });
   // 6. rarest trophy
   if (s.rare) out.push({ bg: "linear-gradient(160deg,#5b1e66,#0b1230 75%)", html: `<p class="eyebrow">Your rarest trophy</p>${s.rare.i ? `<div class="cover" style="width:120px">${img(s.rare.i, s.rare.n)}</div>` : ""}<p class="big">${esc(s.rare.n || "A rare one")}</p>
@@ -161,7 +162,7 @@ function build() {
       <ul class="bars2">${t.slice(0, 4).map(([k, l]) => `<li><span class="l"><span>${l}</span><span>${d[k]}</span></span><span class="t"><i style="width:${d[k]}%"></i></span></li>`).join("")}</ul>` }); }
   // 11. finished + best rated
   if (s.finished.length) out.push({ bg: "linear-gradient(160deg,#7a1f3d,#0b1230 75%)", html: `<p class="eyebrow">Finished</p><p class="huge">${s.finished.length}</p><p class="mid">game${s.finished.length > 1 ? "s" : ""} beaten or completed</p>
-    <div class="covers">${s.finished.slice(0, 12).map(g => `<span title="${esc(g.name)}">${img(g.image, g.name)}</span>`).join("")}</div>
+    <div class="covers${s.finished.length > 12 ? " many" : ""}${s.finished.length > 24 ? " lots" : ""}">${s.finished.map(g => `<span title="${esc(g.name)}">${img(g.image, g.name)}</span>`).join("")}</div>
     ${s.rated ? `<p class="lead">Your favourite: <b>${esc(s.rated.g.name)}</b>, rated <b>${s.rated.r.score}</b>.</p>` : ""}` });
   // 12. goals
   const G = GOALS[Y];
