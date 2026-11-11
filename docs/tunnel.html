@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Game Shelf Time Tunnel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Game Shelf">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#04050c">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Time tunnel: scroll to fly through your years. Each year is a chamber of the covers you played, sized by hours. */
+:root { --display: "Barlow Condensed", "Arial Narrow", sans-serif; --body: "IBM Plex Sans", system-ui, sans-serif; --ink: #f1f4ff; --soft: rgba(241,244,255,.7);
+  --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px); --hue: #8fb4ff; }
+* { box-sizing: border-box; }
+html { background: #04050c; }
+body { margin: 0; color: var(--ink); font-family: var(--body); -webkit-font-smoothing: antialiased; background: #04050c; }
+#gl { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100lvh; display: block; z-index: 0; }
+#track { position: relative; z-index: 1; pointer-events: none; }
+.top { position: fixed; z-index: 4; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  padding: calc(10px + var(--safe-top)) 14px 10px; background: linear-gradient(#04050ccc, #04050c00); }
+.top a { color: var(--ink); text-decoration: none; background: rgba(255,255,255,.1); border-radius: 999px; min-height: 40px; padding: 0 14px; display: inline-flex; align-items: center; font-weight: 600; }
+.progress { flex: 1; height: 3px; border-radius: 3px; background: rgba(255,255,255,.15); overflow: hidden; }
+.progress i { display: block; height: 100%; width: 0; background: var(--hue); transition: background .6s; }
+.yr { font: 700 20px var(--display); min-width: 44px; text-align: right; }
+/* narration, bottom of the screen */
+.story { position: fixed; z-index: 3; left: 0; right: 0; bottom: 0; padding: 26px 22px calc(22px + var(--safe-bottom));
+  background: linear-gradient(#04050c00, #04050cd9 38%); pointer-events: none; }
+.story .in { max-width: 560px; margin: 0 auto; transition: opacity .45s ease, transform .45s ease; }
+.story.final { padding-bottom: calc(92px + var(--safe-bottom)); }
+.story.out .in { opacity: 0; transform: translateY(10px); }
+.eyebrow { font: 600 12.5px var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--hue); margin: 0 0 4px; transition: color .6s; }
+.story h2 { font: 800 clamp(34px, 10vw, 54px)/.95 var(--display); margin: 0 0 8px; }
+.story p { margin: 0; font-size: 16px; line-height: 1.45; color: var(--soft); }
+.story p b { color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font: 600 14px var(--body); }
+.chips span { color: var(--soft); } .chips b { font: 700 22px var(--display); color: var(--ink); margin-right: 3px; }
+.hint { position: fixed; z-index: 3; left: 50%; top: 52%; transform: translate(-50%, -50%); text-align: center; pointer-events: none; transition: opacity .5s; }
+.hint h1 { font: 800 clamp(44px, 14vw, 88px)/.9 var(--display); margin: 0 0 10px; }
+.hint p { color: var(--soft); margin: 0; font-size: 16px; }
+.hint .arrow { display: inline-block; margin-top: 18px; font-size: 26px; animation: bob 1.6s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(8px); } }
+.end { position: fixed; z-index: 4; left: 0; right: 0; bottom: calc(24px + var(--safe-bottom)); display: flex; justify-content: center; gap: 10px; opacity: 0; pointer-events: none; transition: opacity .5s; }
+.end.on { opacity: 1; pointer-events: auto; }
+.end a, .end button { background: var(--ink); color: #04050c; border: 0; border-radius: 999px; padding: 12px 20px; font: 600 16px var(--body); text-decoration: none; min-height: 46px; cursor: pointer; }
+.end .ghost { background: rgba(255,255,255,.14); color: var(--ink); }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .hint .arrow { animation: none; } .story .in { transition: none; } }
+</style>
+
+<main>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="top"><a href="visuals.html" aria-label="Back to 3D views">‹ Back</a><div class="progress" aria-hidden="true"><i id="bar"></i></div><span class="yr" id="yr" aria-hidden="true"></span></div>
+  <div class="hint" id="hint"><h1 id="hintTitle">Time tunnel</h1><p id="hintSub">Scroll to travel through your years</p><span class="arrow" aria-hidden="true">↓</span></div>
+  <section class="story out" id="story" aria-live="polite"><div class="in"><p class="eyebrow" id="sEye"></p><h2 id="sTitle">Time tunnel</h2><p id="sText"></p><div class="chips" id="sChips"></div></div></section>
+  <div class="end" id="end"><button id="again">Fly again</button><a class="ghost" href="visuals.html">3D views</a></div>
+  <div id="track"></div>
+</main>
+
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }</script>
+<script type="module">
+import * as THREE from "three";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const SPACING = 60, PER_YEAR = 10;           // distance between two years; covers shown per year
+// PlayStation's image server doesn't allow 3D textures from other sites, so covers go through a public image proxy (weserv) that does
+const proxied = url => `https://images.weserv.nl/?url=${encodeURIComponent(url.replace(/^https?:\/\//, ""))}&w=224&h=224&fit=cover&output=jpg&q=80`;
+const fmt = n => Math.round(n).toLocaleString();
+
+let DATA, GAL, YEARS = [];
+const renderer = (() => { try { return new THREE.WebGLRenderer({ canvas: $("gl"), antialias: true, powerPreference: "high-performance" }); } catch { return null; } })();
+const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(70, innerWidth / innerHeight, 0.1, 600);
+scene.fog = new THREE.Fog(0x04050c, 30, 150); scene.background = new THREE.Color(0x04050c);
+
+/* ---------- the story of each year ---------- */
+function years() {
+  const games = DATA.games.filter(g => g.hours_by_year && (g.has_trophies || g.rawg_slug));
+  const t0 = new Date(GAL.start), plats = {}, troph = {};
+  GAL.t.forEach(r => { const y = new Date(t0.getTime() + r[0] * 36e5).getFullYear(); troph[y] = (troph[y] || 0) + 1; if (r[1] === 3) (plats[y] ||= []).push(GAL.games[r[3]]); });
+  const ys = [...new Set(games.flatMap(g => Object.keys(g.hours_by_year)).concat(Object.keys(troph)))].map(Number).sort();
+  // trophies per game per year: PSN only reports playtime from the PS4 era on, so earlier years are told through trophies
+  const tg = {}; GAL.t.forEach(r => { const y = new Date(t0.getTime() + r[0] * 36e5).getFullYear(), n = GAL.games[r[3]]; if (!n) return; (tg[y] ||= {})[n] = (tg[y][n] || 0) + 1; });
+  const byName = n => DATA.games.find(g => g.name === n);
+  const out = ys.map(y => {
+    let list = games.map(g => ({ g, h: g.hours_by_year[y] || 0 })).filter(o => o.h >= 1).sort((a, b) => b.h - a.h), byTrophies = false;
+    if (!list.length && tg[y]) { list = Object.entries(tg[y]).map(([n, c]) => ({ g: byName(n), h: c })).filter(o => o.g).sort((a, b) => b.h - a.h); byTrophies = true; }
+    return { y, list, byTrophies, hours: byTrophies ? 0 : list.reduce((s, o) => s + o.h, 0), trophies: troph[y] || 0, plats: plats[y] || [] };
+  }).filter(o => o.list.length || o.trophies);
+  // superlatives for the narration
+  const big = out.reduce((a, b) => b.hours > a.hours ? b : a, out[0]), most = out.reduce((a, b) => b.trophies > a.trophies ? b : a, out[0]);
+  const firstPlat = out.find(o => o.plats.length);
+  out.forEach((o, i) => {
+    const top = o.list[0];
+    o.eyebrow = i === 0 ? "Where it all began" : o === big ? "Your biggest year" : o === most ? "Your trophy record" : o === firstPlat ? "Your first platinum" : o.y === new Date().getFullYear() ? "This year, so far" : "";
+    o.title = top ? `The year of ${top.g.name}` : `${o.trophies} trophies`;
+    const unit = v => o.byTrophies ? `${fmt(v)} troph${v > 1 ? "ies" : "y"}` : `${fmt(v)} h`;
+    o.text = top ? (o.byTrophies ? `<b>${unit(top.h)}</b> in ${esc(top.g.name)}${o.list[1] ? `, then ${esc(o.list[1].g.name)} (${unit(o.list[1].h)})` : ""}.`
+      : `<b>${fmt(top.h)} hours</b> in ${esc(top.g.name)}${o.list[1] ? `, then ${esc(o.list[1].g.name)} (${fmt(o.list[1].h)} h)` : ""}.`)
+      + (o.plats.length ? ` Platinum${o.plats.length > 1 ? "s" : ""}: <b>${o.plats.slice(0, 3).map(esc).join(", ")}</b>${o.plats.length > 3 ? ` and ${o.plats.length - 3} more` : ""}.` : "") : "";
+    o.hue = new THREE.Color().setHSL((0.62 + i * 0.075) % 1, 0.75, 0.62);
+  });
+  return out;
+}
+
+/* ---------- building the tunnel ---------- */
+const glow = (() => { const c = document.createElement("canvas"); c.width = c.height = 64; const x = c.getContext("2d"), g = x.createRadialGradient(32, 32, 0, 32, 32, 32);
+  g.addColorStop(0, "rgba(255,255,255,1)"); g.addColorStop(.3, "rgba(255,255,255,.6)"); g.addColorStop(1, "rgba(255,255,255,0)"); x.fillStyle = g; x.fillRect(0, 0, 64, 64); return new THREE.CanvasTexture(c); })();
+function textTex(text, color, size = 256) {
+  const c = document.createElement("canvas"); c.width = size * 2; c.height = size; const x = c.getContext("2d");
+  x.font = `800 ${size * 0.9}px "Barlow Condensed", "Arial Narrow", sans-serif`; x.textAlign = "center"; x.textBaseline = "middle"; x.fillStyle = color; x.fillText(text, size, size * 0.55);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+function placeholder(name, hue) {
+  const c = document.createElement("canvas"); c.width = c.height = 128; const x = c.getContext("2d");
+  x.fillStyle = `#${hue.clone().multiplyScalar(0.35).getHexString()}`; x.fillRect(0, 0, 128, 128);
+  x.fillStyle = "#fff"; x.font = '700 44px "Barlow Condensed", sans-serif'; x.textAlign = "center"; x.textBaseline = "middle";
+  x.fillText((name || "?").replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase(), 64, 66);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const loader = new THREE.TextureLoader(); loader.setCrossOrigin("anonymous");
+function build() {
+  const R = 7.5;
+  YEARS.forEach((o, i) => {
+    const z = -(i + 1) * SPACING, grp = new THREE.Group(); grp.position.z = z; scene.add(grp); o.group = grp; o.z = z;
+    // the year's gate: a glowing ring and the year written big behind the covers
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(12, 0.07, 8, 120), new THREE.MeshBasicMaterial({ color: o.hue, transparent: true, opacity: .9 }));
+    ring.position.z = 8; grp.add(ring);
+    const ring2 = ring.clone(); ring2.scale.setScalar(1.25); ring2.material = ring.material.clone(); ring2.material.opacity = .3; grp.add(ring2);
+    const year = new THREE.Mesh(new THREE.PlaneGeometry(26, 13), new THREE.MeshBasicMaterial({ map: textTex(String(o.y), `#${o.hue.getHexString()}`), transparent: true, opacity: .22, depthWrite: false }));
+    year.position.set(0, 0, -14); grp.add(year); o.yearMesh = year;
+    // covers on a ring, the biggest (most hours) at the top, gently turned towards you
+    const shown = o.list.slice(0, PER_YEAR), maxH = shown[0]?.h || 1;
+    o.covers = shown.map(({ g, h }, k) => {
+      const a = Math.PI / 2 + (k / shown.length) * Math.PI * 2, s = 2.2 + 3.0 * Math.sqrt(h / maxH), r = R + (k % 2) * 1.2;
+      const mat = new THREE.MeshBasicMaterial({ map: placeholder(g.name, o.hue), transparent: true, opacity: 0 });
+      const m = new THREE.Mesh(new THREE.PlaneGeometry(s, s), mat);
+      m.position.set(Math.cos(a) * r, Math.sin(a) * r * 0.85, (k % 3) * -3);
+      m.rotation.y = -Math.cos(a) * 0.35; m.rotation.x = Math.sin(a) * 0.25;
+      m.userData = { g, h, url: g.image, loaded: false, base: m.position.clone(), phase: k };
+      grp.add(m);
+      if (g.platinum && (o.plats.includes(g.name))) {      // platinum that year: a halo behind the cover
+        const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: glow, color: 0x9fd4ff, transparent: true, opacity: .8, blending: THREE.AdditiveBlending, depthWrite: false }));
+        halo.scale.set(s * 2.1, s * 2.1, 1); halo.position.copy(m.position); halo.position.z -= 0.3; grp.add(halo); m.userData.halo = halo;
+      }
+      return m;
+    });
+  });
+  // the tunnel walls: streaks of light all along the way, tinted by year
+  const n = 2600, pos = new Float32Array(n * 3), col = new Float32Array(n * 3), end = (YEARS.length + 1.5) * SPACING;
+  for (let i = 0; i < n; i++) {
+    const a = Math.random() * Math.PI * 2, r = 13 + Math.random() * 14, z = -Math.random() * end;
+    pos.set([Math.cos(a) * r, Math.sin(a) * r, z], i * 3);
+    const yi = Math.min(YEARS.length - 1, Math.max(0, Math.floor(-z / SPACING) - 1)), c = YEARS[yi].hue.clone().lerp(new THREE.Color(0xffffff), Math.random() * .5);
+    col.set([c.r, c.g, c.b], i * 3);
+  }
+  const geo = new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.BufferAttribute(pos, 3)); geo.setAttribute("color", new THREE.BufferAttribute(col, 3));
+  scene.add(new THREE.Points(geo, new THREE.PointsMaterial({ size: 0.28, map: glow, vertexColors: true, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false })));
+}
+function loadNear(i) {                       // covers load a few years ahead, so the phone isn't asked for 150 images at once
+  for (let k = Math.max(0, i - 1); k <= Math.min(YEARS.length - 1, i + 2); k++) YEARS[k].covers.forEach(m => {
+    if (m.userData.loaded || !m.userData.url) return; m.userData.loaded = true;
+    loader.load(proxied(m.userData.url), t => { t.colorSpace = THREE.SRGBColorSpace; m.material.map.dispose(); m.material.map = t; m.material.needsUpdate = true; }, undefined, () => {});
+  });
+}
+
+/* ---------- scrolling = flying ---------- */
+let target = 0, z = 0, current = -1;
+function layout() {
+  const h = (YEARS.length + 1.6) * 100;      // one screen of scrolling per year
+  $("track").style.height = `${h}vh`;
+  renderer?.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer?.setSize(innerWidth, innerHeight, false);
+  camera.aspect = innerWidth / innerHeight; camera.fov = camera.aspect < 0.8 ? 78 : 64; camera.updateProjectionMatrix();
+}
+addEventListener("resize", layout);
+const progress = () => Math.min(1, Math.max(0, scrollY / Math.max(1, document.documentElement.scrollHeight - innerHeight)));
+function narrate(i) {
+  if (i === current) return; current = i;
+  const s = $("story"); s.classList.add("out");
+  setTimeout(() => {
+    if (i < 0 || i >= YEARS.length) { s.classList.add("out"); return; }
+    const o = YEARS[i];
+    $("sEye").textContent = o.eyebrow ? `${o.y} · ${o.eyebrow}` : String(o.y); $("sTitle").textContent = o.title; $("sText").innerHTML = o.text;
+    $("sChips").innerHTML = `${o.byTrophies ? "" : `<span><b>${fmt(o.hours)}</b>hours</span>`}<span><b>${o.list.length}</b>games</span><span><b>${fmt(o.trophies)}</b>trophies</span>${o.plats.length ? `<span><b>${o.plats.length}</b>platinum${o.plats.length > 1 ? "s" : ""}</span>` : ""}`;
+    document.documentElement.style.setProperty("--hue", `#${o.hue.getHexString()}`);
+    s.classList.remove("out");
+  }, calm ? 0 : 220);
+}
+function frame(now) {
+  requestAnimationFrame(frame);
+  const p = progress(), endZ = -(YEARS.length + 0.6) * SPACING;
+  target = p * endZ; z += (target - z) * (calm ? 1 : 0.08);
+  $("bar").style.width = `${p * 100}%`;
+  // which year are we in: the next chamber ahead of the camera (until you're just through it)
+  const i = Math.ceil((-(z + 14) - 4) / SPACING - 1);
+  const yi = Math.max(-1, Math.min(YEARS.length, i));
+  $("yr").textContent = YEARS[Math.max(0, Math.min(YEARS.length - 1, yi))]?.y ?? "";
+  $("hint").style.opacity = p < 0.02 ? 1 : 0;
+  $("end").classList.toggle("on", p > 0.985); $("story").classList.toggle("final", p > 0.985);
+  if (p > 0.985) { if (current !== "end") { current = "end"; const tot = YEARS.reduce((s, o) => s + o.hours, 0); $("story").classList.add("out");
+      setTimeout(() => { $("sEye").textContent = `${YEARS[0].y}–${YEARS.at(-1).y}`; $("sTitle").textContent = `${YEARS.length} years, ${fmt(tot)} hours`;
+        $("sText").innerHTML = `${fmt(GAL.t.length)} trophies along the way. Thanks for the trip.`; $("sChips").innerHTML = ""; $("story").classList.remove("out"); }, 220); } }
+  else narrate(p < 0.02 ? -1 : Math.max(0, Math.min(YEARS.length - 1, i)));
+  if (!renderer) return;
+  loadNear(Math.max(0, i));
+  const t = now / 1000;
+  camera.position.set(Math.sin(t * 0.3) * 0.6, Math.cos(t * 0.25) * 0.4, z + 14);
+  camera.lookAt(Math.sin(t * 0.2) * 0.8, 0, z - 40);
+  camera.rotation.z = Math.sin(z / 90) * 0.06;
+  YEARS.forEach((o, k) => {
+    const d = o.z - (z + 14);                  // distance ahead of the camera (negative = ahead)
+    const near = Math.max(0, 1 - Math.abs(d + 22) / 55);
+    o.covers.forEach(m => {
+      m.material.opacity = d > -4 ? Math.max(0, (6 - d) / 10) * Math.min(1, near * 1.8) : Math.min(1, near * 1.8);
+      if (!calm) m.position.y = m.userData.base.y + Math.sin(t * 0.8 + m.userData.phase) * 0.18;
+      if (m.userData.halo) m.userData.halo.material.opacity = near * (0.6 + 0.3 * Math.sin(t * 2 + k));
+    });
+    o.yearMesh.material.opacity = k !== i || d > -12 ? 0 : 0.1 + near * 0.32;   // only the year you're in, gone before it fills the screen
+    o.group.rotation.z = calm ? 0 : Math.max(-0.25, Math.min(0.25, (d + 22) * 0.004));     // chambers twist slightly as you pass through
+  });
+  renderer.render(scene, camera);
+}
+$("again").onclick = () => scrollTo({ top: 0, behavior: calm ? "auto" : "smooth" });
+
+async function start() {
+  const get = async (f, d) => { try { const r = await fetch(f, { cache: "no-store" }); return r.ok ? await r.json() : d; } catch { return d; } };
+  [DATA, GAL] = await Promise.all([get("data.json", null), get("galaxy.json", null)]);
+  if (!DATA || !GAL?.t?.length) { $("hintSub").textContent = "No trophy history yet."; return; }
+  YEARS = years();
+  $("hintTitle").textContent = `${YEARS[0].y} → ${YEARS.at(-1).y}`;
+  $("hintSub").textContent = `${YEARS.length} years of play. Scroll to fly through them.`;
+  try { await document.fonts.load('800 100px "Barlow Condensed"'); } catch {}
+  layout();
+  if (renderer) build(); else $("hintSub").textContent += " (3D isn't available here: the story still plays as you scroll.)";
+  requestAnimationFrame(frame);
+}
+start();
+</script>
+<script src="shell.js" defer></script>

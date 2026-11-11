@@ -102,7 +102,12 @@ Tap **Refresh data** at the top of the Library. It opens the workflow on GitHub:
 ### Stats
 Pick a year or all time, then a tab:
 - **Overview:** totals, top games, trophies by year.
-  - **Your history in 3D** (`visuals.html`): an animated **Trophy galaxy** (every trophy you've earned is a star, spiralling out from your first one, coloured by grade, bigger when rarer; it builds up year by year), an **Activity landscape** (a mountain range of your play: one ridge per year, one column per week, height = trophies that week; tap a peak to see the week and the game behind it) and an **Hours race** (your top 10 games by total hours, year after year). Drag to turn, pinch to zoom, tap a star or a peak; the timeline replays or scrubs through time. Uses three.js (loaded from jsDelivr) and `galaxy.json` (built by `extras.py`).
+  - **Your history, visualized** (`visuals.html`, `tunnel.html`):
+    - **Time tunnel:** scroll to fly through your years. Each year is a chamber of the covers you played (bigger = more hours, a halo for that year's platinums) with its story: "2015 · The year of Assassin's Creed Unity", hours, games, trophies. Covers go through the weserv.nl image proxy, because PlayStation's image server doesn't allow 3D textures from other sites.
+    - **Trophy galaxy:** every trophy a star, spiralling out from your first one, coloured by grade, bigger when rarer.
+    - **Gamer fingerprint:** a generative print of your whole history. Time runs along a spiral like a record's groove (one turn per year, the angle is the day of the year); each game is a thread (colour = genre, width = how intensely you played), each trophy a dot, each platinum a star. **Night** or **Paper** style, and **Save poster** makes a 2480×3508 PNG (A4 at 300 dpi, prints well up to A2).
+    - **Hours race:** your top 10 games by total hours, year after year.
+    Uses three.js (jsDelivr) and `galaxy.json` (built by `extras.py`).
     - **Last week** (top of Overview, whatever year is selected): trophies, platinums, hours played, new games, goal progress.
 - **Trophies:** rarest trophies, a daily calendar, milestones, level history, rarity profile.
 - **Habits:** when you play, **your play sessions** (rebuilt from trophy times: typical length, when they start, longest session, biggest weekend, marathon and short-burst games), your pace against HowLongToBeat, finish rate, new releases versus catching up.

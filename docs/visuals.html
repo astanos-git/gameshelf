@@ -14,11 +14,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-/* Three animated views of your history: Trophy galaxy (every trophy a star), Activity landscape (a mountain range of your weeks), Hours race. */
+/* Animated views of your history: Trophy galaxy (every trophy a star), Gamer fingerprint (a generative print), Hours race; the Time tunnel is its own page. */
 :root { --display: "Barlow Condensed", "Arial Narrow", sans-serif; --body: "IBM Plex Sans", system-ui, sans-serif; --ink: #eef2ff; --soft: rgba(238,242,255,.66);
   --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px); }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; background: #05070f; color: var(--ink); font-family: var(--body); overflow: hidden; -webkit-font-smoothing: antialiased; }
+#fp { position: fixed; inset: 0; width: 100%; height: 100%; display: none; touch-action: manipulation; }
+#fp.on { display: block; }
+.back.tunnel { background: linear-gradient(120deg, #6b4fd1, #2b6cb0); }
+.seg.small button { min-height: 36px; padding: 6px 12px; font-size: 14px; }
+.fp-tools { justify-content: space-between; }
+[hidden] { display: none !important; }
 #gl { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
 header { position: fixed; top: 0; left: 0; right: 0; z-index: 5; padding: calc(10px + var(--safe-top)) 14px 10px; display: grid; gap: 10px;
   background: linear-gradient(#05070fdd, #05070f00); pointer-events: none; }
@@ -64,11 +70,13 @@ footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; padding: 10p
 
 <main>
   <canvas id="gl" aria-label="3D view of your games and trophies" role="img"></canvas>
+  <canvas id="fp" aria-label="Your gamer fingerprint: a generative print of your trophy history" role="img"></canvas>
   <div class="labels" id="labels" aria-hidden="true"></div>
   <header>
-    <div class="row"><a class="back" href="stats.html" aria-label="Back to Stats">‹ Stats</a><h1>Your history in 3D</h1></div>
-    <div class="seg" role="group" aria-label="View"><button data-v="galaxy" aria-pressed="true">Trophy galaxy</button><button data-v="land">Landscape</button><button data-v="race">Hours race</button></div>
+    <div class="row"><a class="back" href="stats.html" aria-label="Back to Stats">‹ Stats</a><h1>Your history</h1><a class="back tunnel" href="tunnel.html">Time tunnel ›</a></div>
+    <div class="seg" role="group" aria-label="View"><button data-v="galaxy" aria-pressed="true">Galaxy</button><button data-v="print">Fingerprint</button><button data-v="race">Hours race</button></div>
     <div class="legend" id="legend"></div>
+    <div class="row fp-tools" id="fpTools" hidden><div class="seg small" role="group" aria-label="Print style"><button data-style="night" aria-pressed="true">Night</button><button data-style="paper" aria-pressed="false">Paper</button></div><button class="back" id="fpSave">Save poster</button></div>
   </header>
   <section id="race" aria-label="Hours race"><div class="racebg" id="raceYear"></div></section>
   <footer>
@@ -91,7 +99,7 @@ const info = (icon, title, sub) => { $("info").querySelector(".ic").innerHTML = 
 const GRADE = ["Bronze", "Silver", "Gold", "Platinum"], GCOL = ["#d08c5c", "#c9d4e6", "#ffcf4a", "#8fd0ff"];
 let DATA, GAL, FLAGS = {}, view = "galaxy";
 
-/* ---------- renderer, camera, controls (shared by the galaxy and the landscape) ---------- */
+/* ---------- renderer, camera, controls (for the galaxy) ---------- */
 const canvas = $("gl");
 let renderer;
 try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" }); }
@@ -185,61 +193,127 @@ function pickGalaxy(ev) {
   info(g?.image ? `<img src="${esc(g.image)}" alt="">` : "🏆", t[4] || `${GRADE[t[1]]} trophy`, `${GRADE[t[1]]} · ${GAL.games[t[3]] || ""} · ${fmtDate(when)}${t[2] ? ` · ${t[2] / 10}% of players` : ""}`);
 }
 
-/* ---------- 2. Activity landscape: a mountain range of your play, one ridge per year, one column per week ---------- */
-const land = { scene: new THREE.Scene(), grow: 1, labels: [] };
-const WEEKS = 53, SUB = 6;                       // terrain rows between two years, for smooth valleys
-function buildLand() {
-  const s = land.scene; s.background = new THREE.Color(0x05070f); s.fog = new THREE.Fog(0x05070f, 70, 170);
-  const t0 = new Date(GAL.start), y0 = t0.getFullYear(), y1 = new Date().getFullYear(), NY = y1 - y0 + 1;
-  // trophies per week per year, and which game led each week
-  const grid = Array.from({ length: NY }, () => new Float32Array(WEEKS)), lead = Array.from({ length: NY }, () => Array.from({ length: WEEKS }, () => ({})));
-  GAL.t.forEach(r => { const d = new Date(t0.getTime() + r[0] * 36e5), yi = d.getFullYear() - y0, w = Math.min(WEEKS - 1, Math.floor((d - new Date(d.getFullYear(), 0, 1)) / (7 * 864e5)));
-    grid[yi][w]++; const L = lead[yi][w]; L[r[3]] = (L[r[3]] || 0) + 1; });
-  const max = Math.max(1, ...grid.flatMap(r => [...r]));
-  const W = 64, D = Math.max(40, NY * 5.2), cols = WEEKS * 2, rows = (NY - 1) * SUB || 1;
-  const geo = new THREE.PlaneGeometry(W, D, cols, rows); geo.rotateX(-Math.PI / 2);
-  const pos = geo.attributes.position, base = new Float32Array(pos.count), col = new Float32Array(pos.count * 3), rowOf = new Float32Array(pos.count);
-  const sample = (yf, wf) => {                       // smooth (bilinear, lightly blurred) height at a fractional year/week
-    const yA = Math.floor(yf), yB = Math.min(NY - 1, yA + 1), fy = yf - yA, wA = Math.floor(wf), wB = Math.min(WEEKS - 1, wA + 1), fw = wf - wA;
-    const g = (y, w) => { let v = 0, n = 0; for (let k = -1; k <= 1; k++) { const ww = w + k; if (ww >= 0 && ww < WEEKS) { v += grid[y][ww] * (k ? 0.5 : 1); n += k ? 0.5 : 1; } } return v / n; };
-    return (g(yA, wA) * (1 - fw) + g(yA, wB) * fw) * (1 - fy) + (g(yB, wA) * (1 - fw) + g(yB, wB) * fw) * fy;
-  };
-  const ramp = [[0, "#141c3d"], [0.08, "#2b3a8f"], [0.25, "#7b3fd1"], [0.5, "#e2557a"], [0.75, "#ff9a3c"], [1, "#ffe08a"]].map(([k, c]) => [k, new THREE.Color(c)]);
-  const colorAt = t => { for (let i = 1; i < ramp.length; i++) if (t <= ramp[i][0]) return ramp[i - 1][1].clone().lerp(ramp[i][1], (t - ramp[i - 1][0]) / (ramp[i][0] - ramp[i - 1][0])); return ramp.at(-1)[1].clone(); };
-  for (let i = 0; i < pos.count; i++) {
-    const x = pos.getX(i), z = pos.getZ(i), wf = (x / W + 0.5) * (WEEKS - 1), yf = (z / D + 0.5) * (NY - 1);   // front = latest year, back = your first
-    const yr = yf, v = sample(Math.max(0, Math.min(NY - 1, yr)), Math.max(0, Math.min(WEEKS - 1, wf)));
-    const h = Math.pow(v / max, 0.6) * 12; base[i] = h; rowOf[i] = yr;
-    const c = colorAt(Math.pow(v / max, 0.6)); col.set([c.r, c.g, c.b], i * 3); pos.setY(i, 0);
+/* ---------- 2. Gamer fingerprint: a generative print of your whole history ----------
+   Time runs along a spiral like the groove of a record: one turn per year, from your first trophy in the centre to today on the outside,
+   the angle is the day of the year. Each game is a thread along the groove (colour = its genre, width = how intensely you played it),
+   each trophy a dot on its thread, each platinum a star. No two players get the same print. */
+const fp = { style: "night", progress: 1 };
+const FP_PAL = { night: { bg: "#070914", ink: "#eef2ff", soft: "rgba(238,242,255,.55)", faint: "rgba(238,242,255,.08)", other: "#7d879c", mode: "lighter",
+    cols: ["#ff6b6b", "#ffb347", "#ffe66d", "#7bed9f", "#4ecdc4", "#5dade2", "#a29bfe", "#fd79a8"], plat: "#bfe3ff" },
+  paper: { bg: "#f2ede3", ink: "#1d2030", soft: "rgba(29,32,48,.6)", faint: "rgba(29,32,48,.1)", other: "#9aa0ad", mode: "multiply",
+    cols: ["#d63d3d", "#e07b12", "#c9a200", "#2f9e5b", "#11918a", "#2b6cb0", "#6b4fd1", "#c2357a"], plat: "#1f4f8f" } };
+function buildPrint() {
+  const t0 = new Date(GAL.start), total = GAL.t.at(-1)[0] || 1, y0 = t0.getFullYear(), y1 = new Date(t0.getTime() + total * 36e5).getFullYear();
+  const byName = new Map(DATA.games.map(g => [g.name, g]));
+  const GENERIC = new Set(["Action", "Adventure"]);
+  const mainGenre = g => { const gs = g?.genres || []; return gs.find(x => !GENERIC.has(x)) || gs[0] || "Other"; };
+  // genres ranked by hours: the top 8 get a colour
+  const gh = {}; DATA.games.forEach(g => { if (g.hours) gh[mainGenre(g)] = (gh[mainGenre(g)] || 0) + g.hours; });
+  const genres = Object.entries(gh).sort((a, b) => b[1] - a[1]).slice(0, 8).map(e => e[0]);
+  // where a moment sits on the spiral: years since Jan 1 of the first year = turns
+  const yearPos = ms => { const d = new Date(ms), y = d.getFullYear(), start = new Date(y, 0, 1).getTime(), len = new Date(y + 1, 0, 1).getTime() - start; return (y - y0) + (ms - start) / len; };
+  const hash = s => { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619); return ((h >>> 0) % 1000) / 1000; };
+  const games = new Map();
+  GAL.t.forEach((r, i) => {
+    const name = GAL.games[r[3]] || "?", ms = t0.getTime() + r[0] * 36e5;
+    if (!games.has(name)) { const g = byName.get(name), gen = mainGenre(g); games.set(name, { name, g, ci: genres.indexOf(gen), off: hash(name) - 0.5, pts: [] }); }
+    games.get(name).pts.push({ p: yearPos(ms), grade: r[1], rare: r[2] / 10, ms, n: r[4], i });
+  });
+  // threads: a game's trophies grouped into play spells (a gap of 45+ days starts a new one)
+  games.forEach(o => { o.spells = []; let cur = null;
+    o.pts.forEach(pt => { if (!cur || pt.p - cur.b > 45 / 365) { cur = { a: pt.p, b: pt.p, n: 0 }; o.spells.push(cur); } cur.b = pt.p; cur.n++; }); });
+  Object.assign(fp, { t0, total, y0, y1, turns: (y1 - y0 + 1), genres, games: [...games.values()], yearPos, mainGenre });
+  fp.legendHTML = () => genres.map((g, i) => `<span><i style="background:${FP_PAL[fp.style].cols[i]}"></i>${esc(g)}</span>`).join("") + `<span>✦ platinum · one turn = one year</span>`;
+}
+function drawPrint(x, W, H, opt = {}) {
+  const P = FP_PAL[opt.style || fp.style], prog = opt.progress ?? 1, poster = !!opt.poster;
+  const top = opt.top ?? 0, bottom = opt.bottom ?? 0, cx = W / 2, cy = top + (H - top - bottom) / 2;
+  const R = Math.min(W * 0.44, (H - top - bottom) * 0.44), r0 = R * 0.12, ring = (R - r0) / fp.turns, s = R / 400;   // s: scale for strokes and dots
+  const at = (p, off = 0) => { const a = (p % 1) * Math.PI * 2 - Math.PI / 2, r = r0 + p * ring + off * ring * 0.62; return [cx + Math.cos(a) * r, cy + Math.sin(a) * r]; };
+  const until = fp.yearPos(fp.t0.getTime() + prog * fp.total * 36e5);
+  if (poster || (opt.style || fp.style) === "night") { x.fillStyle = P.bg; x.fillRect(0, 0, W, H); }
+  else {                       // on screen, the paper version is a sheet on the dark page
+    x.fillStyle = FP_PAL.night.bg; x.fillRect(0, 0, W, H);
+    const pad = 10, side = Math.min(W - 2 * pad, H - top - bottom - 2 * pad);
+    x.fillStyle = P.bg; x.beginPath(); x.roundRect(cx - side / 2, cy - side / 2, side, side, 14); x.fill();
   }
-  geo.setAttribute("color", new THREE.BufferAttribute(col, 3));
-  const mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.75, metalness: 0.05, flatShading: true, side: THREE.DoubleSide }));
-  const wire = new THREE.LineSegments(new THREE.WireframeGeometry(geo), new THREE.LineBasicMaterial({ color: 0x9fb4ff, transparent: true, opacity: 0.07 }));
-  s.add(mesh, wire);
-  s.add(new THREE.HemisphereLight(0xc8d6ff, 0x0a0d1a, 1.0));
-  const key = new THREE.DirectionalLight(0xffe6c8, 1.8); key.position.set(-30, 40, 30); s.add(key);
-  Object.assign(land, { mesh, wire, base, rowOf, NY, y0, W, D, grid, lead, max });
-  for (let y = 0; y < NY; y++) land.labels.push({ text: y0 + y, p: new THREE.Vector3(-W * 0.3, 9, D * (y / Math.max(1, NY - 1) - 0.5)) });
-  
-  const busiest = grid.flatMap((r, y) => [...r].map((v, w) => [v, y, w])).sort((a, b) => b[0] - a[0])[0];
-  land.legend = `<span><i style="background:#2b3a8f"></i>quiet</span><span><i style="background:#e2557a"></i>busy</span><span><i style="background:#ffe08a"></i>your peaks</span><span>height = trophies that week · busiest: ${busiest[0]} in a week of ${y0 + busiest[1]}</span>`;
+  // the groove: faint spiral and year marks
+  x.strokeStyle = P.faint; x.lineWidth = Math.max(1, s * 0.8); x.beginPath();
+  for (let p = 0; p <= fp.turns; p += 0.004) { const [px, py] = at(p); p ? x.lineTo(px, py) : x.moveTo(px, py); } x.stroke();
+  x.fillStyle = P.soft; x.font = `600 ${Math.max(9, 11 * s)}px "Barlow Condensed", sans-serif`; x.textAlign = "center";
+  const every = fp.turns > 12 ? 5 : fp.turns > 6 ? 2 : 1;
+  for (let y = 0; y < fp.turns; y++) if ((fp.y0 + y) % every === 0 || y === 0 || y === fp.turns - 1) { const [px, py] = at(y, -0.5); x.fillText(String(fp.y0 + y), px, py - 2 * s); }
+  // months around the outside
+  ["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"].forEach((m, i) => { const a = (i + 0.5) / 12 * Math.PI * 2 - Math.PI / 2, r = R + 16 * s;
+    x.fillText(m, cx + Math.cos(a) * r, cy + Math.sin(a) * r + 4 * s); });
+  // threads, then trophies
+  x.globalCompositeOperation = P.mode; x.lineCap = "round";
+  fp.games.forEach(o => {
+    const col = o.ci >= 0 ? P.cols[o.ci] : P.other;
+    o.spells.forEach(sp => { if (sp.a > until) return; const b = Math.min(sp.b, until), span = Math.max(0.002, b - sp.a);
+      x.strokeStyle = col; x.globalAlpha = 0.5; x.lineWidth = Math.min(7, 1 + 6 * Math.sqrt(sp.n / (span * 365 + 3)) ) * s * 1.6;
+      x.beginPath(); for (let p = sp.a, k = 0; p <= b + 1e-6; p += Math.min(0.003, span / 2), k++) { const [px, py] = at(p, o.off); k ? x.lineTo(px, py) : x.moveTo(px, py); } x.stroke(); });
+    x.fillStyle = col;
+    o.pts.forEach(pt => { if (pt.p > until || pt.grade === 3) return; const [px, py] = at(pt.p, o.off);
+      x.globalAlpha = 0.85; x.beginPath(); x.arc(px, py, ([0.9, 1.2, 1.7][pt.grade] + (pt.rare && pt.rare < 5 ? 0.9 : 0)) * s * 1.5, 0, 7); x.fill(); });
+  });
+  x.globalAlpha = 1; x.globalCompositeOperation = "source-over";
+  // platinums: four-pointed stars with a soft glow
+  fp.games.forEach(o => o.pts.forEach(pt => { if (pt.grade !== 3 || pt.p > until) return; const [px, py] = at(pt.p, o.off), k = 9 * s;
+    const g = x.createRadialGradient(px, py, 0, px, py, k * 2.2); g.addColorStop(0, P.plat); g.addColorStop(1, "transparent");
+    x.globalAlpha = 0.55; x.fillStyle = g; x.beginPath(); x.arc(px, py, k * 2.2, 0, 7); x.fill(); x.globalAlpha = 1;
+    x.fillStyle = P.plat; x.beginPath(); for (let j = 0; j < 8; j++) { const a = j * Math.PI / 4, rr = j % 2 ? k * 0.28 : k; x.lineTo(px + Math.cos(a) * rr, py + Math.sin(a) * rr); } x.closePath(); x.fill(); }));
+  // the needle: where the sweep is now
+  if (prog < 1) { const [px, py] = at(until); x.fillStyle = P.ink; x.beginPath(); x.arc(px, py, 3.5 * s, 0, 7); x.fill(); }
+  // centre label
+  x.fillStyle = P.ink; x.textAlign = "center"; x.font = `700 ${22 * s}px "Barlow Condensed", sans-serif`;
+  x.fillText(DATA.profile?.online_id || "", cx, cy + 7 * s);
+  if (poster) {           // title block for the printed version
+    const m = W * 0.07, ty = H - bottom + bottom * 0.18;
+    x.textAlign = "left"; x.fillStyle = P.ink; x.font = `800 ${W * 0.075}px "Barlow Condensed", sans-serif`;
+    x.fillText(`${DATA.profile?.online_id || "My"} · ${fp.y0}–${fp.y1}`, m, top * 0.62);
+    x.fillStyle = P.soft; x.font = `500 ${W * 0.022}px "IBM Plex Sans", sans-serif`;
+    x.fillText("A fingerprint of every trophy I've earned on PlayStation. One turn of the spiral is one year.", m, top * 0.62 + W * 0.04);
+    const tot = DATA.games.reduce((a, g) => a + (g.hours || 0), 0), plats = GAL.t.filter(r => r[1] === 3).length;
+    const figs = [[GAL.t.length.toLocaleString(), "trophies"], [String(plats), "platinums"], [Math.round(tot).toLocaleString(), "hours"], [String(fp.games.length), "games"]];
+    figs.forEach(([v, l], i) => { const fx = m + i * (W - 2 * m) / 4; x.fillStyle = P.ink; x.font = `700 ${W * 0.055}px "Barlow Condensed", sans-serif`; x.fillText(v, fx, ty + W * 0.05);
+      x.fillStyle = P.soft; x.font = `500 ${W * 0.018}px "IBM Plex Sans", sans-serif`; x.fillText(l, fx, ty + W * 0.075); });
+    let lx = m, ly = ty + W * 0.13; x.font = `500 ${W * 0.017}px "IBM Plex Sans", sans-serif`;
+    fp.genres.forEach((g, i) => { const w = x.measureText(g).width + W * 0.05; if (lx + w > W - m) { lx = m; ly += W * 0.035; }
+      x.fillStyle = P.cols[i]; x.beginPath(); x.arc(lx + W * 0.008, ly - W * 0.006, W * 0.007, 0, 7); x.fill(); x.fillStyle = P.ink; x.fillText(g, lx + W * 0.022, ly); lx += w; });
+    x.fillStyle = P.soft; x.font = `500 ${W * 0.015}px "IBM Plex Sans", sans-serif`; x.textAlign = "right"; x.fillText("Game Shelf", W - m, H - m * 0.6);
+  }
 }
-function updateLand(p) {                          // the range rises year by year, oldest at the back
-  const pos = land.mesh.geometry.attributes.position, NY = land.NY;
-  for (let i = 0; i < pos.count; i++) { const k = Math.min(1, Math.max(0, p * (NY + 2) - land.rowOf[i])); pos.setY(i, land.base[i] * (k * k * (3 - 2 * k))); }
-  pos.needsUpdate = true; land.mesh.geometry.computeVertexNormals();
-  land.wire.geometry.dispose(); land.wire.geometry = new THREE.WireframeGeometry(land.mesh.geometry);
+const fpCanvas = $("fp"), fpCtx = fpCanvas.getContext("2d");
+function renderPrint() {
+  const d = Math.min(devicePixelRatio, 2), W = innerWidth, H = innerHeight;
+  if (fpCanvas.width !== Math.round(W * d)) { fpCanvas.width = Math.round(W * d); fpCanvas.height = Math.round(H * d); }
+  fpCtx.setTransform(d, 0, 0, d, 0, 0);
+  const top = document.querySelector("header").getBoundingClientRect().bottom, bottom = H - document.querySelector("footer").getBoundingClientRect().top;
+  fp.box = { top, bottom }; drawPrint(fpCtx, W, H, { progress: fp.progress, top, bottom });
 }
-function pickLand(ev) {
-  const r = canvas.getBoundingClientRect(), ray = new THREE.Raycaster();
-  ray.setFromCamera(new THREE.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1), camera);
-  const hit = ray.intersectObject(land.mesh)[0]; if (!hit) return;
-  const w = Math.round((hit.point.x / land.W + 0.5) * (WEEKS - 1)), y = Math.round((hit.point.z / land.D + 0.5) * (land.NY - 1));
-  if (y < 0 || y >= land.NY) return;
-  const n = land.grid[y][w], top = Object.entries(land.lead[y][w]).sort((a, b) => b[1] - a[1])[0], g = top && DATA.games.find(x => x.name === GAL.games[top[0]]);
-  const monday = new Date(land.y0 + y, 0, 1 + w * 7);
-  info(g?.image ? `<img src="${esc(g.image)}" alt="">` : "⛰️", `Week of ${monday.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" })}`,
-    n ? `${n} troph${n > 1 ? "ies" : "y"}${top ? ` · mostly ${GAL.games[top[0]]}` : ""}` : "No trophies that week");
+function pickPrint(ev) {
+  const W = innerWidth, H = innerHeight, { top, bottom } = fp.box, cx = W / 2, cy = top + (H - top - bottom) / 2, R = Math.min(W * 0.44, (H - top - bottom) * 0.44), r0 = R * 0.12, ring = (R - r0) / fp.turns;
+  let best = null, bd = 24 * 24;
+  fp.games.forEach(o => o.pts.forEach(pt => { const a = (pt.p % 1) * Math.PI * 2 - Math.PI / 2, r = r0 + pt.p * ring + o.off * ring * 0.62;
+    const dx = cx + Math.cos(a) * r - ev.clientX, dy = cy + Math.sin(a) * r - ev.clientY, dd = dx * dx + dy * dy - (pt.grade === 3 ? 200 : 0);
+    if (dd < bd) { bd = dd; best = [o, pt]; } }));
+  if (!best) return;
+  const [o, pt] = best;
+  info(o.g?.image ? `<img src="${esc(o.g.image)}" alt="">` : "✦", pt.n || o.name, `${GRADE[pt.grade]} · ${o.name} · ${fmtDate(new Date(pt.ms))}${pt.rare ? ` · ${pt.rare}%` : ""} · ${o.g ? fp.mainGenre(o.g) : ""}`);
+}
+async function savePoster() {
+  const btn = $("fpSave"); btn.disabled = true; btn.textContent = "Preparing…";
+  try { await Promise.all(['800 80px "Barlow Condensed"', '500 20px "IBM Plex Sans"'].map(f => document.fonts.load(f))); } catch {}
+  const W = 2480, H = 3508, c = document.createElement("canvas"); c.width = W; c.height = H;        // A4 at 300 dpi, scales to A2/A1
+  drawPrint(c.getContext("2d"), W, H, { poster: true, top: H * 0.13, bottom: H * 0.2, progress: 1 });
+  const blob = await new Promise(r => c.toBlob(r, "image/png")), name = `gamer-fingerprint-${fp.style}.png`;
+  try {
+    const file = new File([blob], name, { type: "image/png" });
+    if (navigator.canShare?.({ files: [file] })) await navigator.share({ files: [file], title: "My gamer fingerprint" });
+    else { const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 4000); }
+  } catch {}
+  btn.disabled = false; btn.textContent = "Save poster";
 }
 
 /* ---------- 3. Hours race: your top 10 games by hours, year by year ---------- */
@@ -274,32 +348,38 @@ function fit(radius, tilt) {        // place the camera so a disc of this radius
 function setView(v) {
   view = v;
   document.querySelectorAll("[data-v]").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v));
-  $("race").classList.toggle("on", v === "race"); canvas.style.visibility = v === "race" ? "hidden" : "visible"; $("labels").innerHTML = "";
+  $("race").classList.toggle("on", v === "race"); canvas.style.visibility = v === "galaxy" ? "visible" : "hidden"; $("labels").innerHTML = "";
+  $("fp").classList.toggle("on", v === "print"); $("fpTools").hidden = v !== "print";
   if (v === "galaxy") { fit(40, 0.95); controls?.target.set(0, 0, 0); $("legend").innerHTML = galaxy.legend;
     info("✨", "Every trophy you've earned is a star", "From your first in the centre, spiralling out to today. Drag to turn, pinch to zoom, tap a star."); play(); }
-  if (v === "land") { fit(land.W * 0.4, 0.78); camera.position.x = -6; land.scene.fog.near = camera.position.length() * 0.9; land.scene.fog.far = camera.position.length() * 2.4; controls?.target.set(0, 0, land.D * 0.12); $("legend").innerHTML = land.legend;
-    info("⛰️", "Your play as a mountain range", "One ridge per year (your first at the back, this year in front), one column per week: the higher, the more trophies. Drag to turn, tap a peak."); play(); }
+  if (v === "print") { $("legend").innerHTML = fp.legendHTML();
+    info("✦", "Your gamer fingerprint", "One turn of the spiral is one year, from your first trophy in the centre. Threads are games (colour = genre), dots are trophies, stars are platinums. Tap one."); play(); }
   if (v === "race") { $("legend").innerHTML = `<span>Total hours per game, year after year</span>`; info("🏁", "Hours race", "Which games took most of your time, and when."); play(); }
   controls?.update();
 }
 document.querySelector(".seg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (b && b.dataset.v !== view) setView(b.dataset.v); });
 let anim = null;
 function play() {                          // replay the current view from the start (instantly with "reduce motion")
-  const dur = view === "galaxy" ? 9000 : view === "land" ? 6000 : Math.max(20000, (race.y1 - race.y0 + 1) * 2600);   // the race: about 2.6 s a year
+  const dur = view === "galaxy" ? 9000 : view === "print" ? 8000 : Math.max(20000, (race.y1 - race.y0 + 1) * 2600);   // the race: about 2.6 s a year
   if (calm) { setProgress(1); return; }
   const t0 = performance.now(); anim = { t0, dur };
 }
 function setProgress(p) {
   p = Math.max(0, Math.min(1, p)); $("scrub").value = Math.round(p * 1000);
   if (view === "galaxy" && galaxy.mat) { galaxy.progress = p; galaxy.mat.uniforms.uProgress.value = p; $("yr").textContent = galaxyYear(p); }
-  if (view === "land" && land.mesh) { land.grow = p; updateLand(p); $("yr").textContent = land.y0 + Math.min(land.NY - 1, Math.floor(p * land.NY)); }
+  if (view === "print" && fp.games) { fp.progress = p; renderPrint(); $("yr").textContent = new Date(fp.t0.getTime() + p * fp.total * 36e5).getFullYear(); }
   if (view === "race" && race.games) drawRace(p);
 }
 $("play").onclick = () => play();
 $("scrub").addEventListener("input", e => { anim = null; setProgress(e.target.value / 1000); });
 let down = null;
 canvas.addEventListener("pointerdown", e => down = [e.clientX, e.clientY]);
-canvas.addEventListener("pointerup", e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 6) (view === "galaxy" ? pickGalaxy : pickLand)(e); down = null; });
+canvas.addEventListener("pointerup", e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 6) pickGalaxy(e); down = null; });
+$("fp").addEventListener("click", pickPrint);
+$("fpTools").addEventListener("click", e => { const b = e.target.closest("[data-style]"); if (b) { fp.style = b.dataset.style;
+  document.querySelectorAll("[data-style]").forEach(x => x.setAttribute("aria-pressed", x === b)); $("legend").innerHTML = fp.legendHTML(); renderPrint(); }
+  if (e.target.id === "fpSave") savePoster(); });
+addEventListener("resize", () => view === "print" && renderPrint());
 
 const tmpM = new THREE.Matrix4(), tmpV = new THREE.Vector3(), tmpQ = new THREE.Quaternion(), tmpS = new THREE.Vector3();
 function labels(list) {
@@ -310,16 +390,13 @@ function labels(list) {
 }
 function loop() {
   requestAnimationFrame(loop);
-  if (anim) { const p = Math.min(1, (performance.now() - anim.t0) / anim.dur); setProgress(view === "land" ? 1 - Math.pow(1 - p, 2) : p); if (p >= 1) anim = null; }
-  if (!renderer || view === "race") return;
+  if (anim) { const p = Math.min(1, (performance.now() - anim.t0) / anim.dur); setProgress(p); if (p >= 1) anim = null; }
+  if (!renderer || view !== "galaxy") return;
   const dt = clock.getDelta(); controls.update();
   if (view === "galaxy") {
     galaxy.mat.uniforms.uTime.value += dt;
     renderer.render(galaxy.scene, camera);
     labels(galaxy.years.filter(y => y.f <= galaxy.progress).map(y => ({ text: y.y, p: y.p })));
-  } else {
-    renderer.render(land.scene, camera);
-    labels(land.labels);
   }
 }
 
@@ -328,12 +405,13 @@ async function start() {
   [DATA, GAL, FLAGS] = await Promise.all([get("data.json", null), get("galaxy.json", null), get("flags.json", {})]);
   if (!DATA) { info("⚠️", "No game data yet", ""); return; }
   buildRace();
-  if (!renderer) { document.querySelector('[data-v="galaxy"]').disabled = document.querySelector('[data-v="land"]').disabled = true; setView("race"); info("ℹ️", "3D isn't available on this device", "The hours race still works."); loop(); return; }
+  if (!renderer) { document.querySelector('[data-v="galaxy"]').disabled = true; if (GAL?.t?.length) buildPrint(); setView(GAL?.t?.length ? "print" : "race"); info("ℹ️", "3D isn't available on this device", "The hours race still works."); loop(); return; }
   resize();
   if (GAL?.t?.length) buildGalaxy(); else document.querySelector('[data-v="galaxy"]').hidden = true;
-  if (GAL?.t?.length) buildLand(); else document.querySelector('[data-v="land"]').hidden = true;
+  if (GAL?.t?.length) buildPrint(); else document.querySelector('[data-v="print"]').hidden = true;
+  document.fonts?.ready.then(() => view === "print" && renderPrint());
   const want = location.hash.slice(1);
-  setView(["galaxy", "land", "race"].includes(want) ? want : GAL?.t?.length ? "galaxy" : "race");
+  setView(["galaxy", "print", "race"].includes(want) ? want : GAL?.t?.length ? "galaxy" : "race");
   loop();
 }
 start();
