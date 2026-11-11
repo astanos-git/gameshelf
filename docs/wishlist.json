@@ -110,6 +110,13 @@
   "released": "2021-06-11",
   "url": "https://rawg.io/games/ratchet-clank-rift-apart"
  },
+ "resident-evil-requiem": {
+  "added": "2026-11-11T07:11:25Z",
+  "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/1/15/Resident_Evil_Requiem_Cover_Art.jpg/250px-Resident_Evil_Requiem_Cover_Art.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "name": "Resident Evil Requiem",
+  "pending": true,
+  "year": "2026"
+ },
  "shadows-die-twice": {
   "added": "2026-10-02T10:10:37Z",
   "genres": [
