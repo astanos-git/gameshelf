@@ -5,8 +5,11 @@
    The moon is the backlog. Day and night pass: walkers sleep in the dark, ghosts only come out then, lanterns and crystals light up. */
 import * as THREE from "three";
 import { mergeGeometries } from "three/addons/utils/BufferGeometryUtils.js";
+import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 
-const RP = 10, DAY = 864e5, YEAR = 365.25 * DAY, LIFT = .075;
+const RP = 10, DAY = 864e5, YEAR = 365.25 * DAY, LIFT = .11;
 const hash = (s, salt = 0) => { let h = 2166136261 ^ salt; for (const c of String(s)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); h ^= h >>> 13; h = Math.imul(h, 0x5bd1e995); h ^= h >>> 15; return ((h >>> 0) % 100000) / 100000; };
 
 export const REALMS = [
@@ -57,7 +60,7 @@ const tri = pts => { const g = new THREE.BufferGeometry(); g.setAttribute("posit
 const cyl = (a, b, h, seg = 6) => new THREE.CylinderGeometry(a, b, h, seg), cone = (r, h, seg = 6) => new THREE.ConeGeometry(r, h, seg), box = (x, y, z) => new THREE.BoxGeometry(x, y, z),
   ball = (r, d = 1) => new THREE.IcosahedronGeometry(r, d), dome = r => new THREE.SphereGeometry(r, 8, 4, 0, Math.PI * 2, 0, Math.PI / 2);
 const PROPS = {                                       // two "elements" per land: a common one and a rarer one
-  fantasy: [() => [part(cyl(.05, .07, .24), "#5b4030", { p: [0, .12, 0] }), part(cone(.3, .5), "#1f6b3a", { p: [0, .45, 0] }), part(cone(.21, .42), "#2a8046", { p: [0, .74, 0] })],
+  fantasy: [() => [part(cyl(.05, .07, .24), "#5b4030", { p: [0, .12, 0] }), part(cone(.3, .5), "#1f6b3a", { p: [0, .45, 0], part: 5 }), part(cone(.21, .42), "#2a8046", { p: [0, .74, 0], part: 5 })],
     () => [part(cyl(.15, .18, .62, 7), "#9a968f", { p: [0, .31, 0] }), part(cone(.23, .34, 7), "#b5473c", { p: [0, .79, 0] }), part(box(.07, .1, .04), "#ffd27a", { p: [0, .42, .16], glow: 1 })]],
   scifi: [() => [part(new THREE.OctahedronGeometry(.17), "#62e8ff", { p: [0, .36, 0], s: [1, 2.3, 1], glow: .8 }), part(new THREE.OctahedronGeometry(.1), "#b58cff", { p: [.17, .18, .05], s: [1, 2, 1], r: [0, 0, -.5], glow: .8 })],
     () => [part(cyl(.02, .035, .95, 5), "#aeb6c8", { p: [0, .47, 0] }), part(ball(.065, 0), "#ff5fd2", { p: [0, .98, 0], glow: 1 }), part(cyl(.16, .02, .07, 8), "#d5dbe8", { p: [0, .6, 0] })]],
@@ -65,13 +68,13 @@ const PROPS = {                                       // two "elements" per land
     () => [part(box(.2, .26, .06), "#8f93a0", { p: [0, .13, 0] }), part(cyl(.1, .1, .06, 8), "#8f93a0", { p: [0, .26, 0], r: [Math.PI / 2, 0, 0] })]],
   waste: [() => [part(box(.34, .36, .08), "#a39684", { p: [0, .18, 0], r: [0, 0, .06] }), part(box(.08, .56, .3), "#8f8372", { p: [-.17, .28, .13] }), part(box(.16, .1, .14), "#7a6f61", { p: [.12, .05, .16], r: [0, .5, 0] })],
     () => [part(cyl(.07, .07, .52, 6), "#6f8f4a", { p: [0, .26, 0] }), part(cyl(.04, .04, .2, 5), "#6f8f4a", { p: [.14, .34, 0] }), part(cyl(.04, .04, .1, 5), "#6f8f4a", { p: [.09, .25, 0], r: [0, 0, Math.PI / 2] }), part(cyl(.04, .04, .16, 5), "#6f8f4a", { p: [-.13, .27, 0] }), part(cyl(.04, .04, .1, 5), "#6f8f4a", { p: [-.08, .2, 0], r: [0, 0, Math.PI / 2] })]],
-  old: [() => [part(cyl(.04, .06, .3), "#6a4a30", { p: [0, .15, 0] }), part(ball(.27, 1), "#6f9440", { p: [0, .5, 0], s: [1, .85, 1] })],
+  old: [() => [part(cyl(.04, .06, .3), "#6a4a30", { p: [0, .15, 0] }), part(ball(.27, 1), "#6f9440", { p: [0, .5, 0], s: [1, .85, 1], part: 5 })],
     () => [part(cyl(.1, .1, .05, 8), "#e9e2d0", { p: [0, .025, 0] }), part(cyl(.065, .075, .62, 8), "#f3eddd", { p: [0, .36, 0] }), part(box(.22, .06, .22), "#e9e2d0", { p: [0, .7, 0] })]],
-  arena: [() => [part(cyl(.014, .014, .8, 4), "#f2f2f2", { p: [0, .4, 0] }), part(tri([[0, .78, 0], [0, .58, 0], [.3, .68, 0]]), "#ff4d4d", {}), part(tri([[0, .78, 0], [.3, .68, 0], [0, .58, 0]]), "#ff4d4d", {})],
+  arena: [() => [part(cyl(.014, .014, .8, 4), "#f2f2f2", { p: [0, .4, 0] }), part(tri([[0, .78, 0], [0, .58, 0], [.3, .68, 0]]), "#ff4d4d", { part: 5 }), part(tri([[0, .78, 0], [.3, .68, 0], [0, .58, 0]]), "#ff4d4d", { part: 5 })],
     () => [part(cyl(.02, .02, .4, 4), "#ffffff", { p: [0, .2, -.28] }), part(cyl(.02, .02, .4, 4), "#ffffff", { p: [0, .2, .28] }), part(cyl(.02, .02, .58, 4), "#ffffff", { p: [0, .4, 0], r: [Math.PI / 2, 0, 0] })]],
   wonder: [() => [part(cyl(.06, .085, .3, 7), "#f3e6d0", { p: [0, .15, 0] }), part(dome(.25), "#e2504a", { p: [0, .27, 0], s: [1, .8, 1] }), part(ball(.045, 0), "#ffffff", { p: [.1, .42, .06] }), part(ball(.04, 0), "#ffffff", { p: [-.09, .4, -.1] })],
     () => [part(cyl(.012, .012, .32, 4), "#4f9a4a", { p: [0, .16, 0] }), part(ball(.09, 0), "#ffd84d", { p: [0, .35, 0], glow: .35 }), part(cyl(.14, .14, .015, 6), "#ff9ecb", { p: [0, .33, 0] })]],
-  story: [() => [part(cyl(.03, .04, .14), "#5b4030", { p: [0, .07, 0] }), part(cone(.13, .85, 6), "#2f6a5a", { p: [0, .55, 0] })],
+  story: [() => [part(cyl(.03, .04, .14), "#5b4030", { p: [0, .07, 0] }), part(cone(.13, .85, 6), "#2f6a5a", { p: [0, .55, 0], part: 5 })],
     () => [part(cyl(.014, .018, .5, 4), "#3b3440", { p: [0, .25, 0] }), part(box(.1, .12, .1), "#ffd27a", { p: [0, .56, 0], glow: 1 }), part(cone(.1, .07, 4), "#3b3440", { p: [0, .66, 0], r: [0, Math.PI / 4, 0] })]],
 };
 const wing = (root, back, tip, side, shade) => part(tri(side > 0 ? [[root, 0, 0], [tip[0], tip[1], tip[2]], [back, 0, 0]] : [[root, 0, 0], [back, 0, 0], [tip[0], tip[1], -tip[2]]]), shade, { part: 1, tint: 1 });
@@ -105,7 +108,9 @@ const CREATURES = {                                   // nose towards +x, feet a
 };
 const LIGHT = `uniform vec3 uSun;
 vec3 lit(vec3 c, vec3 n, vec3 up, float glow) { float day = dot(up, uSun), l = smoothstep(-.22, .3, day), d = max(dot(n, uSun), 0.) * .8 + .28 * max(day, 0.);
-  return c * (.1 + 1.05 * d * l) + c * vec3(.2, .25, .46) * (1. - l) + c * glow * (.3 + 1.5 * (1. - l)); }`;
+  vec3 o = c * (.1 + vec3(1.08, 1.03, .96) * d * l) + c * vec3(.17, .22, .44) * (1. - l);
+  o += c * vec3(1., .4, .1) * smoothstep(.34, 0., abs(day - .04)) * .55 * (.4 + max(dot(n, uSun), 0.));        // golden hour along the edge of the night
+  return o + c * glow * (.3 + 1.7 * (1. - l)); }`;
 
 export function createPlanet(env) {
   const { camera, controls, canvas, info, esc, labels, calm, tex } = env, $ = id => document.getElementById(id);
@@ -121,7 +126,7 @@ export function createPlanet(env) {
   const total = realms.reduce((n, r) => n + r.hours, 0) || 1;
 
   /* the ground: an icosphere, one flat colour per triangle */
-  const geo = new THREE.IcosahedronGeometry(1, 20), pos = geo.attributes.position, NF = pos.count / 3;
+  const geo = new THREE.IcosahedronGeometry(1, 28), pos = geo.attributes.position, NF = pos.count / 3;
   const cents = [], hs = [];
   for (let f = 0; f < NF; f++) { const c = new THREE.Vector3(); for (let k = 0; k < 3; k++) c.add(v1.fromBufferAttribute(pos, f * 3 + k)); cents.push(c.normalize()); hs.push(height(c)); }
   SEA = [...hs].sort((a, b) => a - b)[Math.floor(NF * .4)];
@@ -130,12 +135,15 @@ export function createPlanet(env) {
   order.forEach((r, k) => { const want = fib([3, 4, 1, 6, 2, 5, 0, 7][k]); let best = 0, bd = -2;        // biggest lands around the equator; seeds sit on dry ground
     for (let f = 0; f < NF; f++) if (hs[f] > SEA + .1) { const d = cents[f].dot(want); if (d > bd) { bd = d; best = f; } }
     r.seed = cents[best].clone(); r.w = Math.pow(Math.max(.03, r.hours / total), .32); r.faces = []; r.radius = .1; });
-  const col = new Float32Array(NF * 9), br = new Float32Array(NF * 6), faceRealm = new Int8Array(NF), sand = new THREE.Color("#d9c98f"), rock = new THREE.Color("#8b8782"), snow = new THREE.Color("#f4f6fa"), c1 = new THREE.Color();
+  const col = new Float32Array(NF * 9), br = new Float32Array(NF * 6), gl = new Float32Array(NF * 3), EMBER = { scifi: ["#49e6ff", .07], waste: ["#ff7a2e", .025], horror: ["#8dffb0", .02], wonder: ["#ffe27a", .02] }, faceRealm = new Int8Array(NF), sand = new THREE.Color("#d9c98f"), rock = new THREE.Color("#8b8782"), snow = new THREE.Color("#f4f6fa"), c1 = new THREE.Color();
   for (let f = 0; f < NF; f++) {
     const c = cents[f], h = hs[f] - SEA; let ri = -1;
     if (h > 0) { let bd = 1e9; for (const r of realms) { const d = Math.acos(Math.min(1, c.dot(r.seed))) / r.w; if (d < bd) { bd = d; ri = r.i; } }
       const r = realms[ri], ang = Math.acos(Math.min(1, c.dot(r.seed))); r.faces.push({ f, ang }); r.radius = Math.max(r.radius, ang);
       c1.copy(r.land).offsetHSL((hash(f, 1) - .5) * .03, 0, (hash(f, 2) - .5) * .09 + Math.min(.08, h * .12));
+      if (r.id === "arena") c1.offsetHSL(0, 0, Math.floor(ang * 26) % 2 ? .035 : -.03);                  // mown stripes
+      if (r.id === "wonder") c1.offsetHSL((hash(f, 6) - .5) * .16, 0, 0);
+      const em = EMBER[r.id]; if (em && h > .08 && h < .7 && hash(f, 7) < em[1]) { c1.set(em[0]); gl[f * 3] = gl[f * 3 + 1] = gl[f * 3 + 2] = .9; }   // glowing ground: circuits, embers, wisps
       if (h < .07) c1.lerp(sand, .7); if (h > .75) c1.lerp(rock, Math.min(1, (h - .75) * 4)); if (h > 1.05) c1.lerp(snow, Math.min(1, (h - 1.05) * 5));
     } else c1.setRGB(.07, .3, .55).lerp(new THREE.Color(.16, .55, .75), Math.max(0, 1 + h * 2.2)).offsetHSL(0, 0, (hash(f, 3) - .5) * .03);
     faceRealm[f] = ri;
@@ -143,15 +151,23 @@ export function createPlanet(env) {
   }
   realms.forEach(r => { r.faces.sort((a, b) => a.ang - b.ang); r.faces.forEach(o => { const rank = o.ang / r.radius; o.rank = rank; for (let k = 0; k < 3; k++) br[(o.f * 3 + k) * 2 + 1] = rank; }); });
   for (let i = 0; i < pos.count; i++) { v1.fromBufferAttribute(pos, i).normalize(); v1.multiplyScalar(radiusAt(v1)); pos.setXYZ(i, v1.x, v1.y, v1.z); }
-  geo.computeVertexNormals(); geo.setAttribute("aC", new THREE.BufferAttribute(col, 3)); geo.setAttribute("aBR", new THREE.BufferAttribute(br, 2));
+  const shore = new Float32Array(pos.count); for (let i = 0; i < pos.count; i++) { v1.fromBufferAttribute(pos, i).normalize(); const d = height(v1) - SEA; shore[i] = Math.max(0, Math.min(1, 1 + d / .16)); }
+  geo.computeVertexNormals(); geo.setAttribute("aC", new THREE.BufferAttribute(col, 3)); geo.setAttribute("aBR", new THREE.BufferAttribute(br, 2)); geo.setAttribute("aG", new THREE.BufferAttribute(gl, 1)); geo.setAttribute("aS", new THREE.BufferAttribute(shore, 1));
   const ground = new THREE.Mesh(geo, new THREE.ShaderMaterial({ uniforms: { ...U, uGrow: { value: grow } },
-    vertexShader: `attribute vec3 aC; attribute vec2 aBR; uniform float uGrow[8]; uniform float uTime; varying vec3 vC, vN, vUp; varying float vW;
+    vertexShader: `attribute vec3 aC; attribute vec2 aBR; attribute float aG, aS; uniform float uGrow[8]; varying vec3 vC, vN, vUp, vP; varying float vW, vG, vS;
       void main() { float alive = aBR.x < -.5 ? 1. : smoothstep(0., .08, uGrow[int(aBR.x + .5)] - aBR.y * .92);
-        vec3 bare = vec3(.3, .27, .26) * (.6 + .9 * dot(aC, vec3(.33))); vC = mix(bare, aC, alive); vW = aBR.x < -.5 ? 1. : 0.;
-        vN = normalize(mat3(modelMatrix) * normal); vUp = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
-    fragmentShader: LIGHT + `uniform float uTime; varying vec3 vC, vN, vUp; varying float vW;
-      void main() { vec3 c = vC; if (vW > .5) c *= .93 + .09 * sin(vUp.x * 40. + uTime * 1.3) * sin(vUp.y * 37. - uTime) * sin(vUp.z * 43. + uTime * .7);
-        gl_FragColor = vec4(lit(c, normalize(vN), vUp, 0.), 1.); }` }));
+        vec3 bare = vec3(.3, .27, .26) * (.6 + .9 * dot(aC, vec3(.33))); vC = mix(bare, aC, alive); vW = aBR.x < -.5 ? 1. : 0.; vG = aG * alive; vS = aS;
+        vN = normalize(mat3(modelMatrix) * normal); vUp = normalize(position); vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+    fragmentShader: LIGHT + `uniform float uTime; varying vec3 vC, vN, vUp, vP; varying float vW, vG, vS;
+      void main() { vec3 c = vC, n = normalize(vN), V = normalize(cameraPosition - vP); float day = dot(vUp, uSun), sp = 0.;
+        if (vW > .5) {                                                                                     // the sea: moving glints, foam on the shore
+          n = normalize(vUp + .05 * vec3(sin(vP.x * 9. + uTime * 2.), sin(vP.y * 8. - uTime * 1.7), sin(vP.z * 10. + uTime * 1.3)));
+          c *= .92 + .1 * sin(vUp.x * 40. + uTime * 1.3) * sin(vUp.y * 37. - uTime) * sin(vUp.z * 43. + uTime * .7);
+          float foam = smoothstep(.62, .98, vS + .14 * sin(uTime * 1.6 + vP.x * 3. + vP.z * 2.3 + vP.y * 2.7)); c = mix(c, vec3(.92, .98, 1.), foam * .75);
+          sp = pow(max(dot(reflect(-uSun, n), V), 0.), 48.) * smoothstep(-.05, .2, day); }
+        vec3 o = lit(c, n, vUp, vG) + vec3(1.3, 1.15, .85) * sp * 1.5;
+        float rim = pow(1. - max(dot(vUp, V), 0.), 3.2); o = mix(o, vec3(.42, .68, 1.) * (.12 + .9 * smoothstep(-.3, .4, day)), rim * .55);   // air thickens towards the horizon
+        gl_FragColor = vec4(o, 1.); }` }));
   scene.add(ground);
 
   /* instanced things (props, clouds, creatures) share one shader */
@@ -162,8 +178,9 @@ export function createPlanet(env) {
         else if (uAnim == 1) p.y += sin(t * 2. + ph) * .06;
         else if (uAnim == 2) { p.x += sin(t * 3. + p.y * 9. + ph) * .06 * smoothstep(.1, -.3, p.y); p.y += sin(t * 1.5 + ph) * .06; }
         else if (uAnim == 3) { if (aFx.y > 2.5) p.x += sin(t * uFreq + ph + p.z * 9. + p.x * 6.) * .075 * mv * smoothstep(.42, 0., p.y); p.y += abs(sin(t * uFreq * .5 + ph)) * .02 * mv; }
+        else if (uAnim == 8) { }
         else if (uAnim == 4) { float s = sin(t * uFreq + ph); p.y = p.y * (1. + .2 * s * mv) + max(0., s) * mv * .5; p.xz *= 1. - .1 * s * mv; }
-        else p *= smoothstep(0., .1, uG - aRank * .92);
+        else { p *= smoothstep(0., .1, uG - aRank * .92); if (aFx.y > 4.5) { vec4 o = instanceMatrix * vec4(0., 0., 0., 1.); p.x += sin(t * 1.4 + o.x * 2. + o.z * 3.) * .05 * p.y; p.z += cos(t * 1.1 + o.y * 3.) * .03 * p.y; } }
         vec4 w = modelMatrix * instanceMatrix * vec4(p, 1.);
         vC = mix(aC, aC * aCol, aFx.z); vC = mix(vC, vec3(dot(vC, vec3(.33))) * .62 + .08, aInst.z); vGlow = aFx.x * (1. - aInst.z) + aInst.w * .22;
         vN = normalize(mat3(modelMatrix) * mat3(instanceMatrix) * normal); vUp = normalize(w.xyz); gl_Position = projectionMatrix * viewMatrix * w; }`,
@@ -197,6 +214,8 @@ export function createPlanet(env) {
       const tint = r.tint.clone().offsetHSL((hash(name, 11) - .5) * .12, 0, (hash(name, 12) - .5) * .16); r.mesh.geometry.attributes.aCol.setXYZ(i, tint.r, tint.g, tint.b);
       r.mesh.geometry.attributes.aInst.setXYZW(i, c.ph, 1, 0, 0); });
   });
+  const plats = games.filter(c => c.f.platAt), rings = plats.length ? instanced([part(new THREE.TorusGeometry(.24, .035, 6, 18), "#ffd465", { r: [Math.PI / 2, 0, 0], glow: 1.5 })], plats.length, material(8, 0)) : null;
+  if (rings) { rings.instanceMatrix.setUsage(THREE.DynamicDrawUsage); scene.add(rings); }
   const halo = (() => { const n = games.length, g = new THREE.BufferGeometry();
     g.setAttribute("position", new THREE.BufferAttribute(new Float32Array(n * 3), 3)); g.setAttribute("aSize", new THREE.BufferAttribute(new Float32Array(n), 1)); g.setAttribute("aCol", new THREE.BufferAttribute(new Float32Array(n * 4), 4));
     const p = new THREE.Points(g, new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: { uMap: { value: tex }, uScale: P.uScale = { value: 800 } },
@@ -207,13 +226,33 @@ export function createPlanet(env) {
   /* sky: air, clouds, stars and the backlog moon */
   scene.add(new THREE.Mesh(new THREE.SphereGeometry(RP * 1.2, 48, 32), new THREE.ShaderMaterial({ side: THREE.BackSide, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: { ...U },
     vertexShader: `varying vec3 vN, vW; void main() { vN = normalize(normalMatrix * normal); vW = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
-    fragmentShader: `uniform vec3 uSun; varying vec3 vN, vW; void main() { float i = pow(max(0., .72 - dot(vN, vec3(0., 0., 1.))), 2.6); float day = smoothstep(-.5, .5, dot(vW, uSun)); gl_FragColor = vec4(mix(vec3(.12, .16, .5), vec3(.35, .65, 1.), day), 1.) * i * (.35 + .85 * day); }` })));
-  const clouds = new THREE.Group(); { const n = 16, mesh = instanced([part(ball(1, 1), "#ffffff", {})], n * 3, material(1, 0));
+    fragmentShader: `uniform vec3 uSun; varying vec3 vN, vW; void main() { float i = pow(max(0., .72 - dot(vN, vec3(0., 0., 1.))), 2.6); float day = smoothstep(-.5, .5, dot(vW, uSun)); gl_FragColor = vec4(mix(vec3(.12, .16, .5), vec3(.35, .65, 1.), day), 1.) * i * (.5 + 1.1 * day); }` })));
+  const clouds = new THREE.Group(); { const n = 26, mesh = instanced([part(ball(1, 1), "#ffffff", {})], n * 3, material(8, 0));
     for (let i = 0; i < n; i++) { const c = new THREE.Vector3(hash("c", i) - .5, (hash("d", i) - .5) * .8, hash("e", i) - .5).normalize();
-      for (let k = 0; k < 3; k++) { v3.copy(c).applyAxisAngle(v1.set(0, 1, 0), (k - 1) * .075).normalize(); const s = .55 + hash(i, k) * .5; place(mesh, i * 3 + k, v3.clone(), hash(i, 20) * 6, new THREE.Vector3(s * 1.5, s * .38, s), 2 + hash("f", i) * .5 + (k === 1 ? .12 : 0)); } }
+      for (let k = 0; k < 3; k++) { v3.copy(c).applyAxisAngle(v1.set(0, 1, 0), (k - 1) * .075).normalize(); const s = .55 + hash(i, k) * .5; place(mesh, i * 3 + k, v3.clone(), hash(i, 20) * 6, new THREE.Vector3(s * 1.5, s * .38, s), 2.5 + hash("f", i) * .6 + (k === 1 ? .14 : 0)); } }
     clouds.add(mesh); scene.add(clouds); }
   { const n = 900, a = new Float32Array(n * 3); for (let i = 0; i < n; i++) { v1.set(hash(i, 30) - .5, hash(i, 31) - .5, hash(i, 32) - .5).normalize().multiplyScalar(700); a.set([v1.x, v1.y, v1.z], i * 3); }
     const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(a, 3)); scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: 0xcfd8ff, size: 1.6, sizeAttenuation: false, transparent: true, opacity: .75 }))); }
+  const sunSprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, color: new THREE.Color(5, 3.6, 2), blending: THREE.AdditiveBlending, depthWrite: false })); sunSprite.scale.setScalar(70); scene.add(sunSprite);
+  const aurora = [1, -1].map(side => { const m = new THREE.Mesh(new THREE.CylinderGeometry(3.3, 4.6, 2.6, 72, 1, true), new THREE.ShaderMaterial({ transparent: true, depthWrite: false, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, uniforms: { ...U, uSide: { value: side } },
+      vertexShader: `varying vec2 vUv; varying vec3 vW; void main() { vUv = uv; vec4 w = modelMatrix * vec4(position, 1.); vW = normalize(w.xyz); gl_Position = projectionMatrix * viewMatrix * w; }`,
+      fragmentShader: `uniform vec3 uSun; uniform float uTime; varying vec2 vUv; varying vec3 vW;
+        void main() { float x = vUv.x * 6.283, curtain = .5 + .5 * sin(x * 7. + uTime * .8 + sin(x * 3. - uTime * .5) * 2.), fine = .6 + .4 * sin(x * 41. + uTime * 2.);
+          float a = pow(1. - vUv.y, 1.6) * smoothstep(0., .12, vUv.y) * curtain * fine * (1. - smoothstep(-.25, .15, dot(vW, uSun)));
+          gl_FragColor = vec4(mix(vec3(.2, 1.6, .7), vec3(.9, .3, 1.5), vUv.y) * a * .8, a); }` }));
+    m.position.y = side * (RP + 1.25); if (side < 0) m.rotation.x = Math.PI; m.renderOrder = 5; scene.add(m); return m; });
+  // fireflies over the gentler lands at night
+  { const spots = realms.filter(r => ["wonder", "story", "fantasy", "horror"].includes(r.id)).flatMap(r => r.faces.filter(o => hash(o.f, 21) < .06 && hs[o.f] - SEA > .05).map(o => [r, o])), n = spots.length, g = new THREE.BufferGeometry();
+    const a = new Float32Array(n * 3), b = new Float32Array(n * 3), c = new Float32Array(n * 3);
+    spots.forEach(([r, o], i) => { v1.copy(cents[o.f]).multiplyScalar(radiusAt(cents[o.f]) + .35 + hash(o.f, 22) * .7); a.set([v1.x, v1.y, v1.z], i * 3); b.set([r.i, Math.min(1, o.rank + .05), hash(o.f, 23) * 6.283], i * 3); c.set(r.id === "horror" ? [.5, 1, .7] : [1, .9, .45], i * 3); });
+    g.setAttribute("position", new THREE.BufferAttribute(a, 3)); g.setAttribute("aBR", new THREE.BufferAttribute(b, 3)); g.setAttribute("aC", new THREE.BufferAttribute(c, 3));
+    const pts = new THREE.Points(g, new THREE.ShaderMaterial({ transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: { ...U, uMap: { value: tex }, uScale: P.uScale, uGrow: { value: grow } },
+      vertexShader: `attribute vec3 aBR, aC; uniform float uGrow[8]; uniform float uTime, uScale; uniform vec3 uSun; varying vec4 vCol;
+        void main() { vec3 up = normalize(position), p = position + up * sin(uTime * 1.3 + aBR.z) * .15 + cross(up, vec3(.3, 1., .2)) * sin(uTime * .9 + aBR.z * 2.) * .2;
+          vec4 mv = modelViewMatrix * vec4(p, 1.); gl_Position = projectionMatrix * mv; gl_PointSize = .3 * uScale / max(.1, -mv.z);
+          float a = (1. - smoothstep(-.2, .1, dot(up, uSun))) * step(aBR.y, uGrow[int(aBR.x + .5)]) * (.55 + .45 * sin(uTime * 3. + aBR.z * 5.)); vCol = vec4(aC * 2.2, a); }`,
+      fragmentShader: `uniform sampler2D uMap; varying vec4 vCol; void main() { gl_FragColor = vec4(vCol.rgb, vCol.a * texture2D(uMap, gl_PointCoord).a); }` }));
+    pts.frustumCulled = false; scene.add(pts); }
   const moonGeo = new THREE.IcosahedronGeometry(1, 3); { const p = moonGeo.attributes.position; for (let i = 0; i < p.count; i++) { v1.fromBufferAttribute(p, i).normalize(); const d = 1 + .07 * Math.sin(v1.x * 5 + 1) * Math.sin(v1.y * 6) * Math.sin(v1.z * 4 + 2) - .05 * Math.max(0, Math.sin(v1.x * 9) * Math.sin(v1.z * 8)); p.setXYZ(i, v1.x * d, v1.y * d, v1.z * d); } moonGeo.computeVertexNormals(); }
   const moon = new THREE.Mesh(moonGeo, new THREE.ShaderMaterial({ uniforms: { ...U }, vertexShader: `varying vec3 vN; varying float vS; void main() { vN = normalize(mat3(modelMatrix) * normal); vS = .8 + .25 * sin(position.x * 7.) * sin(position.y * 9.); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
     fragmentShader: `uniform vec3 uSun; varying vec3 vN; varying float vS; void main() { gl_FragColor = vec4(vec3(.72, .72, .78) * vS * (.07 + max(0., dot(normalize(vN), uSun))), 1.); }` }));
@@ -236,8 +275,9 @@ export function createPlanet(env) {
   function frame(dt) {
     const t = U.uTime.value += dt, sun = U.uSun.value;
     if (!calm) sun.set(Math.cos(t * .07), .28, Math.sin(t * .07)).normalize();                     // a day lasts about a minute and a half
+    sunSprite.position.copy(sun).multiplyScalar(420);
     clouds.rotation.y = t * .012; clouds.rotation.x = Math.sin(t * .004) * .2;
-    const ma = t * .06 + 1; moon.position.set(Math.cos(ma) * 17.5, Math.sin(ma * .7) * 5 + 4, Math.sin(ma) * 17.5); moon.rotation.y = t * .1;
+    const ma = t * .06 + 4.2; moon.position.set(Math.cos(ma) * 25, Math.sin(ma * .7) * 6 + 5, Math.sin(ma) * 25); moon.rotation.y = t * .1;
     moon.scale.setScalar(Math.max(.001, moon.scale.x + (P.moonTarget - moon.scale.x) * Math.min(1, dt * 3)));
     const hp = halo.geometry.attributes; let hi = 0;
     for (const r of realms) { if (!r.mesh) continue; const def = r.def, inst = r.mesh.geometry.attributes.aInst;
@@ -256,12 +296,14 @@ export function createPlanet(env) {
         c.p.copy(c.n).multiplyScalar(rad); v3.crossVectors(c.t, c.n); const s = c.s * c.vis;
         m4.makeBasis(c.t, c.n, v3).scale(v1.set(s, s, s)).setPosition(c.p); r.mesh.setMatrixAt(c.i, m4);
         inst.setXYZW(c.i, c.ph, moving ? 1 : 0, c.stone ? 1 : 0, c.plat ? 1 : 0);
-        const on = c.born && s > .05 && (c.plat || c.active);
-        { const up = s * (def.fly ? .35 : 1.05); hp.position.setXYZ(hi, c.p.x + c.n.x * up, c.p.y + c.n.y * up, c.p.z + c.n.z * up); } hp.aSize.setX(hi, on ? (c.plat ? s * .9 + .25 : s * 1.1 + .3 * (1 + Math.sin(t * 4 + c.ph))) : 0);
+        const on = c.born && s > .05 && c.active && !c.plat;
+        { const up = s * (def.fly ? .35 : 1.05); hp.position.setXYZ(hi, c.p.x + c.n.x * up, c.p.y + c.n.y * up, c.p.z + c.n.z * up); } hp.aSize.setX(hi, on ? s * 1.1 + .3 * (1 + Math.sin(t * 4 + c.ph)) : 0);
         if (c.plat) hp.aCol.setXYZW(hi, 1, .8, .3, .75); else hp.aCol.setXYZW(hi, .8, .95, 1, .3); hi++;
       }
       r.mesh.instanceMatrix.needsUpdate = inst.needsUpdate = true; }
     hp.position.needsUpdate = hp.aSize.needsUpdate = hp.aCol.needsUpdate = true;
+    if (rings) { plats.forEach((c, i) => { const s = c.plat && c.born ? c.s * c.vis : 0, top = s * (c.realm.def.fly ? .4 : c.realm.creature === "stag" ? 1.35 : c.realm.creature === "hare" ? 1.05 : .75) + .12 * Math.sin(t * 2 + c.ph) * s;
+        v3.crossVectors(c.t, c.n); v1.copy(c.p).addScaledVector(c.n, top); m4.makeBasis(c.t, c.n, v3).scale(v2.set(s, s, s)).setPosition(v1); rings.setMatrixAt(i, m4); }); rings.instanceMatrix.needsUpdate = true; }
     // camera: face the creature you tapped, drift back when you let go
     const f = P.follow, k = Math.min(1, dt * 2.5);
     if (f) {                                                                                         // a low, slanted close-up: look at the creature from a little above the ground
@@ -277,7 +319,11 @@ export function createPlanet(env) {
       if (P.backlog && moon.position.dot(cd) > -4) list.push({ text: `Backlog moon · ${P.backlog}`, p: moon.position.clone().add(v1.set(0, moon.scale.x + .9, 0)) }); }
     labels(list);
   }
+  const composer = new EffectComposer(env.renderer, new THREE.WebGLRenderTarget(4, 4, { type: THREE.HalfFloatType, samples: 4 }));
+  composer.addPass(new RenderPass(scene, camera)); const bloom = new UnrealBloomPass(new THREE.Vector2(256, 256), .62, .55, .98); composer.addPass(bloom);
+  const render = () => composer.render();
   function homeDist() {
+    composer.setPixelRatio(env.renderer.getPixelRatio()); composer.setSize(innerWidth, innerHeight);
     const top = document.querySelector("header").getBoundingClientRect().bottom, bot = document.querySelector("footer").getBoundingClientRect().top;
     const free = Math.max(.4, (bot - top) / innerHeight), v = THREE.MathUtils.degToRad(camera.fov) / 2, hx = Math.atan(Math.tan(v) * camera.aspect);
     camera.setViewOffset(innerWidth, innerHeight, 0, Math.round((innerHeight - bot - top) / 2), innerWidth, innerHeight);
@@ -287,7 +333,7 @@ export function createPlanet(env) {
   const hello = () => info("🌍", "Your games grew this planet", "Each kind of game grows a land, each game is a creature living on it (bigger = more hours). Platinums wear a halo, dropped games turn to stone, the moon is your backlog. Tap anything.");
   function enter() {
     P.follow = null; P.back = 0; camera.up.set(0, 1, 0); controls.minDistance = RP + 4; controls.maxDistance = 140; controls.minPolarAngle = .25; controls.maxPolarAngle = Math.PI - .25; controls.autoRotate = !calm; controls.autoRotateSpeed = .5;
-    const d = homeDist(); controls.target.set(0, 0, 0); v1.copy(order[0].seed).setY(order[0].seed.y + .35).normalize(); camera.position.copy(v1).multiplyScalar(d);
+    const d = homeDist(); controls.target.set(0, 0, 0); v1.copy(order[0].seed).setY(order[0].seed.y + .35).normalize(); camera.position.copy(v1).multiplyScalar(calm ? d : d * 1.9); if (!calm) P.back = 4;   // glide in
     $("legend").innerHTML = P.legend; hello();
   }
   const ray = new THREE.Raycaster();
@@ -312,5 +358,5 @@ export function createPlanet(env) {
   }
   P.legend = `<span>${realms.filter(r => r.games.length).length} lands · ${games.length} creatures · day and night pass</span>`;
   time(1, true);
-  return Object.assign(P, { time, frame, enter, pick, resize: homeDist, realms });
+  return Object.assign(P, { time, frame, enter, pick, render, resize: homeDist, realms });
 }
