@@ -149,6 +149,7 @@ body.selecting .wrap { padding-bottom: 170px; }
 .list > .empty { text-align: center; padding: 32px 0; }
 @media (max-width: 420px) { .game > button { grid-template-columns: 48px 1fr auto; gap: 10px; padding: 10px; } .cover { width: 48px; height: 48px; }
   .scores { gap: 4px; } .scores .mc, .myscore { width: 36px; height: 36px; font-size: 17px; } }
+.tidytag { font-size: 12px; font-weight: 600; color: var(--muted); }
 </style>
 
 <main class="wrap" id="main">
@@ -341,9 +342,9 @@ function renderHeader() {
 // Finished (platinum, 100% or Beaten) but not rated yet
 const toRate = x => (x.status === "completed" || x.status === "beaten") && !ratingOf(x);
 function renderChips() {
-  const count = s => s === "all" ? DATA.games.length : s === "torate" ? DATA.games.filter(toRate).length : s === "easyplat" ? DATA.games.filter(easyPlat).length : DATA.games.filter(x => x.status === s).length;
-  const chips = { ...STATUS, ...(count("easyplat") ? { easyplat: "🏆 Easy platinum" } : {}), ...(count("torate") ? { torate: "To rate" } : {}) };
-  if ((state.status === "torate" || state.status === "easyplat") && !count(state.status)) state.status = "all";
+  const count = s => s === "all" ? DATA.games.length : s === "torate" ? DATA.games.filter(toRate).length : s === "easyplat" ? DATA.games.filter(easyPlat).length : s === "tidied" ? DATA.games.filter(tidied).length : DATA.games.filter(x => x.status === s).length;
+  const chips = { ...STATUS, ...(count("easyplat") ? { easyplat: "🏆 Easy platinum" } : {}), ...(count("tidied") ? { tidied: "🧹 Tidy-up" } : {}), ...(count("torate") ? { torate: "To rate" } : {}) };
+  if (["torate", "easyplat", "tidied"].includes(state.status) && !count(state.status)) state.status = "all";
   $("chips").innerHTML = Object.entries(chips).map(([k, v]) =>
     `<button class="chip${k === "torate" ? " torate" : ""}" data-s="${k}" aria-pressed="${state.status === k}">${v}<small>${count(k)}</small></button>`).join("");
 }
@@ -362,13 +363,16 @@ const SORTS = {
   platShort: (a, b) => (platOf(a)?.hours ?? 9999) - (platOf(b)?.hours ?? 9999) || (platOf(a)?.difficulty ?? 99) - (platOf(b)?.difficulty ?? 99),
 };
 const platOf = x => x.platinum || x.base_status === "completed" ? null : GP.diffOf(x)?.combined || null;
+let TIDIED = new Map();
+const tidied = x => TIDIED.has(x.name) && (TIDIED.get(x.name).act === "Kept" || x.status === "dropped");   // undone drops leave the filter
+const tidyTag = x => state.status === "tidied" && tidied(x) ? `<span class="tidytag">${TIDIED.get(x.name).act} in tidy-up</span>` : "";
 // "Easy platinum": rated 3.5/10 or less by the guides, not finished and not dropped
 const easyPlat = x => x.status !== "dropped" && platOf(x)?.difficulty != null && platOf(x).difficulty <= 3.5;
 
 function visibleRows() {
   const q = state.q.trim().toLowerCase();
   return DATA.games
-    .filter(x => state.status === "all" || (state.status === "torate" ? toRate(x) : state.status === "easyplat" ? easyPlat(x) : x.status === state.status))
+    .filter(x => state.status === "all" || (state.status === "torate" ? toRate(x) : state.status === "easyplat" ? easyPlat(x) : state.status === "tidied" ? tidied(x) : x.status === state.status))
     .filter(x => !q || x.name.toLowerCase().includes(q) || (x.genres || []).some(gn => gn.toLowerCase().includes(q)))
     .sort(SORTS[state.sort]);
 }
@@ -390,7 +394,7 @@ function renderList() {
         <span class="cover">${pic(x.image, x.name)}${state.selecting ? '<span class="check"></span>' : ""}</span>
         <span class="main">
           <span class="name">${esc(x.name)}</span>
-          <span class="meta"><span class="pill st-${x.status}">${STATUS_LABEL[x.status]}</span><span class="num">${hrs}</span>${beat(x)}${platLine(x)}</span>
+          <span class="meta"><span class="pill st-${x.status}">${STATUS_LABEL[x.status]}</span><span class="num">${hrs}</span>${beat(x)}${tidyTag(x)}${platLine(x)}</span>
           ${prog}
         </span>
         <span class="scores">${myScore(x)}<span class="sc"><span class="mc ${mcClass(x.metacritic)}" title="${x.metacritic == null ? "No Metacritic score found" : "Metacritic score" + ({ rawg: ", via RAWG", wikidata: ", via Wikidata", wikipedia: ", via Wikipedia", manual: ", entered by you" }[x.metacritic_source] || "")}">${x.metacritic ?? "–"}</span><small>MC</small></span></span>
@@ -576,6 +580,11 @@ async function start() {
   let flags = DATA.isSample ? SAMPLE_FLAGS : {};
   if (!DATA.isSample) try { const f = await fetch("flags.json", { cache: "no-store" }); if (f.ok) flags = await f.json(); } catch {}
   applyFlags(DATA.games, flags);
+  // games you went through in the backlog tidy-up (Play next): dropped ones carry "via: tidy-up", kept ones are in tidy.json
+  let tidy = { kept: {} };
+  if (!DATA.isSample) try { const r = await fetch("tidy.json", { cache: "no-store" }); if (r.ok) tidy = await r.json(); } catch {}
+  TIDIED = new Map([...Object.entries(flags).filter(([, f]) => f.via === "tidy-up" && f.flag === "dropped").map(([n, f]) => [n, { act: "Dropped", at: f.at }]),
+    ...Object.entries(tidy.kept || {}).map(([n, at]) => [n, { act: "Kept", at }])]);
   if (!DATA.isSample) try { const r = await fetch("ratings.json", { cache: "no-store" }); if (r.ok) RATINGS = await r.json(); } catch {}
   if (!DATA.isSample) try { const r = await fetch("queue.json", { cache: "no-store" }); if (r.ok) QUEUE = await r.json(); } catch {}
   GP.ratings = RATINGS; GP.queue = QUEUE;
