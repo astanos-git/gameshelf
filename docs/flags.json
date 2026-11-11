@@ -95,6 +95,11 @@
   "at": "2026-10-02T05:28:51Z",
   "flag": "dropped"
  },
+ "Bound": {
+  "at": "2026-11-11T06:05:40Z",
+  "flag": "dropped",
+  "via": "tidy-up"
+ },
  "Burly Men At Sea": {
   "at": "2026-09-29T20:55:19Z",
   "flag": "beaten"
@@ -106,6 +111,11 @@
  "CAPTAIN TSUBASA: RISE OF NEW CHAMPIONS": {
   "at": "2026-09-29T20:41:38Z",
   "flag": "dropped"
+ },
+ "Call of Duty®: Black Ops III": {
+  "at": "2026-11-11T06:05:40Z",
+  "flag": "dropped",
+  "via": "tidy-up"
  },
  "Child of Light": {
   "at": "2026-09-29T20:55:19Z",
@@ -171,6 +181,11 @@
  "Dead Space™ 2": {
   "at": "2026-09-29T20:55:19Z",
   "flag": "beaten"
+ },
+ "Dead by Daylight": {
+  "at": "2026-11-11T06:05:40Z",
+  "flag": "dropped",
+  "via": "tidy-up"
  },
  "Death's Door": {
   "at": "2026-09-29T20:55:19Z",
@@ -295,6 +310,11 @@
   "at": "2026-09-29T20:55:19Z",
   "flag": "beaten"
  },
+ "Generation Zero": {
+  "at": "2026-11-11T06:05:40Z",
+  "flag": "dropped",
+  "via": "tidy-up"
+ },
  "Ghostrunner": {
   "at": "2026-09-29T20:41:38Z",
   "flag": "dropped"
@@ -302,6 +322,11 @@
  "Ghostwire: Tokyo": {
   "at": "2026-09-29T20:55:19Z",
   "flag": "beaten"
+ },
+ "God of War® III Remastered": {
+  "at": "2026-11-11T06:05:40Z",
+  "flag": "dropped",
+  "via": "tidy-up"
  },
  "Gran Turismo® 7": {
   "at": "2026-10-02T05:33:38Z",
@@ -454,6 +479,11 @@
   "at": "2026-09-29T20:41:38Z",
   "flag": "dropped"
  },
+ "Nickelodeon All-Star Brawl": {
+  "at": "2026-11-11T06:05:40Z",
+  "flag": "dropped",
+  "via": "tidy-up"
+ },
  "NieR:Automata": {
   "at": "2026-09-29T20:55:19Z",
   "flag": "beaten"
@@ -485,6 +515,11 @@
  "Powers": {
   "at": "2026-09-29T20:41:38Z",
   "flag": "dropped"
+ },
+ "Predator: Hunting Grounds": {
+  "at": "2026-11-11T06:05:40Z",
+  "flag": "dropped",
+  "via": "tidy-up"
  },
  "RESIDENT EVIL 7 biohazard": {
   "at": "2026-09-29T20:55:19Z",
@@ -566,6 +601,11 @@
  "STAR WARS™ Battlefront™ II": {
   "at": "2026-09-29T20:55:19Z",
   "flag": "beaten"
+ },
+ "STAR WARS™: Squadrons": {
+  "at": "2026-11-11T06:05:40Z",
+  "flag": "dropped",
+  "via": "tidy-up"
  },
  "Sackboy: A Big Adventure": {
   "at": "2026-09-29T20:55:19Z",
@@ -759,6 +799,11 @@
  },
  "Worms Battlegrounds": {
   "at": "2026-11-10T18:43:34Z",
+  "flag": "dropped",
+  "via": "tidy-up"
+ },
+ "XCOM 2": {
+  "at": "2026-11-11T06:05:40Z",
   "flag": "dropped",
   "via": "tidy-up"
  },

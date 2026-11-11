@@ -1,15 +1,26 @@
 {
  "kept": {
+  "ABSOLVER": "2026-11-11",
+  "Darksiders III": "2026-11-11",
   "Day of the Tentacle Remastered": "2026-11-10",
+  "Destiny 2": "2026-11-11",
   "Goat Simulator": "2026-11-10",
   "Here They Lie™": "2026-11-10",
-  "STEEP": "2026-11-10"
+  "Mad Max": "2026-11-11",
+  "Mafia: Trilogy": "2026-11-11",
+  "STEEP": "2026-11-10",
+  "Yakuza Kiwami": "2026-11-11"
  },
  "reviews": [
   {
    "at": "2026-11-10",
    "dropped": 11,
    "kept": 4
+  },
+  {
+   "at": "2026-11-11",
+   "dropped": 9,
+   "kept": 6
   }
  ]
 }
