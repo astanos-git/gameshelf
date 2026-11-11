@@ -1,4 +1,5 @@
 /* Your planet: a small living world grown by your games.
+   The planet itself is rendered per pixel (procedural terrain, sea, clouds, city lights); the creatures and elements on it stay small low-poly models.
    Each kind of game grows its own land (fantasy = dragon woods, sci-fi = neon frontier, horror = haunted marsh...), sized by the hours you spent there,
    and every game you've played is a creature of that land: bigger = more hours, a halo for a platinum, turned to stone if you dropped it.
    The lands and creatures are generic archetypes picked from each game's tags; nothing here is drawn from a game's own art.
@@ -9,26 +10,26 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 
-const RP = 10, DAY = 864e5, YEAR = 365.25 * DAY, LIFT = .11;
+const RP = 10, DAY = 864e5, YEAR = 365.25 * DAY, LIFT = .05;
 const hash = (s, salt = 0) => { let h = 2166136261 ^ salt; for (const c of String(s)) h = Math.imul(h ^ c.charCodeAt(0), 16777619); h ^= h >>> 13; h = Math.imul(h, 0x5bd1e995); h ^= h >>> 15; return ((h >>> 0) % 100000) / 100000; };
 
 export const REALMS = [
-  { id: "fantasy", name: "Dragon woods", creature: "dragon", a: "A dragon", many: "dragons", col: "#3c8a48", accent: "#e8584a",
+  { id: "fantasy", low: "#2a4a20", high: "#58733a", lamp: "#ffc070", name: "Dragon woods", creature: "dragon", a: "A dragon", many: "dragons", col: "#3c8a48", accent: "#e8584a",
     tags: { fantasy: 3, "dark-fantasy": 3, magic: 3, medieval: 3, "souls-like": 3, dragons: 3, jrpg: 2, mythology: 3, demons: 2, "hack-and-slash": 1, "action-rpg": 1 }, genres: { RPG: 2 } },
-  { id: "scifi", name: "Neon frontier", creature: "drone", a: "A drone", many: "drones", col: "#4a4f9e", accent: "#5ee6ff",
+  { id: "scifi", low: "#2a2f3e", high: "#4c5468", lamp: "#5ee6ff", name: "Neon frontier", creature: "drone", a: "A drone", many: "drones", col: "#4a4f9e", accent: "#5ee6ff",
     tags: { "sci-fi": 3, space: 3, futuristic: 3, aliens: 3, cyberpunk: 3, robots: 3, dystopian: 2, superhero: 1 } },
-  { id: "horror", name: "Haunted marsh", creature: "ghost", a: "A ghost", many: "ghosts", col: "#5a5568", accent: "#dfeaff",
+  { id: "horror", low: "#2c3324", high: "#4c4b3e", lamp: "#9dffc0", name: "Haunted marsh", creature: "ghost", a: "A ghost", many: "ghosts", col: "#5a5568", accent: "#dfeaff",
     tags: { horror: 3, "survival-horror": 4, zombies: 3, gore: 1, dark: 1, supernatural: 2, surreal: 1 } },
-  { id: "waste", name: "The wasteland", creature: "beetle", a: "A scrap beetle", many: "scrap beetles", col: "#b68d52", accent: "#e8853a",
+  { id: "waste", low: "#7d5a38", high: "#b08c5e", lamp: "#ff8a3a", name: "The wasteland", creature: "beetle", a: "A scrap beetle", many: "scrap beetles", col: "#b68d52", accent: "#e8853a",
     tags: { "post-apocalyptic": 4, war: 3, military: 3, fps: 2, "third-person-shooter": 2, survival: 1, tactical: 1 }, genres: { Shooter: 1 } },
-  { id: "old", name: "Old world", creature: "eagle", a: "An eagle", many: "eagles", col: "#9aa857", accent: "#f1e3c0",
+  { id: "old", low: "#6c7234", high: "#a89c5c", lamp: "#ffd08a", name: "Old world", creature: "eagle", a: "An eagle", many: "eagles", col: "#9aa857", accent: "#f1e3c0",
     tags: { historical: 4, assassin: 4, stealth: 2, parkour: 2, crime: 2, america: 1, western: 3, "open-world": 1 } },
-  { id: "arena", name: "The arena", creature: "hare", a: "A hare", many: "hares", col: "#58b65a", accent: "#ffffff",
+  { id: "arena", low: "#3c7628", high: "#6ca43e", lamp: "#fff2cc", name: "The arena", creature: "hare", a: "A hare", many: "hares", col: "#58b65a", accent: "#ffffff",
     tags: { soccer: 5, football: 5, sports: 4, racing: 4, competitive: 2, "beat-em-up": 2, fighting: 3 }, genres: { Sports: 5, Racing: 5, Fighting: 3 } },
-  { id: "wonder", name: "Wonderland", creature: "hopper", a: "A hopper", many: "hoppers", col: "#d98fb6", accent: "#ffd84d",
+  { id: "wonder", low: "#7c6274", high: "#b98fa4", lamp: "#ffe27a", name: "Wonderland", creature: "hopper", a: "A hopper", many: "hoppers", col: "#d98fb6", accent: "#ffd84d",
     tags: { cute: 3, colorful: 2, "family-friendly": 3, "3d-platformer": 3, "side-scroller": 2, cartoony: 3, comedy: 2, funny: 2, "hand-drawn": 2, relaxing: 2, music: 2, "pixel-graphics": 1 },
     genres: { Platformer: 3, Puzzle: 2, Family: 3, Casual: 2, Arcade: 2 } },
-  { id: "story", name: "Story coast", creature: "stag", a: "A stag", many: "stags", col: "#c99a4a", accent: "#b9703a",
+  { id: "story", low: "#86602e", high: "#c4944c", lamp: "#ffc070", name: "Story coast", creature: "stag", a: "A stag", many: "stags", col: "#c99a4a", accent: "#b9703a",
     tags: { mystery: 2, detective: 3, "walking-simulator": 3, "point-click": 3, drama: 2, "choices-matter": 2, "visual-novel": 3, investigation: 2, "story-rich": 1, cinematic: 1 } },
 ];
 export function realmOf(g) {                         // which land a game belongs to, from its tags and genres
@@ -108,15 +109,28 @@ const CREATURES = {                                   // nose towards +x, feet a
 };
 const LIGHT = `uniform vec3 uSun;
 vec3 lit(vec3 c, vec3 n, vec3 up, float glow) { float day = dot(up, uSun), l = smoothstep(-.22, .3, day), d = max(dot(n, uSun), 0.) * .8 + .28 * max(day, 0.);
-  vec3 o = c * (.1 + vec3(1.08, 1.03, .96) * d * l) + c * vec3(.17, .22, .44) * (1. - l);
+  vec3 o = c * (.1 + vec3(1.08, 1.03, .96) * d * l) + c * vec3(.1, .13, .26) * (1. - l);
   o += c * vec3(1., .4, .1) * smoothstep(.34, 0., abs(day - .04)) * .55 * (.4 + max(dot(n, uSun), 0.));        // golden hour along the edge of the night
   return o + c * glow * (.3 + 1.7 * (1. - l)); }`;
 
+const NOISE = `uniform float uTime;
+float hash3(vec3 p) { p = fract(p * .3183099 + .1); p *= 17.; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
+float noise(vec3 x) { vec3 i = floor(x), f = fract(x); f = f * f * (3. - 2. * f);
+  return mix(mix(mix(hash3(i), hash3(i + vec3(1, 0, 0)), f.x), mix(hash3(i + vec3(0, 1, 0)), hash3(i + vec3(1, 1, 0)), f.x), f.y),
+             mix(mix(hash3(i + vec3(0, 0, 1)), hash3(i + vec3(1, 0, 1)), f.x), mix(hash3(i + vec3(0, 1, 1)), hash3(i + vec3(1, 1, 1)), f.x), f.y), f.z); }
+float fbm2(vec3 p) { return .62 * noise(p) + .38 * noise(p * 2.07 + 7.1); }
+float fbm3(vec3 p) { return .5 * noise(p) + .28 * noise(p * 2.03 + 7.1) + .16 * noise(p * 4.1 + 13.7) + .06 * noise(p * 8.3 + 3.3); }
+float cloud(vec3 d) { float a = uTime * .006; vec3 p = vec3(d.x * cos(a) - d.z * sin(a), d.y, d.x * sin(a) + d.z * cos(a));   // one drifting cloud field, shared by the cloud layer and its shadow on the ground
+  float w = fbm3(p * 2.1 + 11.), c = fbm3(p * 4.2 + w * 1.7 + vec3(0., uTime * .003, 0.)) + .1 * sin(d.y * 7. + w * 5.); return smoothstep(.57, .76, c); }`;
+const TERRAIN = `float terrain(vec3 n, out vec3 g) { float h = 0., s; g = vec3(0.);
+` + WAVES.map(w => { const k = `vec3(${w.x.toFixed(5)}, ${w.y.toFixed(5)}, ${w.z.toFixed(5)})`; return `  s = dot(n, ${k}) + ${w.p.toFixed(5)}; h += ${w.a.toFixed(5)} * sin(s); g += ${w.a.toFixed(5)} * cos(s) * ${k};`; }).join("\n") + `
+  g *= ${(2.2 / WSUM).toFixed(5)}; return h * ${(2.2 / WSUM).toFixed(5)}; }`;
+
 export function createPlanet(env) {
   const { camera, controls, canvas, info, esc, labels, calm, tex } = env, $ = id => document.getElementById(id);
-  const scene = new THREE.Scene(); scene.background = new THREE.Color("#04050c");
+  const scene = new THREE.Scene(); scene.background = new THREE.Color("#010208");
   const U = { uTime: { value: 0 }, uSun: { value: new THREE.Vector3(1, .25, .4).normalize() } }, grow = new Float32Array(8);
-  const P = { scene, follow: null, zoom: 0, back: 0, home: 50, T: env.now, legend: "" };
+  const P = { scene, sun0: 0, follow: null, zoom: 0, back: 0, home: 50, T: env.now, legend: "" };
   const v1 = new THREE.Vector3(), v2 = new THREE.Vector3(), v3 = new THREE.Vector3(), m4 = new THREE.Matrix4();
 
   /* games -> realms */
@@ -125,48 +139,64 @@ export function createPlanet(env) {
   games.forEach(c => { c.realm.games.push(c); c.realm.hours += c.f.hours; });
   const total = realms.reduce((n, r) => n + r.hours, 0) || 1;
 
-  /* the ground: an icosphere, one flat colour per triangle */
-  const geo = new THREE.IcosahedronGeometry(1, 28), pos = geo.attributes.position, NF = pos.count / 3;
+  /* the ground: a finely divided sphere, lifted by the terrain; all its colour and light is worked out per pixel */
+  const geo = new THREE.IcosahedronGeometry(1, 48), pos = geo.attributes.position, NF = pos.count / 3;
   const cents = [], hs = [];
   for (let f = 0; f < NF; f++) { const c = new THREE.Vector3(); for (let k = 0; k < 3; k++) c.add(v1.fromBufferAttribute(pos, f * 3 + k)); cents.push(c.normalize()); hs.push(height(c)); }
-  SEA = [...hs].sort((a, b) => a - b)[Math.floor(NF * .4)];
+  SEA = [...hs].sort((a, b) => a - b)[Math.floor(NF * .42)];
   const fib = i => { const y = 1 - (i + .5) / 4, r = Math.sqrt(1 - y * y), a = i * 2.39996; return new THREE.Vector3(Math.cos(a) * r, y * .85, Math.sin(a) * r).normalize(); };
   const order = [...realms].sort((a, b) => b.hours - a.hours);
   order.forEach((r, k) => { const want = fib([3, 4, 1, 6, 2, 5, 0, 7][k]); let best = 0, bd = -2;        // biggest lands around the equator; seeds sit on dry ground
     for (let f = 0; f < NF; f++) if (hs[f] > SEA + .1) { const d = cents[f].dot(want); if (d > bd) { bd = d; best = f; } }
     r.seed = cents[best].clone(); r.w = Math.pow(Math.max(.03, r.hours / total), .32); r.faces = []; r.radius = .1; });
-  const col = new Float32Array(NF * 9), br = new Float32Array(NF * 6), gl = new Float32Array(NF * 3), EMBER = { scifi: ["#49e6ff", .07], waste: ["#ff7a2e", .025], horror: ["#8dffb0", .02], wonder: ["#ffe27a", .02] }, faceRealm = new Int8Array(NF), sand = new THREE.Color("#d9c98f"), rock = new THREE.Color("#8b8782"), snow = new THREE.Color("#f4f6fa"), c1 = new THREE.Color();
-  for (let f = 0; f < NF; f++) {
-    const c = cents[f], h = hs[f] - SEA; let ri = -1;
-    if (h > 0) { let bd = 1e9; for (const r of realms) { const d = Math.acos(Math.min(1, c.dot(r.seed))) / r.w; if (d < bd) { bd = d; ri = r.i; } }
-      const r = realms[ri], ang = Math.acos(Math.min(1, c.dot(r.seed))); r.faces.push({ f, ang }); r.radius = Math.max(r.radius, ang);
-      c1.copy(r.land).offsetHSL((hash(f, 1) - .5) * .03, 0, (hash(f, 2) - .5) * .09 + Math.min(.08, h * .12));
-      if (r.id === "arena") c1.offsetHSL(0, 0, Math.floor(ang * 26) % 2 ? .035 : -.03);                  // mown stripes
-      if (r.id === "wonder") c1.offsetHSL((hash(f, 6) - .5) * .16, 0, 0);
-      const em = EMBER[r.id]; if (em && h > .08 && h < .7 && hash(f, 7) < em[1]) { c1.set(em[0]); gl[f * 3] = gl[f * 3 + 1] = gl[f * 3 + 2] = .9; }   // glowing ground: circuits, embers, wisps
-      if (h < .07) c1.lerp(sand, .7); if (h > .75) c1.lerp(rock, Math.min(1, (h - .75) * 4)); if (h > 1.05) c1.lerp(snow, Math.min(1, (h - 1.05) * 5));
-    } else c1.setRGB(.07, .3, .55).lerp(new THREE.Color(.16, .55, .75), Math.max(0, 1 + h * 2.2)).offsetHSL(0, 0, (hash(f, 3) - .5) * .03);
-    faceRealm[f] = ri;
-    for (let k = 0; k < 3; k++) { col.set([c1.r, c1.g, c1.b], (f * 3 + k) * 3); br[(f * 3 + k) * 2] = ri; }
-  }
-  realms.forEach(r => { r.faces.sort((a, b) => a.ang - b.ang); r.faces.forEach(o => { const rank = o.ang / r.radius; o.rank = rank; for (let k = 0; k < 3; k++) br[(o.f * 3 + k) * 2 + 1] = rank; }); });
+  const faceRealm = new Int8Array(NF);
+  for (let f = 0; f < NF; f++) { const c = cents[f]; let ri = -1;
+    if (hs[f] - SEA > 0) { let bd = 1e9; for (const r of realms) { const d = Math.acos(Math.min(1, c.dot(r.seed))) / r.w; if (d < bd) { bd = d; ri = r.i; } }
+      const r = realms[ri], ang = Math.acos(Math.min(1, c.dot(r.seed))); r.faces.push({ f, ang }); r.radius = Math.max(r.radius, ang); }
+    faceRealm[f] = ri; }
+  realms.forEach(r => { r.faces.sort((a, b) => a.ang - b.ang); r.faces.forEach(o => { o.rank = o.ang / r.radius; }); });
   for (let i = 0; i < pos.count; i++) { v1.fromBufferAttribute(pos, i).normalize(); v1.multiplyScalar(radiusAt(v1)); pos.setXYZ(i, v1.x, v1.y, v1.z); }
-  const shore = new Float32Array(pos.count); for (let i = 0; i < pos.count; i++) { v1.fromBufferAttribute(pos, i).normalize(); const d = height(v1) - SEA; shore[i] = Math.max(0, Math.min(1, 1 + d / .16)); }
-  geo.computeVertexNormals(); geo.setAttribute("aC", new THREE.BufferAttribute(col, 3)); geo.setAttribute("aBR", new THREE.BufferAttribute(br, 2)); geo.setAttribute("aG", new THREE.BufferAttribute(gl, 1)); geo.setAttribute("aS", new THREE.BufferAttribute(shore, 1));
-  const ground = new THREE.Mesh(geo, new THREE.ShaderMaterial({ uniforms: { ...U, uGrow: { value: grow } },
-    vertexShader: `attribute vec3 aC; attribute vec2 aBR; attribute float aG, aS; uniform float uGrow[8]; varying vec3 vC, vN, vUp, vP; varying float vW, vG, vS;
-      void main() { float alive = aBR.x < -.5 ? 1. : smoothstep(0., .08, uGrow[int(aBR.x + .5)] - aBR.y * .92);
-        vec3 bare = vec3(.3, .27, .26) * (.6 + .9 * dot(aC, vec3(.33))); vC = mix(bare, aC, alive); vW = aBR.x < -.5 ? 1. : 0.; vG = aG * alive; vS = aS;
-        vN = normalize(mat3(modelMatrix) * normal); vUp = normalize(position); vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
-    fragmentShader: LIGHT + `uniform float uTime; varying vec3 vC, vN, vUp, vP; varying float vW, vG, vS;
-      void main() { vec3 c = vC, n = normalize(vN), V = normalize(cameraPosition - vP); float day = dot(vUp, uSun), sp = 0.;
-        if (vW > .5) {                                                                                     // the sea: moving glints, foam on the shore
-          n = normalize(vUp + .05 * vec3(sin(vP.x * 9. + uTime * 2.), sin(vP.y * 8. - uTime * 1.7), sin(vP.z * 10. + uTime * 1.3)));
-          c *= .92 + .1 * sin(vUp.x * 40. + uTime * 1.3) * sin(vUp.y * 37. - uTime) * sin(vUp.z * 43. + uTime * .7);
-          float foam = smoothstep(.62, .98, vS + .14 * sin(uTime * 1.6 + vP.x * 3. + vP.z * 2.3 + vP.y * 2.7)); c = mix(c, vec3(.92, .98, 1.), foam * .75);
-          sp = pow(max(dot(reflect(-uSun, n), V), 0.), 48.) * smoothstep(-.05, .2, day); }
-        vec3 o = lit(c, n, vUp, vG) + vec3(1.3, 1.15, .85) * sp * 1.5;
-        float rim = pow(1. - max(dot(vUp, V), 0.), 3.2); o = mix(o, vec3(.42, .68, 1.) * (.12 + .9 * smoothstep(-.3, .4, day)), rim * .55);   // air thickens towards the horizon
+  const UG = { uSea: { value: SEA }, uGrow: { value: grow }, uSeed: { value: realms.map(r => new THREE.Vector4(r.seed.x, r.seed.y, r.seed.z, r.w)) }, uRad: { value: realms.map(r => r.radius) },
+    uLow: { value: realms.map(r => new THREE.Color(r.low).multiplyScalar(1.5)) }, uHigh: { value: realms.map(r => new THREE.Color(r.high).multiplyScalar(1.5)) }, uLamp: { value: realms.map(r => new THREE.Color(r.lamp)) }, uNeon: { value: realms.find(r => r.id === "scifi").i } };
+  const ground = new THREE.Mesh(geo, new THREE.ShaderMaterial({ uniforms: { ...U, ...UG },
+    vertexShader: `varying vec3 vP; void main() { vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+    fragmentShader: NOISE + TERRAIN + `
+      uniform vec4 uSeed[8]; uniform vec3 uLow[8]; uniform vec3 uHigh[8]; uniform vec3 uLamp[8]; uniform float uRad[8]; uniform float uGrow[8]; uniform float uSea, uNeon; uniform vec3 uSun; varying vec3 vP;
+      void main() { vec3 d = normalize(vP), V = normalize(cameraPosition - vP), g, n = d, glow = vec3(0.), col;
+        float h = terrain(d, g) - uSea, det = fbm3(d * 9.) - .45, fine = fbm3(d * 31. + 3.), hh = h + det * .2, spec = 0.;
+        float day = dot(d, uSun), l = smoothstep(-.12, .22, day), shadow = 1. - .5 * cloud(normalize(d + uSun * .03));
+        vec3 sunc = mix(vec3(1., .42, .16), vec3(1., .96, .9), smoothstep(-.05, .4, day));                       // sunlight reddens near the edge of the night
+        if (hh > 0.) {
+          vec3 q = normalize(d + (vec3(noise(d * 5. + 3.), noise(d * 5. + 11.), noise(d * 5. + 19.)) - .5) * .1);   // ragged, natural borders between lands
+          float b1 = 9., b2 = 9.; int i1 = 0, i2 = 0;
+          for (int i = 0; i < 8; i++) { float a = acos(clamp(dot(q, uSeed[i].xyz), -1., 1.)) / uSeed[i].w; if (a < b1) { b2 = b1; i2 = i1; b1 = a; i1 = i; } else if (a < b2) { b2 = a; i2 = i; } }
+          float t = clamp(hh * .9 + (fine - .5) * .9, 0., 1.), w = smoothstep(0., .06, b2 - b1) * .5 + .5;
+          vec3 lush = mix(mix(uLow[i2], uHigh[i2], t), mix(uLow[i1], uHigh[i1], t), w);
+          float rank = acos(clamp(dot(d, uSeed[i1].xyz), -1., 1.)) / uRad[i1], alive = smoothstep(0., .1, uGrow[i1] - rank * .92 + (fine - .5) * .08);
+          col = mix(mix(vec3(.3, .25, .21), vec3(.47, .42, .37), fine), lush, alive);                              // bare rock until you play there
+          col *= .86 + .28 * noise(d * 120.);                                                                     // fine grain, for close-ups
+          col = mix(col, vec3(.76, .7, .52), smoothstep(.06, 0., hh));                                             // beaches
+          vec3 gt = g - d * dot(g, d);
+          col = mix(col, mix(vec3(.34, .32, .3), vec3(.5, .48, .46), fine), smoothstep(.6, 1., hh + length(gt) * .1) * .85);   // rock on the heights
+          float ice = clamp(smoothstep(1.05, 1.22, hh + det * .25) + smoothstep(.85, .91, abs(d.y) + det * .08), 0., 1.);
+          col = mix(col, vec3(.93, .95, .98), ice);                                                                // snow on peaks and at the poles
+          float e = .006; vec3 t1 = normalize(cross(d, vec3(.13, 1., .07))), t2 = cross(d, t1);
+          float n0 = fbm2(d * 14.), nx = fbm2((d + t1 * e) * 14.), ny = fbm2((d + t2 * e) * 14.);
+          n = normalize(d - gt * .17 - (t1 * (nx - n0) + t2 * (ny - n0)) / e * .035);                               // relief
+          float town = smoothstep(.5, .72, noise(d * 13. + 5.)) * step(.76, noise(d * 170.)) * alive * (1. - ice);
+          glow = uLamp[i1] * town * (1. - l) * 2.4;                                                                // lights come on at night where your lands are alive
+          if (abs(float(i1) - uNeon) < .5) glow += vec3(.2, .9, 1.) * smoothstep(.035, 0., abs(noise(d * 16. + 2.) - .5)) * alive * (.2 + 1.7 * (1. - l));
+        } else {
+          float depth = -hh; col = mix(vec3(.05, .34, .4), vec3(.012, .065, .18), smoothstep(0., .45, depth));
+          vec3 wv = vec3(noise(d * 70. + uTime * .5), noise(d * 70. + 17. - uTime * .4), noise(d * 70. + 31. + uTime * .3)) - .5; n = normalize(d + wv * .05);
+          float r = max(dot(reflect(-uSun, n), V), 0.); spec = pow(r, 70.) * 2. + pow(r, 9.) * .1;
+          col = mix(col, vec3(.45, .65, .9), pow(1. - max(dot(d, V), 0.), 4.) * .5);
+          col = mix(col, vec3(.9, .96, 1.), smoothstep(.05, 0., depth) * smoothstep(.35, .7, noise(d * 60. + uTime * .3)) * .8);   // surf
+          float ice = smoothstep(.87, .93, abs(d.y) + det * .08); col = mix(col, vec3(.9, .94, .98), ice); spec *= 1. - ice;
+        }
+        float diff = max(dot(n, uSun), 0.) * shadow;
+        vec3 o = col * (sunc * diff * 1.5 + vec3(.06, .07, .09) * l) + col * vec3(.025, .035, .07) * (1. - l) + sunc * spec * shadow * smoothstep(0., .15, day) + glow;
+        float rim = pow(1. - max(dot(d, V), 0.), 3.); o = mix(o, mix(vec3(.8, .45, .25), vec3(.35, .6, 1.), smoothstep(-.12, .12, day)) * smoothstep(-.3, .1, day), rim * .6);   // air
         gl_FragColor = vec4(o, 1.); }` }));
   scene.add(ground);
 
@@ -194,16 +224,16 @@ export function createPlanet(env) {
   /* elements: trees, towers, crystals, ruins... each land grows its own as you play there */
   realms.forEach(r => {
     r.uG = { value: 0 };
-    const spots = r.faces.filter(o => hs[o.f] - SEA > .06 && hs[o.f] - SEA < .95), want = Math.min(Math.floor(spots.length * .3), Math.max(8, Math.round(r.hours / 4)));
+    const spots = r.faces.filter(o => hs[o.f] - SEA > .06 && hs[o.f] - SEA < .95), want = Math.min(Math.floor(spots.length * .12), 110, Math.max(8, Math.round(r.hours / 6)));
     const pick = spots.map(o => [hash(o.f, 9), o]).sort((a, b) => a[0] - b[0]).slice(0, want).map(e => e[1]);
     [pick.filter((_, i) => i % 5 !== 0), pick.filter((_, i) => i % 5 === 0)].forEach((list, k) => { if (!list.length) return;
       const mesh = instanced(PROPS[r.id][k](), list.length, material(9, 0, r.uG));
-      list.forEach((o, i) => { place(mesh, i, cents[o.f], hash(o.f, 4) * 6.283, .75 + hash(o.f, 5) * .7); mesh.geometry.attributes.aRank.setX(i, Math.min(1, o.rank + .04)); });
+      list.forEach((o, i) => { place(mesh, i, cents[o.f], hash(o.f, 4) * 6.283, .5 + hash(o.f, 5) * .45); mesh.geometry.attributes.aRank.setX(i, Math.min(1, o.rank + .04)); });
       scene.add(mesh); });
   });
 
   /* creatures: one per game */
-  const cLen = h => .7 + .15 * Math.sqrt(h);
+  const cLen = h => .55 + .12 * Math.sqrt(h);
   realms.forEach(r => { const def = CREATURES[r.creature]; r.def = def; if (!r.games.length) return;
     r.mesh = instanced(def.parts(), r.games.length, material(def.anim, def.freq)); r.mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage); scene.add(r.mesh);
     r.games.forEach((c, i) => { const f = c.f, name = f.name; c.i = i; c.ph = hash(name, 2) * 6.283;
@@ -224,15 +254,25 @@ export function createPlanet(env) {
     p.frustumCulled = false; scene.add(p); return p; })();
 
   /* sky: air, clouds, stars and the backlog moon */
-  scene.add(new THREE.Mesh(new THREE.SphereGeometry(RP * 1.2, 48, 32), new THREE.ShaderMaterial({ side: THREE.BackSide, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: { ...U },
+  scene.add(new THREE.Mesh(new THREE.SphereGeometry(RP * 1.16, 64, 48), new THREE.ShaderMaterial({ side: THREE.BackSide, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, uniforms: { ...U },
     vertexShader: `varying vec3 vN, vW; void main() { vN = normalize(normalMatrix * normal); vW = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
-    fragmentShader: `uniform vec3 uSun; varying vec3 vN, vW; void main() { float i = pow(max(0., .72 - dot(vN, vec3(0., 0., 1.))), 2.6); float day = smoothstep(-.5, .5, dot(vW, uSun)); gl_FragColor = vec4(mix(vec3(.12, .16, .5), vec3(.35, .65, 1.), day), 1.) * i * (.5 + 1.1 * day); }` })));
-  const clouds = new THREE.Group(); { const n = 26, mesh = instanced([part(ball(1, 1), "#ffffff", {})], n * 3, material(8, 0));
-    for (let i = 0; i < n; i++) { const c = new THREE.Vector3(hash("c", i) - .5, (hash("d", i) - .5) * .8, hash("e", i) - .5).normalize();
-      for (let k = 0; k < 3; k++) { v3.copy(c).applyAxisAngle(v1.set(0, 1, 0), (k - 1) * .075).normalize(); const s = .55 + hash(i, k) * .5; place(mesh, i * 3 + k, v3.clone(), hash(i, 20) * 6, new THREE.Vector3(s * 1.5, s * .38, s), 2.5 + hash("f", i) * .6 + (k === 1 ? .14 : 0)); } }
-    clouds.add(mesh); scene.add(clouds); }
-  { const n = 900, a = new Float32Array(n * 3); for (let i = 0; i < n; i++) { v1.set(hash(i, 30) - .5, hash(i, 31) - .5, hash(i, 32) - .5).normalize().multiplyScalar(700); a.set([v1.x, v1.y, v1.z], i * 3); }
-    const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(a, 3)); scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: 0xcfd8ff, size: 1.6, sizeAttenuation: false, transparent: true, opacity: .75 }))); }
+    fragmentShader: `uniform vec3 uSun; varying vec3 vN, vW; void main() { float i = pow(max(0., .8 - dot(vN, vec3(0., 0., 1.))), 3.2), day = dot(vW, uSun);
+      gl_FragColor = vec4(mix(vec3(1., .45, .2), vec3(.3, .58, 1.), smoothstep(-.15, .12, day)) * smoothstep(-.45, .05, day), 1.) * i * 1.5; }` })));
+  const cloudFade = { value: 1 };
+  { const m = new THREE.Mesh(new THREE.SphereGeometry(RP + 1.05, 96, 64), new THREE.ShaderMaterial({ transparent: true, depthWrite: false, uniforms: { ...U, uFade: cloudFade },
+      vertexShader: `varying vec3 vP; void main() { vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+      fragmentShader: NOISE + `uniform vec3 uSun; uniform float uFade; varying vec3 vP;
+        void main() { vec3 d = normalize(vP); float dens = cloud(d); if (dens < .02) discard;
+          float day = dot(d, uSun), self = cloud(normalize(d + uSun * .045));
+          vec3 sunc = mix(vec3(1., .45, .2), vec3(1.), smoothstep(-.05, .4, day));
+          vec3 c = sunc * smoothstep(-.2, .3, day) * (1. - .3 * self) * (.95 + .25 * dens) + vec3(.02, .03, .055);
+          gl_FragColor = vec4(c, dens * .92 * uFade); }` }));
+    m.renderOrder = 2; scene.add(m); }
+  { const n = 2600, a = new Float32Array(n * 3), c = new Float32Array(n * 3), axis = new THREE.Vector3(.35, .8, .5).normalize();
+    for (let i = 0; i < n; i++) { v1.set(hash(i, 30) - .5, hash(i, 31) - .5, hash(i, 32) - .5).normalize(); if (i % 5 < 2) v1.addScaledVector(axis, -v1.dot(axis) * .88).normalize();   // a milky band across the sky
+      v1.multiplyScalar(700); a.set([v1.x, v1.y, v1.z], i * 3); const b = Math.pow(hash(i, 33), 3) * .9 + .12, t = hash(i, 34); c.set([b * (t > .8 ? 1 : .8), b * .88, b * (t < .2 ? 1 : .82)], i * 3); }
+    const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.BufferAttribute(a, 3)); g.setAttribute("color", new THREE.BufferAttribute(c, 3));
+    scene.add(new THREE.Points(g, new THREE.PointsMaterial({ vertexColors: true, size: 1.7, sizeAttenuation: false, transparent: true, depthWrite: false }))); }
   const sunSprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, color: new THREE.Color(5, 3.6, 2), blending: THREE.AdditiveBlending, depthWrite: false })); sunSprite.scale.setScalar(70); scene.add(sunSprite);
   const aurora = [1, -1].map(side => { const m = new THREE.Mesh(new THREE.CylinderGeometry(3.3, 4.6, 2.6, 72, 1, true), new THREE.ShaderMaterial({ transparent: true, depthWrite: false, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, uniforms: { ...U, uSide: { value: side } },
       vertexShader: `varying vec2 vUv; varying vec3 vW; void main() { vUv = uv; vec4 w = modelMatrix * vec4(position, 1.); vW = normalize(w.xyz); gl_Position = projectionMatrix * viewMatrix * w; }`,
@@ -242,7 +282,7 @@ export function createPlanet(env) {
           gl_FragColor = vec4(mix(vec3(.2, 1.6, .7), vec3(.9, .3, 1.5), vUv.y) * a * .8, a); }` }));
     m.position.y = side * (RP + 1.25); if (side < 0) m.rotation.x = Math.PI; m.renderOrder = 5; scene.add(m); return m; });
   // fireflies over the gentler lands at night
-  { const spots = realms.filter(r => ["wonder", "story", "fantasy", "horror"].includes(r.id)).flatMap(r => r.faces.filter(o => hash(o.f, 21) < .06 && hs[o.f] - SEA > .05).map(o => [r, o])), n = spots.length, g = new THREE.BufferGeometry();
+  { const spots = realms.filter(r => ["wonder", "story", "fantasy", "horror"].includes(r.id)).flatMap(r => r.faces.filter(o => hash(o.f, 21) < .02 && hs[o.f] - SEA > .05).map(o => [r, o])), n = spots.length, g = new THREE.BufferGeometry();
     const a = new Float32Array(n * 3), b = new Float32Array(n * 3), c = new Float32Array(n * 3);
     spots.forEach(([r, o], i) => { v1.copy(cents[o.f]).multiplyScalar(radiusAt(cents[o.f]) + .35 + hash(o.f, 22) * .7); a.set([v1.x, v1.y, v1.z], i * 3); b.set([r.i, Math.min(1, o.rank + .05), hash(o.f, 23) * 6.283], i * 3); c.set(r.id === "horror" ? [.5, 1, .7] : [1, .9, .45], i * 3); });
     g.setAttribute("position", new THREE.BufferAttribute(a, 3)); g.setAttribute("aBR", new THREE.BufferAttribute(b, 3)); g.setAttribute("aC", new THREE.BufferAttribute(c, 3));
@@ -253,9 +293,14 @@ export function createPlanet(env) {
           float a = (1. - smoothstep(-.2, .1, dot(up, uSun))) * step(aBR.y, uGrow[int(aBR.x + .5)]) * (.55 + .45 * sin(uTime * 3. + aBR.z * 5.)); vCol = vec4(aC * 2.2, a); }`,
       fragmentShader: `uniform sampler2D uMap; varying vec4 vCol; void main() { gl_FragColor = vec4(vCol.rgb, vCol.a * texture2D(uMap, gl_PointCoord).a); }` }));
     pts.frustumCulled = false; scene.add(pts); }
-  const moonGeo = new THREE.IcosahedronGeometry(1, 3); { const p = moonGeo.attributes.position; for (let i = 0; i < p.count; i++) { v1.fromBufferAttribute(p, i).normalize(); const d = 1 + .07 * Math.sin(v1.x * 5 + 1) * Math.sin(v1.y * 6) * Math.sin(v1.z * 4 + 2) - .05 * Math.max(0, Math.sin(v1.x * 9) * Math.sin(v1.z * 8)); p.setXYZ(i, v1.x * d, v1.y * d, v1.z * d); } moonGeo.computeVertexNormals(); }
-  const moon = new THREE.Mesh(moonGeo, new THREE.ShaderMaterial({ uniforms: { ...U }, vertexShader: `varying vec3 vN; varying float vS; void main() { vN = normalize(mat3(modelMatrix) * normal); vS = .8 + .25 * sin(position.x * 7.) * sin(position.y * 9.); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
-    fragmentShader: `uniform vec3 uSun; varying vec3 vN; varying float vS; void main() { gl_FragColor = vec4(vec3(.72, .72, .78) * vS * (.07 + max(0., dot(normalize(vN), uSun))), 1.); }` }));
+  const moon = new THREE.Mesh(new THREE.SphereGeometry(1, 48, 32), new THREE.ShaderMaterial({ uniforms: { ...U },
+    vertexShader: `varying vec3 vP; void main() { vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }`,
+    fragmentShader: NOISE + `uniform vec3 uSun; varying vec3 vP;
+      float surf(vec3 d) { float c = noise(d * 5.) * noise(d * 5. + 9.); return fbm3(d * 3.5) * .6 - smoothstep(.22, .34, c) * .25 + smoothstep(.3, .36, c) * .12; }   // dust, and craters with a raised lip
+      void main() { vec3 d = normalize(vP); float e = .012; vec3 t1 = normalize(cross(d, vec3(.13, 1., .07))), t2 = cross(d, t1);
+        float s0 = surf(d), sx = surf(d + t1 * e), sy = surf(d + t2 * e); vec3 n = normalize(d - (t1 * (sx - s0) + t2 * (sy - s0)) / e * .22);
+        float alb = .42 + .5 * s0 - .16 * smoothstep(.5, .62, noise(d * 1.7 + 4.));
+        gl_FragColor = vec4(vec3(.82, .8, .78) * alb * (.012 + 1.25 * max(dot(n, uSun), 0.)), 1.); }` }));
   scene.add(moon);
 
   /* time */
@@ -274,10 +319,10 @@ export function createPlanet(env) {
   }
   function frame(dt) {
     const t = U.uTime.value += dt, sun = U.uSun.value;
-    if (!calm) sun.set(Math.cos(t * .07), .28, Math.sin(t * .07)).normalize();                     // a day lasts about a minute and a half
+    { const a = P.sun0 + (calm ? 0 : t * .07); sun.set(Math.cos(a), .28, Math.sin(a)).normalize(); }                     // a day lasts about a minute and a half
     sunSprite.position.copy(sun).multiplyScalar(420);
-    clouds.rotation.y = t * .012; clouds.rotation.x = Math.sin(t * .004) * .2;
-    const ma = t * .06 + 4.2; moon.position.set(Math.cos(ma) * 25, Math.sin(ma * .7) * 6 + 5, Math.sin(ma) * 25); moon.rotation.y = t * .1;
+    cloudFade.value += (THREE.MathUtils.smoothstep(camera.position.distanceTo(controls.target), 10, 30) * (P.follow ? 0 : 1) - cloudFade.value) * Math.min(1, dt * 3);   // clouds part when you come close
+    const ma = t * .06 + 4.2; moon.position.set(Math.cos(ma) * 25, Math.sin(ma * .7) * 6 + 5, Math.sin(ma) * 25); 
     moon.scale.setScalar(Math.max(.001, moon.scale.x + (P.moonTarget - moon.scale.x) * Math.min(1, dt * 3)));
     const hp = halo.geometry.attributes; let hi = 0;
     for (const r of realms) { if (!r.mesh) continue; const def = r.def, inst = r.mesh.geometry.attributes.aInst;
@@ -320,10 +365,12 @@ export function createPlanet(env) {
     labels(list);
   }
   const composer = new EffectComposer(env.renderer, new THREE.WebGLRenderTarget(4, 4, { type: THREE.HalfFloatType, samples: 4 }));
-  composer.addPass(new RenderPass(scene, camera)); const bloom = new UnrealBloomPass(new THREE.Vector2(256, 256), .62, .55, .98); composer.addPass(bloom);
-  const render = () => composer.render();
+  composer.addPass(new RenderPass(scene, camera)); const bloom = new UnrealBloomPass(new THREE.Vector2(256, 256), .5, .5, 1.); composer.addPass(bloom);
+  const render = () => { composer.render();
+    const now = performance.now(), took = now - (P.last || now); P.last = now;                              // a slow device gets a lighter picture instead of a slideshow
+    if (took > 45 && took < 1000) P.slow++; if (++P.frames >= 45) { if (P.slow > 30 && P.quality > .55) { P.quality = P.quality > 1 ? 1 : P.quality - .25; homeDist(); } P.slow = P.frames = 0; } };
   function homeDist() {
-    composer.setPixelRatio(env.renderer.getPixelRatio()); composer.setSize(innerWidth, innerHeight);
+    P.quality = Math.min(P.quality || 9, env.renderer.getPixelRatio()); composer.setPixelRatio(P.quality); composer.setSize(innerWidth, innerHeight);
     const top = document.querySelector("header").getBoundingClientRect().bottom, bot = document.querySelector("footer").getBoundingClientRect().top;
     const free = Math.max(.4, (bot - top) / innerHeight), v = THREE.MathUtils.degToRad(camera.fov) / 2, hx = Math.atan(Math.tan(v) * camera.aspect);
     camera.setViewOffset(innerWidth, innerHeight, 0, Math.round((innerHeight - bot - top) / 2), innerWidth, innerHeight);
@@ -332,8 +379,9 @@ export function createPlanet(env) {
   }
   const hello = () => info("🌍", "Your games grew this planet", "Each kind of game grows a land, each game is a creature living on it (bigger = more hours). Platinums wear a halo, dropped games turn to stone, the moon is your backlog. Tap anything.");
   function enter() {
-    P.follow = null; P.back = 0; camera.up.set(0, 1, 0); controls.minDistance = RP + 4; controls.maxDistance = 140; controls.minPolarAngle = .25; controls.maxPolarAngle = Math.PI - .25; controls.autoRotate = !calm; controls.autoRotateSpeed = .5;
+    P.follow = null; P.back = 0; camera.up.set(0, 1, 0); P.slow = 0; P.frames = 0; P.last = 0; controls.minDistance = RP + 4; controls.maxDistance = 140; controls.minPolarAngle = .25; controls.maxPolarAngle = Math.PI - .25; controls.autoRotate = !calm; controls.autoRotateSpeed = .5;
     const d = homeDist(); controls.target.set(0, 0, 0); v1.copy(order[0].seed).setY(order[0].seed.y + .35).normalize(); camera.position.copy(v1).multiplyScalar(calm ? d : d * 1.9); if (!calm) P.back = 4;   // glide in
+    P.sun0 = Math.atan2(v1.z, v1.x) - .75 - (calm ? 0 : U.uTime.value * .07);                             // start with the sun on the side you're looking at
     $("legend").innerHTML = P.legend; hello();
   }
   const ray = new THREE.Raycaster();
