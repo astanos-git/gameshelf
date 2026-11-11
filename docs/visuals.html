@@ -14,13 +14,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
-/* Animated views of your history: Your ocean (every game a fish), Gamer fingerprint (a generative print), Hours race; the Time tunnel is its own page. */
+/* Animated views of your history: Your ocean (every game a fish), Your planet (viz-planet.js), the Music box (viz-music.js), Gamer fingerprint (a generative print), Hours race; the Time tunnel is its own page. */
 :root { --display: "Barlow Condensed", "Arial Narrow", sans-serif; --body: "IBM Plex Sans", system-ui, sans-serif; --ink: #eef2ff; --soft: rgba(238,242,255,.66);
   --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px); }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; background: #05070f; color: var(--ink); font-family: var(--body); overflow: hidden; -webkit-font-smoothing: antialiased; }
 #fp { position: fixed; inset: 0; width: 100%; height: 100%; display: none; touch-action: manipulation; }
 #fp.on { display: block; }
+#px { position: fixed; inset: 0; width: 100%; height: 100%; display: none; image-rendering: pixelated; image-rendering: crisp-edges; image-rendering: pixelated; touch-action: manipulation; }
+#px.on { display: block; }
 .back.tunnel { background: linear-gradient(120deg, #6b4fd1, #2b6cb0); }
 .seg.small button { min-height: 36px; padding: 6px 12px; font-size: 14px; }
 .fp-tools { justify-content: space-between; }
@@ -32,8 +34,9 @@ header > * { pointer-events: auto; }
 .row { display: flex; align-items: center; gap: 10px; }
 .back { color: var(--ink); text-decoration: none; background: rgba(255,255,255,.1); border-radius: 999px; min-height: 40px; padding: 0 14px; display: inline-flex; align-items: center; font-weight: 600; }
 h1 { font: 700 26px var(--display); margin: 0; flex: 1; letter-spacing: .01em; }
-.seg { display: flex; background: rgba(255,255,255,.08); border-radius: 999px; padding: 3px; gap: 2px; width: max-content; max-width: 100%; }
-.seg button { border: 0; background: none; color: var(--soft); font: 600 15px var(--body); padding: 8px 14px; border-radius: 999px; min-height: 40px; cursor: pointer; }
+.seg { display: flex; background: rgba(255,255,255,.08); border-radius: 999px; padding: 3px; gap: 2px; width: max-content; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.seg::-webkit-scrollbar { display: none; }
+.seg button { border: 0; background: none; color: var(--soft); font: 600 15px var(--body); padding: 8px 12px; border-radius: 999px; min-height: 40px; cursor: pointer; white-space: nowrap; }
 .seg button[aria-pressed="true"] { background: var(--ink); color: #05070f; }
 .legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12.5px; color: var(--soft); }
 .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: 0; }
@@ -71,13 +74,15 @@ footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; padding: 10p
 
 <main>
   <canvas id="gl" aria-label="Your ocean: every game you have played swims as a fish, sized by hours played" role="img"></canvas>
+  <canvas id="px" aria-label="Music box: your trophy history as a punched paper strip that plays as music" role="img"></canvas>
   <canvas id="fp" aria-label="Your gamer fingerprint: a generative print of your trophy history" role="img"></canvas>
   <div class="labels" id="labels" aria-hidden="true"></div>
   <header>
     <div class="row"><a class="back" href="stats.html" aria-label="Back to Stats">‹ Stats</a><h1>Your history</h1><a class="back tunnel" href="tunnel.html">Time tunnel ›</a></div>
-    <div class="seg" role="group" aria-label="View"><button data-v="ocean" aria-pressed="true">Ocean</button><button data-v="print">Fingerprint</button><button data-v="race">Hours race</button></div>
+    <div class="seg" role="group" aria-label="View"><button data-v="ocean" aria-pressed="true">Ocean</button><button data-v="planet">Planet</button><button data-v="music">Music box</button><button data-v="print">Print</button><button data-v="race">Race</button></div>
     <div class="legend" id="legend"></div>
     <div class="row fp-tools" id="fpTools" hidden><div class="seg small" role="group" aria-label="Print style"><button data-style="night" aria-pressed="true">Night</button><button data-style="paper" aria-pressed="false">Paper</button></div><button class="back" id="fpSave">Save poster</button></div>
+    <div class="row" id="mxTools" hidden><div class="seg small" role="group" aria-label="Speed"><button data-speed="1" aria-pressed="true">1×</button><button data-speed="2" aria-pressed="false">2×</button><button data-speed="4" aria-pressed="false">4×</button></div></div>
   </header>
   <section id="race" aria-label="Hours race"><div class="racebg" id="raceYear"></div></section>
   <footer>
@@ -90,6 +95,8 @@ footer { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; padding: 10p
 <script type="module">
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { createPlanet } from "./viz-planet.js";
+import { createMusic } from "./viz-music.js";
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -98,7 +105,7 @@ const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const fmtDate = d => d.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
 const info = (icon, title, sub) => { $("info").querySelector(".ic").innerHTML = icon; $("infoT").textContent = title; $("infoS").textContent = sub || ""; };
 const GRADE = ["Bronze", "Silver", "Gold", "Platinum"], GCOL = ["#d08c5c", "#c9d4e6", "#ffcf4a", "#8fd0ff"];
-let DATA, GAL, FLAGS = {}, view = "ocean";
+let DATA, GAL, FLAGS = {}, view = "ocean", planet = null, music = null;
 
 /* ---------- renderer, camera, controls (for the ocean) ---------- */
 const canvas = $("gl");
@@ -107,14 +114,14 @@ try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPrefere
 catch { renderer = null; }
 const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, 0.1, 2000);
 const controls = renderer ? new OrbitControls(camera, canvas) : null;
-if (controls) { controls.enableDamping = true; controls.dampingFactor = 0.08; controls.autoRotate = !calm; controls.autoRotateSpeed = 0.35; controls.enablePan = false;
-  controls.minDistance = 5; controls.maxDistance = 120; controls.minPolarAngle = 1.15; controls.maxPolarAngle = 1.74; }   // stay under water
+if (controls) { controls.enableDamping = true; controls.dampingFactor = 0.08; controls.autoRotate = !calm; controls.enablePan = false; }
 const clock = new THREE.Clock();
 function resize() {
   if (!renderer) return;
   renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.setSize(innerWidth, innerHeight, false);
   camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix();
-  if (ocean.uScale) { ocean.uScale.value = renderer.domElement.height / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2)); oceanHome(); }
+  if (ocean.uScale) { ocean.uScale.value = renderer.domElement.height / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2)); if (view === "planet") planet?.resize(); else oceanHome(); }
+  if (view === "music") music?.resize();
 }
 addEventListener("resize", resize);
 
@@ -547,28 +554,37 @@ function drawRace(p) {
 }
 
 /* ---------- switching views, timeline, animation loop ---------- */
-function setView(v) {
-  view = v;
+let anim = null;
+function setView(v, gesture) {
+  if (view === "music" && v !== "music") music?.leave();
+  view = v; anim = null;
+  $("px").classList.toggle("on", v === "music"); $("mxTools").hidden = v !== "music";
   document.querySelectorAll("[data-v]").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v));
-  $("race").classList.toggle("on", v === "race"); canvas.style.visibility = v === "ocean" ? "visible" : "hidden"; $("labels").innerHTML = "";
+  $("race").classList.toggle("on", v === "race"); canvas.style.visibility = v === "ocean" || v === "planet" ? "visible" : "hidden"; $("labels").innerHTML = "";
   $("fp").classList.toggle("on", v === "print"); $("fpTools").hidden = v !== "print";
-  if (v === "ocean") { ocean.follow = null; const d = oceanHome(); controls.target.copy(CENTRE); camera.position.set(0, CENTRE.y + d * Math.cos(1.5), d * Math.sin(1.5));
+  if (v === "planet") { planet.enter(); play(); }
+  if (v === "music") music.enter(gesture);
+  if (v === "ocean") { ocean.follow = null; camera.up.set(0, 1, 0); const d = oceanHome();
+    controls.minDistance = 5; controls.maxDistance = 120; controls.minPolarAngle = 1.15; controls.maxPolarAngle = 1.74; controls.autoRotate = !calm; controls.autoRotateSpeed = .35;   // stay under water
+    controls.target.copy(CENTRE); camera.position.set(0, CENTRE.y + d * Math.cos(1.5), d * Math.sin(1.5));
     $("legend").innerHTML = ocean.legend; oceanInfo(); play(); }
   if (v === "print") { $("legend").innerHTML = fp.legendHTML();
     info("✦", "Your gamer fingerprint", "One turn of the spiral is one year, from your first trophy in the centre. Threads are games (colour = genre), dots are trophies, stars are platinums. Tap one."); play(); }
   if (v === "race") { $("legend").innerHTML = `<span>Total hours per game, year after year</span>`; info("🏁", "Hours race", "Which games took most of your time, and when."); play(); }
   controls?.update();
 }
-document.querySelector(".seg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (b && b.dataset.v !== view) setView(b.dataset.v); });
-let anim = null;
+document.querySelector(".seg").addEventListener("click", e => { const b = e.target.closest("[data-v]"); if (b && b.dataset.v !== view) setView(b.dataset.v, true); });
 function play() {                          // replay the current view from the start (instantly with "reduce motion")
-  const dur = view === "ocean" ? 24000 : view === "print" ? 8000 : Math.max(20000, (race.y1 - race.y0 + 1) * 2600);   // the race: about 2.6 s a year
+  if (view === "music") { music.toggle(); return; }
+  const dur = view === "ocean" ? 24000 : view === "planet" ? 22000 : view === "print" ? 8000 : Math.max(20000, (race.y1 - race.y0 + 1) * 2600);   // the race: about 2.6 s a year
   if (calm) { setProgress(1); return; }
   const t0 = performance.now(); anim = { t0, dur };
 }
 function setProgress(p) {
   p = Math.max(0, Math.min(1, p)); $("scrub").value = Math.round(p * 1000);
   if (view === "ocean" && ocean.mesh) { ocean.quick = .6; oceanTime(p); }
+  if (view === "planet") planet.time(p);
+  if (view === "music") music.seek(p);
   if (view === "print" && fp.games) { fp.progress = p; renderPrint(); $("yr").textContent = new Date(fp.t0.getTime() + p * fp.total * 36e5).getFullYear(); }
   if (view === "race" && race.games) drawRace(p);
 }
@@ -576,7 +592,9 @@ $("play").onclick = () => play();
 $("scrub").addEventListener("input", e => { anim = null; setProgress(e.target.value / 1000); });
 let down = null;
 canvas.addEventListener("pointerdown", e => down = [e.clientX, e.clientY]);
-canvas.addEventListener("pointerup", e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 6) pickOcean(e); down = null; });
+canvas.addEventListener("pointerup", e => { if (down && Math.hypot(e.clientX - down[0], e.clientY - down[1]) < 6) (view === "planet" ? planet.pick : pickOcean)(e); down = null; });
+$("px").addEventListener("click", e => music?.pick(e));
+$("mxTools").addEventListener("click", e => { const b = e.target.closest("[data-speed]"); if (!b) return; music.speedTo(+b.dataset.speed); document.querySelectorAll("[data-speed]").forEach(x => x.setAttribute("aria-pressed", x === b)); });
 $("fp").addEventListener("click", pickPrint);
 $("fpTools").addEventListener("click", e => { const b = e.target.closest("[data-style]"); if (b) { fp.style = b.dataset.style;
   document.querySelectorAll("[data-style]").forEach(x => x.setAttribute("aria-pressed", x === b)); $("legend").innerHTML = fp.legendHTML(); renderPrint(); }
@@ -593,8 +611,11 @@ function labels(list) {
 function loop() {
   requestAnimationFrame(loop);
   if (anim) { const p = Math.min(1, (performance.now() - anim.t0) / anim.dur); setProgress(p); if (p >= 1) anim = null; }
-  if (!renderer || view !== "ocean") return;
-  const dt = Math.min(.05, clock.getDelta()) * (calm ? .3 : 1);
+  const raw = Math.min(.05, clock.getDelta()), dt = raw * (calm ? .3 : 1);
+  if (view === "music") { music.frame(raw); return; }
+  if (!renderer) return;
+  if (view === "planet") { planet.frame(dt); controls.update(); renderer.render(planet.scene, camera); return; }
+  if (view !== "ocean") return;
   U.uTime.value += dt; swim(dt); oceanCamera(dt); controls.update();
   renderer.render(ocean.scene, camera); oceanLabels();
 }
@@ -604,13 +625,15 @@ async function start() {
   [DATA, GAL, FLAGS] = await Promise.all([get("data.json", null), get("galaxy.json", null), get("flags.json", {})]);
   if (!DATA) { info("⚠️", "No game data yet", ""); return; }
   buildRace();
-  if (!renderer) { document.querySelector('[data-v="ocean"]').disabled = true; if (GAL?.t?.length) buildPrint(); setView(GAL?.t?.length ? "print" : "race"); info("ℹ️", "3D isn't available on this device", "The hours race still works."); loop(); return; }
+  if (GAL?.t?.length) music = createMusic({ canvas: $("px"), GAL, DATA, info, esc }); else document.querySelector('[data-v="music"]').hidden = true;
+  if (!renderer) { document.querySelector('[data-v="ocean"]').disabled = document.querySelector('[data-v="planet"]').disabled = true; if (GAL?.t?.length) buildPrint(); setView(GAL?.t?.length ? "print" : "race"); info("ℹ️", "3D isn't available on this device", "The hours race still works."); loop(); return; }
   resize();
   buildOcean(); resize();
+  planet = createPlanet({ renderer, camera, controls, canvas, info, esc, labels, calm, tex: ocean.tex, games: ocean.fish, backlog: ocean.eggs.filter(o => o.birth == null), t0: ocean.t0, now: ocean.now });
   if (GAL?.t?.length) buildPrint(); else document.querySelector('[data-v="print"]').hidden = true;
   document.fonts?.ready.then(() => view === "print" && renderPrint());
   const want = location.hash.slice(1);
-  setView(["print", "race"].includes(want) && (want === "race" || GAL?.t?.length) ? want : "ocean");
+  setView(want === "planet" || want === "race" || (["print", "music"].includes(want) && GAL?.t?.length) ? want : "ocean");
   loop();
 }
 start();
