@@ -23,6 +23,12 @@
   "pending": true,
   "year": "2026"
  },
+ "hopetown": {
+  "added": "2026-11-11T07:22:01Z",
+  "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/9/98/Hopetown_cover.jpg/250px-Hopetown_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "name": "Hopetown",
+  "pending": true
+ },
  "intergalactic-the-heretic-prophet": {
   "added": "2026-10-25T20:58:54Z",
   "genres": [
