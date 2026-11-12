@@ -23,6 +23,11 @@
   "pending": true,
   "year": "2026"
  },
+ "holstin": {
+  "added": "2026-11-12T22:19:11Z",
+  "name": "Holstin",
+  "pending": true
+ },
  "hopetown": {
   "added": "2026-11-11T07:22:01Z",
   "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/9/98/Hopetown_cover.jpg/250px-Hopetown_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
