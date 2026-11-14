@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T13:12:42+00:00",
+ "generated_at": "2026-11-14T17:34:58+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,15 +10,265 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 331,
-  "level_progress": 75,
+  "level_progress": 78,
   "earned": {
    "bronze": 2779,
-   "silver": 656,
+   "silver": 657,
    "gold": 225,
    "platinum": 23
   }
  },
  "games": [
+  {
+   "name": "Control",
+   "image": "https://image.api.playstation.com/cdn/EP4040/CUSA11454_00/FSp6HKGXPLC5VrWg3GAjNEiq3ATYE5qu.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-09-09T05:34:20Z",
+   "hours": 1.7,
+   "first_played": "2026-10-30T21:25:39.180000+00:00",
+   "last_played": "2026-11-14T16:40:58.480000+00:00",
+   "progress": 58,
+   "earned": {
+    "bronze": 30,
+    "silver": 7,
+    "gold": 2,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 50,
+    "silver": 14,
+    "gold": 3,
+    "platinum": 1
+   },
+   "last_trophy": "2026-11-14T16:40:36+00:00",
+   "has_trophies": true,
+   "months": {
+    "2026-11": [
+     27,
+     7,
+     2,
+     0
+    ],
+    "2026-10": [
+     3,
+     0,
+     0,
+     0
+    ]
+   },
+   "trophy_lists": [
+    {
+     "id": "NPWR22157_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 58,
+     "groups": {
+      "001": "The Foundation",
+      "002": "Altered World Events",
+      "default": "Control Ultimate Edition"
+     }
+    }
+   ],
+   "rare": [
+    {
+     "n": "FBC Crisis Solution Task Force",
+     "t": "silver",
+     "r": 12.5,
+     "at": "2026-11-14T16:28:25+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/c3dceafe-e45a-4107-9572-e801e21f4f38.png"
+    },
+    {
+     "n": "Altered Manifestations May Occur",
+     "t": "bronze",
+     "r": 14.1,
+     "at": "2026-11-14T09:57:02+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/d7296725-3547-4218-b623-c938fcf3bcdd.png"
+    },
+    {
+     "n": "Inter-Departmental Cooperation",
+     "t": "bronze",
+     "r": 15.0,
+     "at": "2026-11-14T09:47:05+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/eab8992c-b6d0-49df-b472-b4b74deb0def.png"
+    },
+    {
+     "n": "Living Archetypes",
+     "t": "bronze",
+     "r": 15.3,
+     "at": "2026-11-09T21:27:28+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/2b8f6d27-6962-4334-8863-b9df0cc78000.png"
+    },
+    {
+     "n": "Expert Parautilitarian",
+     "t": "bronze",
+     "r": 17.5,
+     "at": "2026-11-14T08:57:58+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/ab39deb2-cad7-471c-a21f-2c6fa953b073.png"
+    }
+   ],
+   "aliases": [
+    "Control Ultimate Edition"
+   ],
+   "trophies_earned": 39,
+   "trophies_total": 68,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-11-14T16:40:58.480000+00:00",
+   "hours_by_year": {
+    "2026": 1.7
+   },
+   "metacritic": 84,
+   "genres": [
+    "Shooter",
+    "Adventure",
+    "Action"
+   ],
+   "released": "2019-08-27",
+   "rawg_slug": "control",
+   "metacritic_source": "rawg",
+   "series": [],
+   "developers": [],
+   "publishers": [
+    "505 Games"
+   ],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "female-protagonist",
+     "Female Protagonist"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "cinematic",
+     "Cinematic"
+    ],
+    [
+     "metroidvania",
+     "Metroidvania"
+    ],
+    [
+     "detective",
+     "Detective"
+    ],
+    [
+     "3rd-person-perspective",
+     "3rd-Person Perspective"
+    ],
+    [
+     "supernatural",
+     "Supernatural"
+    ],
+    [
+     "abstract",
+     "Abstract"
+    ],
+    [
+     "realism",
+     "realism"
+    ]
+   ],
+   "hltb": {
+    "main": 11.7,
+    "extra": 19.23,
+    "complete": 29.03,
+    "url": "https://howlongtobeat.com/game/57507"
+   },
+   "plat_rate": 6.5,
+   "rare_missing": 21,
+   "first_trophy_at": "2026-10-30T21:43:11+00:00",
+   "platinum_at": null,
+   "dlc": [
+    {
+     "list": "NPWR22157_00",
+     "id": "001",
+     "name": "The Foundation",
+     "platforms": [
+      "PS5"
+     ],
+     "earned": 0,
+     "total": 10
+    },
+    {
+     "list": "NPWR22157_00",
+     "id": "002",
+     "name": "Altered World Events",
+     "platforms": [
+      "PS5"
+     ],
+     "earned": 0,
+     "total": 11
+    }
+   ],
+   "missing_n": 29,
+   "easy": [
+    {
+     "n": "Familiar Methodologies",
+     "t": "bronze",
+     "r": 15.6,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "War Games",
+     "t": "bronze",
+     "r": 14.2,
+     "h": null,
+     "p": "2/5"
+    },
+    {
+     "n": "Aggressive Growth",
+     "t": "bronze",
+     "r": 13.1,
+     "h": true,
+     "p": null
+    }
+   ],
+   "doing": [
+    {
+     "n": "In-depth Investigations",
+     "t": "bronze",
+     "r": 9.3,
+     "h": null,
+     "p": "28/53",
+     "pct": 53
+    },
+    {
+     "n": "War Games",
+     "t": "bronze",
+     "r": 14.2,
+     "h": null,
+     "p": "2/5",
+     "pct": 40
+    },
+    {
+     "n": "Crisis Management",
+     "t": "silver",
+     "r": 9.8,
+     "h": null,
+     "p": "1/5",
+     "pct": 20
+    }
+   ]
+  },
   {
    "name": "Fortnite",
    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1819/sbaZEJ4jKCsdLAjQwVPSzMza.png",
@@ -157,256 +407,6 @@
     }
    ],
    "doing": []
-  },
-  {
-   "name": "Control",
-   "image": "https://image.api.playstation.com/cdn/EP4040/CUSA11454_00/FSp6HKGXPLC5VrWg3GAjNEiq3ATYE5qu.png",
-   "platforms": [
-    "PS4",
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-09-09T05:34:20Z",
-   "hours": 1.4,
-   "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-11-14T08:41:23.030000+00:00",
-   "progress": 56,
-   "earned": {
-    "bronze": 30,
-    "silver": 6,
-    "gold": 2,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 50,
-    "silver": 14,
-    "gold": 3,
-    "platinum": 1
-   },
-   "last_trophy": "2026-11-14T10:56:59+00:00",
-   "has_trophies": true,
-   "months": {
-    "2026-11": [
-     27,
-     6,
-     2,
-     0
-    ],
-    "2026-10": [
-     3,
-     0,
-     0,
-     0
-    ]
-   },
-   "trophy_lists": [
-    {
-     "id": "NPWR22157_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 56,
-     "groups": {
-      "001": "The Foundation",
-      "002": "Altered World Events",
-      "default": "Control Ultimate Edition"
-     }
-    }
-   ],
-   "rare": [
-    {
-     "n": "Altered Manifestations May Occur",
-     "t": "bronze",
-     "r": 14.1,
-     "at": "2026-11-14T09:57:02+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/d7296725-3547-4218-b623-c938fcf3bcdd.png"
-    },
-    {
-     "n": "Inter-Departmental Cooperation",
-     "t": "bronze",
-     "r": 15.0,
-     "at": "2026-11-14T09:47:05+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/eab8992c-b6d0-49df-b472-b4b74deb0def.png"
-    },
-    {
-     "n": "Living Archetypes",
-     "t": "bronze",
-     "r": 15.3,
-     "at": "2026-11-09T21:27:28+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/2b8f6d27-6962-4334-8863-b9df0cc78000.png"
-    },
-    {
-     "n": "Expert Parautilitarian",
-     "t": "bronze",
-     "r": 17.5,
-     "at": "2026-11-14T08:57:58+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/ab39deb2-cad7-471c-a21f-2c6fa953b073.png"
-    },
-    {
-     "n": "Interdimensional Defender",
-     "t": "silver",
-     "r": 19.1,
-     "at": "2026-11-14T09:39:41+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/dd9f9473-c0d4-4102-a978-2d109d12250a.png"
-    }
-   ],
-   "aliases": [
-    "Control Ultimate Edition"
-   ],
-   "trophies_earned": 38,
-   "trophies_total": 68,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-11-14T10:56:59+00:00",
-   "hours_by_year": {
-    "2026": 1.4
-   },
-   "metacritic": 84,
-   "genres": [
-    "Shooter",
-    "Adventure",
-    "Action"
-   ],
-   "released": "2019-08-27",
-   "rawg_slug": "control",
-   "metacritic_source": "rawg",
-   "series": [],
-   "developers": [],
-   "publishers": [
-    "505 Games"
-   ],
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "sci-fi",
-     "Sci-fi"
-    ],
-    [
-     "exploration",
-     "Exploration"
-    ],
-    [
-     "female-protagonist",
-     "Female Protagonist"
-    ],
-    [
-     "action-adventure",
-     "Action-Adventure"
-    ],
-    [
-     "cinematic",
-     "Cinematic"
-    ],
-    [
-     "metroidvania",
-     "Metroidvania"
-    ],
-    [
-     "detective",
-     "Detective"
-    ],
-    [
-     "3rd-person-perspective",
-     "3rd-Person Perspective"
-    ],
-    [
-     "supernatural",
-     "Supernatural"
-    ],
-    [
-     "abstract",
-     "Abstract"
-    ],
-    [
-     "realism",
-     "realism"
-    ]
-   ],
-   "hltb": {
-    "main": 11.7,
-    "extra": 19.23,
-    "complete": 29.03,
-    "url": "https://howlongtobeat.com/game/57507"
-   },
-   "plat_rate": 6.5,
-   "rare_missing": 21,
-   "first_trophy_at": "2026-10-30T21:43:11+00:00",
-   "platinum_at": null,
-   "dlc": [
-    {
-     "list": "NPWR22157_00",
-     "id": "001",
-     "name": "The Foundation",
-     "platforms": [
-      "PS5"
-     ],
-     "earned": 0,
-     "total": 10
-    },
-    {
-     "list": "NPWR22157_00",
-     "id": "002",
-     "name": "Altered World Events",
-     "platforms": [
-      "PS5"
-     ],
-     "earned": 0,
-     "total": 11
-    }
-   ],
-   "missing_n": 30,
-   "easy": [
-    {
-     "n": "Familiar Methodologies",
-     "t": "bronze",
-     "r": 15.6,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "War Games",
-     "t": "bronze",
-     "r": 14.2,
-     "h": null,
-     "p": "0/5"
-    },
-    {
-     "n": "Aggressive Growth",
-     "t": "bronze",
-     "r": 13.1,
-     "h": true,
-     "p": null
-    }
-   ],
-   "doing": [
-    {
-     "n": "FBC Crisis Solution Task Force",
-     "t": "silver",
-     "r": 12.5,
-     "h": null,
-     "p": "14/15",
-     "pct": 93
-    },
-    {
-     "n": "In-depth Investigations",
-     "t": "bronze",
-     "r": 9.3,
-     "h": null,
-     "p": "28/53",
-     "pct": 53
-    },
-    {
-     "n": "Crisis Management",
-     "t": "silver",
-     "r": 9.8,
-     "h": null,
-     "p": "1/5",
-     "pct": 20
-    }
-   ]
   },
   {
    "name": "Blue Prince",
@@ -18801,8 +18801,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "Lego",
-    "2K Drive"
+    "2K Drive",
+    "Lego"
    ],
    "developers": [
     "Visual Concepts"
@@ -58214,7 +58214,7 @@
    "2026-11-07": 3,
    "2026-11-09": 5,
    "2026-11-13": 2,
-   "2026-11-14": 9
+   "2026-11-14": 10
   },
   "weekday_hour": {
    "2011": [
@@ -58525,7 +58525,7 @@
     26,
     40,
     61,
-    46,
+    47,
     32,
     40,
     6,
@@ -61075,7 +61075,7 @@
     1,
     2,
     2,
-    1,
+    2,
     1,
     0,
     0,
@@ -61430,11 +61430,11 @@
    "all": {
     "buckets": [
      66,
-     485,
+     486,
      2140,
      992
     ],
-    "score": 25
+    "score": 26
    },
    "2012": {
     "buckets": [
@@ -61565,7 +61565,7 @@
    "2026": {
     "buckets": [
      9,
-     49,
+     50,
      191,
      60
     ],
