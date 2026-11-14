@@ -912,17 +912,27 @@ def dlc_progress(g: dict) -> list[dict]:
     return out
 
 
+def progress_pct(t: dict) -> int | None:
+    """A trophy's own counter ("12/60", PS5 only) as a percentage."""
+    try:
+        done, target = (int(v) for v in (t.get("p") or "").split("/"))
+        return min(99, round(done / target * 100)) if target > 0 else None
+    except ValueError:
+        return None
+
+
 def build_insights(games: list[dict]) -> dict:
     """Activity by day / weekday / hour (Swiss time), milestones, and per-game trophy facts.
 
-    Adds to each game: first_trophy_at, platinum_at, missing_n and easy (its most common missing trophies).
+    Adds to each game: first_trophy_at, platinum_at, missing_n, easy (its most common missing trophies)
+    and doing (missing trophies with a counter you have started, e.g. 41/50).
     """
     from zoneinfo import ZoneInfo
     tz = ZoneInfo(LOCAL_TZ)
     earned = []                   # (local datetime, trophy, game)
     for g in games:
         first = plat = None
-        best_missing, missing_n = [], 0
+        best_missing, missing_n, doing = [], 0, []
         for i, lst in enumerate(g.get("trophy_lists") or []):
             rows = load_trophy_file(lst["id"])
             for t in rows:
@@ -939,10 +949,12 @@ def build_insights(games: list[dict]) -> dict:
                 g["plat_rate"] = plat_row.get("r") if plat_row else None
                 g["rare_missing"] = sum(1 for t in missing if t.get("r") is not None and t["r"] < 10)
                 best_missing = sorted(missing, key=lambda t: -(t.get("r") or 0))[:3]
+                doing = sorted(((progress_pct(t), t) for t in missing if (progress_pct(t) or 0) > 0), key=lambda e: -e[0])[:3]
         g["first_trophy_at"], g["platinum_at"] = first, plat
         g["dlc"] = dlc_progress(g)
         g["missing_n"] = missing_n
         g["easy"] = [{k: t.get(k) for k in ("n", "t", "r", "h", "p")} for t in best_missing]
+        g["doing"] = [{**{k: t.get(k) for k in ("n", "t", "r", "h", "p")}, "pct": pct} for pct, t in doing]   # trophies you've started, most advanced first
 
     earned.sort(key=lambda x: x[0])
     days: dict[str, int] = {}

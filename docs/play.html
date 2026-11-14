@@ -224,6 +224,12 @@ tr.tap.open td { background: var(--accent-soft); }
       <button class="more" id="closeMore" hidden></button>
       <details class="how"><summary>How this works</summary><p>Games at 70% or more. Under each game: the missing trophies most players have, so likely the easiest left.</p></details>
     </section>
+    <section class="block" id="doingSec" hidden>
+      <h2 class="sec">Almost there</h2>
+      <ol class="list compact" id="doing"></ol>
+      <button class="more" id="doingMore" hidden></button>
+      <details class="how"><summary>How this works</summary><p>Trophies you've started that count towards a number (41 of 50 collectibles, 171 of 200 kills), most advanced first. PlayStation only tracks this for some PS5 trophies, so many trophies and all PS4 games have no counter. Updated with each data refresh.</p></details>
+    </section>
     <section class="block">
       <h2 class="sec">Next platinum: how hard?</h2>
       <div id="platHard"></div>
@@ -325,6 +331,18 @@ function closest() {
 
 let dlcAll = false, closeAll = false, hardAll = false;
 $("closeMore").addEventListener("click", () => { closeAll = !closeAll; closest(); });
+let doingAll = false;
+function almostThere() {                             // single trophies with a counter, closest to done
+  const all = DATA.games.filter(x => x.eff !== "dropped").flatMap(x => (x.doing || []).map(t => ({ x, t }))).sort((a, b) => b.t.pct - a.t.pct || (b.t.r ?? 0) - (a.t.r ?? 0)), rows = doingAll ? all : all.slice(0, 6);
+  $("doingSec").hidden = !all.length; $("doingMore").hidden = all.length <= 6; $("doingMore").textContent = doingAll ? "Show fewer" : `Show all ${all.length}`;
+  $("doing").innerHTML = rows.map(({ x, t }) => { const [done, of] = String(t.p).split("/");
+    return `<li class="item tap" data-g="${esc(x.name)}"><span class="cover">${pic(x.image, x.name)}</span>
+      <span class="main"><span class="name"><span class="dot d-${t.t}"></span> ${t.h ? "Hidden trophy" : esc(t.n)}</span>
+        <span class="prog"><span class="bar"><i style="width:${t.pct}%"></i></span><span class="num">${esc(done)} of ${esc(of)}</span></span>
+        <span class="meta"><span>${esc(x.name)}</span>${t.r != null ? `<span>${t.r}% have it</span>` : ""}</span></span>
+      <span class="left num">${t.pct}%</span></li>`; }).join("");
+}
+$("doingMore").addEventListener("click", () => { doingAll = !doingAll; almostThere(); });
 function dlcToFinish() {
   const rows = DATA.games.map(x => {
     const open = (x.dlc || []).filter(d => d.earned < d.total);
@@ -846,7 +864,7 @@ async function start() {
   if (state.genre && !genres.includes(state.genre)) state.genre = "";
   $("genre").innerHTML = `<option value="">All genres</option>` + genres.map(g => `<option${g === state.genre ? " selected" : ""}>${esc(g)}</option>`).join("");
   await extrasStart();
-  render(); closest(); dlcToFinish(); weekly(); tourney();
+  render(); closest(); almostThere(); dlcToFinish(); weekly(); tourney();
   setupParts();
 }
 start();

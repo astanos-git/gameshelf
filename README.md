@@ -95,6 +95,7 @@ Tap **Refresh data** at the top of the Library. It opens the workflow on GitHub:
   - **Coming soon:** unreleased PS4/PS5 games by category: Your series, Your studios, Your taste, Big releases, Indie (often empty: RAWG rarely lists consoles for unreleased indies), plus Out soon (next 60 days). Tap **+** to wishlist one.
 - **Trophy hunting:**
   - **Closest to platinum:** with the easiest trophies left.
+  - **Almost there:** single trophies with a PlayStation counter that you've started (41 of 50), most advanced first. In the Library, each such trophy shows a progress bar and the trophy list can be sorted "Closest to done first". PlayStation only tracks counters for some PS5 trophies.
   - **Next platinum: how hard?** Guide rating where there is one, otherwise an estimate from PSN rarity.
   - **DLC to finish.**
 - Tap any game for its panel. Games you don't own show a description, studios and release date instead.

@@ -112,6 +112,10 @@
 .tl-sub { font: 600 12px var(--body); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
 .trophy { display: grid; grid-template-columns: 40px 1fr auto; gap: 10px; align-items: center; }
 .trophy.got .ticon img { box-shadow: 0 0 0 2px var(--st-done); }
+.tprog { display: flex; align-items: center; gap: 8px; margin-top: 5px; font-size: 12.5px; color: var(--muted); }
+.tprog .bar { flex: 0 1 140px; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.tprog .num { white-space: nowrap; }
+.tprog .bar i { display: block; height: 100%; min-width: 2px; background: var(--accent); }
 .trophy:not(.got) .ticon img { filter: grayscale(1); opacity: .6; }
 .ticon { width: 40px; height: 40px; border-radius: 6px; overflow: hidden; background: var(--accent-soft); }
 .ticon img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
@@ -474,7 +478,7 @@ function detail(x, id) {
       <summary>Trophy list <span class="note">${total} trophies${missing ? ` · ${missing} missing` : " · all earned"}</span></summary><div class="tl-inner">
       <div class="tl-head"><a class="tguide" href="${listGuideUrl(x.name)}" target="_blank" rel="noopener">Trophy guide</a>
         <span class="seg" role="group" aria-label="Show trophies">${[["all", "All"], ["missing", "Missing"], ["earned", "Earned"]].map(([k, l]) => `<button data-tf="${k}" aria-pressed="${state.tfilter === k}">${l}</button>`).join("")}</span>
-        <select data-ts aria-label="Sort trophies">${[["order", "Game order"], ["newest", "Newest earned first"], ["oldest", "Oldest earned first"], ["rare", "Rarest first"], ["common", "Most common first"]].map(([k, l]) => `<option value="${k}"${state.tsort === k ? " selected" : ""}>${l}</option>`).join("")}</select>
+        <select data-ts aria-label="Sort trophies">${[["order", "Game order"], ["newest", "Newest earned first"], ["oldest", "Oldest earned first"], ["rare", "Rarest first"], ["common", "Most common first"], ["progress", "Closest to done first"]].map(([k, l]) => `<option value="${k}"${state.tsort === k ? " selected" : ""}>${l}</option>`).join("")}</select>
         <select data-tw aria-label="Earned in">${[["any", "Earned any time"], ["30d", "Last 30 days"], ["90d", "Last 3 months"],
           ...[...new Set(Object.keys(x.months || {}).map(m => m.slice(0, 4)))].sort().reverse().map(y => [y, `Earned in ${y}`])]
           .map(([k, l]) => `<option value="${k}"${state.twhen === k ? " selected" : ""}>${l}</option>`).join("")}</select>
@@ -494,18 +498,22 @@ async function renderTrophies() {
   const body = box.querySelector(".tl-body"); if (!body.isConnected) return;
   const avail = lists.filter(l => l.d);
   if (!avail.length) { body.innerHTML = `<p class="flagnote">Trophy details appear after your next refresh.</p>`; return; }
+  const tpct = t => { if (t.e || !t.p) return -1; const [d, o] = t.p.split("/").map(Number); return o > 0 ? d / o : -1; };
   const sorts = { order: (a, b) => a.id - b.id, rare: (a, b) => (a.r ?? 101) - (b.r ?? 101), common: (a, b) => (b.r ?? -1) - (a.r ?? -1),
     newest: (a, b) => (b.at || "").localeCompare(a.at || "") || a.id - b.id,          // not-earned trophies go last
+    progress: (a, b) => a.e - b.e || tpct(b) - tpct(a) || (b.r ?? 0) - (a.r ?? 0) || a.id - b.id,   // missing trophies with a counter, most advanced first
     oldest: (a, b) => (!a.at) - (!b.at) || (a.at || "").localeCompare(b.at || "") || a.id - b.id };
   // "Earned in": only trophies earned in that period
   const since = { "30d": 30, "90d": 91 }[state.twhen];
   const inPeriod = t => state.twhen === "any" || (t.e && t.at && (since ? Date.now() - new Date(t.at) <= since * 864e5 : new Date(t.at).getFullYear() === +state.twhen));
   const row = t => {
     const desc = t.h && !t.e ? `<details><summary>Hidden trophy · tap to reveal</summary><span>${esc(t.d)}</span></details>` : `<span>${esc(t.d)}</span>`;
-    const when = t.e ? (t.at ? fmtDate(t.at) : "Earned") : (t.p ? `${t.p} done` : "Not earned");
+    const [done, of] = t.p ? t.p.split("/").map(Number) : [], pct = of > 0 ? Math.min(99, Math.round(done / of * 100)) : null;   // the trophy's own counter, when PlayStation tracks one
+    const tprog = pct == null || t.e ? "" : `<span class="tprog" role="img" aria-label="${done} of ${of} done, ${pct}%"><span class="bar"><i style="width:${pct}%"></i></span><span class="num">${done} / ${of} · ${pct}%</span></span>`;
+    const when = t.e ? (t.at ? fmtDate(t.at) : "Earned") : (pct != null ? (done ? "In progress" : "Not started") : "Not earned");
     const guide = t.e ? "" : `<a class="tguide" href="${guideUrl(x.name, t.n)}" target="_blank" rel="noopener">Guide</a>`;
     return `<div class="trophy${t.e ? " got" : ""}"><span class="ticon">${t.i ? `<img src="${esc(t.i)}" alt="" loading="lazy" onerror="this.remove()">` : ""}</span>
-      <span class="tname"><b><span class="dot d-${t.t}" title="${t.t}"></span> ${esc(t.n)}</b>${desc}</span>
+      <span class="tname"><b><span class="dot d-${t.t}" title="${t.t}"></span> ${esc(t.n)}</b>${desc}${tprog}</span>
       <span class="tmeta">${t.r != null ? `<span class="rate${t.r < 5 ? " ultra" : ""}" title="${rarity(t.r)}">${t.r}%</span>` : ""}<span>${when}</span>${guide}</span></div>`;
   };
   body.innerHTML = avail.map(l => {
