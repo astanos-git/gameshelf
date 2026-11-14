@@ -5242,6 +5242,128 @@
    "sacrifice"
   ]
  ],
+ "dead-island-2": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "steam-achievements",
+   "Steam Achievements"
+  ],
+  [
+   "multiplayer",
+   "Multiplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "steam-cloud",
+   "Steam Cloud"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "co-op",
+   "Co-op"
+  ],
+  [
+   "cooperative",
+   "cooperative"
+  ],
+  [
+   "first-person",
+   "First-Person"
+  ],
+  [
+   "horror",
+   "Horror"
+  ],
+  [
+   "fps",
+   "FPS"
+  ],
+  [
+   "online-co-op",
+   "Online Co-Op"
+  ],
+  [
+   "gore",
+   "Gore"
+  ],
+  [
+   "survival",
+   "Survival"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "action-rpg",
+   "Action RPG"
+  ],
+  [
+   "controller",
+   "Controller"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "zombies",
+   "Zombies"
+  ],
+  [
+   "hack-and-slash",
+   "Hack and Slash"
+  ],
+  [
+   "character-customization",
+   "Character Customization"
+  ],
+  [
+   "survival-horror",
+   "Survival Horror"
+  ],
+  [
+   "post-apocalyptic",
+   "Post-apocalyptic"
+  ],
+  [
+   "crafting",
+   "Crafting"
+  ],
+  [
+   "combat",
+   "combat"
+  ],
+  [
+   "steam-trading-cards-2",
+   "Steam Trading Cards"
+  ],
+  [
+   "pve",
+   "PvE"
+  ],
+  [
+   "dark-humor",
+   "Dark Humor"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "postapokalipsis",
+   "\u041f\u043e\u0441\u0442\u0430\u043f\u043e\u043a\u0430\u043b\u0438\u043f\u0441\u0438\u0441"
+  ]
+ ],
  "dead-space": [
   [
    "singleplayer",
@@ -15714,6 +15836,52 @@
    "atmosphere"
   ]
  ],
+ "monster-jam": [
+  [
+   "battle",
+   "battle"
+  ],
+  [
+   "destruction",
+   "Destruction"
+  ],
+  [
+   "friends",
+   "friends"
+  ],
+  [
+   "race",
+   "race"
+  ],
+  [
+   "destroy",
+   "destroy"
+  ],
+  [
+   "environment",
+   "environment"
+  ],
+  [
+   "cars",
+   "cars"
+  ],
+  [
+   "school",
+   "school"
+  ],
+  [
+   "metal",
+   "metal"
+  ],
+  [
+   "blue",
+   "blue"
+  ],
+  [
+   "jam",
+   "jam"
+  ]
+ ],
  "mortal-kombat-x": [
   [
    "singleplayer",
@@ -24788,6 +24956,84 @@
   [
    "remeik",
    "\u0420\u0435\u043c\u0435\u0439\u043a"
+  ]
+ ],
+ "tomb-raider-iv-vi-remastered": [
+  [
+   "singleplayer",
+   "Singleplayer"
+  ],
+  [
+   "full-controller-support",
+   "Full controller support"
+  ],
+  [
+   "atmospheric",
+   "Atmospheric"
+  ],
+  [
+   "third-person",
+   "Third Person"
+  ],
+  [
+   "exploration",
+   "Exploration"
+  ],
+  [
+   "action-adventure",
+   "Action-Adventure"
+  ],
+  [
+   "third-person-shooter",
+   "Third-Person Shooter"
+  ],
+  [
+   "dark",
+   "Dark"
+  ],
+  [
+   "retro",
+   "Retro"
+  ],
+  [
+   "mystery",
+   "Mystery"
+  ],
+  [
+   "3d",
+   "3D"
+  ],
+  [
+   "parkour",
+   "Parkour"
+  ],
+  [
+   "stylized",
+   "Stylized"
+  ],
+  [
+   "drama",
+   "Drama"
+  ],
+  [
+   "3d-platformer",
+   "3D Platformer"
+  ],
+  [
+   "family-sharing",
+   "Family Sharing"
+  ],
+  [
+   "puzzle-platformer-2",
+   "Puzzle Platformer"
+  ],
+  [
+   "old-school",
+   "Old School"
+  ],
+  [
+   "precision-platformer-2",
+   "Precision Platformer"
   ]
  ],
  "trackmania-turbo": [

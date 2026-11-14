@@ -565,6 +565,17 @@
   ],
   "series": []
  },
+ "dead-island-2": {
+  "developers": [
+   "Deep Silver Dambuster Studios"
+  ],
+  "publishers": [
+   "Deep Silver Vienna"
+  ],
+  "series": [
+   "Dead Island"
+  ]
+ },
  "dead-space": {
   "developers": [
    "Visceral Games"
@@ -1351,8 +1362,8 @@
    "2K"
   ],
   "series": [
-   "2K Drive",
-   "Lego"
+   "Lego",
+   "2K Drive"
   ]
  },
  "lego-dc-super-villains": {
@@ -1677,8 +1688,8 @@
    "Electronic Arts"
   ],
   "series": [
-   "Need for Speed Hot Pursuit",
-   "Need for Speed"
+   "Need for Speed",
+   "Need for Speed Hot Pursuit"
   ]
  },
  "need-for-speed-payback": {

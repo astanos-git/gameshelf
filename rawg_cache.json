@@ -870,7 +870,15 @@
   "released": "2013-12-16",
   "slug": "dayz"
  },
- "Dead Island 2": null,
+ "Dead Island 2": {
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "metacritic": 75,
+  "released": "2023-04-21",
+  "slug": "dead-island-2"
+ },
  "Dead Space": {
   "genres": [
    "Adventure",
@@ -2472,7 +2480,15 @@
   "released": "2018-01-26",
   "slug": "monster-hunter-world-2"
  },
- "Monster Train 2": null,
+ "Monster Train 2": {
+  "genres": [
+   "Racing",
+   "Arcade"
+  ],
+  "metacritic": null,
+  "released": "2007-11-13",
+  "slug": "monster-jam"
+ },
  "Mortal Kombat X": {
   "genres": [
    "Action",
@@ -3852,7 +3868,16 @@
   "released": "2024-02-13",
   "slug": "tomb-raider-i-iii-remastered"
  },
- "Tomb Raider IV-VI Remastered": null,
+ "Tomb Raider IV-VI Remastered": {
+  "genres": [
+   "Adventure",
+   "Action",
+   "Puzzle"
+  ],
+  "metacritic": null,
+  "released": "2025-02-14",
+  "slug": "tomb-raider-iv-vi-remastered"
+ },
  "Trackmania Turbo": {
   "genres": [
    "Racing",

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T22:33:55+00:00",
+ "generated_at": "2026-11-14T13:12:42+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,15 +10,153 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 331,
-  "level_progress": 43,
+  "level_progress": 75,
   "earned": {
-   "bronze": 2772,
-   "silver": 653,
-   "gold": 224,
+   "bronze": 2779,
+   "silver": 656,
+   "gold": 225,
    "platinum": 23
   }
  },
  "games": [
+  {
+   "name": "Fortnite",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1819/sbaZEJ4jKCsdLAjQwVPSzMza.png",
+   "platforms": [
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2025-05-04T10:54:17Z",
+   "hours": 2.8,
+   "first_played": "2026-03-20T23:14:33.780000+00:00",
+   "last_played": "2026-11-14T13:11:36.750000+00:00",
+   "progress": 0,
+   "earned": {
+    "bronze": 0,
+    "silver": 0,
+    "gold": 0,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 32,
+    "silver": 10,
+    "gold": 3,
+    "platinum": 1
+   },
+   "last_trophy": "2025-07-06T09:29:03+00:00",
+   "has_trophies": true,
+   "months": {},
+   "trophy_lists": [
+    {
+     "id": "NPWR22022_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 0,
+     "groups": {}
+    }
+   ],
+   "rare": [],
+   "aliases": [
+    "Fortnite: Save the World"
+   ],
+   "trophies_earned": 0,
+   "trophies_total": 46,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-11-14T13:11:36.750000+00:00",
+   "hours_by_year": {
+    "2026": 2.8
+   },
+   "metacritic": null,
+   "genres": [
+    "Shooter",
+    "Action"
+   ],
+   "released": "2017-09-26",
+   "rawg_slug": "fornite-battle-royale",
+   "metacritic_source": null,
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "sci-fi",
+     "Sci-fi"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "comedy",
+     "Comedy"
+    ],
+    [
+     "island",
+     "island"
+    ],
+    [
+     "battle-royale-2",
+     "Battle Royale"
+    ],
+    [
+     "build",
+     "build"
+    ],
+    [
+     "solo",
+     "Solo"
+    ],
+    [
+     "dance",
+     "dance"
+    ],
+    [
+     "team",
+     "Team"
+    ],
+    [
+     "bus",
+     "bus"
+    ]
+   ],
+   "hltb": {
+    "main": 66.1,
+    "extra": 180.2,
+    "complete": 519.79,
+    "url": "https://howlongtobeat.com/game/3657"
+   },
+   "plat_rate": 0.1,
+   "rare_missing": 41,
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 46,
+   "easy": [
+    {
+     "n": "Gunsmith",
+     "t": "bronze",
+     "r": 11.6,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Take Out Those Husks",
+     "t": "bronze",
+     "r": 11.6,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Some Sort of Rocket",
+     "t": "bronze",
+     "r": 11.5,
+     "h": null,
+     "p": null
+    }
+   ]
+  },
   {
    "name": "Control",
    "image": "https://image.api.playstation.com/cdn/EP4040/CUSA11454_00/FSp6HKGXPLC5VrWg3GAjNEiq3ATYE5qu.png",
@@ -30,12 +168,12 @@
    "acquired": "2026-09-09T05:34:20Z",
    "hours": 1.4,
    "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-11-09T20:13:33.850000+00:00",
-   "progress": 36,
+   "last_played": "2026-11-14T08:41:23.030000+00:00",
+   "progress": 56,
    "earned": {
-    "bronze": 23,
-    "silver": 3,
-    "gold": 1,
+    "bronze": 30,
+    "silver": 6,
+    "gold": 2,
     "platinum": 0
    },
    "defined": {
@@ -44,19 +182,19 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-11-09T21:28:35+00:00",
+   "last_trophy": "2026-11-14T10:56:59+00:00",
    "has_trophies": true,
    "months": {
+    "2026-11": [
+     27,
+     6,
+     2,
+     0
+    ],
     "2026-10": [
      3,
      0,
      0,
-     0
-    ],
-    "2026-11": [
-     20,
-     3,
-     1,
      0
     ]
    },
@@ -66,7 +204,7 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 36,
+     "progress": 56,
      "groups": {
       "001": "The Foundation",
       "002": "Altered World Events",
@@ -76,49 +214,49 @@
    ],
    "rare": [
     {
-     "at": "2026-11-09T21:27:28+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/2b8f6d27-6962-4334-8863-b9df0cc78000.png",
+     "n": "Altered Manifestations May Occur",
+     "t": "bronze",
+     "r": 14.1,
+     "at": "2026-11-14T09:57:02+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/d7296725-3547-4218-b623-c938fcf3bcdd.png"
+    },
+    {
+     "n": "Inter-Departmental Cooperation",
+     "t": "bronze",
+     "r": 15.0,
+     "at": "2026-11-14T09:47:05+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/eab8992c-b6d0-49df-b472-b4b74deb0def.png"
+    },
+    {
      "n": "Living Archetypes",
+     "t": "bronze",
      "r": 15.3,
-     "t": "bronze"
+     "at": "2026-11-09T21:27:28+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/2b8f6d27-6962-4334-8863-b9df0cc78000.png"
     },
     {
-     "at": "2026-11-09T21:02:42+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/11eb6fb6-a30a-4ca2-9a98-fcdf65f5926e.png",
-     "n": "Astral Phenomena",
-     "r": 19.5,
-     "t": "silver"
+     "n": "Expert Parautilitarian",
+     "t": "bronze",
+     "r": 17.5,
+     "at": "2026-11-14T08:57:58+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/ab39deb2-cad7-471c-a21f-2c6fa953b073.png"
     },
     {
-     "at": "2026-11-07T00:45:41+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/19e9f4a9-ff69-4a03-a704-a92a00e7f77e.png",
-     "n": "The Importance of Synergy",
-     "r": 21.8,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-11-06T14:21:05+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9bf02e0e-a29d-46ab-acbf-6e2164aefbe6.png",
-     "n": "Cognitive Intruder",
-     "r": 22.9,
-     "t": "bronze"
-    },
-    {
-     "at": "2026-11-09T20:41:13+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/1c57afe6-c1a8-4cfe-b4a0-c31d431d74db.png",
-     "n": "Career Development",
-     "r": 24.3,
-     "t": "silver"
+     "n": "Interdimensional Defender",
+     "t": "silver",
+     "r": 19.1,
+     "at": "2026-11-14T09:39:41+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/dd9f9473-c0d4-4102-a978-2d109d12250a.png"
     }
    ],
    "aliases": [
     "Control Ultimate Edition"
    ],
-   "trophies_earned": 27,
+   "trophies_earned": 38,
    "trophies_total": 68,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-11-09T21:28:35+00:00",
+   "last_activity": "2026-11-14T10:56:59+00:00",
    "hours_by_year": {
     "2026": 1.4
    },
@@ -218,176 +356,30 @@
      "total": 11
     }
    ],
-   "missing_n": 41,
+   "missing_n": 30,
    "easy": [
     {
-     "n": "The Face of the Enemy",
+     "n": "Familiar Methodologies",
      "t": "bronze",
-     "r": 23.2,
+     "r": 15.6,
      "h": true,
      "p": null
     },
     {
-     "n": "Discerning the Pattern",
-     "t": "silver",
-     "r": 22.5,
+     "n": "War Games",
+     "t": "bronze",
+     "r": 14.2,
      "h": null,
-     "p": "21/25"
+     "p": "0/5"
     },
     {
-     "n": "Finnish Tango",
+     "n": "Aggressive Growth",
      "t": "bronze",
-     "r": 21.7,
+     "r": 13.1,
      "h": true,
      "p": null
     }
    ]
-  },
-  {
-   "name": "Monster Train 2",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1815/3ea7456f6925d14bd479d7b9bd251be1575e0e5fc37ad88d.png",
-   "platforms": [
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-11-08T18:25:14Z",
-   "hours": 0.0,
-   "first_played": null,
-   "last_played": null,
-   "progress": null,
-   "earned": null,
-   "defined": null,
-   "last_trophy": null,
-   "has_trophies": false,
-   "months": {},
-   "trophy_lists": [],
-   "rare": [],
-   "via_plus": true,
-   "aliases": [],
-   "trophies_earned": 0,
-   "trophies_total": 0,
-   "platinum": false,
-   "status": "unplayed",
-   "last_activity": null,
-   "hours_by_year": {},
-   "metacritic": null,
-   "genres": [],
-   "released": null,
-   "rawg_slug": null,
-   "metacritic_source": null,
-   "series": [],
-   "developers": [],
-   "publishers": [],
-   "tags": [],
-   "hltb": {
-    "main": 5.66,
-    "extra": 37.48,
-    "complete": 133.87,
-    "url": "https://howlongtobeat.com/game/164271"
-   },
-   "first_trophy_at": null,
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 0,
-   "easy": []
-  },
-  {
-   "name": "Dead Island 2",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1916/fVsiqUOxnTrnyl4woUQyWda5.png",
-   "platforms": [
-    "PS4",
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-11-08T18:24:50Z",
-   "hours": 0.0,
-   "first_played": null,
-   "last_played": null,
-   "progress": null,
-   "earned": null,
-   "defined": null,
-   "last_trophy": null,
-   "has_trophies": false,
-   "months": {},
-   "trophy_lists": [],
-   "rare": [],
-   "via_plus": true,
-   "aliases": [],
-   "trophies_earned": 0,
-   "trophies_total": 0,
-   "platinum": false,
-   "status": "unplayed",
-   "last_activity": null,
-   "hours_by_year": {},
-   "metacritic": 73,
-   "genres": [],
-   "released": null,
-   "rawg_slug": null,
-   "metacritic_source": "wikipedia",
-   "series": [],
-   "developers": [],
-   "publishers": [],
-   "tags": [],
-   "hltb": {
-    "main": 16.25,
-    "extra": 26.69,
-    "complete": 39.97,
-    "url": "https://howlongtobeat.com/game/21273"
-   },
-   "first_trophy_at": null,
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 0,
-   "easy": []
-  },
-  {
-   "name": "Tomb Raider IV-VI Remastered",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202409/1221/c785b0366d8f84a18dd17a0d046fdee92ccd6195d79c81a1.png",
-   "platforms": [
-    "PS4",
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2026-11-08T18:23:45Z",
-   "hours": 0.0,
-   "first_played": null,
-   "last_played": null,
-   "progress": null,
-   "earned": null,
-   "defined": null,
-   "last_trophy": null,
-   "has_trophies": false,
-   "months": {},
-   "trophy_lists": [],
-   "rare": [],
-   "via_plus": true,
-   "aliases": [],
-   "trophies_earned": 0,
-   "trophies_total": 0,
-   "platinum": false,
-   "status": "unplayed",
-   "last_activity": null,
-   "hours_by_year": {},
-   "metacritic": 65,
-   "genres": [],
-   "released": null,
-   "rawg_slug": null,
-   "metacritic_source": "wikipedia",
-   "series": [],
-   "developers": [],
-   "publishers": [],
-   "tags": [],
-   "hltb": {
-    "main": 35.33,
-    "extra": 49.74,
-    "complete": 72.13,
-    "url": "https://howlongtobeat.com/game/157979"
-   },
-   "first_trophy_at": null,
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 0,
-   "easy": []
   },
   {
    "name": "Blue Prince",
@@ -399,7 +391,7 @@
    "acquired": "2025-12-14T16:02:26Z",
    "hours": 9.6,
    "first_played": "2026-10-26T20:12:49.930000+00:00",
-   "last_played": "2026-11-08T16:21:35.150000+00:00",
+   "last_played": "2026-11-13T14:06:05.560000+00:00",
    "progress": 0,
    "earned": {
     "bronze": 0,
@@ -432,7 +424,7 @@
    "trophies_total": 17,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-11-08T16:21:35.150000+00:00",
+   "last_activity": "2026-11-13T14:06:05.560000+00:00",
    "hours_by_year": {
     "2026": 9.6
    },
@@ -534,6 +526,311 @@
      "p": null
     }
    ]
+  },
+  {
+   "name": "Monster Train 2",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1815/3ea7456f6925d14bd479d7b9bd251be1575e0e5fc37ad88d.png",
+   "platforms": [
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-11-08T18:25:14Z",
+   "hours": 0.0,
+   "first_played": null,
+   "last_played": null,
+   "progress": null,
+   "earned": null,
+   "defined": null,
+   "last_trophy": null,
+   "has_trophies": false,
+   "months": {},
+   "trophy_lists": [],
+   "rare": [],
+   "via_plus": true,
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 0,
+   "platinum": false,
+   "status": "unplayed",
+   "last_activity": null,
+   "hours_by_year": {},
+   "metacritic": null,
+   "genres": [
+    "Racing",
+    "Arcade"
+   ],
+   "released": "2007-11-13",
+   "rawg_slug": "monster-jam",
+   "metacritic_source": null,
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "battle",
+     "battle"
+    ],
+    [
+     "destruction",
+     "Destruction"
+    ],
+    [
+     "friends",
+     "friends"
+    ],
+    [
+     "race",
+     "race"
+    ],
+    [
+     "destroy",
+     "destroy"
+    ],
+    [
+     "environment",
+     "environment"
+    ],
+    [
+     "cars",
+     "cars"
+    ],
+    [
+     "school",
+     "school"
+    ],
+    [
+     "metal",
+     "metal"
+    ],
+    [
+     "blue",
+     "blue"
+    ],
+    [
+     "jam",
+     "jam"
+    ]
+   ],
+   "hltb": {
+    "main": 5.66,
+    "extra": 37.48,
+    "complete": 133.87,
+    "url": "https://howlongtobeat.com/game/164271"
+   },
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 0,
+   "easy": []
+  },
+  {
+   "name": "Dead Island 2",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1916/fVsiqUOxnTrnyl4woUQyWda5.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-11-08T18:24:50Z",
+   "hours": 0.0,
+   "first_played": null,
+   "last_played": null,
+   "progress": null,
+   "earned": null,
+   "defined": null,
+   "last_trophy": null,
+   "has_trophies": false,
+   "months": {},
+   "trophy_lists": [],
+   "rare": [],
+   "via_plus": true,
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 0,
+   "platinum": false,
+   "status": "unplayed",
+   "last_activity": null,
+   "hours_by_year": {},
+   "metacritic": 75,
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "released": "2023-04-21",
+   "rawg_slug": "dead-island-2",
+   "metacritic_source": "rawg",
+   "series": [
+    "Dead Island"
+   ],
+   "developers": [
+    "Deep Silver Dambuster Studios"
+   ],
+   "publishers": [
+    "Deep Silver Vienna"
+   ],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "horror",
+     "Horror"
+    ],
+    [
+     "fps",
+     "FPS"
+    ],
+    [
+     "gore",
+     "Gore"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "action-rpg",
+     "Action RPG"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "zombies",
+     "Zombies"
+    ],
+    [
+     "hack-and-slash",
+     "Hack and Slash"
+    ],
+    [
+     "character-customization",
+     "Character Customization"
+    ]
+   ],
+   "hltb": {
+    "main": 16.25,
+    "extra": 26.69,
+    "complete": 39.97,
+    "url": "https://howlongtobeat.com/game/21273"
+   },
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 0,
+   "easy": []
+  },
+  {
+   "name": "Tomb Raider IV-VI Remastered",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202409/1221/c785b0366d8f84a18dd17a0d046fdee92ccd6195d79c81a1.png",
+   "platforms": [
+    "PS4",
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2026-11-08T18:23:45Z",
+   "hours": 0.0,
+   "first_played": null,
+   "last_played": null,
+   "progress": null,
+   "earned": null,
+   "defined": null,
+   "last_trophy": null,
+   "has_trophies": false,
+   "months": {},
+   "trophy_lists": [],
+   "rare": [],
+   "via_plus": true,
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 0,
+   "platinum": false,
+   "status": "unplayed",
+   "last_activity": null,
+   "hours_by_year": {},
+   "metacritic": 65,
+   "genres": [
+    "Adventure",
+    "Action",
+    "Puzzle"
+   ],
+   "released": "2025-02-14",
+   "rawg_slug": "tomb-raider-iv-vi-remastered",
+   "metacritic_source": "wikipedia",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "action-adventure",
+     "Action-Adventure"
+    ],
+    [
+     "third-person-shooter",
+     "Third-Person Shooter"
+    ],
+    [
+     "dark",
+     "Dark"
+    ],
+    [
+     "retro",
+     "Retro"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "parkour",
+     "Parkour"
+    ],
+    [
+     "stylized",
+     "Stylized"
+    ],
+    [
+     "drama",
+     "Drama"
+    ],
+    [
+     "3d-platformer",
+     "3D Platformer"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ]
+   ],
+   "hltb": {
+    "main": 35.33,
+    "extra": 49.74,
+    "complete": 72.13,
+    "url": "https://howlongtobeat.com/game/157979"
+   },
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 0,
+   "easy": []
   },
   {
    "name": "I Have No Mouth, and I Must Scream",
@@ -1294,144 +1591,6 @@
      "t": "bronze",
      "r": 51.7,
      "h": true,
-     "p": null
-    }
-   ]
-  },
-  {
-   "name": "Fortnite",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1819/sbaZEJ4jKCsdLAjQwVPSzMza.png",
-   "platforms": [
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2025-05-04T10:54:17Z",
-   "hours": 2.8,
-   "first_played": "2026-03-20T23:14:33.780000+00:00",
-   "last_played": "2026-10-10T18:04:46.340000+00:00",
-   "progress": 0,
-   "earned": {
-    "bronze": 0,
-    "silver": 0,
-    "gold": 0,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 32,
-    "silver": 10,
-    "gold": 3,
-    "platinum": 1
-   },
-   "last_trophy": "2025-07-06T09:29:03+00:00",
-   "has_trophies": true,
-   "months": {},
-   "trophy_lists": [
-    {
-     "id": "NPWR22022_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 0,
-     "groups": {}
-    }
-   ],
-   "rare": [],
-   "aliases": [
-    "Fortnite: Save the World"
-   ],
-   "trophies_earned": 0,
-   "trophies_total": 46,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-10-10T18:04:46.340000+00:00",
-   "hours_by_year": {
-    "2026": 2.8
-   },
-   "metacritic": null,
-   "genres": [
-    "Shooter",
-    "Action"
-   ],
-   "released": "2017-09-26",
-   "rawg_slug": "fornite-battle-royale",
-   "metacritic_source": null,
-   "series": [],
-   "developers": [],
-   "publishers": [],
-   "tags": [
-    [
-     "sci-fi",
-     "Sci-fi"
-    ],
-    [
-     "sandbox",
-     "Sandbox"
-    ],
-    [
-     "comedy",
-     "Comedy"
-    ],
-    [
-     "island",
-     "island"
-    ],
-    [
-     "battle-royale-2",
-     "Battle Royale"
-    ],
-    [
-     "build",
-     "build"
-    ],
-    [
-     "solo",
-     "Solo"
-    ],
-    [
-     "dance",
-     "dance"
-    ],
-    [
-     "team",
-     "Team"
-    ],
-    [
-     "bus",
-     "bus"
-    ]
-   ],
-   "hltb": {
-    "main": 66.1,
-    "extra": 180.2,
-    "complete": 519.79,
-    "url": "https://howlongtobeat.com/game/3657"
-   },
-   "plat_rate": 0.1,
-   "rare_missing": 41,
-   "first_trophy_at": null,
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 46,
-   "easy": [
-    {
-     "n": "Gunsmith",
-     "t": "bronze",
-     "r": 11.6,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "Take Out Those Husks",
-     "t": "bronze",
-     "r": 11.6,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "Some Sort of Rocket",
-     "t": "bronze",
-     "r": 11.5,
-     "h": null,
      "p": null
     }
    ]
@@ -13478,8 +13637,8 @@
    "rawg_slug": "need-for-speed-hot-pursuit-remastered",
    "metacritic_source": "rawg",
    "series": [
-    "Need for Speed Hot Pursuit",
-    "Need for Speed"
+    "Need for Speed",
+    "Need for Speed Hot Pursuit"
    ],
    "developers": [
     "Stellar Entertainment",
@@ -18217,8 +18376,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "2K Drive",
-    "Lego"
+    "Lego",
+    "2K Drive"
    ],
    "developers": [
     "Visual Concepts"
@@ -57344,7 +57503,9 @@
    "2026-11-05": 5,
    "2026-11-06": 5,
    "2026-11-07": 3,
-   "2026-11-09": 5
+   "2026-11-09": 5,
+   "2026-11-13": 2,
+   "2026-11-14": 9
   },
   "weekday_hour": {
    "2011": [
@@ -57631,7 +57792,7 @@
     41,
     49,
     46,
-    58,
+    60,
     32,
     15,
     4,
@@ -57640,15 +57801,15 @@
     88,
     80,
     55,
-    52,
-    33,
+    55,
+    34,
     10,
     2,
     0,
     0,
     2,
-    4,
-    17,
+    6,
+    20,
     15,
     17,
     14,
@@ -60181,7 +60342,7 @@
     15,
     3,
     7,
-    20,
+    22,
     8,
     1,
     0,
@@ -60190,15 +60351,15 @@
     9,
     4,
     4,
-    3,
-    0,
+    6,
+    1,
     1,
     0,
     0,
     0,
     0,
-    0,
-    4,
+    2,
+    7,
     4,
     2,
     0,
@@ -60560,8 +60721,8 @@
    "all": {
     "buckets": [
      66,
-     484,
-     2130,
+     485,
+     2140,
      992
     ],
     "score": 25
@@ -60695,8 +60856,8 @@
    "2026": {
     "buckets": [
      9,
-     48,
-     181,
+     49,
+     191,
      60
     ],
     "score": 28
