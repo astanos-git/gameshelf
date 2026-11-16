@@ -1,24 +1,23 @@
 {
- "week": "2026-W45",
- "generated_at": "2026-11-02T05:07:29+00:00",
+ "week": "2026-W47",
+ "generated_at": "2026-11-16T12:41:15+00:00",
  "picks": [
   {
-   "slug": "the-elder-scrolls-v-skyrim",
-   "name": "The Elder Scrolls V: Skyrim",
-   "image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg",
-   "metacritic": 94,
-   "released": "2011-11-11",
+   "slug": "final-fantasy-xvi",
+   "name": "Final Fantasy XVI",
+   "image": "https://media.rawg.io/media/games/22e/22e68bb62b3013283972cecf98ed51dc.jpg",
+   "metacritic": 88,
+   "released": "2023-06-22",
    "genres": [
     "Action",
     "RPG"
    ],
    "platforms": [
-    "PS5",
-    "PS4"
+    "PS5"
    ],
-   "length": 110,
-   "why": "Close to The Witcher 3: Wild Hunt — Remastered, which you enjoyed; matches your taste for atmospheric, story rich, open world; about 110 h.",
-   "url": "https://rawg.io/games/the-elder-scrolls-v-skyrim",
+   "length": 60,
+   "why": "Close to FINAL FANTASY VII REBIRTH, which you enjoyed; matches your taste for atmospheric, story rich, rpg; about 60 h.",
+   "url": "https://rawg.io/games/final-fantasy-xvi",
    "tags": [
     [
      "atmospheric",
@@ -33,57 +32,116 @@
      "Story Rich"
     ],
     [
-     "open-world",
-     "Open World"
-    ],
-    [
      "fantasy",
      "Fantasy"
     ],
     [
-     "sandbox",
-     "Sandbox"
+     "gore",
+     "Gore"
+    ],
+    [
+     "violent",
+     "Violent"
     ],
     [
      "action-rpg",
      "Action RPG"
     ],
     [
-     "role-playing",
-     "role-playing"
+     "captions-available",
+     "Captions available"
     ],
     [
-     "moddable",
-     "Moddable"
+     "dark-fantasy",
+     "Dark Fantasy"
     ],
     [
-     "character-customization",
-     "Character Customization"
+     "cinematic",
+     "Cinematic"
     ]
    ]
   },
   {
-   "slug": "anno-mutationem",
-   "name": "Anno: Mutationem",
-   "image": "https://media.rawg.io/media/games/b1d/b1d0b2d6b4cbc94d8c2066353367d13e.jpg",
-   "metacritic": 73,
-   "released": "2022-03-16",
+   "slug": "death-road-to-canada",
+   "name": "Death Road to Canada",
+   "image": "https://media.rawg.io/media/screenshots/e1c/e1c6229f98a42b082d911fdcf27615bd.jpeg",
+   "metacritic": 91,
+   "released": "2016-07-20",
    "genres": [
-    "Platformer",
+    "Indie",
     "Adventure",
     "Action"
    ],
    "platforms": [
-    "PS5",
     "PS4"
    ],
-   "length": 15,
-   "why": "Close to Horizon Zero Dawn™, which you enjoyed; matches your taste for story rich, action-adventure, exploration; about 15 h, close to your usual 17 h.",
-   "url": "https://rawg.io/games/anno-mutationem",
+   "length": 23,
+   "why": "Close to ELDEN RING, which you enjoyed; matches your taste for rpg, survival, difficult; about 23 h, close to your usual 17 h.",
+   "url": "https://rawg.io/games/death-road-to-canada",
    "tags": [
     [
      "rpg",
      "RPG"
+    ],
+    [
+     "cooperative",
+     "cooperative"
+    ],
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "difficult",
+     "Difficult"
+    ],
+    [
+     "survival",
+     "Survival"
+    ],
+    [
+     "comedy",
+     "Comedy"
+    ],
+    [
+     "pixel-graphics",
+     "Pixel Graphics"
+    ],
+    [
+     "zombies",
+     "Zombies"
+    ],
+    [
+     "character-customization",
+     "Character Customization"
+    ],
+    [
+     "controller-support",
+     "controller support"
+    ]
+   ]
+  },
+  {
+   "slug": "the-swapper",
+   "name": "The Swapper",
+   "image": "https://media.rawg.io/media/games/6fc/6fcb1c529c764700d55f3bbc1b0fbb5b.jpg",
+   "metacritic": 87,
+   "released": "2013-05-13",
+   "genres": [
+    "Adventure",
+    "Action",
+    "Puzzle"
+   ],
+   "platforms": [
+    "PS4"
+   ],
+   "length": 5,
+   "why": "Close to Hollow Knight, which you enjoyed; matches your taste for atmospheric, story rich, exploration; about 5 h.",
+   "url": "https://rawg.io/games/the-swapper",
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
     ],
     [
      "story-rich",
@@ -94,80 +152,32 @@
      "Sci-fi"
     ],
     [
+     "horror",
+     "Horror"
+    ],
+    [
      "exploration",
      "Exploration"
     ],
     [
-     "female-protagonist",
-     "Female Protagonist"
+     "difficult",
+     "Difficult"
     ],
     [
-     "action-adventure",
-     "Action-Adventure"
+     "space",
+     "Space"
     ],
     [
-     "pixel-graphics",
-     "Pixel Graphics"
+     "mystery",
+     "Mystery"
     ],
     [
-     "action-rpg",
-     "Action RPG"
+     "side-scroller",
+     "Side Scroller"
     ],
     [
-     "anime",
-     "Anime"
-    ],
-    [
-     "futuristic",
-     "Futuristic"
-    ]
-   ]
-  },
-  {
-   "slug": "yakuza-kiwami-2",
-   "name": "Yakuza Kiwami 2",
-   "image": "https://media.rawg.io/media/games/b32/b32735e3f7d95959cc39265f555f2aa8.jpg",
-   "metacritic": 85,
-   "released": "2017-12-07",
-   "genres": [
-    "Adventure",
-    "Action",
-    "RPG"
-   ],
-   "platforms": [
-    "PS4"
-   ],
-   "length": 36,
-   "why": "Close to Ghost of Tsushima, which you enjoyed; matches your taste for atmospheric, action-adventure, rpg; about 36 h.",
-   "url": "https://rawg.io/games/yakuza-kiwami-2",
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "rpg",
-     "RPG"
-    ],
-    [
-     "comedy",
-     "Comedy"
-    ],
-    [
-     "violent",
-     "Violent"
-    ],
-    [
-     "action-adventure",
-     "Action-Adventure"
-    ],
-    [
-     "sexual-content",
-     "Sexual Content"
-    ],
-    [
-     "beat-em-up",
-     "Beat 'em up"
+     "metroidvania",
+     "Metroidvania"
     ]
    ]
   }
@@ -192,6 +202,18 @@
   "usual_length": 17
  },
  "history": [
+  {
+   "slug": "final-fantasy-xvi",
+   "week": "2026-W47"
+  },
+  {
+   "slug": "death-road-to-canada",
+   "week": "2026-W47"
+  },
+  {
+   "slug": "the-swapper",
+   "week": "2026-W47"
+  },
   {
    "slug": "the-elder-scrolls-v-skyrim",
    "week": "2026-W45"

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T17:34:58+00:00",
+ "generated_at": "2026-11-16T12:39:22+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,9 +10,9 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 331,
-  "level_progress": 78,
+  "level_progress": 80,
   "earned": {
-   "bronze": 2779,
+   "bronze": 2780,
    "silver": 657,
    "gold": 225,
    "platinum": 23
@@ -28,12 +28,12 @@
    ],
    "owned": true,
    "acquired": "2026-09-09T05:34:20Z",
-   "hours": 1.7,
+   "hours": 2.8,
    "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-11-14T16:40:58.480000+00:00",
-   "progress": 58,
+   "last_played": "2026-11-15T09:45:16.830000+00:00",
+   "progress": 59,
    "earned": {
-    "bronze": 30,
+    "bronze": 31,
     "silver": 7,
     "gold": 2,
     "platinum": 0
@@ -44,11 +44,11 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-11-14T16:40:36+00:00",
+   "last_trophy": "2026-11-15T09:38:42+00:00",
    "has_trophies": true,
    "months": {
     "2026-11": [
-     27,
+     28,
      7,
      2,
      0
@@ -66,7 +66,7 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 58,
+     "progress": 59,
      "groups": {
       "001": "The Foundation",
       "002": "Altered World Events",
@@ -75,6 +75,13 @@
     }
    ],
    "rare": [
+    {
+     "n": "Head of Communications",
+     "t": "bronze",
+     "r": 11.0,
+     "at": "2026-11-15T08:48:01+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/9ed1646c-2c53-42f7-8f0a-a3ca38561dd5.png"
+    },
     {
      "n": "FBC Crisis Solution Task Force",
      "t": "silver",
@@ -102,25 +109,18 @@
      "r": 15.3,
      "at": "2026-11-09T21:27:28+00:00",
      "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/2b8f6d27-6962-4334-8863-b9df0cc78000.png"
-    },
-    {
-     "n": "Expert Parautilitarian",
-     "t": "bronze",
-     "r": 17.5,
-     "at": "2026-11-14T08:57:58+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/ab39deb2-cad7-471c-a21f-2c6fa953b073.png"
     }
    ],
    "aliases": [
     "Control Ultimate Edition"
    ],
-   "trophies_earned": 39,
+   "trophies_earned": 40,
    "trophies_total": 68,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-11-14T16:40:58.480000+00:00",
+   "last_activity": "2026-11-15T09:45:16.830000+00:00",
    "hours_by_year": {
-    "2026": 1.7
+    "2026": 2.8
    },
    "metacritic": 84,
    "genres": [
@@ -218,7 +218,7 @@
      "total": 11
     }
    ],
-   "missing_n": 29,
+   "missing_n": 28,
    "easy": [
     {
      "n": "Familiar Methodologies",
@@ -58214,7 +58214,8 @@
    "2026-11-07": 3,
    "2026-11-09": 5,
    "2026-11-13": 2,
-   "2026-11-14": 10
+   "2026-11-14": 10,
+   "2026-11-15": 1
   },
   "weekday_hour": {
    "2011": [
@@ -58541,7 +58542,7 @@
     2,
     1,
     1,
-    2,
+    3,
     16,
     17,
     17,
@@ -61091,7 +61092,7 @@
     0,
     0,
     0,
-    1,
+    2,
     6,
     1,
     5,
@@ -61430,7 +61431,7 @@
    "all": {
     "buckets": [
      66,
-     486,
+     487,
      2140,
      992
     ],
@@ -61565,7 +61566,7 @@
    "2026": {
     "buckets": [
      9,
-     50,
+     51,
      191,
      60
     ],

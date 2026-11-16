@@ -9,6 +9,16 @@
   "concept": "10017682",
   "page": "control-resonant"
  },
+ "holstin": {
+  "checked": "2026-11-16",
+  "concept": null,
+  "page": null
+ },
+ "hopetown": {
+  "checked": "2026-11-16",
+  "concept": null,
+  "page": null
+ },
  "intergalactic-the-heretic-prophet": {
   "checked": "2026-11-09",
   "concept": null,
@@ -34,10 +44,20 @@
   "concept": "10017620",
   "page": "phantom-blade-zero"
  },
+ "pragmata": {
+  "checked": "2026-11-16",
+  "concept": "10002075",
+  "page": "pragmata"
+ },
  "ratchet-clank-rift-apart": {
   "checked": "2026-11-09",
   "concept": "10000669",
   "page": "ratchet-and-clank-rift-apart"
+ },
+ "resident-evil-9-requiem": {
+  "checked": "2026-11-16",
+  "concept": null,
+  "page": null
  },
  "shadows-die-twice": {
   "checked": "2026-11-09",

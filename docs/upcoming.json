@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T05:08:51+00:00",
+ "generated_at": "2026-11-16T12:42:54+00:00",
  "upcoming": [
   {
    "slug": "ananta",
@@ -39,7 +39,7 @@
    "cats": [
     "big"
    ],
-   "added": 111,
+   "added": 110,
    "reason": "Big release, much awaited"
   },
   {
@@ -60,29 +60,8 @@
     "taste",
     "big"
    ],
-   "added": 117,
+   "added": 116,
    "reason": "Your taste: action"
-  },
-  {
-   "slug": "god-of-war-laufey",
-   "name": "God of War Laufey",
-   "image": "https://media.rawg.io/media/games/d9e/d9e30f2182a8535a0ef02949dfb1ffed.jpg",
-   "released": "2027-02-16",
-   "tba": false,
-   "metacritic": null,
-   "genres": [
-    "Adventure",
-    "Action"
-   ],
-   "platforms": [
-    "PS5"
-   ],
-   "url": "https://rawg.io/games/god-of-war-laufey",
-   "cats": [
-    "taste"
-   ],
-   "added": 44,
-   "reason": "Your taste: adventure, action"
   },
   {
    "slug": "fable2020",
@@ -102,7 +81,7 @@
    "cats": [
     "big"
    ],
-   "added": 376,
+   "added": 375,
    "reason": "Big release, much awaited"
   },
   {
@@ -125,8 +104,29 @@
     "taste",
     "big"
    ],
-   "added": 368,
+   "added": 369,
    "reason": "Your taste: atmospheric, exploration"
+  },
+  {
+   "slug": "god-of-war-laufey",
+   "name": "God of War Laufey",
+   "image": "https://media.rawg.io/media/games/d9e/d9e30f2182a8535a0ef02949dfb1ffed.jpg",
+   "released": "2027-05-20",
+   "tba": false,
+   "metacritic": null,
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS5"
+   ],
+   "url": "https://rawg.io/games/god-of-war-laufey",
+   "cats": [
+    "taste"
+   ],
+   "added": 46,
+   "reason": "Your taste: adventure, action"
   },
   {
    "slug": "tomb-raider-catalyst",
@@ -212,7 +212,7 @@
    "cats": [
     "taste"
    ],
-   "added": 15,
+   "added": 19,
    "reason": "Your taste: adventure, action"
   },
   {
@@ -234,7 +234,7 @@
     "taste",
     "big"
    ],
-   "added": 1044,
+   "added": 1045,
    "reason": "Your taste: action"
   },
   {
@@ -343,6 +343,25 @@
   }
  ],
  "details": {
+  "death-road-to-canada": {
+   "name": "Death Road to Canada",
+   "released": "2016-07-20",
+   "tba": false,
+   "description": "Death Road to Canada is a Randomly Generated Road Trip Simulator. You control and manage a car full of jerks as they explore cities, recruit weird people, argue with each other, and face gigantic swarms of slow zombies.",
+   "developers": [
+    "Noodlecake Studios",
+    "Rocketcat Games",
+    "Rocketcat"
+   ],
+   "publishers": [
+    "Rocketcat Games",
+    "Rocketcat",
+    "Ukiyo Publishing"
+   ],
+   "website": "http://www.deathroadtocanada.com",
+   "metacritic": 91,
+   "esrb": null
+  },
   "marvels-spider-man-3": {
    "name": "Marvel's Spider-Man 3",
    "released": null,
@@ -358,208 +377,50 @@
    "metacritic": null,
    "esrb": null
   },
-  "marvels-venom": {
-   "name": "Marvel's Venom",
-   "released": null,
-   "tba": true,
-   "description": "Marvel’s Venom is currently in development by Insomniac Games for PlayStation 5. Created in collaboration with Marvel Games and PlayStation.",
+  "final-fantasy-xvi": {
+   "name": "Final Fantasy XVI",
+   "released": "2023-06-22",
+   "tba": false,
+   "description": "An epic dark fantasy world where the fate of the land is decided by the mighty Eikons and the Dominants who wield them.",
    "developers": [
-    "Insomniac Games"
+    "Square Enix"
    ],
    "publishers": [
-    "Sony Interactive Entertainment"
+    "Square Enix"
    ],
-   "website": null,
-   "metacritic": null,
-   "esrb": "Rating Pending"
-  },
-  "tomb-raider-legacy-of-atlantis": {
-   "name": "Tomb Raider: Legacy of Atlantis",
-   "released": "2027-02-12",
-   "tba": false,
-   "description": "",
-   "developers": [
-    "Crystal Dynamics"
-   ],
-   "publishers": [],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "tomb-raider-catalyst": {
-   "name": "Tomb Raider: Catalyst",
-   "released": "2027-12-31",
-   "tba": false,
-   "description": "Tomb Raider: Catalyst marks a bold direction for the series as Lara Croft embarks on a new adventure across Northern India. Tomb Raider: Catalyst is set in the wake of a mythical cataclysm that has unleashed ancient secrets and awakened the mysterious forces that guard them.",
-   "developers": [
-    "Crystal Dynamics"
-   ],
-   "publishers": [],
-   "website": null,
-   "metacritic": null,
+   "website": "https://na.finalfantasyxvi.com/",
+   "metacritic": 88,
    "esrb": "Mature"
   },
-  "fable2020": {
-   "name": "Fable",
-   "released": "2027-02-23",
-   "tba": false,
-   "description": "Explore a land of fantastical creatures and wondrous places. What does it mean to be a Hero? Well, in the fairytale land of Albion, that is entirely up to you. With a dark threat looming, your choices will change Albion forever.",
+  "intergalactic-the-heretic-prophet": {
+   "name": "Intergalactic: The Heretic Prophet",
+   "released": null,
+   "tba": true,
+   "description": "",
    "developers": [
-    "Playground Games"
-   ],
-   "publishers": [
-    "Xbox Game Studios"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "resident-evil-veronica": {
-   "name": "Resident Evil Veronica",
-   "released": "2027-12-31",
-   "tba": false,
-   "description": "Resident Evil Veronica is a remake of 2000's Resident Evil Code: Veronica. In 2027, madness and intrigue, love and hate all combine to create a chilling new entry in survival horror.",
-   "developers": [
-    "Capcom"
-   ],
-   "publishers": [
-    "Capcom"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "the-expanse-osiris-reborn": {
-   "name": "The Expanse: Osiris Reborn",
-   "released": "2027-12-31",
-   "tba": false,
-   "description": "The Expanse: Osiris Reborn is a third-person Action RPG set in the world of The Expanse. You are not a hero, but a simple mercenary who found himself in the wrong place at the wrong time. Assemble a team, break through the web of lies and leave your mark on the history of the solar system.",
-   "developers": [
-    "Owlcat Games"
-   ],
-   "publishers": [
-    "Owlcat Games"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "phantom-blade-zero": {
-   "description": "Be the Dark Raider exiled by \"The Order\", embark on the path of vengeance, and uncover the darkest secrets of Wulin!",
-   "developers": [
-    "S-Game"
-   ],
-   "esrb": null,
-   "metacritic": null,
-   "name": "Phantom Blade Zero",
-   "publishers": [
-    "S-Game"
-   ],
-   "released": "2026-10-29",
-   "tba": false,
-   "website": null
-  },
-  "kena-scars-of-kosmora": {
-   "name": "Kena: Scars of Kosmora",
-   "released": "2027-12-31",
-   "tba": false,
-   "description": "In Kena: Scars of Kosmora, Kena is older and renowned as a Spirit Guide. In hopes of finding answers to the affliction she has endured all her life, Kena travels to the mysterious island of Kosmora. Home to distinct cultures and regions, Kosmora is full of buried secrets from a tragic past.",
-   "developers": [
-    "Ember Lab"
+    "Naughty Dog"
    ],
    "publishers": [],
    "website": null,
    "metacritic": null,
    "esrb": null
   },
-  "the-witcher-remake": {
-   "name": "The Witcher: Remake",
-   "released": null,
-   "tba": true,
-   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
+  "shadows-die-twice": {
+   "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
    "developers": [
-    "Fool's Theory"
+    "FromSoftware"
    ],
+   "esrb": "Mature",
+   "metacritic": 90,
+   "name": "Sekiro: Shadows Die Twice",
    "publishers": [
-    "CD PROJEKT RED"
+    "FromSoftware",
+    "Activision Value Publishing",
+    "方块游戏"
    ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
-  },
-  "no-rest-for-the-wicked-2024": {
-   "name": "No Rest for the Wicked",
-   "released": "2027-03-31",
+   "released": "2019-03-22",
    "tba": false,
-   "description": "From Moon Studios, the award-winning developers of Ori and the Blind Forest and Ori and the Will of the Wisps comes No Rest for the Wicked, a visceral, precision Action RPG set to reinvent the genre. The year is 841 – King Harol is dead. As word of his death echoes throughout the kingdom, the crown passes to his arrogant, yet untested son Magnus.",
-   "developers": [
-    "Moon Studios"
-   ],
-   "publishers": [
-    "Private Division"
-   ],
-   "website": "https://store.privatedivision.com/en/game/no-rest-for-the-wicked",
-   "metacritic": null,
-   "esrb": null
-  },
-  "prince-of-persia-the-sands-of-time-remake": {
-   "name": "Prince of Persia: The Sands of Time Remake",
-   "released": null,
-   "tba": true,
-   "description": "The Prince has returned! Experience the classic tale that redefined action-adventure gaming in this full-scale remake for a new generation. - You are the Prince of Persia. Embark on a journey to save your kingdom from the treacherous Vizier. - Master the Sands of Time and use your dagger to reverse, accelerate, freeze, and slow time itself. - Fight cursed enemies and solve puzzles along the way.",
-   "developers": [
-    "Ubisoft"
-   ],
-   "publishers": [
-    "Ubisoft Entertainment"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": "Teen"
-  },
-  "yakuza-kiwami-2": {
-   "name": "Yakuza Kiwami 2",
-   "released": "2017-12-07",
-   "tba": false,
-   "description": "Kazuma Kiryu thought his Tojo Clan days were behind him. He and the young girl in his care, Haruka Sawamura, have built a peaceful life from the ashes of conflict. All it took was a single gunshot to shatter that peace. Yukio Terada, the Fifth Chairman of the Tojo Clan, has been assassinated. With war on the horizon, the legendary Dragon of Dojima is pulled back into the world he wanted to leave behind.",
-   "developers": [
-    "SEGA",
-    "Ryu ga Gotoku Studio"
-   ],
-   "publishers": [
-    "SEGA"
-   ],
-   "website": "http://yakuza.sega.com/kiwami2/home.html",
-   "metacritic": 85,
-   "esrb": "Mature"
-  },
-  "ananta": {
-   "name": "ananta",
-   "released": "2027-01-15",
-   "tba": false,
-   "description": "Previously known as Project Mugen, ANANTA is a free-to-play urban open-world RPG set in Nova City. Players become the new captain of a special task force, switch between different characters and roles, fight hidden threats, and freely explore a living city filled with activities, vehicles, and unexpected events. Launches globally on January 15, 2027 for PC, PlayStation 5, iOS, and Android.",
-   "developers": [],
-   "publishers": [
-    "Netease"
-   ],
-   "website": "https://www.anantagame.com/",
-   "metacritic": null,
-   "esrb": null
-  },
-  "god-of-war-laufey": {
-   "name": "God of War Laufey",
-   "released": "2027-02-16",
-   "tba": false,
-   "description": "",
-   "developers": [
-    "Santa Monica Studio"
-   ],
-   "publishers": [
-    "Sony Interactive Entertainment"
-   ],
-   "website": null,
-   "metacritic": null,
-   "esrb": null
+   "website": "http://www.sekirothegame.com"
   },
   "the-witcher-4": {
    "name": "The Witcher (A New Saga Begins)",
@@ -574,21 +435,6 @@
     "CD PROJEKT RED"
    ],
    "website": "https://www.thewitcher.com/witcher4",
-   "metacritic": null,
-   "esrb": null
-  },
-  "titan-quest-2": {
-   "name": "Titan Quest 2",
-   "released": "2027-01-19",
-   "tba": false,
-   "description": "Nemesis, Goddess of Retribution, is out of control. She is corrupting the Threads of Fate and punishing all those who oppose her. Take up your weapon, fight alongside gods, and change fate itself in Titan Quest 2, an action RPG inspired by Greek mythology.",
-   "developers": [
-    "Grimlore Games"
-   ],
-   "publishers": [
-    "THQ Nordic"
-   ],
-   "website": null,
    "metacritic": null,
    "esrb": null
   },
@@ -609,13 +455,219 @@
    "tba": false,
    "website": null
   },
-  "intergalactic-the-heretic-prophet": {
-   "name": "Intergalactic: The Heretic Prophet",
-   "released": null,
-   "tba": true,
+  "god-of-war-laufey": {
+   "name": "God of War Laufey",
+   "released": "2027-05-20",
+   "tba": false,
    "description": "",
    "developers": [
-    "Naughty Dog"
+    "Santa Monica Studio"
+   ],
+   "publishers": [
+    "Sony Interactive Entertainment"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "tomb-raider-legacy-of-atlantis": {
+   "name": "Tomb Raider: Legacy of Atlantis",
+   "released": "2027-02-12",
+   "tba": false,
+   "description": "",
+   "developers": [
+    "Crystal Dynamics"
+   ],
+   "publishers": [],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "resident-evil-veronica": {
+   "name": "Resident Evil Veronica",
+   "released": "2027-12-31",
+   "tba": false,
+   "description": "Resident Evil Veronica is a remake of 2000's Resident Evil Code: Veronica. In 2027, madness and intrigue, love and hate all combine to create a chilling new entry in survival horror.",
+   "developers": [
+    "Capcom"
+   ],
+   "publishers": [
+    "Capcom"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "tomb-raider-catalyst": {
+   "name": "Tomb Raider: Catalyst",
+   "released": "2027-12-31",
+   "tba": false,
+   "description": "Tomb Raider: Catalyst marks a bold direction for the series as Lara Croft embarks on a new adventure across Northern India. Tomb Raider: Catalyst is set in the wake of a mythical cataclysm that has unleashed ancient secrets and awakened the mysterious forces that guard them.",
+   "developers": [
+    "Crystal Dynamics"
+   ],
+   "publishers": [],
+   "website": null,
+   "metacritic": null,
+   "esrb": "Mature"
+  },
+  "the-expanse-osiris-reborn": {
+   "name": "The Expanse: Osiris Reborn",
+   "released": "2027-12-31",
+   "tba": false,
+   "description": "The Expanse: Osiris Reborn is a third-person Action RPG set in the world of The Expanse. You are not a hero, but a simple mercenary who found himself in the wrong place at the wrong time. Assemble a team, break through the web of lies and leave your mark on the history of the solar system.",
+   "developers": [
+    "Owlcat Games"
+   ],
+   "publishers": [
+    "Owlcat Games"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "fable2020": {
+   "name": "Fable",
+   "released": "2027-02-23",
+   "tba": false,
+   "description": "Explore a land of fantastical creatures and wondrous places. What does it mean to be a Hero? Well, in the fairytale land of Albion, that is entirely up to you. With a dark threat looming, your choices will change Albion forever.",
+   "developers": [
+    "Playground Games"
+   ],
+   "publishers": [
+    "Xbox Game Studios"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "resident-evil-9-requiem": {
+   "name": "Resident Evil 9: Requiem",
+   "released": "2026-02-27",
+   "tba": false,
+   "description": "Resident Evil Requiem is the ninth title in the mainline Resident Evil series. Prepare to escape death in a heart-stopping experience that will chill you to your core. Technological advancements combined with the development team's depth of experience combine in a story with rich characters and gameplay that's more immersive than ever before.",
+   "developers": [
+    "Capcom"
+   ],
+   "publishers": [
+    "Capcom"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": "Mature"
+  },
+  "prince-of-persia-the-sands-of-time-remake": {
+   "name": "Prince of Persia: The Sands of Time Remake",
+   "released": null,
+   "tba": true,
+   "description": "The Prince has returned! Experience the classic tale that redefined action-adventure gaming in this full-scale remake for a new generation. - You are the Prince of Persia. Embark on a journey to save your kingdom from the treacherous Vizier. - Master the Sands of Time and use your dagger to reverse, accelerate, freeze, and slow time itself. - Fight cursed enemies and solve puzzles along the way.",
+   "developers": [
+    "Ubisoft"
+   ],
+   "publishers": [
+    "Ubisoft Entertainment"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": "Teen"
+  },
+  "brothers-a-tale-of-two-sons-2": {
+   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
+   "developers": [
+    "Starbreeze Studios",
+    "Parables Games"
+   ],
+   "esrb": "Teen",
+   "metacritic": 90,
+   "name": "Brothers: A Tale of Two Sons",
+   "publishers": [
+    "505 Games",
+    "Parables Games"
+   ],
+   "released": "2013-08-07",
+   "tba": false,
+   "website": "https://505games.com/games/brothers/"
+  },
+  "the-witcher-remake": {
+   "name": "The Witcher: Remake",
+   "released": null,
+   "tba": true,
+   "description": "The Witcher Remake is what you might know by the codename “Canis Majoris”. It’s still early and we want to ensure that the game is created with the utmost care and attention to detail, therefore, while we’re excited to share the news with you, we want to ask you for patience as it will be a while until we start talking about this project in detail.",
+   "developers": [
+    "Fool's Theory"
+   ],
+   "publishers": [
+    "CD PROJEKT RED"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "titan-quest-2": {
+   "name": "Titan Quest 2",
+   "released": "2027-01-19",
+   "tba": false,
+   "description": "Nemesis, Goddess of Retribution, is out of control. She is corrupting the Threads of Fate and punishing all those who oppose her. Take up your weapon, fight alongside gods, and change fate itself in Titan Quest 2, an action RPG inspired by Greek mythology.",
+   "developers": [
+    "Grimlore Games"
+   ],
+   "publishers": [
+    "THQ Nordic"
+   ],
+   "website": null,
+   "metacritic": null,
+   "esrb": null
+  },
+  "no-rest-for-the-wicked-2024": {
+   "name": "No Rest for the Wicked",
+   "released": "2027-03-31",
+   "tba": false,
+   "description": "From Moon Studios, the award-winning developers of Ori and the Blind Forest and Ori and the Will of the Wisps comes No Rest for the Wicked, a visceral, precision Action RPG set to reinvent the genre. The year is 841 – King Harol is dead. As word of his death echoes throughout the kingdom, the crown passes to his arrogant, yet untested son Magnus.",
+   "developers": [
+    "Moon Studios"
+   ],
+   "publishers": [
+    "Private Division"
+   ],
+   "website": "https://store.privatedivision.com/en/game/no-rest-for-the-wicked",
+   "metacritic": null,
+   "esrb": null
+  },
+  "phantom-blade-zero": {
+   "description": "Be the Dark Raider exiled by \"The Order\", embark on the path of vengeance, and uncover the darkest secrets of Wulin!",
+   "developers": [
+    "S-Game"
+   ],
+   "esrb": null,
+   "metacritic": null,
+   "name": "Phantom Blade Zero",
+   "publishers": [
+    "S-Game"
+   ],
+   "released": "2026-10-29",
+   "tba": false,
+   "website": null
+  },
+  "ananta": {
+   "name": "ananta",
+   "released": "2027-01-15",
+   "tba": false,
+   "description": "Previously known as Project Mugen, ANANTA is a free-to-play urban open-world RPG set in Nova City. Players become the new captain of a special task force, switch between different characters and roles, fight hidden threats, and freely explore a living city filled with activities, vehicles, and unexpected events. Launches globally on January 15, 2027 for PC, PlayStation 5, iOS, and Android.",
+   "developers": [],
+   "publishers": [
+    "Netease"
+   ],
+   "website": "https://www.anantagame.com/",
+   "metacritic": null,
+   "esrb": null
+  },
+  "kena-scars-of-kosmora": {
+   "name": "Kena: Scars of Kosmora",
+   "released": "2027-12-31",
+   "tba": false,
+   "description": "In Kena: Scars of Kosmora, Kena is older and renowned as a Spirit Guide. In hopes of finding answers to the affliction she has endured all her life, Kena travels to the mysterious island of Kosmora. Home to distinct cultures and regions, Kosmora is full of buried secrets from a tragic past.",
+   "developers": [
+    "Ember Lab"
    ],
    "publishers": [],
    "website": null,
@@ -638,70 +690,37 @@
    "tba": false,
    "website": "http://www.owlboygame.com"
   },
-  "shadows-die-twice": {
-   "description": "Sekiro: Shadows Die Twice is a game about a ninja (or shinobi, as they call it), who is seeking revenge in the Sengoku era Japan. ###Plot",
+  "marvels-venom": {
+   "name": "Marvel's Venom",
+   "released": null,
+   "tba": true,
+   "description": "Marvel’s Venom is currently in development by Insomniac Games for PlayStation 5. Created in collaboration with Marvel Games and PlayStation.",
    "developers": [
-    "FromSoftware"
+    "Insomniac Games"
    ],
-   "esrb": "Mature",
-   "metacritic": 90,
-   "name": "Sekiro: Shadows Die Twice",
    "publishers": [
-    "FromSoftware",
-    "Activision Value Publishing",
-    "方块游戏"
+    "Sony Interactive Entertainment"
    ],
-   "released": "2019-03-22",
-   "tba": false,
-   "website": "http://www.sekirothegame.com"
+   "website": null,
+   "metacritic": null,
+   "esrb": "Rating Pending"
   },
-  "the-elder-scrolls-v-skyrim": {
-   "name": "The Elder Scrolls V: Skyrim",
-   "released": "2011-11-11",
+  "the-swapper": {
+   "name": "The Swapper",
+   "released": "2013-05-13",
    "tba": false,
-   "description": "The fifth game in the series, Skyrim takes us on a journey through the coldest region of Cyrodiil. Once again player can traverse the open world RPG armed with various medieval weapons and magic, to become a hero of Nordic legends –Dovahkiin, the Dragonborn. After mandatory character creation players will have to escape not only imprisonment but a fire-breathing dragon. Something Skyrim hasn’t seen in centuries.",
+   "description": "The Swapper is a classical platform game with several elements of Metroidvania focused on solving puzzles. The game follows a female astronaut stranded on the abandoned space research station in a science-fictional universe. Completing the game players will be able to learn more about the fate of researches and to restore the sequence of events held aboard the station.",
    "developers": [
-    "Bethesda Game Studios"
+    "Curve Digital",
+    "Facepalm Games"
    ],
    "publishers": [
-    "Bethesda Softworks"
+    "Curve Digital",
+    "Facepalm Games"
    ],
-   "website": "http://elderscrolls.com/",
-   "metacritic": 94,
-   "esrb": "Mature"
-  },
-  "brothers-a-tale-of-two-sons-2": {
-   "description": "Brothers - A Tale of Two Sons is a story about teamwork. Having a very curious setup, the story follows two brothers on a quest. With their mother dead and father being heavily ill, the only way to save is to bring water from the Tree of Life. But on their way, they will have to challenge the world and themselves. Villages, mountains and forests, bullies, trolls and wolves will await Naiee and Naia on their journey.",
-   "developers": [
-    "Starbreeze Studios",
-    "Parables Games"
-   ],
-   "esrb": "Teen",
-   "metacritic": 90,
-   "name": "Brothers: A Tale of Two Sons",
-   "publishers": [
-    "505 Games",
-    "Parables Games"
-   ],
-   "released": "2013-08-07",
-   "tba": false,
-   "website": "https://505games.com/games/brothers/"
-  },
-  "anno-mutationem": {
-   "name": "Anno: Mutationem",
-   "released": "2022-03-16",
-   "tba": false,
-   "description": "Welcome to the neon-covered, 2D-meets-3D Cyberpunk world of ANNO: Mutationem. In this Action-Adventure game with RPG elements you become Ann: a highly-skilled combat-trained lone wolf on a personal mission in the giant Metropolis, full of sinister mega-corporations, mysterious fringe groups and creatures more bizarre than words can express.",
-   "developers": [
-    "Thinking Stars",
-    "Thinkingstars"
-   ],
-   "publishers": [
-    "Lightning Games"
-   ],
-   "website": "http://anno-m.com",
-   "metacritic": 73,
-   "esrb": "Teen"
+   "website": "http://facepalmgames.com/the-swapper",
+   "metacritic": 87,
+   "esrb": "Everyone 10+"
   }
  }
 }

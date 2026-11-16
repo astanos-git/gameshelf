@@ -8,21 +8,21 @@ X-WR-TIMEZONE:Europe/Zurich
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:finish-81ddf838af78@gameshelf
+UID:finish-a1595abbb4c3@gameshelf
 DTSTAMP:20260101T000000Z
-DTSTART;VALUE=DATE:20270126
-DTEND;VALUE=DATE:20270127
-SUMMARY:🎮 Finish Blue Prince? (forecast)
-DESCRIPTION:About 27 h left at ~2.6 h/week. Moves as you play.
+DTSTART;VALUE=DATE:20270319
+DTEND;VALUE=DATE:20270320
+SUMMARY:🎮 Finish Control? (forecast)
+DESCRIPTION:About 16 h left at ~0.9 h/week. Moves as you play.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:finish-eca8d2801293@gameshelf
+UID:finish-81ddf838af78@gameshelf
 DTSTAMP:20260101T000000Z
-DTSTART;VALUE=DATE:20270117
-DTEND;VALUE=DATE:20270118
-SUMMARY:🎮 Finish Metaphor: ReFantazio? (forecast)
-DESCRIPTION:About 31 h left at ~3.4 h/week. Moves as you play.
+DTSTART;VALUE=DATE:20270114
+DTEND;VALUE=DATE:20270115
+SUMMARY:🎮 Finish Blue Prince? (forecast)
+DESCRIPTION:About 27 h left at ~3.2 h/week. Moves as you play.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -56,16 +56,6 @@ URL:https://rawg.io/games/tomb-raider-legacy-of-atlantis
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:release-god-of-war-laufey@gameshelf
-DTSTAMP:20260101T000000Z
-DTSTART;VALUE=DATE:20270216
-DTEND;VALUE=DATE:20270217
-SUMMARY:🗓 God of War Laufey is out
-DESCRIPTION:Your taste: adventure\, action
-URL:https://rawg.io/games/god-of-war-laufey
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:release-fable2020@gameshelf
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20270223
@@ -83,6 +73,16 @@ DTEND;VALUE=DATE:20270401
 SUMMARY:🗓 No Rest for the Wicked is out
 DESCRIPTION:Your taste: atmospheric\, exploration
 URL:https://rawg.io/games/no-rest-for-the-wicked-2024
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-god-of-war-laufey@gameshelf
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20270520
+DTEND;VALUE=DATE:20270521
+SUMMARY:🗓 God of War Laufey is out
+DESCRIPTION:Your taste: adventure\, action
+URL:https://rawg.io/games/god-of-war-laufey
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT

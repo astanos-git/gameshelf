@@ -168,6 +168,39 @@
   "tba": false,
   "website": "http://www.darksoulsii.com"
  },
+ "death-road-to-canada": {
+  "description": "Death Road to Canada is a Randomly Generated Road Trip Simulator. You control and manage a car full of jerks as they explore cities, recruit weird people, argue with each other, and face gigantic swarms of slow zombies.",
+  "developer_ids": [
+   [
+    132752,
+    "Noodlecake Studios"
+   ],
+   [
+    3437,
+    "Rocketcat Games"
+   ],
+   [
+    57,
+    "Rocketcat"
+   ]
+  ],
+  "developers": [
+   "Noodlecake Studios",
+   "Rocketcat Games",
+   "Rocketcat"
+  ],
+  "esrb": null,
+  "metacritic": 91,
+  "name": "Death Road to Canada",
+  "publishers": [
+   "Rocketcat Games",
+   "Rocketcat",
+   "Ukiyo Publishing"
+  ],
+  "released": "2016-07-20",
+  "tba": false,
+  "website": "http://www.deathroadtocanada.com"
+ },
  "dreams": {
   "description": "Dream anything, play everything Create, play and share your own games and experiences, in the incredible new title from the LittleBigPlanet and Tearaway team. Dreams is an extraordinary open-ended experience where you can make anything, from interactive adventures and platformers, to shoot ‘em ups, puzzlers and more. The possibilities are endless.",
   "developer_ids": [
@@ -210,6 +243,27 @@
   "tba": false,
   "website": null
  },
+ "final-fantasy-xvi": {
+  "description": "An epic dark fantasy world where the fate of the land is decided by the mighty Eikons and the Dominants who wield them.",
+  "developer_ids": [
+   [
+    4132,
+    "Square Enix"
+   ]
+  ],
+  "developers": [
+   "Square Enix"
+  ],
+  "esrb": "Mature",
+  "metacritic": 88,
+  "name": "Final Fantasy XVI",
+  "publishers": [
+   "Square Enix"
+  ],
+  "released": "2023-06-22",
+  "tba": false,
+  "website": "https://na.finalfantasyxvi.com/"
+ },
  "god-of-war-2": {
   "description": "It is a new beginning for Kratos. Living as a man outside the shadow of the gods, he ventures into the brutal Norse wilds with his son Atreus, fighting to fulfill a deeply personal quest.",
   "developer_ids": [
@@ -249,7 +303,7 @@
   "publishers": [
    "Sony Interactive Entertainment"
   ],
-  "released": "2027-02-16",
+  "released": "2027-05-20",
   "tba": false,
   "website": null
  },
@@ -519,6 +573,27 @@
   "tba": false,
   "website": null
  },
+ "resident-evil-9-requiem": {
+  "description": "Resident Evil Requiem is the ninth title in the mainline Resident Evil series. Prepare to escape death in a heart-stopping experience that will chill you to your core. Technological advancements combined with the development team's depth of experience combine in a story with rich characters and gameplay that's more immersive than ever before.",
+  "developer_ids": [
+   [
+    3678,
+    "Capcom"
+   ]
+  ],
+  "developers": [
+   "Capcom"
+  ],
+  "esrb": "Mature",
+  "metacritic": null,
+  "name": "Resident Evil 9: Requiem",
+  "publishers": [
+   "Capcom"
+  ],
+  "released": "2026-02-27",
+  "tba": false,
+  "website": null
+ },
  "resident-evil-veronica": {
   "description": "Resident Evil Veronica is a remake of 2000's Resident Evil Code: Veronica. In 2027, madness and intrigue, love and hate all combine to create a chilling new entry in survival horror.",
   "developer_ids": [
@@ -658,6 +733,33 @@
   "released": "2020-06-19",
   "tba": false,
   "website": "https://www.thelastofus.playstation.com/"
+ },
+ "the-swapper": {
+  "description": "The Swapper is a classical platform game with several elements of Metroidvania focused on solving puzzles. The game follows a female astronaut stranded on the abandoned space research station in a science-fictional universe. Completing the game players will be able to learn more about the fate of researches and to restore the sequence of events held aboard the station.",
+  "developer_ids": [
+   [
+    325,
+    "Curve Digital"
+   ],
+   [
+    28194,
+    "Facepalm Games"
+   ]
+  ],
+  "developers": [
+   "Curve Digital",
+   "Facepalm Games"
+  ],
+  "esrb": "Everyone 10+",
+  "metacritic": 87,
+  "name": "The Swapper",
+  "publishers": [
+   "Curve Digital",
+   "Facepalm Games"
+  ],
+  "released": "2013-05-13",
+  "tba": false,
+  "website": "http://facepalmgames.com/the-swapper"
  },
  "the-witcher-4": {
   "description": "The Witcher IV is a single-player, open-world RPG from CD PROJEKT RED. At the start of a new saga, players take on the role of Ciri, a professional monster slayer, and embark on a journey through a brutal dark-fantasy world. Powered by Unreal Engine 5, it aims to be the most immersive and ambitious open-world Witcher game to date.",
