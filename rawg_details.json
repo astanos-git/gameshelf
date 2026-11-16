@@ -114,6 +114,27 @@
   "tba": false,
   "website": "https://505games.com/games/brothers/"
  },
+ "control-resonant": {
+  "description": "After years in confinement at the hands of the Federal Bureau of Control (FBC), Dylan Faden’s former captors are deploying him at the peak of a supernatural crisis. Charged with combating a mysterious cosmic entity as it alters fundamental aspects of our reality, Dylan must harness his new-found powers to take the fight to the myriad threats overwhelming Manhattan.",
+  "developer_ids": [
+   [
+    6294,
+    "Remedy Entertainment"
+   ]
+  ],
+  "developers": [
+   "Remedy Entertainment"
+  ],
+  "esrb": "Mature",
+  "metacritic": null,
+  "name": "Control Resonant",
+  "publishers": [
+   "Remedy Entertainment"
+  ],
+  "released": "2026-09-23",
+  "tba": false,
+  "website": "https://controlgame.com/en"
+ },
  "cyberpunk-2077": {
   "description": "Cyberpunk 2077 is a science fiction game loosely based on the role-playing game Cyberpunk 2020. ###Setting",
   "developer_ids": [
@@ -350,6 +371,27 @@
   "tba": false,
   "website": "https://www.rockstargames.com/games/vicecity"
  },
+ "holstin": {
+  "description": "Late November 1992. A small, isolated town in eastern Poland is struck by a foul calamity that slowly begins to consume everyone and everything it touches. This is the last known whereabouts of your friend Bartek before he stopped answering your calls. Now, you need to follow in his footsteps to uncover what brought him to this town in the first place and why he possibly couldn’t ever get out.",
+  "developer_ids": [
+   [
+    28546,
+    "SONKA"
+   ]
+  ],
+  "developers": [
+   "SONKA"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Holstin",
+  "publishers": [
+   "SONKA"
+  ],
+  "released": null,
+  "tba": false,
+  "website": null
+ },
  "intergalactic-the-heretic-prophet": {
   "description": "",
   "developer_ids": [
@@ -387,6 +429,27 @@
   "released": "2027-12-31",
   "tba": false,
   "website": null
+ },
+ "mariachi-legends": {
+  "description": "You are Pablo Cruz, a Mexican detective chosen by Lady Death herself to take on the greatest case of her career: Find the powerful amulet that could undermine her power over the Kingdom of the Dead and disrupt the celebration of Muertos Day.",
+  "developer_ids": [
+   [
+    428004,
+    "Halberd Studios"
+   ]
+  ],
+  "developers": [
+   "Halberd Studios"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Mariachi Legends",
+  "publishers": [
+   "Freedom Games"
+  ],
+  "released": null,
+  "tba": true,
+  "website": "https://www.halberdstudios.com/mariachi-legends"
  },
  "marvels-spider-man-2": {
   "description": "Marvel's Spider-Man 2 is a 2023 action-adventure game developed by Insomniac Games and published by Sony Interactive Entertainment. It is based on the Marvel Comics character Spider-Man, and features a narrative inspired by its long-running comic book mythology which is also derived from various adaptations in other media.",
@@ -522,6 +585,27 @@
    "S-Game"
   ],
   "released": "2026-10-29",
+  "tba": false,
+  "website": null
+ },
+ "pragmata": {
+  "description": "Capcom’s newest IP—PRAGMATA. An all-new Science Fiction action adventure with its own unique hacking twist! It is the near future, and protagonists Hugh and his android companion Diana, must work together as they make their way through the cold lunar research station.",
+  "developer_ids": [
+   [
+    3678,
+    "Capcom"
+   ]
+  ],
+  "developers": [
+   "Capcom"
+  ],
+  "esrb": null,
+  "metacritic": null,
+  "name": "Pragmata",
+  "publishers": [
+   "Capcom"
+  ],
+  "released": "2026-04-17",
   "tba": false,
   "website": null
  },

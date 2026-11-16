@@ -18,15 +18,26 @@
  },
  "control-resonant": {
   "added": "2026-11-07T22:20:56Z",
-  "image": "https://thumb.wikimedia.org/wikipedia/en/thumb/a/a1/Control_Resonant_cover_art.png/250px-Control_Resonant_cover_art.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "found": "2026-11-16",
+  "genres": [
+   "Action",
+   "Adventure"
+  ],
+  "image": "https://media.rawg.io/media/games/bfc/bfc7b45c6e9d3e21bb1c613c16c088f2.jpeg",
   "name": "Control Resonant",
-  "pending": true,
-  "year": "2026"
+  "platforms": [
+   "PS5"
+  ],
+  "released": "2026-09-23",
+  "url": "https://rawg.io/games/control-resonant"
  },
  "holstin": {
   "added": "2026-11-12T22:19:11Z",
+  "found": "2026-11-16",
+  "genres": [],
+  "image": "https://media.rawg.io/media/screenshots/25c/25cf2205a2886ffb2705c251eb035442.jpg",
   "name": "Holstin",
-  "pending": true
+  "url": "https://rawg.io/games/holstin"
  },
  "hopetown": {
   "added": "2026-11-11T07:22:01Z",
@@ -49,8 +60,16 @@
  },
  "mariachi-legends": {
   "added": "2026-11-07T22:12:25Z",
-  "name": "Mariachi legends",
-  "pending": true
+  "found": "2026-11-16",
+  "genres": [
+   "Action",
+   "Adventure",
+   "Indie"
+  ],
+  "image": "https://media.rawg.io/media/screenshots/932/9325640a4c0933d736a5da7a51b86485.jpg",
+  "name": "Mariachi Legends",
+  "tba": true,
+  "url": "https://rawg.io/games/mariachi-legends"
  },
  "marvels-spider-man-3": {
   "added": "2026-10-25T20:58:54Z",
@@ -100,10 +119,17 @@
  },
  "pragmata": {
   "added": "2026-11-10T18:37:43Z",
-  "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Pragmata_cover.jpg/250px-Pragmata_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "found": "2026-11-16",
+  "genres": [
+   "Action"
+  ],
+  "image": "https://media.rawg.io/media/games/9b2/9b20adbf00491d56ad6793654067f2fd.jpg",
   "name": "Pragmata",
-  "pending": true,
-  "year": "2026"
+  "platforms": [
+   "PS5"
+  ],
+  "released": "2026-04-17",
+  "url": "https://rawg.io/games/pragmata"
  },
  "ratchet-clank-rift-apart": {
   "added": "2026-10-14T10:53:30Z",
