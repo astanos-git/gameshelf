@@ -100,7 +100,7 @@ def wish_lookups(wishlist: dict, log: list[str]) -> dict:
     out, hits = {}, []
     for s, w in wishlist.items():
         info = rawg_find(w["name"], w.get("year")) if w.get("pending") else {}
-        if info and info.get("slug") not in wishlist:
+        if info and (info.get("slug") == s or info.get("slug") not in wishlist):   # a name-only entry usually already sits under the very slug RAWG uses
             new = info.pop("slug")
             out[new] = {**({"image": w["image"]} if w.get("image") else {}), **{k: v for k, v in info.items() if v is not None},
                         "added": w["added"], "found": date.today().isoformat()}
