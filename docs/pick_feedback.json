@@ -308,6 +308,58 @@
    ]
   ]
  },
+ "death-road-to-canada": {
+  "at": "2026-11-16T15:13:57Z",
+  "feedback": "down",
+  "genres": [
+   "Indie",
+   "Adventure",
+   "Action"
+  ],
+  "name": "Death Road to Canada",
+  "tags": [
+   [
+    "rpg",
+    "RPG"
+   ],
+   [
+    "cooperative",
+    "cooperative"
+   ],
+   [
+    "funny",
+    "Funny"
+   ],
+   [
+    "difficult",
+    "Difficult"
+   ],
+   [
+    "survival",
+    "Survival"
+   ],
+   [
+    "comedy",
+    "Comedy"
+   ],
+   [
+    "pixel-graphics",
+    "Pixel Graphics"
+   ],
+   [
+    "zombies",
+    "Zombies"
+   ],
+   [
+    "character-customization",
+    "Character Customization"
+   ],
+   [
+    "controller-support",
+    "controller support"
+   ]
+  ]
+ },
  "dishonored-2": {
   "at": "2026-10-05T05:02:35Z",
   "feedback": "up",
@@ -459,6 +511,57 @@
    [
     "nudity",
     "Nudity"
+   ]
+  ]
+ },
+ "final-fantasy-xvi": {
+  "at": "2026-11-16T15:13:57Z",
+  "feedback": "up",
+  "genres": [
+   "Action",
+   "RPG"
+  ],
+  "name": "Final Fantasy XVI",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "rpg",
+    "RPG"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "fantasy",
+    "Fantasy"
+   ],
+   [
+    "gore",
+    "Gore"
+   ],
+   [
+    "violent",
+    "Violent"
+   ],
+   [
+    "action-rpg",
+    "Action RPG"
+   ],
+   [
+    "captions-available",
+    "Captions available"
+   ],
+   [
+    "dark-fantasy",
+    "Dark Fantasy"
+   ],
+   [
+    "cinematic",
+    "Cinematic"
    ]
   ]
  },
@@ -869,6 +972,58 @@
    [
     "character-customization",
     "Character Customization"
+   ]
+  ]
+ },
+ "the-swapper": {
+  "at": "2026-11-16T15:13:57Z",
+  "feedback": "up",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Puzzle"
+  ],
+  "name": "The Swapper",
+  "tags": [
+   [
+    "atmospheric",
+    "Atmospheric"
+   ],
+   [
+    "story-rich",
+    "Story Rich"
+   ],
+   [
+    "sci-fi",
+    "Sci-fi"
+   ],
+   [
+    "horror",
+    "Horror"
+   ],
+   [
+    "exploration",
+    "Exploration"
+   ],
+   [
+    "difficult",
+    "Difficult"
+   ],
+   [
+    "space",
+    "Space"
+   ],
+   [
+    "mystery",
+    "Mystery"
+   ],
+   [
+    "side-scroller",
+    "Side Scroller"
+   ],
+   [
+    "metroidvania",
+    "Metroidvania"
    ]
   ]
  },
