@@ -94,10 +94,11 @@ Tap **Refresh data** at the top of the Library. It opens the workflow on GitHub:
     - **Prices:** each Monday the Swiss PS Store price (CHF) of every wishlist game is checked: discount and end date, "PS Plus" when it's included with your subscription, and the lowest price seen. Tap a game and **Set alert** at a price: the Monday push (and your calendar, on the sale's last day) tells you when it's at or below it. Prices come from public store pages; nothing is bought.
   - **Coming soon:** unreleased PS4/PS5 games by category: Your series, Your studios, Your taste, Big releases, Indie (often empty: RAWG rarely lists consoles for unreleased indies), plus Out soon (next 60 days). Tap **+** to wishlist one.
 - **Trophy hunting:**
-  - **Closest to platinum:** with the easiest trophies left.
+  - **Closest to platinum:** with the easiest trophies left. For a game whose platinum you don't have yet, progress counts only the base-game trophies (the ones the platinum needs, not DLC); after the platinum, it's 100% with DLC.
   - **Almost there:** single trophies with a PlayStation counter that you've started (41 of 50), most advanced first. In the Library, each such trophy shows a progress bar and the trophy list can be sorted "Closest to done first". PlayStation only tracks counters for some PS5 trophies.
   - **Next platinum: how hard?** Guide rating where there is one, otherwise an estimate from PSN rarity.
   - **DLC to finish.**
+- In the Library, games with DLC trophies show two bars: **Plat** (base-game trophies, what the platinum needs) and **All** (everything, DLC included, as on PSN).
 - Tap any game for its panel. Games you don't own show a description, studios and release date instead.
 
 ### Stats

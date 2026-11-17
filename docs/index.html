@@ -77,6 +77,9 @@
 .prog .bar { flex: 1 1 auto; max-width: 220px; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
 .prog .bar i { display: block; height: 100%; background: var(--accent); }
 .prog.plat .bar i { background: var(--plat); }
+.progs { display: grid; gap: 3px; }
+.prog .lbl { flex: 0 0 3.2em; }
+.prog.all .bar i { background: var(--muted); opacity: .7; }
 
 /* scores on the right: your rating (outlined) next to Metacritic (filled), small labels under */
 .scores { display: flex; gap: 6px; align-items: flex-start; }
@@ -388,9 +391,11 @@ function renderList() {
   $("list").innerHTML = rows.map((x, i) => {
     const id = "g" + DATA.games.indexOf(x), open = !state.selecting && state.open === id;
     const locked = state.selecting && x.base_status === "completed", picked = state.selecting && state.sel.has(id);
-    const prog = x.defined
-      ? `<div class="prog ${x.platinum ? "plat" : ""}"><span class="bar"><i style="width:${x.progress}%"></i></span><span class="num">${x.trophies_earned}/${x.trophies_total} · ${x.progress}%</span></div>`
-      : `<div class="prog">No trophies yet</div>`;
+    // games with DLC trophies get two bars: what the platinum needs (base game) and everything, DLC included
+    const prog = !x.defined ? `<div class="prog">No trophies yet</div>`
+      : x.base ? `<div class="progs"><div class="prog${x.platinum ? " plat" : ""}"><span class="lbl">${x.defined.platinum ? "Plat" : "Base"}</span><span class="bar"><i style="width:${x.base.pct}%"></i></span><span class="num">${x.platinum ? "Earned ✦" : `${x.base.earned}/${x.base.total} · ${x.base.pct}%`}</span></div>
+          <div class="prog all"><span class="lbl">All</span><span class="bar"><i style="width:${x.progress}%"></i></span><span class="num">${x.trophies_earned}/${x.trophies_total} · ${x.progress}%</span></div></div>`
+      : `<div class="prog ${x.platinum ? "plat" : ""}"><span class="bar"><i style="width:${x.progress}%"></i></span><span class="num">${x.trophies_earned}/${x.trophies_total} · ${x.progress}%</span></div>`;
     const hrs = x.hours ? `${x.hours.toLocaleString()} h` : (x.platforms.some(p => p === "PS3" || p === "PSVITA") ? "Playtime n/a" : "0 h");
     const btnAttr = state.selecting ? `aria-pressed="${picked}"${locked ? ' aria-disabled="true" title="Completed games can\'t be flagged"' : ""}` : `aria-expanded="${open}" aria-controls="${id}-d"`;
     return `<article class="game${picked ? " sel" : ""}${locked ? " locked" : ""}${open ? " open" : ""}">

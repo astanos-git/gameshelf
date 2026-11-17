@@ -193,7 +193,7 @@
     "url": "https://howlongtobeat.com/game/57507"
    },
    "plat_rate": 6.5,
-   "rare_missing": 21,
+   "rare_missing": 4,
    "first_trophy_at": "2026-10-30T21:43:11+00:00",
    "platinum_at": null,
    "dlc": [
@@ -218,15 +218,8 @@
      "total": 11
     }
    ],
-   "missing_n": 28,
+   "missing_n": 6,
    "easy": [
-    {
-     "n": "Familiar Methodologies",
-     "t": "bronze",
-     "r": 15.6,
-     "h": true,
-     "p": null
-    },
     {
      "n": "War Games",
      "t": "bronze",
@@ -239,6 +232,13 @@
      "t": "bronze",
      "r": 13.1,
      "h": true,
+     "p": null
+    },
+    {
+     "n": "Master Parautilitarian",
+     "t": "gold",
+     "r": 9.8,
+     "h": null,
      "p": null
     }
    ],
@@ -267,7 +267,12 @@
      "p": "1/5",
      "pct": 20
     }
-   ]
+   ],
+   "base": {
+    "earned": 40,
+    "total": 46,
+    "pct": 87
+   }
   },
   {
    "name": "Fortnite",
@@ -378,11 +383,11 @@
     "url": "https://howlongtobeat.com/game/3657"
    },
    "plat_rate": 0.1,
-   "rare_missing": 41,
+   "rare_missing": 40,
    "first_trophy_at": null,
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 46,
+   "missing_n": 45,
    "easy": [
     {
      "n": "Gunsmith",
@@ -406,7 +411,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Blue Prince",
@@ -525,11 +531,11 @@
     "url": "https://howlongtobeat.com/game/136426"
    },
    "plat_rate": 0.3,
-   "rare_missing": 16,
+   "rare_missing": 15,
    "first_trophy_at": null,
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 17,
+   "missing_n": 16,
    "easy": [
     {
      "n": "Inheritance Trophy",
@@ -553,7 +559,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Monster Train 2",
@@ -650,7 +657,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Dead Island 2",
@@ -758,7 +767,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Tomb Raider IV-VI Remastered",
@@ -861,7 +872,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "I Have No Mouth, and I Must Scream",
@@ -1034,7 +1047,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Ultros",
@@ -1202,11 +1216,11 @@
     "url": "https://howlongtobeat.com/game/129248"
    },
    "plat_rate": 0.4,
-   "rare_missing": 20,
+   "rare_missing": 19,
    "first_trophy_at": "2026-09-27T12:51:46+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 20,
+   "missing_n": 19,
    "easy": [
     {
      "n": "No trap can hold their whisper",
@@ -1230,7 +1244,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Battlefield™ 6",
@@ -1387,7 +1402,7 @@
     "url": "https://howlongtobeat.com/game/171520"
    },
    "plat_rate": 0.3,
-   "rare_missing": 29,
+   "rare_missing": 20,
    "first_trophy_at": "2026-07-25T09:40:23+00:00",
    "platinum_at": null,
    "dlc": [
@@ -1402,7 +1417,7 @@
      "total": 11
     }
    ],
-   "missing_n": 52,
+   "missing_n": 40,
    "easy": [
     {
      "n": "Punished",
@@ -1419,14 +1434,19 @@
      "p": null
     },
     {
-     "n": "Collector",
-     "t": "bronze",
-     "r": 31.5,
+     "n": "Sergeant Redford",
+     "t": "silver",
+     "r": 26.2,
      "h": null,
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 2,
+    "total": 42,
+    "pct": 5
+   }
   },
   {
    "name": "Metaphor: ReFantazio",
@@ -1600,11 +1620,11 @@
     "url": "https://howlongtobeat.com/game/129956"
    },
    "plat_rate": 4.7,
-   "rare_missing": 3,
+   "rare_missing": 2,
    "first_trophy_at": "2026-08-26T20:16:43+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 26,
+   "missing_n": 25,
    "easy": [
     {
      "n": "Stray Elements",
@@ -1628,7 +1648,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "EARTH DEFENSE FORCE:WORLD BROTHERS 2",
@@ -1728,7 +1749,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "HUNT: SHOWDOWN 1896",
@@ -1797,7 +1820,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "F1® 25",
@@ -1874,7 +1899,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Bō: Path of the Teal Lotus",
@@ -2052,7 +2079,7 @@
     "url": "https://howlongtobeat.com/game/111259"
    },
    "plat_rate": 1.9,
-   "rare_missing": 18,
+   "rare_missing": 7,
    "first_trophy_at": "2026-06-20T09:09:37+00:00",
    "platinum_at": null,
    "dlc": [
@@ -2067,7 +2094,7 @@
      "total": 10
     }
    ],
-   "missing_n": 27,
+   "missing_n": 16,
    "easy": [
     {
      "n": "No Bridge, No Problem",
@@ -2116,7 +2143,12 @@
      "p": "22/34",
      "pct": 65
     }
-   ]
+   ],
+   "base": {
+    "earned": 14,
+    "total": 30,
+    "pct": 47
+   }
   },
   {
    "name": "Chained Echoes",
@@ -2193,7 +2225,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Wobbly Life",
@@ -2279,7 +2313,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Sniper Elite: Resistance",
@@ -2370,7 +2406,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "SIGNALIS",
@@ -2524,11 +2562,11 @@
     "url": "https://howlongtobeat.com/game/57149"
    },
    "plat_rate": 2.8,
-   "rare_missing": 3,
+   "rare_missing": 2,
    "first_trophy_at": "2026-08-21T07:55:16+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 6,
+   "missing_n": 5,
    "easy": [
     {
      "n": "NITRO",
@@ -2552,7 +2590,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "SILENT HILL 2",
@@ -2708,11 +2747,11 @@
     "url": "https://howlongtobeat.com/game/114905"
    },
    "plat_rate": 2.1,
-   "rare_missing": 16,
+   "rare_missing": 15,
    "first_trophy_at": "2026-06-20T00:15:17+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 17,
+   "missing_n": 16,
    "easy": [
     {
      "n": "Making Peace",
@@ -2745,7 +2784,8 @@
      "p": "1/5",
      "pct": 20
     }
-   ]
+   ],
+   "base": null
   },
   {
    "name": "Dying Light 2",
@@ -2853,7 +2893,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Big Walk",
@@ -2928,7 +2970,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "EA SPORTS FC™ 26",
@@ -3048,11 +3092,11 @@
     "url": "https://howlongtobeat.com/game/171044"
    },
    "plat_rate": 0.1,
-   "rare_missing": 22,
+   "rare_missing": 21,
    "first_trophy_at": null,
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 44,
+   "missing_n": 43,
    "easy": [
     {
      "n": "Authenticity",
@@ -3076,7 +3120,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "MIO: Memories in Orbit",
@@ -3126,7 +3171,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Hollow Knight: Silksong",
@@ -3221,7 +3268,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Alters",
@@ -3324,7 +3373,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "CrossCode",
@@ -3433,7 +3484,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Artful Escape",
@@ -3596,7 +3649,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Death's Door",
@@ -3763,11 +3817,11 @@
     "url": "https://howlongtobeat.com/game/90590"
    },
    "plat_rate": 3.9,
-   "rare_missing": 8,
+   "rare_missing": 7,
    "first_trophy_at": "2026-06-06T20:33:47+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 17,
+   "missing_n": 16,
    "easy": [
     {
      "n": "Cremation",
@@ -3791,7 +3845,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "GRIS",
@@ -3940,11 +3995,11 @@
     "url": "https://howlongtobeat.com/game/62257"
    },
    "plat_rate": 9.4,
-   "rare_missing": 3,
+   "rare_missing": 2,
    "first_trophy_at": "2026-05-28T19:50:17+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 10,
+   "missing_n": 9,
    "easy": [
     {
      "n": "Depression",
@@ -3968,7 +4023,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Untitled Goose Game",
@@ -4106,11 +4162,11 @@
     "url": "https://howlongtobeat.com/game/66086"
    },
    "plat_rate": 2.2,
-   "rare_missing": 13,
+   "rare_missing": 12,
    "first_trophy_at": "2026-05-27T17:29:20+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 16,
+   "missing_n": 15,
    "easy": [
     {
      "n": "The Back Gardens",
@@ -4134,7 +4190,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Still Wakes the Deep",
@@ -4234,7 +4291,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Black Myth: Wukong",
@@ -4364,11 +4423,11 @@
     "url": "https://howlongtobeat.com/game/82089"
    },
    "plat_rate": 6.0,
-   "rare_missing": 6,
+   "rare_missing": 5,
    "first_trophy_at": "2026-03-20T21:07:55+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 15,
+   "missing_n": 14,
    "easy": [
     {
      "n": "Pound and Perfect",
@@ -4392,7 +4451,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Roblox",
@@ -4529,7 +4589,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "WUCHANG: Fallen Feathers",
@@ -4636,7 +4697,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Tomb Raider I-III Remastered Starring Lara Croft",
@@ -4740,7 +4803,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Lords of the Fallen",
@@ -4792,7 +4857,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Sword of the Sea",
@@ -4954,11 +5021,11 @@
     "url": "https://howlongtobeat.com/game/129238"
    },
    "plat_rate": 2.0,
-   "rare_missing": 24,
+   "rare_missing": 23,
    "first_trophy_at": "2026-03-02T21:07:19+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 34,
+   "missing_n": 33,
    "easy": [
     {
      "n": "Cool Combo!",
@@ -4982,7 +5049,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Indiana Jones and the Great Circle",
@@ -5197,7 +5265,12 @@
      "p": "0/25"
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 45,
+    "total": 45,
+    "pct": 100
+   }
   },
   {
    "name": "SHINOBI: Art of Vengeance",
@@ -5358,11 +5431,11 @@
     "url": "https://howlongtobeat.com/game/163815"
    },
    "plat_rate": 1.2,
-   "rare_missing": 5,
+   "rare_missing": 4,
    "first_trophy_at": "2026-01-07T21:26:30+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 25,
+   "missing_n": 24,
    "easy": [
     {
      "n": "Wall Breaker",
@@ -5386,7 +5459,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Subnautica: Below Zero",
@@ -5486,7 +5560,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Lost Records: Bloom & Rage",
@@ -5586,7 +5662,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Bye Sweet Carole",
@@ -5689,7 +5767,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Pathless",
@@ -5793,7 +5873,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "INDIKA",
@@ -5966,7 +6048,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "ASTRO's PLAYROOM",
@@ -6142,7 +6225,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 42,
+    "total": 42,
+    "pct": 100
+   }
   },
   {
    "name": "Hellblade II: Senua’s Saga",
@@ -6258,11 +6346,11 @@
     "url": "https://howlongtobeat.com/game/72854"
    },
    "plat_rate": 1.6,
-   "rare_missing": 4,
+   "rare_missing": 3,
    "first_trophy_at": "2026-01-08T21:13:12+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 5,
+   "missing_n": 4,
    "easy": [
     {
      "n": "Seeing Things Differently",
@@ -6303,7 +6391,8 @@
      "p": "4/17",
      "pct": 24
     }
-   ]
+   ],
+   "base": null
   },
   {
    "name": "EA SPORTS FC™ 25",
@@ -6416,11 +6505,11 @@
     "url": "https://howlongtobeat.com/game/153883"
    },
    "plat_rate": 0.1,
-   "rare_missing": 18,
+   "rare_missing": 17,
    "first_trophy_at": null,
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 40,
+   "missing_n": 39,
    "easy": [
     {
      "n": "PlayStyles+",
@@ -6444,7 +6533,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "ASTRO BOT",
@@ -6648,7 +6738,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 43,
+    "total": 43,
+    "pct": 100
+   }
   },
   {
    "name": "Core Keeper",
@@ -6748,7 +6843,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Need for Speed™ Unbound",
@@ -6833,7 +6930,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Disney Epic Mickey: Rebrushed",
@@ -6935,7 +7034,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Hell is Us",
@@ -7102,11 +7203,11 @@
     "url": "https://howlongtobeat.com/game/106639"
    },
    "plat_rate": 2.0,
-   "rare_missing": 15,
+   "rare_missing": 14,
    "first_trophy_at": "2025-12-08T21:46:57+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 16,
+   "missing_n": 15,
    "easy": [
     {
      "n": "Curator",
@@ -7155,7 +7256,8 @@
      "p": "19/43",
      "pct": 44
     }
-   ]
+   ],
+   "base": null
   },
   {
    "name": "despelote",
@@ -7250,11 +7352,11 @@
     "url": "https://howlongtobeat.com/game/94576"
    },
    "plat_rate": 6.8,
-   "rare_missing": 4,
+   "rare_missing": 3,
    "first_trophy_at": "2025-12-08T20:34:06+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 9,
+   "missing_n": 8,
    "easy": [
     {
      "n": "Golazo",
@@ -7278,7 +7380,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "The Midnight Walk",
@@ -7378,7 +7481,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Until Then",
@@ -7481,7 +7586,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Nine Sols",
@@ -7588,7 +7695,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Pepper Grinder",
@@ -7637,7 +7746,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Split Fiction",
@@ -7737,7 +7848,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "It Takes Two",
@@ -7927,11 +8040,11 @@
     "url": "https://howlongtobeat.com/game/80199"
    },
    "plat_rate": 1.8,
-   "rare_missing": 12,
+   "rare_missing": 11,
    "first_trophy_at": "2024-11-30T20:53:28+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 16,
+   "missing_n": 15,
    "easy": [
     {
      "n": "It Took Two",
@@ -7955,7 +8068,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "LEGO® Horizon Adventures™",
@@ -8057,7 +8171,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Dispatch",
@@ -8210,11 +8326,11 @@
     "url": "https://howlongtobeat.com/game/160618"
    },
    "plat_rate": 2.5,
-   "rare_missing": 2,
+   "rare_missing": 1,
    "first_trophy_at": "2025-11-15T23:30:17+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 15,
+   "missing_n": 14,
    "easy": [
     {
      "n": "\"That’s, like, a real superhero.\"",
@@ -8238,7 +8354,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "The Dark Pictures Anthology: Little Hope",
@@ -8343,7 +8460,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Dark Pictures Anthology: House of Ashes",
@@ -8446,7 +8565,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Dark Pictures Anthology: The Devil in Me",
@@ -8549,7 +8670,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Visage",
@@ -8648,7 +8771,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Neva",
@@ -8754,7 +8879,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Pacific Drive",
@@ -8859,7 +8986,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "SILENT HILL f",
@@ -8965,7 +9094,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "DEATH STRANDING 2: ON THE BEACH",
@@ -9016,7 +9147,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Plucky Squire",
@@ -9120,7 +9253,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "STAR WARS Jedi: Survivor™",
@@ -9266,11 +9401,11 @@
     "url": "https://howlongtobeat.com/game/108358"
    },
    "plat_rate": 3.5,
-   "rare_missing": 17,
+   "rare_missing": 16,
    "first_trophy_at": "2025-11-15T00:05:49+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 52,
+   "missing_n": 51,
    "easy": [
     {
      "n": "Grab Some Seat",
@@ -9294,7 +9429,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Marvel's Spider-Man 2",
@@ -9501,7 +9637,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 41,
+    "total": 41,
+    "pct": 100
+   }
   },
   {
    "name": "EA SPORTS™ WRC",
@@ -9571,7 +9712,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "ENDER MAGNOLIA: Bloom in the Mist",
@@ -9739,7 +9882,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "DEATHLOOP",
@@ -9908,7 +10052,7 @@
     "url": "https://howlongtobeat.com/game/68258"
    },
    "plat_rate": 1.5,
-   "rare_missing": 29,
+   "rare_missing": 25,
    "first_trophy_at": "2025-10-12T15:27:47+00:00",
    "platinum_at": null,
    "dlc": [
@@ -9923,7 +10067,7 @@
      "total": 4
     }
    ],
-   "missing_n": 48,
+   "missing_n": 44,
    "easy": [
     {
      "n": "Chop Chop",
@@ -9947,7 +10091,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 10,
+    "total": 54,
+    "pct": 19
+   }
   },
   {
    "name": "Jusant",
@@ -10119,7 +10268,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "COCOON",
@@ -10204,7 +10354,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Goat Simulator 3",
@@ -10313,7 +10465,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Clair Obscur: Expedition 33",
@@ -10504,7 +10658,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Stardew Valley",
@@ -10611,7 +10766,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Psychonauts 2",
@@ -10670,7 +10827,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Viewfinder",
@@ -10774,7 +10933,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "MY HERO ONE'S JUSTICE 2",
@@ -10865,7 +11026,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Lies of P",
@@ -10963,7 +11126,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "DayZ",
@@ -11069,7 +11234,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Diablo® IV",
@@ -11177,7 +11344,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Blasphemous 2",
@@ -11282,7 +11451,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "LEGO® MARVEL's Avengers",
@@ -11372,7 +11543,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "LEGO® MARVEL Super Heroes 2",
@@ -11458,7 +11631,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Alan Wake 2",
@@ -11588,7 +11763,7 @@
     "url": "https://howlongtobeat.com/game/101237"
    },
    "plat_rate": 5.8,
-   "rare_missing": 25,
+   "rare_missing": 5,
    "first_trophy_at": "2025-03-14T20:51:48+00:00",
    "platinum_at": null,
    "dlc": [
@@ -11613,7 +11788,7 @@
      "total": 10
     }
    ],
-   "missing_n": 27,
+   "missing_n": 7,
    "easy": [
     {
      "n": "All Smiles",
@@ -11662,7 +11837,12 @@
      "p": "8/14",
      "pct": 57
     }
-   ]
+   ],
+   "base": {
+    "earned": 59,
+    "total": 66,
+    "pct": 89
+   }
   },
   {
    "name": "Balatro",
@@ -11801,11 +11981,11 @@
     "url": "https://howlongtobeat.com/game/132112"
    },
    "plat_rate": 0.3,
-   "rare_missing": 17,
+   "rare_missing": 16,
    "first_trophy_at": "2025-06-10T20:07:19+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 31,
+   "missing_n": 30,
    "easy": [
     {
      "n": "10K",
@@ -11829,7 +12009,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Alone in the Dark",
@@ -11912,7 +12093,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "LEGO® Star Wars™: The Skywalker Saga",
@@ -12044,11 +12227,11 @@
     "url": "https://howlongtobeat.com/game/68261"
    },
    "plat_rate": 1.5,
-   "rare_missing": 27,
+   "rare_missing": 26,
    "first_trophy_at": "2024-08-14T08:05:42+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 39,
+   "missing_n": 38,
    "easy": [
     {
      "n": "''Aggressive Negotiations''",
@@ -12072,7 +12255,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "ARK: Survival Ascended",
@@ -12181,7 +12365,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Texas Chain Saw Massacre",
@@ -12287,7 +12473,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "RoboCop: Rogue City",
@@ -12390,7 +12578,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "HOT WHEELS UNLEASHED™ 2 - Turbocharged",
@@ -12518,7 +12708,7 @@
     "url": "https://howlongtobeat.com/game/129536"
    },
    "plat_rate": 0.6,
-   "rare_missing": 41,
+   "rare_missing": 28,
    "first_trophy_at": null,
    "platinum_at": null,
    "dlc": [
@@ -12563,7 +12753,7 @@
      "total": 3
     }
    ],
-   "missing_n": 56,
+   "missing_n": 43,
    "easy": [
     {
      "n": "Rookie",
@@ -12587,7 +12777,12 @@
      "p": "0/100"
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 0,
+    "total": 43,
+    "pct": 0
+   }
   },
   {
    "name": "Little Nightmares II",
@@ -12742,11 +12937,11 @@
     "url": "https://howlongtobeat.com/game/69805"
    },
    "plat_rate": 3.7,
-   "rare_missing": 9,
+   "rare_missing": 8,
    "first_trophy_at": "2025-03-10T19:58:22+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 9,
+   "missing_n": 8,
    "easy": [
     {
      "n": "How Do I Look?",
@@ -12770,7 +12965,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "The Last Faith",
@@ -12875,7 +13071,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "FINAL FANTASY VII REBIRTH",
@@ -13067,11 +13265,11 @@
     "url": "https://howlongtobeat.com/game/109434"
    },
    "plat_rate": 2.6,
-   "rare_missing": 8,
+   "rare_missing": 7,
    "first_trophy_at": "2024-10-29T20:06:15+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 15,
+   "missing_n": 14,
    "easy": [
     {
      "n": "3-Star Hotel",
@@ -13095,7 +13293,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Dragon Age™: The Veilguard",
@@ -13151,7 +13350,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Teenage Mutant Ninja Turtles: The Cowabunga Collection",
@@ -13254,7 +13455,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Sonic Colours: Ultimate",
@@ -13336,7 +13539,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "High On Life",
@@ -13441,7 +13646,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "PAC-MAN WORLD Re-PAC",
@@ -13530,7 +13737,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Stray",
@@ -13699,11 +13908,11 @@
     "url": "https://howlongtobeat.com/game/79790"
    },
    "plat_rate": 2.5,
-   "rare_missing": 9,
+   "rare_missing": 8,
    "first_trophy_at": "2022-10-01T23:49:06+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 11,
+   "missing_n": 10,
    "easy": [
     {
      "n": "No More Lives",
@@ -13727,7 +13936,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Suicide Squad: Kill the Justice League",
@@ -13831,7 +14041,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Need for Speed™ Hot Pursuit Remastered",
@@ -13941,7 +14153,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Dragon's Dogma 2",
@@ -14109,11 +14323,11 @@
     "url": "https://howlongtobeat.com/game/109526"
    },
    "plat_rate": 2.7,
-   "rare_missing": 9,
+   "rare_missing": 8,
    "first_trophy_at": "2024-10-01T19:28:52+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 36,
+   "missing_n": 35,
    "easy": [
     {
      "n": "Nobles' Night Out",
@@ -14162,7 +14376,8 @@
      "p": "9/80",
      "pct": 11
     }
-   ]
+   ],
+   "base": null
   },
   {
    "name": "Mass Effect™ Legendary Edition",
@@ -14331,7 +14546,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Legendary Edition: Mass Effect",
@@ -14501,11 +14717,11 @@
     "url": "https://howlongtobeat.com/game/84851"
    },
    "plat_rate": 4.2,
-   "rare_missing": 7,
+   "rare_missing": 6,
    "first_trophy_at": "2024-09-27T08:07:41+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 15,
+   "missing_n": 14,
    "easy": [
     {
      "n": "First Aid Specialist",
@@ -14529,7 +14745,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "The Callisto Protocol",
@@ -14698,7 +14915,7 @@
     "url": "https://howlongtobeat.com/game/85967"
    },
    "plat_rate": 2.7,
-   "rare_missing": 24,
+   "rare_missing": 3,
    "first_trophy_at": "2024-09-25T18:51:22+00:00",
    "platinum_at": null,
    "dlc": [
@@ -14753,7 +14970,7 @@
      "total": 7
     }
    ],
-   "missing_n": 42,
+   "missing_n": 21,
    "easy": [
     {
      "n": "If the SHU Fits...",
@@ -14794,7 +15011,12 @@
      "p": "1/10",
      "pct": 10
     }
-   ]
+   ],
+   "base": {
+    "earned": 5,
+    "total": 26,
+    "pct": 19
+   }
   },
   {
    "name": "DREDGE",
@@ -14942,7 +15164,7 @@
     "url": "https://howlongtobeat.com/game/94128"
    },
    "plat_rate": 6.4,
-   "rare_missing": 26,
+   "rare_missing": 5,
    "first_trophy_at": "2024-09-23T19:42:51+00:00",
    "platinum_at": null,
    "dlc": [
@@ -14967,7 +15189,7 @@
      "total": 12
     }
    ],
-   "missing_n": 58,
+   "missing_n": 37,
    "easy": [
     {
      "n": "From the Fog",
@@ -14991,7 +15213,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 2,
+    "total": 39,
+    "pct": 5
+   }
   },
   {
    "name": "A Plague Tale: Requiem",
@@ -15156,11 +15383,11 @@
     "url": "https://howlongtobeat.com/game/93945"
    },
    "plat_rate": 3.3,
-   "rare_missing": 10,
+   "rare_missing": 9,
    "first_trophy_at": "2024-09-15T21:21:03+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 10,
+   "missing_n": 9,
    "easy": [
     {
      "n": "Fighter",
@@ -15209,7 +15436,8 @@
      "p": "4/5",
      "pct": 80
     }
-   ]
+   ],
+   "base": null
   },
   {
    "name": "Cyberpunk 2077",
@@ -15395,7 +15623,7 @@
     "url": "https://howlongtobeat.com/game/2127"
    },
    "plat_rate": 2.2,
-   "rare_missing": 26,
+   "rare_missing": 15,
    "first_trophy_at": "2024-07-21T19:54:00+00:00",
    "platinum_at": null,
    "dlc": [
@@ -15410,7 +15638,7 @@
      "total": 13
     }
    ],
-   "missing_n": 47,
+   "missing_n": 33,
    "easy": [
     {
      "n": "Life of the Road",
@@ -15434,7 +15662,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 11,
+    "total": 44,
+    "pct": 25
+   }
   },
   {
    "name": "Rad TV",
@@ -15483,7 +15716,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Alan Wake Remastered",
@@ -15602,7 +15837,7 @@
     "url": "https://howlongtobeat.com/game/97692"
    },
    "plat_rate": 1.6,
-   "rare_missing": 31,
+   "rare_missing": 13,
    "first_trophy_at": "2024-07-12T13:49:26+00:00",
    "platinum_at": null,
    "dlc": [
@@ -15627,7 +15862,7 @@
      "total": 9
     }
    ],
-   "missing_n": 31,
+   "missing_n": 13,
    "easy": [
     {
      "n": "Boob Tube",
@@ -15644,14 +15879,19 @@
      "p": null
     },
     {
-     "n": "A Friend in Need",
+     "n": "Medical Opinions",
      "t": "bronze",
-     "r": 6.5,
+     "r": 5.3,
      "h": null,
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 37,
+    "total": 50,
+    "pct": 74
+   }
   },
   {
    "name": "Outer Wilds",
@@ -15793,7 +16033,7 @@
     "url": "https://howlongtobeat.com/game/57527"
    },
    "plat_rate": 2.2,
-   "rare_missing": 25,
+   "rare_missing": 11,
    "first_trophy_at": "2024-06-07T09:53:55+00:00",
    "platinum_at": null,
    "dlc": [
@@ -15818,7 +16058,7 @@
      "total": 2
     }
    ],
-   "missing_n": 26,
+   "missing_n": 12,
    "easy": [
     {
      "n": "Harmonic Convergence",
@@ -15842,7 +16082,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 5,
+    "total": 17,
+    "pct": 29
+   }
   },
   {
    "name": "Borderlands 3",
@@ -15952,7 +16197,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Among Us",
@@ -16031,7 +16278,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "EA SPORTS FC™ 24",
@@ -16176,11 +16425,11 @@
     "url": "https://howlongtobeat.com/game/131658"
    },
    "plat_rate": 0.1,
-   "rare_missing": 22,
+   "rare_missing": 21,
    "first_trophy_at": "2024-01-22T13:02:03+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 36,
+   "missing_n": 35,
    "easy": [
     {
      "n": "Dead-ball specialist",
@@ -16204,7 +16453,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "SpongeBob SquarePants: The Cosmic Shake",
@@ -16305,7 +16555,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Streets of Rage 4",
@@ -16370,7 +16622,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Hogwarts Legacy",
@@ -16550,11 +16804,11 @@
     "url": "https://howlongtobeat.com/game/83145"
    },
    "plat_rate": 1.9,
-   "rare_missing": 5,
+   "rare_missing": 4,
    "first_trophy_at": "2024-03-18T09:59:35+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 9,
+   "missing_n": 8,
    "easy": [
     {
      "n": "The Toast of the Town",
@@ -16603,7 +16857,8 @@
      "p": "9/12",
      "pct": 75
     }
-   ]
+   ],
+   "base": null
   },
   {
    "name": "TUNIC",
@@ -16666,7 +16921,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Ghostrunner 2",
@@ -16772,7 +17029,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Skul: The Hero Slayer",
@@ -16828,7 +17087,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Immortals of Aveum™",
@@ -16926,7 +17187,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Minecraft Legends",
@@ -17034,7 +17297,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "SILENT HILL: The Short Message",
@@ -17084,7 +17349,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Gran Turismo® 7",
@@ -17207,11 +17474,11 @@
     "url": "https://howlongtobeat.com/game/81847"
    },
    "plat_rate": 0.5,
-   "rare_missing": 17,
+   "rare_missing": 16,
    "first_trophy_at": "2023-04-18T14:12:27+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 37,
+   "missing_n": 36,
    "easy": [
     {
      "n": "Going the Distance: 24 Hours of Le Mans",
@@ -17235,7 +17502,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Horizon Call of the Mountain™",
@@ -17360,11 +17628,11 @@
     "url": "https://howlongtobeat.com/game/102430"
    },
    "plat_rate": 0.5,
-   "rare_missing": 10,
+   "rare_missing": 9,
    "first_trophy_at": "2023-08-26T20:23:43+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 24,
+   "missing_n": 23,
    "easy": [
     {
      "n": "Machine Safari",
@@ -17413,7 +17681,8 @@
      "p": "7/20",
      "pct": 35
     }
-   ]
+   ],
+   "base": null
   },
   {
    "name": "Ghostwire: Tokyo",
@@ -17585,7 +17854,7 @@
     "url": "https://howlongtobeat.com/game/68156"
    },
    "plat_rate": 3.1,
-   "rare_missing": 33,
+   "rare_missing": 25,
    "first_trophy_at": "2024-02-08T22:03:37+00:00",
    "platinum_at": null,
    "dlc": [
@@ -17600,7 +17869,7 @@
      "total": 10
     }
    ],
-   "missing_n": 35,
+   "missing_n": 27,
    "easy": [
     {
      "n": "Boundless Spirit",
@@ -17649,7 +17918,12 @@
      "p": "28/50",
      "pct": 56
     }
-   ]
+   ],
+   "base": {
+    "earned": 29,
+    "total": 56,
+    "pct": 52
+   }
   },
   {
    "name": "Hello Neighbor 2",
@@ -17753,7 +18027,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Arise: A simple story",
@@ -17918,11 +18194,11 @@
     "url": "https://howlongtobeat.com/game/70900"
    },
    "plat_rate": 4.7,
-   "rare_missing": 17,
+   "rare_missing": 16,
    "first_trophy_at": "2024-02-08T20:04:40+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 29,
+   "missing_n": 28,
    "easy": [
     {
      "n": "Always together",
@@ -17946,7 +18222,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Sifu",
@@ -18094,7 +18371,7 @@
     "url": "https://howlongtobeat.com/game/89091"
    },
    "plat_rate": 2.3,
-   "rare_missing": 36,
+   "rare_missing": 17,
    "first_trophy_at": "2024-02-06T21:41:02+00:00",
    "platinum_at": null,
    "dlc": [
@@ -18119,7 +18396,7 @@
      "total": 10
     }
    ],
-   "missing_n": 59,
+   "missing_n": 40,
    "easy": [
     {
      "n": "Lightning Hands",
@@ -18160,7 +18437,12 @@
      "p": "3/30",
      "pct": 10
     }
-   ]
+   ],
+   "base": {
+    "earned": 2,
+    "total": 42,
+    "pct": 5
+   }
   },
   {
    "name": "Dead Space",
@@ -18332,11 +18614,11 @@
     "url": "https://howlongtobeat.com/game/95927"
    },
    "plat_rate": 1.6,
-   "rare_missing": 8,
+   "rare_missing": 7,
    "first_trophy_at": "2024-01-08T21:23:23+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 11,
+   "missing_n": 10,
    "easy": [
     {
      "n": "Backbreaker",
@@ -18360,7 +18642,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Evil West",
@@ -18467,7 +18750,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "ELDEN RING",
@@ -18672,7 +18957,7 @@
    "first_trophy_at": "2023-08-18T21:31:55+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 13,
+   "missing_n": 12,
    "easy": [
     {
      "n": "Shardbearer Mohg",
@@ -18696,7 +18981,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Sable",
@@ -18762,7 +19048,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "LEGO® 2K Drive",
@@ -18871,7 +19159,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Room VR: A Dark Matter",
@@ -18950,7 +19240,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Journey to Foundation",
@@ -19049,7 +19341,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "DRAGON BALL: THE BREAKERS",
@@ -19156,7 +19450,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Mafia II: Definitive Edition",
@@ -19255,7 +19551,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "EA SPORTS™ FIFA 23",
@@ -19374,11 +19672,11 @@
     "url": "https://howlongtobeat.com/game/110878"
    },
    "plat_rate": 0.1,
-   "rare_missing": 21,
+   "rare_missing": 20,
    "first_trophy_at": "2022-10-06T15:16:00+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 38,
+   "missing_n": 37,
    "easy": [
     {
      "n": "Power Shot",
@@ -19402,7 +19700,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Weird West: Definitive Edition",
@@ -19463,7 +19762,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Black Desert",
@@ -19548,7 +19849,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Generation Zero",
@@ -19625,7 +19928,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Saints Row",
@@ -19729,7 +20034,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Old Man's Journey",
@@ -19884,7 +20191,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Dreams™",
@@ -19967,7 +20275,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Trek to Yomi",
@@ -20134,11 +20444,11 @@
     "url": "https://howlongtobeat.com/game/93913"
    },
    "plat_rate": 0.6,
-   "rare_missing": 20,
+   "rare_missing": 19,
    "first_trophy_at": "2023-07-22T23:38:08+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 21,
+   "missing_n": 20,
    "easy": [
     {
      "n": "Afterlife traveler",
@@ -20162,7 +20472,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Endling - Extinction is Forever",
@@ -20314,11 +20625,11 @@
     "url": "https://howlongtobeat.com/game/87488"
    },
    "plat_rate": 4.3,
-   "rare_missing": 4,
+   "rare_missing": 3,
    "first_trophy_at": "2023-07-22T22:23:14+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 25,
+   "missing_n": 24,
    "easy": [
     {
      "n": "A Friend in Need",
@@ -20342,7 +20653,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "God of War Ragnarök",
@@ -20518,7 +20830,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 35,
+    "total": 35,
+    "pct": 100
+   }
   },
   {
    "name": "Moss VR",
@@ -20624,7 +20941,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Moss II VR",
@@ -20730,7 +21049,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Call of Duty®: Black Ops Cold War",
@@ -20832,7 +21153,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Thumper",
@@ -20990,11 +21313,11 @@
     "url": "https://howlongtobeat.com/game/40500"
    },
    "plat_rate": 1.5,
-   "rare_missing": 15,
+   "rare_missing": 14,
    "first_trophy_at": "2023-06-20T14:44:54+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 15,
+   "missing_n": 14,
    "easy": [
     {
      "n": "Level 1 S Rank",
@@ -21018,7 +21341,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Before Your Eyes",
@@ -21183,11 +21507,11 @@
     "url": "https://howlongtobeat.com/game/90830"
    },
    "plat_rate": 2.7,
-   "rare_missing": 6,
+   "rare_missing": 5,
    "first_trophy_at": "2023-06-23T15:12:38+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 7,
+   "missing_n": 6,
    "easy": [
     {
      "n": "Egyptologist",
@@ -21211,7 +21535,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Jurassic World Evolution 2",
@@ -21317,7 +21642,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "NBA 2K23",
@@ -21426,7 +21753,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "LEGO® Builder's Journey",
@@ -21482,7 +21811,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Rez Infinite",
@@ -21566,7 +21897,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "No Man's Sky",
@@ -21761,7 +22094,7 @@
     "url": "https://howlongtobeat.com/game/20074"
    },
    "plat_rate": 1.6,
-   "rare_missing": 9,
+   "rare_missing": 5,
    "first_trophy_at": "2018-04-27T21:31:14+00:00",
    "platinum_at": null,
    "dlc": [
@@ -21786,7 +22119,7 @@
      "total": 5
     }
    ],
-   "missing_n": 20,
+   "missing_n": 15,
    "easy": [
     {
      "n": "The Space Merchants",
@@ -21810,7 +22143,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 7,
+    "total": 22,
+    "pct": 32
+   }
   },
   {
    "name": "Chivalry 2",
@@ -21914,7 +22252,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Sackboy: A Big Adventure",
@@ -22083,11 +22423,11 @@
     "url": "https://howlongtobeat.com/game/80125"
    },
    "plat_rate": 0.4,
-   "rare_missing": 13,
+   "rare_missing": 12,
    "first_trophy_at": "2023-05-21T19:28:53+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 23,
+   "missing_n": 22,
    "easy": [
     {
      "n": "Slap Attack",
@@ -22136,7 +22476,8 @@
      "p": "6/8",
      "pct": 75
     }
-   ]
+   ],
+   "base": null
   },
   {
    "name": "OlliOlli World",
@@ -22310,7 +22651,7 @@
     "url": "https://howlongtobeat.com/game/91070"
    },
    "plat_rate": 0.1,
-   "rare_missing": 49,
+   "rare_missing": 36,
    "first_trophy_at": "2023-05-08T18:16:56+00:00",
    "platinum_at": null,
    "dlc": [
@@ -22335,7 +22676,7 @@
      "total": 6
     }
    ],
-   "missing_n": 50,
+   "missing_n": 37,
    "easy": [
     {
      "n": "So That's How You Do It",
@@ -22359,7 +22700,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 5,
+    "total": 42,
+    "pct": 12
+   }
   },
   {
    "name": "STAR WARS Jedi: Fallen Order™",
@@ -22518,11 +22864,11 @@
     "url": "https://howlongtobeat.com/game/60145"
    },
    "plat_rate": 3.6,
-   "rare_missing": 16,
+   "rare_missing": 15,
    "first_trophy_at": "2023-04-03T19:18:29+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 19,
+   "missing_n": 18,
    "easy": [
     {
      "n": "Bank Shot",
@@ -22546,7 +22892,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "LEGO®  Harry Potter™ Collection",
@@ -22660,11 +23007,11 @@
     "url": "https://howlongtobeat.com/game/47803"
    },
    "plat_rate": 4.6,
-   "rare_missing": 12,
+   "rare_missing": 11,
    "first_trophy_at": null,
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 49,
+   "missing_n": 48,
    "easy": [
     {
      "n": "Albus Percival Wulfric Brian",
@@ -22688,7 +23035,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Tails of Iron",
@@ -22794,7 +23142,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Horizon Forbidden West",
@@ -23027,7 +23377,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 58,
+    "total": 58,
+    "pct": 100
+   }
   },
   {
    "name": "Battlefield™ 2042",
@@ -23140,7 +23495,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Song in the Smoke Rekindled",
@@ -23245,7 +23602,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Star Wars: Tales from the Galaxy's Edge - Enhanced Edition",
@@ -23297,7 +23656,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Mafia: Definitive Edition",
@@ -23396,7 +23757,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Evil Dead: The Game",
@@ -23502,7 +23865,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Marvel’s Spider-Man: Miles Morales",
@@ -23671,11 +24036,11 @@
     "url": "https://howlongtobeat.com/game/79859"
    },
    "plat_rate": 5.6,
-   "rare_missing": 4,
+   "rare_missing": 3,
    "first_trophy_at": "2023-01-07T20:31:53+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 4,
+   "missing_n": 3,
    "easy": [
     {
      "n": "Ready for Anything",
@@ -23699,7 +24064,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "NieR:Automata",
@@ -23870,11 +24236,11 @@
     "url": "https://howlongtobeat.com/game/38029"
    },
    "plat_rate": 8.6,
-   "rare_missing": 3,
+   "rare_missing": 2,
    "first_trophy_at": "2022-12-20T21:17:42+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 32,
+   "missing_n": 31,
    "easy": [
     {
      "n": "Fighting's Not My Thing",
@@ -23898,7 +24264,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Axiom Verge 2",
@@ -24007,7 +24374,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Fallout 76",
@@ -24113,7 +24482,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Heavenly Bodies",
@@ -24199,11 +24570,11 @@
     "url": "https://howlongtobeat.com/game/95410"
    },
    "plat_rate": 0.9,
-   "rare_missing": 13,
+   "rare_missing": 12,
    "first_trophy_at": "2022-12-18T01:54:37+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 25,
+   "missing_n": 24,
    "easy": [
     {
      "n": "Power Restored",
@@ -24227,7 +24598,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Resident Evil Village",
@@ -24407,7 +24779,7 @@
     "url": "https://howlongtobeat.com/game/80038"
    },
    "plat_rate": 1.6,
-   "rare_missing": 28,
+   "rare_missing": 20,
    "first_trophy_at": "2022-10-22T22:09:00+00:00",
    "platinum_at": null,
    "dlc": [
@@ -24422,7 +24794,7 @@
      "total": 7
     }
    ],
-   "missing_n": 34,
+   "missing_n": 26,
    "easy": [
     {
      "n": "Photographer",
@@ -24446,7 +24818,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 23,
+    "total": 49,
+    "pct": 47
+   }
   },
   {
    "name": "Nioh 2",
@@ -24502,7 +24879,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Ghostrunner",
@@ -24599,7 +24978,7 @@
     "url": "https://howlongtobeat.com/game/69898"
    },
    "plat_rate": 1.0,
-   "rare_missing": 39,
+   "rare_missing": 27,
    "first_trophy_at": null,
    "platinum_at": null,
    "dlc": [
@@ -24614,7 +24993,7 @@
      "total": 11
     }
    ],
-   "missing_n": 45,
+   "missing_n": 33,
    "easy": [
     {
      "n": "Longrunner",
@@ -24638,7 +25017,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 0,
+    "total": 33,
+    "pct": 0
+   }
   },
   {
    "name": "DRAGON BALL XENOVERSE 2",
@@ -24793,7 +25177,7 @@
     "url": "https://howlongtobeat.com/game/40860"
    },
    "plat_rate": 0.7,
-   "rare_missing": 22,
+   "rare_missing": 11,
    "first_trophy_at": "2022-10-24T10:32:39+00:00",
    "platinum_at": null,
    "dlc": [
@@ -24838,7 +25222,7 @@
      "total": 3
     }
    ],
-   "missing_n": 59,
+   "missing_n": 47,
    "easy": [
     {
      "n": "The Saiyan Legend Reborn! ",
@@ -24862,7 +25246,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 2,
+    "total": 49,
+    "pct": 4
+   }
   },
   {
    "name": "Hoa",
@@ -25032,7 +25421,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Kena: Bridge of Spirits",
@@ -25202,11 +25592,11 @@
     "url": "https://howlongtobeat.com/game/79793"
    },
    "plat_rate": 1.9,
-   "rare_missing": 8,
+   "rare_missing": 7,
    "first_trophy_at": "2022-10-08T23:26:40+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 9,
+   "missing_n": 8,
    "easy": [
     {
      "n": "Quick Draw",
@@ -25230,7 +25620,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "SUPERHOT",
@@ -25336,7 +25727,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Dark Pictures Anthology: Man of Medan",
@@ -25473,11 +25866,11 @@
     "url": "https://howlongtobeat.com/game/67361"
    },
    "plat_rate": 0.5,
-   "rare_missing": 15,
+   "rare_missing": 14,
    "first_trophy_at": "2022-10-01T20:30:26+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 24,
+   "missing_n": 23,
    "easy": [
     {
      "n": "Brother thing, you know",
@@ -25501,7 +25894,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "CAPTAIN TSUBASA: RISE OF NEW CHAMPIONS",
@@ -25671,11 +26065,11 @@
     "url": "https://howlongtobeat.com/game/78271"
    },
    "plat_rate": 0.5,
-   "rare_missing": 21,
+   "rare_missing": 20,
    "first_trophy_at": "2022-09-20T15:10:35+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 38,
+   "missing_n": 37,
    "easy": [
     {
      "n": "First Step to the Top",
@@ -25699,7 +26093,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Little Nightmares",
@@ -25926,7 +26321,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 6,
+    "total": 13,
+    "pct": 46
+   }
   },
   {
    "name": "GRAVITY RUSH™ 2",
@@ -26069,7 +26469,7 @@
     "url": "https://howlongtobeat.com/game/30313"
    },
    "plat_rate": 2.7,
-   "rare_missing": 30,
+   "rare_missing": 19,
    "first_trophy_at": "2021-11-18T22:01:23+00:00",
    "platinum_at": null,
    "dlc": [
@@ -26084,7 +26484,7 @@
      "total": 11
     }
    ],
-   "missing_n": 35,
+   "missing_n": 23,
    "easy": [
     {
      "n": "Kat's Daily Routine",
@@ -26108,7 +26508,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 13,
+    "total": 36,
+    "pct": 36
+   }
   },
   {
    "name": "FIFA 22",
@@ -26262,11 +26667,11 @@
     "url": "https://howlongtobeat.com/game/98260"
    },
    "plat_rate": 0.1,
-   "rare_missing": 21,
+   "rare_missing": 20,
    "first_trophy_at": "2022-05-23T14:45:29+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 34,
+   "missing_n": 33,
    "easy": [
     {
      "n": "Dead-ball specialist",
@@ -26290,7 +26695,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Yakuza: Like A Dragon",
@@ -26397,7 +26803,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Crash Bandicoot™ 4: It’s About Time",
@@ -26495,7 +26903,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Nickelodeon All-Star Brawl",
@@ -26599,7 +27009,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "NARUTO TO BORUTO: SHINOBI STRIKER",
@@ -26679,7 +27091,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Horizon Chase Turbo",
@@ -26833,7 +27247,7 @@
     "url": "https://howlongtobeat.com/game/57066"
    },
    "plat_rate": 0.8,
-   "rare_missing": 40,
+   "rare_missing": 28,
    "first_trophy_at": "2019-12-23T14:37:04+00:00",
    "platinum_at": null,
    "dlc": [
@@ -26848,7 +27262,7 @@
      "total": 11
     }
    ],
-   "missing_n": 42,
+   "missing_n": 30,
    "easy": [
     {
      "n": "Quickie",
@@ -26872,7 +27286,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 7,
+    "total": 37,
+    "pct": 19
+   }
   },
   {
    "name": "Rayman Legends",
@@ -27060,11 +27479,11 @@
     "url": "https://howlongtobeat.com/game/12655"
    },
    "plat_rate": 0.3,
-   "rare_missing": 25,
+   "rare_missing": 24,
    "first_trophy_at": "2015-04-04T08:06:01+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 40,
+   "missing_n": 39,
    "easy": [
     {
      "n": "Just kick it!",
@@ -27088,7 +27507,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "FIFA 17",
@@ -27251,11 +27671,11 @@
     "url": "https://howlongtobeat.com/game/38724"
    },
    "plat_rate": 0.1,
-   "rare_missing": 19,
+   "rare_missing": 18,
    "first_trophy_at": "2016-12-28T14:14:10+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 34,
+   "missing_n": 33,
    "easy": [
     {
      "n": "Mine!",
@@ -27279,7 +27699,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Team Sonic Racing",
@@ -27351,7 +27772,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "ARK: Survival Evolved",
@@ -27460,7 +27883,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Deep Rock Galactic",
@@ -27542,7 +27967,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "DIRT 5",
@@ -27650,7 +28077,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Persona®5 Strikers",
@@ -27758,7 +28187,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Persistence",
@@ -27856,7 +28287,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Mortal Shell",
@@ -27933,7 +28366,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "LEGO® DC Super-Villains",
@@ -28011,7 +28446,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Godfall",
@@ -28077,7 +28514,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Resident Evil Re:Verse",
@@ -28177,7 +28616,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Need for Speed™ Payback",
@@ -28347,7 +28788,7 @@
     "url": "https://howlongtobeat.com/game/46292"
    },
    "plat_rate": 0.4,
-   "rare_missing": 26,
+   "rare_missing": 21,
    "first_trophy_at": "2021-02-03T10:56:01+00:00",
    "platinum_at": null,
    "dlc": [
@@ -28362,7 +28803,7 @@
      "total": 4
     }
    ],
-   "missing_n": 51,
+   "missing_n": 46,
    "easy": [
     {
      "n": "Udo Roth",
@@ -28386,7 +28827,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 7,
+    "total": 53,
+    "pct": 13
+   }
   },
   {
    "name": "DAYS GONE",
@@ -28562,7 +29008,7 @@
     "url": "https://howlongtobeat.com/game/38003"
    },
    "plat_rate": 4.2,
-   "rare_missing": 20,
+   "rare_missing": 4,
    "first_trophy_at": "2021-10-28T19:24:18+00:00",
    "platinum_at": null,
    "dlc": [
@@ -28597,7 +29043,7 @@
      "total": 3
     }
    ],
-   "missing_n": 55,
+   "missing_n": 39,
    "easy": [
     {
      "n": "Kitchen Courier",
@@ -28621,7 +29067,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 6,
+    "total": 45,
+    "pct": 13
+   }
   },
   {
    "name": "Until You Fall",
@@ -28678,7 +29129,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Walking Dead: Saints & Sinners",
@@ -28783,7 +29236,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "What Remains of Edith Finch",
@@ -28944,7 +29399,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "PGA TOUR 2K21",
@@ -29051,11 +29507,11 @@
     "url": "https://howlongtobeat.com/game/77979"
    },
    "plat_rate": 0.2,
-   "rare_missing": 10,
+   "rare_missing": 9,
    "first_trophy_at": "2021-10-18T20:44:08+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 29,
+   "missing_n": 28,
    "easy": [
     {
      "n": "Ferret",
@@ -29079,7 +29535,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "ENDER LILIES: Quietus of the Knights",
@@ -29261,7 +29718,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Mortal Kombat X",
@@ -29364,7 +29822,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "FINAL FANTASY VII REMAKE",
@@ -29558,11 +30018,11 @@
     "url": "https://howlongtobeat.com/game/57686"
    },
    "plat_rate": 2.6,
-   "rare_missing": 12,
+   "rare_missing": 11,
    "first_trophy_at": "2021-05-14T10:47:13+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 14,
+   "missing_n": 13,
    "easy": [
     {
      "n": "Peeress of Pull-Ups",
@@ -29586,7 +30046,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Predator: Hunting Grounds",
@@ -29690,7 +30151,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "HITMAN™ 2",
@@ -29747,7 +30210,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "STAR WARS™: Squadrons",
@@ -29832,7 +30297,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Another World - 20th Anniversary Edition",
@@ -30014,7 +30481,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Persona 5",
@@ -30175,11 +30643,11 @@
     "url": "https://howlongtobeat.com/game/15221"
    },
    "plat_rate": 2.2,
-   "rare_missing": 11,
+   "rare_missing": 10,
    "first_trophy_at": "2021-04-10T22:16:07+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 43,
+   "missing_n": 42,
    "easy": [
     {
      "n": "Castle of Lust Falls",
@@ -30203,7 +30671,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Stranded Deep",
@@ -30303,7 +30772,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Battlefield™ V",
@@ -30412,7 +30883,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Zombie Army 4: Dead War",
@@ -30520,7 +30993,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Monster Hunter: World",
@@ -30657,11 +31132,11 @@
     "url": "https://howlongtobeat.com/game/52493"
    },
    "plat_rate": 1.1,
-   "rare_missing": 11,
+   "rare_missing": 10,
    "first_trophy_at": "2021-04-06T00:12:13+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 49,
+   "missing_n": 48,
    "easy": [
     {
      "n": "Welcome to the New World",
@@ -30685,7 +31160,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Devil May Cry 5 Series",
@@ -30852,7 +31328,7 @@
     "url": "https://howlongtobeat.com/game/57514"
    },
    "plat_rate": 0.3,
-   "rare_missing": 26,
+   "rare_missing": 20,
    "first_trophy_at": "2021-03-11T15:40:47+00:00",
    "platinum_at": null,
    "dlc": [
@@ -30877,7 +31353,7 @@
      "total": 4
     }
    ],
-   "missing_n": 36,
+   "missing_n": 30,
    "easy": [
     {
      "n": "Break a Leg",
@@ -30901,7 +31377,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 18,
+    "total": 48,
+    "pct": 38
+   }
   },
   {
    "name": "Farpoint",
@@ -30956,7 +31437,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Remnant: From the Ashes",
@@ -31042,7 +31525,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "GreedFall",
@@ -31110,7 +31595,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Red Dead Redemption 2",
@@ -31248,11 +31735,11 @@
     "url": "https://howlongtobeat.com/game/27100"
    },
    "plat_rate": 0.1,
-   "rare_missing": 26,
+   "rare_missing": 25,
    "first_trophy_at": "2020-12-18T15:16:43+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 50,
+   "missing_n": 49,
    "easy": [
     {
      "n": "Trusty Steed",
@@ -31276,7 +31763,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "A Plague Tale: Innocence",
@@ -31420,11 +31908,11 @@
     "url": "https://howlongtobeat.com/game/65080"
    },
    "plat_rate": 9.2,
-   "rare_missing": 1,
+   "rare_missing": 0,
    "first_trophy_at": "2020-12-06T02:16:34+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 13,
+   "missing_n": 12,
    "easy": [
     {
      "n": "Tribute",
@@ -31448,7 +31936,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Worms Rumble",
@@ -31557,7 +32046,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Hellblade: Senua’s Sacrifice",
@@ -31736,7 +32227,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Hollow Knight",
@@ -31902,11 +32394,11 @@
     "url": "https://howlongtobeat.com/game/26286"
    },
    "plat_rate": 2.0,
-   "rare_missing": 12,
+   "rare_missing": 11,
    "first_trophy_at": "2020-11-06T11:25:45+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 12,
+   "missing_n": 11,
    "easy": [
     {
      "n": "Solace",
@@ -31930,7 +32422,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Spotify",
@@ -31980,7 +32473,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Ghost of Tsushima",
@@ -32215,7 +32710,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 51,
+    "total": 51,
+    "pct": 100
+   }
   },
   {
    "name": "Middle-earth™: Shadow of War™",
@@ -32322,7 +32822,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Vampyr",
@@ -32424,7 +32926,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Blasphemous",
@@ -32585,11 +33089,11 @@
     "url": "https://howlongtobeat.com/game/62047"
    },
    "plat_rate": 2.4,
-   "rare_missing": 6,
+   "rare_missing": 5,
    "first_trophy_at": "2020-09-10T12:23:19+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 7,
+   "missing_n": 6,
    "easy": [
     {
      "n": "Power Unleashed",
@@ -32613,7 +33117,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "The Last of Us™ Part II",
@@ -32779,7 +33284,7 @@
     "url": "https://howlongtobeat.com/game/41753"
    },
    "plat_rate": 4.0,
-   "rare_missing": 8,
+   "rare_missing": 5,
    "first_trophy_at": "2020-08-28T10:04:41+00:00",
    "platinum_at": null,
    "dlc": [
@@ -32794,7 +33299,7 @@
      "total": 2
     }
    ],
-   "missing_n": 8,
+   "missing_n": 5,
    "easy": [
     {
      "n": "Arms Master",
@@ -32818,7 +33323,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 20,
+    "total": 25,
+    "pct": 80
+   }
   },
   {
    "name": "Street Fighter V",
@@ -32960,11 +33470,11 @@
     "url": "https://howlongtobeat.com/game/33284"
    },
    "plat_rate": 0.1,
-   "rare_missing": 35,
+   "rare_missing": 34,
    "first_trophy_at": "2020-09-10T11:35:07+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 42,
+   "missing_n": 41,
    "easy": [
     {
      "n": "Enlightenment",
@@ -32988,7 +33498,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "YouTube",
@@ -33099,7 +33610,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Cuphead",
@@ -33268,7 +33781,7 @@
     "url": "https://howlongtobeat.com/game/21680"
    },
    "plat_rate": 3.4,
-   "rare_missing": 19,
+   "rare_missing": 7,
    "first_trophy_at": "2020-08-17T10:31:08+00:00",
    "platinum_at": null,
    "dlc": [
@@ -33293,31 +33806,36 @@
      "total": 2
     }
    ],
-   "missing_n": 27,
+   "missing_n": 12,
    "easy": [
-    {
-     "n": "Alive and Kicking",
-     "t": "bronze",
-     "r": 17.7,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "The Latest Sensation",
-     "t": "bronze",
-     "r": 17.0,
-     "h": null,
-     "p": null
-    },
     {
      "n": "Coffers Full",
      "t": "bronze",
      "r": 14.2,
      "h": null,
      "p": null
+    },
+    {
+     "n": "Sheriff",
+     "t": "gold",
+     "r": 12.6,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Butter-and-Egg Man",
+     "t": "bronze",
+     "r": 11.1,
+     "h": null,
+     "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 16,
+    "total": 28,
+    "pct": 57
+   }
   },
   {
    "name": "The Last of Us™ Remastered",
@@ -33492,7 +34010,7 @@
     "url": "https://howlongtobeat.com/game/20221"
    },
    "plat_rate": 0.3,
-   "rare_missing": 42,
+   "rare_missing": 20,
    "first_trophy_at": "2020-06-22T14:17:36+00:00",
    "platinum_at": null,
    "dlc": [
@@ -33537,31 +34055,36 @@
      "total": 2
     }
    ],
-   "missing_n": 42,
+   "missing_n": 20,
    "easy": [
-    {
-     "n": "Recovered Supply Raider",
-     "t": "bronze",
-     "r": 7.5,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "Forsaken Supply Raider",
-     "t": "bronze",
-     "r": 7.4,
-     "h": null,
-     "p": null
-    },
     {
      "n": "No Matter What - Hard",
      "t": "silver",
      "r": 6.2,
      "h": null,
      "p": null
+    },
+    {
+     "n": "Populace",
+     "t": "bronze",
+     "r": 4.7,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "The Last of Us - Easy +",
+     "t": "silver",
+     "r": 4.1,
+     "h": null,
+     "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 3,
+    "total": 23,
+    "pct": 13
+   }
   },
   {
    "name": "LEGO® Jurassic World™",
@@ -33697,11 +34220,11 @@
     "url": "https://howlongtobeat.com/game/24013"
    },
    "plat_rate": 2.7,
-   "rare_missing": 18,
+   "rare_missing": 17,
    "first_trophy_at": "2020-07-21T14:47:20+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 49,
+   "missing_n": 48,
    "easy": [
     {
      "n": "Remember To Wash Your Hands",
@@ -33725,7 +34248,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "NBA 2K20",
@@ -33793,7 +34317,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Erica",
@@ -33897,7 +34423,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "DEATH STRANDING™",
@@ -34067,11 +34595,11 @@
     "url": "https://howlongtobeat.com/game/38061"
    },
    "plat_rate": 2.1,
-   "rare_missing": 13,
+   "rare_missing": 12,
    "first_trophy_at": "2020-04-17T19:58:41+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 15,
+   "missing_n": 14,
    "easy": [
     {
      "n": "Childminder",
@@ -34095,7 +34623,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "WIPEOUT™ OMEGA COLLECTION",
@@ -34190,11 +34719,11 @@
     "url": "https://howlongtobeat.com/game/46335"
    },
    "plat_rate": 0.1,
-   "rare_missing": 33,
+   "rare_missing": 32,
    "first_trophy_at": "2020-04-10T15:12:44+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 33,
+   "missing_n": 32,
    "easy": [
     {
      "n": "Deadly Momentum",
@@ -34218,7 +34747,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Burly Men At Sea",
@@ -34387,7 +34917,7 @@
    "first_trophy_at": "2020-04-16T20:40:12+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 20,
+   "missing_n": 19,
    "easy": [
     {
      "n": "Wooden Trousers",
@@ -34411,7 +34941,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "SHADOW OF THE COLOSSUS™",
@@ -34558,11 +35089,11 @@
     "url": "https://howlongtobeat.com/game/52731"
    },
    "plat_rate": 1.0,
-   "rare_missing": 16,
+   "rare_missing": 15,
    "first_trophy_at": "2020-04-09T23:39:38+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 17,
+   "missing_n": 16,
    "easy": [
     {
      "n": "Five-Lined Skink",
@@ -34586,7 +35117,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "KINGDOM HEARTS Ⅲ",
@@ -34682,7 +35214,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "DiRT Rally 2.0",
@@ -34752,7 +35286,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "METAL GEAR SOLID V: THE PHANTOM PAIN",
@@ -34917,11 +35453,11 @@
     "url": "https://howlongtobeat.com/game/5918"
    },
    "plat_rate": 0.9,
-   "rare_missing": 15,
+   "rare_missing": 14,
    "first_trophy_at": "2020-03-05T12:48:45+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 35,
+   "missing_n": 34,
    "easy": [
     {
      "n": "Enhancement",
@@ -34945,7 +35481,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "SONIC FORCES",
@@ -35009,7 +35546,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "ACE COMBAT™ 7: SKIES UNKNOWN",
@@ -35157,11 +35696,11 @@
     "url": "https://howlongtobeat.com/game/53763"
    },
    "plat_rate": 0.1,
-   "rare_missing": 24,
+   "rare_missing": 23,
    "first_trophy_at": "2020-02-02T14:53:00+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 48,
+   "missing_n": 47,
    "easy": [
     {
      "n": "Looming Shadow",
@@ -35185,7 +35724,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Outlast 2",
@@ -35354,11 +35894,11 @@
     "url": "https://howlongtobeat.com/game/32537"
    },
    "plat_rate": 0.1,
-   "rare_missing": 12,
+   "rare_missing": 11,
    "first_trophy_at": "2020-02-25T10:02:18+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 14,
+   "missing_n": 13,
    "easy": [
     {
      "n": "Heal the Sick",
@@ -35382,7 +35922,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "BioShock: The Collection",
@@ -35461,7 +36002,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "BioShock Infinite: The Complete Edition",
@@ -35513,7 +36056,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "KINGDOM HEARTS - HD 1.5+2.5 ReMIX -",
@@ -35656,11 +36201,11 @@
     "url": "https://howlongtobeat.com/game/42802"
    },
    "plat_rate": 2.2,
-   "rare_missing": 25,
+   "rare_missing": 24,
    "first_trophy_at": "2019-12-23T00:37:45+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 31,
+   "missing_n": 30,
    "easy": [
     {
      "n": "Supreme Soloist",
@@ -35684,7 +36229,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Goat Simulator",
@@ -35787,7 +36333,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Uncharted™: The Nathan Drake Collection",
@@ -35868,7 +36416,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "BATMAN™: ARKHAM KNIGHT",
@@ -36067,7 +36617,7 @@
     "url": "https://howlongtobeat.com/game/18005"
    },
    "plat_rate": 0.7,
-   "rare_missing": 61,
+   "rare_missing": 15,
    "first_trophy_at": "2019-09-26T13:14:22+00:00",
    "platinum_at": null,
    "dlc": [
@@ -36232,7 +36782,7 @@
      "total": 7
     }
    ],
-   "missing_n": 76,
+   "missing_n": 30,
    "easy": [
     {
      "n": "Double Jeopardy",
@@ -36256,7 +36806,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 34,
+    "total": 64,
+    "pct": 53
+   }
   },
   {
    "name": "Titanfall™ 2",
@@ -36363,7 +36918,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Nioh",
@@ -36432,7 +36989,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Uncanny Valley",
@@ -36584,7 +37143,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Shadow of the Tomb Raider",
@@ -36776,7 +37336,7 @@
     "url": "https://howlongtobeat.com/game/51233"
    },
    "plat_rate": 0.9,
-   "rare_missing": 41,
+   "rare_missing": 4,
    "first_trophy_at": "2019-07-21T00:34:32+00:00",
    "platinum_at": null,
    "dlc": [
@@ -36851,31 +37411,36 @@
      "total": 6
     }
    ],
-   "missing_n": 41,
+   "missing_n": 4,
    "easy": [
     {
-     "n": "That Was A Breeze",
-     "t": "gold",
-     "r": 5.6,
+     "n": "One with the Jungle",
+     "t": "bronze",
+     "r": 2.5,
      "h": null,
      "p": null
     },
     {
-     "n": "Go With The Flow",
-     "t": "silver",
-     "r": 5.4,
-     "h": true,
+     "n": "Gunslinger",
+     "t": "bronze",
+     "r": 1.7,
+     "h": null,
      "p": null
     },
     {
-     "n": "Monkey Do",
-     "t": "gold",
-     "r": 4.7,
+     "n": "Made to Endure",
+     "t": "bronze",
+     "r": 1.6,
      "h": null,
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 59,
+    "total": 63,
+    "pct": 94
+   }
   },
   {
    "name": "Darksiders III",
@@ -36979,7 +37544,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Sniper Elite 4",
@@ -37087,7 +37654,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Detroit: Become Human™",
@@ -37266,11 +37835,11 @@
     "url": "https://howlongtobeat.com/game/31388"
    },
    "plat_rate": 1.4,
-   "rare_missing": 7,
+   "rare_missing": 6,
    "first_trophy_at": "2019-05-30T15:04:44+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 19,
+   "missing_n": 18,
    "easy": [
     {
      "n": "DEFEND YOURSELF",
@@ -37294,7 +37863,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "God of War",
@@ -37489,7 +38059,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Conan Exiles",
@@ -37595,7 +38166,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "King's Quest",
@@ -37681,7 +38254,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "HITMAN™",
@@ -37788,7 +38363,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Marvel's Spider-Man",
@@ -38031,7 +38608,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 50,
+    "total": 50,
+    "pct": 100
+   }
   },
   {
    "name": "STEEP",
@@ -38123,7 +38705,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "RESIDENT EVIL 7 biohazard",
@@ -38302,7 +38886,7 @@
     "url": "https://howlongtobeat.com/game/38051"
    },
    "plat_rate": 1.6,
-   "rare_missing": 33,
+   "rare_missing": 11,
    "first_trophy_at": "2018-11-01T22:01:22+00:00",
    "platinum_at": null,
    "dlc": [
@@ -38347,7 +38931,7 @@
      "total": 2
     }
    ],
-   "missing_n": 37,
+   "missing_n": 15,
    "easy": [
     {
      "n": "Slash Slash, Slashity Slash!",
@@ -38371,7 +38955,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 22,
+    "total": 37,
+    "pct": 59
+   }
   },
   {
    "name": "Iconoclasts",
@@ -38438,7 +39027,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Assassin's Creed® Odyssey",
@@ -38532,7 +39123,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Yakuza Kiwami",
@@ -38621,7 +39214,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Assassin's Creed® Origins",
@@ -38772,7 +39367,7 @@
     "url": "https://howlongtobeat.com/game/46402"
    },
    "plat_rate": 3.6,
-   "rare_missing": 21,
+   "rare_missing": 3,
    "first_trophy_at": "2018-06-30T12:36:26+00:00",
    "platinum_at": null,
    "dlc": [
@@ -38807,7 +39402,7 @@
      "total": 6
     }
    ],
-   "missing_n": 28,
+   "missing_n": 10,
    "easy": [
     {
      "n": "Slasher",
@@ -38831,7 +39426,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 40,
+    "total": 50,
+    "pct": 80
+   }
   },
   {
    "name": "Friday the 13th: The Game",
@@ -38937,7 +39537,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "God of War® III Remastered",
@@ -38989,7 +39591,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Destiny 2",
@@ -39096,7 +39700,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Mafia: Trilogy",
@@ -39162,7 +39768,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Here They Lie™",
@@ -39238,7 +39846,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Dead by Daylight",
@@ -39341,7 +39951,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Knowledge is Power™",
@@ -39392,7 +40004,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "ABSOLVER",
@@ -39487,7 +40101,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Child of Light",
@@ -39662,7 +40278,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Call of Duty®: Black Ops III",
@@ -39765,7 +40382,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Trials Fusion™",
@@ -39851,7 +40470,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "XCOM 2",
@@ -39959,7 +40580,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Mighty No. 9",
@@ -40096,11 +40719,11 @@
     "url": "https://howlongtobeat.com/game/14197"
    },
    "plat_rate": 0.1,
-   "rare_missing": 28,
+   "rare_missing": 27,
    "first_trophy_at": "2018-06-01T11:17:40+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 30,
+   "missing_n": 29,
    "easy": [
     {
      "n": "FINE PLAY! (Opening Boss)",
@@ -40124,7 +40747,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Horizon Zero Dawn™",
@@ -40317,7 +40941,7 @@
     "url": "https://howlongtobeat.com/game/26784"
    },
    "plat_rate": 5.3,
-   "rare_missing": 15,
+   "rare_missing": 2,
    "first_trophy_at": "2017-10-12T14:58:35+00:00",
    "platinum_at": null,
    "dlc": [
@@ -40352,7 +40976,7 @@
      "total": 12
     }
    ],
-   "missing_n": 20,
+   "missing_n": 7,
    "easy": [
     {
      "n": "Aided the defectors",
@@ -40376,7 +41000,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 48,
+    "total": 55,
+    "pct": 87
+   }
   },
   {
    "name": "The Unfinished Swan",
@@ -40566,7 +41195,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Night in the Woods",
@@ -40737,11 +41367,11 @@
     "url": "https://howlongtobeat.com/game/20078"
    },
    "plat_rate": 1.1,
-   "rare_missing": 13,
+   "rare_missing": 12,
    "first_trophy_at": "2018-03-10T15:41:19+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 16,
+   "missing_n": 15,
    "easy": [
     {
      "n": "Best Available Friend",
@@ -40765,7 +41395,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Mad Max",
@@ -40866,7 +41497,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Trackmania Turbo",
@@ -40953,7 +41586,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Ratchet & Clank™",
@@ -41094,11 +41729,11 @@
     "url": "https://howlongtobeat.com/game/35859"
    },
    "plat_rate": 2.6,
-   "rare_missing": 22,
+   "rare_missing": 21,
    "first_trophy_at": "2017-10-21T11:16:48+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 44,
+   "missing_n": 43,
    "easy": [
     {
      "n": "The Rescuer",
@@ -41122,7 +41757,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Claire",
@@ -41225,7 +41861,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "SOMA",
@@ -41390,7 +42028,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Never Alone",
@@ -41608,7 +42247,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 6,
+    "total": 15,
+    "pct": 40
+   }
   },
   {
    "name": "STAR WARS™ Battlefront™ II",
@@ -41781,7 +42425,7 @@
     "url": "https://howlongtobeat.com/game/9098"
    },
    "plat_rate": 0.4,
-   "rare_missing": 14,
+   "rare_missing": 13,
    "first_trophy_at": "2018-03-01T14:33:57+00:00",
    "platinum_at": null,
    "dlc": [
@@ -41796,7 +42440,7 @@
      "total": 3
     }
    ],
-   "missing_n": 25,
+   "missing_n": 24,
    "easy": [
     {
      "n": "Battle Beyond the Stars",
@@ -41820,7 +42464,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 16,
+    "total": 40,
+    "pct": 40
+   }
   },
   {
    "name": "Wolfenstein® II: The New Colossus™",
@@ -41997,7 +42646,7 @@
     "url": "https://howlongtobeat.com/game/46420"
    },
    "plat_rate": 0.1,
-   "rare_missing": 54,
+   "rare_missing": 23,
    "first_trophy_at": "2018-01-23T21:06:17+00:00",
    "platinum_at": null,
    "dlc": [
@@ -42032,7 +42681,7 @@
      "total": 10
     }
    ],
-   "missing_n": 58,
+   "missing_n": 27,
    "easy": [
     {
      "n": "Crippled but Able",
@@ -42056,7 +42705,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 23,
+    "total": 50,
+    "pct": 46
+   }
   },
   {
    "name": "Grand Kingdom",
@@ -42129,7 +42783,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "StarBlood Arena™",
@@ -42178,7 +42834,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Uncharted: The Lost Legacy™",
@@ -42308,11 +42966,11 @@
     "url": "https://howlongtobeat.com/game/41814"
    },
    "plat_rate": 1.8,
-   "rare_missing": 26,
+   "rare_missing": 25,
    "first_trophy_at": "2018-01-08T09:34:42+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 34,
+   "missing_n": 33,
    "easy": [
     {
      "n": "Drop Me a Line",
@@ -42336,7 +42994,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "UNCHARTED: Legacy of Thieves Collection",
@@ -42511,7 +43170,7 @@
     "url": "https://howlongtobeat.com/game/101083"
    },
    "plat_rate": 0.6,
-   "rare_missing": 47,
+   "rare_missing": 34,
    "first_trophy_at": "2016-05-10T19:45:56+00:00",
    "platinum_at": null,
    "dlc": [
@@ -42526,7 +43185,7 @@
      "total": 12
     }
    ],
-   "missing_n": 51,
+   "missing_n": 38,
    "easy": [
     {
      "n": "Don't Feed the Animals",
@@ -42550,7 +43209,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 17,
+    "total": 55,
+    "pct": 31
+   }
   },
   {
    "name": "Deus Ex: Mankind Divided™",
@@ -42657,7 +43321,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Batman",
@@ -42705,7 +43371,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Bound",
@@ -42756,7 +43424,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Worms Battlegrounds",
@@ -42842,7 +43512,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Until Dawn™",
@@ -43007,11 +43679,11 @@
     "url": "https://howlongtobeat.com/game/21924"
    },
    "plat_rate": 2.6,
-   "rare_missing": 8,
+   "rare_missing": 7,
    "first_trophy_at": "2017-10-11T13:40:05+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 14,
+   "missing_n": 13,
    "easy": [
     {
      "n": "Scream Too!",
@@ -43035,7 +43707,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Amnesia Collection",
@@ -43103,7 +43776,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Life Is Strange™",
@@ -43288,7 +43963,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "inFAMOUS™ Second Son",
@@ -43339,7 +44015,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Last Guardian™",
@@ -43471,11 +44149,11 @@
     "url": "https://howlongtobeat.com/game/9995"
    },
    "plat_rate": 0.3,
-   "rare_missing": 19,
+   "rare_missing": 18,
    "first_trophy_at": "2017-08-18T19:48:57+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 19,
+   "missing_n": 18,
    "easy": [
     {
      "n": "Broad-Backed",
@@ -43499,7 +44177,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Assassin's Creed® Freedom Cry",
@@ -43602,7 +44281,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Just Cause 3",
@@ -43707,7 +44388,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "RiME",
@@ -43859,11 +44542,11 @@
     "url": "https://howlongtobeat.com/game/20064"
    },
    "plat_rate": 4.0,
-   "rare_missing": 17,
+   "rare_missing": 16,
    "first_trophy_at": "2017-06-17T19:16:54+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 23,
+   "missing_n": 22,
    "easy": [
     {
      "n": "Careful steps",
@@ -43887,7 +44570,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Tom Clancy's The Division™",
@@ -44033,7 +44717,7 @@
     "url": "https://howlongtobeat.com/game/20073"
    },
    "plat_rate": 1.8,
-   "rare_missing": 25,
+   "rare_missing": 9,
    "first_trophy_at": "2017-05-26T20:14:55+00:00",
    "platinum_at": null,
    "dlc": [
@@ -44068,7 +44752,7 @@
      "total": 5
     }
    ],
-   "missing_n": 64,
+   "missing_n": 48,
    "easy": [
     {
      "n": "Shut That Door",
@@ -44092,7 +44776,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 2,
+    "total": 50,
+    "pct": 4
+   }
   },
   {
    "name": "The Vanishing of Ethan Carter",
@@ -44269,7 +44958,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Salt and Sanctuary",
@@ -44414,11 +45104,11 @@
     "url": "https://howlongtobeat.com/game/25107"
    },
    "plat_rate": 6.8,
-   "rare_missing": 2,
+   "rare_missing": 1,
    "first_trophy_at": "2017-05-13T21:10:53+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 36,
+   "missing_n": 35,
    "easy": [
     {
      "n": "The Three",
@@ -44442,7 +45132,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "DOOM",
@@ -44623,7 +45314,7 @@
     "url": "https://howlongtobeat.com/game/101201"
    },
    "plat_rate": 1.1,
-   "rare_missing": 32,
+   "rare_missing": 10,
    "first_trophy_at": "2017-02-20T10:04:46+00:00",
    "platinum_at": null,
    "dlc": [
@@ -44678,7 +45369,7 @@
      "total": 3
     }
    ],
-   "missing_n": 37,
+   "missing_n": 15,
    "easy": [
     {
      "n": "Thorough Shopper",
@@ -44702,7 +45393,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 18,
+    "total": 33,
+    "pct": 55
+   }
   },
   {
    "name": "Tales from the Borderlands",
@@ -44806,7 +45502,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "The Witness",
@@ -44957,11 +45655,11 @@
     "url": "https://howlongtobeat.com/game/10273"
    },
    "plat_rate": 2.2,
-   "rare_missing": 3,
+   "rare_missing": 2,
    "first_trophy_at": "2017-02-03T23:13:14+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 11,
+   "missing_n": 10,
    "easy": [
     {
      "n": "Desert Ruin",
@@ -44985,7 +45683,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "NOT A HERO",
@@ -45077,7 +45776,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "LittleBigPlanet™3",
@@ -45135,7 +45836,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "This War of Mine: The Little Ones",
@@ -45281,11 +45984,11 @@
     "url": "https://howlongtobeat.com/game/34142"
    },
    "plat_rate": 1.1,
-   "rare_missing": 17,
+   "rare_missing": 16,
    "first_trophy_at": "2017-02-03T21:04:49+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 26,
+   "missing_n": 25,
    "easy": [
     {
      "n": "Diary: First blood",
@@ -45309,7 +46012,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Gravity Rush™ Remastered",
@@ -45430,7 +46134,7 @@
     "url": "https://howlongtobeat.com/game/34079"
    },
    "plat_rate": 7.5,
-   "rare_missing": 10,
+   "rare_missing": 5,
    "first_trophy_at": "2017-01-20T23:03:11+00:00",
    "platinum_at": null,
    "dlc": [
@@ -45465,31 +46169,36 @@
      "total": 8
     }
    ],
-   "missing_n": 30,
+   "missing_n": 8,
    "easy": [
     {
-     "n": "The Diary of a Maid",
-     "t": "bronze",
-     "r": 37.7,
+     "n": "Gravitational Anomaly",
+     "t": "silver",
+     "r": 17.7,
      "h": null,
      "p": null
     },
     {
-     "n": "The Madam and the Shifter",
-     "t": "bronze",
-     "r": 31.4,
+     "n": "Pitching Machine",
+     "t": "silver",
+     "r": 16.8,
      "h": null,
      "p": null
     },
     {
-     "n": "Undercover",
-     "t": "bronze",
-     "r": 21.8,
+     "n": "Burning Game Hunter",
+     "t": "silver",
+     "r": 11.5,
      "h": null,
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 31,
+    "total": 39,
+    "pct": 79
+   }
   },
   {
    "name": "For Honor",
@@ -45593,7 +46302,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "INSIDE",
@@ -45788,7 +46499,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Battlefield™ 1",
@@ -45916,7 +46628,7 @@
     "url": "https://howlongtobeat.com/game/38001"
    },
    "plat_rate": 0.7,
-   "rare_missing": 31,
+   "rare_missing": 11,
    "first_trophy_at": "2016-12-29T11:57:02+00:00",
    "platinum_at": null,
    "dlc": [
@@ -45961,7 +46673,7 @@
      "total": 5
     }
    ],
-   "missing_n": 42,
+   "missing_n": 22,
    "easy": [
     {
      "n": "Counter-sniper",
@@ -45985,7 +46697,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 9,
+    "total": 31,
+    "pct": 29
+   }
   },
   {
    "name": "Titan Souls",
@@ -46082,7 +46799,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Day of the Tentacle Remastered",
@@ -46172,7 +46891,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Everybody's Gone To The Rapture™",
@@ -46305,11 +47026,11 @@
     "url": "https://howlongtobeat.com/game/24711"
    },
    "plat_rate": 3.4,
-   "rare_missing": 16,
+   "rare_missing": 15,
    "first_trophy_at": "2016-12-29T10:18:01+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 18,
+   "missing_n": 17,
    "easy": [
     {
      "n": "Passive Observer",
@@ -46333,7 +47054,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Rise of the Tomb Raider",
@@ -46514,7 +47236,7 @@
     "url": "https://howlongtobeat.com/game/19266"
    },
    "plat_rate": 0.4,
-   "rare_missing": 70,
+   "rare_missing": 23,
    "first_trophy_at": "2016-11-21T12:06:03+00:00",
    "platinum_at": null,
    "dlc": [
@@ -46569,31 +47291,36 @@
      "total": 13
     }
    ],
-   "missing_n": 89,
+   "missing_n": 30,
    "easy": [
     {
-     "n": "Abandon All Hope",
+     "n": "Craftswoman",
      "t": "bronze",
-     "r": 41.2,
+     "r": 32.9,
      "h": null,
      "p": null
     },
     {
-     "n": "A Moment of Clarity",
+     "n": "Zipper",
      "t": "bronze",
-     "r": 40.9,
+     "r": 18.0,
      "h": null,
      "p": null
     },
     {
-     "n": "Amateur Chemist",
+     "n": "Renegade",
      "t": "bronze",
-     "r": 35.9,
+     "r": 15.9,
      "h": null,
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 35,
+    "total": 65,
+    "pct": 54
+   }
   },
   {
    "name": "Darkest Dungeon",
@@ -46700,7 +47427,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Game of Thrones",
@@ -46839,7 +47568,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Firewatch",
@@ -47051,7 +47781,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 5,
+    "total": 5,
+    "pct": 100
+   }
   },
   {
    "name": "Netflix",
@@ -47102,7 +47837,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Bloodborne™",
@@ -47231,7 +47968,7 @@
     "url": "https://howlongtobeat.com/game/21262"
    },
    "plat_rate": 6.9,
-   "rare_missing": 4,
+   "rare_missing": 2,
    "first_trophy_at": "2016-07-10T12:28:39+00:00",
    "platinum_at": null,
    "dlc": [
@@ -47246,7 +47983,7 @@
      "total": 6
     }
    ],
-   "missing_n": 37,
+   "missing_n": 30,
    "easy": [
     {
      "n": "Rune Contact",
@@ -47270,7 +48007,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 3,
+    "total": 33,
+    "pct": 9
+   }
   },
   {
    "name": "Fallout 4",
@@ -47472,7 +48214,7 @@
     "url": "https://howlongtobeat.com/game/26729"
    },
    "plat_rate": 1.8,
-   "rare_missing": 41,
+   "rare_missing": 7,
    "first_trophy_at": "2016-01-02T16:26:57+00:00",
    "platinum_at": null,
    "dlc": [
@@ -47537,7 +48279,7 @@
      "total": 10
     }
    ],
-   "missing_n": 54,
+   "missing_n": 19,
    "easy": [
     {
      "n": "Never Go It Alone",
@@ -47561,7 +48303,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 31,
+    "total": 50,
+    "pct": 62
+   }
   },
   {
    "name": "Unravel",
@@ -47666,7 +48413,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Valiant Hearts: The Great War",
@@ -47858,7 +48607,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "The Evil Within",
@@ -48023,7 +48773,7 @@
     "url": "https://howlongtobeat.com/game/9866"
    },
    "plat_rate": 0.6,
-   "rare_missing": 54,
+   "rare_missing": 23,
    "first_trophy_at": "2015-12-28T11:27:37+00:00",
    "platinum_at": null,
    "dlc": [
@@ -48058,7 +48808,7 @@
      "total": 10
     }
    ],
-   "missing_n": 68,
+   "missing_n": 37,
    "easy": [
     {
      "n": "Old Flame",
@@ -48082,7 +48832,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 4,
+    "total": 41,
+    "pct": 10
+   }
   },
   {
    "name": "The Wolf Among Us",
@@ -48251,7 +49006,7 @@
    "first_trophy_at": "2015-12-21T17:25:15+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 4,
+   "missing_n": 3,
    "easy": [
     {
      "n": "Novice Librarian",
@@ -48275,7 +49030,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "The Order: 1886",
@@ -48431,11 +49187,11 @@
     "url": "https://howlongtobeat.com/game/20067"
    },
    "plat_rate": 6.7,
-   "rare_missing": 5,
+   "rare_missing": 4,
    "first_trophy_at": "2015-12-19T10:09:11+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 12,
+   "missing_n": 11,
    "easy": [
     {
      "n": "Highly Volatile",
@@ -48459,7 +49215,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "The Witcher 3: Wild Hunt — Remastered",
@@ -48671,7 +49428,7 @@
     "url": "https://howlongtobeat.com/game/10270"
    },
    "plat_rate": 1.1,
-   "rare_missing": 38,
+   "rare_missing": 14,
    "first_trophy_at": "2015-06-20T08:34:01+00:00",
    "platinum_at": null,
    "dlc": [
@@ -48696,7 +49453,7 @@
      "total": 13
     }
    ],
-   "missing_n": 53,
+   "missing_n": 26,
    "easy": [
     {
      "n": "Fearless Vampire Slayer",
@@ -48720,7 +49477,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 26,
+    "total": 52,
+    "pct": 50
+   }
   },
   {
    "name": "STAR WARS™ Battlefront™",
@@ -48790,7 +49552,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "Assassin's Creed® Unity",
@@ -48958,7 +49722,7 @@
     "url": "https://howlongtobeat.com/game/21269"
    },
    "plat_rate": 1.1,
-   "rare_missing": 18,
+   "rare_missing": 13,
    "first_trophy_at": "2015-04-02T12:57:56+00:00",
    "platinum_at": null,
    "dlc": [
@@ -48973,7 +49737,7 @@
      "total": 7
     }
    ],
-   "missing_n": 24,
+   "missing_n": 16,
    "easy": [
     {
      "n": "Master Architect",
@@ -48990,14 +49754,19 @@
      "p": null
     },
     {
-     "n": "Reign Of Terror",
+     "n": "Choreography",
      "t": "bronze",
-     "r": 12.9,
+     "r": 10.4,
      "h": null,
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 34,
+    "total": 50,
+    "pct": 68
+   }
   },
   {
    "name": "Powers",
@@ -49087,7 +49856,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "THE PLAYROOM",
@@ -49229,7 +50000,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 0,
+    "total": 12,
+    "pct": 0
+   }
   },
   {
    "name": "Middle-earth™: Shadow of Mordor™",
@@ -49401,7 +50177,7 @@
     "url": "https://howlongtobeat.com/game/18006"
    },
    "plat_rate": 2.9,
-   "rare_missing": 33,
+   "rare_missing": 9,
    "first_trophy_at": "2015-01-03T13:51:33+00:00",
    "platinum_at": null,
    "dlc": [
@@ -49426,7 +50202,7 @@
      "total": 10
     }
    ],
-   "missing_n": 66,
+   "missing_n": 42,
    "easy": [
     {
      "n": "Unleashed",
@@ -49450,7 +50226,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 9,
+    "total": 51,
+    "pct": 18
+   }
   },
   {
    "name": "FIFA 15",
@@ -49580,11 +50361,11 @@
     "url": "https://howlongtobeat.com/game/21232"
    },
    "plat_rate": 0.1,
-   "rare_missing": 21,
+   "rare_missing": 20,
    "first_trophy_at": "2015-01-03T11:50:18+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 43,
+   "missing_n": 42,
    "easy": [
     {
      "n": "Woodwork!",
@@ -49608,7 +50389,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Assassin's Creed® Rogue",
@@ -49780,11 +50562,11 @@
     "url": "https://howlongtobeat.com/game/21246"
    },
    "plat_rate": 2.4,
-   "rare_missing": 14,
+   "rare_missing": 13,
    "first_trophy_at": "2015-01-25T09:56:35+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 24,
+   "missing_n": 23,
    "easy": [
     {
      "n": "Do not want",
@@ -49808,7 +50590,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "HEAVY RAIN™",
@@ -49972,11 +50755,11 @@
     "url": "https://howlongtobeat.com/game/4377"
    },
    "plat_rate": 2.9,
-   "rare_missing": 8,
+   "rare_missing": 7,
    "first_trophy_at": "2015-01-22T13:05:44+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 33,
+   "missing_n": 32,
    "easy": [
     {
      "n": "Interactive Drama",
@@ -50000,7 +50783,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Uncharted 2: Among Thieves™",
@@ -50124,7 +50908,7 @@
     "url": "https://howlongtobeat.com/game/10796"
    },
    "plat_rate": 2.4,
-   "rare_missing": 32,
+   "rare_missing": 8,
    "first_trophy_at": "2012-05-15T16:36:56+00:00",
    "platinum_at": null,
    "dlc": [
@@ -50149,7 +50933,7 @@
      "total": 11
     }
    ],
-   "missing_n": 40,
+   "missing_n": 16,
    "easy": [
     {
      "n": "Steel Fist Master",
@@ -50173,7 +50957,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 31,
+    "total": 47,
+    "pct": 66
+   }
   },
   {
    "name": "Assassin's Creed® IV Black Flag",
@@ -50363,7 +51152,7 @@
     "url": "https://howlongtobeat.com/game/12707"
    },
    "plat_rate": 0.5,
-   "rare_missing": 20,
+   "rare_missing": 9,
    "first_trophy_at": "2014-09-27T17:54:03+00:00",
    "platinum_at": null,
    "dlc": [
@@ -50388,7 +51177,7 @@
      "total": 6
     }
    ],
-   "missing_n": 25,
+   "missing_n": 14,
    "easy": [
     {
      "n": "Wild West Indies",
@@ -50412,7 +51201,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 36,
+    "total": 50,
+    "pct": 72
+   }
   },
   {
    "name": "P.T.",
@@ -50487,7 +51281,9 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "rare_missing": null,
+   "base": null
   },
   {
    "name": "BioShock Infinite",
@@ -50670,7 +51466,7 @@
     "url": "https://howlongtobeat.com/game/1068"
    },
    "plat_rate": 1.5,
-   "rare_missing": 44,
+   "rare_missing": 13,
    "first_trophy_at": "2014-03-15T15:59:44+00:00",
    "platinum_at": null,
    "dlc": [
@@ -50705,7 +51501,7 @@
      "total": 10
     }
    ],
-   "missing_n": 69,
+   "missing_n": 38,
    "easy": [
     {
      "n": "Tear 'em a New One",
@@ -50729,7 +51525,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 12,
+    "total": 50,
+    "pct": 24
+   }
   },
   {
    "name": "The Walking Dead",
@@ -50900,7 +51701,7 @@
     "url": "https://howlongtobeat.com/game/66845"
    },
    "plat_rate": 23.1,
-   "rare_missing": 7,
+   "rare_missing": 0,
    "first_trophy_at": "2013-12-21T19:54:14+00:00",
    "platinum_at": null,
    "dlc": [
@@ -50915,7 +51716,7 @@
      "total": 8
     }
    ],
-   "missing_n": 17,
+   "missing_n": 8,
    "easy": [
     {
      "n": "Into The Fire",
@@ -50939,7 +51740,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 32,
+    "total": 40,
+    "pct": 80
+   }
   },
   {
    "name": "WATCH_DOGS™",
@@ -51120,7 +51926,7 @@
     "url": "https://howlongtobeat.com/game/37861"
    },
    "plat_rate": 0.5,
-   "rare_missing": 22,
+   "rare_missing": 11,
    "first_trophy_at": "2014-06-01T08:48:26+00:00",
    "platinum_at": null,
    "dlc": [
@@ -51135,7 +51941,7 @@
      "total": 10
     }
    ],
-   "missing_n": 23,
+   "missing_n": 12,
    "easy": [
     {
      "n": "Stealth Cookie",
@@ -51159,7 +51965,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 27,
+    "total": 39,
+    "pct": 69
+   }
   },
   {
    "name": "Tomb Raider",
@@ -51338,11 +52149,11 @@
     "url": "https://howlongtobeat.com/game/10469"
    },
    "plat_rate": 0.7,
-   "rare_missing": 21,
+   "rare_missing": 20,
    "first_trophy_at": "2014-03-22T16:39:37+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 22,
+   "missing_n": 21,
    "easy": [
     {
      "n": "Sole Survivor",
@@ -51366,7 +52177,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "LEGO® MARVEL Super Heroes",
@@ -51537,11 +52349,11 @@
     "url": "https://howlongtobeat.com/game/14130"
    },
    "plat_rate": 2.3,
-   "rare_missing": 10,
+   "rare_missing": 9,
    "first_trophy_at": "2013-12-14T00:17:10+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 24,
+   "missing_n": 23,
    "easy": [
     {
      "n": "Cosplay",
@@ -51565,7 +52377,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Journey",
@@ -51760,7 +52573,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Uncharted 3: Drake's Deception™",
@@ -51896,7 +52710,7 @@
     "url": "https://howlongtobeat.com/game/10797"
    },
    "plat_rate": 1.2,
-   "rare_missing": 65,
+   "rare_missing": 14,
    "first_trophy_at": "2012-06-26T16:53:01+00:00",
    "platinum_at": null,
    "dlc": [
@@ -51951,7 +52765,7 @@
      "total": 10
     }
    ],
-   "missing_n": 68,
+   "missing_n": 17,
    "easy": [
     {
      "n": "Run-and-Gunner",
@@ -51975,7 +52789,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 37,
+    "total": 54,
+    "pct": 69
+   }
   },
   {
    "name": "Dragon's Crown",
@@ -52137,11 +52956,11 @@
     "url": "https://howlongtobeat.com/game/12403"
    },
    "plat_rate": 3.1,
-   "rare_missing": 15,
+   "rare_missing": 14,
    "first_trophy_at": "2013-12-14T16:06:34+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 29,
+   "missing_n": 28,
    "easy": [
     {
      "n": "Devout Follower",
@@ -52165,7 +52984,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Hitman: Absolution™",
@@ -52302,11 +53122,11 @@
     "url": "https://howlongtobeat.com/game/4475"
    },
    "plat_rate": 1.3,
-   "rare_missing": 12,
+   "rare_missing": 11,
    "first_trophy_at": "2013-12-07T02:21:08+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 46,
+   "missing_n": 45,
    "easy": [
     {
      "n": "Kingslayer",
@@ -52330,7 +53150,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Grand Theft Auto V",
@@ -52507,7 +53328,7 @@
     "url": "https://howlongtobeat.com/game/4064"
    },
    "plat_rate": 0.4,
-   "rare_missing": 27,
+   "rare_missing": 20,
    "first_trophy_at": "2013-09-20T17:19:30+00:00",
    "platinum_at": null,
    "dlc": [
@@ -52522,7 +53343,7 @@
      "total": 9
     }
    ],
-   "missing_n": 44,
+   "missing_n": 34,
    "easy": [
     {
      "n": "Off the Plane",
@@ -52546,7 +53367,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 15,
+    "total": 49,
+    "pct": 31
+   }
   },
   {
    "name": "Beyond: Two Souls™",
@@ -52714,11 +53540,11 @@
     "url": "https://howlongtobeat.com/game/1023"
    },
    "plat_rate": 1.6,
-   "rare_missing": 11,
+   "rare_missing": 10,
    "first_trophy_at": "2013-10-19T17:01:54+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 18,
+   "missing_n": 17,
    "easy": [
     {
      "n": "Agent 894732",
@@ -52742,7 +53568,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "flOw trophy set",
@@ -52904,7 +53731,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Flower",
@@ -53030,7 +53858,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Ni no Kuni: Wrath of the White Witch",
@@ -53161,11 +53990,11 @@
     "url": "https://howlongtobeat.com/game/6585"
    },
    "plat_rate": 2.8,
-   "rare_missing": 14,
+   "rare_missing": 13,
    "first_trophy_at": "2013-02-02T18:05:45+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 22,
+   "missing_n": 21,
    "easy": [
     {
      "n": "Pop Pop Fizz Fizz",
@@ -53189,7 +54018,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "The Last of Us™",
@@ -53349,7 +54179,7 @@
     "url": "https://howlongtobeat.com/game/9997"
    },
    "plat_rate": 0.5,
-   "rare_missing": 46,
+   "rare_missing": 19,
    "first_trophy_at": "2013-06-22T16:38:33+00:00",
    "platinum_at": null,
    "dlc": [
@@ -53394,7 +54224,7 @@
      "total": 2
     }
    ],
-   "missing_n": 46,
+   "missing_n": 19,
    "easy": [
     {
      "n": "Populace",
@@ -53418,7 +54248,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 4,
+    "total": 23,
+    "pct": 17
+   }
   },
   {
    "name": "Darksiders II",
@@ -53584,11 +54419,11 @@
     "url": "https://howlongtobeat.com/game/2245"
    },
    "plat_rate": 1.8,
-   "rare_missing": 14,
+   "rare_missing": 13,
    "first_trophy_at": "2013-02-16T15:45:11+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 17,
+   "missing_n": 16,
    "easy": [
     {
      "n": "Respec Yourself",
@@ -53612,7 +54447,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Dead Space™ 2",
@@ -53785,7 +54621,7 @@
     "url": "https://howlongtobeat.com/game/2335"
    },
    "plat_rate": 1.9,
-   "rare_missing": 15,
+   "rare_missing": 6,
    "first_trophy_at": "2012-11-10T16:20:00+00:00",
    "platinum_at": null,
    "dlc": [
@@ -53800,7 +54636,7 @@
      "total": 8
     }
    ],
-   "missing_n": 33,
+   "missing_n": 24,
    "easy": [
     {
      "n": "Brute Juke",
@@ -53824,7 +54660,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 26,
+    "total": 50,
+    "pct": 52
+   }
   },
   {
    "name": "Dishonored",
@@ -54000,7 +54841,7 @@
     "url": "https://howlongtobeat.com/game/2602"
    },
    "plat_rate": 1.3,
-   "rare_missing": 51,
+   "rare_missing": 20,
    "first_trophy_at": "2013-01-12T00:34:16+00:00",
    "platinum_at": null,
    "dlc": [
@@ -54035,7 +54876,7 @@
      "total": 10
     }
    ],
-   "missing_n": 60,
+   "missing_n": 29,
    "easy": [
     {
      "n": "Thief",
@@ -54059,7 +54900,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 21,
+    "total": 50,
+    "pct": 42
+   }
   },
   {
    "name": "Assassin's Creed® III",
@@ -54226,7 +55072,7 @@
     "url": "https://howlongtobeat.com/game/655"
    },
    "plat_rate": 0.6,
-   "rare_missing": 31,
+   "rare_missing": 16,
    "first_trophy_at": "2012-11-11T15:50:07+00:00",
    "platinum_at": null,
    "dlc": [
@@ -54271,7 +55117,7 @@
      "total": 3
     }
    ],
-   "missing_n": 36,
+   "missing_n": 21,
    "easy": [
     {
      "n": "Tumblehome",
@@ -54295,7 +55141,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 29,
+    "total": 50,
+    "pct": 58
+   }
   },
   {
    "name": "VANQUISH",
@@ -54455,11 +55306,11 @@
     "url": "https://howlongtobeat.com/game/10899"
    },
    "plat_rate": 1.0,
-   "rare_missing": 20,
+   "rare_missing": 19,
    "first_trophy_at": "2012-11-03T16:16:02+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 42,
+   "missing_n": 41,
    "easy": [
     {
      "n": "That Ended Up Working Out Nicely",
@@ -54483,7 +55334,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "AC Revelations",
@@ -54657,7 +55509,7 @@
     "url": "https://howlongtobeat.com/game/664"
    },
    "plat_rate": 1.1,
-   "rare_missing": 36,
+   "rare_missing": 15,
    "first_trophy_at": "2012-09-25T14:08:30+00:00",
    "platinum_at": null,
    "dlc": [
@@ -54692,7 +55544,7 @@
      "total": 10
     }
    ],
-   "missing_n": 44,
+   "missing_n": 23,
    "easy": [
     {
      "n": "Mastering the Art",
@@ -54716,7 +55568,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 26,
+    "total": 49,
+    "pct": 53
+   }
   },
   {
    "name": "FIFA 12",
@@ -54850,7 +55707,7 @@
     "url": "https://howlongtobeat.com/game/3448"
    },
    "plat_rate": 0.1,
-   "rare_missing": 24,
+   "rare_missing": 13,
    "first_trophy_at": "2011-12-28T08:27:55+00:00",
    "platinum_at": null,
    "dlc": [
@@ -54865,7 +55722,7 @@
      "total": 10
     }
    ],
-   "missing_n": 50,
+   "missing_n": 39,
    "easy": [
     {
      "n": "Warrior",
@@ -54889,7 +55746,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 6,
+    "total": 45,
+    "pct": 13
+   }
   },
   {
    "name": "DARK SOULS",
@@ -55021,11 +55883,11 @@
     "url": "https://howlongtobeat.com/game/2224"
    },
    "plat_rate": 6.4,
-   "rare_missing": 3,
+   "rare_missing": 2,
    "first_trophy_at": "2012-09-12T10:36:54+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 36,
+   "missing_n": 35,
    "easy": [
     {
      "n": "Ring the Bell (Quelaag's Domain)",
@@ -55049,7 +55911,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Darksiders",
@@ -55224,7 +56087,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "AC Brotherhood",
@@ -55390,7 +56254,7 @@
     "url": "https://howlongtobeat.com/game/661"
    },
    "plat_rate": 0.4,
-   "rare_missing": 18,
+   "rare_missing": 7,
    "first_trophy_at": "2012-07-16T17:06:31+00:00",
    "platinum_at": null,
    "dlc": [
@@ -55405,7 +56269,7 @@
      "total": 10
     }
    ],
-   "missing_n": 29,
+   "missing_n": 18,
    "easy": [
     {
      "n": "Synchronization Established",
@@ -55429,7 +56293,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 32,
+    "total": 50,
+    "pct": 64
+   }
   },
   {
    "name": "Red Dead Redemption",
@@ -55599,7 +56468,7 @@
     "url": "https://howlongtobeat.com/game/7676"
    },
    "plat_rate": 0.3,
-   "rare_missing": 66,
+   "rare_missing": 25,
    "first_trophy_at": "2012-05-01T17:14:41+00:00",
    "platinum_at": null,
    "dlc": [
@@ -55644,7 +56513,7 @@
      "total": 12
     }
    ],
-   "missing_n": 71,
+   "missing_n": 28,
    "easy": [
     {
      "n": "Red Dead Rockstar",
@@ -55654,21 +56523,26 @@
      "p": null
     },
     {
-     "n": "The Downward Spiral",
-     "t": "bronze",
-     "r": 20.4,
-     "h": true,
-     "p": null
-    },
-    {
      "n": "More than a Fistful",
      "t": "bronze",
      "r": 12.6,
      "h": null,
      "p": null
+    },
+    {
+     "n": "In a Hail of Bullets",
+     "t": "silver",
+     "r": 10.2,
+     "h": null,
+     "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 20,
+    "total": 48,
+    "pct": 42
+   }
   },
   {
    "name": "inFamous",
@@ -55782,11 +56656,11 @@
     "url": "https://howlongtobeat.com/game/4674"
    },
    "plat_rate": 1.9,
-   "rare_missing": 5,
+   "rare_missing": 4,
    "first_trophy_at": "2012-05-30T10:31:12+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 15,
+   "missing_n": 14,
    "easy": [
     {
      "n": "Evil Eats",
@@ -55810,7 +56684,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Assassin's Creed II™",
@@ -55971,7 +56846,8 @@
    "dlc": [],
    "missing_n": 0,
    "easy": [],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Batman: Arkham City™",
@@ -56120,7 +56996,7 @@
     "url": "https://howlongtobeat.com/game/882"
    },
    "plat_rate": 0.7,
-   "rare_missing": 31,
+   "rare_missing": 14,
    "first_trophy_at": "2012-03-29T17:01:54+00:00",
    "platinum_at": null,
    "dlc": [
@@ -56165,7 +57041,7 @@
      "total": 10
     }
    ],
-   "missing_n": 33,
+   "missing_n": 15,
    "easy": [
     {
      "n": "AR Knight",
@@ -56175,21 +57051,26 @@
      "p": null
     },
     {
-     "n": "Lost Property",
+     "n": "Catch",
      "t": "bronze",
-     "r": 10.7,
+     "r": 8.0,
      "h": null,
      "p": null
     },
     {
-     "n": "Breaking and Entering",
+     "n": "Flawless Freeflow Fighter 2.0",
      "t": "bronze",
-     "r": 8.6,
+     "r": 6.3,
      "h": null,
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 35,
+    "total": 50,
+    "pct": 70
+   }
   },
   {
    "name": "Uncharted: Drake's Fortune™",
@@ -56298,11 +57179,11 @@
     "url": "https://howlongtobeat.com/game/10799"
    },
    "plat_rate": 3.3,
-   "rare_missing": 12,
+   "rare_missing": 11,
    "first_trophy_at": "2012-03-23T15:37:12+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 20,
+   "missing_n": 19,
    "easy": [
     {
      "n": "20 Kills: Mk-NDI",
@@ -56326,7 +57207,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Dead Space™",
@@ -56490,11 +57372,11 @@
     "url": "https://howlongtobeat.com/game/95927"
    },
    "plat_rate": 4.2,
-   "rare_missing": 6,
+   "rare_missing": 5,
    "first_trophy_at": "2012-03-19T10:02:21+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 15,
+   "missing_n": 14,
    "easy": [
     {
      "n": "Eviscerator",
@@ -56518,7 +57400,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "Mafia II",
@@ -56680,7 +57563,7 @@
     "url": "https://howlongtobeat.com/game/5513"
    },
    "plat_rate": 1.5,
-   "rare_missing": 32,
+   "rare_missing": 11,
    "first_trophy_at": "2012-03-09T08:26:36+00:00",
    "platinum_at": null,
    "dlc": [
@@ -56705,7 +57588,7 @@
      "total": 10
     }
    ],
-   "missing_n": 36,
+   "missing_n": 15,
    "easy": [
     {
      "n": "Knucklehead",
@@ -56729,7 +57612,12 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 32,
+    "total": 47,
+    "pct": 68
+   }
   },
   {
    "name": "Killzone 2",
@@ -56824,11 +57712,11 @@
     "url": "https://howlongtobeat.com/game/4985"
    },
    "plat_rate": 0.4,
-   "rare_missing": 57,
+   "rare_missing": 56,
    "first_trophy_at": "2012-03-08T15:47:56+00:00",
    "platinum_at": null,
    "dlc": [],
-   "missing_n": 81,
+   "missing_n": 80,
    "easy": [
     {
      "n": "Salamun Ribbon",
@@ -56852,7 +57740,8 @@
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": null
   },
   {
    "name": "L.A. Noire",
@@ -57027,7 +57916,7 @@
     "url": "https://howlongtobeat.com/game/5146"
    },
    "plat_rate": 1.9,
-   "rare_missing": 27,
+   "rare_missing": 6,
    "first_trophy_at": "2012-01-02T14:50:25+00:00",
    "platinum_at": null,
    "dlc": [
@@ -57072,31 +57961,36 @@
      "total": 5
     }
    ],
-   "missing_n": 27,
+   "missing_n": 6,
    "easy": [
     {
-     "n": "The Printer's Devil",
-     "t": "gold",
-     "r": 8.3,
+     "n": "Roscoe And Friends",
+     "t": "bronze",
+     "r": 4.4,
      "h": null,
      "p": null
     },
     {
-     "n": "Racing For Pinks",
+     "n": "The Moose",
      "t": "bronze",
-     "r": 7.8,
-     "h": true,
+     "r": 3.6,
+     "h": null,
      "p": null
     },
     {
-     "n": "Eight Million Stories",
+     "n": "Shamus To The Stars",
      "t": "gold",
-     "r": 6.6,
+     "r": 2.9,
      "h": null,
      "p": null
     }
    ],
-   "doing": []
+   "doing": [],
+   "base": {
+    "earned": 34,
+    "total": 40,
+    "pct": 85
+   }
   }
  ],
  "insights": {

@@ -924,15 +924,18 @@ def progress_pct(t: dict) -> int | None:
 def build_insights(games: list[dict]) -> dict:
     """Activity by day / weekday / hour (Swiss time), milestones, and per-game trophy facts.
 
-    Adds to each game: first_trophy_at, platinum_at, missing_n, easy (its most common missing trophies)
-    and doing (missing trophies with a counter you have started, e.g. 41/50).
+    Adds to each game: first_trophy_at, platinum_at, missing_n, easy (its most common missing trophies),
+    doing (missing trophies with a counter you have started, e.g. 41/50) and, for games with DLC trophies,
+    base (earned / total base-game trophies, the ones the platinum needs).
+    While the platinum is still to get, missing_n / easy / rare_missing count only what the platinum needs
+    (base-game trophies, not the platinum itself, which pops on its own); after that, everything left.
     """
     from zoneinfo import ZoneInfo
     tz = ZoneInfo(LOCAL_TZ)
     earned = []                   # (local datetime, trophy, game)
     for g in games:
         first = plat = None
-        best_missing, missing_n, doing = [], 0, []
+        best_missing, missing_n, doing, base = [], 0, [], None
         for i, lst in enumerate(g.get("trophy_lists") or []):
             rows = load_trophy_file(lst["id"])
             for t in rows:
@@ -943,16 +946,22 @@ def build_insights(games: list[dict]) -> dict:
                     if t.get("t") == "platinum":
                         plat = min(plat, t["at"]) if plat else t["at"]
             if i == 0:  # the most advanced list decides what's left to do
-                missing = [t for t in rows if not t.get("e")]
-                missing_n = len(missing)
                 plat_row = next((t for t in rows if t.get("t") == "platinum"), None)
+                core = [t for t in rows if (t.get("g") or "default") == "default" and t.get("t") != "platinum"]
+                if len(core) < len(rows) - (1 if plat_row else 0) and core:     # the list has DLC trophies
+                    n = sum(1 for t in core if t.get("e"))
+                    base = {"earned": n, "total": len(core), "pct": 100 if plat_row and plat_row.get("e") else min(99 if n < len(core) else 100, round(n / len(core) * 100))}
+                goal = core if plat_row and not plat_row.get("e") else rows
+                missing = [t for t in goal if not t.get("e")]
+                missing_n = len(missing)
                 g["plat_rate"] = plat_row.get("r") if plat_row else None
                 g["rare_missing"] = sum(1 for t in missing if t.get("r") is not None and t["r"] < 10)
                 best_missing = sorted(missing, key=lambda t: -(t.get("r") or 0))[:3]
-                doing = sorted(((progress_pct(t), t) for t in missing if (progress_pct(t) or 0) > 0), key=lambda e: -e[0])[:3]
+                doing = sorted(((progress_pct(t), t) for t in rows if not t.get("e") and (progress_pct(t) or 0) > 0), key=lambda e: -e[0])[:3]
         g["first_trophy_at"], g["platinum_at"] = first, plat
         g["dlc"] = dlc_progress(g)
         g["missing_n"] = missing_n
+        g["base"] = base
         g["easy"] = [{k: t.get(k) for k in ("n", "t", "r", "h", "p")} for t in best_missing]
         g["doing"] = [{**{k: t.get(k) for k in ("n", "t", "r", "h", "p")}, "pct": pct} for pct, t in doing]   # trophies you've started, most advanced first
 
