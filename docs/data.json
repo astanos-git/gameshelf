@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T12:39:22+00:00",
+ "generated_at": "2026-11-18T21:26:37+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,9 +10,9 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 331,
-  "level_progress": 80,
+  "level_progress": 83,
   "earned": {
-   "bronze": 2780,
+   "bronze": 2782,
    "silver": 657,
    "gold": 225,
    "platinum": 23
@@ -28,12 +28,12 @@
    ],
    "owned": true,
    "acquired": "2026-09-09T05:34:20Z",
-   "hours": 2.8,
+   "hours": 19.1,
    "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-11-15T09:45:16.830000+00:00",
-   "progress": 59,
+   "last_played": "2026-11-18T21:24:56.900000+00:00",
+   "progress": 61,
    "earned": {
-    "bronze": 31,
+    "bronze": 33,
     "silver": 7,
     "gold": 2,
     "platinum": 0
@@ -44,11 +44,11 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-11-15T09:38:42+00:00",
+   "last_trophy": "2026-11-18T21:11:37+00:00",
    "has_trophies": true,
    "months": {
     "2026-11": [
-     28,
+     30,
      7,
      2,
      0
@@ -66,7 +66,7 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 59,
+     "progress": 61,
      "groups": {
       "001": "The Foundation",
       "002": "Altered World Events",
@@ -90,6 +90,13 @@
      "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/c3dceafe-e45a-4107-9572-e801e21f4f38.png"
     },
     {
+     "n": "Aggressive Growth",
+     "t": "bronze",
+     "r": 13.1,
+     "at": "2026-11-18T20:25:58+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/4a25f190-2878-4eba-b012-4e20e794e10c.png"
+    },
+    {
      "n": "Altered Manifestations May Occur",
      "t": "bronze",
      "r": 14.1,
@@ -97,30 +104,23 @@
      "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/d7296725-3547-4218-b623-c938fcf3bcdd.png"
     },
     {
-     "n": "Inter-Departmental Cooperation",
+     "n": "War Games",
      "t": "bronze",
-     "r": 15.0,
-     "at": "2026-11-14T09:47:05+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/eab8992c-b6d0-49df-b472-b4b74deb0def.png"
-    },
-    {
-     "n": "Living Archetypes",
-     "t": "bronze",
-     "r": 15.3,
-     "at": "2026-11-09T21:27:28+00:00",
-     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/2b8f6d27-6962-4334-8863-b9df0cc78000.png"
+     "r": 14.2,
+     "at": "2026-11-18T21:11:34+00:00",
+     "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/3047c8c8-a0a3-43cc-b355-43d7b72b4395.png"
     }
    ],
    "aliases": [
     "Control Ultimate Edition"
    ],
-   "trophies_earned": 40,
+   "trophies_earned": 42,
    "trophies_total": 68,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-11-15T09:45:16.830000+00:00",
+   "last_activity": "2026-11-18T21:24:56.900000+00:00",
    "hours_by_year": {
-    "2026": 2.8
+    "2026": 19.1
    },
    "metacritic": 84,
    "genres": [
@@ -218,28 +218,33 @@
      "total": 11
     }
    ],
-   "missing_n": 6,
+   "missing_n": 4,
+   "base": {
+    "earned": 42,
+    "total": 46,
+    "pct": 91
+   },
    "easy": [
-    {
-     "n": "War Games",
-     "t": "bronze",
-     "r": 14.2,
-     "h": null,
-     "p": "2/5"
-    },
-    {
-     "n": "Aggressive Growth",
-     "t": "bronze",
-     "r": 13.1,
-     "h": true,
-     "p": null
-    },
     {
      "n": "Master Parautilitarian",
      "t": "gold",
      "r": 9.8,
      "h": null,
      "p": null
+    },
+    {
+     "n": "Crisis Management",
+     "t": "silver",
+     "r": 9.8,
+     "h": null,
+     "p": "2/5"
+    },
+    {
+     "n": "Volatile Debris",
+     "t": "bronze",
+     "r": 9.0,
+     "h": null,
+     "p": "1/10"
     }
    ],
    "doing": [
@@ -252,27 +257,22 @@
      "pct": 53
     },
     {
-     "n": "War Games",
-     "t": "bronze",
-     "r": 14.2,
+     "n": "Crisis Management",
+     "t": "silver",
+     "r": 9.8,
      "h": null,
      "p": "2/5",
      "pct": 40
     },
     {
-     "n": "Crisis Management",
+     "n": "Astral Tactician",
      "t": "silver",
-     "r": 9.8,
+     "r": 7.1,
      "h": null,
-     "p": "1/5",
+     "p": "5/25",
      "pct": 20
     }
-   ],
-   "base": {
-    "earned": 40,
-    "total": 46,
-    "pct": 87
-   }
+   ]
   },
   {
    "name": "Fortnite",
@@ -388,6 +388,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 45,
+   "base": null,
    "easy": [
     {
      "n": "Gunsmith",
@@ -411,8 +412,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Blue Prince",
@@ -422,7 +422,7 @@
    ],
    "owned": true,
    "acquired": "2025-12-14T16:02:26Z",
-   "hours": 9.6,
+   "hours": 13.5,
    "first_played": "2026-10-26T20:12:49.930000+00:00",
    "last_played": "2026-11-13T14:06:05.560000+00:00",
    "progress": 0,
@@ -459,7 +459,7 @@
    "status": "started",
    "last_activity": "2026-11-13T14:06:05.560000+00:00",
    "hours_by_year": {
-    "2026": 9.6
+    "2026": 13.5
    },
    "metacritic": 92,
    "genres": [
@@ -536,6 +536,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 16,
+   "base": null,
    "easy": [
     {
      "n": "Inheritance Trophy",
@@ -559,8 +560,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Monster Train 2",
@@ -656,10 +656,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Dead Island 2",
@@ -766,10 +765,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Tomb Raider IV-VI Remastered",
@@ -871,10 +869,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "I Have No Mouth, and I Must Scream",
@@ -1046,9 +1043,9 @@
    "platinum_at": "2026-10-30T16:16:41+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Ultros",
@@ -1221,6 +1218,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 19,
+   "base": null,
    "easy": [
     {
      "n": "No trap can hold their whisper",
@@ -1244,8 +1242,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Battlefield™ 6",
@@ -1418,6 +1415,11 @@
     }
    ],
    "missing_n": 40,
+   "base": {
+    "earned": 2,
+    "total": 42,
+    "pct": 5
+   },
    "easy": [
     {
      "n": "Punished",
@@ -1441,12 +1443,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 2,
-    "total": 42,
-    "pct": 5
-   }
+   "doing": []
   },
   {
    "name": "Metaphor: ReFantazio",
@@ -1625,6 +1622,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 25,
+   "base": null,
    "easy": [
     {
      "n": "Stray Elements",
@@ -1648,8 +1646,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "EARTH DEFENSE FORCE:WORLD BROTHERS 2",
@@ -1748,10 +1745,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "HUNT: SHOWDOWN 1896",
@@ -1819,10 +1815,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "F1® 25",
@@ -1898,10 +1893,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Bō: Path of the Teal Lotus",
@@ -2095,6 +2089,11 @@
     }
    ],
    "missing_n": 16,
+   "base": {
+    "earned": 14,
+    "total": 30,
+    "pct": 47
+   },
    "easy": [
     {
      "n": "No Bridge, No Problem",
@@ -2143,12 +2142,7 @@
      "p": "22/34",
      "pct": 65
     }
-   ],
-   "base": {
-    "earned": 14,
-    "total": 30,
-    "pct": 47
-   }
+   ]
   },
   {
    "name": "Chained Echoes",
@@ -2224,10 +2218,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Wobbly Life",
@@ -2312,10 +2305,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Sniper Elite: Resistance",
@@ -2405,10 +2397,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "SIGNALIS",
@@ -2567,6 +2558,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 5,
+   "base": null,
    "easy": [
     {
      "n": "NITRO",
@@ -2590,8 +2582,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "SILENT HILL 2",
@@ -2752,6 +2743,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 16,
+   "base": null,
    "easy": [
     {
      "n": "Making Peace",
@@ -2784,8 +2776,7 @@
      "p": "1/5",
      "pct": 20
     }
-   ],
-   "base": null
+   ]
   },
   {
    "name": "Dying Light 2",
@@ -2892,10 +2883,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Big Walk",
@@ -2969,10 +2959,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "EA SPORTS FC™ 26",
@@ -3097,6 +3086,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 43,
+   "base": null,
    "easy": [
     {
      "n": "Authenticity",
@@ -3120,8 +3110,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "MIO: Memories in Orbit",
@@ -3170,10 +3159,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Hollow Knight: Silksong",
@@ -3267,10 +3255,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Alters",
@@ -3372,10 +3359,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "CrossCode",
@@ -3483,10 +3469,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Artful Escape",
@@ -3648,9 +3633,9 @@
    "platinum_at": "2026-06-20T08:38:29+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Death's Door",
@@ -3822,6 +3807,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 16,
+   "base": null,
    "easy": [
     {
      "n": "Cremation",
@@ -3845,8 +3831,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "GRIS",
@@ -4000,6 +3985,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 9,
+   "base": null,
    "easy": [
     {
      "n": "Depression",
@@ -4023,8 +4009,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Untitled Goose Game",
@@ -4167,6 +4152,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 15,
+   "base": null,
    "easy": [
     {
      "n": "The Back Gardens",
@@ -4190,8 +4176,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Still Wakes the Deep",
@@ -4290,10 +4275,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Black Myth: Wukong",
@@ -4428,6 +4412,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 14,
+   "base": null,
    "easy": [
     {
      "n": "Pound and Perfect",
@@ -4451,8 +4436,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Roblox",
@@ -4566,6 +4550,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 8,
+   "base": null,
    "easy": [
     {
      "n": "Scout",
@@ -4589,8 +4574,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "WUCHANG: Fallen Feathers",
@@ -4696,10 +4680,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Tomb Raider I-III Remastered Starring Lara Croft",
@@ -4802,10 +4785,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Lords of the Fallen",
@@ -4856,10 +4838,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Sword of the Sea",
@@ -5026,6 +5007,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 33,
+   "base": null,
    "easy": [
     {
      "n": "Cool Combo!",
@@ -5049,8 +5031,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Indiana Jones and the Great Circle",
@@ -5242,6 +5223,11 @@
     }
    ],
    "missing_n": 10,
+   "base": {
+    "earned": 45,
+    "total": 45,
+    "pct": 100
+   },
    "easy": [
     {
      "n": "Locked Doors Hide Secrets",
@@ -5265,12 +5251,7 @@
      "p": "0/25"
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 45,
-    "total": 45,
-    "pct": 100
-   }
+   "doing": []
   },
   {
    "name": "SHINOBI: Art of Vengeance",
@@ -5436,6 +5417,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 24,
+   "base": null,
    "easy": [
     {
      "n": "Wall Breaker",
@@ -5459,8 +5441,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Subnautica: Below Zero",
@@ -5559,10 +5540,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Lost Records: Bloom & Rage",
@@ -5661,10 +5641,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Bye Sweet Carole",
@@ -5766,10 +5745,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Pathless",
@@ -5872,10 +5850,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "INDIKA",
@@ -6047,9 +6024,9 @@
    "platinum_at": "2026-02-01T19:57:23+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "ASTRO's PLAYROOM",
@@ -6202,6 +6179,11 @@
     }
    ],
    "missing_n": 7,
+   "base": {
+    "earned": 42,
+    "total": 42,
+    "pct": 100
+   },
    "easy": [
     {
      "n": "Gravity Daze!",
@@ -6225,12 +6207,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 42,
-    "total": 42,
-    "pct": 100
-   }
+   "doing": []
   },
   {
    "name": "Hellblade II: Senua’s Saga",
@@ -6351,6 +6328,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 4,
+   "base": null,
    "easy": [
     {
      "n": "Seeing Things Differently",
@@ -6391,8 +6369,7 @@
      "p": "4/17",
      "pct": 24
     }
-   ],
-   "base": null
+   ]
   },
   {
    "name": "EA SPORTS FC™ 25",
@@ -6510,6 +6487,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 39,
+   "base": null,
    "easy": [
     {
      "n": "PlayStyles+",
@@ -6533,8 +6511,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "ASTRO BOT",
@@ -6715,6 +6692,11 @@
     }
    ],
    "missing_n": 14,
+   "base": {
+    "earned": 43,
+    "total": 43,
+    "pct": 100
+   },
    "easy": [
     {
      "n": "Hurtle Rescue",
@@ -6738,12 +6720,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 43,
-    "total": 43,
-    "pct": 100
-   }
+   "doing": []
   },
   {
    "name": "Core Keeper",
@@ -6842,10 +6819,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Need for Speed™ Unbound",
@@ -6929,10 +6905,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Disney Epic Mickey: Rebrushed",
@@ -7033,10 +7008,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Hell is Us",
@@ -7208,6 +7182,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 15,
+   "base": null,
    "easy": [
     {
      "n": "Curator",
@@ -7256,8 +7231,7 @@
      "p": "19/43",
      "pct": 44
     }
-   ],
-   "base": null
+   ]
   },
   {
    "name": "despelote",
@@ -7357,6 +7331,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 8,
+   "base": null,
    "easy": [
     {
      "n": "Golazo",
@@ -7380,8 +7355,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "The Midnight Walk",
@@ -7480,10 +7454,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Until Then",
@@ -7585,10 +7558,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Nine Sols",
@@ -7694,10 +7666,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Pepper Grinder",
@@ -7745,10 +7716,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Split Fiction",
@@ -7847,10 +7817,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "It Takes Two",
@@ -8045,6 +8014,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 15,
+   "base": null,
    "easy": [
     {
      "n": "It Took Two",
@@ -8068,8 +8038,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "LEGO® Horizon Adventures™",
@@ -8170,10 +8139,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Dispatch",
@@ -8331,6 +8299,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 14,
+   "base": null,
    "easy": [
     {
      "n": "\"That’s, like, a real superhero.\"",
@@ -8354,8 +8323,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "The Dark Pictures Anthology: Little Hope",
@@ -8459,10 +8427,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Dark Pictures Anthology: House of Ashes",
@@ -8564,10 +8531,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Dark Pictures Anthology: The Devil in Me",
@@ -8669,10 +8635,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Visage",
@@ -8770,10 +8735,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Neva",
@@ -8878,10 +8842,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Pacific Drive",
@@ -8985,10 +8948,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "SILENT HILL f",
@@ -9093,10 +9055,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "DEATH STRANDING 2: ON THE BEACH",
@@ -9146,10 +9107,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Plucky Squire",
@@ -9252,10 +9212,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "STAR WARS Jedi: Survivor™",
@@ -9406,6 +9365,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 51,
+   "base": null,
    "easy": [
     {
      "n": "Grab Some Seat",
@@ -9429,8 +9389,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Marvel's Spider-Man 2",
@@ -9628,6 +9587,11 @@
     }
    ],
    "missing_n": 1,
+   "base": {
+    "earned": 41,
+    "total": 41,
+    "pct": 100
+   },
    "easy": [
     {
      "n": "Once More, With Feeling",
@@ -9637,12 +9601,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 41,
-    "total": 41,
-    "pct": 100
-   }
+   "doing": []
   },
   {
    "name": "EA SPORTS™ WRC",
@@ -9711,10 +9670,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "ENDER MAGNOLIA: Bloom in the Mist",
@@ -9881,9 +9839,9 @@
    "platinum_at": "2025-10-22T14:00:13+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "DEATHLOOP",
@@ -10068,6 +10026,11 @@
     }
    ],
    "missing_n": 44,
+   "base": {
+    "earned": 10,
+    "total": 54,
+    "pct": 19
+   },
    "easy": [
     {
      "n": "Chop Chop",
@@ -10091,12 +10054,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 10,
-    "total": 54,
-    "pct": 19
-   }
+   "doing": []
   },
   {
    "name": "Jusant",
@@ -10267,9 +10225,9 @@
    "platinum_at": "2025-10-12T15:16:37+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "COCOON",
@@ -10353,10 +10311,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Goat Simulator 3",
@@ -10464,10 +10421,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Clair Obscur: Expedition 33",
@@ -10657,9 +10613,9 @@
    "platinum_at": "2025-10-09T15:13:56+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Stardew Valley",
@@ -10765,10 +10721,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Psychonauts 2",
@@ -10826,10 +10781,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Viewfinder",
@@ -10932,10 +10886,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "MY HERO ONE'S JUSTICE 2",
@@ -11025,10 +10978,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Lies of P",
@@ -11125,10 +11077,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "DayZ",
@@ -11233,10 +11184,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Diablo® IV",
@@ -11343,10 +11293,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Blasphemous 2",
@@ -11450,10 +11399,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "LEGO® MARVEL's Avengers",
@@ -11542,10 +11490,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "LEGO® MARVEL Super Heroes 2",
@@ -11630,10 +11577,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Alan Wake 2",
@@ -11789,6 +11735,11 @@
     }
    ],
    "missing_n": 7,
+   "base": {
+    "earned": 59,
+    "total": 66,
+    "pct": 89
+   },
    "easy": [
     {
      "n": "All Smiles",
@@ -11837,12 +11788,7 @@
      "p": "8/14",
      "pct": 57
     }
-   ],
-   "base": {
-    "earned": 59,
-    "total": 66,
-    "pct": 89
-   }
+   ]
   },
   {
    "name": "Balatro",
@@ -11986,6 +11932,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 30,
+   "base": null,
    "easy": [
     {
      "n": "10K",
@@ -12009,8 +11956,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Alone in the Dark",
@@ -12092,10 +12038,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "LEGO® Star Wars™: The Skywalker Saga",
@@ -12232,6 +12177,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 38,
+   "base": null,
    "easy": [
     {
      "n": "''Aggressive Negotiations''",
@@ -12255,8 +12201,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "ARK: Survival Ascended",
@@ -12364,10 +12309,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Texas Chain Saw Massacre",
@@ -12472,10 +12416,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "RoboCop: Rogue City",
@@ -12577,10 +12520,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "HOT WHEELS UNLEASHED™ 2 - Turbocharged",
@@ -12754,6 +12696,11 @@
     }
    ],
    "missing_n": 43,
+   "base": {
+    "earned": 0,
+    "total": 43,
+    "pct": 0
+   },
    "easy": [
     {
      "n": "Rookie",
@@ -12777,12 +12724,7 @@
      "p": "0/100"
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 0,
-    "total": 43,
-    "pct": 0
-   }
+   "doing": []
   },
   {
    "name": "Little Nightmares II",
@@ -12942,6 +12884,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 8,
+   "base": null,
    "easy": [
     {
      "n": "How Do I Look?",
@@ -12965,8 +12908,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "The Last Faith",
@@ -13070,10 +13012,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "FINAL FANTASY VII REBIRTH",
@@ -13270,6 +13211,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 14,
+   "base": null,
    "easy": [
     {
      "n": "3-Star Hotel",
@@ -13293,8 +13235,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Dragon Age™: The Veilguard",
@@ -13349,10 +13290,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Teenage Mutant Ninja Turtles: The Cowabunga Collection",
@@ -13454,10 +13394,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Sonic Colours: Ultimate",
@@ -13538,10 +13477,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "High On Life",
@@ -13645,10 +13583,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "PAC-MAN WORLD Re-PAC",
@@ -13736,10 +13673,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Stray",
@@ -13913,6 +13849,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 10,
+   "base": null,
    "easy": [
     {
      "n": "No More Lives",
@@ -13936,8 +13873,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Suicide Squad: Kill the Justice League",
@@ -14040,10 +13976,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Need for Speed™ Hot Pursuit Remastered",
@@ -14152,10 +14087,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Dragon's Dogma 2",
@@ -14328,6 +14262,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 35,
+   "base": null,
    "easy": [
     {
      "n": "Nobles' Night Out",
@@ -14376,8 +14311,7 @@
      "p": "9/80",
      "pct": 11
     }
-   ],
-   "base": null
+   ]
   },
   {
    "name": "Mass Effect™ Legendary Edition",
@@ -14523,6 +14457,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 10,
+   "base": null,
    "easy": [
     {
      "n": "Soldier",
@@ -14546,8 +14481,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Legendary Edition: Mass Effect",
@@ -14722,6 +14656,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 14,
+   "base": null,
    "easy": [
     {
      "n": "First Aid Specialist",
@@ -14745,8 +14680,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "The Callisto Protocol",
@@ -14971,6 +14905,11 @@
     }
    ],
    "missing_n": 21,
+   "base": {
+    "earned": 5,
+    "total": 26,
+    "pct": 19
+   },
    "easy": [
     {
      "n": "If the SHU Fits...",
@@ -15011,12 +14950,7 @@
      "p": "1/10",
      "pct": 10
     }
-   ],
-   "base": {
-    "earned": 5,
-    "total": 26,
-    "pct": 19
-   }
+   ]
   },
   {
    "name": "DREDGE",
@@ -15190,6 +15124,11 @@
     }
    ],
    "missing_n": 37,
+   "base": {
+    "earned": 2,
+    "total": 39,
+    "pct": 5
+   },
    "easy": [
     {
      "n": "From the Fog",
@@ -15213,12 +15152,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 2,
-    "total": 39,
-    "pct": 5
-   }
+   "doing": []
   },
   {
    "name": "A Plague Tale: Requiem",
@@ -15388,6 +15322,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 9,
+   "base": null,
    "easy": [
     {
      "n": "Fighter",
@@ -15436,8 +15371,7 @@
      "p": "4/5",
      "pct": 80
     }
-   ],
-   "base": null
+   ]
   },
   {
    "name": "Cyberpunk 2077",
@@ -15639,6 +15573,11 @@
     }
    ],
    "missing_n": 33,
+   "base": {
+    "earned": 11,
+    "total": 44,
+    "pct": 25
+   },
    "easy": [
     {
      "n": "Life of the Road",
@@ -15662,12 +15601,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 11,
-    "total": 44,
-    "pct": 25
-   }
+   "doing": []
   },
   {
    "name": "Rad TV",
@@ -15715,10 +15649,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Alan Wake Remastered",
@@ -15863,6 +15796,11 @@
     }
    ],
    "missing_n": 13,
+   "base": {
+    "earned": 37,
+    "total": 50,
+    "pct": 74
+   },
    "easy": [
     {
      "n": "Boob Tube",
@@ -15886,12 +15824,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 37,
-    "total": 50,
-    "pct": 74
-   }
+   "doing": []
   },
   {
    "name": "Outer Wilds",
@@ -16059,6 +15992,11 @@
     }
    ],
    "missing_n": 12,
+   "base": {
+    "earned": 5,
+    "total": 17,
+    "pct": 29
+   },
    "easy": [
     {
      "n": "Harmonic Convergence",
@@ -16082,12 +16020,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 5,
-    "total": 17,
-    "pct": 29
-   }
+   "doing": []
   },
   {
    "name": "Borderlands 3",
@@ -16196,10 +16129,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Among Us",
@@ -16277,10 +16209,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "EA SPORTS FC™ 24",
@@ -16430,6 +16361,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 35,
+   "base": null,
    "easy": [
     {
      "n": "Dead-ball specialist",
@@ -16453,8 +16385,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "SpongeBob SquarePants: The Cosmic Shake",
@@ -16554,10 +16485,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Streets of Rage 4",
@@ -16621,10 +16551,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Hogwarts Legacy",
@@ -16809,6 +16738,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 8,
+   "base": null,
    "easy": [
     {
      "n": "The Toast of the Town",
@@ -16857,8 +16787,7 @@
      "p": "9/12",
      "pct": 75
     }
-   ],
-   "base": null
+   ]
   },
   {
    "name": "TUNIC",
@@ -16920,10 +16849,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Ghostrunner 2",
@@ -17028,10 +16956,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Skul: The Hero Slayer",
@@ -17086,10 +17013,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Immortals of Aveum™",
@@ -17186,10 +17112,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Minecraft Legends",
@@ -17296,10 +17221,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "SILENT HILL: The Short Message",
@@ -17348,10 +17272,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Gran Turismo® 7",
@@ -17479,6 +17402,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 36,
+   "base": null,
    "easy": [
     {
      "n": "Going the Distance: 24 Hours of Le Mans",
@@ -17502,8 +17426,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Horizon Call of the Mountain™",
@@ -17633,6 +17556,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 23,
+   "base": null,
    "easy": [
     {
      "n": "Machine Safari",
@@ -17681,8 +17605,7 @@
      "p": "7/20",
      "pct": 35
     }
-   ],
-   "base": null
+   ]
   },
   {
    "name": "Ghostwire: Tokyo",
@@ -17870,6 +17793,11 @@
     }
    ],
    "missing_n": 27,
+   "base": {
+    "earned": 29,
+    "total": 56,
+    "pct": 52
+   },
    "easy": [
     {
      "n": "Boundless Spirit",
@@ -17918,12 +17846,7 @@
      "p": "28/50",
      "pct": 56
     }
-   ],
-   "base": {
-    "earned": 29,
-    "total": 56,
-    "pct": 52
-   }
+   ]
   },
   {
    "name": "Hello Neighbor 2",
@@ -18026,10 +17949,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Arise: A simple story",
@@ -18199,6 +18121,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 28,
+   "base": null,
    "easy": [
     {
      "n": "Always together",
@@ -18222,8 +18145,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Sifu",
@@ -18397,6 +18319,11 @@
     }
    ],
    "missing_n": 40,
+   "base": {
+    "earned": 2,
+    "total": 42,
+    "pct": 5
+   },
    "easy": [
     {
      "n": "Lightning Hands",
@@ -18437,12 +18364,7 @@
      "p": "3/30",
      "pct": 10
     }
-   ],
-   "base": {
-    "earned": 2,
-    "total": 42,
-    "pct": 5
-   }
+   ]
   },
   {
    "name": "Dead Space",
@@ -18619,6 +18541,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 10,
+   "base": null,
    "easy": [
     {
      "n": "Backbreaker",
@@ -18642,8 +18565,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Evil West",
@@ -18749,10 +18671,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "ELDEN RING",
@@ -18958,6 +18879,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 12,
+   "base": null,
    "easy": [
     {
      "n": "Shardbearer Mohg",
@@ -18981,8 +18903,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Sable",
@@ -19047,10 +18968,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "LEGO® 2K Drive",
@@ -19089,8 +19009,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "2K Drive",
-    "Lego"
+    "Lego",
+    "2K Drive"
    ],
    "developers": [
     "Visual Concepts"
@@ -19158,10 +19078,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Room VR: A Dark Matter",
@@ -19239,10 +19158,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Journey to Foundation",
@@ -19340,10 +19258,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "DRAGON BALL: THE BREAKERS",
@@ -19449,10 +19366,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Mafia II: Definitive Edition",
@@ -19550,10 +19466,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "EA SPORTS™ FIFA 23",
@@ -19677,6 +19592,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 37,
+   "base": null,
    "easy": [
     {
      "n": "Power Shot",
@@ -19700,8 +19616,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Weird West: Definitive Edition",
@@ -19761,10 +19676,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Black Desert",
@@ -19848,10 +19762,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Generation Zero",
@@ -19927,10 +19840,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Saints Row",
@@ -20033,10 +19945,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Old Man's Journey",
@@ -20190,9 +20101,9 @@
    "platinum_at": "2023-08-13T22:57:19+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Dreams™",
@@ -20274,10 +20185,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Trek to Yomi",
@@ -20449,6 +20359,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 20,
+   "base": null,
    "easy": [
     {
      "n": "Afterlife traveler",
@@ -20472,8 +20383,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Endling - Extinction is Forever",
@@ -20630,6 +20540,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 24,
+   "base": null,
    "easy": [
     {
      "n": "A Friend in Need",
@@ -20653,8 +20564,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "God of War Ragnarök",
@@ -20807,6 +20717,11 @@
     }
    ],
    "missing_n": 12,
+   "base": {
+    "earned": 35,
+    "total": 35,
+    "pct": 100
+   },
    "easy": [
     {
      "n": "Invitation Accepted",
@@ -20830,12 +20745,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 35,
-    "total": 35,
-    "pct": 100
-   }
+   "doing": []
   },
   {
    "name": "Moss VR",
@@ -20940,10 +20850,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Moss II VR",
@@ -21048,10 +20957,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Call of Duty®: Black Ops Cold War",
@@ -21152,10 +21060,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Thumper",
@@ -21318,6 +21225,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 14,
+   "base": null,
    "easy": [
     {
      "n": "Level 1 S Rank",
@@ -21341,8 +21249,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Before Your Eyes",
@@ -21512,6 +21419,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 6,
+   "base": null,
    "easy": [
     {
      "n": "Egyptologist",
@@ -21535,8 +21443,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Jurassic World Evolution 2",
@@ -21641,10 +21548,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "NBA 2K23",
@@ -21752,10 +21658,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "LEGO® Builder's Journey",
@@ -21810,10 +21715,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Rez Infinite",
@@ -21896,10 +21800,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "No Man's Sky",
@@ -22120,6 +22023,11 @@
     }
    ],
    "missing_n": 15,
+   "base": {
+    "earned": 7,
+    "total": 22,
+    "pct": 32
+   },
    "easy": [
     {
      "n": "The Space Merchants",
@@ -22143,12 +22051,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 7,
-    "total": 22,
-    "pct": 32
-   }
+   "doing": []
   },
   {
    "name": "Chivalry 2",
@@ -22251,10 +22154,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Sackboy: A Big Adventure",
@@ -22428,6 +22330,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 22,
+   "base": null,
    "easy": [
     {
      "n": "Slap Attack",
@@ -22476,8 +22379,7 @@
      "p": "6/8",
      "pct": 75
     }
-   ],
-   "base": null
+   ]
   },
   {
    "name": "OlliOlli World",
@@ -22677,6 +22579,11 @@
     }
    ],
    "missing_n": 37,
+   "base": {
+    "earned": 5,
+    "total": 42,
+    "pct": 12
+   },
    "easy": [
     {
      "n": "So That's How You Do It",
@@ -22700,12 +22607,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 5,
-    "total": 42,
-    "pct": 12
-   }
+   "doing": []
   },
   {
    "name": "STAR WARS Jedi: Fallen Order™",
@@ -22869,6 +22771,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 18,
+   "base": null,
    "easy": [
     {
      "n": "Bank Shot",
@@ -22892,8 +22795,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "LEGO®  Harry Potter™ Collection",
@@ -23012,6 +22914,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 48,
+   "base": null,
    "easy": [
     {
      "n": "Albus Percival Wulfric Brian",
@@ -23035,8 +22938,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Tails of Iron",
@@ -23141,10 +23043,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Horizon Forbidden West",
@@ -23354,6 +23255,11 @@
     }
    ],
    "missing_n": 21,
+   "base": {
+    "earned": 58,
+    "total": 58,
+    "pct": 100
+   },
    "easy": [
     {
      "n": "Discovered the Ascension",
@@ -23377,12 +23283,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 58,
-    "total": 58,
-    "pct": 100
-   }
+   "doing": []
   },
   {
    "name": "Battlefield™ 2042",
@@ -23494,10 +23395,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Song in the Smoke Rekindled",
@@ -23601,10 +23501,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Star Wars: Tales from the Galaxy's Edge - Enhanced Edition",
@@ -23655,10 +23554,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Mafia: Definitive Edition",
@@ -23756,10 +23654,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Evil Dead: The Game",
@@ -23864,10 +23761,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Marvel’s Spider-Man: Miles Morales",
@@ -24041,6 +23937,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 3,
+   "base": null,
    "easy": [
     {
      "n": "Ready for Anything",
@@ -24064,8 +23961,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "NieR:Automata",
@@ -24241,6 +24137,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 31,
+   "base": null,
    "easy": [
     {
      "n": "Fighting's Not My Thing",
@@ -24264,8 +24161,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Axiom Verge 2",
@@ -24373,10 +24269,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Fallout 76",
@@ -24481,10 +24376,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Heavenly Bodies",
@@ -24575,6 +24469,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 24,
+   "base": null,
    "easy": [
     {
      "n": "Power Restored",
@@ -24598,8 +24493,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Resident Evil Village",
@@ -24795,6 +24689,11 @@
     }
    ],
    "missing_n": 26,
+   "base": {
+    "earned": 23,
+    "total": 49,
+    "pct": 47
+   },
    "easy": [
     {
      "n": "Photographer",
@@ -24818,12 +24717,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 23,
-    "total": 49,
-    "pct": 47
-   }
+   "doing": []
   },
   {
    "name": "Nioh 2",
@@ -24878,10 +24772,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Ghostrunner",
@@ -24994,6 +24887,11 @@
     }
    ],
    "missing_n": 33,
+   "base": {
+    "earned": 0,
+    "total": 33,
+    "pct": 0
+   },
    "easy": [
     {
      "n": "Longrunner",
@@ -25017,12 +24915,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 0,
-    "total": 33,
-    "pct": 0
-   }
+   "doing": []
   },
   {
    "name": "DRAGON BALL XENOVERSE 2",
@@ -25223,6 +25116,11 @@
     }
    ],
    "missing_n": 47,
+   "base": {
+    "earned": 2,
+    "total": 49,
+    "pct": 4
+   },
    "easy": [
     {
      "n": "The Saiyan Legend Reborn! ",
@@ -25246,12 +25144,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 2,
-    "total": 49,
-    "pct": 4
-   }
+   "doing": []
   },
   {
    "name": "Hoa",
@@ -25420,9 +25313,9 @@
    "platinum_at": "2022-10-22T21:19:10+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Kena: Bridge of Spirits",
@@ -25597,6 +25490,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 8,
+   "base": null,
    "easy": [
     {
      "n": "Quick Draw",
@@ -25620,8 +25514,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "SUPERHOT",
@@ -25726,10 +25619,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Dark Pictures Anthology: Man of Medan",
@@ -25871,6 +25763,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 23,
+   "base": null,
    "easy": [
     {
      "n": "Brother thing, you know",
@@ -25894,8 +25787,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "CAPTAIN TSUBASA: RISE OF NEW CHAMPIONS",
@@ -26070,6 +25962,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 37,
+   "base": null,
    "easy": [
     {
      "n": "First Step to the Top",
@@ -26093,8 +25986,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Little Nightmares",
@@ -26298,6 +26190,11 @@
     }
    ],
    "missing_n": 16,
+   "base": {
+    "earned": 6,
+    "total": 13,
+    "pct": 46
+   },
    "easy": [
     {
      "n": "Highly Sprung",
@@ -26321,12 +26218,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 6,
-    "total": 13,
-    "pct": 46
-   }
+   "doing": []
   },
   {
    "name": "GRAVITY RUSH™ 2",
@@ -26485,6 +26377,11 @@
     }
    ],
    "missing_n": 23,
+   "base": {
+    "earned": 13,
+    "total": 36,
+    "pct": 36
+   },
    "easy": [
     {
      "n": "Kat's Daily Routine",
@@ -26508,12 +26405,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 13,
-    "total": 36,
-    "pct": 36
-   }
+   "doing": []
   },
   {
    "name": "FIFA 22",
@@ -26672,6 +26564,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 33,
+   "base": null,
    "easy": [
     {
      "n": "Dead-ball specialist",
@@ -26695,8 +26588,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Yakuza: Like A Dragon",
@@ -26802,10 +26694,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Crash Bandicoot™ 4: It’s About Time",
@@ -26902,10 +26793,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Nickelodeon All-Star Brawl",
@@ -27008,10 +26898,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "NARUTO TO BORUTO: SHINOBI STRIKER",
@@ -27090,10 +26979,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Horizon Chase Turbo",
@@ -27263,6 +27151,11 @@
     }
    ],
    "missing_n": 30,
+   "base": {
+    "earned": 7,
+    "total": 37,
+    "pct": 19
+   },
    "easy": [
     {
      "n": "Quickie",
@@ -27286,12 +27179,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 7,
-    "total": 37,
-    "pct": 19
-   }
+   "doing": []
   },
   {
    "name": "Rayman Legends",
@@ -27484,6 +27372,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 39,
+   "base": null,
    "easy": [
     {
      "n": "Just kick it!",
@@ -27507,8 +27396,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "FIFA 17",
@@ -27676,6 +27564,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 33,
+   "base": null,
    "easy": [
     {
      "n": "Mine!",
@@ -27699,8 +27588,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Team Sonic Racing",
@@ -27771,10 +27659,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "ARK: Survival Evolved",
@@ -27882,10 +27769,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Deep Rock Galactic",
@@ -27966,10 +27852,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "DIRT 5",
@@ -28076,10 +27961,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Persona®5 Strikers",
@@ -28186,10 +28070,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Persistence",
@@ -28286,10 +28169,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Mortal Shell",
@@ -28365,10 +28247,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "LEGO® DC Super-Villains",
@@ -28445,10 +28326,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Godfall",
@@ -28513,10 +28393,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Resident Evil Re:Verse",
@@ -28615,10 +28494,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Need for Speed™ Payback",
@@ -28804,6 +28682,11 @@
     }
    ],
    "missing_n": 46,
+   "base": {
+    "earned": 7,
+    "total": 53,
+    "pct": 13
+   },
    "easy": [
     {
      "n": "Udo Roth",
@@ -28827,12 +28710,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 7,
-    "total": 53,
-    "pct": 13
-   }
+   "doing": []
   },
   {
    "name": "DAYS GONE",
@@ -29044,6 +28922,11 @@
     }
    ],
    "missing_n": 39,
+   "base": {
+    "earned": 6,
+    "total": 45,
+    "pct": 13
+   },
    "easy": [
     {
      "n": "Kitchen Courier",
@@ -29067,12 +28950,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 6,
-    "total": 45,
-    "pct": 13
-   }
+   "doing": []
   },
   {
    "name": "Until You Fall",
@@ -29128,10 +29006,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Walking Dead: Saints & Sinners",
@@ -29235,10 +29112,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "What Remains of Edith Finch",
@@ -29398,9 +29274,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "PGA TOUR 2K21",
@@ -29512,6 +29388,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 28,
+   "base": null,
    "easy": [
     {
      "n": "Ferret",
@@ -29535,8 +29412,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "ENDER LILIES: Quietus of the Knights",
@@ -29717,9 +29593,9 @@
    "platinum_at": "2021-10-18T20:04:16+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Mortal Kombat X",
@@ -29821,10 +29697,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "FINAL FANTASY VII REMAKE",
@@ -30023,6 +29898,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 13,
+   "base": null,
    "easy": [
     {
      "n": "Peeress of Pull-Ups",
@@ -30046,8 +29922,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Predator: Hunting Grounds",
@@ -30150,10 +30025,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "HITMAN™ 2",
@@ -30209,10 +30083,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "STAR WARS™: Squadrons",
@@ -30296,10 +30169,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Another World - 20th Anniversary Edition",
@@ -30480,9 +30352,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Persona 5",
@@ -30648,6 +30520,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 42,
+   "base": null,
    "easy": [
     {
      "n": "Castle of Lust Falls",
@@ -30671,8 +30544,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Stranded Deep",
@@ -30771,10 +30643,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Battlefield™ V",
@@ -30882,10 +30753,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Zombie Army 4: Dead War",
@@ -30992,10 +30862,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Monster Hunter: World",
@@ -31137,6 +31006,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 48,
+   "base": null,
    "easy": [
     {
      "n": "Welcome to the New World",
@@ -31160,8 +31030,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Devil May Cry 5 Series",
@@ -31354,6 +31223,11 @@
     }
    ],
    "missing_n": 30,
+   "base": {
+    "earned": 18,
+    "total": 48,
+    "pct": 38
+   },
    "easy": [
     {
      "n": "Break a Leg",
@@ -31377,12 +31251,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 18,
-    "total": 48,
-    "pct": 38
-   }
+   "doing": []
   },
   {
    "name": "Farpoint",
@@ -31436,10 +31305,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Remnant: From the Ashes",
@@ -31524,10 +31392,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "GreedFall",
@@ -31594,10 +31461,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Red Dead Redemption 2",
@@ -31740,6 +31606,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 49,
+   "base": null,
    "easy": [
     {
      "n": "Trusty Steed",
@@ -31763,8 +31630,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "A Plague Tale: Innocence",
@@ -31913,6 +31779,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 12,
+   "base": null,
    "easy": [
     {
      "n": "Tribute",
@@ -31936,8 +31803,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Worms Rumble",
@@ -32045,10 +31911,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Hellblade: Senua’s Sacrifice",
@@ -32226,9 +32091,9 @@
    "platinum_at": "2020-12-04T16:30:17+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Hollow Knight",
@@ -32399,6 +32264,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 11,
+   "base": null,
    "easy": [
     {
      "n": "Solace",
@@ -32422,8 +32288,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Spotify",
@@ -32472,10 +32337,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Ghost of Tsushima",
@@ -32687,6 +32551,11 @@
     }
    ],
    "missing_n": 25,
+   "base": {
+    "earned": 51,
+    "total": 51,
+    "pct": 100
+   },
    "easy": [
     {
      "n": "Promising Start",
@@ -32710,12 +32579,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 51,
-    "total": 51,
-    "pct": 100
-   }
+   "doing": []
   },
   {
    "name": "Middle-earth™: Shadow of War™",
@@ -32821,10 +32685,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Vampyr",
@@ -32925,10 +32788,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Blasphemous",
@@ -33094,6 +32956,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 6,
+   "base": null,
    "easy": [
     {
      "n": "Power Unleashed",
@@ -33117,8 +32980,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "The Last of Us™ Part II",
@@ -33300,6 +33162,11 @@
     }
    ],
    "missing_n": 5,
+   "base": {
+    "earned": 20,
+    "total": 25,
+    "pct": 80
+   },
    "easy": [
     {
      "n": "Arms Master",
@@ -33323,12 +33190,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 20,
-    "total": 25,
-    "pct": 80
-   }
+   "doing": []
   },
   {
    "name": "Street Fighter V",
@@ -33475,6 +33337,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 41,
+   "base": null,
    "easy": [
     {
      "n": "Enlightenment",
@@ -33498,8 +33361,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "YouTube",
@@ -33609,10 +33471,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Cuphead",
@@ -33807,6 +33668,11 @@
     }
    ],
    "missing_n": 12,
+   "base": {
+    "earned": 16,
+    "total": 28,
+    "pct": 57
+   },
    "easy": [
     {
      "n": "Coffers Full",
@@ -33830,12 +33696,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 16,
-    "total": 28,
-    "pct": 57
-   }
+   "doing": []
   },
   {
    "name": "The Last of Us™ Remastered",
@@ -34056,6 +33917,11 @@
     }
    ],
    "missing_n": 20,
+   "base": {
+    "earned": 3,
+    "total": 23,
+    "pct": 13
+   },
    "easy": [
     {
      "n": "No Matter What - Hard",
@@ -34079,12 +33945,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 3,
-    "total": 23,
-    "pct": 13
-   }
+   "doing": []
   },
   {
    "name": "LEGO® Jurassic World™",
@@ -34225,6 +34086,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 48,
+   "base": null,
    "easy": [
     {
      "n": "Remember To Wash Your Hands",
@@ -34248,8 +34110,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "NBA 2K20",
@@ -34316,10 +34177,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Erica",
@@ -34422,10 +34282,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "DEATH STRANDING™",
@@ -34600,6 +34459,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 14,
+   "base": null,
    "easy": [
     {
      "n": "Childminder",
@@ -34623,8 +34483,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "WIPEOUT™ OMEGA COLLECTION",
@@ -34724,6 +34583,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 32,
+   "base": null,
    "easy": [
     {
      "n": "Deadly Momentum",
@@ -34747,8 +34607,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Burly Men At Sea",
@@ -34918,6 +34777,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 19,
+   "base": null,
    "easy": [
     {
      "n": "Wooden Trousers",
@@ -34941,8 +34801,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "SHADOW OF THE COLOSSUS™",
@@ -35094,6 +34953,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 16,
+   "base": null,
    "easy": [
     {
      "n": "Five-Lined Skink",
@@ -35117,8 +34977,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "KINGDOM HEARTS Ⅲ",
@@ -35213,10 +35072,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "DiRT Rally 2.0",
@@ -35285,10 +35143,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "METAL GEAR SOLID V: THE PHANTOM PAIN",
@@ -35458,6 +35315,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 34,
+   "base": null,
    "easy": [
     {
      "n": "Enhancement",
@@ -35481,8 +35339,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "SONIC FORCES",
@@ -35545,10 +35402,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "ACE COMBAT™ 7: SKIES UNKNOWN",
@@ -35701,6 +35557,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 47,
+   "base": null,
    "easy": [
     {
      "n": "Looming Shadow",
@@ -35724,8 +35581,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Outlast 2",
@@ -35899,6 +35755,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 13,
+   "base": null,
    "easy": [
     {
      "n": "Heal the Sick",
@@ -35922,8 +35779,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "BioShock: The Collection",
@@ -36001,10 +35857,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "BioShock Infinite: The Complete Edition",
@@ -36055,10 +35910,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "KINGDOM HEARTS - HD 1.5+2.5 ReMIX -",
@@ -36206,6 +36060,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 30,
+   "base": null,
    "easy": [
     {
      "n": "Supreme Soloist",
@@ -36229,8 +36084,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Goat Simulator",
@@ -36332,10 +36186,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Uncharted™: The Nathan Drake Collection",
@@ -36415,10 +36268,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "BATMAN™: ARKHAM KNIGHT",
@@ -36783,6 +36635,11 @@
     }
    ],
    "missing_n": 30,
+   "base": {
+    "earned": 34,
+    "total": 64,
+    "pct": 53
+   },
    "easy": [
     {
      "n": "Double Jeopardy",
@@ -36806,12 +36663,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 34,
-    "total": 64,
-    "pct": 53
-   }
+   "doing": []
   },
   {
    "name": "Titanfall™ 2",
@@ -36917,10 +36769,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Nioh",
@@ -36988,10 +36839,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Uncanny Valley",
@@ -37120,6 +36970,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 10,
+   "base": null,
    "easy": [
     {
      "n": "Playing House",
@@ -37143,8 +36994,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Shadow of the Tomb Raider",
@@ -37412,6 +37262,11 @@
     }
    ],
    "missing_n": 4,
+   "base": {
+    "earned": 59,
+    "total": 63,
+    "pct": 94
+   },
    "easy": [
     {
      "n": "One with the Jungle",
@@ -37435,12 +37290,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 59,
-    "total": 63,
-    "pct": 94
-   }
+   "doing": []
   },
   {
    "name": "Darksiders III",
@@ -37543,10 +37393,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Sniper Elite 4",
@@ -37653,10 +37502,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Detroit: Become Human™",
@@ -37840,6 +37688,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 18,
+   "base": null,
    "easy": [
     {
      "n": "DEFEND YOURSELF",
@@ -37863,8 +37712,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "God of War",
@@ -38058,9 +37906,9 @@
    "platinum_at": "2019-05-19T20:54:18+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Conan Exiles",
@@ -38165,10 +38013,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "King's Quest",
@@ -38253,10 +38100,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "HITMAN™",
@@ -38362,10 +38208,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Marvel's Spider-Man",
@@ -38585,6 +38430,11 @@
     }
    ],
    "missing_n": 23,
+   "base": {
+    "earned": 50,
+    "total": 50,
+    "pct": 100
+   },
    "easy": [
     {
      "n": "The Cat Came Back",
@@ -38608,12 +38458,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 50,
-    "total": 50,
-    "pct": 100
-   }
+   "doing": []
   },
   {
    "name": "STEEP",
@@ -38704,10 +38549,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "RESIDENT EVIL 7 biohazard",
@@ -38932,6 +38776,11 @@
     }
    ],
    "missing_n": 15,
+   "base": {
+    "earned": 22,
+    "total": 37,
+    "pct": 59
+   },
    "easy": [
     {
      "n": "Slash Slash, Slashity Slash!",
@@ -38955,12 +38804,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 22,
-    "total": 37,
-    "pct": 59
-   }
+   "doing": []
   },
   {
    "name": "Iconoclasts",
@@ -39026,10 +38870,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Assassin's Creed® Odyssey",
@@ -39122,10 +38965,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Yakuza Kiwami",
@@ -39213,10 +39055,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Assassin's Creed® Origins",
@@ -39403,6 +39244,11 @@
     }
    ],
    "missing_n": 10,
+   "base": {
+    "earned": 40,
+    "total": 50,
+    "pct": 80
+   },
    "easy": [
     {
      "n": "Slasher",
@@ -39426,12 +39272,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 40,
-    "total": 50,
-    "pct": 80
-   }
+   "doing": []
   },
   {
    "name": "Friday the 13th: The Game",
@@ -39536,10 +39377,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "God of War® III Remastered",
@@ -39590,10 +39430,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Destiny 2",
@@ -39699,10 +39538,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Mafia: Trilogy",
@@ -39767,10 +39605,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Here They Lie™",
@@ -39845,10 +39682,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Dead by Daylight",
@@ -39950,10 +39786,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Knowledge is Power™",
@@ -40003,10 +39838,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "ABSOLVER",
@@ -40100,10 +39934,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Child of Light",
@@ -40269,6 +40102,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 1,
+   "base": null,
    "easy": [
     {
      "n": "Perfect Sonnet",
@@ -40278,8 +40112,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Call of Duty®: Black Ops III",
@@ -40381,10 +40214,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Trials Fusion™",
@@ -40469,10 +40301,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "XCOM 2",
@@ -40579,10 +40410,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Mighty No. 9",
@@ -40724,6 +40554,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 29,
+   "base": null,
    "easy": [
     {
      "n": "FINE PLAY! (Opening Boss)",
@@ -40747,8 +40578,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Horizon Zero Dawn™",
@@ -40977,6 +40807,11 @@
     }
    ],
    "missing_n": 7,
+   "base": {
+    "earned": 48,
+    "total": 55,
+    "pct": 87
+   },
    "easy": [
     {
      "n": "Aided the defectors",
@@ -41000,12 +40835,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 48,
-    "total": 55,
-    "pct": 87
-   }
+   "doing": []
   },
   {
    "name": "The Unfinished Swan",
@@ -41172,6 +41002,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 5,
+   "base": null,
    "easy": [
     {
      "n": "Page Turner",
@@ -41195,8 +41026,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Night in the Woods",
@@ -41372,6 +41202,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 15,
+   "base": null,
    "easy": [
     {
      "n": "Best Available Friend",
@@ -41395,8 +41226,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Mad Max",
@@ -41496,10 +41326,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Trackmania Turbo",
@@ -41585,10 +41414,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Ratchet & Clank™",
@@ -41734,6 +41562,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 43,
+   "base": null,
    "easy": [
     {
      "n": "The Rescuer",
@@ -41757,8 +41586,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Claire",
@@ -41860,10 +41688,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "SOMA",
@@ -42005,6 +41832,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 9,
+   "base": null,
    "easy": [
     {
      "n": "Chasing Catherine",
@@ -42028,8 +41856,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Never Alone",
@@ -42224,6 +42051,11 @@
     }
    ],
    "missing_n": 13,
+   "base": {
+    "earned": 6,
+    "total": 15,
+    "pct": 40
+   },
    "easy": [
     {
      "n": "Sea and Air",
@@ -42247,12 +42079,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 6,
-    "total": 15,
-    "pct": 40
-   }
+   "doing": []
   },
   {
    "name": "STAR WARS™ Battlefront™ II",
@@ -42441,6 +42268,11 @@
     }
    ],
    "missing_n": 24,
+   "base": {
+    "earned": 16,
+    "total": 40,
+    "pct": 40
+   },
    "easy": [
     {
      "n": "Battle Beyond the Stars",
@@ -42464,12 +42296,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 16,
-    "total": 40,
-    "pct": 40
-   }
+   "doing": []
   },
   {
    "name": "Wolfenstein® II: The New Colossus™",
@@ -42682,6 +42509,11 @@
     }
    ],
    "missing_n": 27,
+   "base": {
+    "earned": 23,
+    "total": 50,
+    "pct": 46
+   },
    "easy": [
     {
      "n": "Crippled but Able",
@@ -42705,12 +42537,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 23,
-    "total": 50,
-    "pct": 46
-   }
+   "doing": []
   },
   {
    "name": "Grand Kingdom",
@@ -42782,10 +42609,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "StarBlood Arena™",
@@ -42833,10 +42659,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Uncharted: The Lost Legacy™",
@@ -42971,6 +42796,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 33,
+   "base": null,
    "easy": [
     {
      "n": "Drop Me a Line",
@@ -42994,8 +42820,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "UNCHARTED: Legacy of Thieves Collection",
@@ -43186,6 +43011,11 @@
     }
    ],
    "missing_n": 38,
+   "base": {
+    "earned": 17,
+    "total": 55,
+    "pct": 31
+   },
    "easy": [
     {
      "n": "Don't Feed the Animals",
@@ -43209,12 +43039,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 17,
-    "total": 55,
-    "pct": 31
-   }
+   "doing": []
   },
   {
    "name": "Deus Ex: Mankind Divided™",
@@ -43320,10 +43145,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Batman",
@@ -43370,10 +43194,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Bound",
@@ -43423,10 +43246,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Worms Battlegrounds",
@@ -43511,10 +43333,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Until Dawn™",
@@ -43684,6 +43505,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 13,
+   "base": null,
    "easy": [
     {
      "n": "Scream Too!",
@@ -43707,8 +43529,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Amnesia Collection",
@@ -43775,10 +43596,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Life Is Strange™",
@@ -43962,9 +43782,9 @@
    "platinum_at": "2017-10-08T15:07:44+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "inFAMOUS™ Second Son",
@@ -44014,10 +43834,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Last Guardian™",
@@ -44154,6 +43973,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 18,
+   "base": null,
    "easy": [
     {
      "n": "Broad-Backed",
@@ -44177,8 +43997,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Assassin's Creed® Freedom Cry",
@@ -44280,10 +44099,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Just Cause 3",
@@ -44387,10 +44205,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "RiME",
@@ -44547,6 +44364,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 22,
+   "base": null,
    "easy": [
     {
      "n": "Careful steps",
@@ -44570,8 +44388,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Tom Clancy's The Division™",
@@ -44753,6 +44570,11 @@
     }
    ],
    "missing_n": 48,
+   "base": {
+    "earned": 2,
+    "total": 50,
+    "pct": 4
+   },
    "easy": [
     {
      "n": "Shut That Door",
@@ -44776,12 +44598,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 2,
-    "total": 50,
-    "pct": 4
-   }
+   "doing": []
   },
   {
    "name": "The Vanishing of Ethan Carter",
@@ -44949,6 +44766,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 1,
+   "base": null,
    "easy": [
     {
      "n": "Unfinished Story",
@@ -44958,8 +44776,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Salt and Sanctuary",
@@ -45109,6 +44926,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 35,
+   "base": null,
    "easy": [
     {
      "n": "The Three",
@@ -45132,8 +44950,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "DOOM",
@@ -45370,6 +45187,11 @@
     }
    ],
    "missing_n": 15,
+   "base": {
+    "earned": 18,
+    "total": 33,
+    "pct": 55
+   },
    "easy": [
     {
      "n": "Thorough Shopper",
@@ -45393,12 +45215,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 18,
-    "total": 33,
-    "pct": 55
-   }
+   "doing": []
   },
   {
    "name": "Tales from the Borderlands",
@@ -45501,10 +45318,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "The Witness",
@@ -45660,6 +45476,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 10,
+   "base": null,
    "easy": [
     {
      "n": "Desert Ruin",
@@ -45683,8 +45500,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "NOT A HERO",
@@ -45775,10 +45591,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "LittleBigPlanet™3",
@@ -45835,10 +45650,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "This War of Mine: The Little Ones",
@@ -45989,6 +45803,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 25,
+   "base": null,
    "easy": [
     {
      "n": "Diary: First blood",
@@ -46012,8 +45827,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Gravity Rush™ Remastered",
@@ -46170,6 +45984,11 @@
     }
    ],
    "missing_n": 8,
+   "base": {
+    "earned": 31,
+    "total": 39,
+    "pct": 79
+   },
    "easy": [
     {
      "n": "Gravitational Anomaly",
@@ -46193,12 +46012,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 31,
-    "total": 39,
-    "pct": 79
-   }
+   "doing": []
   },
   {
    "name": "For Honor",
@@ -46301,10 +46115,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "INSIDE",
@@ -46476,6 +46289,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 7,
+   "base": null,
    "easy": [
     {
      "n": "Room for Reflection",
@@ -46499,8 +46313,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Battlefield™ 1",
@@ -46674,6 +46487,11 @@
     }
    ],
    "missing_n": 22,
+   "base": {
+    "earned": 9,
+    "total": 31,
+    "pct": 29
+   },
    "easy": [
     {
      "n": "Counter-sniper",
@@ -46697,12 +46515,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 9,
-    "total": 31,
-    "pct": 29
-   }
+   "doing": []
   },
   {
    "name": "Titan Souls",
@@ -46798,10 +46611,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Day of the Tentacle Remastered",
@@ -46890,10 +46702,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Everybody's Gone To The Rapture™",
@@ -47031,6 +46842,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 17,
+   "base": null,
    "easy": [
     {
      "n": "Passive Observer",
@@ -47054,8 +46866,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Rise of the Tomb Raider",
@@ -47292,6 +47103,11 @@
     }
    ],
    "missing_n": 30,
+   "base": {
+    "earned": 35,
+    "total": 65,
+    "pct": 54
+   },
    "easy": [
     {
      "n": "Craftswoman",
@@ -47315,12 +47131,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 35,
-    "total": 65,
-    "pct": 54
-   }
+   "doing": []
   },
   {
    "name": "Darkest Dungeon",
@@ -47426,10 +47237,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Game of Thrones",
@@ -47567,9 +47377,9 @@
    "platinum_at": "2016-11-21T11:49:19+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Firewatch",
@@ -47758,6 +47568,11 @@
     }
    ],
    "missing_n": 4,
+   "base": {
+    "earned": 5,
+    "total": 5,
+    "pct": 100
+   },
    "easy": [
     {
      "n": "Love Turts",
@@ -47781,12 +47596,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 5,
-    "total": 5,
-    "pct": 100
-   }
+   "doing": []
   },
   {
    "name": "Netflix",
@@ -47836,10 +47646,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Bloodborne™",
@@ -47984,6 +47793,11 @@
     }
    ],
    "missing_n": 30,
+   "base": {
+    "earned": 3,
+    "total": 33,
+    "pct": 9
+   },
    "easy": [
     {
      "n": "Rune Contact",
@@ -48007,12 +47821,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 3,
-    "total": 33,
-    "pct": 9
-   }
+   "doing": []
   },
   {
    "name": "Fallout 4",
@@ -48280,6 +48089,11 @@
     }
    ],
    "missing_n": 19,
+   "base": {
+    "earned": 31,
+    "total": 50,
+    "pct": 62
+   },
    "easy": [
     {
      "n": "Never Go It Alone",
@@ -48303,12 +48117,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 31,
-    "total": 50,
-    "pct": 62
-   }
+   "doing": []
   },
   {
    "name": "Unravel",
@@ -48412,10 +48221,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Valiant Hearts: The Great War",
@@ -48591,6 +48399,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 2,
+   "base": null,
    "easy": [
     {
      "n": "Ypres' wake-up call",
@@ -48607,8 +48416,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "The Evil Within",
@@ -48809,6 +48617,11 @@
     }
    ],
    "missing_n": 37,
+   "base": {
+    "earned": 4,
+    "total": 41,
+    "pct": 10
+   },
    "easy": [
     {
      "n": "Old Flame",
@@ -48832,12 +48645,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 4,
-    "total": 41,
-    "pct": 10
-   }
+   "doing": []
   },
   {
    "name": "The Wolf Among Us",
@@ -49007,6 +48815,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 3,
+   "base": null,
    "easy": [
     {
      "n": "Novice Librarian",
@@ -49030,8 +48839,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "The Order: 1886",
@@ -49192,6 +49000,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 11,
+   "base": null,
    "easy": [
     {
      "n": "Highly Volatile",
@@ -49215,8 +49024,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "The Witcher 3: Wild Hunt — Remastered",
@@ -49454,6 +49262,11 @@
     }
    ],
    "missing_n": 26,
+   "base": {
+    "earned": 26,
+    "total": 52,
+    "pct": 50
+   },
    "easy": [
     {
      "n": "Fearless Vampire Slayer",
@@ -49477,12 +49290,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 26,
-    "total": 52,
-    "pct": 50
-   }
+   "doing": []
   },
   {
    "name": "STAR WARS™ Battlefront™",
@@ -49551,10 +49359,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "Assassin's Creed® Unity",
@@ -49738,6 +49545,11 @@
     }
    ],
    "missing_n": 16,
+   "base": {
+    "earned": 34,
+    "total": 50,
+    "pct": 68
+   },
    "easy": [
     {
      "n": "Master Architect",
@@ -49761,12 +49573,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 34,
-    "total": 50,
-    "pct": 68
-   }
+   "doing": []
   },
   {
    "name": "Powers",
@@ -49855,10 +49662,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "THE PLAYROOM",
@@ -49977,6 +49783,11 @@
     }
    ],
    "missing_n": 24,
+   "base": {
+    "earned": 0,
+    "total": 12,
+    "pct": 0
+   },
    "easy": [
     {
      "n": "Lovely meeting you!",
@@ -50000,12 +49811,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 0,
-    "total": 12,
-    "pct": 0
-   }
+   "doing": []
   },
   {
    "name": "Middle-earth™: Shadow of Mordor™",
@@ -50203,6 +50009,11 @@
     }
    ],
    "missing_n": 42,
+   "base": {
+    "earned": 9,
+    "total": 51,
+    "pct": 18
+   },
    "easy": [
     {
      "n": "Unleashed",
@@ -50226,12 +50037,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 9,
-    "total": 51,
-    "pct": 18
-   }
+   "doing": []
   },
   {
    "name": "FIFA 15",
@@ -50366,6 +50172,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 42,
+   "base": null,
    "easy": [
     {
      "n": "Woodwork!",
@@ -50389,8 +50196,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Assassin's Creed® Rogue",
@@ -50567,6 +50373,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 23,
+   "base": null,
    "easy": [
     {
      "n": "Do not want",
@@ -50590,8 +50397,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "HEAVY RAIN™",
@@ -50760,6 +50566,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 32,
+   "base": null,
    "easy": [
     {
      "n": "Interactive Drama",
@@ -50783,8 +50590,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Uncharted 2: Among Thieves™",
@@ -50934,6 +50740,11 @@
     }
    ],
    "missing_n": 16,
+   "base": {
+    "earned": 31,
+    "total": 47,
+    "pct": 66
+   },
    "easy": [
     {
      "n": "Steel Fist Master",
@@ -50957,12 +50768,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 31,
-    "total": 47,
-    "pct": 66
-   }
+   "doing": []
   },
   {
    "name": "Assassin's Creed® IV Black Flag",
@@ -51178,6 +50984,11 @@
     }
    ],
    "missing_n": 14,
+   "base": {
+    "earned": 36,
+    "total": 50,
+    "pct": 72
+   },
    "easy": [
     {
      "n": "Wild West Indies",
@@ -51201,12 +51012,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 36,
-    "total": 50,
-    "pct": 72
-   }
+   "doing": []
   },
   {
    "name": "P.T.",
@@ -51280,10 +51086,9 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "rare_missing": null,
-   "base": null
+   "doing": []
   },
   {
    "name": "BioShock Infinite",
@@ -51502,6 +51307,11 @@
     }
    ],
    "missing_n": 38,
+   "base": {
+    "earned": 12,
+    "total": 50,
+    "pct": 24
+   },
    "easy": [
     {
      "n": "Tear 'em a New One",
@@ -51525,12 +51335,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 12,
-    "total": 50,
-    "pct": 24
-   }
+   "doing": []
   },
   {
    "name": "The Walking Dead",
@@ -51717,6 +51522,11 @@
     }
    ],
    "missing_n": 8,
+   "base": {
+    "earned": 32,
+    "total": 40,
+    "pct": 80
+   },
    "easy": [
     {
      "n": "Into The Fire",
@@ -51740,12 +51550,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 32,
-    "total": 40,
-    "pct": 80
-   }
+   "doing": []
   },
   {
    "name": "WATCH_DOGS™",
@@ -51942,6 +51747,11 @@
     }
    ],
    "missing_n": 12,
+   "base": {
+    "earned": 27,
+    "total": 39,
+    "pct": 69
+   },
    "easy": [
     {
      "n": "Stealth Cookie",
@@ -51965,12 +51775,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 27,
-    "total": 39,
-    "pct": 69
-   }
+   "doing": []
   },
   {
    "name": "Tomb Raider",
@@ -52154,6 +51959,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 21,
+   "base": null,
    "easy": [
     {
      "n": "Sole Survivor",
@@ -52177,8 +51983,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "LEGO® MARVEL Super Heroes",
@@ -52354,6 +52159,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 23,
+   "base": null,
    "easy": [
     {
      "n": "Cosplay",
@@ -52377,8 +52183,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Journey",
@@ -52550,6 +52355,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 6,
+   "base": null,
    "easy": [
     {
      "n": "Crossing",
@@ -52573,8 +52379,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Uncharted 3: Drake's Deception™",
@@ -52766,6 +52571,11 @@
     }
    ],
    "missing_n": 17,
+   "base": {
+    "earned": 37,
+    "total": 54,
+    "pct": 69
+   },
    "easy": [
     {
      "n": "Run-and-Gunner",
@@ -52789,12 +52599,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 37,
-    "total": 54,
-    "pct": 69
-   }
+   "doing": []
   },
   {
    "name": "Dragon's Crown",
@@ -52961,6 +52766,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 28,
+   "base": null,
    "easy": [
     {
      "n": "Devout Follower",
@@ -52984,8 +52790,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Hitman: Absolution™",
@@ -53127,6 +52932,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 45,
+   "base": null,
    "easy": [
     {
      "n": "Kingslayer",
@@ -53150,8 +52956,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Grand Theft Auto V",
@@ -53344,6 +53149,11 @@
     }
    ],
    "missing_n": 34,
+   "base": {
+    "earned": 15,
+    "total": 49,
+    "pct": 31
+   },
    "easy": [
     {
      "n": "Off the Plane",
@@ -53367,12 +53177,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 15,
-    "total": 49,
-    "pct": 31
-   }
+   "doing": []
   },
   {
    "name": "Beyond: Two Souls™",
@@ -53545,6 +53350,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 17,
+   "base": null,
    "easy": [
     {
      "n": "Agent 894732",
@@ -53568,8 +53374,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "flOw trophy set",
@@ -53708,6 +53513,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 13,
+   "base": null,
    "easy": [
     {
      "n": "Swift",
@@ -53731,8 +53537,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Flower",
@@ -53835,6 +53640,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 13,
+   "base": null,
    "easy": [
     {
      "n": " Welcome Back",
@@ -53858,8 +53664,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Ni no Kuni: Wrath of the White Witch",
@@ -53995,6 +53800,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 21,
+   "base": null,
    "easy": [
     {
      "n": "Pop Pop Fizz Fizz",
@@ -54018,8 +53824,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "The Last of Us™",
@@ -54225,6 +54030,11 @@
     }
    ],
    "missing_n": 19,
+   "base": {
+    "earned": 4,
+    "total": 23,
+    "pct": 17
+   },
    "easy": [
     {
      "n": "Populace",
@@ -54248,12 +54058,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 4,
-    "total": 23,
-    "pct": 17
-   }
+   "doing": []
   },
   {
    "name": "Darksiders II",
@@ -54424,6 +54229,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 16,
+   "base": null,
    "easy": [
     {
      "n": "Respec Yourself",
@@ -54447,8 +54253,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Dead Space™ 2",
@@ -54637,6 +54442,11 @@
     }
    ],
    "missing_n": 24,
+   "base": {
+    "earned": 26,
+    "total": 50,
+    "pct": 52
+   },
    "easy": [
     {
      "n": "Brute Juke",
@@ -54660,12 +54470,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 26,
-    "total": 50,
-    "pct": 52
-   }
+   "doing": []
   },
   {
    "name": "Dishonored",
@@ -54877,6 +54682,11 @@
     }
    ],
    "missing_n": 29,
+   "base": {
+    "earned": 21,
+    "total": 50,
+    "pct": 42
+   },
    "easy": [
     {
      "n": "Thief",
@@ -54900,12 +54710,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 21,
-    "total": 50,
-    "pct": 42
-   }
+   "doing": []
   },
   {
    "name": "Assassin's Creed® III",
@@ -55118,6 +54923,11 @@
     }
    ],
    "missing_n": 21,
+   "base": {
+    "earned": 29,
+    "total": 50,
+    "pct": 58
+   },
    "easy": [
     {
      "n": "Tumblehome",
@@ -55141,12 +54951,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 29,
-    "total": 50,
-    "pct": 58
-   }
+   "doing": []
   },
   {
    "name": "VANQUISH",
@@ -55311,6 +55116,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 41,
+   "base": null,
    "easy": [
     {
      "n": "That Ended Up Working Out Nicely",
@@ -55334,8 +55140,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "AC Revelations",
@@ -55545,6 +55350,11 @@
     }
    ],
    "missing_n": 23,
+   "base": {
+    "earned": 26,
+    "total": 49,
+    "pct": 53
+   },
    "easy": [
     {
      "n": "Mastering the Art",
@@ -55568,12 +55378,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 26,
-    "total": 49,
-    "pct": 53
-   }
+   "doing": []
   },
   {
    "name": "FIFA 12",
@@ -55723,6 +55528,11 @@
     }
    ],
    "missing_n": 39,
+   "base": {
+    "earned": 6,
+    "total": 45,
+    "pct": 13
+   },
    "easy": [
     {
      "n": "Warrior",
@@ -55746,12 +55556,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 6,
-    "total": 45,
-    "pct": 13
-   }
+   "doing": []
   },
   {
    "name": "DARK SOULS",
@@ -55888,6 +55693,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 35,
+   "base": null,
    "easy": [
     {
      "n": "Ring the Bell (Quelaag's Domain)",
@@ -55911,8 +55717,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Darksiders",
@@ -56086,9 +55891,9 @@
    "platinum_at": "2012-09-12T10:04:54+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "AC Brotherhood",
@@ -56270,6 +56075,11 @@
     }
    ],
    "missing_n": 18,
+   "base": {
+    "earned": 32,
+    "total": 50,
+    "pct": 64
+   },
    "easy": [
     {
      "n": "Synchronization Established",
@@ -56293,12 +56103,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 32,
-    "total": 50,
-    "pct": 64
-   }
+   "doing": []
   },
   {
    "name": "Red Dead Redemption",
@@ -56514,6 +56319,11 @@
     }
    ],
    "missing_n": 28,
+   "base": {
+    "earned": 20,
+    "total": 48,
+    "pct": 42
+   },
    "easy": [
     {
      "n": "Red Dead Rockstar",
@@ -56537,12 +56347,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 20,
-    "total": 48,
-    "pct": 42
-   }
+   "doing": []
   },
   {
    "name": "inFamous",
@@ -56661,6 +56466,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 14,
+   "base": null,
    "easy": [
     {
      "n": "Evil Eats",
@@ -56684,8 +56490,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Assassin's Creed II™",
@@ -56845,9 +56650,9 @@
    "platinum_at": "2012-05-01T16:48:14+00:00",
    "dlc": [],
    "missing_n": 0,
+   "base": null,
    "easy": [],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Batman: Arkham City™",
@@ -57042,6 +56847,11 @@
     }
    ],
    "missing_n": 15,
+   "base": {
+    "earned": 35,
+    "total": 50,
+    "pct": 70
+   },
    "easy": [
     {
      "n": "AR Knight",
@@ -57065,12 +56875,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 35,
-    "total": 50,
-    "pct": 70
-   }
+   "doing": []
   },
   {
    "name": "Uncharted: Drake's Fortune™",
@@ -57184,6 +56989,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 19,
+   "base": null,
    "easy": [
     {
      "n": "20 Kills: Mk-NDI",
@@ -57207,8 +57013,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Dead Space™",
@@ -57377,6 +57182,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 14,
+   "base": null,
    "easy": [
     {
      "n": "Eviscerator",
@@ -57400,8 +57206,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "Mafia II",
@@ -57589,6 +57394,11 @@
     }
    ],
    "missing_n": 15,
+   "base": {
+    "earned": 32,
+    "total": 47,
+    "pct": 68
+   },
    "easy": [
     {
      "n": "Knucklehead",
@@ -57612,12 +57422,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 32,
-    "total": 47,
-    "pct": 68
-   }
+   "doing": []
   },
   {
    "name": "Killzone 2",
@@ -57717,6 +57522,7 @@
    "platinum_at": null,
    "dlc": [],
    "missing_n": 80,
+   "base": null,
    "easy": [
     {
      "n": "Salamun Ribbon",
@@ -57740,8 +57546,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": null
+   "doing": []
   },
   {
    "name": "L.A. Noire",
@@ -57962,6 +57767,11 @@
     }
    ],
    "missing_n": 6,
+   "base": {
+    "earned": 34,
+    "total": 40,
+    "pct": 85
+   },
    "easy": [
     {
      "n": "Roscoe And Friends",
@@ -57985,12 +57795,7 @@
      "p": null
     }
    ],
-   "doing": [],
-   "base": {
-    "earned": 34,
-    "total": 40,
-    "pct": 85
-   }
+   "doing": []
   }
  ],
  "insights": {
@@ -59109,7 +58914,8 @@
    "2026-11-09": 5,
    "2026-11-13": 2,
    "2026-11-14": 10,
-   "2026-11-15": 1
+   "2026-11-15": 1,
+   "2026-11-18": 2
   },
   "weekday_hour": {
    "2011": [
@@ -59352,8 +59158,8 @@
     14,
     10,
     14,
-    44,
-    48,
+    45,
+    49,
     24,
     14,
     8,
@@ -61902,8 +61708,8 @@
     1,
     3,
     0,
-    8,
-    10,
+    9,
+    11,
     3,
     0,
     0,
@@ -62325,7 +62131,7 @@
    "all": {
     "buckets": [
      66,
-     487,
+     489,
      2140,
      992
     ],
@@ -62460,7 +62266,7 @@
    "2026": {
     "buckets": [
      9,
-     51,
+     53,
      191,
      60
     ],
