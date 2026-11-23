@@ -8,21 +8,12 @@ X-WR-TIMEZONE:Europe/Zurich
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:finish-a1595abbb4c3@gameshelf
-DTSTAMP:20260101T000000Z
-DTSTART;VALUE=DATE:20261119
-DTEND;VALUE=DATE:20261120
-SUMMARY:🎮 Finish Control? (forecast)
-DESCRIPTION:About 0 h left at ~5.6 h/week. Moves as you play.
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:finish-81ddf838af78@gameshelf
 DTSTAMP:20260101T000000Z
-DTSTART;VALUE=DATE:20261230
-DTEND;VALUE=DATE:20261231
+DTSTART;VALUE=DATE:20270119
+DTEND;VALUE=DATE:20270120
 SUMMARY:🎮 Finish Blue Prince? (forecast)
-DESCRIPTION:About 23 h left at ~3.9 h/week. Moves as you play.
+DESCRIPTION:About 23 h left at ~2.8 h/week. Moves as you play.
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
@@ -96,16 +87,6 @@ URL:https://rawg.io/games/tomb-raider-catalyst
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
-UID:release-the-expanse-osiris-reborn@gameshelf
-DTSTAMP:20260101T000000Z
-DTSTART;VALUE=DATE:20271231
-DTEND;VALUE=DATE:20280101
-SUMMARY:🗓 The Expanse: Osiris Reborn is out
-DESCRIPTION:Big release\, much awaited
-URL:https://rawg.io/games/the-expanse-osiris-reborn
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
 UID:release-kena-scars-of-kosmora@gameshelf
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20271231
@@ -113,6 +94,16 @@ DTEND;VALUE=DATE:20280101
 SUMMARY:🗓 Kena: Scars of Kosmora is out
 DESCRIPTION:Your taste: adventure\, action
 URL:https://rawg.io/games/kena-scars-of-kosmora
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:release-the-expanse-osiris-reborn@gameshelf
+DTSTAMP:20260101T000000Z
+DTSTART;VALUE=DATE:20271231
+DTEND;VALUE=DATE:20280101
+SUMMARY:🗓 The Expanse: Osiris Reborn is out
+DESCRIPTION:Big release\, much awaited
+URL:https://rawg.io/games/the-expanse-osiris-reborn
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT

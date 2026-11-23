@@ -1,143 +1,141 @@
 {
- "week": "2026-W47",
- "generated_at": "2026-11-16T12:41:15+00:00",
+ "week": "2026-W48",
+ "generated_at": "2026-11-23T14:31:29+00:00",
  "picks": [
   {
-   "slug": "final-fantasy-xvi",
-   "name": "Final Fantasy XVI",
-   "image": "https://media.rawg.io/media/games/22e/22e68bb62b3013283972cecf98ed51dc.jpg",
-   "metacritic": 88,
-   "released": "2023-06-22",
+   "slug": "grand-theft-auto-san-andreas",
+   "name": "Grand Theft Auto: San Andreas",
+   "image": "https://media.rawg.io/media/games/960/960b601d9541cec776c5fa42a00bf6c4.jpg",
+   "metacritic": 93,
+   "released": "2004-10-26",
    "genres": [
-    "Action",
-    "RPG"
+    "Action"
    ],
    "platforms": [
-    "PS5"
+    "PS4"
    ],
-   "length": 60,
-   "why": "Close to FINAL FANTASY VII REBIRTH, which you enjoyed; matches your taste for atmospheric, story rich, rpg; about 60 h.",
-   "url": "https://rawg.io/games/final-fantasy-xvi",
+   "length": 44,
+   "why": "Close to The Witcher 3: Wild Hunt — Remastered, which you enjoyed; matches your taste for atmospheric, story rich, open world; about 44 h.",
+   "url": "https://rawg.io/games/grand-theft-auto-san-andreas",
    "tags": [
     [
      "atmospheric",
      "Atmospheric"
     ],
     [
-     "rpg",
-     "RPG"
-    ],
-    [
      "story-rich",
      "Story Rich"
     ],
     [
-     "fantasy",
-     "Fantasy"
-    ],
-    [
-     "gore",
-     "Gore"
-    ],
-    [
-     "violent",
-     "Violent"
-    ],
-    [
-     "action-rpg",
-     "Action RPG"
-    ],
-    [
-     "captions-available",
-     "Captions available"
-    ],
-    [
-     "dark-fantasy",
-     "Dark Fantasy"
-    ],
-    [
-     "cinematic",
-     "Cinematic"
-    ]
-   ]
-  },
-  {
-   "slug": "death-road-to-canada",
-   "name": "Death Road to Canada",
-   "image": "https://media.rawg.io/media/screenshots/e1c/e1c6229f98a42b082d911fdcf27615bd.jpeg",
-   "metacritic": 91,
-   "released": "2016-07-20",
-   "genres": [
-    "Indie",
-    "Adventure",
-    "Action"
-   ],
-   "platforms": [
-    "PS4"
-   ],
-   "length": 23,
-   "why": "Close to ELDEN RING, which you enjoyed; matches your taste for rpg, survival, difficult; about 23 h, close to your usual 17 h.",
-   "url": "https://rawg.io/games/death-road-to-canada",
-   "tags": [
-    [
-     "rpg",
-     "RPG"
-    ],
-    [
-     "cooperative",
-     "cooperative"
+     "open-world",
+     "Open World"
     ],
     [
      "funny",
      "Funny"
     ],
     [
-     "difficult",
-     "Difficult"
-    ],
-    [
-     "survival",
-     "Survival"
+     "sandbox",
+     "Sandbox"
     ],
     [
      "comedy",
      "Comedy"
     ],
     [
-     "pixel-graphics",
-     "Pixel Graphics"
+     "moddable",
+     "Moddable"
     ],
     [
-     "zombies",
-     "Zombies"
+     "mature",
+     "Mature"
+    ],
+    [
+     "crime",
+     "Crime"
+    ],
+    [
+     "driving",
+     "Driving"
+    ]
+   ]
+  },
+  {
+   "slug": "tchia",
+   "name": "Tchia",
+   "image": "https://media.rawg.io/media/games/859/859bf45f635a04fa16eab64b9d02da03.jpg",
+   "metacritic": 77,
+   "released": "2023-03-21",
+   "genres": [
+    "Adventure",
+    "Action"
+   ],
+   "platforms": [
+    "PS5",
+    "PS4"
+   ],
+   "length": 14,
+   "why": "Close to Indiana Jones and the Great Circle, which you enjoyed; matches your taste for story rich, exploration, open world; about 14 h, close to your usual 17 h.",
+   "url": "https://rawg.io/games/tchia",
+   "tags": [
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "open-world",
+     "Open World"
+    ],
+    [
+     "funny",
+     "Funny"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "sandbox",
+     "Sandbox"
+    ],
+    [
+     "stealth",
+     "Stealth"
     ],
     [
      "character-customization",
      "Character Customization"
     ],
     [
-     "controller-support",
-     "controller support"
+     "cute",
+     "Cute"
+    ],
+    [
+     "colorful",
+     "Colorful"
+    ],
+    [
+     "physics",
+     "Physics"
     ]
    ]
   },
   {
-   "slug": "the-swapper",
-   "name": "The Swapper",
-   "image": "https://media.rawg.io/media/games/6fc/6fcb1c529c764700d55f3bbc1b0fbb5b.jpg",
-   "metacritic": 87,
-   "released": "2013-05-13",
+   "slug": "modern-warfare",
+   "name": "Call of Duty 4: Modern Warfare",
+   "image": "https://media.rawg.io/media/games/9fb/9fbaea2168caea1f806546dfdaaeb1da.jpg",
+   "metacritic": 92,
+   "released": "2007-11-05",
    "genres": [
-    "Adventure",
-    "Action",
-    "Puzzle"
+    "Shooter",
+    "Action"
    ],
    "platforms": [
     "PS4"
    ],
-   "length": 5,
-   "why": "Close to Hollow Knight, which you enjoyed; matches your taste for atmospheric, story rich, exploration; about 5 h.",
-   "url": "https://rawg.io/games/the-swapper",
+   "length": 9,
+   "why": "Close to Assassin's Creed® Unity, which you enjoyed; matches your taste for atmospheric, story rich, cooperative; about 9 h.",
+   "url": "https://rawg.io/games/modern-warfare",
    "tags": [
     [
      "atmospheric",
@@ -148,36 +146,36 @@
      "Story Rich"
     ],
     [
-     "sci-fi",
-     "Sci-fi"
+     "cooperative",
+     "cooperative"
     ],
     [
-     "horror",
-     "Horror"
+     "fps",
+     "FPS"
     ],
     [
-     "exploration",
-     "Exploration"
+     "zombies",
+     "Zombies"
     ],
     [
-     "difficult",
-     "Difficult"
+     "moddable",
+     "Moddable"
     ],
     [
-     "space",
-     "Space"
+     "war",
+     "War"
     ],
     [
-     "mystery",
-     "Mystery"
+     "military",
+     "Military"
     ],
     [
-     "side-scroller",
-     "Side Scroller"
+     "competitive",
+     "Competitive"
     ],
     [
-     "metroidvania",
-     "Metroidvania"
+     "linear",
+     "Linear"
     ]
    ]
   }
@@ -202,6 +200,18 @@
   "usual_length": 17
  },
  "history": [
+  {
+   "slug": "grand-theft-auto-san-andreas",
+   "week": "2026-W48"
+  },
+  {
+   "slug": "tchia",
+   "week": "2026-W48"
+  },
+  {
+   "slug": "modern-warfare",
+   "week": "2026-W48"
+  },
   {
    "slug": "final-fantasy-xvi",
    "week": "2026-W47"

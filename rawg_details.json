@@ -350,6 +350,34 @@
   "tba": false,
   "website": "https://blog.playstation.com/2021/09/09/first-look-at-god-of-war-ragnarok/"
  },
+ "grand-theft-auto-san-andreas": {
+  "description": "Grand Theft Auto - San Andreas is the seventh entry in the series in the GTA franchise, but only second big title after GTA - Vice City. Setting up in fictional state San Andreas, you follow the story of CJ, a member of one of the multiple gangs in the city. CJ's family is being attacked in drive shooting which resulted in the death of CJ's mother, so he returns to home from Liberty City.",
+  "developer_ids": [
+   [
+    3524,
+    "Rockstar North"
+   ],
+   [
+    10436,
+    "War Drum Studios"
+   ]
+  ],
+  "developers": [
+   "Rockstar North",
+   "War Drum Studios"
+  ],
+  "esrb": "Mature",
+  "metacritic": 93,
+  "name": "Grand Theft Auto: San Andreas",
+  "publishers": [
+   "Capcom",
+   "Rockstar Games",
+   "1C-SoftClub"
+  ],
+  "released": "2004-10-26",
+  "tba": false,
+  "website": "http://www.rockstargames.com/sanandreas/pc"
+ },
  "grand-theft-auto-vice-city": {
   "description": "Grand Theft Auto: Vice City is a third-person shooter with an open world. The game is set in a fictional city during the 1980’s and exhibits a unique design of locations, people, and objects, resembling the real world’s counterparts of Vice City, mainly Miami, FL. GTA: Vice City is a fourth game of the series, following Grand Theft Auto III.",
   "developer_ids": [
@@ -519,6 +547,39 @@
   "released": null,
   "tba": true,
   "website": null
+ },
+ "modern-warfare": {
+  "description": "The fourth installment of a popular series, Call of Duty 4: Modern Warfare is split into two different, gameplay-wise, parts. The single-player campaign invites players to go through the episodic story, where players control six different characters.",
+  "developer_ids": [
+   [
+    5833,
+    "Raven Software"
+   ],
+   [
+    5734,
+    "Treyarch"
+   ],
+   [
+    3801,
+    "Infinity Ward"
+   ]
+  ],
+  "developers": [
+   "Raven Software",
+   "Treyarch",
+   "Infinity Ward"
+  ],
+  "esrb": "Mature",
+  "metacritic": 92,
+  "name": "Call of Duty 4: Modern Warfare",
+  "publishers": [
+   "Square Enix",
+   "Aspyr",
+   "Activision Blizzard"
+  ],
+  "released": "2007-11-05",
+  "tba": false,
+  "website": "https://www.activision.com/games/call-of-duty/call-of-duty-modern-warfare-remastered"
  },
  "no-rest-for-the-wicked-2024": {
   "description": "From Moon Studios, the award-winning developers of Ori and the Blind Forest and Ori and the Will of the Wisps comes No Rest for the Wicked, a visceral, precision Action RPG set to reinvent the genre. The year is 841 – King Harol is dead. As word of his death echoes throughout the kingdom, the crown passes to his arrogant, yet untested son Magnus.",
@@ -754,6 +815,28 @@
   "released": "2002-03-01",
   "tba": false,
   "website": "http://www.lucasarts.com"
+ },
+ "tchia": {
+  "description": "POSSESSING MECHANIC Tchia's special gift lets you take control of any animal or object you can find. Use their unique gameplays and abilities to travel, solve puzzles and uncover secrets. Fly around as a bird, explore the ocean as a fish or dig treasures as a dog. Over 30 playable animals and hundreds of objects. EXPLORATION & TRAVERSAL",
+  "developer_ids": [
+   [
+    5697,
+    "Awaceb"
+   ]
+  ],
+  "developers": [
+   "Awaceb"
+  ],
+  "esrb": "Teen",
+  "metacritic": 77,
+  "name": "Tchia",
+  "publishers": [
+   "Kepler Interactive",
+   "Awaceb"
+  ],
+  "released": "2023-03-21",
+  "tba": false,
+  "website": "https://www.awaceb.com/tchia"
  },
  "the-elder-scrolls-v-skyrim": {
   "description": "The fifth game in the series, Skyrim takes us on a journey through the coldest region of Cyrodiil. Once again player can traverse the open world RPG armed with various medieval weapons and magic, to become a hero of Nordic legends –Dovahkiin, the Dragonborn. After mandatory character creation players will have to escape not only imprisonment but a fire-breathing dragon. Something Skyrim hasn’t seen in centuries.",

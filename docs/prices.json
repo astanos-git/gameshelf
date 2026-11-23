@@ -1,6 +1,6 @@
 {
  "brothers-a-tale-of-two-sons-2": {
-  "checked": "2026-11-16",
+  "checked": "2026-11-23",
   "concept": "200617",
   "first_checked": "2026-11-09",
   "low": 21.9,
@@ -9,17 +9,18 @@
  },
  "control-resonant": {
   "base": 59.9,
-  "checked": "2026-11-16",
+  "checked": "2026-11-23",
   "concept": "10017682",
   "first_checked": "2026-11-09",
   "low": 47.92,
   "low_at": "2026-11-16",
-  "prev": 59.9,
+  "plus": true,
+  "plus_since": "2026-11-23",
   "price": 47.92,
   "until": "2026-11-30"
  },
  "phantom-blade-zero": {
-  "checked": "2026-11-16",
+  "checked": "2026-11-23",
   "concept": "10017620",
   "first_checked": "2026-11-09",
   "low": 59.9,
@@ -27,7 +28,7 @@
   "price": 59.9
  },
  "pragmata": {
-  "checked": "2026-11-16",
+  "checked": "2026-11-23",
   "concept": "10002075",
   "first_checked": "2026-11-16",
   "low": 59.9,
@@ -35,7 +36,7 @@
   "price": 59.9
  },
  "ratchet-clank-rift-apart": {
-  "checked": "2026-11-16",
+  "checked": "2026-11-23",
   "concept": "10000669",
   "first_checked": "2026-11-09",
   "low": 79.9,
@@ -46,12 +47,11 @@
  },
  "shadows-die-twice": {
   "base": 64.9,
-  "checked": "2026-11-16",
+  "checked": "2026-11-23",
   "concept": "232898",
   "first_checked": "2026-11-09",
   "low": 32.45,
   "low_at": "2026-11-16",
-  "prev": 64.9,
   "price": 32.45,
   "until": "2026-11-30"
  }

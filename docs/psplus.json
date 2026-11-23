@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-16",
+ "checked": "2026-11-23",
  "games": [
   {
    "first_seen": "2026-11-09",
@@ -674,7 +674,7 @@
   },
   {
    "first_seen": "2026-11-16",
-   "from": "2026-11-17",
+   "from": null,
    "name": "Atomfall",
    "systems": [
     "PS4",
@@ -1610,17 +1610,6 @@
    "until": null
   },
   {
-   "first_seen": "2026-11-09",
-   "from": null,
-   "name": "Cricket 24: Official Game of the Ashes",
-   "systems": [
-    "PS4",
-    "PS5"
-   ],
-   "tier": "Extra",
-   "until": "2026-11-17"
-  },
-  {
    "first_seen": "2026-11-16",
    "from": "2026-11-24",
    "name": "Cricket 26: The Official Game of the Ashes",
@@ -1917,7 +1906,7 @@
   },
   {
    "first_seen": "2026-11-16",
-   "from": "2026-11-17",
+   "from": null,
    "name": "Death Stranding 2: On the Beach",
    "systems": [
     "PS5"
@@ -1980,7 +1969,7 @@
    "from": null,
    "name": "Deliver Us the Moon",
    "systems": [
-    "PS5"
+    "PS4"
    ],
    "tier": "Extra",
    "until": null
@@ -2370,7 +2359,7 @@
   },
   {
    "first_seen": "2026-11-16",
-   "from": "2026-11-17",
+   "from": null,
    "name": "Dragon Quest III HD-2D Remake",
    "systems": [
     "PS5"
@@ -2599,16 +2588,6 @@
    ],
    "tier": "Premium",
    "until": null
-  },
-  {
-   "first_seen": "2026-11-09",
-   "from": null,
-   "name": "Earth Defense Force 4.1: The Shadow of New Despair",
-   "systems": [
-    "PS4"
-   ],
-   "tier": "Extra",
-   "until": "2026-11-17"
   },
   {
    "first_seen": "2026-11-09",
@@ -2923,7 +2902,7 @@
     "PS4"
    ],
    "tier": "Extra",
-   "until": null
+   "until": "2026-12-15"
   },
   {
    "first_seen": "2026-11-09",
@@ -3221,16 +3200,6 @@
   {
    "first_seen": "2026-11-09",
    "from": null,
-   "name": "Football Manager 26 Console",
-   "systems": [
-    "PS5"
-   ],
-   "tier": "Extra",
-   "until": "2026-11-17"
-  },
-  {
-   "first_seen": "2026-11-09",
-   "from": null,
    "name": "For Honor",
    "systems": [
     "PS4"
@@ -3270,7 +3239,7 @@
   },
   {
    "first_seen": "2026-11-16",
-   "from": "2026-11-17",
+   "from": null,
    "name": "Freedom Wars Remastered",
    "systems": [
     "PS4",
@@ -3520,7 +3489,7 @@
     "PS5"
    ],
    "tier": "Extra",
-   "until": null
+   "until": "2026-12-15"
   },
   {
    "first_seen": "2026-11-09",
@@ -3542,17 +3511,6 @@
    ],
    "tier": "Extra",
    "until": null
-  },
-  {
-   "first_seen": "2026-11-09",
-   "from": null,
-   "name": "Grand Theft Auto V",
-   "systems": [
-    "PS4",
-    "PS5"
-   ],
-   "tier": "Extra",
-   "until": "2026-11-17"
   },
   {
    "first_seen": "2026-11-09",
@@ -3863,7 +3821,7 @@
    "from": null,
    "name": "Hollow Knight: Voidheart Edition",
    "systems": [
-    "PS5"
+    "PS4"
    ],
    "tier": "Extra",
    "until": null
@@ -3960,16 +3918,6 @@
    ],
    "tier": "Extra",
    "until": null
-  },
-  {
-   "first_seen": "2026-11-09",
-   "from": null,
-   "name": "Hotshot Racing",
-   "systems": [
-    "PS4"
-   ],
-   "tier": "Extra",
-   "until": "2026-11-17"
   },
   {
    "first_seen": "2026-11-09",
@@ -5222,7 +5170,7 @@
    "from": null,
    "name": "Metro Redux",
    "systems": [
-    "PS4"
+    "PS5"
    ],
    "tier": "Premium",
    "until": null
@@ -5277,17 +5225,6 @@
    ],
    "tier": "Extra",
    "until": null
-  },
-  {
-   "first_seen": "2026-11-09",
-   "from": null,
-   "name": "Monster Boy and the Cursed Kingdom",
-   "systems": [
-    "PS4",
-    "PS5"
-   ],
-   "tier": "Extra",
-   "until": "2026-11-17"
   },
   {
    "first_seen": "2026-11-09",
@@ -6604,16 +6541,6 @@
   {
    "first_seen": "2026-11-09",
    "from": null,
-   "name": "Rapala Fishing Pro Series",
-   "systems": [
-    "PS4"
-   ],
-   "tier": "Extra",
-   "until": "2026-11-17"
-  },
-  {
-   "first_seen": "2026-11-09",
-   "from": null,
    "name": "Ratatouille",
    "systems": [
     "PS3"
@@ -6780,16 +6707,6 @@
    ],
    "tier": "Premium",
    "until": null
-  },
-  {
-   "first_seen": "2026-11-09",
-   "from": null,
-   "name": "Red Dead Redemption 2",
-   "systems": [
-    "PS4"
-   ],
-   "tier": "Extra",
-   "until": "2026-11-17"
   },
   {
    "first_seen": "2026-11-09",
@@ -7152,16 +7069,6 @@
    ],
    "tier": "Extra",
    "until": null
-  },
-  {
-   "first_seen": "2026-11-09",
-   "from": null,
-   "name": "Rock of Ages III: Make & Break",
-   "systems": [
-    "PS4"
-   ],
-   "tier": "Extra",
-   "until": "2026-11-17"
   },
   {
    "first_seen": "2026-11-09",
@@ -7804,7 +7711,7 @@
     "PS5"
    ],
    "tier": "Extra",
-   "until": null
+   "until": "2026-12-15"
   },
   {
    "first_seen": "2026-11-09",
@@ -7819,7 +7726,7 @@
   },
   {
    "first_seen": "2026-11-16",
-   "from": "2026-11-17",
+   "from": null,
    "name": "Soul Reaver 2",
    "systems": [
     "PS2"
@@ -8970,16 +8877,6 @@
   {
    "first_seen": "2026-11-09",
    "from": null,
-   "name": "The Talos Principle II",
-   "systems": [
-    "PS5"
-   ],
-   "tier": "Extra",
-   "until": "2026-11-17"
-  },
-  {
-   "first_seen": "2026-11-09",
-   "from": null,
    "name": "The Technomancer",
    "systems": [
     "PS4"
@@ -9609,7 +9506,7 @@
    "from": null,
    "name": "UNO",
    "systems": [
-    "PS5"
+    "PS4"
    ],
    "tier": "Extra",
    "until": null
@@ -9619,7 +9516,7 @@
    "from": null,
    "name": "Until Dawn",
    "systems": [
-    "PS5"
+    "PS4"
    ],
    "tier": "Extra",
    "until": null

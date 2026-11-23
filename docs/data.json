@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T21:26:37+00:00",
+ "generated_at": "2026-11-23T14:29:35+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -28,9 +28,9 @@
    ],
    "owned": true,
    "acquired": "2026-09-09T05:34:20Z",
-   "hours": 19.1,
+   "hours": 19.3,
    "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-11-18T21:24:56.900000+00:00",
+   "last_played": "2026-11-20T10:22:57.050000+00:00",
    "progress": 61,
    "earned": {
     "bronze": 33,
@@ -44,7 +44,7 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-11-18T21:11:37+00:00",
+   "last_trophy": "2026-11-20T10:22:29+00:00",
    "has_trophies": true,
    "months": {
     "2026-11": [
@@ -92,7 +92,7 @@
     {
      "n": "Aggressive Growth",
      "t": "bronze",
-     "r": 13.1,
+     "r": 13.2,
      "at": "2026-11-18T20:25:58+00:00",
      "i": "https://psnobj.prod.dl.playstation.net/psnobj/NPWR22157_00/4a25f190-2878-4eba-b012-4e20e794e10c.png"
     },
@@ -118,9 +118,9 @@
    "trophies_total": 68,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-11-18T21:24:56.900000+00:00",
+   "last_activity": "2026-11-20T10:22:57.050000+00:00",
    "hours_by_year": {
-    "2026": 19.1
+    "2026": 19.3
    },
    "metacritic": 84,
    "genres": [
@@ -253,8 +253,8 @@
      "t": "bronze",
      "r": 9.3,
      "h": null,
-     "p": "28/53",
-     "pct": 53
+     "p": "31/53",
+     "pct": 58
     },
     {
      "n": "Crisis Management",
@@ -19009,8 +19009,8 @@
    "rawg_slug": "lego-2k-drive",
    "metacritic_source": "wikipedia",
    "series": [
-    "Lego",
-    "2K Drive"
+    "2K Drive",
+    "Lego"
    ],
    "developers": [
     "Visual Concepts"
@@ -20140,7 +20140,9 @@
    "released": "1995-02-11",
    "rawg_slug": "nights-into-dreams",
    "metacritic_source": "wikipedia",
-   "series": [],
+   "series": [
+    "Nights"
+   ],
    "developers": [
     "Sonic Team"
    ],

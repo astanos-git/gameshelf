@@ -1362,8 +1362,8 @@
    "2K"
   ],
   "series": [
-   "Lego",
-   "2K Drive"
+   "2K Drive",
+   "Lego"
   ]
  },
  "lego-dc-super-villains": {
@@ -1760,7 +1760,9 @@
    "Sonic Team"
   ],
   "publishers": [],
-  "series": []
+  "series": [
+   "Nights"
+  ]
  },
  "nine-sols": {
   "developers": [
