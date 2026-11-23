@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T14:29:35+00:00",
+ "generated_at": "2026-11-23T21:31:40+00:00",
  "login": {
   "fingerprint": "bec7e4cce8af",
   "since": "2026-09-29T09:57:38+00:00",
@@ -10,9 +10,9 @@
   "account_id": "5030476681465522602",
   "avatar": "http://static-resource.np.community.playstation.net/avatar/WWS_E/E0030.png",
   "trophy_level": 331,
-  "level_progress": 83,
+  "level_progress": 85,
   "earned": {
-   "bronze": 2782,
+   "bronze": 2783,
    "silver": 657,
    "gold": 225,
    "platinum": 23
@@ -30,10 +30,10 @@
    "acquired": "2026-09-09T05:34:20Z",
    "hours": 19.3,
    "first_played": "2026-10-30T21:25:39.180000+00:00",
-   "last_played": "2026-11-20T10:22:57.050000+00:00",
-   "progress": 61,
+   "last_played": "2026-11-23T20:48:19.750000+00:00",
+   "progress": 62,
    "earned": {
-    "bronze": 33,
+    "bronze": 34,
     "silver": 7,
     "gold": 2,
     "platinum": 0
@@ -44,11 +44,11 @@
     "gold": 3,
     "platinum": 1
    },
-   "last_trophy": "2026-11-20T10:22:29+00:00",
+   "last_trophy": "2026-11-23T21:26:00+00:00",
    "has_trophies": true,
    "months": {
     "2026-11": [
-     30,
+     31,
      7,
      2,
      0
@@ -66,7 +66,7 @@
      "platforms": [
       "PS5"
      ],
-     "progress": 61,
+     "progress": 62,
      "groups": {
       "001": "The Foundation",
       "002": "Altered World Events",
@@ -114,11 +114,11 @@
    "aliases": [
     "Control Ultimate Edition"
    ],
-   "trophies_earned": 42,
+   "trophies_earned": 43,
    "trophies_total": 68,
    "platinum": false,
    "status": "started",
-   "last_activity": "2026-11-20T10:22:57.050000+00:00",
+   "last_activity": "2026-11-23T21:26:00+00:00",
    "hours_by_year": {
     "2026": 19.3
    },
@@ -214,7 +214,7 @@
      "platforms": [
       "PS5"
      ],
-     "earned": 0,
+     "earned": 1,
      "total": 11
     }
    ],
@@ -237,7 +237,7 @@
      "t": "silver",
      "r": 9.8,
      "h": null,
-     "p": "2/5"
+     "p": "3/5"
     },
     {
      "n": "Volatile Debris",
@@ -249,30 +249,178 @@
    ],
    "doing": [
     {
-     "n": "In-depth Investigations",
-     "t": "bronze",
-     "r": 9.3,
-     "h": null,
-     "p": "31/53",
-     "pct": 58
-    },
-    {
      "n": "Crisis Management",
      "t": "silver",
      "r": 9.8,
      "h": null,
-     "p": "2/5",
-     "pct": 40
+     "p": "3/5",
+     "pct": 60
     },
     {
-     "n": "Astral Tactician",
-     "t": "silver",
-     "r": 7.1,
+     "n": "In-depth Investigations",
+     "t": "bronze",
+     "r": 9.3,
      "h": null,
-     "p": "5/25",
-     "pct": 20
+     "p": "32/53",
+     "pct": 60
+    },
+    {
+     "n": "Elevated Mind",
+     "t": "bronze",
+     "r": 4.5,
+     "h": null,
+     "p": "13/25",
+     "pct": 52
     }
    ]
+  },
+  {
+   "name": "Blue Prince",
+   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1222/155cec2bad7676df9a1aa7e96cdd9f363e117c1650a43c34.png",
+   "platforms": [
+    "PS5"
+   ],
+   "owned": true,
+   "acquired": "2025-12-14T16:02:26Z",
+   "hours": 14.0,
+   "first_played": "2026-10-26T20:12:49.930000+00:00",
+   "last_played": "2026-11-23T20:48:14.320000+00:00",
+   "progress": 0,
+   "earned": {
+    "bronze": 0,
+    "silver": 0,
+    "gold": 0,
+    "platinum": 0
+   },
+   "defined": {
+    "bronze": 0,
+    "silver": 8,
+    "gold": 8,
+    "platinum": 1
+   },
+   "last_trophy": "2026-10-26T20:12:53+00:00",
+   "has_trophies": true,
+   "months": {},
+   "trophy_lists": [
+    {
+     "id": "NPWR46707_00",
+     "platforms": [
+      "PS5"
+     ],
+     "progress": 0,
+     "groups": {}
+    }
+   ],
+   "rare": [],
+   "aliases": [],
+   "trophies_earned": 0,
+   "trophies_total": 17,
+   "platinum": false,
+   "status": "started",
+   "last_activity": "2026-11-23T20:48:14.320000+00:00",
+   "hours_by_year": {
+    "2026": 14.0
+   },
+   "metacritic": 92,
+   "genres": [
+    "Indie",
+    "Strategy",
+    "Adventure",
+    "Puzzle"
+   ],
+   "released": "2025-04-10",
+   "rawg_slug": "blue-prince",
+   "metacritic_source": "wikipedia",
+   "series": [],
+   "developers": [],
+   "publishers": [],
+   "tags": [
+    [
+     "atmospheric",
+     "Atmospheric"
+    ],
+    [
+     "story-rich",
+     "Story Rich"
+    ],
+    [
+     "exploration",
+     "Exploration"
+    ],
+    [
+     "mystery",
+     "Mystery"
+    ],
+    [
+     "replay-value",
+     "Replay Value"
+    ],
+    [
+     "walking-simulator",
+     "Walking Simulator"
+    ],
+    [
+     "roguelite",
+     "Roguelite"
+    ],
+    [
+     "stylized",
+     "Stylized"
+    ],
+    [
+     "family-sharing",
+     "Family Sharing"
+    ],
+    [
+     "level-editor",
+     "Level Editor"
+    ],
+    [
+     "investigation",
+     "Investigation"
+    ],
+    [
+     "nonlinear",
+     "Nonlinear"
+    ]
+   ],
+   "hltb": {
+    "main": 18.39,
+    "extra": 36.48,
+    "complete": 104.57,
+    "url": "https://howlongtobeat.com/game/136426"
+   },
+   "plat_rate": 0.3,
+   "rare_missing": 15,
+   "first_trophy_at": null,
+   "platinum_at": null,
+   "dlc": [],
+   "missing_n": 16,
+   "base": null,
+   "easy": [
+    {
+     "n": "Inheritance Trophy",
+     "t": "silver",
+     "r": 14.3,
+     "h": null,
+     "p": null
+    },
+    {
+     "n": "Trophy 8",
+     "t": "silver",
+     "r": 9.2,
+     "h": true,
+     "p": null
+    },
+    {
+     "n": "Full House Trophy",
+     "t": "silver",
+     "r": 9.0,
+     "h": null,
+     "p": null
+    }
+   ],
+   "doing": []
   },
   {
    "name": "Fortnite",
@@ -408,154 +556,6 @@
      "n": "Some Sort of Rocket",
      "t": "bronze",
      "r": 11.5,
-     "h": null,
-     "p": null
-    }
-   ],
-   "doing": []
-  },
-  {
-   "name": "Blue Prince",
-   "image": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1222/155cec2bad7676df9a1aa7e96cdd9f363e117c1650a43c34.png",
-   "platforms": [
-    "PS5"
-   ],
-   "owned": true,
-   "acquired": "2025-12-14T16:02:26Z",
-   "hours": 13.5,
-   "first_played": "2026-10-26T20:12:49.930000+00:00",
-   "last_played": "2026-11-13T14:06:05.560000+00:00",
-   "progress": 0,
-   "earned": {
-    "bronze": 0,
-    "silver": 0,
-    "gold": 0,
-    "platinum": 0
-   },
-   "defined": {
-    "bronze": 0,
-    "silver": 8,
-    "gold": 8,
-    "platinum": 1
-   },
-   "last_trophy": "2026-10-26T20:12:53+00:00",
-   "has_trophies": true,
-   "months": {},
-   "trophy_lists": [
-    {
-     "id": "NPWR46707_00",
-     "platforms": [
-      "PS5"
-     ],
-     "progress": 0,
-     "groups": {}
-    }
-   ],
-   "rare": [],
-   "aliases": [],
-   "trophies_earned": 0,
-   "trophies_total": 17,
-   "platinum": false,
-   "status": "started",
-   "last_activity": "2026-11-13T14:06:05.560000+00:00",
-   "hours_by_year": {
-    "2026": 13.5
-   },
-   "metacritic": 92,
-   "genres": [
-    "Indie",
-    "Strategy",
-    "Adventure",
-    "Puzzle"
-   ],
-   "released": "2025-04-10",
-   "rawg_slug": "blue-prince",
-   "metacritic_source": "wikipedia",
-   "series": [],
-   "developers": [],
-   "publishers": [],
-   "tags": [
-    [
-     "atmospheric",
-     "Atmospheric"
-    ],
-    [
-     "story-rich",
-     "Story Rich"
-    ],
-    [
-     "exploration",
-     "Exploration"
-    ],
-    [
-     "mystery",
-     "Mystery"
-    ],
-    [
-     "replay-value",
-     "Replay Value"
-    ],
-    [
-     "walking-simulator",
-     "Walking Simulator"
-    ],
-    [
-     "roguelite",
-     "Roguelite"
-    ],
-    [
-     "stylized",
-     "Stylized"
-    ],
-    [
-     "family-sharing",
-     "Family Sharing"
-    ],
-    [
-     "level-editor",
-     "Level Editor"
-    ],
-    [
-     "investigation",
-     "Investigation"
-    ],
-    [
-     "nonlinear",
-     "Nonlinear"
-    ]
-   ],
-   "hltb": {
-    "main": 18.39,
-    "extra": 36.48,
-    "complete": 104.57,
-    "url": "https://howlongtobeat.com/game/136426"
-   },
-   "plat_rate": 0.3,
-   "rare_missing": 15,
-   "first_trophy_at": null,
-   "platinum_at": null,
-   "dlc": [],
-   "missing_n": 16,
-   "base": null,
-   "easy": [
-    {
-     "n": "Inheritance Trophy",
-     "t": "silver",
-     "r": 14.3,
-     "h": null,
-     "p": null
-    },
-    {
-     "n": "Trophy 8",
-     "t": "silver",
-     "r": 9.2,
-     "h": true,
-     "p": null
-    },
-    {
-     "n": "Full House Trophy",
-     "t": "silver",
-     "r": 9.0,
      "h": null,
      "p": null
     }
@@ -58917,7 +58917,8 @@
    "2026-11-13": 2,
    "2026-11-14": 10,
    "2026-11-15": 1,
-   "2026-11-18": 2
+   "2026-11-18": 2,
+   "2026-11-23": 1
   },
   "weekday_hour": {
    "2011": [
@@ -59112,7 +59113,7 @@
     17,
     20,
     41,
-    84,
+    85,
     97,
     23,
     14,
@@ -61662,7 +61663,7 @@
     1,
     0,
     0,
-    5,
+    6,
     17,
     1,
     0,
@@ -62134,7 +62135,7 @@
     "buckets": [
      66,
      489,
-     2140,
+     2141,
      992
     ],
     "score": 26
@@ -62269,7 +62270,7 @@
     "buckets": [
      9,
      53,
-     191,
+     192,
      60
     ],
     "score": 28
