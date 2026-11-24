@@ -2,13 +2,17 @@
  "kept": {
   "ABSOLVER": "2026-11-11",
   "Amnesia Collection": "2026-11-11",
+  "BioShock Infinite: The Complete Edition": "2026-11-24",
+  "BioShock: The Collection": "2026-11-24",
   "Claire": "2026-11-11",
+  "DIRT 5": "2026-11-24",
   "Darksiders III": "2026-11-11",
   "Day of the Tentacle Remastered": "2026-11-10",
   "Destiny 2": "2026-11-11",
   "Goat Simulator": "2026-11-10",
   "Here They Lie™": "2026-11-10",
   "Iconoclasts": "2026-11-11",
+  "LEGO® DC Super-Villains": "2026-11-24",
   "LittleBigPlanet™3": "2026-11-11",
   "Mad Max": "2026-11-11",
   "Mafia: Trilogy": "2026-11-11",
@@ -17,6 +21,8 @@
   "STEEP": "2026-11-10",
   "Tales from the Borderlands": "2026-11-11",
   "Titan Souls": "2026-11-11",
+  "Titanfall™ 2": "2026-11-24",
+  "Uncharted™: The Nathan Drake Collection": "2026-11-24",
   "Yakuza Kiwami": "2026-11-11",
   "inFAMOUS™ Second Son": "2026-11-11"
  },
@@ -35,6 +41,11 @@
    "at": "2026-11-11",
    "dropped": 6,
    "kept": 9
+  },
+  {
+   "at": "2026-11-24",
+   "dropped": 9,
+   "kept": 6
   }
  ]
 }
